@@ -1734,7 +1734,7 @@ textarea:focus {
 }
 /*Header Bottom Menu*/
 .header-bottom {
-		background: #fed700;
+		background: #0C2F4E;
 		margin-bottom: 20px;
 }
 
@@ -1749,7 +1749,7 @@ textarea:focus {
 }
 .hb-menu nav > ul > li > a {
 	display: flex;
-	color: #242424;
+	color: #ffffff;
 	text-transform: uppercase;
 	font-size: 14px;
 	line-height: 35px;
@@ -1777,7 +1777,7 @@ textarea:focus {
 	font-family: fontawesome;
 	font-size: 18px;
 	transition: all 0.3s ease-in-out;
-	color: #242424;
+	color: #ffffff;
 }
 .hb-menu nav > ul > li:nth-child(n+5) > a::after {
 	content: none;
