@@ -91,7 +91,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/1.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -324,7 +324,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/6.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -1054,7 +1054,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/2.jpg"
                                                   alt="Li's Product Image">
                                           </a>

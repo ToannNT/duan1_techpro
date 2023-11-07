@@ -26,13 +26,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/product.php";
             break;
         case 'productdetail':
-            require_once "view/product.php";
+            require_once "view/productdetail.php";
             break;
         case 'contact':
             require_once "view/contact.php";
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
+
             break;
 
 
