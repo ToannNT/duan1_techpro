@@ -4,7 +4,7 @@
            <div class="breadcrumb-content">
                <ul>
                    <li><a href="index.html">Home</a></li>
-                   <li class="active">Blog Left Sidebar</li>
+                   <li class="active">Blog </li>
                </ul>
            </div>
        </div>
@@ -20,35 +20,33 @@
                        <div class="li-blog-sidebar">
                            <div class="li-sidebar-search-form">
                                <form action="#">
-                                   <input type="text" class="li-search-field" placeholder="search here">
+                                   <input type="text" class="li-search-field" placeholder="Tìm kiếm tại đây">
                                    <button type="submit" class="li-search-btn"><i class="fa fa-search"></i></button>
                                </form>
                            </div>
                        </div>
                        <div class="li-blog-sidebar pt-25">
-                           <h4 class="li-blog-sidebar-title">Categories</h4>
+                           <h4 class="li-blog-sidebar-title">Thể loại</h4>
                            <ul class="li-blog-archive">
                                <li><a href="#">Laptops (10)</a></li>
-                               <li><a href="#">TV & Audio (08)</a></li>
-                               <li><a href="#">reach (07)</a></li>
-                               <li><a href="#">Smartphone (14)</a></li>
-                               <li><a href="#">Cameras (10)</a></li>
-                               <li><a href="#">Headphone (06)</a></li>
+                               <li><a href="#">Điện thoại (08)</a></li>
+                               <li><a href="#">Tai nghe (07)</a></li>
+                               <li><a href="#">Phụ kiện khác (14)</a></li>
                            </ul>
                        </div>
                        <div class="li-blog-sidebar">
-                           <h4 class="li-blog-sidebar-title">Blog Archives</h4>
+                           <h4 class="li-blog-sidebar-title">Lưu trữ Blog</h4>
                            <ul class="li-blog-archive">
-                               <li><a href="#">January (10)</a></li>
-                               <li><a href="#">February (08)</a></li>
-                               <li><a href="#">March (07)</a></li>
-                               <li><a href="#">April (14)</a></li>
-                               <li><a href="#">May (10)</a></li>
-                               <li><a href="#">June (06)</a></li>
+                               <li><a href="#">Tháng Một (10)</a></li>
+                               <li><a href="#">Tháng Hai (08)</a></li>
+                               <li><a href="#">Tháng Ba (07)</a></li>
+                               <li><a href="#">Tháng Bốn (14)</a></li>
+                               <li><a href="#">Tháng Năm (10)</a></li>
+                               <li><a href="#">Tháng Sáu (06)</a></li>
                            </ul>
                        </div>
                        <div class="li-blog-sidebar">
-                           <h4 class="li-blog-sidebar-title">Recent Post</h4>
+                           <h4 class="li-blog-sidebar-title">BÀI ĐĂNG GẦN ĐÂY</h4>
                            <div class="li-recent-post pb-30">
                                <div class="li-recent-post-thumb">
                                    <a href="blog-details-left-sidebar.html">
@@ -57,8 +55,8 @@
                                    </a>
                                </div>
                                <div class="li-recent-post-des">
-                                   <span><a href="blog-details-left-sidebar.html">First Blog Post</a></span>
-                                   <span class="li-post-date">25.11.2018</span>
+                                   <span><a href="blog-details-left-sidebar.html">Bài đăng blog đầu tiên</a></span>
+                                   <span class="li-post-date">25.11.2023</span>
                                </div>
                            </div>
                            <div class="li-recent-post pb-30">
@@ -69,7 +67,7 @@
                                    </a>
                                </div>
                                <div class="li-recent-post-des">
-                                   <span><a href="blog-details-left-sidebar.html">First Blog Post</a></span>
+                                   <span><a href="blog-details-left-sidebar.html">Bài đăng blog mới nhất</a></span>
                                    <span class="li-post-date">25.11.2018</span>
                                </div>
                            </div>
@@ -81,13 +79,13 @@
                                    </a>
                                </div>
                                <div class="li-recent-post-des">
-                                   <span><a href="blog-details-left-sidebar.html">First Blog Post</a></span>
+                                   <span><a href="blog-details-left-sidebar.html">Bài đăng blog </a></span>
                                    <span class="li-post-date">25.11.2018</span>
                                </div>
                            </div>
                        </div>
                        <div class="li-blog-sidebar">
-                           <h4 class="li-blog-sidebar-title">Tags</h4>
+                           <h4 class="li-blog-sidebar-title">Khác</h4>
                            <ul class="li-blog-tags">
                                <li><a href="#">Gaming</a></li>
                                <li><a href="#">Chromebook</a></li>
@@ -111,15 +109,18 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               image post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">
+                                        Đánh giá camera Xiaomi 13T Pro: Không để cho vui, camera Leica này "nghệ" thật sự</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>
@@ -143,15 +144,17 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               gallery post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">Flash sale cuối tuần: Camera Ezviz H6C giá chỉ 390 ngàn, laptop Lenovo IdeaPad 3 giá sốc 8.9 triệu đồng</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>
@@ -165,15 +168,18 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               audio post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">
+                                        Samsung đang phát triển Galaxy Z Flip5 Maison Margiela, sẽ sớm ra mắt</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>
@@ -187,15 +193,18 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               video post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">
+                                        Mua màn hình hoặc máy chiếu ASUS ProArt, nhận ngay 3 tháng sử dụng Adobe Creative Cloud</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>
@@ -209,15 +218,18 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               fifth post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">
+                                        Top 4 chiếc laptop gaming chơi Valorant max setting tốt nhất hiện nay mà anh em nên tham khảo</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>
@@ -231,15 +243,18 @@
                                </div>
                                <div class="li-blog-content">
                                    <div class="li-blog-details">
-                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog
-                                               second post</a></h3>
+                                       <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">
+                                        Apple đã trình diện đến người dùng mẫu điện thoại iPhone 12 128GB với sự tuyên bố về một kỷ nguyên mới của iPhone 5G,</a></h3>
                                        <div class="li-blog-meta">
                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                        </div>
-                                       <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                           Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.</p>
+                                       <p>Công nghệ là sức mạnh biến đổi thế giới. Từ internet, trí tuệ nhân tạo, 
+                                        đến xe tự lái và năng lượng tái tạo, 
+                                        nó luôn là nguồn cảm hứng vô tận. 
+                                        Công nghệ giúp kết nối, tiết kiệm thời gian và tạo ra 
+                                        cơ hội mới. Đây là thời đại của sự tiến bộ không ngừng..</p>
                                        <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
                                    </div>
                                </div>

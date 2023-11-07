@@ -4,7 +4,7 @@
                 <div class="breadcrumb-content">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li class="active">Contact</li>
+                        <li class="active">Liên hệ</li>
                     </ul>
                 </div>
             </div>
@@ -21,18 +21,19 @@
                 <div class="row">
                     <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                         <div class="contact-page-side-content">
-                            <h3 class="contact-page-title">Contact Us</h3>
-                            <p class="contact-page-message mb-25">Claritas est etiam processus dynamicus, qui sequitur
-                                mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc
-                                putamus parum claram anteposuerit litterarum formas human.</p>
+                            <h3 class="contact-page-title">Liên hệ với chúng tôi</h3>
+                            <p class="contact-page-message mb-25">
+                                Chúng tôi sẽ phản hồi Quý khách trong vòng 2 ngày làm việc đối 
+                                với những yêu cầu gửi trực tuyến. Nếu Quý khách cần hỗ trợ khẩn 
+                                cấp, vui lòng liên hệ với chúng tôi thông qua những cách thức khác.</p>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-fax"></i> Address</h4>
-                                <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                                <h4><i class="fa fa-fax"></i>Địa chỉ</h4>
+                                <p>Công viên phần mềm Quang Trung, Quận 12, TP Hồ Chí Minh </p>
                             </div>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-phone"></i> Phone</h4>
-                                <p>Mobile: (08) 123 456 789</p>
-                                <p>Hotline: 1009 678 456</p>
+                                <h4><i class="fa fa-phone"></i> Số điện thoại</h4>
+                                <p>SĐT: 0799526520</p>
+                                <p>Đường dây nóng: 1009 678 456</p>
                             </div>
                             <div class="single-contact-block last-child">
                                 <h4><i class="fa fa-envelope-o"></i> Email</h4>
@@ -43,27 +44,27 @@
                     </div>
                     <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                         <div class="contact-form-content pt-sm-55 pt-xs-55">
-                            <h3 class="contact-page-title">Tell Us Your Message</h3>
+                            <h3 class="contact-page-title">Hãy cho chúng tôi biết tin nhắn của bạn</h3>
                             <div class="contact-form">
                                 <form id="contact-form" action="http://demo.hasthemes.com/limupa-v3/limupa/mail.php" method="post">
                                     <div class="form-group">
-                                        <label>Your Name <span class="required">*</span></label>
+                                        <label>Họ và tên của bạn <span class="required">*</span></label>
                                         <input type="text" name="customerName" id="customername" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Your Email <span class="required">*</span></label>
+                                        <label> Email <span class="required">*</span></label>
                                         <input type="email" name="customerEmail" id="customerEmail" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Subject</label>
+                                        <label>Vấn đề của bạn</label>
                                         <input type="text" name="contactSubject" id="contactSubject">
                                     </div>
                                     <div class="form-group mb-30">
-                                        <label>Your Message</label>
+                                        <label>Tin nhắn của bạn</label>
                                         <textarea name="contactMessage" id="contactMessage"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" value="submit" id="submit" class="li-btn-3" name="submit">send</button>
+                                        <button type="submit" value="submit" id="submit" class="li-btn-3" name="submit">Gửi</button>
                                     </div>
                                 </form>
                             </div>
