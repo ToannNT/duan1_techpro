@@ -40,7 +40,7 @@
                                       <h2>iPhone 15 Pro Max 256GB</h2>
                                       <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3>
                                       <div class="default-btn slide-btn">
-                                          <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                          <a class="links" href="shop-left-sidebar.html">Mua ngay</a>
                                       </div>
                                   </div>
                               </div>
@@ -91,7 +91,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/1.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -324,7 +324,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/6.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -1054,7 +1054,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/2.jpg"
                                                   alt="Li's Product Image">
                                           </a>
