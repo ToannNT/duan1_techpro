@@ -10,9 +10,9 @@
                               <div class="single-slide align-center-left  animation-style-01 bg-1">
                                   <div class="slider-progress"></div>
                                   <div class="slider-content">
-                                      <h5>Sale Offer <span>-20% Off</span> This Week</h5>
-                                      <h2>Chamcham Galaxy S9 | S9+</h2>
-                                      <h3>Starting at <span>$1209.00</span></h3>
+                                      <h5>Ưu đãi giảm giá <span>-giảm giá 20%</span> Tuần này</h5>
+                                      <h2>Galaxy S23 FE 5G </h2>
+                                      <h3>Giá chỉ từ <span>12.000.000VNĐ</span></h3>
                                       <div class="default-btn slide-btn">
                                           <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
                                       </div>
@@ -23,9 +23,9 @@
                               <div class="single-slide align-center-left animation-style-02 bg-2">
                                   <div class="slider-progress"></div>
                                   <div class="slider-content">
-                                      <h5>Sale Offer <span>Black Friday</span> This Week</h5>
-                                      <h2>Work Desk Surface Studio 2018</h2>
-                                      <h3>Starting at <span>$824.00</span></h3>
+                                      <h5>Siêu giảm giá <span>Black Friday</span>Chỉ một ngày duy nhất</h5>
+                                      <h2>Đặc quyền Techpro Shop</h2>
+                                      <h3>Giá chỉ từ <span>9.990.000VNĐ</span></h3>
                                       <div class="default-btn slide-btn">
                                           <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
                                       </div>
@@ -36,11 +36,11 @@
                               <div class="single-slide align-center-left animation-style-01 bg-3">
                                   <div class="slider-progress"></div>
                                   <div class="slider-content">
-                                      <h5>Sale Offer <span>-10% Off</span> This Week</h5>
-                                      <h2>Phantom 4 Pro+ Obsidian</h2>
-                                      <h3>Starting at <span>$1849.00</span></h3>
+                                      <h5>Ưu đãi siêu hời<span>Giảm tới 10%</span>Trong tuần này</h5>
+                                      <h2>iPhone 15 Pro Max 256GB</h2>
+                                      <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3>
                                       <div class="default-btn slide-btn">
-                                          <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                          <a class="links" href="shop-left-sidebar.html">Mua ngay</a>
                                       </div>
                                   </div>
                               </div>
@@ -74,10 +74,9 @@
                   <div class="col-lg-12">
                       <div class="li-product-tab">
                           <ul class="nav li-product-menu">
-                              <li><a class="active" data-toggle="tab" href="#li-new-product"><span>New
-                                          Arrival</span></a></li>
-                              <li><a data-toggle="tab" href="#li-bestseller-product"><span>Bestseller</span></a></li>
-                              <li><a data-toggle="tab" href="#li-featured-product"><span>Featured Products</span></a>
+                              <li><a class="active" data-toggle="tab" href="#li-new-product"><span>Hàng mới về</span></a></li>
+                              <li><a data-toggle="tab" href="#li-bestseller-product"><span>Sản phẩm bán chạy</span></a></li>
+                              <li><a data-toggle="tab" href="#li-featured-product"><span>Sản phẩm nổi bật</span></a>
                               </li>
                           </ul>
                       </div>
@@ -92,17 +91,17 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/1.jpg"
                                                   alt="Li's Product Image">
                                           </a>
-                                          <span class="sticker">New</span>
+                                          <span class="sticker">Mới</span>
                                       </div>
                                       <div class="product_desc">
                                           <div class="product_desc_info">
                                               <div class="product-review">
                                                   <h5 class="manufacturer">
-                                                      <a href="shop-left-sidebar.html">Graphic Corner</a>
+                                                      <a href="shop-left-sidebar.html">Góc đồ họa</a>
                                                   </h5>
                                                   <div class="rating-box">
                                                       <ul class="rating">
@@ -114,15 +113,14 @@
                                                       </ul>
                                                   </div>
                                               </div>
-                                              <h4><a class="product_name" href="single-product.html">Accusantium
-                                                      dolorem1</a></h4>
+                                              <h4><a class="product_name" href="single-product.html">iPhone 15 Pro Max 256GB</a></h4>
                                               <div class="price-box">
-                                                  <span class="new-price">$46.80</span>
+                                                  <span class="new-price">31.000.000VNĐ</span>
                                               </div>
                                           </div>
                                           <div class="add-actions">
                                               <ul class="add-actions-link">
-                                                  <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                  <li class="add-cart active"><a href="#">Thêm</a></li>
                                                   <li><a class="links-details" href="wishlist.html"><i
                                                               class="fa fa-heart-o"></i></a></li>
                                                   <li><a href="#" title="quick view" class="quick-view-btn"
@@ -326,7 +324,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/6.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -996,12 +994,12 @@
                   <div class="col-lg-12">
                       <div class="li-section-title">
                           <h2>
-                              <span>Laptop</span>
+                              <span>Điện thoại</span>
                           </h2>
                           <ul class="li-sub-category-list">
-                              <li class="active"><a href="shop-left-sidebar.html">Prime Video</a></li>
-                              <li><a href="shop-left-sidebar.html">Computers</a></li>
-                              <li><a href="shop-left-sidebar.html">Electronics</a></li>
+                              <li class="active"><a href="shop-left-sidebar.html"> Video</a></li>
+                              <li><a href="shop-left-sidebar.html">Máy tính</a></li>
+                              <li><a href="shop-left-sidebar.html">Thiết bị điện tử</a></li>
                           </ul>
                       </div>
                       <div class="row">
@@ -1056,7 +1054,7 @@
                                   <!-- single-product-wrap start -->
                                   <div class="single-product-wrap">
                                       <div class="product-image">
-                                          <a href="single-product.html">
+                                          <a href="index.php?pg=productdetail">
                                               <img src="./view/layout/images/product/large-size/2.jpg"
                                                   alt="Li's Product Image">
                                           </a>
@@ -1304,7 +1302,7 @@
                   <div class="col-lg-12">
                       <div class="li-section-title">
                           <h2>
-                              <span>TV & Audio</span>
+                              <span>Laptop</span>
                           </h2>
                           <ul class="li-sub-category-list">
                               <li class="active"><a href="shop-left-sidebar.html">Chamcham</a></li>
@@ -1614,15 +1612,15 @@
                       <!-- Li's Static Home Image Area End Here -->
                       <!-- Begin Li's Static Home Content Area -->
                       <div class="li-static-home-content">
-                          <p>Sale Offer<span>-20% Off</span>This Week</p>
-                          <h2>Featured Product</h2>
-                          <h2>Meito Accessories 2018</h2>
+                          <p>Siêu sale<span>Giảm 20%</span>Trong 3 ngày</p>
+                          <h2>Sản phẩm nổi bật</h2>
+                          <h2>Tai nghe Bluetooth AirPods Pro Gen 2 MagSafe Charge (USB-C) Apple MTJV3 </h2>
                           <p class="schedule">
-                              Starting at
-                              <span> $1209.00</span>
+                              Giá chỉ từ
+                              <span> 5.599.000VNĐ</span>
                           </p>
                           <div class="default-btn">
-                              <a href="shop-left-sidebar.html" class="links">Shopping Now</a>
+                              <a href="shop-left-sidebar.html" class="links">Mua ngay</a>
                           </div>
                       </div>
                       <!-- Li's Static Home Content Area End Here -->
@@ -1639,7 +1637,7 @@
                   <div class="col-lg-12">
                       <div class="li-product-tab li-trending-product-tab">
                           <h2>
-                              <span>Trendding Products</span>
+                              <span>Sản phẩm bestseller</span>
                           </h2>
                           <ul class="nav li-product-menu li-trending-product-menu">
                               <li><a class="active" data-toggle="tab" href="#home1"><span>Sanai</span></a></li>
@@ -2547,7 +2545,7 @@
                   <div class="col-lg-12">
                       <div class="li-section-title">
                           <h2>
-                              <span>Bestsellers</span>
+                              <span>Sản phẩm nhiều lượt xem</span>
                           </h2>
                       </div>
                       <div class="row">

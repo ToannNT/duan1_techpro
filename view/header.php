@@ -63,7 +63,7 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="header-top-left">
                                 <ul class="phone-wrap">
-                                    <li><span>Telephone Enquiry:</span><a href="#">(+123) 123 321 345</a></li>
+                                    <li><span>Yêu cầu qua điện thoại:</span><a href="#">(+123) 123 321 345</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,20 +74,20 @@
                                 <ul class="ht-menu">
                                     <!-- Begin Setting Area -->
                                     <li>
-                                        <div class="ht-setting-trigger"><span>Setting</span></div>
+                                        <div class="ht-setting-trigger"><span>Cài đặt</span></div>
                                         <div class="setting ht-setting">
                                             <ul class="ht-setting-list">
-                                                <li><a href="login-register.html">My Account</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="login-register.html">Sign In</a></li>
+                                                <li><a href="login-register.html">Tài khoản của tôi</a></li>
+                                                <li><a href="checkout.html">Thanh toán</a></li>
+                                                <li><a href="login-register.html">Đăng nhập</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                     <!-- Setting Area End Here -->
                                     <!-- Begin Currency Area -->
                                     <li>
-                                        <span class="currency-selector-wrapper">Currency :</span>
-                                        <div class="ht-currency-trigger"><span>USD $</span></div>
+                                        <span class="currency-selector-wrapper">Tiền tệ :</span>
+                                        <div class="ht-currency-trigger"><span>VNĐ</span></div>
                                         <div class="currency ht-currency">
                                             <ul class="ht-setting-list">
                                                 <li><a href="#">EUR €</a></li>
@@ -98,8 +98,8 @@
                                     <!-- Currency Area End Here -->
                                     <!-- Begin Language Area -->
                                     <li>
-                                        <span class="language-selector-wrapper">Language :</span>
-                                        <div class="ht-language-trigger"><span>English</span></div>
+                                        <span class="language-selector-wrapper">Ngôn ngữ :</span>
+                                        <div class="ht-language-trigger"><span>Tiếng việt</span></div>
                                         <div class="language ht-language">
                                             <ul class="ht-setting-list">
                                                 <li class="active">
@@ -108,7 +108,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg"
-                                                            alt>Français</a>
+                                                            alt>Tiếng việt</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -139,7 +139,7 @@
                         <div class="wrappr-nav-mid col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                             <!-- Begin Header Middle Searchbox Area -->
                             <form action="#" class="hm-searchbox">
-                                <input type="text" placeholder="Enter your search key ...">
+                                <input type="text" placeholder="Nhập phím tìm kiếm của bạn ...">
                                 <button class="li-btn" type="submit"><i style="color: white;"
                                         class="fa fa-search"></i></button>
                             </form>
@@ -196,14 +196,14 @@
                                                     </button>
                                                 </li>
                                             </ul>
-                                            <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                            <p class="minicart-total">Tổng: <span>£80.00</span></p>
                                             <div class="minicart-button">
                                                 <a href="shopping-cart.html"
                                                     class="li-button li-button-fullwidth li-button-dark">
-                                                    <span>View Full Cart</span>
+                                                    <span>Xem giỏ hàng</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">
-                                                    <span>Checkout</span>
+                                                    <span>Thanh toán</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -296,9 +296,9 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="index.php?pg=blog">Blog</a></li>
-                                        <li><a href="index.php?pg=aboutus">About Us</a></li>
-                                        <li><a href="index.php?pg=contact">Contact</a></li>
+                                        <li><a href="index.php?pg=blog">Tin tức</a></li>
+                                        <li><a href="index.php?pg=aboutus">Về chúng tôi</a></li>
+                                        <li><a href="index.php?pg=contact">Liên hệ</a></li>
 
                                     </ul>
                                 </nav>

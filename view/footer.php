@@ -13,8 +13,8 @@
                                    <img src="./view/layout/images/shipping-icon/1.png" alt="Shipping Icon">
                                </div>
                                <div class="shipping-text">
-                                   <h2>Free Delivery</h2>
-                                   <p>And free returns. See checkout for delivery dates.</p>
+                                   <h2>Giao hàng miễn phí</h2>
+                                   <p>Và trả lại miễn phí. Xem thanh toán để biết ngày giao hàng.​</p>
                                </div>
                            </div>
                        </div>
@@ -26,8 +26,8 @@
                                    <img src="./view/layout/images/shipping-icon/2.png" alt="Shipping Icon">
                                </div>
                                <div class="shipping-text">
-                                   <h2>Safe Payment</h2>
-                                   <p>Pay with the world's most popular and secure payment methods.</p>
+                                   <h2>Thanh toán an toàn</h2>
+                                   <p>Thanh toán bằng các phương thức thanh toán an toàn và phổ biến nhất thế giới.</p>
                                </div>
                            </div>
                        </div>
@@ -39,8 +39,8 @@
                                    <img src="./view/layout/images/shipping-icon/3.png" alt="Shipping Icon">
                                </div>
                                <div class="shipping-text">
-                                   <h2>Shop with Confidence</h2>
-                                   <p>Our Buyer Protection covers your purchasefrom click to delivery.</p>
+                                   <h2>Mua sắm với sự tự tin</h2>
+                                   <p>Bảo vệ người mua của chúng tôi bao gồm việc mua hàng của bạn từ nhấp chuột đến giao hàng.</p>
                                </div>
                            </div>
                        </div>
@@ -52,8 +52,8 @@
                                    <img src="./view/layout/images/shipping-icon/4.png" alt="Shipping Icon">
                                </div>
                                <div class="shipping-text">
-                                   <h2>24/7 Help Center</h2>
-                                   <p>Have a question? Call a Specialist or chat online.</p>
+                                   <h2>Trung tâm trợ giúp 24/7</h2>
+                                   <p>Có một câu hỏi? Gọi cho Chuyên gia hoặc trò chuyện trực tuyến.</p>
                                </div>
                            </div>
                        </div>
@@ -74,17 +74,17 @@
                            <div class="footer-logo">
                                <img src="./view/layout/images/menu/logo/logo_footer.png" alt="Footer Logo">
                                <p class="info">
-                                   We are a team of designers and developers that create high quality HTML Template &
-                                   Woocommerce, Shopify Theme.
+                                    Chúng tôi là một nhóm gồm các nhà thiết kế và phát triển tạo ra Mẫu HTML &
+                                    Thương mại điện tử, Chủ đề Shopify.
                                </p>
                            </div>
                            <ul class="des">
                                <li>
-                                   <span>Address: </span>
+                                   <span>Địa chỉ: </span>
                                    6688Princess Road, London, Greater London BAS 23JK, UK
                                </li>
                                <li>
-                                   <span>Phone: </span>
+                                   <span>Số điện thoại: </span>
                                    <a href="#">(+123) 123 321 345</a>
                                </li>
                                <li>
@@ -182,25 +182,25 @@
                        <!-- Begin Footer Links Area -->
                        <div class="footer-links">
                            <ul>
-                               <li><a href="#">Online Shopping</a></li>
-                               <li><a href="#">Promotions</a></li>
-                               <li><a href="#">My Orders</a></li>
-                               <li><a href="#">Help</a></li>
-                               <li><a href="#">Customer Service</a></li>
-                               <li><a href="#">Support</a></li>
-                               <li><a href="#">Most Populars</a></li>
-                               <li><a href="#">New Arrivals</a></li>
-                               <li><a href="#">Special Products</a></li>
-                               <li><a href="#">Manufacturers</a></li>
-                               <li><a href="#">Our Stores</a></li>
-                               <li><a href="#">Shipping</a></li>
-                               <li><a href="#">Payments</a></li>
-                               <li><a href="#">Warantee</a></li>
-                               <li><a href="#">Refunds</a></li>
-                               <li><a href="#">Checkout</a></li>
-                               <li><a href="#">Discount</a></li>
-                               <li><a href="#">Refunds</a></li>
-                               <li><a href="#">Policy Shipping</a></li>
+                               <li><a href="#">Mua sắm trực tuyến</a></li>
+                               <li><a href="#">Khuyến mãi</a></li>
+                               <li><a href="#">Đơn hàng của tôi</a></li>
+                               <li><a href="#">Giúp đỡ</a></li>
+                               <li><a href="#">Dịch vụ khách hàng</a></li>
+                               <li><a href="#">Ủng hộ</a></li>
+                               <li><a href="#">Phổ biến nhất</a></li>
+                               <li><a href="#">Điểm đến mới</a></li>
+                               <li><a href="#">Sản phẩm đặc biệt</a></li>
+                               <li><a href="#">Nhà sản xuất</a></li>
+                               <li><a href="#">Cửa hàng của chúng tô</a></li>
+                               <li><a href="#">Vận chuyển</a></li>
+                               <li><a href="#">Thanh toán</a></li>
+                               <li><a href="#">Bảo hành</a></li>
+                               <li><a href="#">Hoàn tiền</a></li>
+                               <li><a href="#">Chi trả</a></li>
+                               <li><a href="#">Giảm giá</a></li>
+                               <li><a href="#">Hoàn tiền trả hàng</a></li>
+                               <li><a href="#">Chính sách vận chuyển</a></li>
                            </ul>
                        </div>
                        <!-- Footer Links Area End Here -->

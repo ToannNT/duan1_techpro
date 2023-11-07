@@ -3,8 +3,8 @@
        <div class="container">
            <div class="breadcrumb-content">
                <ul>
-                   <li><a href="index.html">Home</a></li>
-                   <li class="active">Single Product</li>
+                   <li><a href="index.html">Trang chủ</a></li>
+                   <li class="active">Chi tiết sản phẩm</li>
                </ul>
            </div>
        </div>
@@ -18,55 +18,55 @@
                    <!-- Product Details Left -->
                    <div class="product-details-left">
                        <div class="product-details-images slider-navigation-1">
-                           <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/1.jpg"
+                            <div class="lg-image">
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/1.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/1.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/1.jpg" alt="product image">
                                </a>
                            </div>
                            <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/2.jpg"
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/2.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/2.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/2.jpg" alt="product image">
                                </a>
                            </div>
                            <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/3.jpg"
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/3.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/3.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/3.jpg" alt="product image">
                                </a>
                            </div>
                            <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/4.jpg"
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/4.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/4.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/4.jpg" alt="product image">
                                </a>
                            </div>
                            <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/5.jpg"
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/5.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/5.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/5.jpg" alt="product image">
                                </a>
                            </div>
                            <div class="lg-image">
-                               <a class="popup-img venobox vbox-item" href="images/product/large-size/6.jpg"
+                               <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/6.jpg"
                                    data-gall="myGallery">
-                                   <img src="images/product/large-size/6.jpg" alt="product image">
+                                   <img src="./view/layout/images/product/large-size/6.jpg" alt="product image">
                                </a>
                            </div>
                        </div>
                        <div class="product-details-thumbs slider-thumbs-1">
-                           <div class="sm-image"><img src="images/product/small-size/1.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/./view/layout/images/product/small-size/1.jpg" alt="product image thumb">
                            </div>
-                           <div class="sm-image"><img src="images/product/small-size/2.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/images/product/small-size/2.jpg" alt="product image thumb">
                            </div>
-                           <div class="sm-image"><img src="images/product/small-size/3.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/images/product/small-size/3.jpg" alt="product image thumb">
                            </div>
-                           <div class="sm-image"><img src="images/product/small-size/4.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/images/product/small-size/4.jpg" alt="product image thumb">
                            </div>
-                           <div class="sm-image"><img src="images/product/small-size/5.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/images/product/small-size/5.jpg" alt="product image thumb">
                            </div>
-                           <div class="sm-image"><img src="images/product/small-size/6.jpg" alt="product image thumb">
+                           <div class="sm-image"><img src="./view/layout/images/product/small-size/6.jpg" alt="product image thumb">
                            </div>
                        </div>
                    </div>
@@ -76,8 +76,8 @@
                <div class="col-lg-7 col-md-6">
                    <div class="product-details-view-content pt-60">
                        <div class="product-info">
-                           <h2>Today is a good day Framed poster</h2>
-                           <span class="product-details-ref">Reference: demo_15</span>
+                           <h2>Điện thoại iPhone 12 128GB</h2>
+                           <!-- <span class="product-details-ref">Reference: demo_15</span> -->
                            <div class="rating-box pt-20">
                                <ul class="rating rating-with-review-item">
                                    <li><i class="fa fa-star-o"></i></li>
@@ -90,20 +90,20 @@
                                </ul>
                            </div>
                            <div class="price-box pt-20">
-                               <span class="new-price new-price-2">$57.98</span>
+                               <span class="new-price new-price-2">16.490.000₫</span>
                            </div>
                            <div class="product-desc">
                                <p>
-                                   <span>100% cotton double printed dress. Black and white striped top and orange high
-                                       waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur
-                                       adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus
-                                       similique eveniet quia pariatur.
+                                   <span>Phone 12 được trang bị chipset A14 Bionic -
+                                     bộ xử lý được trang bị lần đầu trên iPad Air 4 
+                                     vừa cho ra mắt cách đây không lâu, mở đầu xu thế
+                                      chip 5 nm thương mại trên toàn thế giới..
                                    </span>
                                </p>
                            </div>
                            <div class="product-variants">
                                <div class="produt-variants-size">
-                                   <label>Dimension</label>
+                                   <label>Kích thước</label>
                                    <select class="nice-select">
                                        <option value="1" title="S" selected="selected">40x60cm</option>
                                        <option value="2" title="M">60x90cm</option>
@@ -114,19 +114,18 @@
                            <div class="single-add-to-cart">
                                <form action="#" class="cart-quantity">
                                    <div class="quantity">
-                                       <label>Quantity</label>
+                                       <label>Số lượng</label>
                                        <div class="cart-plus-minus">
                                            <input class="cart-plus-minus-box" value="1" type="text">
                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                        </div>
                                    </div>
-                                   <button class="add-to-cart" type="submit">Add to cart</button>
+                                   <button class="add-to-cart" type="submit">Thêm vào giỏ hàng</button>
                                </form>
                            </div>
                            <div class="product-additional-info pt-25">
-                               <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to
-                                   wishlist</a>
+                               <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Thêm vào danh sách yêu thích</a>
                                <div class="product-social-sharing pt-25">
                                    <ul>
                                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
@@ -145,7 +144,7 @@
                                            <div class="reassurance-icon">
                                                <i class="fa fa-check-square-o"></i>
                                            </div>
-                                           <p>Security policy (edit with Customer reassurance module)</p>
+                                           <p>Chính sách bảo mật cao</p>
                                        </div>
                                    </li>
                                    <li>
@@ -153,7 +152,7 @@
                                            <div class="reassurance-icon">
                                                <i class="fa fa-truck"></i>
                                            </div>
-                                           <p>Delivery policy (edit with Customer reassurance module)</p>
+                                           <p>Miễn phí giao hàng</p>
                                        </div>
                                    </li>
                                    <li>
@@ -161,7 +160,7 @@
                                            <div class="reassurance-icon">
                                                <i class="fa fa-exchange"></i>
                                            </div>
-                                           <p> Return policy (edit with Customer reassurance module)</p>
+                                           <p> Trả hàng hoàn tiền</p>
                                        </div>
                                    </li>
                                </ul>
@@ -180,9 +179,9 @@
                <div class="col-lg-12">
                    <div class="li-product-tab">
                        <ul class="nav li-product-menu">
-                           <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a></li>
-                           <li><a data-toggle="tab" href="#product-details"><span>Product Details</span></a></li>
-                           <li><a data-toggle="tab" href="#reviews"><span>Reviews</span></a></li>
+                           <li><a class="active" data-toggle="tab" href="#description"><span>Mô tả sản phẩm</span></a></li>
+                           <li><a data-toggle="tab" href="#product-details"><span>Chi tiết sản phẩm</span></a></li>
+                           <li><a data-toggle="tab" href="#reviews"><span>Đánh giá</span></a></li>
                        </ul>
                    </div>
                    <!-- Begin Li's Tab Menu Content Area -->
@@ -191,15 +190,16 @@
            <div class="tab-content">
                <div id="description" class="tab-pane active show" role="tabpanel">
                    <div class="product-description">
-                       <span>The best is yet to come! Give your walls a voice with a framed poster. This aesthethic,
-                           optimistic poster will look great in your desk or in an open-space office.
-                           Painted wooden frame with passe-partout for more depth.</span>
+                       <span>Apple cho biết A14 Bionic sẽ mạnh hơn gần 40% chipset A13 Bionic, trong
+                         đó khả năng xử lý đồ họa nhanh hơn 50% cũng như các tác vụ học máy mượt mà hơn
+                          80% khi so sánh với bộ xử lý tiền nhiệm. Apple cũng đã hỗ trợ kết nối mạng 
+                          5G tốc độ load cực nhanh cho mọi trải nghiệm lướt web, xem phim luôn được ổn định và mượt mà hơn..</span>
                    </div>
                </div>
                <div id="product-details" class="tab-pane" role="tabpanel">
                    <div class="product-details-manufacturer">
                        <a href="#">
-                           <img src="images/product-details/1.jpg" alt="Product Manufacturer Image">
+                           <img src="./view/layout/images/product-details/1.jpg" alt="Product Manufacturer Image">
                        </a>
                        <p><span>Reference</span> demo_7</p>
                        <p><span>Reference</span> demo_7</p>
@@ -209,7 +209,7 @@
                    <div class="product-reviews">
                        <div class="product-details-comment-block">
                            <div class="comment-review">
-                               <span>Grade</span>
+                               <span>Đánh giá sao</span>
                                <ul class="rating">
                                    <li><i class="fa fa-star-o"></i></li>
                                    <li><i class="fa fa-star-o"></i></li>
@@ -227,30 +227,26 @@
                                <p>Plaza</p>
                            </div>
                            <div class="review-btn">
-                               <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Write Your
-                                   Review!</a>
+                               <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Viết đánh giá của bạn</a>
                            </div>
                            <!-- Begin Quick View | Modal Area -->
                            <div class="modal fade modal-wrapper" id="mymodal">
                                <div class="modal-dialog modal-dialog-centered" role="document">
                                    <div class="modal-content">
                                        <div class="modal-body">
-                                           <h3 class="review-page-title">Write Your Review</h3>
+                                           <h3 class="review-page-title">Viết đánh giá của bạn</h3>
                                            <div class="modal-inner-area row">
                                                <div class="col-lg-6">
                                                    <div class="li-review-product">
-                                                       <img src="images/product/large-size/3.jpg" alt="Li's Product">
+                                                       <img src="./view/layout/images/product/large-size/3.jpg" alt="Li's Product">
                                                        <div class="li-review-product-desc">
-                                                           <p class="li-product-name">Today is a good day Framed poster
+                                                           <p class="li-product-name">Điện thoại iPhone 12 128GB
                                                            </p>
                                                            <p>
-                                                               <span>Beach Camera Exclusive Bundle - Includes Two
-                                                                   Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill
-                                                                   The Entire Room With
-                                                                   Exquisite Sound via Ring Radiator Technology. Stream
-                                                                   And Control R3 Speakers Wirelessly With Your
-                                                                   Smartphone. Sophisticated,
-                                                                   Modern Design </span>
+                                                               <span>Phone 12 được trang bị chipset A14 Bionic - 
+                                                                bộ xử lý được trang bị lần đầu trên iPad Air 4
+                                                                 vừa cho ra mắt cách đây không lâu, mở đầu xu
+                                                                  thế chip 5 nm thương mại trên toàn thế giới. </span>
                                                            </p>
                                                        </div>
                                                    </div>
@@ -260,10 +256,10 @@
                                                        <!-- Begin Feedback Area -->
                                                        <div class="feedback-area">
                                                            <div class="feedback">
-                                                               <h3 class="feedback-title">Our Feedback</h3>
+                                                               <h3 class="feedback-title">Cảm nhận của bạn</h3>
                                                                <form action="#">
                                                                    <p class="your-opinion">
-                                                                       <label>Your Rating</label>
+                                                                       <label>Bạn hãy đánh giá sao</label>
                                                                        <span>
                                                                            <select class="star-rating">
                                                                                <option value="1">1</option>
@@ -275,13 +271,13 @@
                                                                        </span>
                                                                    </p>
                                                                    <p class="feedback-form">
-                                                                       <label for="feedback">Your Review</label>
+                                                                       <label for="feedback">Đánh giá của bạn</label>
                                                                        <textarea id="feedback" name="comment" cols="45"
                                                                            rows="8" aria-required="true"></textarea>
                                                                    </p>
                                                                    <div class="feedback-input">
                                                                        <p class="feedback-form-author">
-                                                                           <label for="author">Name<span
+                                                                           <label for="author">Họ và tên<span
                                                                                    class="required">*</span>
                                                                            </label>
                                                                            <input id="author" name="author" value
@@ -296,14 +292,13 @@
                                                                            <input id="email" name="email" value
                                                                                size="30" aria-required="true"
                                                                                type="text">
-                                                                           <span class="required"><sub>*</sub> Required
-                                                                               fields</span>
+                                                                           <span class="required"><sub>*</sub> Phần bắt buộc</span>
                                                                        </p>
                                                                        <div class="feedback-btn pb-15">
                                                                            <a href="#" class="close"
                                                                                data-dismiss="modal"
-                                                                               aria-label="Close">Close</a>
-                                                                           <a href="#">Submit</a>
+                                                                               aria-label="Close">Đóng</a>
+                                                                           <a href="#">Gửi</a>
                                                                        </div>
                                                                    </div>
                                                                </form>
@@ -333,7 +328,7 @@
                <div class="col-lg-12">
                    <div class="li-section-title">
                        <h2>
-                           <span>15 other products in the same category:</span>
+                           <span>15 sản phẩm khác cùng danh mục:</span>
                        </h2>
                    </div>
                    <div class="row">
@@ -343,7 +338,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/1.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/1.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>
@@ -388,7 +383,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/2.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/2.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>
@@ -435,7 +430,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/3.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/3.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>
@@ -480,7 +475,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/4.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/4.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>
@@ -527,7 +522,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/5.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>
@@ -572,7 +567,7 @@
                                <div class="single-product-wrap">
                                    <div class="product-image">
                                        <a href="single-product.html">
-                                           <img src="images/product/large-size/6.jpg" alt="Li's Product Image">
+                                           <img src="./view/layout/images/product/large-size/6.jpg" alt="Li's Product Image">
                                        </a>
                                        <span class="sticker">New</span>
                                    </div>

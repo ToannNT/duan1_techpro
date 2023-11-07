@@ -57,7 +57,7 @@
                                      <h3 class="counter">2169</h3>
                                  </div>
                                  <div class="counter-text">
-                                     <span>HAPPY CUSTOMERS</span>
+                                     <span>KHÁCH HÀNG HẠNH PHÚC</span>
                                  </div>
                              </div>
                          </div>
@@ -75,7 +75,7 @@
                                  <h3 class="counter">869</h3>
                              </div>
                              <div class="counter-text">
-                                 <span>AWARDS WINNED</span>
+                                 <span>GIẢI THƯỞNG GIÀNH ĐƯỢC</span>
                              </div>
                          </div>
                      </div>
@@ -92,7 +92,7 @@
                                  <h3 class="counter">689</h3>
                              </div>
                              <div class="counter-text">
-                                 <span>HOURS WORKED</span>
+                                 <span>SỐ GIỜ LÀM VIỆC</span>
                              </div>
                          </div>
                      </div>
@@ -109,7 +109,7 @@
                                  <h3 class="counter">2169</h3>
                              </div>
                              <div class="counter-text">
-                                 <span>COMPLETE PROJECTS</span>
+                                 <span>DỰ ÁN HOÀN THÀNH</span>
                              </div>
                          </div>
                      </div>
@@ -125,7 +125,7 @@
              <div class="row">
                  <div class="col-12">
                      <div class="li-section-title capitalize mb-25">
-                         <h2><span>our team</span></h2>
+                         <h2><span>Đội ngũ chúng tôi</span></h2>
                      </div>
                  </div>
              </div> <!-- section title end -->
@@ -136,7 +136,7 @@
                              <img src="./view/layout/images/team/1.png" alt="Our Team Member">
                          </div>
                          <div class="team-content text-center">
-                             <h3>Jonathan Scott</h3>
+                             <h3>Nguyễn Thanh Toàn</h3>
                              <p>IT Expert</p>
                              <a href="#">info@example.com</a>
                              <div class="team-social">
@@ -154,7 +154,7 @@
                              <img src="./view/layout/images/team/2.png" alt="Our Team Member">
                          </div>
                          <div class="team-content text-center">
-                             <h3>Oliver Bastin</h3>
+                             <h3>Bùi Dương Diễm</h3>
                              <p>Web Designer</p>
                              <a href="#">info@example.com</a>
                              <div class="team-social">
@@ -172,7 +172,7 @@
                              <img src="./view/layout/images/team/3.png" alt="Our Team Member">
                          </div>
                          <div class="team-content text-center">
-                             <h3>Erik Jonson</h3>
+                             <h3>Nguyễn Quốc Học</h3>
                              <p>Web Developer</p>
                              <a href="#">info@example.com</a>
                              <div class="team-social">
@@ -190,7 +190,7 @@
                              <img src="./view/layout/images/team/4.png" alt="Our Team Member">
                          </div>
                          <div class="team-content text-center">
-                             <h3>Maria Mandy</h3>
+                             <h3>Cao Wen Wí</h3>
                              <p>Marketing officer</p>
                              <a href="#">info@example.com</a>
                              <div class="team-social">

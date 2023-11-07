@@ -3,8 +3,8 @@
      <div class="container">
          <div class="breadcrumb-content">
              <ul>
-                 <li><a href="index.html">Home</a></li>
-                 <li class="active">Shop Left Sidebar</li>
+                 <li><a href="index.html">Trang chủ</a></li>
+                 <li class="active">Sản phẩm</li>
              </ul>
          </div>
      </div>
@@ -37,15 +37,15 @@
                              <!-- shop-item-filter-list end -->
                          </div>
                          <div class="toolbar-amount">
-                             <span>Showing 1 to 9 of 15</span>
+                             <span>Hiển thị 1 đến 9 trên 15</span>
                          </div>
                      </div>
                      <!-- product-select-box start -->
                      <div class="product-select-box">
                          <div class="product-short">
-                             <p>Sort By:</p>
+                             <p>Sắp xếp theo:</p>
                              <select class="nice-select">
-                                 <option value="trending">Relevance</option>
+                                 <option value="trending">Mức độ liên quan</option>
                                  <option value="sales">Name (A - Z)</option>
                                  <option value="sales">Name (Z - A)</option>
                                  <option value="rating">Price (Low &gt; High)</option>
@@ -1318,7 +1318,7 @@
                      <!-- category-sub-menu start -->
                      <div class="category-sub-menu">
                          <ul>
-                             <li class="has-sub"><a href="# ">Prime Video</a>
+                             <li class="has-sub"><a href="# ">Video</a>
                                  <ul>
                                      <li><a href="#">All Videos</a></li>
                                      <li><a href="#">Blouses</a></li>
@@ -1330,7 +1330,7 @@
                                      <li><a href="#">Getting Started</a></li>
                                  </ul>
                              </li>
-                             <li class="has-sub"><a href="#">Computer</a>
+                             <li class="has-sub"><a href="#">Máy tính</a>
                                  <ul>
                                      <li><a href="#">TV & Video</a></li>
                                      <li><a href="#">Audio & Theater</a></li>
@@ -1341,7 +1341,7 @@
                                      <li><a href="#">Wireless Speakers</a></li>
                                  </ul>
                              </li>
-                             <li class="has-sub"><a href="#">Electronics</a>
+                             <li class="has-sub"><a href="#">Thiết bị điện tử</a>
                                  <ul>
                                      <li><a href="#">Amazon Home</a></li>
                                      <li><a href="#">Kitchen & Dining</a></li>
@@ -1357,22 +1357,24 @@
                  <!--sidebar-categores-box start  -->
                  <div class="sidebar-categores-box">
                      <div class="sidebar-title">
-                         <h2>Filter By</h2>
+                         <h2>Lọc bởi</h2>
                      </div>
                      <!-- btn-clear-all start -->
-                     <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button>
+                     <button class="btn-clear-all mb-sm-30 mb-xs-30">Xóa tất cả</button>
                      <!-- btn-clear-all end -->
                      <!-- filter-sub-area start -->
                      <div class="filter-sub-area">
-                         <h5 class="filter-sub-titel">Brand</h5>
+                         <h5 class="filter-sub-titel">Thương hiệu</h5>
                          <div class="categori-checkbox">
                              <form action="#">
                                  <ul>
-                                     <li><input type="checkbox" name="product-categori"><a href="#">Prime Video (13)</a>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Apple (30)</a>
                                      </li>
-                                     <li><input type="checkbox" name="product-categori"><a href="#">Computers (12)</a>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">SamSung (12)</a>
                                      </li>
-                                     <li><input type="checkbox" name="product-categori"><a href="#">Electronics (11)</a>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Xiaomi (11)</a>
+                                     </li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">VSsmart (11)</a>
                                      </li>
                                  </ul>
                              </form>
@@ -1381,14 +1383,15 @@
                      <!-- filter-sub-area end -->
                      <!-- filter-sub-area start -->
                      <div class="filter-sub-area pt-sm-10 pt-xs-10">
-                         <h5 class="filter-sub-titel">Categories</h5>
+                         <h5 class="filter-sub-titel">Giá</h5>
                          <div class="categori-checkbox">
                              <form action="#">
                                  <ul>
-                                     <li><input type="checkbox" name="product-categori"><a href="#">Graphic Corner
-                                             (10)</a></li>
-                                     <li><input type="checkbox" name="product-categori"><a href="#"> Studio Design
-                                             (6)</a></li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Dưới 1.000.000đ</a></li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Từ 2.000.000đ - 3.000.000đ</a></li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Từ 5.000.000đ - 3.000.000đ</a></li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Từ 10.000.000đ - 5.000.000đ</a></li>
+                                     <li><input type="checkbox" name="product-categori"><a href="#">Trên 10.000.000đ</a></li>
                                  </ul>
                              </form>
                          </div>
@@ -1400,10 +1403,7 @@
                          <div class="size-checkbox">
                              <form action="#">
                                  <ul>
-                                     <li><input type="checkbox" name="product-size"><a href="#">S (3)</a></li>
-                                     <li><input type="checkbox" name="product-size"><a href="#">M (3)</a></li>
-                                     <li><input type="checkbox" name="product-size"><a href="#">L (3)</a></li>
-                                     <li><input type="checkbox" name="product-size"><a href="#">XL (3)</a></li>
+                                     <li><input type="checkbox" name="product-size"><a href="#">Có giảm giá</a></li>                                   
                                  </ul>
                              </form>
                          </div>
@@ -1411,14 +1411,14 @@
                      <!-- filter-sub-area end -->
                      <!-- filter-sub-area start -->
                      <div class="filter-sub-area pt-sm-10 pt-xs-10">
-                         <h5 class="filter-sub-titel">Color</h5>
+                         <h5 class="filter-sub-titel">Màu sắc</h5>
                          <div class="color-categoriy">
                              <form action="#">
                                  <ul>
-                                     <li><span class="white"></span><a href="#">White (1)</a></li>
-                                     <li><span class="black"></span><a href="#">Black (1)</a></li>
-                                     <li><span class="Orange"></span><a href="#">Orange (3) </a></li>
-                                     <li><span class="Blue"></span><a href="#">Blue (2) </a></li>
+                                     <li><span class="white"></span><a href="#">Trắng (1)</a></li>
+                                     <li><span class="black"></span><a href="#">Đen (1)</a></li>
+                                     <li><span class="Orange"></span><a href="#">Cam (3) </a></li>
+                                     <li><span class="Blue"></span><a href="#">Xanh (2) </a></li>
                                  </ul>
                              </form>
                          </div>
@@ -1426,7 +1426,7 @@
                      <!-- filter-sub-area end -->
                      <!-- filter-sub-area start -->
                      <div class="filter-sub-area pt-sm-10 pb-sm-15 pb-xs-15">
-                         <h5 class="filter-sub-titel">Dimension</h5>
+                         <h5 class="filter-sub-titel">Kích thước</h5>
                          <div class="categori-checkbox">
                              <form action="#">
                                  <ul>
@@ -1444,16 +1444,15 @@
                  <!-- category-sub-menu start -->
                  <div class="sidebar-categores-box mb-sm-0 mb-xs-0">
                      <div class="sidebar-title">
-                         <h2>Laptop</h2>
+                         <h2>Loại sản phẩm</h2>
                      </div>
                      <div class="category-tags">
                          <ul>
-                             <li><a href="# ">Devita</a></li>
-                             <li><a href="# ">Cameras</a></li>
-                             <li><a href="# ">Sony</a></li>
-                             <li><a href="# ">Computer</a></li>
-                             <li><a href="# ">Big Sale</a></li>
-                             <li><a href="# ">Accessories</a></li>
+                             <li><a href="# ">Hot</a></li>
+                             <li><a href="# ">Mới</a></li>
+                             <li><a href="# ">Nhiều Lượt xem </a></li>
+                             <li><a href="# ">Bestseller</a></li>
+                             <li><a href="# ">Big Sale</a></li>                    
                          </ul>
                      </div>
                      <!-- category-sub-menu end -->
