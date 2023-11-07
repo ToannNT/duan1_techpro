@@ -95,6 +95,11 @@ a:hover {
 		overflow: hidden;
 		display: block;
 }
+
+.logo-main{
+	width: 55%;
+}
+
 a:focus,
 a:hover {
 	color: #fed700;
@@ -314,7 +319,7 @@ textarea {
 /*----------------------------------------*/
 button.li-btn {
 	border: none;
-	background: #fed700;
+	background: #0C2F4E;
 	color: #242424;
 	font-size: 20px;
 	width: 45px;
@@ -1440,13 +1445,16 @@ textarea:focus {
 }
 .hm-searchbox {
 	display: flex;
+	justify-content: start;
 	position: relative;
 	background: #fff;
 	border-radius: 5px;
 	border: 1px solid #e1e1e1;
-	min-width: 638px;
+	min-width: 438px;
 	height: 45px;
 	float: left;
+	margin-right: 35px;
+	/* background-color: #00a9da; */
 }
 .hm-searchbox .nice-select.select-search-category {
 	width: auto;
@@ -1467,6 +1475,10 @@ textarea:focus {
 	overflow-y: auto;
 	overscroll-behavior-x: none;
 }
+.wrappr-nav-mid{
+	display: flex;
+	justify-content: end;
+}
 .hm-searchbox .current::after {
 	content: "";
 	position: absolute;
@@ -1485,7 +1497,7 @@ textarea:focus {
 }
 .hm-searchbox input {
 		font-size: 13px;
-		color: #a5a5a5;
+		color: #000000;
 		height: 45px;
 		background: transparent;
 		border: none;
@@ -1504,7 +1516,6 @@ textarea:focus {
 	position: relative;
 }
 .hm-wishlist > a {
-	border: 1px solid #e1e1e1;
 	font-size: 20px;
 	color: #242424;
 	width: 45px;
@@ -1525,22 +1536,44 @@ textarea:focus {
 }
 .hm-minicart-trigger {
 		border-radius: 2px;
-		background: #e80f0f;
-		color: #fff;
+		/* border:1px solid #e80f0f; */
+		/* color: #fff; */
 		height: 45px;
 		cursor: pointer;
 		display: block;
 		position: relative;
-		padding: 0 15px 0 55px;
+		padding: 0 15px 0 45px;
+}
+.hm-minicart-trigger__user{
+	border-radius: 2px;
+	/* border:1px solid #e80f0f; */
+	color: #000000;
+	height: 45px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	padding: 0 15px 0 25px;
 }
 .item-icon::before {
 		content: "\f291";
 		position: absolute;
 		font-family: fontawesome;
+		color: #0C2F4E;
 		left: 10px;
 		top: 6px;
 		display: block;
-		font-size: 20px;
+		font-size: 25px;
+}
+.item-icon__user::before {
+	content: "\f007";
+	position: absolute;
+	font-family: fontawesome;
+	color: #0C2F4E;
+	left: 10px;
+	top: 3px;
+	font-size: 150px;
+	display: block;
+	font-size: 30px;
 }
 .item-text {
 		position: relative;
@@ -1566,8 +1599,8 @@ textarea:focus {
 		line-height: 26px;
 		font-size: 12px;
 		font-weight: 400;
-		color: #242424;
-		background: #fed700;
+		color: white;
+		background: #60A3E7;
 		text-align: center;
 		border-radius: 100%;
 }
@@ -2759,7 +2792,8 @@ textarea:focus {
 /*  2.9 Footer
 /*----------------------------------------*/
 .footer {
-	background: #f7f7f7;
+	background: #0C2F4E;
+	color: white;
 	border-top: 1px solid #e1e1e1;
 }
 .footer-static-top-3 {
@@ -2795,17 +2829,20 @@ textarea:focus {
 .shipping-text h2 {
 	font-size: 16px;
 	font-weight: 500;
-	color: #242424;
+	color: white;
 	padding-bottom: 10px;
 }
 .shipping-text p {
 	margin: 0;
-	color: #888;
+	color: #c5c5c5;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 18px;
 }
 /*Footer Middle*/
+.footer-logo>img{
+	width: 140px;
+}
 .footer-logo-wrap {
 	border-bottom: 1px dashed #e1e1e1;
 }
@@ -2813,7 +2850,7 @@ textarea:focus {
 	margin: 20px 0 25px;
 	font-size: 14px;
 	line-height: 24px;
-	color: #888;
+	color: #c5c5c5;
 }
 .footer-static-middle .des > li {
 	color: #888;
@@ -2833,7 +2870,7 @@ textarea:focus {
 	font-size: 20px;
 	line-height: 24px;
 	font-weight: 500;
-	color: #242424;
+	color: white;
 	margin: 0 0 15px 0;
 	cursor: pointer;
 	padding-top: 20px;
@@ -2848,7 +2885,7 @@ textarea:focus {
 }
 .footer-block > ul > li > a {
 	font-size: 14px;
-	color: #888;
+	color: #c5c5c5;
 	line-height: 36px;
 	display: block;
 	position: relative;
@@ -2959,7 +2996,7 @@ text-align: center;
 	position: relative;
 }
 .footer-links > ul > li > a {
-	color: #888;
+	/* color: #888; */
 	line-height: 24px;
 	letter-spacing: 0.3px;
 }
@@ -5430,6 +5467,15 @@ span.required {
 .small-version {
   display: none;
 }
+
+
+
+
+
+
+
+
+
 /*----------------------------------------------------------------------------------------------------*/
 /*------------------------------------------> The End <-----------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------*/
