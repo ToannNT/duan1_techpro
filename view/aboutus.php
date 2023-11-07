@@ -4,7 +4,7 @@
              <div class="breadcrumb-content">
                  <ul>
                      <li><a href="index.html">Home</a></li>
-                     <li class="active">About Us</li>
+                     <li class="active">Về Chúng Tôi</li>
                  </ul>
              </div>
          </div>
@@ -17,15 +17,16 @@
                  <!-- About Text Start -->
                  <div class="col-lg-6 order-last order-lg-first">
                      <div class="about-text-wrap">
-                         <h2><span>Provide Best</span>Product For You</h2>
-                         <p>We provide the best Beard oile all over the world. We are the worldd best store in indi for
-                             Beard Oil. You can buy our product without any hegitation because they truste us and buy
-                             our product without any hagitation because they belive and always happy buy our product.
+                         <h2><span>Cung cấp tốt nhất</span>Sản phẩm dành cho bạn</h2>
+                         <p>
+                            Chúng tôi cung cấp loại dầu râu tốt nhất trên toàn thế giới. Chúng tôi là cửa hàng tốt nhất thế giới ở Ấn Độ cho
+                              Dầu râu. Bạn có thể mua sản phẩm của chúng tôi mà không cần đắn đo vì họ tin tưởng chúng tôi và mua hàng
+                              sản phẩm của chúng tôi mà không có bất kỳ sự băn khoăn nào vì họ tin tưởng và luôn vui vẻ khi mua sản phẩm của chúng tôi.
                          </p>
-                         <p>Some of our customer say’s that they trust us and buy our product without any hagitation
-                             because they belive us and always happy to buy our product.</p>
-                         <p>We provide the beshat they trusted us and buy our product without any hagitation because
-                             they belive us and always happy to buy.</p>
+                         <p>Một số khách hàng của chúng tôi nói rằng họ tin tưởng chúng tôi và mua sản phẩm của chúng tôi mà không hề đắn đo
+                            bởi vì họ tin tưởng chúng tôi và luôn vui vẻ mua sản phẩm của chúng tôi.</p>
+                         <p>Chúng tôi cung cấp những điều tốt nhất mà họ đã tin tưởng và mua sản phẩm của chúng tôi mà không có bất kỳ lời buộc tội nào vì
+                            họ tin tưởng chúng tôi và luôn vui vẻ mua hàng.</p>
                      </div>
                  </div>
                  <!-- About Text End -->
