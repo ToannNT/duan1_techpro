@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="./view/layout/asset/css/responsive.css">
     <!-- Modernizr js -->
     <script src="./view/layout/asset/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
