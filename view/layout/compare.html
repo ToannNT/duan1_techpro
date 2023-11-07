@@ -36,12 +36,16 @@
         <link rel="stylesheet" href="asset/css/bootstrap.min.css">
         <!-- Helper CSS -->
         <link rel="stylesheet" href="asset/css/helper.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <!-- Modernizr js -->
+        <script src="asset/js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <!-- Main Style CSS -->
         <link rel="stylesheet" href="asset/css/style.css">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="asset/css/responsive.css">
-        <!-- Modernizr js -->
-        <script src="asset/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="asset/script.js"></script>
     </head>
     <body>
@@ -442,7 +446,6 @@
                         <table class="table table-bordered table-hover mb-0">
                             <tbody>
                                 <tr>
-                                    <th class="compare-column-titles">Image</th>
                                     <td class="compare-column-productinfo">
                                         <div class="compare-pdoduct-image d-flex flex-column">
                                             <a href="single-product.html">
@@ -467,57 +470,47 @@
                             </tbody>
                         </table>
                         <br>
-                        <table class="table table-bordered table-hover mb-0">
-                            <tbody>
-                                <tr>
-                                    <th>Product Name</th>
-                                    <td>
-                                        <h5 class="compare-product-name"><a href="single-product.html">HP Pavilion</a></h5>
-                                    </td>
-                                    <td>
-                                        <h5 class="compare-product-name"><a href="single-product.html">HP Probook</a></h5>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-hover mb-0">
-                            <tbody>
-                                <tr>
-                                    <th>Description</th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-hover mb-0">
-                            <tbody>
-                                <tr>
-
-                                </tr>
-
-                                <tr>
-                                    <th>Rating</th>
-                                    <td>
-                                        <div class="li-pro-rating li-rattingbox">
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o li-star"></i></span>
-                                            <span><i class="fa fa-star-o li-star"></i></span>
+                        <div class="accordion">
+                            <div class="d-flex justify-content-between">
+                                <h4>Tên sản phẩm</h4>
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <table class="table table-bordered table-hover mb-0">
+                                    <tr>
+                                        <div class="d-flex">
+                                            <td colspan="2">
+                                                <h5 class="compare-product-name col-6"><a href="single-product.html">HP Pavilion</a></h5>
+                                            </td>
+                                            <td colspan="2">
+                                                <h5 class="compare-product-name col-6"><a href="single-product.html">HP Pavilion</a></h5>
+                                            </td>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="li-pro-rating li-rattingbox">
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o"></i></span>
-                                            <span><i class="fa fa-star-o li-star"></i></span>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div><br>
+
+                        <div class="accordion">
+                            <div class="d-flex justify-content-between">
+                                <h4>Chức năng</h4>
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <table class="table table-bordered table-hover mb-0">
+                                    <tr>
+                                        <div class="d-flex">
+                                            <td colspan="2">
+                                                <h5 class="compare-product-name col-6"><a href="single-product.html">HP Pavilion</a></h5>
+                                            </td>
+                                            <td colspan="2">
+                                                <h5 class="compare-product-name col-6"><a href="single-product.html">HP Pavilion</a></h5>
+                                            </td>
                                         </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
