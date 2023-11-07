@@ -40,7 +40,7 @@
                                       <h2>iPhone 15 Pro Max 256GB</h2>
                                       <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3>
                                       <div class="default-btn slide-btn">
-                                          <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                          <a class="links" href="shop-left-sidebar.html">Mua ngay</a>
                                       </div>
                                   </div>
                               </div>
