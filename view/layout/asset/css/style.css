@@ -4529,9 +4529,9 @@ thead {
 	min-width: 250px;
 }
 .compare-pdoduct-image {
-	max-width: 200px;
+	max-width: 100%;
 	display: inline-block;
-	padding: 20px 0;
+	padding: 20px;
 }
 .compare-pdoduct-image a {
 	display: inline-block;
