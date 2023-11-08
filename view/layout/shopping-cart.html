@@ -1,47 +1,47 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
     
-<!-- shopping-cart31:32-->
+<!-- checkout31:27-->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Shopping Cart || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
+        <title>Checkout || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
         <!-- Material Design Iconic Font-V2.2.0 -->
-        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="asset/css/material-design-iconic-font.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="asset/css/font-awesome.min.css">
         <!-- Font Awesome Stars-->
-        <link rel="stylesheet" href="css/fontawesome-stars.css">
+        <link rel="stylesheet" href="asset/css/fontawesome-stars.css">
         <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="asset/css/meanmenu.css">
         <!-- owl carousel CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="asset/css/owl.carousel.min.css">
         <!-- Slick Carousel CSS -->
-        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="asset/css/slick.css">
         <!-- Animate CSS -->
-        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="asset/css/animate.css">
         <!-- Jquery-ui CSS -->
-        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="asset/css/jquery-ui.min.css">
         <!-- Venobox CSS -->
-        <link rel="stylesheet" href="css/venobox.css">
+        <link rel="stylesheet" href="asset/css/venobox.css">
         <!-- Nice Select CSS -->
-        <link rel="stylesheet" href="css/nice-select.css">
+        <link rel="stylesheet" href="asset/css/nice-select.css">
         <!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="asset/css/magnific-popup.css">
         <!-- Bootstrap V4.1.3 Fremwork CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="asset/css/bootstrap.min.css">
         <!-- Helper CSS -->
-        <link rel="stylesheet" href="css/helper.css">
+        <link rel="stylesheet" href="asset/css/helper.css">
         <!-- Main Style CSS -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="asset/css/style.css">
         <!-- Responsive CSS -->
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="asset/css/responsive.css">
         <!-- Modernizr js -->
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="asset/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
     <!--[if lt IE 8]>
@@ -427,8 +427,8 @@
                 <div class="container">
                     <div class="breadcrumb-content">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Shopping Cart</li>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li class="active">Giỏ hàng</li>
                         </ul>
                     </div>
                 </div>
@@ -444,12 +444,13 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th class="li-product-remove">remove</th>
-                                                <th class="li-product-thumbnail">images</th>
-                                                <th class="cart-product-name">Product</th>
-                                                <th class="li-product-price">Unit Price</th>
-                                                <th class="li-product-quantity">Quantity</th>
-                                                <th class="li-product-subtotal">Total</th>
+                                                <th class="li-product-remove">Xoá</th>
+                                                <th class="li-product-thumbnail">Hình ảnh</th>
+                                                <th class="cart-product-name">Tên sản phẩm</th>
+                                                <th class="li-product-price">Giá</th>
+                                                <th class="li-product-quantity">Số lượng</th>
+                                                <th class="li-product-subtotal">Tổng tiền</th>
+                                                <th class="li-product-subtotal"> Kiểm tra</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -459,7 +460,7 @@
                                                 <td class="li-product-name"><a href="#">Accusantium dolorem1</a></td>
                                                 <td class="li-product-price"><span class="amount">$46.80</span></td>
                                                 <td class="quantity">
-                                                    <label>Quantity</label>
+                                                    <label>Số lượng</label>
                                                     <div class="cart-plus-minus">
                                                         <input class="cart-plus-minus-box" value="1" type="text">
                                                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
@@ -467,6 +468,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="product-subtotal"><span class="amount">$70.00</span></td>
+                                                <td class="product-subtotal"><input type="checkbox" name="" id=""></span></td>
                                             </tr>
                                             <tr>
                                                 <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
@@ -482,32 +484,22 @@
                                                     </div>
                                                 </td>
                                                 <td class="product-subtotal"><span class="amount">$60.50</span></td>
+                                                <td class="product-subtotal"><input type="checkbox" name="" id=""></span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="coupon-all">
-                                            <div class="coupon">
-                                                <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                                <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
-                                            </div>
-                                            <div class="coupon2">
-                                                <input class="button" name="update_cart" value="Update cart" type="submit">
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5 ml-auto">
                                         <div class="cart-page-total">
-                                            <h2>Cart totals</h2>
+                                            <h2>Tổng giỏ hàng</h2>
                                             <ul>
-                                                <li>Subtotal <span>$130.00</span></li>
-                                                <li>Total <span>$130.00</span></li>
+                                                <li>Tạm tính<span>$130.00</span></li>
+                                                <li>Tổng tiền<span>$130.00</span></li>
                                             </ul>
-                                            <a href="#">Proceed to checkout</a>
+                                            <a href="#">Đến trang thanh toán</a>
                                         </div>
                                     </div>
                                 </div>
@@ -747,47 +739,47 @@
         </div>
         <!-- Body Wrapper End Here -->
         <!-- jQuery-V1.12.4 -->
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="asset/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- Popper js -->
-        <script src="js/vendor/popper.min.js"></script>
+        <script src="asset/js/vendor/popper.min.js"></script>
         <!-- Bootstrap V4.1.3 Fremwork js -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="asset/js/bootstrap.min.js"></script>
         <!-- Ajax Mail js -->
-        <script src="js/ajax-mail.js"></script>
+        <script src="asset/js/ajax-mail.js"></script>
         <!-- Meanmenu js -->
-        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="asset/js/jquery.meanmenu.min.js"></script>
         <!-- Wow.min js -->
-        <script src="js/wow.min.js"></script>
+        <script src="asset/js/wow.min.js"></script>
         <!-- Slick Carousel js -->
-        <script src="js/slick.min.js"></script>
+        <script src="asset/js/slick.min.js"></script>
         <!-- Owl Carousel-2 js -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="asset/js/owl.carousel.min.js"></script>
         <!-- Magnific popup js -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="asset/js/jquery.magnific-popup.min.js"></script>
         <!-- Isotope js -->
-        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="asset/js/isotope.pkgd.min.js"></script>
         <!-- Imagesloaded js -->
-        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="asset/js/imagesloaded.pkgd.min.js"></script>
         <!-- Mixitup js -->
-        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="asset/js/jquery.mixitup.min.js"></script>
         <!-- Countdown -->
-        <script src="js/jquery.countdown.min.js"></script>
+        <script src="asset/js/jquery.countdown.min.js"></script>
         <!-- Counterup -->
-        <script src="js/jquery.counterup.min.js"></script>
+        <script src="asset/js/jquery.counterup.min.js"></script>
         <!-- Waypoints -->
-        <script src="js/waypoints.min.js"></script>
+        <script src="asset/js/waypoints.min.js"></script>
         <!-- Barrating -->
-        <script src="js/jquery.barrating.min.js"></script>
+        <script src="asset/js/jquery.barrating.min.js"></script>
         <!-- Jquery-ui -->
-        <script src="js/jquery-ui.min.js"></script>
+        <script src="asset/js/jquery-ui.min.js"></script>
         <!-- Venobox -->
-        <script src="js/venobox.min.js"></script>
+        <script src="asset/js/venobox.min.js"></script>
         <!-- Nice Select js -->
-        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="asset/js/jquery.nice-select.min.js"></script>
         <!-- ScrollUp js -->
-        <script src="js/scrollUp.min.js"></script>
+        <script src="asset/js/scrollUp.min.js"></script>
         <!-- Main/Activator js -->
-        <script src="js/main.js"></script>
+        <script src="asset/js/main.js"></script>
     </body>
 
 <!-- shopping-cart31:32-->
