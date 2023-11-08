@@ -17,7 +17,7 @@ require_once "view/header.php";
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
     $pg = $_GET['pg'];
-    switch ($pg) {
+    switch ($pg) {dimmmmmmmmmmmmmmmmmmmm
             // 1111111111111111111111111
         case 'blog':
             require_once "view/blog.php";
