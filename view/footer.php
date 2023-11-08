@@ -111,8 +111,7 @@
                        <!-- Begin Footer Block Area -->
                        <div class="col-lg-2 col-md-3 col-sm-6">
                            <div class="footer-block">
-                               <h3 class="footer-block-title">Chính sáchh</h3>
-                               <h3>thêm chính sách </h3>
+                               <h3 class="footer-block-title">Chính sách</h3>
                                <ul>
                                    <li><a href="#">Chính sách thành viên</a></li>
                                    <li><a href="#">Chính sách hoàn tiền</a></li>
