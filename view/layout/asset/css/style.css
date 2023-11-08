@@ -2598,7 +2598,7 @@ textarea:focus {
 	right: 15px;
 	bottom: 15px;
 	left: 15px;
-	border: 1.5px solid #fff;
+	border: 1.5px solid #0C2F4E;
 	opacity: 0;
 	filter: alpha(opacity=0);
 	-webkit-transition: opacity 0.35s,transform 0.35s;
@@ -2622,7 +2622,8 @@ textarea:focus {
 	transform: translate3d(0,0,0);
 }
 .li-banner > a > img, .single-banner > a > img {
-	width: 100%;
+			height: 130px;
+			object-fit: cover;
 }
 /*----------------------------------------*/
 /*  2.6 Li's Laptop Features
@@ -3541,12 +3542,13 @@ li.right-menu .cat-mega-menu-2 > li {
 	border-right: 1px solid #ebebeb;
 }
 .table-content table th {
+	color: white;
 	border-top: medium none;
 	font-size: 15px;
 	text-transform: capitalize;
-	padding: 20px 10px;
+	padding: 10px 10px;
 	text-align: center;
-	font-weight: 500;
+	font-weight: 400;
 	vertical-align: middle;
 	white-space: nowrap;
 }
@@ -3609,9 +3611,9 @@ li.right-menu .cat-mega-menu-2 > li {
 /* 6.4 Li's Checkout Page
 /*----------------------------------------*/
 .coupon-accordion h3 {
-	background-color: #75A2D0;
+	background-color: #d8d8d8d8;
 	border-top: 3px solid #0C2F4E;
-	color: white;
+	color: black;
 	font-size: 14px;
 	font-weight: 400;
 	list-style: outside none none;
@@ -3631,13 +3633,15 @@ li.right-menu .cat-mega-menu-2 > li {
 	top: 16px;
 }
 .coupon-accordion span {
-	color: #d3d3d3bb;
+	color: #60A3E6;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out 0s;
 	text-transform: none;
+
 }
 .coupon-accordion span:hover {
 	color: #0C2F4E;
+	text-decoration: underline;
 }
 .coupon-content {
 	border: 1px solid #e5e5e5;
@@ -3654,7 +3658,7 @@ li.right-menu .cat-mega-menu-2 > li {
 }
 .coupon-info p.form-row-first label span.required,
 .coupon-info p.form-row-last label span.required {
-	color: red;
+	color: #60A3E6	;
 	font-weight: 700;
 	font-size: 14px;
 }
@@ -3763,7 +3767,7 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 .country-select label span.required,
 .checkout-form-list label span.required {
-	color: #0C2F4E;
+	color: #60A3E6;
 	display: inline-block;
 	font-size: 24px;
 	line-height: 16px;
@@ -3852,7 +3856,7 @@ p.checkout-coupon input[type="submit"]:hover {
 	width: 30px;
 }
 .your-order {
-	background: #75a3d091 none repeat scroll 0 0;
+	background: #d3d3d3 none repeat scroll 0 0;
 	padding: 30px 40px 45px;
 }
 .your-order h3 {
@@ -3864,12 +3868,12 @@ p.checkout-coupon input[type="submit"]:hover {
 	width: 100%;
 }
 .your-order-table table {
-	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	background: #d3d3d3 none repeat scroll 0 0;
 	border: medium none;
 	width: 100%;
 }
 thead {
-	background-color: #75A2D0;
+	background-color: whitesmoke;
 }
 .your-order-table table th {
 	border-top: medium none;
@@ -3891,7 +3895,7 @@ thead {
 	text-align: center;
 }
 .your-order-table table tr.cart_item:hover {
-	background: #75A2D0;
+	background: whitesmoke;
 }
 .your-order-table table .order-total td {
 	border-bottom: medium none;
@@ -3915,7 +3919,7 @@ thead {
 .payment-accordion .card-header {
 	padding: 0;
 	margin-bottom: 0;
-	background-color: #B1CBE4;
+	background-color: #d3d3d3;
 	border-bottom: 0;
 }
 .payment-accordion .card-body {
@@ -3937,7 +3941,7 @@ thead {
 	color: #515151;
 }
 .order-button-payment input {
-	background: #61A5E8 none repeat scroll 0 0;
+	background: #0C2F4E none repeat scroll 0 0;
 	border: medium none;
 	color: #fff;
 	font-size: 17px;
@@ -3953,7 +3957,7 @@ thead {
 	cursor: pointer;
 }
 .order-button-payment input:hover {
-	background: #0C2F4E none repeat scroll 0 0;
+	background: #61A5E8 none repeat scroll 0 0;
 }
 /*----------------------------------------*/
 /* 6.5 Li's Login Register
@@ -4152,7 +4156,7 @@ thead {
 	float: right;
 }
 .cart-page-total {
-	padding-top: 30px;
+	/* padding-top: 30px; */
 }
 .cart-page-total>h2 {
 	font-size: 25px;
@@ -4179,19 +4183,21 @@ thead {
 	border-bottom: 0;
 }
 .cart-page-total>a {
-	background-color: #61A5E8;
-	border: 1px solid #61A5E8;
+	background-color: #0C2F4E;
+	border: 1px solid #0C2F4E;
 	color: #fff;
 	display: inline-block;
 	margin-top: 30px;
+	width: 100%;
+	text-align: center;
 	padding: 10px 20px;
 	text-transform: capitalize;
 	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 .cart-page-total>a:hover {
-	background: #0C2F4E;
-	border-color: #0C2F4E;
+	background: #60A3E6;
+	border-color: #60A3E6;
 }
 /*----------------------------------------*/
 /* 6.7 Li's Blog Page
@@ -4926,7 +4932,7 @@ span.required {
 }
 .price-checkbox li a,.size-checkbox li a,.color-categoriy ul li a,.categori-checkbox ul li a {
   color: #363f4d;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 15px;
   margin-top: 0;
 }
@@ -5035,8 +5041,8 @@ span.required {
   z-index: 99;
 }
 .shop-top-bar {
-  padding: 15px;
-  border: 1px solid #ededed;
+  padding: 10px;
+  border: 1px solid #0C2F4E;
 }
 @media only screen and (max-width: 767px) {
 	.shop-top-bar {
