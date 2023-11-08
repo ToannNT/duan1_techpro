@@ -2598,7 +2598,7 @@ textarea:focus {
 	right: 15px;
 	bottom: 15px;
 	left: 15px;
-	border: 1.5px solid #fff;
+	border: 1.5px solid #0C2F4E;
 	opacity: 0;
 	filter: alpha(opacity=0);
 	-webkit-transition: opacity 0.35s,transform 0.35s;
@@ -2622,7 +2622,8 @@ textarea:focus {
 	transform: translate3d(0,0,0);
 }
 .li-banner > a > img, .single-banner > a > img {
-	width: 100%;
+			height: 130px;
+			object-fit: cover;
 }
 /*----------------------------------------*/
 /*  2.6 Li's Laptop Features
@@ -4931,7 +4932,7 @@ span.required {
 }
 .price-checkbox li a,.size-checkbox li a,.color-categoriy ul li a,.categori-checkbox ul li a {
   color: #363f4d;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 15px;
   margin-top: 0;
 }
@@ -5040,8 +5041,8 @@ span.required {
   z-index: 99;
 }
 .shop-top-bar {
-  padding: 15px;
-  border: 1px solid #ededed;
+  padding: 10px;
+  border: 1px solid #0C2F4E;
 }
 @media only screen and (max-width: 767px) {
 	.shop-top-bar {
