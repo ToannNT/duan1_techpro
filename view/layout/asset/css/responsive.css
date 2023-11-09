@@ -236,6 +236,9 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 		/* justify-content: center; */
 
 	}
+	.hm-searchbox{
+		margin-bottom: 25px;
+	}
 	.meanmenu-reveal{
 		display: flex;
 		justify-content: center;
@@ -665,7 +668,7 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 		flex-wrap: wrap;
 	}
 	.minicart-product-list__register{
-		margin-right: 32px;
+		margin-right: 45px;
 	}
 	.ht-menu > li {
 		padding: 0 15px;
@@ -682,7 +685,8 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 		text-align: center;
 	}
 	.hm-searchbox {
-		width: 100%;
+		min-width: 100%;
+		/* width: 50%; */
 		margin-right: 0px;
 		/* float: unset; */
 	}
