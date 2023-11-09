@@ -73,7 +73,7 @@
 /*----------------------------------------*/
 body {
 	color: #242424;
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: normal;
@@ -1622,6 +1622,24 @@ textarea:focus {
 	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+
+.minicart__register {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 9;
+    display: none;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    width: 150px;
+    background: #ffffff;
+    text-align: left;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
 .minicart .minicart-product-list {
 	padding-left: 0;
 	margin-bottom: 0;
@@ -1768,7 +1786,7 @@ textarea:focus {
 /*Header Bottom Menu*/
 .header-bottom {
 		background: #0C2F4E;
-		margin-bottom: 20px;
+		/* margin-bottom: 20px; */
 }
 
 .hb-menu > nav > ul {
@@ -2622,7 +2640,7 @@ textarea:focus {
 	transform: translate3d(0,0,0);
 }
 .li-banner > a > img, .single-banner > a > img {
-			height: 130px;
+			/* height: 130px; */
 			object-fit: cover;
 }
 /*----------------------------------------*/
@@ -3384,6 +3402,7 @@ li.right-menu .cat-mega-menu-2 > li {
 }
 /*Li's Breadcrumb*/
 .breadcrumb-area {
+	margin-top: 20px;
 	padding: 21px 0 22px;
 	background: #f9f9f9;
 }
