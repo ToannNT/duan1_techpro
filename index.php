@@ -1,18 +1,19 @@
 <?php
+session_start();
+ob_start();
 // session_start();
-// ob_start();
-// session_start();
-// require_once "dao/pdo.php";
+require_once "dao/pdo.php";
+require_once "dao/user.php";
 // require_once "dao/sanpham.php";
 // require_once "dao/danhmuc.php";
 // require_once "dao/giohang.php";
-// require_once "dao/user.php";
 // require_once "dao/bill.php";
 
 
 
 //header
 require_once "view/header.php";
+
 
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
@@ -33,11 +34,72 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
-
+        case 'login_register':
+            require_once "view/login_register.php";
             break;
+        case 'register':
+            // xác định giá trị input
+            if(isset($_POST["dangky"])&&($_POST["dangky"])){
+                $hoten=$_POST["hoten"];
+                $username=$_POST["username"];
+                $email=$_POST["email"];
+                $sdt=$_POST["sdt"];
+                $password=$_POST["password"];
+                // xử lý
+                user_insert($hoten,$username,$email,$sdt,$password);
+            }
+            include_once"view/login_register.php";
+            break;
+        case 'login':
+            //input
+            if(isset($_POST["dangnhap"])&&($_POST["dangnhap"])){  
+                $username=$_POST["username"];
+                $password=$_POST["password"];
+                //kiem tra
+                $kq=checkuser($username,$password); 
+                if(is_array($kq)&&(count($kq))){   
+                    $_SESSION['s_user']=$kq;        
+                    header('location: index.php');
+                }else{  
+                    $tb="Tài khoản không tồn tại hoặc thông tin đăng nhập sai!";
+                    $_SESSION['tb_dangnhap']=$tb; 
+                    header('location: index.php?pg=login_register');
 
-
-
+                }
+                //out
+            }  
+            break;
+        case'logout':
+            if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){ 
+                unset($_SESSION['s_user']);                                     
+            }
+            header('location: index.php');
+        case 'account':
+            require_once "view/account.php";
+            break;
+        case 'confirm_account':
+            require_once "view/account.php";
+            break;
+        case 'update_user':
+            // xác định giá trị input
+            if(isset($_POST["capnhat"])&&($_POST["capnhat"])){
+                $hoten=$_POST["hoten"];
+                $username=$_POST["username"];
+                $password=$_POST["password"];
+                $email=$_POST["email"];
+                $gioitinh=$_POST["gioitinh"];
+                $diachi=$_POST["diachi"];
+                $sdt=$_POST["sdt"];
+                $hinh=$_POST["hinh"];
+                $id=$_POST["id"];
+                $role=0;
+                // xử lý
+                update_user($hoten,$username, $password,  $email, $gioitinh,$diachi, $sdt, $hinh, $role, $id);
+                include_once"view/confirm_account.php";
+            }else{
+                include_once"view/index.php";
+            }
+            break; 
 
         default:
             require_once "view/home.php";
