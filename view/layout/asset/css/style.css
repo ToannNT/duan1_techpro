@@ -73,7 +73,7 @@
 /*----------------------------------------*/
 body {
 	color: #242424;
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: normal;
@@ -97,7 +97,7 @@ a:hover {
 }
 
 .logo-main{
-	width: 55%;
+	width: 50%;
 }
 
 a:focus,
@@ -340,7 +340,7 @@ a.links,
 a.links-2, 
 a.review-links {
 	background: #0C2F4E none repeat scroll 0 0;
-	color: #242424;
+	color: #ffffff;
 	display: inline-block;
 	font-family: Montserrat;
 	font-size: 14px;
@@ -456,7 +456,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(images/slider/1.jpg);
+	background-image: url(./images/slider/1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -464,14 +464,14 @@ textarea:focus {
 	width: 100%;
 }
 .bg-2 {
-	background-image: url(images/slider/2.jpg);
+	background-image: url(./images/slider/2.jpg);
 }
 .bg-3 {
-	background-image: url(images/slider/3.jpg);
+	background-image: url(./images/slider/3.jpg);
 }
 /*Home Two | Slider Background Image*/
 .bg-4, .bg-5, .bg-6 {
-	background-image: url(images/slider/4.jpg);
+	background-image: url(./images/slider/4.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -479,14 +479,14 @@ textarea:focus {
 	width: 100%;
 }
 .bg-5 {
-	background-image: url(images/slider/5.jpg);
+	background-image: url(./images/slider/5.jpg);
 }
 .bg-6 {
-	background-image: url(images/slider/6.jpg);
+	background-image: url(./images/slider/6.jpg);
 }
 /*Home Three | Slider Background Image*/
 .bg-7, .bg-8, .bg-9 {
-	background-image: url(images/slider/7.jpg);
+	background-image: url(./images/slider/7.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -494,14 +494,14 @@ textarea:focus {
 	width: 100%;
 }
 .bg-8 {
-	background-image: url(images/slider/8.jpg);
+	background-image: url(./images/slider/8.jpg);
 }
 .bg-9 {
-	background-image: url(images/slider/9.jpg);
+	background-image: url(./images/slider/9.jpg);
 }
 /*Home Four | Slider Background Image*/
 .bg-10, .bg-11, .bg-12 {
-	background-image: url(images/slider/10.jpg);
+	background-image: url(./images/slider/10.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -509,10 +509,10 @@ textarea:focus {
 	width: 100%;
 }
 .bg-11 {
-	background-image: url(images/slider/11.jpg);
+	background-image: url(./images/slider/11.jpg);
 }
 .bg-12 {
-	background-image: url(images/slider/12.jpg);
+	background-image: url(./images/slider/12.jpg);
 }
 /*----------------------------------------*/
 /*  li's Background Variation Set 
@@ -1622,6 +1622,24 @@ textarea:focus {
 	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+
+.minicart__register {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 9;
+    display: none;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    width: 150px;
+    background: #ffffff;
+    text-align: left;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
 .minicart .minicart-product-list {
 	padding-left: 0;
 	margin-bottom: 0;
@@ -1768,7 +1786,7 @@ textarea:focus {
 /*Header Bottom Menu*/
 .header-bottom {
 		background: #0C2F4E;
-		margin-bottom: 20px;
+		/* margin-bottom: 20px; */
 }
 
 .hb-menu > nav > ul {
@@ -2598,7 +2616,7 @@ textarea:focus {
 	right: 15px;
 	bottom: 15px;
 	left: 15px;
-	border: 1.5px solid #fff;
+	border: 1.5px solid #0C2F4E;
 	opacity: 0;
 	filter: alpha(opacity=0);
 	-webkit-transition: opacity 0.35s,transform 0.35s;
@@ -2622,7 +2640,8 @@ textarea:focus {
 	transform: translate3d(0,0,0);
 }
 .li-banner > a > img, .single-banner > a > img {
-	width: 100%;
+			/* height: 130px; */
+			object-fit: cover;
 }
 /*----------------------------------------*/
 /*  2.6 Li's Laptop Features
@@ -3383,6 +3402,7 @@ li.right-menu .cat-mega-menu-2 > li {
 }
 /*Li's Breadcrumb*/
 .breadcrumb-area {
+	margin-top: 20px;
 	padding: 21px 0 22px;
 	background: #f9f9f9;
 }
@@ -3541,12 +3561,13 @@ li.right-menu .cat-mega-menu-2 > li {
 	border-right: 1px solid #ebebeb;
 }
 .table-content table th {
+	color: white;
 	border-top: medium none;
 	font-size: 15px;
 	text-transform: capitalize;
-	padding: 20px 10px;
+	padding: 10px 10px;
 	text-align: center;
-	font-weight: 500;
+	font-weight: 400;
 	vertical-align: middle;
 	white-space: nowrap;
 }
@@ -3609,9 +3630,9 @@ li.right-menu .cat-mega-menu-2 > li {
 /* 6.4 Li's Checkout Page
 /*----------------------------------------*/
 .coupon-accordion h3 {
-	background-color: #75A2D0;
+	background-color: #d8d8d8d8;
 	border-top: 3px solid #0C2F4E;
-	color: white;
+	color: black;
 	font-size: 14px;
 	font-weight: 400;
 	list-style: outside none none;
@@ -3631,13 +3652,15 @@ li.right-menu .cat-mega-menu-2 > li {
 	top: 16px;
 }
 .coupon-accordion span {
-	color: #d3d3d3bb;
+	color: #60A3E6;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out 0s;
 	text-transform: none;
+
 }
 .coupon-accordion span:hover {
 	color: #0C2F4E;
+	text-decoration: underline;
 }
 .coupon-content {
 	border: 1px solid #e5e5e5;
@@ -3654,7 +3677,7 @@ li.right-menu .cat-mega-menu-2 > li {
 }
 .coupon-info p.form-row-first label span.required,
 .coupon-info p.form-row-last label span.required {
-	color: red;
+	color: #60A3E6	;
 	font-weight: 700;
 	font-size: 14px;
 }
@@ -3763,7 +3786,7 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 .country-select label span.required,
 .checkout-form-list label span.required {
-	color: #0C2F4E;
+	color: #60A3E6;
 	display: inline-block;
 	font-size: 24px;
 	line-height: 16px;
@@ -3852,7 +3875,7 @@ p.checkout-coupon input[type="submit"]:hover {
 	width: 30px;
 }
 .your-order {
-	background: #75a3d091 none repeat scroll 0 0;
+	background: #d3d3d3 none repeat scroll 0 0;
 	padding: 30px 40px 45px;
 }
 .your-order h3 {
@@ -3864,12 +3887,12 @@ p.checkout-coupon input[type="submit"]:hover {
 	width: 100%;
 }
 .your-order-table table {
-	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	background: #d3d3d3 none repeat scroll 0 0;
 	border: medium none;
 	width: 100%;
 }
 thead {
-	background-color: #75A2D0;
+	background-color: whitesmoke;
 }
 .your-order-table table th {
 	border-top: medium none;
@@ -3891,7 +3914,7 @@ thead {
 	text-align: center;
 }
 .your-order-table table tr.cart_item:hover {
-	background: #75A2D0;
+	background: whitesmoke;
 }
 .your-order-table table .order-total td {
 	border-bottom: medium none;
@@ -3915,7 +3938,7 @@ thead {
 .payment-accordion .card-header {
 	padding: 0;
 	margin-bottom: 0;
-	background-color: #B1CBE4;
+	background-color: #d3d3d3;
 	border-bottom: 0;
 }
 .payment-accordion .card-body {
@@ -3937,7 +3960,7 @@ thead {
 	color: #515151;
 }
 .order-button-payment input {
-	background: #61A5E8 none repeat scroll 0 0;
+	background: #0C2F4E none repeat scroll 0 0;
 	border: medium none;
 	color: #fff;
 	font-size: 17px;
@@ -3953,7 +3976,7 @@ thead {
 	cursor: pointer;
 }
 .order-button-payment input:hover {
-	background: #0C2F4E none repeat scroll 0 0;
+	background: #61A5E8 none repeat scroll 0 0;
 }
 /*----------------------------------------*/
 /* 6.5 Li's Login Register
@@ -3966,6 +3989,7 @@ thead {
 	margin-bottom: 30px;
 }
 .login-form {
+	margin-top: 50px;
   background-color: #ffffff;
   padding: 30px;
   -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
@@ -4152,7 +4176,7 @@ thead {
 	float: right;
 }
 .cart-page-total {
-	padding-top: 30px;
+	/* padding-top: 30px; */
 }
 .cart-page-total>h2 {
 	font-size: 25px;
@@ -4179,19 +4203,21 @@ thead {
 	border-bottom: 0;
 }
 .cart-page-total>a {
-	background-color: #61A5E8;
-	border: 1px solid #61A5E8;
+	background-color: #0C2F4E;
+	border: 1px solid #0C2F4E;
 	color: #fff;
 	display: inline-block;
 	margin-top: 30px;
+	width: 100%;
+	text-align: center;
 	padding: 10px 20px;
 	text-transform: capitalize;
 	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 .cart-page-total>a:hover {
-	background: #0C2F4E;
-	border-color: #0C2F4E;
+	background: #60A3E6;
+	border-color: #60A3E6;
 }
 /*----------------------------------------*/
 /* 6.7 Li's Blog Page
@@ -4926,7 +4952,7 @@ span.required {
 }
 .price-checkbox li a,.size-checkbox li a,.color-categoriy ul li a,.categori-checkbox ul li a {
   color: #363f4d;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 15px;
   margin-top: 0;
 }
@@ -5035,8 +5061,8 @@ span.required {
   z-index: 99;
 }
 .shop-top-bar {
-  padding: 15px;
-  border: 1px solid #ededed;
+  padding: 10px;
+  border: 1px solid #0C2F4E;
 }
 @media only screen and (max-width: 767px) {
 	.shop-top-bar {
@@ -5549,3 +5575,5 @@ span.required {
 .ui-accordion-header-icon{
 	display: none;
 }
+
+

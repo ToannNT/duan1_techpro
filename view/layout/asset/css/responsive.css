@@ -49,16 +49,27 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 	}
 }
 /* Tablet Desktop :768px. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 800px) and (max-width: 991px) {
 	/*Home Version One Area*/
 	/*Header Right*/
 	.header-middle-right {
 		display: flex;
 		justify-content: center;
 	}
+	.minicart-product-list__register{
+		margin-right: 32px;
+	}
+	.logo-main {
+		width: 200px;
+	}
+	.wrappr-nav-mid {
+		display: flex;
+		flex-wrap: wrap;
+		/* justify-content: center; */
+	}
 	/*Header Middle*/
 	.hm-searchbox {
-		min-width: 480px;
+		min-width: 380px;
 	}
 	.logo {
 		text-align: center;
@@ -209,13 +220,30 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 	}
 }
 /*Large Mobile Device :576px */
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 799px) {
 	/*Home Version One Area*/
 	/*Header Top*/
 	.header-top-left {
 		text-align: center;
 		padding-bottom: 10px;
 	}
+	.minicart-product-list__register{
+		margin-right: 35px;
+	}
+	.wrappr-nav-mid{
+		display: flex;
+		flex-wrap: wrap;
+		/* justify-content: center; */
+
+	}
+	.hm-searchbox{
+		margin-bottom: 25px;
+	}
+	.meanmenu-reveal{
+		display: flex;
+		justify-content: center;
+	}
+	
 	.logo {
 		text-align: center;
 	}
@@ -225,7 +253,8 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 	}
 	/*Header Middle*/
 	.hm-searchbox {
-		min-width: 268px;
+		margin-right: 0px;
+		width: 100%;
 	}
 	.header-middle-right {
 		display: flex;
@@ -416,8 +445,16 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 		text-align: center;
 	}
 	.hm-searchbox {
-		min-width: 268px;
-		float: unset;
+		width: 100%;
+		margin-right: 0px;
+		/* float: unset; */
+	}
+	.wrappr-nav-mid{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.minicart-product-list__register{
+		margin-right: 32px;
 	}
 	.header-middle-right {
 		display: flex;
@@ -626,6 +663,13 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 	.ht-menu {
 		flex-direction: row-reverse;
 	}
+	.wrappr-nav-mid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.minicart-product-list__register{
+		margin-right: 45px;
+	}
 	.ht-menu > li {
 		padding: 0 15px;
 		display: block;
@@ -641,8 +685,10 @@ Note: responsive.css, All Responsive CSS Style For This Theme Included In This F
 		text-align: center;
 	}
 	.hm-searchbox {
-		min-width: 268px;
-		float: unset;
+		min-width: 100%;
+		/* width: 50%; */
+		margin-right: 0px;
+		/* float: unset; */
 	}
 	.hm-searchbox .nice-select.select-search-category {
 		display: none;

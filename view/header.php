@@ -1,3 +1,58 @@
+<?php
+    if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){
+        extract($_SESSION['s_user']);
+        $html_account='<li class="hm-minicart">
+                        <div class="hm-minicart-trigger hm-minicart-trigger__user">
+                            <a href="wishlist.html">
+                                <span class="cart-item-count wishlist-item-count">0</span>
+                            </a>
+                            <span class="item-icon__user">
+
+                            </span>
+                        </div>
+                        <div class="minicart minicart__register">
+                            <ul style="margin-left: 10px;" class="minicart-product-list ">
+                                <li>
+                                    <a href="index.php?pg=account">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="index.php?pg=logout">Thoát</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </li>
+                    <!-- Header Mini Cart Area End Here -->
+                </ul>
+                <ul class="minicart-product-list__register" style="padding-top: 15px;">'.$username.'</ul>
+                        ';
+    }else{
+        $html_account='<li class="hm-minicart">
+                            <div class="hm-minicart-trigger hm-minicart-trigger__user">
+                                <a href="wishlist.html">
+                                    <span class="cart-item-count wishlist-item-count">0</span>
+                                </a>
+                                <span class="item-icon__user">
+
+                                </span>
+                            </div>
+                            <div class="minicart minicart__register">
+                                <ul style="margin-left: 10px;" class="minicart-product-list ">
+                                    <li>
+                                        <a href="index.php?pg=login_register">Đăng Nhập</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Đăng ký</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- Header Mini Cart Area End Here -->
+                    </ul>
+                    <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
+    }
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -45,6 +100,7 @@
     <script src="./view/layout/asset/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
 </head>
 
 <body>
@@ -79,7 +135,7 @@
                                             <ul class="ht-setting-list">
                                                 <li><a href="login-register.html">Tài khoản của tôi</a></li>
                                                 <li><a href="checkout.html">Thanh toán</a></li>
-                                                <li><a href="login-register.html">Đăng nhập</a></li>
+                                                <li><a href="index.php?pg=login_register">Đăng nhập</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -201,30 +257,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="hm-minicart">
-                                        <div class="hm-minicart-trigger hm-minicart-trigger__user">
-                                            <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count">0</span>
-                                            </a>
-                                            <span class="item-icon__user">
-
-                                            </span>
-                                        </div>
-                                        <div class="minicart">
-                                            <ul class="minicart-product-list">
-                                                <li>
-                                                    Đăng nhập
-                                                </li>
-                                                <li>
-                                                    Đăng kí
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                    </li>
-                                    <!-- Header Mini Cart Area End Here -->
-                                </ul>
-                                <ul style="padding-top: 15px;">Đăng nhập</ul>
+                                    <?=$html_account?>
                             </div>
                             <!-- Header Middle Right Area End Here -->
                         </div>
