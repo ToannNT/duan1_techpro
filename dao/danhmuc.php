@@ -43,6 +43,36 @@ require_once 'pdo.php';
  * @return array mảng loại truy vấn được
  * @throws PDOException lỗi truy vấn
  */
+
+
+// function show_danhmuc($dsdanhmuc)
+// {
+//     $show_dsdanhmuc_all = '';
+
+//     foreach ($dsdanhmuc as $item) {
+//         extract($item);
+
+//         // $link = 'index.php?pg=productdetail&idpro=' . $id;
+//         $show_dsdanhmuc_all .= '
+//             <li><a href="shop-left-sidebar.html">ĐIỆN THOẠI</a>
+//             <ul>
+//                 <li><a href="shop-left-sidebar.html">iphone</a></li>
+//                 <li><a href="shop-right-sidebar.html">SamSung</a>
+//                 </li>
+//                 <li><a href="shop-list.html">Xiaomi</a></li>
+//                 <li><a href="shop-list-left-sidebar.html">Shop List Left
+//                         Sidebar</a></li>
+//                 <li><a href="shop-list-right-sidebar.html">Shop List Right
+//                         Sidebar</a></li>
+//             </ul>
+//             </li>
+//          ';
+//     }
+//     return $show_dsdanhmuc_all;
+// }
+
+
+
 function danhmuc_all()
 {
     $sql = "SELECT * FROM danhmuc ORDER BY id ASC";

@@ -2255,6 +2255,23 @@ textarea:focus {
 	text-transform: uppercase;
 	font-size: 11px;
 }
+
+.product-image > span.sticker__hot {
+	background: rgb(245, 5, 5);
+	border-radius: 100%;
+	color: #fff;
+	right: 15px;
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	z-index: 99;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+}
 .product-review {
 	border-bottom: 1px solid #ebebeb;
 }
@@ -2320,6 +2337,9 @@ textarea:focus {
   position: relative;
 }
 .product_desc .product_desc_info .product_name {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	color: #0363cd;
 	display: block;
 	font-size: 14px;
