@@ -5550,6 +5550,11 @@ span.required {
 .error-button a:hover{background:#242424;color:#fff;}
 .small-version {
   display: none;
+}.forgotmk-wrapper{
+	border: 1px solid;
+	border-color: #D3D3D3;
+	width: 100%;
+	max-width: 600px;
 }
 
 

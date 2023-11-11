@@ -30,7 +30,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                            <a href="#">Bạn đã quên mật khẩu?</a>
+                                            <a href="index.php?pg=ft_password">Bạn đã quên mật khẩu?</a>
                                         </div>
                                         <div class="col-md-12">
                                             <input class="name" name="dangnhap" type="submit" value="Đăng nhập">

@@ -21,6 +21,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     $pg = $_GET['pg'];
     switch ($pg) {
             // 1111111111111111111111111
+        case 'ft_password':
+            require_once "view/ft_password.php";
+            break;
+        case 'sw_password':
+            require_once "view/sw_password.php";
+            break;
         case 'blog':
             require_once "view/blog.php";
             break;
