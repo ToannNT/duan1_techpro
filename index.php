@@ -3,11 +3,14 @@
 // ob_start();
 // session_start();
 // require_once "dao/pdo.php";
-require_once "dao/sanpham.php";
+// require_once "dao/sanpham.php";
 // require_once "dao/danhmuc.php";
 // require_once "dao/giohang.php";
 // require_once "dao/user.php";
 // require_once "dao/bill.php";
+
+
+
 //header
 require_once "view/header.php";
 
@@ -20,8 +23,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/blog.php";
             break;
         case 'product':
-            $dssp = get_spct(12);
-            // $show_slsp=get_slsp($id);
             require_once "view/product.php";
             break;
         case 'productdetail':
@@ -32,7 +33,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
+
             break;
+
+
+
 
         default:
             require_once "view/home.php";
