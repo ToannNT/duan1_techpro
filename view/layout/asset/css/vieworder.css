@@ -55,6 +55,7 @@ td>a:hover{
 }
 /* endline */
 .accout-user{
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -67,20 +68,28 @@ td>a:hover{
   font-size: 1.2rem;
 }
 .sidebars{
-  background-color: #75A2D0;
-  border-radius: 0.7rem;
+  background-color: #d8d8d8;
+  border-radius: 0.4rem;
   margin-top: 2px;
 }
 .sidebar{
+  margin-top: 2rem;
   padding: 1.5rem 1rem 1.5rem 1rem;
 }
 .sidebar-item i{
   font-size: 1.7rem;
 }
+.mrt12{
+  margin-bottom: 0.2rem;
+  border: none !important;
+}
+.nice-select{
+  width: fit-content !important;
+}
 .sidebar-item{
   margin-bottom: 2px;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  font-size: 1.2rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+  font-size: 0.8rem;
   display: flex;
   gap: 1.5rem;
   align-items: center;
