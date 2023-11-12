@@ -77,7 +77,7 @@ function show_SP($dssp)
         <div class="single-product-wrap">
             <div class="product-image">
                 <a href="index.php?pg=productdetail">
-                    <img src="./view/layout/images/product/large-size/1.jpg" alt="Li s Product Image">
+                    <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
                 ' . $itemHot . '
