@@ -43,11 +43,35 @@ require_once 'pdo.php';
  * @return array mảng loại truy vấn được
  * @throws PDOException lỗi truy vấn
  */
-function danhmuc_all()
+
+function show_DM($dsdm)
 {
-    $sql = "SELECT * FROM danhmuc ORDER BY id ASC";
+    $show_all = '';
+    foreach ($dsdm as $item) {
+        extract($item);
+        $show_all .= '
+        <li><a href="shop-left-sidebar.html">' . $ten . '</a></li>
+        ';
+    }
+    return $show_all;
+}
+
+
+// for ($i = 1; $i < 5; $i++) {
+function dsdm_brand()
+{
+    $sql = "SELECT * FROM brand WHERE id_catalog = 1 ORDER BY id ASC";
     return pdo_query($sql);
 }
+// }
+
+
+// function dsdanhmuc()
+// {
+//     $sql = "SELECT c.ten_dm, b.ten  FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog 
+//      WHERE b.id_catalog = 2 AND c.id = 2";
+//     return pdo_query($sql);
+// }
 
 function get_follow_page($id)
 {

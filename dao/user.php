@@ -1,11 +1,9 @@
 <?php
-// require_once 'pdo.php';
-
-
-function user_insert($username, $password, $email, $hinh)
+// require_once 'pdo.php'
+function user_insert($hoten,$username,$email,$sdt,$password)
 {
-    $sql = "INSERT INTO user(username,password,email,hinh) VALUES (?, ?, ?, ?)";
-    pdo_execute($sql, $username, $password, $email, $hinh);
+    $sql = "INSERT INTO user(hoten,username,email,sdt,password) VALUES (?,?,?,?,?)";
+    pdo_execute($sql,$hoten,$username,$email,$sdt,$password);
 }
 
 //lấy về id mới nhất sau khi insert
@@ -26,10 +24,10 @@ function checkuser($username, $password)
     // }
 }
 
-function update_user($username, $password, $hoten, $email, $diachi, $dienthoai, $hinh, $role, $id)
+function update_user($hoten,$username, $password, $email, $gioitinh,$diachi, $sdt, $hinh, $role, $id)
 {
-    $sql = "UPDATE user SET username=?,password=?,hoten=?,email=?,diachi=?,dienthoai=?, hinh=?,role=? WHERE id=?";
-    pdo_execute($sql, $username, $password, $hoten, $email, $diachi, $dienthoai, $hinh, $role, $id);
+    $sql = "UPDATE user SET hoten=?, username=?,password=?,email=?,gioitinh=?,diachi=?,sdt=?, hinh=?,role=? WHERE id=?";
+    pdo_execute($sql, $hoten, $username, $password,  $email,$gioitinh, $diachi, $sdt, $hinh, $role, $id);
 }
 
 function get_user($id)

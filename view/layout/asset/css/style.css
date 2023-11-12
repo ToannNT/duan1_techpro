@@ -2255,6 +2255,23 @@ textarea:focus {
 	text-transform: uppercase;
 	font-size: 11px;
 }
+
+.product-image > span.sticker__hot {
+	background: rgb(245, 5, 5);
+	border-radius: 100%;
+	color: #fff;
+	right: 15px;
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	z-index: 99;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+}
 .product-review {
 	border-bottom: 1px solid #ebebeb;
 }
@@ -2320,6 +2337,9 @@ textarea:focus {
   position: relative;
 }
 .product_desc .product_desc_info .product_name {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	color: #0363cd;
 	display: block;
 	font-size: 14px;
@@ -3989,6 +4009,7 @@ thead {
 	margin-bottom: 30px;
 }
 .login-form {
+	margin-top: 50px;
   background-color: #ffffff;
   padding: 30px;
   -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
@@ -5529,6 +5550,11 @@ span.required {
 .error-button a:hover{background:#242424;color:#fff;}
 .small-version {
   display: none;
+}.forgotmk-wrapper{
+	border: 1px solid;
+	border-color: #D3D3D3;
+	width: 100%;
+	max-width: 600px;
 }
 
 
@@ -5574,4 +5600,5 @@ span.required {
 .ui-accordion-header-icon{
 	display: none;
 }
+
 
