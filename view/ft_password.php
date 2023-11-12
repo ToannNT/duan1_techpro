@@ -8,8 +8,8 @@
                     </div>
                 </div>
             </div>
-            <div class="error404-area pt-30 pb-30 col-12">
-                <div class="formpass d-flex justify-content-center">
+            <div class="error404-area pt-30 pb-30">
+                <div class="formpass">
                             <div class="forgotmk-wrapper text-center ptb-50 pt-xs-20">
                                     <div class="text">
                                         <h5>Quên mật khẩu</h5>
