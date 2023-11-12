@@ -44,34 +44,40 @@ require_once 'pdo.php';
  * @throws PDOException lỗi truy vấn
  */
 
-function show_DM($dsdm)
-{
-    $show_all = '';
-    foreach ($dsdm as $item) {
-        extract($item);
-        $show_all .= '
-        <li><a href="shop-left-sidebar.html">' . $ten . '</a></li>
-        ';
-    }
-    return $show_all;
-}
+
+// function show_danhmuc($dsdanhmuc)
+// {
+//     $show_dsdanhmuc_all = '';
+
+//     foreach ($dsdanhmuc as $item) {
+//         extract($item);
+
+//         // $link = 'index.php?pg=productdetail&idpro=' . $id;
+//         $show_dsdanhmuc_all .= '
+//             <li><a href="shop-left-sidebar.html">ĐIỆN THOẠI</a>
+//             <ul>
+//                 <li><a href="shop-left-sidebar.html">iphone</a></li>
+//                 <li><a href="shop-right-sidebar.html">SamSung</a>
+//                 </li>
+//                 <li><a href="shop-list.html">Xiaomi</a></li>
+//                 <li><a href="shop-list-left-sidebar.html">Shop List Left
+//                         Sidebar</a></li>
+//                 <li><a href="shop-list-right-sidebar.html">Shop List Right
+//                         Sidebar</a></li>
+//             </ul>
+//             </li>
+//          ';
+//     }
+//     return $show_dsdanhmuc_all;
+// }
 
 
-// for ($i = 1; $i < 5; $i++) {
-function dsdm_brand()
+
+function danhmuc_all()
 {
-    $sql = "SELECT * FROM brand WHERE id_catalog = 1 ORDER BY id ASC";
+    $sql = "SELECT * FROM danhmuc ORDER BY id ASC";
     return pdo_query($sql);
 }
-// }
-
-
-// function dsdanhmuc()
-// {
-//     $sql = "SELECT c.ten_dm, b.ten  FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog 
-//      WHERE b.id_catalog = 2 AND c.id = 2";
-//     return pdo_query($sql);
-// }
 
 function get_follow_page($id)
 {

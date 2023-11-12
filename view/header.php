@@ -1,11 +1,7 @@
 <?php
-// echo var_dump($dsdanhmuc_all);
-$show_dm_dt = show_DM($dsdanhmuc_all);
-
-
-if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
-    extract($_SESSION['s_user']);
-    $html_account = '<li class="hm-minicart">
+    if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){
+        extract($_SESSION['s_user']);
+        $html_account='<li class="hm-minicart">
                         <div class="hm-minicart-trigger hm-minicart-trigger__user">
                             <a href="wishlist.html">
                                 <span class="cart-item-count wishlist-item-count">0</span>
@@ -28,10 +24,10 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                     </li>
                     <!-- Header Mini Cart Area End Here -->
                 </ul>
-                <ul class="minicart-product-list__register" style="padding-top: 15px;">' . $username . '</ul>
+                <ul class="minicart-product-list__register" style="padding-top: 15px;">'.$username.'</ul>
                         ';
-} else {
-    $html_account = '<li class="hm-minicart">
+    }else{
+        $html_account='<li class="hm-minicart">
                             <div class="hm-minicart-trigger hm-minicart-trigger__user">
                                 <a href="wishlist.html">
                                     <span class="cart-item-count wishlist-item-count">0</span>
@@ -55,7 +51,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                         <!-- Header Mini Cart Area End Here -->
                     </ul>
                     <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
-}
+    }
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -261,7 +257,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             </div>
                                         </div>
                                     </li>
-                                    <?= $html_account ?>
+                                    <?=$html_account?>
                             </div>
                             <!-- Header Middle Right Area End Here -->
                         </div>
@@ -287,12 +283,6 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             <ul class="megamenu hb-megamenu">
                                                 <li><a href="shop-left-sidebar.html">ĐIỆN THOẠI</a>
                                                     <ul>
-                                                        <!-- <li><a href="shop-left-sidebar.html">iphone</a></li> -->
-                                                        <?= $show_dm_dt ?>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="shop-left-sidebar.html">LAPTOP</a>
-                                                    <ul>
                                                         <li><a href="shop-left-sidebar.html">iphone</a></li>
                                                         <li><a href="shop-right-sidebar.html">SamSung</a>
                                                         </li>
@@ -303,28 +293,31 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                                                 Sidebar</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="shop-left-sidebar.html">TABLET</a>
+                                                <li><a href="single-product-gallery-left.html">LAPTOP</a>
                                                     <ul>
-                                                        <li><a href="shop-left-sidebar.html">iphone</a></li>
-                                                        <li><a href="shop-right-sidebar.html">SamSung</a>
-                                                        </li>
-                                                        <li><a href="shop-list.html">Xiaomi</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">Shop List Left
-                                                                Sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                                Sidebar</a></li>
+                                                        <li><a href="single-product-carousel.html">ASUS</a></li>
+                                                        <li><a href="single-product-gallery-left.html">MACBOOK</a></li>
+                                                        <li><a href="single-product-gallery-right.html">Single Product
+                                                                Gallery Right</a></li>
+                                                        <li><a href="single-product-tab-style-top.html">Single Product
+                                                                Tab Style Top</a></li>
+                                                        <li><a href="single-product-tab-style-left.html">Single Product
+                                                                Tab Style Left</a></li>
+                                                        <li><a href="single-product-tab-style-right.html">Single Product
+                                                                Tab Style Right</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="shop-left-sidebar.html">SMARTWATCH</a>
+                                                <li><a href="single-product.html">Single Products</a>
                                                     <ul>
-                                                        <li><a href="shop-left-sidebar.html">iphone</a></li>
-                                                        <li><a href="shop-right-sidebar.html">SamSung</a>
+                                                        <li><a href="single-product.html">Single Product</a></li>
+                                                        <li><a href="single-product-sale.html">Single Product Sale</a>
                                                         </li>
-                                                        <li><a href="shop-list.html">Xiaomi</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">Shop List Left
-                                                                Sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                                Sidebar</a></li>
+                                                        <li><a href="single-product-group.html">Single Product Group</a>
+                                                        </li>
+                                                        <li><a href="single-product-normal.html">Single Product
+                                                                Normal</a></li>
+                                                        <li><a href="single-product-affiliate.html">Single Product
+                                                                Affiliate</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

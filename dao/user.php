@@ -1,5 +1,7 @@
 <?php
-// require_once 'pdo.php'
+// require_once 'pdo.php';
+
+
 function user_insert($hoten,$username,$email,$sdt,$password)
 {
     $sql = "INSERT INTO user(hoten,username,email,sdt,password) VALUES (?,?,?,?,?)";
