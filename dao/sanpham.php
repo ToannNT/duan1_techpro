@@ -64,12 +64,21 @@ function show_SP($dssp)
         if ($giamgia > 0) {
             $gia_sp = '
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <span class="new-price new-price-2">' . $giamgia . '</span>
                 <span class="old-price">' . $gia . '</span>
                 <span class="discount-percentage">-7% nè</span>
             ';
         } else {
             $gia_sp = '<span class="new-price">' . $gia . '</span>';
+=======
+                <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
+                <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
+                <span class="discount-percentage">-7% nè</span>
+            ';
+        } else {
+            $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 =======
                 <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                 <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
@@ -96,7 +105,11 @@ function show_SP($dssp)
                     <div class="product-review">
                         <h5 class="manufacturer">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <a href="shop-left-sidebar.html">Danh mục ở đây</a>
+=======
+                            <a href="shop-left-sidebar.html"></a>
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 =======
                             <a href="shop-left-sidebar.html"></a>
 >>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
@@ -121,7 +134,11 @@ function show_SP($dssp)
                 <div class="add-actions">
                     <ul class="add-actions-link">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li class="add-cart active"><a href="#">Thêmmm</a></li>
+=======
+                        <li class="add-cart active"><a href="#">Thêm</a></li>
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 =======
                         <li class="add-cart active"><a href="#">Thêm</a></li>
 >>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
@@ -155,7 +172,11 @@ function get_dssp_hot($limit)
 function get_dssp_new($limit)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     $sql = "SELECT * FROM product WHERE new = 1  ORDER BY id DESC LIMIT " . $limit;
+=======
+    $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE new = 1 ORDER BY id DESC LIMIT " . $limit;
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 =======
     $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE new = 1 ORDER BY id DESC LIMIT " . $limit;
 >>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)

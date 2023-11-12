@@ -116,14 +116,20 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             $dssp_laptop = get_dssp_laptop(5);
             $dssp_suggest = get_dssp_suggest(5);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of 15b229a (Toàn)
 =======
+=======
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 
 
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
+=======
 >>>>>>> parent of 9b2ed80 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
             break;
     }
