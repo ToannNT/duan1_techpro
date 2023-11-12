@@ -6,20 +6,7 @@ require_once 'pdo.php';
 //     $sql = "INSERT INTO hang_hoa(ten_hh, don_gia, giam_gia, hinh, ma_loai, dac_biet, so_luot_xem, ngay_nhap, mo_ta) VALUES (?,?,?,?,?,?,?,?,?)";
 //     pdo_execute($sql, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet == 1, $so_luot_xem, $ngay_nhap, $mo_ta);
 // }
-<<<<<<< HEAD
-function get_spct($limit)
-{
-    $sql = "SELECT * FROM product ORDER BY id DESC LIMIT " . $limit;
-    return pdo_query($sql);
-}
-function get_slsp($id)
-{
-    $sql = "SELECT id_dm, COUNT(*) as count FROM product GROUP BY id_dm";
-    return pdo_query($sql, $id);
-}
-=======
 
->>>>>>> a76ea57e5e3554474e833d4fa95167d5c37cc637
 // function hang_hoa_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta)
 // {
 //     $sql = "UPDATE hang_hoa SET ten_hh=?,don_gia=?,giam_gia=?,hinh=?,ma_loai=?,dac_biet=?,so_luot_xem=?,ngay_nhap=?,mo_ta=? WHERE ma_hh=?";
