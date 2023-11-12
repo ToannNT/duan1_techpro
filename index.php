@@ -2,8 +2,6 @@
 session_start();
 ob_start();
 // session_start();
-// ob_start();
-// session_start();
 require_once "dao/pdo.php";
 require_once "dao/user.php";
 require_once "dao/sanpham.php";
@@ -33,8 +31,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/blog.php";
             break;
         case 'product':
-            $dssp = get_spct(12);
-            // $show_slsp=get_slsp($id);
             require_once "view/product.php";
             break;
         case 'productdetail':
@@ -122,6 +118,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             $dssp_phone = get_dssp_dienthoai(5);
             $dssp_laptop = get_dssp_laptop(5);
             $dssp_suggest = get_dssp_suggest(5);
+
+
+
+
             break;
     }
 } else {

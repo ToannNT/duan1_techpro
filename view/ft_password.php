@@ -7,7 +7,7 @@
                         </ul>
                     </div>
                 </div>
-</div>
+            </div>
             <div class="error404-area pt-30 pb-30">
                 <div class="formpass">
                             <div class="forgotmk-wrapper text-center ptb-50 pt-xs-20">
@@ -22,7 +22,7 @@
                                     <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
                                     <label>Đã có tài khoản?<a href=""> Đăng nhập ngay</a></label>
                                     </div>
-                                    <div class="confirm-button">
+                                    <div class="error-button">
                                         <a href="index.html">Xác nhận</a>
                                     </div>
                             </div>

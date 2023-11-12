@@ -5,7 +5,11 @@
  */
 function pdo_get_connection()
 {
+<<<<<<< HEAD
     $dburl = "mysql:host=localhost;dbname=da1;charset=utf8";
+=======
+    $dburl = "mysql:host=localhost;dbname=duann;charset=utf8";
+>>>>>>> a76ea57e5e3554474e833d4fa95167d5c37cc637
     $username = 'root';
     $password = '';
 
