@@ -2,12 +2,23 @@
 session_start();
 ob_start();
 // session_start();
+<<<<<<< HEAD
 require_once "dao/pdo.php";
 require_once "dao/user.php";
 require_once "dao/sanpham.php";
 require_once "dao/danhmuc.php";
 require_once "dao/giohang.php";
 require_once "dao/bill.php";
+=======
+// ob_start();
+// session_start();
+// require_once "dao/pdo.php";
+// require_once "dao/sanpham.php";
+// require_once "dao/danhmuc.php";
+// require_once "dao/giohang.php";
+// require_once "dao/user.php";
+// require_once "dao/bill.php";
+>>>>>>> parent of 888f251 (update)
 
 
 
@@ -41,6 +52,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
+<<<<<<< HEAD
         case 'login_register':
             require_once "view/login_register.php";
             break;
@@ -105,7 +117,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             } else {
                 include_once "view/index.php";
             }
+=======
+
+>>>>>>> parent of 888f251 (update)
             break;
+
+
+
 
         default:
             require_once "view/home.php";

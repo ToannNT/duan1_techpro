@@ -5,7 +5,11 @@
  */
 function pdo_get_connection()
 {
+<<<<<<< HEAD
     $dburl = "mysql:host=localhost;dbname=duan1;charset=utf8";
+=======
+    $dburl = "mysql:host=localhost;dbname=highwaystore2;charset=utf8";
+>>>>>>> parent of 888f251 (update)
     $username = 'root';
     $password = '';
 
