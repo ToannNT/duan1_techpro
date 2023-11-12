@@ -5555,6 +5555,56 @@ span.required {
 	border-color: #D3D3D3;
 	width: 100%;
 	max-width: 600px;
+}.text{
+	margin-top: 30px;
+	margin-bottom: 15px;
+}.formpass h5{
+	max-width: 200px;
+	width: 100%;
+}
+.formpass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.text1{
+	text-align: left ;
+	margin-left: 25px;
+	margin-top: 25px;
+	width: 100%;
+
+}.text1 input{
+	width: 100%;
+	max-width:600px ;
+}
+.text2{
+	text-align: left;
+	width: 100%;
+	margin-left: 40px;
+}.text2 label{
+	color: black;
+}.text2 a{
+	color: #61A5E8;
+}.mb-0{
+	border: 1px solid #D3D3D3;
+}.confirm-button{
+	width: 100%;
+	max-width: 200px;
+	margin-bottom: 5%;
+}.confirm-button a{
+	background: #0C2F4E none repeat scroll 0 0;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 40px;
+	padding: 0 30px;
+   margin-top: 10px;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+   border-radius: 7.4px;
+}.confirm-button:hover{
+	background:#242424;
+	color:#fff;
 }
 
 
