@@ -7,7 +7,10 @@ require_once 'pdo.php';
 //     pdo_execute($sql, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet == 1, $so_luot_xem, $ngay_nhap, $mo_ta);
 // }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 888f251 (update)
 // function hang_hoa_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta)
 // {
 //     $sql = "UPDATE hang_hoa SET ten_hh=?,don_gia=?,giam_gia=?,hinh=?,ma_loai=?,dac_biet=?,so_luot_xem=?,ngay_nhap=?,mo_ta=? WHERE ma_hh=?";
@@ -25,73 +28,57 @@ require_once 'pdo.php';
 //         pdo_execute($sql, $ma_hh);
 //     }
 // }
-function show_spct($dssp){
+function show_SP($dssp)
+{
     $show_dssp_all = '';
 
     foreach ($dssp as $item) {
         extract($item);
-        // if ($dac_biet == 1) {
-        //     $itemHot = '
-        //     <img src="./view/layout/img/icon_product_hot.png" alt="">
-        //     ';
-        // } else {
-        //     $itemHot = '';
-        // }
-        // if ($dac_biet == 2) {
-        //     $itemNew = '
-        //     <img src="./view/layout/img/icon_product_new.png" alt="">
-        //     ';
-        // } else {
-        //     $itemNew = '';
-        // }
-        // if ($giam_gia > 0) {
-        //     $gia_sp = '' . $giam_gia . '.000đ <sup><strike>' . $gia . '.000đ';
-        // } else {
-        //     $gia_sp = '' . $gia . '.000đ <sup><strike>';
-        // }
-        // $link = 'index.php?pg=productdetail&idpro=' . $id;
+        if ($dac_biet == 1) {
+            $itemHot = '
+            <img src="./view/layout/img/icon_product_hot.png" alt="">
+            ';
+        } else {
+            $itemHot = '';
+        }
+        if ($dac_biet == 2) {
+            $itemNew = '
+            <img src="./view/layout/img/icon_product_new.png" alt="">
+            ';
+        } else {
+            $itemNew = '';
+        }
+        if ($giam_gia > 0) {
+            $gia_sp = '' . $giam_gia . '.000đ <sup><strike>' . $gia . '.000đ';
+        } else {
+            $gia_sp = '' . $gia . '.000đ <sup><strike>';
+        }
+        $link = 'index.php?pg=productdetail&idpro=' . $id;
         $show_dssp_all .= '
-        <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-            <!-- single-product-wrap start -->
-            <div class="single-product-wrap">
-                <div class="product-image">
-                    <a href="single-product.html">
-                        <img src="./view/layout/images/product/large-size/'.$hinh.'.jpg" alt="">
-                    </a>
-                    <span class="sticker">New</span>
-                </div>
-                <div class="product_desc">
-                    <div class="product_desc_info">
-                        <div class="product-review">
-                            <h5 class="manufacturer">
-                                <a href="product-details.html">Danhmuc</a>
-                            </h5>
-                            <div class="rating-box">
-                                <ul class="rating">
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
-                        <div class="price-box">
-                            <span class="new-price">'.number_format($gia,0,",",".").'đ</span>
-                        </div>
-                    </div>
-                    <div class="add-actions">
-                        <ul class="add-actions-link">
-                            <li class="add-cart active"><a href="shopping-cart.html">Thêm giỏ hàng</a></li>
-                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="products-box">
+            <div class="products-box__view">
+                ' . $itemNew . '
             </div>
-            <!-- single-product-wrap end -->
+            <div class="products-box__hot">
+                ' . $itemHot . '
             </div>
+            <a href="' . $link . '">
+                <img class="products-box__images" src="./view/layout/img/' . $hinh . '" alt="images">
+            </a>
+            <p class="products-box__name">' . $ten_sp . '</p>
+            <p class="products-box__price"> ' . $gia_sp . '</strike></sup> </p>
+            <form action="index.php?pg=addcart" method="post" class="products-box__btn_submit">
+                <input type="hidden" name="idpro" value="' . $id . '">
+                <input type="hidden" name="name" value="' . $ten_sp . '">
+                <input type="hidden" name="img" value="' . $hinh . '">
+                <input type="hidden" name="price" value="' . $gia . '">
+                <input type="hidden" name="quantity" value="1">
+                <input type="submit" class="products-box__btn__buy" value="Mua">
+                <input type="submit" name="addcart" class="products-box__btn__add" value="Thêm">
+            </form>
+   
+    
+        </div>
         ';
     }
     return $show_dssp_all;
@@ -117,7 +104,11 @@ function get_dssp_hot($limit)
     return pdo_query($sql);
 }
 
-
+function get_dssp_new($limit)
+{
+    $sql = "SELECT * FROM sanpham WHERE dac_biet = 2  ORDER BY id DESC LIMIT " . $limit;
+    return pdo_query($sql);
+}
 
 function get_dssp_All($keyword, $idcatalog, $limit)
 {

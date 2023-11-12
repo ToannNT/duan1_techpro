@@ -18,6 +18,9 @@ require_once "dao/bill.php";
 // require_once "dao/giohang.php";
 // require_once "dao/user.php";
 // require_once "dao/bill.php";
+<<<<<<< HEAD
+>>>>>>> parent of 888f251 (update)
+=======
 >>>>>>> parent of 888f251 (update)
 
 
@@ -53,8 +56,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'aboutus':
             require_once "view/aboutus.php";
 <<<<<<< HEAD
+<<<<<<< HEAD
         case 'login_register':
             require_once "view/login_register.php";
+=======
+
+>>>>>>> parent of 888f251 (update)
             break;
         case 'register':
             // xác định giá trị input
@@ -121,6 +128,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 >>>>>>> parent of 888f251 (update)
             break;
+
+
+
 
 
 
