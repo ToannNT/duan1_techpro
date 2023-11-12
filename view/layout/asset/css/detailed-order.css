@@ -1,0 +1,117 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+input,
+select,
+textarea {
+    background-color: transparent;
+    outline: none;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+body {
+    min-height: 100vh;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+}
+.order_conteiner{
+    width: 100%;
+    background-color: #f1f1f1;
+}
+.order_back{
+    width: 77%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    padding: 10px;
+    background-color: #fff;
+    font-weight: 300;
+}
+.order_table{
+    width: 77%;
+    margin: 10px auto;
+}
+table{
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+table tr{
+    border-bottom: 0.5px solid gray;
+}
+tbody tr:not(:first-child){
+    text-align: right;
+}
+tfoot{
+    text-align: right;
+}
+/* tfoot tr {
+    border-bottom:none ;
+} */
+/* table tbody tr:nth-child(1) td:nth-child(1){
+    display: flex;
+}
+.inf__Phone{
+    flex: 2;
+} */
+table tbody tr:nth-child(1) h4{
+    font-size: large;
+    font-weight: 500;
+    display: block;
+}
+/* table tbody tr:nth-child(1) img{
+    width: 30rem;
+} */
+table tbody tr:nth-child(2) td:nth-child(1),
+tr:nth-child(3) td:nth-child(1), 
+tr:nth-child(4) td:nth-child(1), 
+tr:nth-child(5) td:nth-child(1){
+    border-right: 0.5px solid gray;
+}
+table tbody tr:nth-child(1) td:nth-child(2),
+tr:nth-child(5) td:nth-child(2){
+    font-size: larger;
+    color: red;
+    font-weight: 500;
+}
+table tfoot td:nth-child(1){
+    border-right: 1px solid gray;
+}
+td, th{
+    padding: 15px 10px;
+}
+th:nth-child(1){
+    width: 15rem;
+}
+th h3{
+    font-size: x-large;
+    text-align: right;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+table thead {
+    background-color: #fff;
+}
+table tbody tr td {
+    font-size: medium;
+}
