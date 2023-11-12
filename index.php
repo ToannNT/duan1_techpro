@@ -107,6 +107,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             break;
 
+
+
+
         default:
             require_once "view/home.php";
             $dssp_hot = get_dssp_hot(5);
