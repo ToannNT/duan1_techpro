@@ -63,12 +63,12 @@ function show_SP($dssp)
 
         if ($giamgia > 0) {
             $gia_sp = '
-                <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
-                <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
+                <span class="new-price new-price-2">' . $giamgia . '</span>
+                <span class="old-price">' . $gia . '</span>
                 <span class="discount-percentage">-7% nè</span>
             ';
         } else {
-            $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+            $gia_sp = '<span class="new-price">' . $gia . '</span>';
         }
         // $link = 'index.php?pg=productdetail&idpro=' . $id;
         $show_dssp_all .= '
@@ -86,7 +86,7 @@ function show_SP($dssp)
                 <div class="product_desc_info">
                     <div class="product-review">
                         <h5 class="manufacturer">
-                            <a href="shop-left-sidebar.html"></a>
+                            <a href="shop-left-sidebar.html">Danh mục ở đây</a>
                         </h5>
                         <div class="rating-box">
                             <ul class="rating">
@@ -107,7 +107,7 @@ function show_SP($dssp)
                 </div>
                 <div class="add-actions">
                     <ul class="add-actions-link">
-                        <li class="add-cart active"><a href="#">Thêm</a></li>
+                        <li class="add-cart active"><a href="#">Thêmmm</a></li>
                         <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                         <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                     </ul>
@@ -129,48 +129,21 @@ function show_SP($dssp)
 //     $sql = "SELECT COUNT(*) FROM sanpham WHERE id_catalog=?";
 //     return pdo_query_value($sql, $id);
 // }
-// function get_dssp_hot($limit)
-// {
-//     $sql = "SELECT * FROM product WHERE banchay = 1 ORDER BY id DESC LIMIT " . $limit;
-//     return pdo_query($sql);
-// }
-
 function get_dssp_hot($limit)
 {
-    $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE banchay = 1 ORDER BY id DESC LIMIT " . $limit;
+    $sql = "SELECT * FROM product WHERE banchay = 1 ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
 
 function get_dssp_new($limit)
 {
-    $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE new = 1 ORDER BY id DESC LIMIT " . $limit;
+    $sql = "SELECT * FROM product WHERE new = 1  ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
 
 function get_dssp_sale($limit)
 {
-    $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE giamgia > 0  ORDER BY id DESC LIMIT " . $limit;
-
-    return pdo_query($sql);
-}
-
-function get_dssp_dienthoai($limit)
-{
-    $sql = "SELECT * FROM product WHERE id_catalog = 1  ORDER BY id DESC LIMIT " . $limit;
-
-    return pdo_query($sql);
-}
-function get_dssp_laptop($limit)
-{
-    $sql = "SELECT * FROM product WHERE id_catalog = 2  ORDER BY id DESC LIMIT " . $limit;
-
-    return pdo_query($sql);
-}
-
-function get_dssp_suggest($limit)
-{
-    $sql = "SELECT * FROM product  ORDER BY id DESC LIMIT " . $limit;
-
+    $sql = "SELECT * FROM product WHERE giamgia > 0  ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
 

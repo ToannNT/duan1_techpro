@@ -14,7 +14,6 @@ require_once "dao/bill.php";
 
 
 //header
-$dsdanhmuc_all = dsdm_brand();
 require_once "view/header.php";
 
 
@@ -53,20 +52,19 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             $dssp_hot = get_dssp_hot(5);
             $dssp_new = get_dssp_new(5);
             $dssp_sale = get_dssp_sale(5);
+<<<<<<< HEAD
             $dssp_phone = get_dssp_dienthoai(5);
             $dssp_laptop = get_dssp_laptop(5);
             $dssp_suggest = get_dssp_suggest(5);
+=======
+
+>>>>>>> parent of 15b229a (Toàn)
             break;
     }
 } else {
     $dssp_hot = get_dssp_hot(5);
     $dssp_new = get_dssp_new(5);
     $dssp_sale = get_dssp_sale(5);
-    $dssp_phone = get_dssp_dienthoai(5);
-    $dssp_laptop = get_dssp_laptop(5);
-    $dssp_suggest = get_dssp_suggest(5);
-
-
 
 
     require_once "view/home.php";
