@@ -247,7 +247,7 @@ function show_dssp($dssp_sp){
                                 </div>
                                 <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
                                 <div class="price-box">
-                                    <span class="new-price">'.number_format($gia).'đ</span>
+                                    <span class="new-price">'.number_format($giamgia).'đ</span>
                                 </div>
                             </div>
                             <div class="add-actions">
