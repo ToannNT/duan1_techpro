@@ -1,7 +1,5 @@
 <?php
-    $htmlspct = show_SP($dssp);
-    // extract($show_slsp);
-    extract($dssp);
+    $html_dssp = show_dssp($dssp_all);
 ?>
 <!-- Header Area End Here -->
             <!-- Begin Li's Breadcrumb Area -->
@@ -65,7 +63,7 @@
                                     <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
                                         <div class="product-area shop-product-area">
                                             <div class="row"  id="categoryForm">
-                                                <?= $htmlspct;?>
+                                                <?= $html_dssp;?>
                                                 <!-- 111111111 -->
                                             </div>
                                         </div>
@@ -657,7 +655,7 @@
                                     <div class="categori-checkbox">
                                         <form action="#">
                                             <ul>    
-                                                <li><input type="checkbox" name="product-brand"><a href="#">Apple (<?=$id;?>)</a></li>
+                                                <li><input type="checkbox" name="product-brand"><a href="#">Apple ()</a></li>
                                                 <li><input type="checkbox" name="product-brand"><a href="#">Samsung (12)</a></li>
                                                 <li><input type="checkbox" name="product-brand"><a href="#">Xiaomi (11)</a></li>
                                                 <li><input type="checkbox" name="product-brand"><a href="#">VSmar (11)</a></li>
