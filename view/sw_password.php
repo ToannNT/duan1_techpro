@@ -1,4 +1,14 @@
-            <div class="error404-area pt-30 pb-30">
+<div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Đổi mật khẩu mới</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           <div class="error404-area pt-30 pb-30">
                 <div class="formpass">
                             <div class="forgotmk-wrapper text-center ptb-50 pt-xs-20">
                                     <div class="text">
@@ -16,7 +26,7 @@
                                             <label> Password mới</label> 
                                             <input class="mb-0" type="email" placeholder="Nhập">
                                     </div>
-                                    <div class="error-button">
+                                    <div class="confirm-button">
                                         <a href="index.html">Xác nhận</a>
                                     </div>
                             </div>

@@ -22,7 +22,7 @@
                                     <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
                                     <label>Đã có tài khoản?<a href=""> Đăng nhập ngay</a></label>
                                     </div>
-                                    <div class="error-button">
+                                    <div class="confirm-button">
                                         <a href="index.html">Xác nhận</a>
                                     </div>
                             </div>
