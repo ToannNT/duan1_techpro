@@ -36,7 +36,8 @@ require_once 'pdo.php';
 
 
 
-function show_SP($dssp){
+function show_SP($dssp)
+{
     $show_dssp_all = '';
 
     foreach ($dssp as $item) {
@@ -76,7 +77,7 @@ function show_SP($dssp){
         <div class="single-product-wrap">
             <div class="product-image">
                 <a href="index.php?pg=productdetail">
-                    <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
+                    <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
                 ' . $itemHot . '
@@ -210,22 +211,24 @@ function get_dssp_suggest($limit)
 
 // Trang sản phẩm
 
-function get_dssp($limit){
+function get_dssp($limit)
+{
     $sql = "SELECT * FROM product ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
 
-function show_dssp($dssp_sp){
-    $showhtml='';
-        foreach ($dssp_sp as $dssp) {
-            extract($dssp);
-            $showhtml.= '
+function show_dssp($dssp_sp)
+{
+    $showhtml = '';
+    foreach ($dssp_sp as $dssp) {
+        extract($dssp);
+        $showhtml .= '
                     <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
                             <a href="single-product.html">
-                            <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
+                            <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                             </a>
                             <span class="sticker">New</span>
                         </div>
@@ -245,9 +248,9 @@ function show_dssp($dssp_sp){
                                         </ul>
                                     </div>
                                 </div>
-                                <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
+                                <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
                                 <div class="price-box">
-                                    <span class="new-price">'.number_format($gia).'đ</span>
+                                    <span class="new-price">' . number_format($gia) . 'đ</span>
                                 </div>
                             </div>
                             <div class="add-actions">
@@ -261,7 +264,7 @@ function show_dssp($dssp_sp){
                     </div>
                     <!-- single-product-wrap end -->
                 </div>';
-        }
+    }
     return $showhtml;
 }
 

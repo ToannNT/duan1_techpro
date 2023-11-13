@@ -44,32 +44,50 @@ require_once 'pdo.php';
  * @throws PDOException lỗi truy vấn
  */
 
-function show_DM($dsdm)
+
+
+function show_DM($dsdm_catalog, $dsdm_brand)
 {
+    $i = 1;
     $show_all = '';
-    foreach ($dsdm as $item) {
+    foreach ($dsdm_catalog as $item) {
         extract($item);
         $show_all .= '
-        <li><a href="shop-left-sidebar.html">' . $ten . '</a></li>
-        ';
+            <li><a href="index.php?pg=product&idcatalog=' . $id . '">' . $ten_dm . '</a>';
+
+        foreach ($dsdm_brand as $item) {
+            extract($item);
+            if ($id_catalog == $i) {
+                $show_all .= '
+                            <ul>
+                                <li><a href="index.php?pg=product&idcatalog=' . $i . '&idbrand=' . $id . '">' . $ten . '</a></li></li>
+                            </ul>
+                        ';
+            }
+        }
+        $show_all .= '</li>';
+        $i++;
     }
+
     return $show_all;
 }
 
-
-// for ($i = 1; $i < 5; $i++) {
 function dsdm_brand()
 {
-    $sql = "SELECT * FROM brand WHERE id_catalog = 1 ORDER BY id ASC";
+    $sql = "SELECT * FROM brand ORDER BY id ASC";
     return pdo_query($sql);
 }
-// }
+
+function dsdm_catalog()
+{
+    $sql = "SELECT * FROM catalog ORDER BY id ASC";
+    return pdo_query($sql);
+}
 
 
 // function dsdanhmuc()
 // {
-//     $sql = "SELECT c.ten_dm, b.ten  FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog 
-//      WHERE b.id_catalog = 2 AND c.id = 2";
+//     $sql = "SELECT c.id, c.ten_dm , b.id_catalog, b.ten FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog";
 //     return pdo_query($sql);
 // }
 

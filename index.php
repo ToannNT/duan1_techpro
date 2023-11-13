@@ -12,7 +12,9 @@ require_once "dao/bill.php";
 
 
 //header
-$dsdanhmuc_all = dsdm_brand();
+$ds_danhmuc = dsdm_catalog();
+$ds_brand = dsdm_brand();
+
 require_once "view/header.php";
 
 
