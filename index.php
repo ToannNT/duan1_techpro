@@ -31,6 +31,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/blog.php";
             break;
         case 'product':
+            $dssp_all = get_dssp(12);
             require_once "view/product.php";
             break;
         case 'productdetail':

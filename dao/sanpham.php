@@ -36,8 +36,7 @@ require_once 'pdo.php';
 
 
 
-function show_SP($dssp)
-{
+function show_SP($dssp){
     $show_dssp_all = '';
 
     foreach ($dssp as $item) {
@@ -135,6 +134,7 @@ function show_SP($dssp)
 //     return pdo_query($sql);
 // }
 
+
 function get_dssp_hot($limit)
 {
     $sql = "SELECT p.* , c.ten_dm FROM product p INNER JOIN catalog c ON p.id_catalog = c.id WHERE banchay = 1 ORDER BY id DESC LIMIT " . $limit;
@@ -208,15 +208,67 @@ function get_dssp_suggest($limit)
 
 
 
+// Trang sản phẩm
+
+function get_dssp($limit){
+    $sql = "SELECT * FROM product ORDER BY id DESC LIMIT " . $limit;
+    return pdo_query($sql);
+}
+
+function show_dssp($dssp_sp){
+    $showhtml='';
+        foreach ($dssp_sp as $dssp) {
+            extract($dssp);
+            $showhtml.= '
+                    <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
+                    <!-- single-product-wrap start -->
+                    <div class="single-product-wrap">
+                        <div class="product-image">
+                            <a href="single-product.html">
+                            <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
+                            </a>
+                            <span class="sticker">New</span>
+                        </div>
+                        <div class="product_desc">
+                            <div class="product_desc_info">
+                                <div class="product-review">
+                                    <h5 class="manufacturer">
+                                        <a href="product-details.html">Graphic Corner</a>
+                                    </h5>
+                                    <div class="rating-box">
+                                        <ul class="rating">
+                                            <li><i class="fa fa-star-o"></i></li>
+                                            <li><i class="fa fa-star-o"></i></li>
+                                            <li><i class="fa fa-star-o"></i></li>
+                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
+                                <div class="price-box">
+                                    <span class="new-price">'.number_format($gia).'đ</span>
+                                </div>
+                            </div>
+                            <div class="add-actions">
+                                <ul class="add-actions-link">
+                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single-product-wrap end -->
+                </div>';
+        }
+    return $showhtml;
+}
 
 
 
 
-
-
-
-
-
+//end trang sản phẩm
 
 
 // function hang_hoa_exist($ma_hh)
