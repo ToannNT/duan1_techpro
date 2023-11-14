@@ -2203,8 +2203,6 @@ textarea:focus {
   transition: all 300ms ease-in 0s;
 }
 .single-product-wrap:hover {
-  margin: 0 0 -75px;
-  padding: 0 0 75px;
   z-index: 9;
 }
 .single-product-wrap.mt-40:hover {
@@ -2478,6 +2476,7 @@ textarea:focus {
 	transition: all 300ms ease-in-out;
 }
 .single-product-wrap:hover .add-actions {
+	transform: translateY(-150px);
 	bottom: 0;
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";

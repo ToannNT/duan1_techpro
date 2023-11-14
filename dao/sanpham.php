@@ -264,9 +264,23 @@ function show_dssp($dssp_sp){
         }
     return $showhtml;
 }
-
-
-
+function show_dsdm($dsdm){
+    $html_dsdm= '';
+    foreach ($dsdm as $value){
+        extract($value);
+        $html_dsdm.= '
+            <li><input type="checkbox" class="common_selector catalog" value="'.$ten_dm.'" name="product-categori"><a href="#">'.$ten_dm.'</a></li>
+        ';
+    }
+    return $html_dsdm;
+}
+// function get_dsdm(){
+//     $sql = "SELECT product.*, catalog.ten_dm
+//     FROM product
+//     JOIN catalog ON product.id_catalog = catalog.id
+//     ORDER BY product.id DESC";
+//     return pdo_query($sql);
+// }
 
 //end trang sản phẩm
 
