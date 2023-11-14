@@ -76,7 +76,7 @@ function show_SP($dssp)
         <!-- single-product-wrap start -->
         <div class="single-product-wrap">
             <div class="product-image">
-                <a href="index.php?pg=productdetail">
+                <a href="index.php?pg=productdetail&idproduct=' . $id . '">
                     <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
@@ -227,7 +227,7 @@ function show_dssp($dssp_sp)
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
-                            <a href="single-product.html">
+                            <a href="index.php?pg=productdetail&idproduct=' . $id . '">
                             <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                             </a>
                             <span class="sticker">New</span>
@@ -267,12 +267,13 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
-function show_dsdm($dsdm){
-    $html_dsdm= '';
-    foreach ($dsdm as $value){
+function show_dsdm($dsdm)
+{
+    $html_dsdm = '';
+    foreach ($dsdm as $value) {
         extract($value);
-        $html_dsdm.= '
-            <li><input type="checkbox" class="common_selector catalog" value="'.$ten_dm.'" name="product-categori"><a href="#">'.$ten_dm.'</a></li>
+        $html_dsdm .= '
+            <li><input type="checkbox" class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="#">' . $ten_dm . '</a></li>
         ';
     }
     return $html_dsdm;
