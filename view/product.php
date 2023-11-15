@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $html_dssp = show_dssp($dssp_all);
 <<<<<<< Updated upstream
     // $html_showdm = show_dsdm($dsdm);
@@ -10,6 +11,12 @@
     echo var_dump($dsdm);
 =======
 >>>>>>> Stashed changes
+=======
+$html_dssp = show_dssp($dssp_all);
+// $html_showdm = show_dsdm($dsdm);
+
+// echo var_dump($dsdm);
+>>>>>>> parent of 86c51e6 (diem)
 =======
 $html_dssp = show_dssp($dssp_all);
 // $html_showdm = show_dsdm($dsdm);
@@ -705,6 +712,7 @@ $html_dssp = show_dssp($dssp_all);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <!-- btn-clear-all start -->
                                 <button class="btn-clear-all mb-sm-30 mb-xs-30">Xoá tất cả</button>
                                 <!-- btn-clear-all end -->
@@ -789,6 +797,8 @@ $html_dssp = show_dssp($dssp_all);
 >>>>>>> parent of 86c51e6 (diem)
 =======
 >>>>>>> parent of 86c51e6 (diem)
+=======
+>>>>>>> parent of 86c51e6 (diem)
                                 <div class="col-lg-6 col-md-6">
                                     <ul class="pagination-box pt-xs-20 pb-xs-15">
                                         <li><a href="#" class="Previous"><i class="fa fa-chevron-left"></i> Trước</a>
@@ -802,6 +812,9 @@ $html_dssp = show_dssp($dssp_all);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 86c51e6 (diem)
+=======
 >>>>>>> parent of 86c51e6 (diem)
 =======
 >>>>>>> parent of 86c51e6 (diem)
@@ -817,6 +830,7 @@ $html_dssp = show_dssp($dssp_all);
                 </div>
                 <!-- shop-products-wrapper end -->
             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -849,6 +863,26 @@ $html_dssp = show_dssp($dssp_all);
                             <form action="">
                                 <ul>
 
+=======
+            <div class="col-lg-3 order-2 order-lg-1">
+                <!--sidebar-categores-box start  -->
+                <!--sidebar-categores-box end  -->
+                <!--sidebar-categores-box start  -->
+                <div class="sidebar-categores-box">
+                    <div class="sidebar-title">
+                        <h2>Lọc sản phẩm theo</h2>
+                    </div>
+                    <!-- btn-clear-all start -->
+                    <button class="btn-clear-all mb-sm-30 mb-xs-30">Xoá tất cả</button>
+                    <!-- btn-clear-all end -->
+                    <!-- filter-sub-area start -->
+                    <div class="filter-sub-area">
+                        <h5 class="filter-sub-titel">Danh mục</h5>
+                        <div class="categori-checkbox">
+                            <form action="">
+                                <ul>
+
+>>>>>>> parent of 86c51e6 (diem)
 =======
             <div class="col-lg-3 order-2 order-lg-1">
                 <!--sidebar-categores-box start  -->
@@ -988,6 +1022,10 @@ $html_dssp = show_dssp($dssp_all);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<script src="js/jquery-ui.js"></script>
+>>>>>>> parent of 86c51e6 (diem)
+=======
 <script src="js/jquery-ui.js"></script>
 >>>>>>> parent of 86c51e6 (diem)
 =======

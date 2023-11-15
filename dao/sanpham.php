@@ -80,11 +80,15 @@ function show_SP($dssp)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <a href="'.$link.'">
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> Stashed changes
+=======
+                <a href="index.php?pg=productdetail">
+>>>>>>> parent of 86c51e6 (diem)
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> parent of 86c51e6 (diem)
@@ -356,6 +360,7 @@ function show_dssp($dssp_sp)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 
 function get_dssp($limit)
@@ -414,6 +419,8 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
+=======
+>>>>>>> parent of 86c51e6 (diem)
 =======
 >>>>>>> parent of 86c51e6 (diem)
 =======
