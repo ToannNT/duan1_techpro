@@ -1084,7 +1084,7 @@ textarea:focus {
   color: #0363cd;
   text-transform: capitalize;
   font-weight: 500;
-  margin: 0 0 15px 0;
+  /* margin: 0 0 15px 0; */
 }
 .product-details-ref {
 	font-size: 13px;
@@ -1164,14 +1164,14 @@ textarea:focus {
 .cart-quantity .add-to-cart {
 	border: none;
 	font-size: 14px;
-	color: #242424;
+	color: #919191;
 	position: relative;
 	background: #0C2F4E;
 	cursor: pointer;
 	font-weight: 500;
 	text-transform: capitalize;
-	padding: 13px 70px;
-	border-radius: 2px;
+	padding: 13px 20px;
+	border-radius: 5px;
 	transition: all 0.3s ease-in-out;
 }
 .cart-quantity .add-to-cart:hover {
@@ -2426,14 +2426,15 @@ textarea:focus {
 .add-actions-link li.add-cart {
 	float: left;
 	margin: 0;
-	background: #eef0f1;
-	border: 1px solid #e1e1e1;
+	background: #0C2F4E;
+	/* border: 1px solid #e1e1e1; */
 	transition: all 0.3s ease-in-out;
-	width: 120px;
+	width: 115px;
 }
 .add-actions-link li:hover {
-	background: #0C2F4E;
-	border-color: #0C2F4E;
+	background: #305173;
+	
+	/* border-color: #0C2F4E; */
 }
 .add-actions-link li a {
 	color: #a4a4a4;
@@ -2447,11 +2448,11 @@ textarea:focus {
 	transition: all 300ms ease-in 0s;
 }
 .add-actions-link li.add-cart.active a {
-	color: #242424;
+	color: #ffffff;
 }
 .add-actions-link li:hover a, 
 .add-actions-link li.add-cart:hover a {
-	color: #242424;
+	color: #ffffff;
 }
 .add-actions-link li.add-cart > a {
 	color: #a4a4a4;
@@ -3421,7 +3422,7 @@ li.right-menu .cat-mega-menu-2 > li {
 }
 /*Li's Breadcrumb*/
 .breadcrumb-area {
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	padding: 21px 0 22px;
 	background: #f9f9f9;
 }
@@ -3492,7 +3493,7 @@ li.right-menu .cat-mega-menu-2 > li {
 	padding: 0;
 }
 .shop-add-action .add-actions-link li.add-cart {
-	margin: 0 0 25px;;
+	margin: 0 0 25px;
 }
 .shop-add-action .add-actions-link li.wishlist, 
 .shop-add-action .add-actions-link li:last-child {
@@ -5160,7 +5161,7 @@ span.required {
 /*----------------------------------------*/
 .product-details-view-content .product-desc {
 	border-bottom: 1px solid #e1e1e1;
-	margin-bottom: 25px;
+	/* margin-bottom: 25px; */
 }
 .product-details-view-content .product-desc p {
 	margin-bottom: 20px;
@@ -5302,6 +5303,7 @@ span.required {
 }
 .li-review-product img {
 	border: 1px solid #ebebeb;
+	width: 400px;
 }
 .li-review-product-desc {
 	line-height: 18px;
