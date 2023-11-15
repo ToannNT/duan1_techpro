@@ -9,7 +9,7 @@
     ?>
 
     <!-- Begin Slider With Banner Area -->
-    <div style="margin-top: 20px;" class="slider-with-banner">
+    <div  class="slider-with-banner">
         <div class="container">
             <div class="row">
                 <!-- Begin Slider Area -->
@@ -20,11 +20,11 @@
                             <div class="single-slide align-center-left  animation-style-01 bg-1">
                                 <div class="slider-progress"></div>
                                 <div class="slider-content">
-                                    <h5>Ưu đãi giảm giá <span>-giảm giá 20%</span> Tuần này</h5>
+                                    <!-- <h5>Ưu đãi giảm giá <span>-giảm giá 20%</span> Tuần này</h5>
                                     <h2>Galaxy S23 FE 5G </h2>
-                                    <h3>Giá chỉ từ <span>12.000.000VNĐ</span></h3>
+                                    <h3>Giá chỉ từ <span>12.000.000VNĐ</span></h3> -->
                                     <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                        <a class="links" href="index.php?pg=product">Mua ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -33,11 +33,11 @@
                             <div class="single-slide align-center-left animation-style-02 bg-2">
                                 <div class="slider-progress"></div>
                                 <div class="slider-content">
-                                    <h5>Siêu giảm giá <span>Black Friday</span>Chỉ một ngày duy nhất</h5>
+                                    <!-- <h5>Siêu giảm giá <span>Black Friday</span>Chỉ một ngày duy nhất</h5>
                                     <h2>Đặc quyền Techpro Shop</h2>
-                                    <h3>Giá chỉ từ <span>9.990.000VNĐ</span></h3>
+                                    <h3>Giá chỉ từ <span>9.990.000VNĐ</span></h3> -->
                                     <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                        <a class="links" href="index.php?pg=product">Mua ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -46,11 +46,11 @@
                             <div class="single-slide align-center-left animation-style-01 bg-3">
                                 <div class="slider-progress"></div>
                                 <div class="slider-content">
-                                    <h5>Ưu đãi siêu hời<span>Giảm tới 10%</span>Trong tuần này</h5>
+                                    <!-- <h5>Ưu đãi siêu hời<span>Giảm tới 10%</span>Trong tuần này</h5>
                                     <h2>iPhone 15 Pro Max 256GB</h2>
-                                    <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3>
+                                    <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3> -->
                                     <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Mua ngay</a>
+                                        <a class="index.php?pg=product" href="shop-left-sidebar.html">Mua ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -62,15 +62,20 @@
                 <!-- Begin Li Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                     <div class="li-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/1_1.jpg" alt>
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/bn6.png" alt>
                         </a>
                     </div>
                     <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/1_2.jpg" alt>
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/bn7.png" alt>
                         </a>
                     </div>
+                    <!-- <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                        <a href="#">
+                            <img src="./view/layout/images/banner/bn8.png" alt>
+                        </a>
+                    </div> -->
                 </div>
                 <!-- Li Banner Area End Here -->
             </div>
@@ -163,8 +168,8 @@
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center">
                     <div class="single-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/1_3.jpg" alt="Li's Static Banner">
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/bn11.png" alt="Li's Static Banner">
                         </a>
                     </div>
                 </div>
@@ -172,20 +177,21 @@
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                     <div class="single-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/1_4.jpg" alt="Li's Static Banner">
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                    <div class="single-banner">
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/bn9.jpg" alt="Li's Static Banner">
                         </a>
                     </div>
                 </div>
                 <!-- Single Banner Area End Here -->
                 <!-- Begin Single Banner Area -->
-                <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/1_5.jpg" alt="Li's Static Banner">
-                        </a>
-                    </div>
-                </div>
+                
                 <!-- Single Banner Area End Here -->
             </div>
         </div>
@@ -228,9 +234,9 @@
             <div class="row">
                 <!-- Begin Li's Featured Banner Area -->
                 <div class="col-lg-3 text-center">
-                    <div class="single-banner featured-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/featured-banner.jpg" alt="Li's Featured Banner">
+                    <div class="single-bannerr featured-banner">
+                        <a href="index.php?pg=product">
+                            <img src="./view/layout/images/banner/banner14.jpg" alt="Li's Featured Banner">
                         </a>
                     </div>
                 </div>
@@ -240,7 +246,7 @@
                     <div class="featured-product pt-sm-30 pt-xs-30">
                         <div class="li-section-title">
                             <h2>
-                                <span>Featured Products</span>
+                                <span>Siêu sale vào ngày Black Friday</span>
                             </h2>
                         </div>
                         <div class="row">
@@ -249,13 +255,13 @@
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
                                             <a href="product-details.html">
-                                                <img alt src="./view/layout/images/featured-product/1.jpg">
+                                                <img alt src="./view/layout/images/product/dt-iphone-11-trang.jpg">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
                                             <div class="product-review">
                                                 <h5 class="manufacturer">
-                                                    <a href="shop-left-sidebar.html">Studio Dedasdassign</a>
+                                                    <a href="shop-left-sidebar.html">Điện thoại Iphone 15 Plus 256G</a>
                                                 </h5>
                                             </div>
                                             <div class="rating-box">
@@ -267,16 +273,15 @@
                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <h4><a class="featured-product-name" href="single-product.html">Mug Today
-                                                    is a good day</a></h4>
+                                            <h4><a class="featured-product-name" href="single-product.html">Chỉ trong ngày hôm nay</a></h4>
                                             <div class="featured-price-box">
-                                                <span class="new-price new-price-2">$71.80</span>
-                                                <span class="old-price">$77.22</span>
-                                                <span class="discount-percentage">-7%</span>
+                                                <span class="new-price new-price-2">35.000.000đ</span>
+                                                <span class="old-price">36.000.000đ</span>
+                                                <!-- <span class="discount-percentage">-7%</span> -->
                                             </div>
                                             <div class="featured-product-action">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                    <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
@@ -289,13 +294,13 @@
                                     <div class="featured-pro-wrapper">
                                         <div class="product-img">
                                             <a href="product-details.html">
-                                                <img alt src="./view/layout/images/featured-product/1.jpg">
+                                                <img alt src="./view/layout/images/product/sm-xiaomi-nau.jpg">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
                                             <div class="product-review">
                                                 <h5 class="manufacturer">
-                                                    <a href="shop-left-sidebar.html">Studio Design</a>
+                                                    <a href="shop-left-sidebar.html">Đồng hồ Xixaomi</a>
                                                 </h5>
                                             </div>
                                             <div class="rating-box">
@@ -307,14 +312,13 @@
                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <h4><a class="featured-product-name" href="single-product.html">Mug Today
-                                                    is a good day</a></h4>
+                                            <h4><a class="featured-product-name" href="single-product.html">Chỉ trong ngày hôm nay</a></h4>
                                             <div class="featured-price-box">
-                                                <span class="new-price">$71.80</span>
+                                                <span class="new-price">9.900.00đ</span>
                                             </div>
                                             <div class="featured-product-action">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                    <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
@@ -380,15 +384,15 @@
                     <!-- Li's Static Home Image Area End Here -->
                     <!-- Begin Li's Static Home Content Area -->
                     <div class="li-static-home-content">
-                        <p>Siêu sale<span>Giảm 20%</span>Trong 3 ngày</p>
+                        <!-- <p>Siêu sale<span>Giảm 20%</span>Trong 3 ngày</p>
                         <h2>Sản phẩm nổi bật</h2>
                         <h2>Tai nghe Bluetooth AirPods Pro Gen 2 MagSafe Charge (USB-C) Apple MTJV3 </h2>
                         <p class="schedule">
                             Giá chỉ từ
                             <span> 5.599.000VNĐ</span>
-                        </p>
+                        </p> -->
                         <div class="default-btn">
-                            <a href="shop-left-sidebar.html" class="links">Mua ngay</a>
+                            <a href="index.php?pg=product" class="links">Mua ngay</a>
                         </div>
                     </div>
                     <!-- Li's Static Home Content Area End Here -->

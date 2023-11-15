@@ -456,18 +456,20 @@ textarea:focus {
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(./images/slider/1.jpg);
+	background-image: url(./images/slider/sl1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: cover;
-	min-height: 475px;
+	background-size:100% ;
+	min-height: 400px;
 	width: 100%;
 }
 .bg-2 {
-	background-image: url(./images/slider/2.jpg);
+	background-image: url(./images/slider/sl7.png);
+	background-size:100% ;
 }
 .bg-3 {
-	background-image: url(./images/slider/3.jpg);
+	background-image: url(./images/slider/sl6.jpg);
+	background-size:100% ;
 }
 /*Home Two | Slider Background Image*/
 .bg-4, .bg-5, .bg-6 {
@@ -2406,7 +2408,6 @@ textarea:focus {
 .add-actions-link {
 	display: inline-block;
 	margin-top: 24px;
-	padding-top: 20px;
 	-webkit-transition: all 300ms ease-in 0s;
 	transition: all 300ms ease-in 0s;
 	width: 100%;
@@ -2659,9 +2660,58 @@ textarea:focus {
 	transform: translate3d(0,0,0);
 }
 .li-banner > a > img, .single-banner > a > img {
-			/* height: 130px; */
+			/* height: 500px; */
 			object-fit: cover;
 }
+/* ////// */
+.li-bannerr {
+	position: relative;
+	overflow: hidden;
+}
+.li-bannerr > a, .single-bannerr > a, .featured-banner a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+.li-bannerr > a > img, .single-bannerr > a > img{
+	height: 500px;
+	object-fit: cover;
+}
+.li-bannerr:hover > a:before, .single-bannerr:hover > a:before {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.single-bannerr > a::before {
+	position: absolute;
+	content: "";
+	top: 15px;
+	right: 15px;
+	bottom: 15px;
+	left: 15px;
+	border: 1.5px solid #0C2F4E;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: opacity 0.35s,transform 0.35s;
+	-moz-transition: opacity 0.35s,transform 0.35s;
+	-ms-transition: opacity 0.35s,transform 0.35s;
+	-o-transition: opacity 0.35s,transform 0.35s;
+	transition: opacity 0.35s,transform 0.35s;
+	-webkit-transform: translate3d(-10px,0,0);
+	-moz-transform: translate3d(-10px,0,0);
+	-ms-transform: translate3d(-10px,0,0);
+	-o-transform: translate3d(-10px,0,0);
+	transform: translate3d(-10px,0,0);
+}
+.single-bannerr img {
+	width: 100%;
+  }
 /*----------------------------------------*/
 /*  2.6 Li's Laptop Features
 /*----------------------------------------*/
@@ -2727,9 +2777,9 @@ textarea:focus {
 /*  2.7 Li's Static Home Banner
 /*----------------------------------------*/
 .li-static-home-image {
-	background-image: url(images/bg-banner/1.jpg);
+	background-image: url(./images/slider/bgbn2.jpg);
 	background-size: cover;
-	height: 400px;
+	height: 180px;
 	background-repeat: no-repeat;
 }
 .li-static-home-content {
@@ -5650,5 +5700,30 @@ span.required {
 .ui-accordion-header-icon{
 	display: none;
 }
+/* sưa button login */
+.default-btn input{
+	background: #0C2F4E;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 50px;
+    position: relative;
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease-in-out 0s;
+    width: 150px;
+	cursor: pointer;
+	margin-left: 20px;
+	border-radius: 5px;
+	padding: 13px 20px;
 
+}
+.default-btn input:hover{
+	background: #242424;
+    color: #ffffff;}
 
+.thongbao h9{
+	margin-left: 40px;
+	
+}
+/* row */
