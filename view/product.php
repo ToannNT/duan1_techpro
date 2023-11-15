@@ -1,8 +1,11 @@
 <?php
     $html_dssp = show_dssp($dssp_all);
+<<<<<<< Updated upstream
     // $html_showdm = show_dsdm($dsdm);
 
     echo var_dump($dsdm);
+=======
+>>>>>>> Stashed changes
 ?>
 <!-- Header Area End Here -->
             <!-- Begin Li's Breadcrumb Area -->
@@ -645,7 +648,14 @@
                                     <div class="categori-checkbox">
                                         <form action="">
                                             <ul>    
+<<<<<<< Updated upstream
                                                 <?=$html_showdm?>
+=======
+                                                <li><input type="checkbox" value="dienthoai" name="product-categori"><a href="#">Điện Thoại</a></li>
+                                                <li><input type="checkbox" value="laptop" name="product-categori"><a href="#">Máy tính</a></li>
+                                                <li><input type="checkbox" value="tablet" name="product-categori"><a href="#">Máy tính bảng</a></li>
+                                                <li><input type="checkbox" value="smartw" name="product-categori"><a href="#">Đồng hồ thông minh</a></li>
+>>>>>>> Stashed changes
                                             </ul>
                                         </form>
                                     </div>
@@ -716,7 +726,10 @@
             </div>
             <!-- Content Wraper Area End Here -->
             <!-- Begin Footer Area -->
+<<<<<<< Updated upstream
             <script src="js/jquery-1.10.2.min.js"></script>
             <script src="js/jquery-ui.js"></script>
 
             
+=======
+>>>>>>> Stashed changes
