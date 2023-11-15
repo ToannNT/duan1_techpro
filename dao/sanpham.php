@@ -88,6 +88,7 @@ function show_SP($dssp)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <a href="'.$link.'">
 =======
@@ -129,6 +130,9 @@ function show_SP($dssp)
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> parent of 86c51e6 (diem)
+=======
+                <a href="index.php?pg=productdetail&idproduct=' . $id . '">
+>>>>>>> parent of e7a2125 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
                     <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
@@ -222,6 +226,7 @@ function get_dssp_laptop($limit)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 86c51e6 (diem)
@@ -237,6 +242,8 @@ function get_Sp_relate($iddm, $id)
     return pdo_query($sql, $iddm, $id);
 }
 >>>>>>> parent of 86c51e6 (diem)
+=======
+>>>>>>> parent of e7a2125 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 function get_dssp_suggest($limit)
 {
     $sql = "SELECT * FROM product  ORDER BY id DESC LIMIT " . $limit;

@@ -8,6 +8,7 @@
         // echo var_dump($dsdanhmuc_all);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         ?>
 =======
     <!-- Begin Slider With Banner Area -->
@@ -87,6 +88,9 @@
                     <div class="li-product-tab">
                         <ul class="nav li-product-menu">
 >>>>>>> parent of 86c51e6 (diem)
+=======
+        ?>
+>>>>>>> parent of e7a2125 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 
       <!-- Begin Slider With Banner Area -->
       <div style="margin-top: 20px;" class="slider-with-banner">
