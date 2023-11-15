@@ -38,15 +38,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/product.php";
             break;
         case 'productdetail':
-            if(isset($_GET['idpro'])){
-                $id=$_GET['idpro'];
-                $show_Sp_detail=get_Sp_Detail($id);
-                $iddm=$show_Sp_detail['id_catalog'];
-                $show_relate=get_Sp_relate( $iddm,$id );
-                require_once "view/productdetail.php";
-            }else{
-                include_once "view/home.php";
-            }
+            require_once "view/productdetail.php";
             break;
         case 'contact':
             require_once "view/contact.php";
