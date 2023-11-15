@@ -87,6 +87,7 @@ function show_SP($dssp)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <a href="'.$link.'">
 =======
@@ -122,6 +123,9 @@ function show_SP($dssp)
 =======
                 <a href="index.php?pg=productdetail&idproduct=' . $id . '">
 >>>>>>> parent of e7a2125 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
+=======
+                <a href="index.php?pg=productdetail">
+>>>>>>> parent of 86c51e6 (diem)
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> parent of 86c51e6 (diem)
@@ -217,7 +221,10 @@ function get_dssp_laptop($limit)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 86c51e6 (diem)
 function get_Sp_Detail($id)
 {
     $sql = "SELECT * FROM product where id=?";
@@ -338,6 +345,7 @@ function show_dssp($dssp_sp)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 
 function get_dssp($limit)
@@ -396,6 +404,8 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
+=======
+>>>>>>> parent of 86c51e6 (diem)
 =======
 >>>>>>> parent of 86c51e6 (diem)
 =======
