@@ -1,14 +1,5 @@
 <?php
     extract($show_Sp_detail);
-    if ($giamgia > 0) {
-        $gia_sp = '
-            <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
-            <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-            <span class="discount-percentage">-7% nè</span>
-        ';
-    } else {
-        $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
-    }
 ?>
 <!-- Begin Li's Breadcrumb Area -->
 <div class="breadcrumb-area">
@@ -101,8 +92,8 @@
                                 <li class="review-item"><a href="#">Write Review</a></li>
                             </ul>
                         </div> -->
-                        <div class="price-box">
-                            <?=$gia_sp?>
+                        <div class="price-box pt-20">
+                            <span class="new-price new-price-2"><?=number_format($giamgia, 0, '.', '.')?></span>
                         </div>
                         <div class="product-desc">
                             <p>

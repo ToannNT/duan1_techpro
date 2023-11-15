@@ -43,7 +43,7 @@
                             </div>
                             <!-- Single Slide Area End Here -->
                             <!-- Begin Single Slide Area -->
-                            <div class="single-slide align-center-left animation-style-01">
+                            <div class="single-slide align-center-left animation-style-01 bg-3">
                                 <div class="slider-progress"></div>
                                 <div class="slider-content">
                                     <h5>Ưu đãi siêu hời<span>Giảm tới 10%</span>Trong tuần này</h5>
