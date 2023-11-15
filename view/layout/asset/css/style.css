@@ -456,7 +456,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(./images/slider/1.jpg);
+	background-image: url(./images/slider/4.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -464,10 +464,10 @@ textarea:focus {
 	width: 100%;
 }
 .bg-2 {
-	background-image: url(./images/slider/2.jpg);
+	background-image: url(./images/slider/5.jpg);
 }
 .bg-3 {
-	background-image: url(./images/slider/3.jpg);
+	background-image: url(./images/slider/6.jpg);
 }
 /*Home Two | Slider Background Image*/
 .bg-4, .bg-5, .bg-6 {
@@ -479,7 +479,7 @@ textarea:focus {
 	width: 100%;
 }
 .bg-5 {
-	background-image: url(./images/slider/5.jpg);
+	background-image: url(./images/slider/banner5.jpg);
 }
 .bg-6 {
 	background-image: url(./images/slider/6.jpg);
@@ -2426,15 +2426,14 @@ textarea:focus {
 .add-actions-link li.add-cart {
 	float: left;
 	margin: 0;
-	background: #0C2F4E;
-	/* border: 1px solid #e1e1e1; */
+	background: #eef0f1;
+	border: 1px solid #e1e1e1;
 	transition: all 0.3s ease-in-out;
-	width: 115px;
+	width: 120px;
 }
 .add-actions-link li:hover {
-	background: #305173;
-	
-	/* border-color: #0C2F4E; */
+	background: #0C2F4E;
+	border-color: #0C2F4E;
 }
 .add-actions-link li a {
 	color: #a4a4a4;
@@ -2448,11 +2447,11 @@ textarea:focus {
 	transition: all 300ms ease-in 0s;
 }
 .add-actions-link li.add-cart.active a {
-	color: #ffffff;
+	color: #242424;
 }
 .add-actions-link li:hover a, 
 .add-actions-link li.add-cart:hover a {
-	color: #ffffff;
+	color: #242424;
 }
 .add-actions-link li.add-cart > a {
 	color: #a4a4a4;
@@ -2728,7 +2727,7 @@ textarea:focus {
 /*  2.7 Li's Static Home Banner
 /*----------------------------------------*/
 .li-static-home-image {
-	background-image: url(images/bg-banner/1.jpg);
+	background-image: url(./view/layout/images/product/banner1.jpg);
 	background-size: cover;
 	height: 400px;
 	background-repeat: no-repeat;
@@ -3493,7 +3492,7 @@ li.right-menu .cat-mega-menu-2 > li {
 	padding: 0;
 }
 .shop-add-action .add-actions-link li.add-cart {
-	margin: 0 0 25px;
+	margin: 0 0 25px;;
 }
 .shop-add-action .add-actions-link li.wishlist, 
 .shop-add-action .add-actions-link li:last-child {
@@ -4006,7 +4005,7 @@ thead {
 	line-height: 23px;
 	text-transform: capitalize;
 	font-weight: 700;
-	margin-bottom: 30px;
+	margin-left: 17px;
 }
 .login-form {
 	margin-top: 50px;
@@ -5651,5 +5650,27 @@ span.required {
 .ui-accordion-header-icon{
 	display: none;
 }
+/* button login */
+.default-btn input{
+	background: #0C2F4E none repeat scroll 0 0;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 50px;
+    position: relative;
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease-in-out 0s;
+    width: 150px;
+	cursor: pointer;
+	margin-left: 20px;
 
+}
+.default-btn input:hover{
+	background-color: #00a9da;
+}
 
+.thongbao h9{
+	margin-left: 40px;
+	margin-bottom: 20px;
+}

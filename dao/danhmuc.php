@@ -91,11 +91,11 @@ function dsdm_catalog()
 //     return pdo_query($sql);
 // }
 
-// function get_follow_page($id)
-// {
-//     $sql = "SELECT ten_loai FROM danhmuc WHERE id=?";
-//     return pdo_query_value($sql, $id);
-// }
+function get_follow_page($id)
+{
+    $sql = "SELECT ten_loai FROM danhmuc WHERE id=?";
+    return pdo_query_value($sql, $id);
+}
 
 
 

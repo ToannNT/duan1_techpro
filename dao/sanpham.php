@@ -76,7 +76,7 @@ function show_SP($dssp)
         <!-- single-product-wrap start -->
         <div class="single-product-wrap">
             <div class="product-image">
-                <a href="index.php?pg=productdetail">
+                <a href="'.$link.'">
                     <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
@@ -221,14 +221,12 @@ function get_dssp_laptop($limit)
     return pdo_query($sql);
 }
 
-function get_Sp_Detail($id)
-{
+function get_Sp_Detail($id){
     $sql = "SELECT * FROM product where id=?";
     return pdo_query_one($sql, $id);
 }
 
-function get_Sp_relate($iddm, $id)
-{
+function get_Sp_relate( $iddm,$id ){
     $sql = "SELECT * FROM product where id_catalog=? AND id<>? ORDER BY id DESC limit 4";
     return pdo_query($sql, $iddm, $id);
 }
@@ -291,7 +289,7 @@ function show_dssp($dssp_sp)
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
-                            <a href="index.php?pg=productdetail&idproduct=' . $id . '">
+                            <a href="single-product.html">
                             <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                             </a>
                             <span class="sticker">New</span>
@@ -331,13 +329,12 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
-function show_dsdm($dsdm)
-{
-    $html_dsdm = '';
-    foreach ($dsdm as $value) {
+function show_dsdm($dsdm){
+    $html_dsdm= '';
+    foreach ($dsdm as $value){
         extract($value);
-        $html_dsdm .= '
-            <li><input type="checkbox" class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="#">' . $ten_dm . '</a></li>
+        $html_dsdm.= '
+            <li><input type="checkbox" class="common_selector catalog" value="'.$ten_dm.'" name="product-categori"><a href="#">'.$ten_dm.'</a></li>
         ';
     }
     return $html_dsdm;
