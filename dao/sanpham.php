@@ -77,11 +77,15 @@ function show_SP($dssp)
         <div class="single-product-wrap">
             <div class="product-image">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <a href="'.$link.'">
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> Stashed changes
+=======
+                <a href="index.php?pg=productdetail">
+>>>>>>> parent of 86c51e6 (diem)
 =======
                 <a href="index.php?pg=productdetail">
 >>>>>>> parent of 86c51e6 (diem)
@@ -301,7 +305,7 @@ function show_dssp($dssp_sp)
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
-                            <a href="single-product.html">
+                            <a href="index.php?pg=productdetail&idproduct=' . $id . '">
                             <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                             </a>
                             <span class="sticker">New</span>
@@ -341,6 +345,7 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 
 function get_dssp($limit)
@@ -399,6 +404,8 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
+=======
+>>>>>>> parent of 86c51e6 (diem)
 function show_dsdm($dsdm)
 {
     $html_dsdm = '';
