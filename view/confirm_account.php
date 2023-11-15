@@ -56,7 +56,13 @@
                                             <label for="#">Địa chỉ: </label>
                                             <input type="text" id="diachi" value="<?=$diachi?>" name="diachi">
                                         </div>
-                                        <h5 style="color:red">Cập nhật thông tin thành công</h5>
+                                        <div class="thongbao">
+                                        <h5 style="color:#0C2F4E">Cập nhật thông tin thành công</h5><br>
+                                        </div>
+                                        <div class="default-btn-thaydoi">
+                                            <input type="hidden" name="id" value="<?=$id?>">
+                                            <input type="submit"  name="capnhat" value="Lưu thay đổi">
+                                        </div>
 
                                     </div>
                                     </form>
