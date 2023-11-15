@@ -782,7 +782,7 @@ textarea:focus {
 }
 .product-area .owl-carousel .owl-stage-outer {
 	margin: 0 0 -100px;
-	padding: 0 0 85px;
+	padding: 20px 0 75px;
 	position: relative;
 }
 /*Special Product Active Box Shadow*/
@@ -2241,13 +2241,13 @@ textarea:focus {
 .product-image > span.sticker {
 	background: #0363cd;
 	border-radius: 100%;
-	color: #fff;
-	right: 15px;
-	position: absolute;
-	top: 20px;
-	z-index: 99;
-	height: 40px;
-	width: 40px;
+    color: #fff;
+    right: -10px;
+    position: absolute;
+    top: -27px;
+    z-index: 99;
+	height: 37px;
+    width: 37px;
 	line-height: 40px;
 	text-align: center;
 	text-transform: uppercase;
@@ -2258,13 +2258,12 @@ textarea:focus {
 	background: rgb(245, 5, 5);
 	border-radius: 100%;
 	color: #fff;
-	right: 15px;
 	position: absolute;
-	top: 20px;
-	left: 0px;
+	top: -27px;
+	left: -10px;
 	z-index: 99;
-	height: 40px;
-	width: 40px;
+    height: 37px;
+    width: 37px;
 	line-height: 40px;
 	text-align: center;
 	text-transform: uppercase;

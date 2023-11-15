@@ -34,17 +34,24 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'product':
             $dssp_all = get_dssp(12);
-            // $dsdm = get_dsdm(4);
+            $dsdm = dsdm_catalog();
+            if (isset($_GET['idcatalog'])) {
+                $idcatalog = $_GET['idcatalog'];
+                $dsbrandne = dsdm_brand_product($idcatalog);
+            } else {
+                $dsbrandne = dsdm_brand_product(1);
+            }
+
             require_once "view/product.php";
             break;
         case 'productdetail':
-            if(isset($_GET['idpro'])){
-                $id=$_GET['idpro'];
-                $show_Sp_detail=get_Sp_Detail($id);
-                $iddm=$show_Sp_detail['id_catalog'];
-                $show_relate=get_Sp_relate( $iddm,$id );
+            if (isset($_GET['idpro'])) {
+                $id = $_GET['idpro'];
+                $show_Sp_detail = get_Sp_Detail($id);
+                $iddm = $show_Sp_detail['id_catalog'];
+                $show_relate = get_Sp_relate($iddm, $id);
                 require_once "view/productdetail.php";
-            }else{
+            } else {
                 include_once "view/home.php";
             }
             break;

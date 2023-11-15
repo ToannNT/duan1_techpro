@@ -45,7 +45,7 @@ require_once 'pdo.php';
  */
 
 
-
+// show menu headerrrrrrrrrrrrr
 function show_DM($dsdm_catalog, $dsdm_brand)
 {
     $i = 1;
@@ -72,17 +72,107 @@ function show_DM($dsdm_catalog, $dsdm_brand)
     return $show_all;
 }
 
+
+
+
+// show filter trang productttttttttttttttttttttttttttttt
+
+function show_dsdm_product($dsdm)
+{
+    $checked = "checked";
+    $html_dsdm = '
+    <li>
+    <input type="checkbox"';
+    if (!isset($_GET['idcatalog'])) {
+        $html_dsdm .= $checked;
+    } else {
+        $html_dsdm .= "";
+    }
+    $html_dsdm .= ' class="common_selector catalog" value="#" name="product-categori"><a href="#">Tất cả</a>
+    </li>
+    ';
+    foreach ($dsdm as $value) {
+        extract($value);
+        $link = 'index.php?pg=product&idcatalog=' . $id . '';
+
+
+
+        $html_dsdm .= '
+            <li>
+            <input type="checkbox"';
+
+        if (isset($_GET['idcatalog']) && ($_GET['idcatalog'] != "") && ($_GET['idcatalog'] == $id)) {
+            $html_dsdm .= $checked;
+        }
+        $html_dsdm .= ' class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="' . $link . '">' . $ten_dm . '</a>
+            </li>
+        ';
+    }
+    return $html_dsdm;
+}
+
+function show_dsbr_product($dsdm)
+{
+    $html_dsdm = '';
+    foreach ($dsdm as $value) {
+        extract($value);
+        $link = 'index.php?pg=product&idcatalog=' . $id_catalog . '&idbrand=' . $id . '';
+
+        $html_dsdm .= '
+            <li>
+            <input type="checkbox" class="common_selector catalog" value="' . $ten . '" name="product-categori"><a href="' . $link . '">' . $ten . '</a>
+            </li>
+        ';
+    }
+    return $html_dsdm;
+}
+
+
+
+
+
+
+// SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT Ở ĐÂY 
+
+
+
+//TRANG HOME
+function dsdm_catalog()
+{
+    $sql = "SELECT * FROM catalog ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
+
+
+// TRANG PRODUCT
 function dsdm_brand()
 {
     $sql = "SELECT * FROM brand ORDER BY id ASC";
     return pdo_query($sql);
 }
 
-function dsdm_catalog()
+
+// function dsdm_brand_product($idcatalog)
+// {
+//     $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id
+//      WHERE b.id_catalog = ?";
+
+//     return pdo_query($sql, $idcatalog);
+// }
+
+function dsdm_brand_product($idcatalog)
 {
-    $sql = "SELECT * FROM catalog ORDER BY id ASC";
+    $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id";
+
+    if ($idcatalog != "") {
+        $sql .= " WHERE b.id_catalog = " . $idcatalog;
+    }
+
     return pdo_query($sql);
 }
+
+
 
 
 // function dsdanhmuc()

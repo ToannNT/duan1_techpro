@@ -76,7 +76,7 @@ function show_SP($dssp)
         <!-- single-product-wrap start -->
         <div class="single-product-wrap">
             <div class="product-image">
-                <a href="index.php?pg=productdetail">
+                <a href="' . $link . '">
                     <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
@@ -284,17 +284,48 @@ function get_dssp($limit)
 function show_dssp($dssp_sp)
 {
     $showhtml = '';
-    foreach ($dssp_sp as $dssp) {
-        extract($dssp);
+    foreach ($dssp_sp as $item) {
+        extract($item);
+        if ($banchay == 1) {
+            $itemHot = '
+            <span class="sticker__hot">Hot</span>
+            ';
+        } else {
+            $itemHot = '
+            <span class="sticker__hott"></span>
+            ';
+        }
+        if ($new == 1) {
+            $itemNew = '
+            <span class="sticker">Mới</span>
+            ';
+        } else {
+            $itemNew = '
+            <span class="stickerr"></span>
+            ';
+        }
+
+        if ($giamgia > 0) {
+            $gia_sp = '
+                <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
+                <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
+                <span class="discount-percentage">-7% nè</span>
+            ';
+        } else {
+            $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+        }
+        $link = 'index.php?pg=productdetail&idpro=' . $id;
+        $link = 'index.php?pg=productdetail&idpro=' . $id;
         $showhtml .= '
                     <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
-                            <a href="index.php?pg=productdetail&idproduct=' . $id . '">
+                            <a href="' . $link . '">
                             <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
                             </a>
-                            <span class="sticker">New</span>
+                            ' . $itemNew . '
+                            ' . $itemHot . '
                         </div>
                         <div class="product_desc">
                             <div class="product_desc_info">
@@ -313,9 +344,11 @@ function show_dssp($dssp_sp)
                                     </div>
                                 </div>
                                 <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
+
                                 <div class="price-box">
-                                    <span class="new-price">' . number_format($gia) . 'đ</span>
-                                </div>
+                                ' . $gia_sp . '
+                               </div>
+                               
                             </div>
                             <div class="add-actions">
                                 <ul class="add-actions-link">
@@ -331,17 +364,8 @@ function show_dssp($dssp_sp)
     }
     return $showhtml;
 }
-function show_dsdm($dsdm)
-{
-    $html_dsdm = '';
-    foreach ($dsdm as $value) {
-        extract($value);
-        $html_dsdm .= '
-            <li><input type="checkbox" class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="#">' . $ten_dm . '</a></li>
-        ';
-    }
-    return $html_dsdm;
-}
+
+
 // function get_dsdm(){
 //     $sql = "SELECT product.*, catalog.ten_dm
 //     FROM product
