@@ -134,10 +134,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             $dssp_phone = get_dssp_dienthoai(5);
             $dssp_laptop = get_dssp_laptop(5);
             $dssp_suggest = get_dssp_suggest(5);
-
-
-
-
             break;
     }
 } else {
