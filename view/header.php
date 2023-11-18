@@ -1,6 +1,6 @@
 <?php
 // echo var_dump($dsdanhmuc_all);
-$show_dm_dt = show_DM($dsdanhmuc_all);
+$show_dm_all = show_DM($ds_danhmuc, $ds_brand);
 
 
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
@@ -163,10 +163,12 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                         <div class="language ht-language">
                                             <ul class="ht-setting-list">
                                                 <li class="active">
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/1.jpg" alt>English</a>
+                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/1.jpg"
+                                                            alt>English</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg" alt>Français</a>
+                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg"
+                                                            alt>Français</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -198,7 +200,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                             <!-- Begin Header Middle Searchbox Area -->
                             <form action="#" class="hm-searchbox">
                                 <input type="text" placeholder="Enter your search key ...">
-                                <button class="li-btn" type="submit"><i style="color: white;" class="fa fa-search"></i></button>
+                                <button class="li-btn" type="submit"><i style="color: white;"
+                                        class="fa fa-search"></i></button>
                             </form>
                             <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
@@ -208,7 +211,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                     <li class="hm-wishlist">
                                         <a href="wishlist.html">
                                             <span class="cart-item-count wishlist-item-count">0</span>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
+                                                class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -227,7 +231,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             <ul class="minicart-product-list">
                                                 <li>
                                                     <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="./view/layout/images/product/small-size/5.jpg" alt="cart products">
+                                                        <img src="./view/layout/images/product/small-size/5.jpg"
+                                                            alt="cart products">
                                                     </a>
                                                     <div class="minicart-product-details">
                                                         <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -239,7 +244,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                                 </li>
                                                 <li>
                                                     <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="./view/layout/images/product/small-size/6.jpg" alt="cart products">
+                                                        <img src="./view/layout/images/product/small-size/6.jpg"
+                                                            alt="cart products">
                                                     </a>
                                                     <div class="minicart-product-details">
                                                         <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -252,7 +258,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             </ul>
                                             <p class="minicart-total">Tổng: <span>£80.00</span></p>
                                             <div class="minicart-button">
-                                                <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
+                                                <a href="shopping-cart.html"
+                                                    class="li-button li-button-fullwidth li-button-dark">
                                                     <span>View Full Cart</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">
@@ -285,25 +292,12 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                         <li class="themne megamenu-holder">
                                             <a href="index.php?pg=product">Sản phẩm</a>
                                             <ul class="megamenu hb-megamenu">
-                                                <li><a href="shop-left-sidebar.html">ĐIỆN THOẠI</a>
-                                                    <ul>
-                                                        <!-- <li><a href="shop-left-sidebar.html">iphone</a></li> -->
-                                                        <?= $show_dm_dt ?>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="shop-left-sidebar.html">LAPTOP</a>
-                                                    <ul>
-                                                        <li><a href="shop-left-sidebar.html">iphone</a></li>
-                                                        <li><a href="shop-right-sidebar.html">SamSung</a>
-                                                        </li>
-                                                        <li><a href="shop-list.html">Xiaomi</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">Shop List Left
-                                                                Sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                                Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="shop-left-sidebar.html">TABLET</a>
+
+
+                                                <?= $show_dm_all ?>
+
+
+                                                <!-- <li><a href="shop-left-sidebar.html">LAPTOP</a>
                                                     <ul>
                                                         <li><a href="shop-left-sidebar.html">iphone</a></li>
                                                         <li><a href="shop-right-sidebar.html">SamSung</a>
@@ -314,19 +308,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                                         <li><a href="shop-list-right-sidebar.html">Shop List Right
                                                                 Sidebar</a></li>
                                                     </ul>
-                                                </li>
-                                                <li><a href="shop-left-sidebar.html">SMARTWATCH</a>
-                                                    <ul>
-                                                        <li><a href="shop-left-sidebar.html">iphone</a></li>
-                                                        <li><a href="shop-right-sidebar.html">SamSung</a>
-                                                        </li>
-                                                        <li><a href="shop-list.html">Xiaomi</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">Shop List Left
-                                                                Sidebar</a></li>
-                                                        <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                                Sidebar</a></li>
-                                                    </ul>
-                                                </li>
+                                                </li> -->
+
                                             </ul>
                                         </li>
                                         <li><a href="index.php?pg=blog">Tin tức</a></li>

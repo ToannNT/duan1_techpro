@@ -44,40 +44,148 @@ require_once 'pdo.php';
  * @throws PDOException lỗi truy vấn
  */
 
-function show_DM($dsdm)
+
+// show menu headerrrrrrrrrrrrr
+function show_DM($dsdm_catalog, $dsdm_brand)
 {
+    $i = 1;
     $show_all = '';
-    foreach ($dsdm as $item) {
+    foreach ($dsdm_catalog as $item) {
         extract($item);
         $show_all .= '
-        <li><a href="shop-left-sidebar.html">' . $ten . '</a></li>
-        ';
+            <li><a href="index.php?pg=product&idcatalog=' . $id . '">' . $ten_dm . '</a>';
+
+        foreach ($dsdm_brand as $item) {
+            extract($item);
+            if ($id_catalog == $i) {
+                $show_all .= '
+                            <ul>
+                                <li><a href="index.php?pg=product&idcatalog=' . $i . '&idbrand=' . $id . '">' . $ten . '</a></li></li>
+                            </ul>
+                        ';
+            }
+        }
+        $show_all .= '</li>';
+        $i++;
     }
+
     return $show_all;
 }
 
 
-// for ($i = 1; $i < 5; $i++) {
-function dsdm_brand()
+
+
+// show filter trang productttttttttttttttttttttttttttttt
+
+function show_dsdm_product($dsdm)
 {
-    $sql = "SELECT * FROM brand WHERE id_catalog = 1 ORDER BY id ASC";
+    $checked = "checked";
+    $html_dsdm = '
+    <li>
+    <input type="checkbox"';
+    if (!isset($_GET['idcatalog'])) {
+        $html_dsdm .= $checked;
+    } else {
+        $html_dsdm .= "";
+    }
+    $html_dsdm .= ' class="common_selector catalog" value="#" name="product-categori"><a href="#">Tất cả</a>
+    </li>
+    ';
+    foreach ($dsdm as $value) {
+        extract($value);
+        $link = 'index.php?pg=product&idcatalog=' . $id . '';
+
+
+
+        $html_dsdm .= '
+            <li>
+            <input type="checkbox"';
+
+        if (isset($_GET['idcatalog']) && ($_GET['idcatalog'] != "") && ($_GET['idcatalog'] == $id)) {
+            $html_dsdm .= $checked;
+        }
+        $html_dsdm .= ' class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="' . $link . '">' . $ten_dm . '</a>
+            </li>
+        ';
+    }
+    return $html_dsdm;
+}
+
+function show_dsbr_product($dsdm)
+{
+    $html_dsdm = '';
+    foreach ($dsdm as $value) {
+        extract($value);
+        $link = 'index.php?pg=product&idcatalog=' . $id_catalog . '&idbrand=' . $id . '';
+
+        $html_dsdm .= '
+            <li>
+            <input type="checkbox" class="common_selector catalog" value="' . $ten . '" name="product-categori"><a href="' . $link . '">' . $ten . '</a>
+            </li>
+        ';
+    }
+    return $html_dsdm;
+}
+
+
+
+
+
+
+// SELECTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT Ở ĐÂY 
+
+
+
+//TRANG HOME
+function dsdm_catalog()
+{
+    $sql = "SELECT * FROM catalog ORDER BY id ASC";
     return pdo_query($sql);
 }
+
+
+
+// TRANG PRODUCT
+function dsdm_brand()
+{
+    $sql = "SELECT * FROM brand ORDER BY id ASC";
+    return pdo_query($sql);
+}
+
+
+// function dsdm_brand_product($idcatalog)
+// {
+//     $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id
+//      WHERE b.id_catalog = ?";
+
+//     return pdo_query($sql, $idcatalog);
 // }
+
+function dsdm_brand_product($idcatalog)
+{
+    $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id";
+
+    if ($idcatalog != "") {
+        $sql .= " WHERE b.id_catalog = " . $idcatalog;
+    }
+
+    return pdo_query($sql);
+}
+
+
 
 
 // function dsdanhmuc()
 // {
-//     $sql = "SELECT c.ten_dm, b.ten  FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog 
-//      WHERE b.id_catalog = 2 AND c.id = 2";
+//     $sql = "SELECT c.id, c.ten_dm , b.id_catalog, b.ten FROM catalog c INNER JOIN brand b ON c.id = b.id_catalog";
 //     return pdo_query($sql);
 // }
 
-function get_follow_page($id)
-{
-    $sql = "SELECT ten_loai FROM danhmuc WHERE id=?";
-    return pdo_query_value($sql, $id);
-}
+// function get_follow_page($id)
+// {
+//     $sql = "SELECT ten_loai FROM danhmuc WHERE id=?";
+//     return pdo_query_value($sql, $id);
+// }
 
 
 
