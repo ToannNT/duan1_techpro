@@ -61,7 +61,7 @@
 
 .content-col-left__infomation{
     justify-content: space-between;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
 }
 .content-col-left__infomation--input{
@@ -83,5 +83,28 @@
 .content-col-right{
     margin-bottom: 20px;
 }
+.default-btn-thaydoi input{
+	background: #0C2F4E;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 50px;
+    position: relative;
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease-in-out 0s;
+    width: 150px;
+	cursor: pointer;
+	/* margin-left: 20px; */
+	border-radius: 5px;
+	padding: 13px 20px;
+
+}
+.default-btn-thaydoi input:hover{
+	background: #242424;
+    color: #ffffff;}
+
+    
+
 
 
