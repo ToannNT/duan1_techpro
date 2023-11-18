@@ -8,7 +8,8 @@ require_once "dao/sanpham.php";
 require_once "dao/danhmuc.php";
 require_once "dao/giohang.php";
 require_once "dao/bill.php";
-require_once "dao/blog.php";
+
+
 
 //header
 $dsdanhmuc_all = dsdm_brand();
