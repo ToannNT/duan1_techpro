@@ -36,8 +36,7 @@ require_once 'pdo.php';
 
 
 
-function show_SP($dssp)
-{
+function show_SP($dssp){
     $show_dssp_all = '';
 
     foreach ($dssp as $item) {
@@ -70,14 +69,14 @@ function show_SP($dssp)
         } else {
             $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
         }
-        $link = 'index.php?pg=productdetail&idpro=' . $id;
+        // $link = 'index.php?pg=productdetail&idpro=' . $id;
         $show_dssp_all .= '
         <div class="col-lg-12">
         <!-- single-product-wrap start -->
         <div class="single-product-wrap">
             <div class="product-image">
-                <a href="' . $link . '">
-                    <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
+                <a href="index.php?pg=productdetail">
+                    <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
                 </a>
                 ' . $itemNew . '
                 ' . $itemHot . '
@@ -121,59 +120,6 @@ function show_SP($dssp)
     return $show_dssp_all;
 }
 
-// function showSp_relate($show_relate){
-//     $html_dssp_relate='';
-//     foreach ($show_relate as $item) {
-//         extract($item);
-//         $link= "index.php?page=productdetail&idpro=". $id;
-//         $html_dssp_relate .= '<div class="col-lg-12">
-//                                 <!-- single-product-wrap start -->
-//                                 <div class="single-product-wrap">
-//                                     <div class="product-image">
-//                                         <a href="single-product.html">
-//                                             <img src="./view/layout/images/product/large-size/'.$hinh.'" alt="">
-//                                         </a>
-//                                         <span class="sticker">New</span>
-//                                     </div>
-//                                     <div class="product_desc">
-//                                         <div class="product_desc_info">
-//                                             <div class="product-review">
-//                                                 <h5 class="manufacturer">
-//                                                     <a href="product-details.html">Graphic Corner</a>
-//                                                 </h5>
-//                                                 <div class="rating-box">
-//                                                     <ul class="rating">
-//                                                         <li><i class="fa fa-star-o"></i></li>
-//                                                         <li><i class="fa fa-star-o"></i></li>
-//                                                         <li><i class="fa fa-star-o"></i></li>
-//                                                         <li class="no-star"><i class="fa fa-star-o"></i></li>
-//                                                         <li class="no-star"><i class="fa fa-star-o"></i></li>
-//                                                     </ul>
-//                                                 </div>
-//                                             </div>
-//                                             <h4><a class="product_name" href="single-product.html">Accusantium
-//                                                     dolorem1</a></h4>
-//                                             <div class="price-box">
-//                                                 <span class="new-price">$46.80</span>
-//                                             </div>
-//                                         </div>
-//                                         <div class="add-actions">
-//                                             <ul class="add-actions-link">
-//                                                 <li class="add-cart active"><a href="#">Add to cart</a></li>
-//                                                 <li><a href="#" title="quick view" class="quick-view-btn"
-//                                                         data-toggle="modal" data-target="#exampleModalCenter"><i
-//                                                             class="fa fa-eye"></i></a></li>
-//                                                 <li><a class="links-details" href="wishlist.html"><i
-//                                                             class="fa fa-heart-o"></i></a></li>
-//                                             </ul>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <!-- single-product-wrap end -->
-//                             </div>';
-//     }
-//     return $html_dssp_relate;
-// }
 
 
 
@@ -221,17 +167,6 @@ function get_dssp_laptop($limit)
     return pdo_query($sql);
 }
 
-function get_Sp_Detail($id)
-{
-    $sql = "SELECT * FROM product where id=?";
-    return pdo_query_one($sql, $id);
-}
-
-function get_Sp_relate($iddm, $id)
-{
-    $sql = "SELECT * FROM product where id_catalog=? AND id<>? ORDER BY id DESC limit 4";
-    return pdo_query($sql, $iddm, $id);
-}
 function get_dssp_suggest($limit)
 {
     $sql = "SELECT * FROM product  ORDER BY id DESC LIMIT " . $limit;
@@ -275,57 +210,24 @@ function get_dssp_suggest($limit)
 
 // Trang sản phẩm
 
-function get_dssp($limit)
-{
+function get_dssp($limit){
     $sql = "SELECT * FROM product ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
 
-function show_dssp($dssp_sp)
-{
-    $showhtml = '';
-    foreach ($dssp_sp as $item) {
-        extract($item);
-        if ($banchay == 1) {
-            $itemHot = '
-            <span class="sticker__hot">Hot</span>
-            ';
-        } else {
-            $itemHot = '
-            <span class="sticker__hott"></span>
-            ';
-        }
-        if ($new == 1) {
-            $itemNew = '
-            <span class="sticker">Mới</span>
-            ';
-        } else {
-            $itemNew = '
-            <span class="stickerr"></span>
-            ';
-        }
-
-        if ($giamgia > 0) {
-            $gia_sp = '
-                <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
-                <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                <span class="discount-percentage">-7% nè</span>
-            ';
-        } else {
-            $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
-        }
-        $link = 'index.php?pg=productdetail&idpro=' . $id;
-        $link = 'index.php?pg=productdetail&idpro=' . $id;
-        $showhtml .= '
+function show_dssp($dssp_sp){
+    $showhtml='';
+        foreach ($dssp_sp as $dssp) {
+            extract($dssp);
+            $showhtml.= '
                     <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                     <!-- single-product-wrap start -->
                     <div class="single-product-wrap">
                         <div class="product-image">
-                            <a href="' . $link . '">
-                            <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
+                            <a href="single-product.html">
+                            <img src="./view/layout/images/product/'.$hinh.'" alt="Li s Product Image">
                             </a>
-                            ' . $itemNew . '
-                            ' . $itemHot . '
+                            <span class="sticker">New</span>
                         </div>
                         <div class="product_desc">
                             <div class="product_desc_info">
@@ -343,12 +245,10 @@ function show_dssp($dssp_sp)
                                         </ul>
                                     </div>
                                 </div>
-                                <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
-
+                                <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
                                 <div class="price-box">
-                                ' . $gia_sp . '
-                               </div>
-                               
+                                    <span class="new-price">'.number_format($gia).'đ</span>
+                                </div>
                             </div>
                             <div class="add-actions">
                                 <ul class="add-actions-link">
@@ -361,18 +261,12 @@ function show_dssp($dssp_sp)
                     </div>
                     <!-- single-product-wrap end -->
                 </div>';
-    }
+        }
     return $showhtml;
 }
 
 
-// function get_dsdm(){
-//     $sql = "SELECT product.*, catalog.ten_dm
-//     FROM product
-//     JOIN catalog ON product.id_catalog = catalog.id
-//     ORDER BY product.id DESC";
-//     return pdo_query($sql);
-// }
+
 
 //end trang sản phẩm
 

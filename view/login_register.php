@@ -58,7 +58,14 @@
                                             <label>Mật khẩu</label>
                                             <input class="mb-0" type="password" id="password" name="password" placeholder="Mật khẩu của bạn">
                                         </div>
-                                        
+                                        <h9 style="color:red">
+                                            <?php
+                                            if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
+                                                echo $_SESSION['tb_dangnhap'];
+                                                unset ($_SESSION['tb_dangnhap']);
+                                            }  
+                                            ?>
+                                        </h9>
                                         <div class="col-md-8">
                                             <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
                                                 <input type="checkbox" id="remember_me">
@@ -66,19 +73,9 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                            <a href="index.php?pg=ft_password">Quên mật khẩu?</a>
+                                            <a href="index.php?pg=ft_password">Bạn đã quên mật khẩu?</a>
                                         </div>
-                                        <div class="thongbao">
-                                            <h9 style="color:red">
-                                                    <?php
-                                                    if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
-                                                        echo $_SESSION['tb_dangnhap'];
-                                                        unset ($_SESSION['tb_dangnhap']);
-                                                    }  
-                                                    ?>
-                                                </h9>
-                                            </div>
-                                        <div class="default-btn">
+                                        <div class="col-md-12">
                                             <input class="name" name="dangnhap" type="submit" value="Đăng nhập">
                                         </div>
                                     </div>
@@ -114,7 +111,7 @@
                                             <label>Nhập lại mật khẩu</label>
                                             <input class="mb-0" type="password" id="repassword" name="repassword" placeholder="Mời nhập lại mật khẩu">
                                         </div>
-                                        <div class="default-btn">
+                                        <div class="col-12">
                                         <input class="name" type="submit" name="dangky" value="Đăng ký">
                                         </div>
                                     </div>

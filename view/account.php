@@ -60,7 +60,7 @@ if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){
                                             <label for="#">Chọn hình mới: </label>
                                             <input type="file" id="hinh" value="<?=$hinh?>" name="hinh">
                                         </div>
-                                        <div class="default-btn-thaydoi">
+                                        <div class="bnt">
                                             <input type="hidden" name="id" value="<?=$id?>">
                                             <input type="submit"  name="capnhat" value="Lưu thay đổi">
                                         </div>

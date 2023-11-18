@@ -133,8 +133,7 @@
                                </ul>
                                <ul class="social-link">
                                    <li class="twitter">
-                                       <a href="https://twitter.com/" data-toggle="tooltip" target="_blank"
-                                           title="Twitter">
+                                       <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
                                            <i class="fa fa-twitter"></i>
                                        </a>
                                    </li>
@@ -144,26 +143,22 @@
                                        </a>
                                    </li>
                                    <li class="google-plus">
-                                       <a href="https://www.plus.google.com/discover" data-toggle="tooltip"
-                                           target="_blank" title="Google Plus">
+                                       <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
                                            <i class="fa fa-google-plus"></i>
                                        </a>
                                    </li>
                                    <li class="facebook">
-                                       <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank"
-                                           title="Facebook">
+                                       <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
                                            <i class="fa fa-facebook"></i>
                                        </a>
                                    </li>
                                    <li class="youtube">
-                                       <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank"
-                                           title="Youtube">
+                                       <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
                                            <i class="fa fa-youtube"></i>
                                        </a>
                                    </li>
                                    <li class="instagram">
-                                       <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank"
-                                           title="Instagram">
+                                       <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank" title="Instagram">
                                            <i class="fa fa-instagram"></i>
                                        </a>
                                    </li>
@@ -263,18 +258,12 @@
                                    </div>
                                </div>
                                <div class="product-details-thumbs slider-thumbs-1">
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/1.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/2.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/3.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/4.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/5.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/6.jpg"
-                                           alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/1.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/2.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/3.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/4.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/5.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/6.jpg" alt="product image thumb"></div>
                                </div>
                            </div>
                            <!--// Product Details Left -->
@@ -336,14 +325,11 @@
                                            wishlist</a>
                                        <div class="product-social-sharing pt-25">
                                            <ul>
-                                               <li class="facebook"><a href="#"><i
-                                                           class="fa fa-facebook"></i>Facebook</a></li>
+                                               <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
                                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a>
                                                </li>
-                                               <li class="google-plus"><a href="#"><i
-                                                           class="fa fa-google-plus"></i>Google +</a></li>
-                                               <li class="instagram"><a href="#"><i
-                                                           class="fa fa-instagram"></i>Instagram</a></li>
+                                               <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                               <li class="instagram"><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
                                            </ul>
                                        </div>
                                    </div>
@@ -400,16 +386,6 @@
    <script src="./view/layout/asset/js/scrollUp.min.js"></script>
    <!-- Main/Activator js -->
    <script src="./view/layout/asset/js/main.js"></script>
-   <script>
-$(document).ready(function() {
-    function filter_data() {
-        $('.filter')
-
-    }
-
-
-});
-   </script>
    </body>
 
    <!-- index30:23-->
