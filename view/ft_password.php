@@ -1,3 +1,71 @@
+<?php
+
+use PHPMailer\PHPMailer\Exception;
+
+$loi="";
+if(isset($_POST["nutguiyeucau"])==true){
+    $email=$_POST['email'];
+    $conn = new PDO("mysql:host = localhost;dbname=duan1;charset=utf8", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql= "SELECT * FROM user WHERE email =?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute( [$email] );
+    $count= $stmt ->rowCount();
+    if($count == 0){
+        $loi="Email bạn nhập chưa được đăng ký";
+    } else{
+        $matkhaumoi = substr(md5(rand(0,9999999)),0 ,8);
+        $sql = "UPDATE user SET password = ? WHERE email = ?";
+        $stmt = $conn->prepare($sql);  
+        $stmt->execute( [$matkhaumoi, $email] );
+        GuiMatKhauMoi($email,$matkhaumoi); 
+    }
+}
+    ?>
+    <?php
+    function GuiMatKhauMoi($email,$matkhaumoi){
+        require "PHPMailer-master/src/PHPMailer.php"; 
+        require "PHPMailer-master/src/SMTP.php"; 
+        require 'PHPMailer-master/src/Exception.php'; 
+        $mail = new PHPMailer\PHPMailer\PHPMailer(true);//true:enables exceptions
+        try {
+            $mail->SMTPDebug = 0; //0,1,2: chế độ debug
+            $mail->isSMTP();  
+            $mail->CharSet  = "utf-8";
+            $mail->Host = 'smtp.gmail.com';  //SMTP servers
+            $mail->SMTPAuth = true; // Enable authentication
+            $mail->Username = 'thanhtoan28740@gmail.com'; // SMTP username
+            $mail->Password = 'wqrx wxbj kxer kdsk';   // SMTP password
+            $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
+            $mail->Port = 465;  // port to connect to                
+            $mail->setFrom('thanhtoan28740@gmail.com', 'TechPro' ); 
+            $mail->addAddress($email); 
+            $mail->isHTML(true);  // Set email format to HTML
+            $mail->Subject = 'Thư gửi mật khẩu mới';
+            $noidungthu = "<p>Mật khẩu của bạn đã được đặt lại. 
+                 Mật khẩu mới của bạn là {$matkhaumoi} </p>
+            "; 
+            $mail->Body = $noidungthu;
+            $mail->smtpConnect( array(
+                "ssl" => array(
+                    "verify_peer" => false,
+                    "verify_peer_name" => false,
+                    "allow_self_signed" => true
+                )
+            ));
+            $mail->send();
+            echo 'Đã gửi mail xong';
+        } catch (Exception $e) {
+            echo 'Error: ', $mail->ErrorInfo;
+        }
+    }
+
+
+?>
+
+
+
 <div class="breadcrumb-area">
                 <div class="container">
                     <div class="breadcrumb-content">
@@ -10,21 +78,22 @@
             </div>
             <div class="error404-area pt-30 pb-30">
                 <div class="formpass">
-                            <div class="forgotmk-wrapper text-center ptb-50 pt-xs-20">
+                            <form method="post" class="forgotmk-wrapper text-center ptb-50 pt-xs-20">
                                     <div class="text">
                                         <h5>Quên mật khẩu</h5>
                                     </div>
+                                    <?php if($loi!="") {?>
+                                    <div class="alert alert-danger"><?=$loi?></div>
+                                    <?php }?>
                                     <div class="text1 col-md-11 col-12 mb-20">
-                                    <label> Nhập Email :</label> 
-                                    <input class="mb-0" type="email" placeholder="Nhập Email">
+                                        <label> Nhập Email :</label> 
+                                        <input value="<?php if(isset($email)==true) echo $email?>" class="mb-0" id="email" name="email" type="email" placeholder="Nhập Email">
                                     </div>
                                     <div class="text2">
-                                    <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
-                                    <label>Đã có tài khoản?<a href=""> Đăng nhập ngay</a></label>
+                                        <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
+                                        <label>Đã có tài khoản?<a href=""> Đăng nhập ngay</a></label>
                                     </div>
-                                    <div class="confirm-button">
-                                        <a href="index.html">Xác nhận</a>
-                                    </div>
-                            </div>
-                </div>
+                                    <button type="submit" name="nutguiyeucau" value="nutgui" class="btn btn-primary mb-20" >Xác nhận</button>
+                             </form>
+                </div> 
             </div>
