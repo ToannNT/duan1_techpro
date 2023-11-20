@@ -33,11 +33,11 @@
                             <?php 
                                 foreach ($data_tintuc as $dm): 
                                 extract($dm);
-                                $link='index.php?pg=blog&iddm='.$madm; 
+                                $link='index.php?pg=blog&iddm='.$id; 
                                     
                             ?>  
                                 <ul class="li-blog-archive">
-                                    <li><a href="index.php?pg=blog&iddm=<?=$dm['madm']?>"><?= $dm['tendm'] ?></a></li>
+                                    <li><a href="index.php?pg=blog&iddm=<?=$dm['id']?>"><?= $dm['ten_dm'] ?></a></li>
                                 </ul>
                             <?php endforeach; ?>
                         </div>
@@ -56,8 +56,8 @@
                                         </a>
                                     </div>
                                     <div class="li-recent-post-des">
-                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['tieude'] ?></a></span>
-                                        <span class="li-post-date"><?= $tt['ngaydang'] ?></span>
+                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['mota'] ?></a></span>
+                                        <span class="li-post-date"><?= $tt['ngay'] ?></span>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
