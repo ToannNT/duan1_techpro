@@ -10,17 +10,17 @@
         $sql .= " LIMIT " .$start. "," .$limit;
     }
     $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchALL();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchALL();
 }
 // tương tác với trang CTSP
 function get_tintuc($id){
-    $sql = "SELECT * FROM blog p INNER JOIN catalog c ON p.madm = c.id WHERE p.id=".$id;
+    $sql = "SELECT * FROM blog p INNER JOIN catalog c ON p.madm = c.id WHERE p.id_blog=".$id;
     $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetch();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetch();
 }
 // phân trang 
 function count_tintuc(){

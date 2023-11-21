@@ -52,7 +52,7 @@
                                         </a>
                                     </div>
                                     <div class="li-recent-post-des">
-                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['mota'] ?></a></span>
+                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['tieude'] ?></a></span>
                                         <span class="li-post-date"><?= $tt['ngay'] ?></span>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="li-blog-content">
                                             <div class="li-blog-details">
-                                                <h3 class="li-blog-heading pt-25"><a href="#"><?=$data['CTSP']['mota']?></a></h3>
+                                                <h3 class="li-blog-heading pt-25"><a href="#"><?=$data['CTSP']['tieude']?></a></h3>
                                                 <div class="li-blog-meta"> 
                                                     <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                                 </div>

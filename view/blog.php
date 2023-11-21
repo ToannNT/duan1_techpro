@@ -56,7 +56,7 @@
                                         </a>
                                     </div>
                                     <div class="li-recent-post-des">
-                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['mota'] ?></a></span>
+                                        <span><a href="blog-details-left-sidebar.html"><?= $tt['tieude'] ?></a></span>
                                         <span class="li-post-date"><?= $tt['ngay'] ?></span>
                                     </div>
                                 </div>
@@ -67,7 +67,6 @@
                <!-- Li's Blog Sidebar Area End Here -->
                <!-- Begin Li's Main Content Area -->
                <div class="col-lg-9 order-lg-2 order-1 ">
-                   
                        <div class="col-lg-12 col-md-12">
                            <div class="li-blog-single-item pb-25 d-flex flex-wrap">
                             <?php 
@@ -85,12 +84,12 @@
                                 <?php foreach($data_tintuc as $tt):?>  
                                             <div class="col-lg-6 col-md-6">                                      
                                                 <div class="li-blog-banner">
-                                                    <a href="index.php?pg=blog_details&id=<?=$tt['id']?>">
+                                                    <a href="index.php?pg=blog_details&id=<?=$tt['id_blog']?>">
                                                         <img class="img-full"src="<?= $tt['hinh']?>" alt></a>
                                                 </div >
                                                 <div class="li-blog-content">
                                                                         <div class="li-blog-details">
-                                                                            <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?=$tt['id']?>"> <?=$tt['mota']?></a></h3>
+                                                                            <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?=$tt['id']?>"> <?=$tt['tieude']?></a></h3>
                                                                             <div class="li-blog-meta">
                                                                                 <a class="author" href="#"><i class="fa fa-user"></i>ADMIN</a>
                                                                                 <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
