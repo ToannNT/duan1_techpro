@@ -292,13 +292,13 @@ span.tooltip-content {
     max-width: 100%;
 }
 
-.nice-select .option:hover,
-.nice-select .option.focus,
-.nice-select .option.selected.focus {
+.nice-selectt .option:hover,
+.nice-selectt .option.focus,
+.nice-selectt .option.selected.focus {
     background-color: #0C2F4E;
 }
 
-.nice-select .option:hover {
+.nice-selectt .option:hover {
     color: #ffffff;
 }
 
@@ -1889,7 +1889,7 @@ textarea:focus {
     /* background-color: #00a9da; */
 }
 
-.hm-searchbox .nice-select.select-search-category {
+.hm-searchbox .nice-selectt.select-search-category {
     width: auto;
     line-height: 43px;
     height: 43px;
@@ -1927,7 +1927,7 @@ textarea:focus {
     font-size: 13px;
 }
 
-.hm-searchbox .nice-select.select-search-category::before {
+.hm-searchbox .nice-selectt.select-search-category::before {
     right: 30px;
     top: 25px;
     color: #7e7e7e;
@@ -5062,7 +5062,7 @@ thead {
     text-transform: capitalize;
 }
 
-.login-form .nice-select {
+.login-form .nice-selectt {
     width: 100%;
     background-color: transparent;
     border: 1px solid #999999;
@@ -5075,7 +5075,7 @@ thead {
     margin-bottom: 15px;
 }
 
-.login-form .nice-select::after {
+.login-form .nice-selectt::after {
     width: 6px;
     height: 6px;
     border-width: 1px;
@@ -5083,13 +5083,13 @@ thead {
     border-color: #7a7a7a;
 }
 
-.login-form .nice-select .current {
+.login-form .nice-selectt .current {
     color: #7a7a7a;
     display: block;
     line-height: 23px;
 }
 
-.login-form .nice-select .list {
+.login-form .nice-selectt .list {
     width: 100%;
 }
 
@@ -6297,7 +6297,7 @@ span.required {
     .shop-bar-inner {
         margin-bottom: 10px;
     }
-    .product-short .nice-select {
+    .product-short .nice-selectt {
         margin-bottom: 5px;
     }
 }
@@ -6339,7 +6339,7 @@ span.required {
     width: 100%;
 }
 
-.product-short .nice-select {
+.product-short .nice-selectt {
     border-radius: 0;
     color: #242424;
     font-size: 14px;
@@ -6350,12 +6350,12 @@ span.required {
 }
 
 @media only screen and (max-width: 767px) {
-    .product-short .nice-select {
+    .product-short .nice-selectt {
         width: 180px;
     }
 }
 
-.product-short .nice-select .list {
+.product-short .nice-selectt .list {
     border-radius: 0px;
     width: 100%;
     z-index: 99;
@@ -6373,7 +6373,7 @@ span.required {
     }
 }
 
-.product-short .nice-select .option {
+.product-short .nice-selectt .option {
     line-height: 30px;
     min-height: 30px;
 }
