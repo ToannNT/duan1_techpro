@@ -38,12 +38,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'product':
             $dssp_all = get_dssp(12);
             $dsdm = dsdm_catalog();
-            if (isset($_GET['idcatalog'])) {
-                $idcatalog = $_GET['idcatalog'];
-                $dsbrandne = dsdm_brand_product($idcatalog);
-            } else {
-                $dsbrandne = dsdm_brand_product(1);
-            }
+
+            $dsbrandne = dsdm_brand_product();
+
+
+
+            // if (isset($_POST['action'])) {
+            //     $dssp_filter = get_data_filter();
+            // } else {
+            //     $dssp_filter = get_data_filter();
+            // }
 
             require_once "view/product.php";
             break;

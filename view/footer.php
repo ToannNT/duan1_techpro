@@ -400,16 +400,9 @@
    <script src="./view/layout/asset/js/scrollUp.min.js"></script>
    <!-- Main/Activator js -->
    <script src="./view/layout/asset/js/main.js"></script>
-   <script>
-$(document).ready(function() {
-    function filter_data() {
-        $('.filter')
-
-    }
-
-
-});
-   </script>
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script src="./view/layout/asset/script.js"></script>
    </body>
 
    <!-- index30:23-->
