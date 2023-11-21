@@ -112,7 +112,7 @@ a:hover {
 }
 
 .logo-main {
-    width: 50%;
+    width: 60%;
 }
 
 a:focus,
@@ -3087,7 +3087,7 @@ textarea:focus {
 }
 
 .single-product-wrap:hover .add-actions {
-    transform: translateY(-150px);
+    transform: translateY(-79%);
     bottom: 0;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -4289,17 +4289,12 @@ li.right-menu .cat-mega-menu-2>li {
 }
 
 .featured-product-action {
-    position: relative;
+    /* position: relative;
     top: 20px;
     transition: all 0.5s ease-in-out;
     opacity: 0;
-    visibility: hidden;
-}
-
-.featured-pro-wrapper:hover .featured-product-action {
-    top: 0;
-    opacity: 1;
-    visibility: visible;
+    visibility: hidden; */
+    margin-top: 10px;
 }
 
 .featured-price-box {
