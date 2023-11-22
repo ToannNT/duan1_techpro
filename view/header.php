@@ -106,6 +106,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     <link rel="stylesheet" href="./view/layout/asset/css/bootstrap.min.css">
     <!-- Helper CSS -->
     <link rel="stylesheet" href="./view/layout/asset/css/helper.css">
+    <!-- Jquery-ui CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="./view/layout/asset/css/style.css">
     <!-- Responsive CSS -->
@@ -115,8 +117,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-        
+    
 </head>
 
 <body>

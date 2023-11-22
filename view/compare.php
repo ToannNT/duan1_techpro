@@ -41,7 +41,7 @@
                                     <td class="compare-column-productinfo col-6">
                                         <div class="compare-pdoduct-image d-flex flex-column">
                                             <a href="single-product.html">
-                                                 <img src="./view/layout/images/product/<?=$hinh1?>" alt="">
+                                                 <img class="col-6" src="./view/layout/images/product/<?=$hinh1?>" alt="">
                                             </a>
                                             <a href="cart.html" class="ho-button ho-button-sm">
                                                 <span>ADD TO CART</span>
@@ -51,7 +51,7 @@
                                     <td class="compare-column-productinfo col-6">
                                         <div class="compare-pdoduct-image d-flex flex-column" >
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/<?=$hinh2?>" alt="">
+                                                <img class="col-6" src="./view/layout/images/product/<?=$hinh2?>" alt="">
                                             </a>
                                             <a href="cart.html" class="ho-button ho-button-sm">
                                                 <span>ADD TO CART</span>
