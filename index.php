@@ -9,6 +9,8 @@ require_once "dao/danhmuc.php";
 require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
+require_once "dao/compare.php";
+
 
 
 //header
@@ -64,6 +66,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'contact':
             require_once "view/contact.php";
+            break;
+        case 'compare':
+            require_once "view/compare.php";
             break;
         case 'aboutus':
             require_once "view/aboutus.php";

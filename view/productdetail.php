@@ -387,6 +387,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <button class="sosanh mt-20" id="sosanh">So Sánh</button>
+                                    <input type="hidden" id="spss1" value="'.$id1.'">
+                                    <input type="hidden" id="spss2" value="'.$id.'">
                                     <!-- single-product-wrap end -->
                                 </div>';
                         }
