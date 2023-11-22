@@ -1,5 +1,6 @@
 <?php
     extract($show_Sp_detail);
+    $id1=$id;
     if ($giamgia > 0) {
         $gia_sp = '
             <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>

@@ -405,10 +405,6 @@
    <script src="./view/layout/asset/script.js"></script>
    <script>
 $(document).ready(function() {
-    function filter_data() {
-        $('.filter')
-
-    };
 
     $(".sosanh").click(function(){   
         var taikhoan= 'tài khoản';
