@@ -31,6 +31,11 @@ function update_user($hoten,$username, $password, $email, $gioitinh,$diachi, $sd
     $sql = "UPDATE user SET hoten=?, username=?,password=?,email=?,gioitinh=?,diachi=?,sdt=?, hinh=?,role=? WHERE id=?";
     pdo_execute($sql, $hoten, $username, $password,  $email,$gioitinh, $diachi, $sdt, $hinh, $role, $id);
 }
+function update_pass_user($password, $id)
+{
+    $sql = "UPDATE user SET password=? WHERE id=?";
+    pdo_execute($sql, $password, $id);
+}
 
 function get_user($id)
 {

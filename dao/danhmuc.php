@@ -1,6 +1,37 @@
 <?php
 require_once 'pdo.php';
 
+function get_Catalog(){
+    $sql="SELECT * FROM catalog";
+    return pdo_query($sql);
+}
+
+function get_Catalog_One($id){
+    $sql="SELECT * FROM catalog WHERE id=".$id;
+    return pdo_query_one($sql);
+}
+function catagory_add($stt,$name,$mota,$sethome){
+    $sql="INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
+    return pdo_execute($sql,$stt,$name,$mota,$sethome);
+}
+function delete_catalog($id){
+    $sql="DELETE FROM catalog WHERE id=".$id;
+    pdo_execute($sql);
+    // $dssp=get_dssp_suggest($id);
+    // // echo var_dump ($dssp);
+    // if(count($dssp) > 0){
+    //     $tb = "Danh muc nay hien co san pham ".count($dssp)." san pham. Ban khong duoc xoa!";
+    // }else{
+    //     pdo_execute($sql);
+    //     $tb = "";
+    // }
+    // return $tb;
+}
+
+function updateCatagory($id, $stt, $name, $mota, $sethome){
+    $sql = "UPDATE catalog SET stt=?, ten_dm=?, mota=?, sethome=?  WHERE id=".$id;
+    return pdo_execute($sql, $stt, $name, $mota, $sethome);
+}
 // /**
 //  * Thêm loại mới
 //  * @param String $ten_loai là tên loại
@@ -79,24 +110,32 @@ function show_DM($dsdm_catalog, $dsdm_brand)
 
 function show_dsdm_product($dsdm)
 {
-    // $checked = "checked";
-    $html_dsdm = '';
-    // if (!isset($_GET['idcatalog'])) {
-    //     $html_dsdm .= $checked;
-    // } else {
-    //     $html_dsdm .= "";
-    // }
-    // $html_dsdm .= ' class="common_selector catalog" value="#" name="product-categori"><a href="#">Tất cả</a>
-
+    $checked = "checked";
+    $html_dsdm = '
+    <li>
+    <input type="checkbox"';
+    if (!isset($_GET['idcatalog'])) {
+        $html_dsdm .= $checked;
+    } else {
+        $html_dsdm .= "";
+    }
+    $html_dsdm .= ' class="common_selector catalog" value="#" name="product-categori"><a href="#">Tất cả</a>
+    </li>
+    ';
     foreach ($dsdm as $value) {
         extract($value);
         $link = 'index.php?pg=product&idcatalog=' . $id . '';
 
+
+
         $html_dsdm .= '
             <li>
-            <input id="' . $id . '" type="checkbox" onclick="uncheckOthers_dm(this); uncheck_all_brand();"';
+            <input type="checkbox"';
 
-        $html_dsdm .= 'class="common_selector catalog checkbox_dm" value="' . $id . '" name="product-categori"><a href="' . $link . '">' . $ten_dm . '</a>
+        if (isset($_GET['idcatalog']) && ($_GET['idcatalog'] != "") && ($_GET['idcatalog'] == $id)) {
+            $html_dsdm .= $checked;
+        }
+        $html_dsdm .= ' class="common_selector catalog" value="' . $ten_dm . '" name="product-categori"><a href="' . $link . '">' . $ten_dm . '</a>
             </li>
         ';
     }
@@ -106,22 +145,18 @@ function show_dsdm_product($dsdm)
 function show_dsbr_product($dsdm)
 {
     $html_dsdm = '';
-    $i = 1;
     foreach ($dsdm as $value) {
         extract($value);
-        // $link = 'index.php?pg=product&idcatalog=' . $id_catalog . '&idbrand=' . $id . '';
+        $link = 'index.php?pg=product&idcatalog=' . $id_catalog . '&idbrand=' . $id . '';
+
         $html_dsdm .= '
-            <li class="' . $id_catalog . '">
-            <input  type="checkbox" onclick="uncheckOthers_br(this);" id="brand_ne' . $i . '" class="common_selector brand checkbox_br" value="' . $id . '" name="product-brand">
-            ' . $ten . '
+            <li>
+            <input type="checkbox" class="common_selector catalog" value="' . $ten . '" name="product-categori"><a href="' . $link . '">' . $ten . '</a>
             </li>
         ';
-        $i++;
     }
     return $html_dsdm;
 }
-
-
 
 
 
@@ -157,9 +192,13 @@ function dsdm_brand()
 //     return pdo_query($sql, $idcatalog);
 // }
 
-function dsdm_brand_product()
+function dsdm_brand_product($idcatalog)
 {
-    $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id ORDER BY id ASC";
+    $sql = "SELECT b.ten , b.id  , c.id as id_catalog FROM brand b INNER JOIN catalog c ON b.id_catalog = c.id";
+
+    if ($idcatalog != "") {
+        $sql .= " WHERE b.id_catalog = " . $idcatalog;
+    }
 
     return pdo_query($sql);
 }

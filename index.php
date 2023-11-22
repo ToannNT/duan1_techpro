@@ -8,8 +8,6 @@ require_once "dao/sanpham.php";
 require_once "dao/danhmuc.php";
 require_once "dao/giohang.php";
 require_once "dao/bill.php";
-require_once "dao/blog.php";
-require_once "dao/compare.php";
 
 
 
@@ -31,25 +29,45 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'sw_password':
             require_once "view/sw_password.php";
             break;
+        case 'changepassword':
+            // if(isset($_SESSION['id']) && isset($_SESSION['username'])){
+            //     if (isset($_POST['op']) && isset($_POST['np']) && isset($_POST['c_np'])) {
+            //         # code...
+            //     }
+            // }
+            if (isset($_POST["thaydoi"])){
+                $password = $_POST['op'];
+                $newpassword = $_POST['np'];
+                $repassword = $_POST['c_np'];
+                $id= $_SESSION['s_user']['id'];
+                // $checkvar = $conn->query("SELECT * FROM 'user' WHERE 'username' = '".$conn->real_escape_string($username)."' ")->fetch_array();
+                if ($password == "" || $newpassword == "" || $repassword == "") {
+                    $thongbao="Vui lòng nhập đầy đủ thông tin";
+                }else if($password != $_SESSION['s_user']['password']){
+                    echo $password;
+                    echo $_SESSION['s_user']['password'];
+                    $thongbao = "Mật khẩu hiện tại không chính xác";
+                }else if( $newpassword != $repassword){
+                    $thongbao = "Mật khẩu nhập lại không đúng";
+                }else{
+                    update_pass_user($newpassword, $id);
+                    $thongbaothanhcong = "Thành công";
+                }
+            }
+            include_once "view/changepassword.php";
+            break;
         case 'blog':
             require_once "view/blog.php";
-            break;
-        case 'blog_details':
-            require_once "view/blog_details.php";
             break;
         case 'product':
             $dssp_all = get_dssp(12);
             $dsdm = dsdm_catalog();
-
-            $dsbrandne = dsdm_brand_product();
-
-
-
-            // if (isset($_POST['action'])) {
-            //     $dssp_filter = get_data_filter();
-            // } else {
-            //     $dssp_filter = get_data_filter();
-            // }
+            if (isset($_GET['idcatalog'])) {
+                $idcatalog = $_GET['idcatalog'];
+                $dsbrandne = dsdm_brand_product($idcatalog);
+            } else {
+                $dsbrandne = dsdm_brand_product(1);
+            }
 
             require_once "view/product.php";
             break;
@@ -67,9 +85,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'contact':
             require_once "view/contact.php";
             break;
-        case 'compare':
-            require_once "view/compare.php";
-            break;
         case 'aboutus':
             require_once "view/aboutus.php";
         case 'login_register':
@@ -84,7 +99,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $sdt = $_POST["sdt"];
                 $password = $_POST["password"];
                 // xử lý
-                user_insert($hoten, $username, $email, $sdt, $password);
+                if ($username == null && $password == null) {
+                    $tb = "Cần nhập đủ thông tin";
+                    echo ''.$tb.'';
+                }else{
+                    user_insert($hoten, $username, $email, $sdt, $password);
+                }
             }
             include_once "view/login_register.php";
             break;
@@ -127,7 +147,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $gioitinh = $_POST["gioitinh"];
                 $diachi = $_POST["diachi"];
                 $sdt = $_POST["sdt"];
-                $hinh = $_POST["hinh"];
+                // $hinh = $_POST["hinh"];
                 $id = $_POST["id"];
                 $role = 0;
                 // xử lý

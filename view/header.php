@@ -65,21 +65,11 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>
-        <?php
-        if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
-            $pg = $_GET['pg'];
-            echo $pg;
-        } else {
-            echo "Home";
-        }
-        // }
-        ?>
-    </title>
+    <title>Home Version One || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./view/layout/images/menu/logo/logo_full.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./view/layout/images/favicon.png">
     <!-- Material Design Iconic Font-V2.2.0 -->
     <link rel="stylesheet" href="./view/layout/asset/css/material-design-iconic-font.min.css">
     <!-- Font Awesome -->
@@ -106,8 +96,6 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     <link rel="stylesheet" href="./view/layout/asset/css/bootstrap.min.css">
     <!-- Helper CSS -->
     <link rel="stylesheet" href="./view/layout/asset/css/helper.css">
-    <!-- Jquery-ui CSS -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="./view/layout/asset/css/style.css">
     <!-- Responsive CSS -->
@@ -117,7 +105,6 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
-    
 </head>
 
 <body>
@@ -176,10 +163,12 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                         <div class="language ht-language">
                                             <ul class="ht-setting-list">
                                                 <li class="active">
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/1.jpg" alt>English</a>
+                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/1.jpg"
+                                                            alt>English</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg" alt>Français</a>
+                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg"
+                                                            alt>Français</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -209,11 +198,10 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                         <!-- Begin Header Middle Right Area -->
                         <div class="wrappr-nav-mid col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                             <!-- Begin Header Middle Searchbox Area -->
-                            <form action="index.php?pg=product" method="post" class="hm-searchbox">
-                                <input type="text" id="search_product_name" placeholder="Nhập tên sản phẩm">
-                                <button class="li-btn" name="timkiem" type="submit">
-                                    <i style="color: white;" class="fa fa-search"></i>
-                                </button>
+                            <form action="#" class="hm-searchbox">
+                                <input type="text" placeholder="Enter your search key ...">
+                                <button class="li-btn" type="submit"><i style="color: white;"
+                                        class="fa fa-search"></i></button>
                             </form>
                             <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
@@ -223,7 +211,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                     <li class="hm-wishlist">
                                         <a href="wishlist.html">
                                             <span class="cart-item-count wishlist-item-count">0</span>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
+                                                class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -242,7 +231,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             <ul class="minicart-product-list">
                                                 <li>
                                                     <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="./view/layout/images/product/small-size/5.jpg" alt="cart products">
+                                                        <img src="./view/layout/images/product/small-size/5.jpg"
+                                                            alt="cart products">
                                                     </a>
                                                     <div class="minicart-product-details">
                                                         <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -254,7 +244,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                                 </li>
                                                 <li>
                                                     <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="./view/layout/images/product/small-size/6.jpg" alt="cart products">
+                                                        <img src="./view/layout/images/product/small-size/6.jpg"
+                                                            alt="cart products">
                                                     </a>
                                                     <div class="minicart-product-details">
                                                         <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -267,7 +258,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                             </ul>
                                             <p class="minicart-total">Tổng: <span>£80.00</span></p>
                                             <div class="minicart-button">
-                                                <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
+                                                <a href="shopping-cart.html"
+                                                    class="li-button li-button-fullwidth li-button-dark">
                                                     <span>View Full Cart</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">

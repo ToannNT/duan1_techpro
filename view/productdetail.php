@@ -1,6 +1,5 @@
 <?php
     extract($show_Sp_detail);
-    $id1=$id;
     if ($giamgia > 0) {
         $gia_sp = '
             <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
@@ -388,9 +387,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="sosanh mt-20" id="sosanh">So Sánh</button>
-                                    <input type="hidden" id="spss1" value="'.$id1.'">
-                                    <input type="hidden" id="spss2" value="'.$id.'">
                                     <!-- single-product-wrap end -->
                                 </div>';
                         }
