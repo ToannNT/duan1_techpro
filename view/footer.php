@@ -400,16 +400,23 @@
    <script src="./view/layout/asset/js/scrollUp.min.js"></script>
    <!-- Main/Activator js -->
    <script src="./view/layout/asset/js/main.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   <script src="./view/layout/asset/script.js"></script>
    <script>
 $(document).ready(function() {
-    function filter_data() {
-        $('.filter')
 
-    }
+    $(".sosanh").click(function(){   
+        var taikhoan= 'tài khoản';
+        var id1= $(this).parent().find("#spss1").val();
+        var id2= $(this).parent().find("#spss2").val();
+ 
+        window.location.href= 'http://localhost/duan1_techpro/index.php?pg=compare&idsp1=' + id1 + '&idsp2=' + id2;
+    
 
-
+    });
 });
-   </script>
+</script>
    </body>
 
    <!-- index30:23-->

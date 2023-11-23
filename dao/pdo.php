@@ -113,8 +113,3 @@ function pdo_query_value($sql)
         unset($conn);
     }
 }
-//  QUẢN LÝ DANH MỤC
-function detele($sql){
-    $conn = pdo_get_connection();
-    $conn -> exec($sql);
-}

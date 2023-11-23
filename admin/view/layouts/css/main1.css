@@ -2585,7 +2585,6 @@ fieldset:disabled a.btn {
   /* width: 100px; */
   font-weight: 600;
   letter-spacing: 1px;
-  margin-left: 15px;
 }
 .btn-cancel{
   background-color: rgb(255 197 197);
@@ -2593,7 +2592,6 @@ fieldset:disabled a.btn {
   /* width: 100px; */
   font-weight: 600;
   letter-spacing: 1px;
-  margin-left: 15px;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {

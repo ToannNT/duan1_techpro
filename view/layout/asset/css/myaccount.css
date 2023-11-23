@@ -78,7 +78,6 @@
     font-size: 14px;
     color: #7a7a7a;
     margin-bottom: 15px;
-    
 }
 
 .content-col-right{
@@ -99,9 +98,13 @@
 	/* margin-left: 20px; */
 	border-radius: 5px;
 	padding: 13px 20px;
+
 }
 .default-btn-thaydoi input:hover{
 	background: #242424;
     color: #ffffff;}
+
+    
+
 
 

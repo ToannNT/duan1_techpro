@@ -1,9 +1,3 @@
-<!-- <?php
-  extract($get_Cataloglist);
-  echo "<pre>";
-  print_r($get_Cataloglist);
-  echo "</pre>";
-?> -->
 <main class="app-content">
         <div class="app-title">
             <ul class="app-breadcrumb breadcrumb side">
@@ -26,13 +20,6 @@
                             </div>
                           </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
-                            <?php
-                              if(isset($tb)){
-                              echo "<h4 style= 'color: red'>".$tb."</h4>";
-                              // unset ($tb);
-                              // header ('location: index.php?pg=qldanhmuc');
-                              }
-                            ?>
                             <thead>
                                 <tr>
                                     <th width="10"><input type="checkbox" id="all"></th>
@@ -44,28 +31,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?php
-                                foreach ($get_Cataloglist as $item) {
-                                  extract($item);
-                                  // echo "<pre>";
-                                  // print_r($get_Cataloglist);
-                                  // echo "</pre>";
-                                  echo '<tr>
-                                            <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                                            <td>'.$stt.'</td>
-                                            <td>'.$ten_dm.'</td>
-                                            <td>'.$mota.'</td>
-                                            <td>'.$sethome.'</td>
-                                            <td><a href="index.php?pg=del&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                                    onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
-                                                </button>
-                                                <a href="index.php?pg=updateCatagory&id='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
-                                            </td>
-                                        </tr>';
-                                }
-                              ?>
-
-                                <!-- <tr>
+                                <tr>
+                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td>71309005</td>
+                                    <td>Bàn ăn gỗ Theresa</td>
+                                    <td><img src="/img-sanpham/theresa.jpg" alt="" width="100px;"></td>
+                                    <td>40</td>
+                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
+                                        </button>
+                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
+                      data-target="#ModalUP"><i class="fas fa-edit"></i></button>
+                                       
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                                     <td>61304005</td>
                                     <td>Bàn ăn Reno mặt đá</td>
@@ -93,7 +73,7 @@
 
                                       
                                     </td>
-                                </tr> -->
+                                </tr>
                             </tbody>
                         </table>
                     </div>

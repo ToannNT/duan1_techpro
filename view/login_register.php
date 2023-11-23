@@ -6,16 +6,6 @@
                             <form action="index.php?pg=login" method="post">
                                 <div class="login-form">
                                     <h4 class="login-title">Đăng nhập</h4>
-                                    <div class="thongbao">
-                                            <h9 style="color:red">
-                                                <?php
-                                                if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
-                                                    echo $_SESSION['tb_dangnhap'];
-                                                    unset ($_SESSION['tb_dangnhap']);
-                                                }  
-                                                ?>
-                                            </h9>
-                                        </div>
                                     <div class="row">
                                         <div class="col-md-12 col-12 mb-20">
                                             <label>Tên đăng nhập*</label>
@@ -35,6 +25,16 @@
                                         <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
                                             <a href="index.php?pg=ft_password">Quên mật khẩu?</a>
                                         </div>
+                                        <div class="thongbao">
+                                            <h9 style="color:red">
+                                                    <?php
+                                                    if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
+                                                        echo $_SESSION['tb_dangnhap'];
+                                                        unset ($_SESSION['tb_dangnhap']);
+                                                    }  
+                                                    ?>
+                                                </h9>
+                                            </div>
                                         <div class="default-btn">
                                             <input class="name" name="dangnhap" type="submit" value="Đăng nhập">
                                         </div>
@@ -72,14 +72,7 @@
                                             <input class="mb-0" type="password" id="repassword" name="repassword" placeholder="Mời nhập lại mật khẩu">
                                         </div>
                                         <div class="default-btn">
-                                            <!-- <?php 
-                                            if ($_POST['username'] == null && $_POST['password'] == null) {
-                                                echo'<input class="name" disabled="disabled" value="Đăng ký">';
-                                            }else{
-                                                echo '<input class="name" type="submit" name="dangky" value="Đăng ký">';
-                                            }
-                                            ?> -->
-                                            <input class="name" type="submit" name="dangky" value="Đăng ký">
+                                        <input class="name" type="submit" name="dangky" value="Đăng ký">
                                         </div>
                                     </div>
                                 </div>
