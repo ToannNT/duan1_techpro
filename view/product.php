@@ -25,7 +25,7 @@ $html_showbrand = show_dsbr_product($dsbrandne);
         <div class="row">
             <div class="col-lg-9 order-1 order-lg-2">
                 <!-- Begin Li's Banner Area -->
-                <div class="single-banner shop-page-banner">
+                <div class="single-banner shop-page-banner" style="height: 100px;">
                     <a href="#">
                         <img src="./view/layout/images/bg-banner/2.jpg" alt="Li's Static Banner">
                     </a>

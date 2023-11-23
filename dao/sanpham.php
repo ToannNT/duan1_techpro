@@ -62,10 +62,12 @@ function show_SP($dssp)
         }
 
         if ($giamgia > 0) {
+            $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
+
             $gia_sp = '
                 <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                 <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                <span class="discount-percentage">-7% nè</span>
+                <span class="discount-percentage">- ' . floor($phantram) . '%</span>
             ';
         } else {
             $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
@@ -285,6 +287,7 @@ function show_dssp($dssp_sp)
 {
     $showhtml = '';
     foreach ($dssp_sp as $item) {
+
         extract($item);
         if ($banchay == 1) {
             $itemHot = '
@@ -304,12 +307,12 @@ function show_dssp($dssp_sp)
             <span class="stickerr"></span>
             ';
         }
-
         if ($giamgia > 0) {
+            $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
             $gia_sp = '
                 <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                 <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                <span class="discount-percentage">-7% nè</span>
+                <span class="discount-percentage">- ' . floor($phantram) . '%</span>
             ';
         } else {
             $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';

@@ -42,10 +42,11 @@ if (isset($_POST['input'])) {
             }
 
             if ($giamgia > 0) {
+                $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
                 $gia_sp = '
                     <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                     <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                    <span class="discount-percentage">-7% nè</span>
+                    <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                 ';
             } else {
                 $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
@@ -158,12 +159,12 @@ if (isset($_POST['input'])) {
                     <span class="stickerr"></span>
                     ';
                 }
-
                 if ($giamgia > 0) {
+                    $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
                     $gia_sp = '
                         <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                         <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                        <span class="discount-percentage">-7% nè</span>
+                        <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                     ';
                 } else {
                     $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
@@ -253,10 +254,11 @@ if (isset($_POST['input'])) {
             }
 
             if ($giamgia > 0) {
+                $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
                 $gia_sp = '
                     <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                     <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                    <span class="discount-percentage">-7% nè</span>
+                    <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                 ';
             } else {
                 $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
