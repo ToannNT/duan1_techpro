@@ -163,7 +163,9 @@ sup {
 }
 
 a {
-  color: rgb(0, 28, 64);
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -1704,10 +1706,14 @@ pre code {
 .table-bordered th,
 .table-bordered td {
   border: 1px solid #dee2e6;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .table-bordered thead th,
 .table-bordered thead td {
+  vertical-align: middle;
+  text-align: center;
   border-bottom-width: 2px;
 }
 
@@ -14284,7 +14290,8 @@ be a descendant of the grid when it is being dragged.
   margin-top: 15px;
 }
 #thumbimage{
-  border-radius: .357rem;
+  height: auto;
+  padding: 5px 0px;
   object-fit: contain;
   background: white;
 }

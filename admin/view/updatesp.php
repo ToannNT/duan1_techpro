@@ -1,53 +1,54 @@
 <?php
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_danhmuc);
+if(is_array($showup)&&(count($showup)>0)){
+  extract($showup);
+  $idupdate= $id;
+  }
   $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
-  //hàm lấy ngày giờ hiện tại
-  $currentDateTime = date("Y-m-d H:i:s");
+  $html_showdmadm = showdm_adm($dsdm_adm, $id_catalog);
 ?>
-
 <main class="app-content">
     <div class="app-title">
-      <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><a style="color:#001C40;" href="index.php?pg=qlsanpham">Quản lý sản phẩm</a></li>
-        <li class="breadcrumb-item active"><a href="#"></a>Tạo mới sản phẩm</li>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item">Quản lý sản phẩm</li>
+        <li class="breadcrumb-item active"><a href="#"></a>Cập nhật sản phẩm</li>
       </ul>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Tạo mới sản phẩm</h3>
+          <h3 class="tile-title">Cập nhật sản phẩm</h3>
           <div class="tile-body">
           </div>
-            <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">
+            <form action="index.php?pg=updatepro" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
-                <label class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" name="masp" type="text" placeholder="">
+                <label class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span>  </label>
+                <input class="form-control" name="masp" type="text" value="<?=($ma_sp!="")?$ma_sp:"";?>">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span></label>
-                <input class="form-control" name="tensp" type="text">
+                <label class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input class="form-control" name="tensp" type="text" value="<?=($ten!="")?$ten:"";?>">
               </div>
               <div class="form-group col-md-3">
-                <label for="exampleSelect1" class="control-label">Danh mục<span style="color: red; font-weight: bold" >(*)</span></label>
+                <label for="exampleSelect1" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
                 <select class="form-control" name="danhmucsp" id="exampleSelect1">
-                  <option value="">--Chọn danh mục--</option>
+                  <option value="default">--Chọn danh mục--</option>
                   <?=$html_showdmadm?>
                 </select>
               </div>
               <div class="form-group col-md-3 ">
-                <label for="exampleSelect1" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span></label>
+                <label for="exampleSelect1" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <select class="form-control" name="brandsp" id="exampleSelect1">
                   <option>-- Chọn hãng --</option>
                   <?=$html_showbradm?>
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span></label>
-                <input class="form-control" name="giaban" type="text">
+                <label class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input class="form-control" name="giaban" value="<?=$gia?>" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá giảm<span style="color: red; font-weight: bold" >(*)</span></label>
-                <input class="form-control" name="giagiam" type="text">
+                <label class="control-label">Giá giảm</label>
+                <input class="form-control" name="giagiam" value="<?=$giamgia?>" type="text">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="exampleSelect1" class="control-label">Tình trạng</label>
@@ -58,26 +59,29 @@
                 </select>
               </div>
               <div class="form-group col-md-3">
+
               </div>
               <div class="form-group col-md-3">
-              <label class="control-label">Thuộc tính <span style="color: red; font-weight: bold" >(*)</span></label>
+                <label class="control-label">Thuộc tính <span style="color: red; font-weight: bold" >(*)</span></label>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="seo" value="1" id=""> Sale</label>
+                  <label for=""><input type="checkbox" name="seo" value="<?=$sale;?>" id=""> Sale</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="moi" value="1" id=""> Mới</label>
+                  <label for=""><input type="checkbox" name="moi" value="<?=$new;?>" id=""> Mới</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="many" value="1" id=""> Xem nhiều</label>
+                  <label for=""><input type="checkbox" name="many" value="<?=$xemnhieu;?>" id=""> Xem nhiều</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="run" value="1" id=""> Bán chạy</label>
+                  <label for=""><input type="checkbox" name="run" value="<?=$banchay;?>" id=""> Bán chạy</label>
                 </div>
               </div>
               <div class="form-group col-md-9">
                 <label class="control-label">Ảnh sản phẩm<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <div  >
-                  <input type="file" id="uploadfile" name="imgup" onchange="readURL(this);" />
+                <div id="myfileupload">
+                  <input type="file" id="uploadfile" name="imgup" value="<?=$hinh;?>" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfile" name="imgold" value="<?=$hinh;?>" />
+                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
                 </div>
                 <div id="thumbbox">
                   <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
@@ -88,37 +92,40 @@
                   <p style="clear:both"></p>
                 </div>
               </div>
-              <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p><br>
+                <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 1</p>
-                  <input type="file" name="hinh1"/>
+                  <input type="file" id="uploadfile1" name="hinh1"/>
+                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh1?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 2</p>
-                  <input type="file" name="hinh2"/>
+                  <input type="file" id="uploadfile2" name="hinh2"/>
+                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh2?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 3</p>
-                  <input type="file" name="hinh3"/>
+                  <input type="file" id="uploadfile3" name="hinh3"/>
+                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh3?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 4</p>
-                  <input type="file" name="hinh4"/>
+                  <input type="file" id="uploadfile4" name="hinh4"/>
+                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh4?>" alt="">
                 </div><br>
               <div class="form-group col-md-12">
                 <br>
-                <label class="control-label">Nhập mô tả</label>
-                <input class="form-control" name="mota" type="text">
+                <label class="control-label">Mô tả</label>
+                <input class="form-control" name="mota" value="<?=$mota?>" type="text">
               </div>
               <div class="form-group col-md-12">
-                <label class="control-label">Nhập chi tiết</label>
-                <textarea class="form-control" name="chitiet" id="chitiet"></textarea>
+                <label class="control-label">Chi tiết sản phẩm</label>
+                <textarea class="form-control" name="chitiet" id="chitiet"><?=$chitiet?></textarea>
                 <script>CKEDITOR.replace('chitiet');</script>
               </div>
-              <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="addsp" value="Lưu lại">
-                <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
-              </div>
+              <input type="hidden" name="id" value="<?=$idupdate?>">
+              <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
+              <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>
         </div>
       </div>
@@ -234,10 +241,8 @@ MODAL
             </div>
           </div>
           <BR>
-          <div class="btn">
-            <button class="btn btn-save" type="button">Lưu lại</button>
-            <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          </div>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
           <BR>
         </div>
         <div class="modal-footer">
@@ -246,5 +251,5 @@ MODAL
     </div>
   </div>
   <!--
-js
+MODAL
 -->

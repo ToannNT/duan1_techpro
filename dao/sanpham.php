@@ -1,6 +1,61 @@
 <?php
 require_once 'pdo.php';
 
+// TRANG SẢN PHẨM ADMIN
+function get_tablesp($limit){  
+    $sql = "SELECT product.*, catalog.ten_dm AS tendm
+    FROM product
+    LEFT JOIN catalog ON product.id_catalog = catalog.id
+    ORDER BY product.id DESC
+    LIMIT " . $limit;
+    return pdo_query($sql);
+}
+function show_tablesp($showspadm){
+    $html_showspadm='';
+    foreach ($showspadm as $spadm) {
+        extract($spadm);
+        $link = 'index.php?pg=delsp&id='. $id;
+        $link2 = 'index.php?pg=updatesp&id='. $id;
+        $html_showspadm.='
+        <tr>
+            <td width="10">'.$id.'</td>
+            <td width="10%">'.$ma_sp.'</td>
+            <td width="25%">'.$ten.'</td>
+            <td style="width: 100px; height: 100px; overflow: hidden;">
+                <img src="../view/layout/images/product/'.$hinh.'" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+            </td>
+            <td>40</td>
+            <td><span class="badge bg-success">Còn hàng</span></td>
+            <td>'.number_format($gia,0,'.','.').'đ</td>
+            <td>'.$tendm.'</td>
+            <td>
+            <a class="btn btn-primary btn-sm trash" href="' . $link . '"><i class="fas fa-trash-alt"></i></a>
+            <a class="btn btn-primary btn-sm edit" href="' . $link2 . '"><i class="fas fa-edit"></i></a>
+            </td> 
+        </tr>
+        ';
+    }
+    return $html_showspadm;
+}
+//them san pham
+function insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run){
+    $sql ="INSERT INTO product (ma_sp, ten, gia, giamgia, id_catalog, id_brand, hinh, hinh1, hinh2, hinh3, hinh4, chitiet, mota, sale, new, xemnhieu, banchay) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
+}
+//end them san pham
+
+//xoa san pham
+function delsp($id){
+    $sql = "DELETE FROM product WHERE  id=?";
+    pdo_execute($sql, $id);
+}
+//end xoa san pham
+
+//sua san pham.
+function updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id){
+    $sql = "UPDATE product SET ma_sp=?,ten=?,gia=?,giamgia=?,id_catalog=?,id_brand=?,hinh=?,hinh1=?,hinh2=?,hinh3=?,hinh4=?,chitiet=?,mota=?,sale=?,new=?,xemnhieu=?,banchay=? WHERE id=?";
+    pdo_execute($sql, $masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
+}
 // function hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta)
 // {
 //     $sql = "INSERT INTO hang_hoa(ten_hh, don_gia, giam_gia, hinh, ma_loai, dac_biet, so_luot_xem, ngay_nhap, mo_ta) VALUES (?,?,?,?,?,?,?,?,?)";
