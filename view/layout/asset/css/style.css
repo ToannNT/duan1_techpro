@@ -106,7 +106,7 @@ a:hover {
 
 .img-full {
     width: 100%;
-    max-width: 300px;
+    /* max-width: 300px; */
     overflow: hidden;
     display: block;
 }
@@ -3324,7 +3324,7 @@ textarea:focus {
 .li-banner>a>img,
 .single-banner>a>img {
     /* height: 500px; */
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
@@ -5417,14 +5417,13 @@ thead {
     display: flex;
 }
 
-
 .li-blog-sidebar .li-recent-post .li-recent-post-thumb {
     min-width: 65px;
     border: 1px solid #e1e1e1;
     height: 45px;
 }
 
-.li-blog-sidebar .li-recent-post .li-recent-post-thumb img{
+.li-blog-sidebar .li-recent-post .li-recent-post-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -5444,7 +5443,6 @@ thead {
     padding: 0px 0px 10px 0px;
     text-transform: capitalize;
 }
-
 
 .li-blog-sidebar .li-recent-post .li-recent-post-des span a {
     color: #242424;
@@ -5500,8 +5498,8 @@ thead {
 }
 
 .li-blog-content p {
-    display:-webkit-box;
-    -webkit-line-clamp:4;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -6401,7 +6399,8 @@ span.required {
 .product-image>a img {
     height: 100%;
     object-fit: contain;
-    width: 100%;}
+    width: 100%;
+}
 
 .shop-products-wrapper .tab-content .tab-pane.active {
     display: block;
@@ -7147,14 +7146,15 @@ span.required {
 
 
 /* row */
-.li-blog-banner{
+
+.li-blog-banner {
     width: 100%;
     /* border: 1px solid #e1e1e1; */
     height: 200px;
 }
 
-.li-blog-banner img{
+.li-blog-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }

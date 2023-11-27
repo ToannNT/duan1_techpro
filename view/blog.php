@@ -84,7 +84,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="li-blog-banner">
                                 <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
-                                    <img class="img-full" src="<?= $tt['hinh'] ?>" alt></a>
+                                    <img class="img-full" src="<?= $tt['hinh'] ?>" ></a>
                             </div>
                             <div class="li-blog-content">
                                 <div class="li-blog-details">
@@ -97,7 +97,7 @@
                                             <?= $tt['ngay'] ?></a>
                                     </div>
                                     <p> <?= $tt['noidung'] ?></p>
-                                    <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id'] ?>">Read
+                                    <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read
                                         More...</a>
                                 </div>
                             </div>
