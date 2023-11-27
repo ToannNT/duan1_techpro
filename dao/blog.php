@@ -12,7 +12,7 @@
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    return $stmt->fetchALL();
+    return $stmt->fetchALL();// lấy all dữ liệu
 }
 // tương tác với trang CTSP
 function get_tintuc($id){
@@ -20,7 +20,7 @@ function get_tintuc($id){
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetch();//chỉ lấy 1 dữ liệu
 }
 // phân trang 
 function count_tintuc(){
@@ -28,7 +28,7 @@ function count_tintuc(){
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    return $stmt->fetch();//chỉ lấy 1 sản phẩm
+    return $stmt->fetch();//chỉ lấy 1 dữ liệu
 }
 // tương tác với bảng catalog và hiển thị danh mục sp
 function get_catogories($iddm){
@@ -40,7 +40,7 @@ function get_catogories($iddm){
  $conn = pdo_get_connection();
  $stmt = $conn->prepare($sql);
  $stmt->execute();
- return $stmt->fetchALL();
+ return $stmt->fetchALL();// lấy all dữ liệu
 }
 // tương tác với bảng newspapers
 function get_newspapers(){
@@ -48,7 +48,23 @@ function get_newspapers(){
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    return $stmt->fetchALL();
+    return $stmt->fetchALL();// lấy all dữ liệu
 }
+// tương tác với black friday 
+function get_blackfriday(){
+    $sql = "SELECT * FROM product WHERE dac_biet = 1";
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchALL(); // lấy all dữ liệu
 
+}
+// lấy 3 blog ngoài trang index
+function get_tintucindex(){
+    $sql = "SELECT * FROM blog LIMIT 3";
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchALL();// lấy all dữ liệu
+}
 ?>
