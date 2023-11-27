@@ -47,7 +47,7 @@
                         $data_newspapers = get_newspapers();
                         ?>
                         <h4 class="li-blog-sidebar-title">Tin tức mới</h4>
-                        <?php foreach ($data_newspapers as $tt) : ?>
+                        <?php foreach ($data_newspapers as $tt): ?>
                         <div class="li-recent-post pb-30">
                             <div class="li-recent-post-thumb">
                                 <a href="blog-details-left-sidebar.html">

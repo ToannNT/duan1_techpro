@@ -1,6 +1,36 @@
 <?php
 require_once 'pdo.php';
 
+
+//TRANG ADMIN DANH MUC SP
+function showdm_adm($dsdm_adm, $id_catalog){
+    $html_show= '';
+    foreach ($dsdm_adm as $dm_adm) {
+        extract($dm_adm);
+        if($id_catalog == $id){
+            $html_show.='<option selected value="'.$id.'">'.$ten_dm.'</option>';
+        }else{
+            $html_show.='<option value="'.$id.'">'.$ten_dm.'</option>';
+        }
+    }
+    return $html_show;
+}
+function showbr_adm($dsbr_adm, $id_brand){
+    $html_show= '';
+    foreach ($dsbr_adm as $br_adm) {
+        extract($br_adm);
+        if($id_brand == $id){
+            $html_show.='<option selected value="'.$id.'">'.$ten.'</option>';
+        }else{
+            $html_show.='<option value="'.$id.'">'.$ten.'</option>';
+        }
+        
+    }
+    return $html_show;
+}
+//END TRANG ADMIN DANH MUC SP
+
+
 // /**
 //  * Thêm loại mới
 //  * @param String $ten_loai là tên loại
