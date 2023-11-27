@@ -63,8 +63,8 @@
       </head>
 
 <body onload="time()" class="app sidebar-mini rtl">
-   <!-- Navbar-->
-   <header class="app-header">
+  <!-- Navbar-->
+  <header class="app-header">
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
       aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
@@ -72,7 +72,7 @@
 
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="/index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href="../index.php"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
@@ -80,8 +80,8 @@
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../view/layout/images/menu/logo/logo_main.png" width="50px"
-        alt="User Image">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+        src="../view/layout/images/menu/logo/logo_main.png" width="50px" alt="User Image">
       <div>
         <p class="app-sidebar__user-name"><b>Admin Techpro</b></p>
         <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
@@ -113,10 +113,14 @@
           <span class="app-menu__label">Quản lý giao diện</span>
         </a>
         <ul class="sub-menu">
-          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
-          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
-          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li>
-          <li><a class="app-menu__item" href="qlbanner.html"><i class='app-menu__icon bx bx-slideshow'></i><span class="app-menu__label">Banner</span></a></li>
+          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span
+                class="app-menu__label">Header</span></a></li>
+          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span
+                class="app-menu__label">Footer</span></a></li>
+          <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span
+                class="app-menu__label">Button</span></a></li>
+          <li><a class="app-menu__item" href="qlbanner.html"><i class='app-menu__icon bx bx-slideshow'></i><span
+                class="app-menu__label">Banner</span></a></li>
         </ul>
       </li>
       <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài

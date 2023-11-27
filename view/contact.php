@@ -14,7 +14,8 @@
         <div class="contact-main-page mt-60 mb-40 mb-md-40 mb-sm-40 mb-xs-40">
             <div class="container mb-60">
                 <div id="google-map">
-                    Add maps khúc này nha
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.44366148992!2d106.62525347508979!3d10.853821089299716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bee0b0ef9e5%3A0x5b4da59e47aa97a8!2zQ8O0bmcgVmnDqm4gUGjhuqduIE3hu4FtIFF1YW5nIFRydW5n!5e0!3m2!1svi!2s!4v1700189056001!5m2!1svi!2s" 
+                width="600" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="container">
