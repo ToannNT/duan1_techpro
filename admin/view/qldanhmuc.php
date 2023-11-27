@@ -20,6 +20,9 @@
                             </div>
                           </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
+                          <?php
+                            if(isset($tb)) echo '<h4 style= "color: red;">'.$tb.'</h4>';
+                          ?>
                             <thead>
                                 <tr>
                                     <th width="10"><input type="checkbox" id="all"></th>
@@ -31,7 +34,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                            <?php
+                                foreach ($get_Cataloglist as $item) {
+                                  extract($item);
+                                  echo '<tr>
+                                            <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                            <td>'.$stt.'</td>
+                                            <td>'.$ten_dm.'</td>
+                                            <td>'.$mota.'</td>
+                                            <td>'.$sethome.'</td>
+                                            <td><a href="index.php?pg=del&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                                    onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
+                                                </button>
+                                                <a href="index.php?pg=updateCatagory&id='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                                            </td>
+                                        </tr>';
+                                }
+                              ?>
+                                <!-- <tr>
                                     <td width="10"><input type="checkbox" name="check1" value="1"></td>
                                     <td>71309005</td>
                                     <td>Bàn ăn gỗ Theresa</td>
@@ -73,7 +93,7 @@
 
                                       
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

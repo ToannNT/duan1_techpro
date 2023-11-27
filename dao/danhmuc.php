@@ -36,7 +36,37 @@ require_once 'pdo.php';
 //         pdo_execute($sql, $ma_loai);
 //     }
 // }
+function get_Catalog(){
+    $sql="SELECT * FROM catalog";
+    return pdo_query($sql);
+}
 
+function get_Catalog_One($id){
+    $sql="SELECT * FROM catalog WHERE id=".$id;
+    return pdo_query_one($sql);
+}
+function catagory_add($stt,$name,$mota,$sethome){
+    $sql="INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
+    return pdo_execute($sql,$stt,$name,$mota,$sethome);
+}
+function delete_catalog($id){
+    $sql="DELETE FROM catalog WHERE id=".$id;
+    // pdo_execute($sql);
+    $dssp=sptheodanhmuc($id);
+    // echo var_dump ($dssp);
+    if(count($dssp) > 0){
+        $tb = "Danh mục này có ".count($dssp)." sản phẩm. Bạn không được xóa!";
+    }else{
+        pdo_execute($sql);
+        $tb = "";
+    }
+    return $tb;
+}
+
+function updateCatagory($id, $stt, $name, $mota, $sethome){
+    $sql = "UPDATE catalog SET stt=?, ten_dm=?, mota=?, sethome=?  WHERE id=".$id;
+    return pdo_execute($sql, $stt, $name, $mota, $sethome);
+}
 
 /**
  * Truy vấn tất cả các loại
@@ -164,7 +194,10 @@ function dsdm_brand_product()
     return pdo_query($sql);
 }
 
-
+function sptheodanhmuc($id){
+    $sql="SELECT * FROM product where id_catalog=".$id;
+    return pdo_query($sql);
+}
 
 
 // function dsdanhmuc()

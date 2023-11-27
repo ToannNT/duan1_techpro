@@ -31,6 +31,37 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'sw_password':
             require_once "view/sw_password.php";
             break;
+        case 'changepassword':
+            // if(isset($_SESSION['id']) && isset($_SESSION['username'])){
+            //     if (isset($_POST['op']) && isset($_POST['np']) && isset($_POST['c_np'])) {
+            //         # code...
+            //     }
+            // }
+            if(isset($_SESSION['s_user'])){
+                if (isset($_POST["thaydoi"])){
+                    $password = $_POST['op'];
+                    $newpassword = $_POST['np'];
+                    $repassword = $_POST['c_np'];
+                    $id= $_SESSION['s_user']['id'];
+                    // $checkvar = $conn->query("SELECT * FROM 'user' WHERE 'username' = '".$conn->real_escape_string($username)."' ")->fetch_array();
+                    if ($password == "" || $newpassword == "" || $repassword == "") {
+                        $thongbao="Vui lòng nhập đầy đủ thông tin";
+                    }else if($password != $_SESSION['s_user']['password']){
+                        echo $password;
+                        echo $_SESSION['s_user']['password'];
+                        $thongbao = "Mật khẩu hiện tại không chính xác";
+                    }else if( $newpassword != $repassword){
+                        $thongbao = "Mật khẩu nhập lại không đúng";
+                    }else{
+                        update_pass_user($newpassword, $id);
+                        $thongbaothanhcong = "Thành công";
+                    }
+                }
+            }else{
+                include_once "view/login_register.php";
+            }
+            include_once "view/changepassword.php";
+            break;
         case 'blog':
             require_once "view/blog.php";
             break;
@@ -97,7 +128,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $kq = checkuser($username, $password);
                 if (is_array($kq) && (count($kq))) {
                     $_SESSION['s_user'] = $kq;
-                    header('location: index.php');
+                    header('location: index.php?pg=account');
                 } else {
                     $tb = "Tài khoản không tồn tại hoặc thông tin đăng nhập sai!";
                     $_SESSION['tb_dangnhap'] = $tb;
@@ -137,7 +168,50 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 include_once "view/index.php";
             }
             break;
-
+        case 'addtoWishlist':
+            if(isset($_POST['btn_Wish'])){
+                $img=$_POST['img'];
+                $name=$_POST['name'];
+                $price=$_POST['price'];
+                // if (isset($_SESSION['f_Product']) && ($_SESSION['f_Product'] != "")) {
+                //     $flag = false;
+                //     // Kiểm tra xem sản phẩm đã có trong wishlist chưa
+                //     foreach ($_SESSION['f_Product'] as $key => $value) {
+                //     // Nếu có rồi thì không cần add nữa
+                //         if ($value['name'] == $name) {
+                //             // $_SESSION['f_Product'][$key]['quantity'] += 1;
+                            
+                //             $flag = true;
+                //         }
+                //     }
+                //     // Nếu chưa có thì thêm vào
+                //     if (!$flag) {
+                //         $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
+                //         $_SESSION['f_Product'][]=$sp;
+                //     }
+                // }    
+                // // Nếu chưa có session F_Product
+                // else {
+                //     $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
+                //     $_SESSION['f_Product'][]=$sp;
+                // }
+                $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
+                $_SESSION['f_Product'][]=$sp;
+                header('location: index.php?pg=login_register');
+            }
+            break;
+        case 'wishlist':
+            include_once "view/wishlist.php";
+            break;
+        case 'delWishlistArray':
+            if(isset($_GET['ind']) && ($_GET['ind'])>=0){
+                array_splice($_SESSION['f_Product'],$_GET['ind'],1);
+                header ('location: index.php?page=cart');
+            }
+            if(empty($_SESSION['f_Product'])){
+                unset($_SESSION['f_Product']);
+            }
+            break;
         default:
             require_once "view/home.php";
             $dssp_hot = get_dssp_hot(5);

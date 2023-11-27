@@ -56,6 +56,11 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                     </ul>
                     <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
 }
+if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)){
+    $Favorite_count='<span class="cart-item-count wishlist-item-count">'.count($_SESSION['f_Product']).'</span>';
+}else{
+    $Favorite_count='<span class="cart-item-count wishlist-item-count">0</span>';
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -221,8 +226,9 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                 <ul class="hm-menu">
                                     <!-- Begin Header Middle Wishlist Area -->
                                     <li class="hm-wishlist">
-                                        <a href="wishlist.html">
-                                            <span class="cart-item-count wishlist-item-count">0</span>
+                                        <a href="index.php?pg=wishlist">
+                                            <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
+                                            <?=$Favorite_count?>
                                             <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
