@@ -33,9 +33,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
 } else {
     $html_account = '<li class="hm-minicart">
                             <div class="hm-minicart-trigger hm-minicart-trigger__user">
-                                <a href="wishlist.html">
-                                    <span class="cart-item-count wishlist-item-count">0</span>
-                                </a>
+
                                 <span class="item-icon__user">
 
                                 </span>
@@ -56,10 +54,10 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                     </ul>
                     <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
 }
-if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)){
-    $Favorite_count='<span class="cart-item-count wishlist-item-count">'.count($_SESSION['f_Product']).'</span>';
-}else{
-    $Favorite_count='<span class="cart-item-count wishlist-item-count">0</span>';
+if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
+    $Favorite_count = '<span class="cart-item-count wishlist-item-count">' . count($_SESSION['f_Product']) . '</span>';
+} else {
+    $Favorite_count = '<span class="cart-item-count wishlist-item-count">0</span>';
 }
 ?>
 <!doctype html>
@@ -122,7 +120,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)){
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
-    
+
 </head>
 
 <body>
@@ -134,69 +132,6 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)){
         <!-- Begin Header Area -->
         <header>
             <!-- Begin Header Top Area -->
-            <div class="header-top">
-                <div class="container">
-                    <div class="row">
-                        <!-- Begin Header Top Left Area -->
-                        <div class="col-lg-3 col-md-4">
-                            <div class="header-top-left">
-                                <ul class="phone-wrap">
-                                    <li><span>Yêu cầu qua điện thoại:</span><a href="#">(+123) 123 321 345</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Header Top Left Area End Here -->
-                        <!-- Begin Header Top Right Area -->
-                        <div class="col-lg-9 col-md-8">
-                            <div class="header-top-right">
-                                <ul class="ht-menu">
-                                    <!-- Begin Setting Area -->
-                                    <li>
-                                        <div class="ht-setting-trigger"><span>Cài đặt</span></div>
-                                        <div class="setting ht-setting">
-                                            <ul class="ht-setting-list">
-                                                <li><a href="login-register.html">Tài khoản của tôi</a></li>
-                                                <li><a href="checkout.html">Thanh toán</a></li>
-                                                <li><a href="index.php?pg=login_register">Đăng nhập</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!-- Setting Area End Here -->
-                                    <!-- Begin Currency Area -->
-                                    <li>
-                                        <span class="currency-selector-wrapper">Tiền tệ :</span>
-                                        <div class="ht-currency-trigger"><span>VNĐ</span></div>
-                                        <div class="currency ht-currency">
-                                            <ul class="ht-setting-list">
-                                                <li><a href="#">EUR €</a></li>
-                                                <li class="active"><a href="#">USD $</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!-- Currency Area End Here -->
-                                    <!-- Begin Language Area -->
-                                    <li>
-                                        <span class="language-selector-wrapper">Ngôn ngữ :</span>
-                                        <div class="ht-language-trigger"><span>Tiếng việt</span></div>
-                                        <div class="language ht-language">
-                                            <ul class="ht-setting-list">
-                                                <li class="active">
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/1.jpg" alt>English</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="./view/layout/images/menu/flag-icon/2.jpg" alt>Français</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!-- Language Area End Here -->
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Header Top Right Area End Here -->
-                    </div>
-                </div>
-            </div>
             <!-- Header Top Area End Here -->
             <!-- Begin Header Middle Area -->
             <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
@@ -228,7 +163,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)){
                                     <li class="hm-wishlist">
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
-                                            <?=$Favorite_count?>
+                                            <?= $Favorite_count ?>
                                             <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
