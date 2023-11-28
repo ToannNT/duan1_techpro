@@ -145,7 +145,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
                 if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
                 if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
-                
+                if($masp==""){
+                    $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm</p>';
+                }
                 insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
                 $target_file ="../view/layout/images/product/". $hinhsp;
 

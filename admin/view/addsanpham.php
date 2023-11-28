@@ -1,8 +1,6 @@
 <?php
   $html_showdmadm = showdm_adm($dsdm_adm, $id_danhmuc);
   $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
-  //hàm lấy ngày giờ hiện tại
-  $currentDateTime = date("Y-m-d H:i:s");
 ?>
 
 <main class="app-content">
@@ -16,6 +14,7 @@
       <div class="col-md-12">
         <div class="tile">
           <h3 class="tile-title">Tạo mới sản phẩm</h3>
+          <?=$alert?>
           <div class="tile-body">
           </div>
             <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">

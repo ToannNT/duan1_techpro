@@ -1,69 +1,69 @@
    <!-- Begin Footer Area -->
+   <div class="footer-static-top">
+       <div class="container">
+           <!-- Begin Footer Shipping Area -->
+           <div class="footer-shipping pt-60 pb-55 pb-xs-25">
+               <div class="row">
+                   <!-- Begin Li's Shipping Inner Box Area -->
+                   <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
+                       <div class="li-shipping-inner-box">
+                           <div class="shipping-icon">
+                               <img src="./view/layout/images/shipping-icon/1.png" alt="Shipping Icon">
+                           </div>
+                           <div class="shipping-text">
+                               <h2>Giao hàng miễn phí</h2>
+                               <p>Và trả lại miễn phí. Xem thanh toán để biết ngày giao hàng.​</p>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- Li's Shipping Inner Box Area End Here -->
+                   <!-- Begin Li's Shipping Inner Box Area -->
+                   <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
+                       <div class="li-shipping-inner-box">
+                           <div class="shipping-icon">
+                               <img src="./view/layout/images/shipping-icon/2.png" alt="Shipping Icon">
+                           </div>
+                           <div class="shipping-text">
+                               <h2>Thanh toán an toàn</h2>
+                               <p>Thanh toán bằng các phương thức thanh toán an toàn và phổ biến nhất thế giới.</p>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- Li's Shipping Inner Box Area End Here -->
+                   <!-- Begin Li's Shipping Inner Box Area -->
+                   <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
+                       <div class="li-shipping-inner-box">
+                           <div class="shipping-icon">
+                               <img src="./view/layout/images/shipping-icon/3.png" alt="Shipping Icon">
+                           </div>
+                           <div class="shipping-text">
+                               <h2>Mua sắm với sự tự tin</h2>
+                               <p>Bảo vệ người mua của chúng tôi bao gồm việc mua hàng của bạn từ nhấp chuột đến
+                                   giao hàng.</p>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- Li's Shipping Inner Box Area End Here -->
+                   <!-- Begin Li's Shipping Inner Box Area -->
+                   <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
+                       <div class="li-shipping-inner-box">
+                           <div class="shipping-icon">
+                               <img src="./view/layout/images/shipping-icon/4.png" alt="Shipping Icon">
+                           </div>
+                           <div class="shipping-text">
+                               <h2>Trung tâm trợ giúp 24/7</h2>
+                               <p>Có một câu hỏi? Gọi cho Chuyên gia hoặc trò chuyện trực tuyến.</p>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- Li's Shipping Inner Box Area End Here -->
+               </div>
+           </div>
+           <!-- Footer Shipping Area End Here -->
+       </div>
+   </div>
    <div class="footer">
        <!-- Begin Footer Static Top Area -->
-       <div class="footer-static-top">
-           <div class="container">
-               <!-- Begin Footer Shipping Area -->
-               <div class="footer-shipping pt-60 pb-55 pb-xs-25">
-                   <div class="row">
-                       <!-- Begin Li's Shipping Inner Box Area -->
-                       <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                           <div class="li-shipping-inner-box">
-                               <div class="shipping-icon">
-                                   <img src="./view/layout/images/shipping-icon/1.png" alt="Shipping Icon">
-                               </div>
-                               <div class="shipping-text">
-                                   <h2>Giao hàng miễn phí</h2>
-                                   <p>Và trả lại miễn phí. Xem thanh toán để biết ngày giao hàng.​</p>
-                               </div>
-                           </div>
-                       </div>
-                       <!-- Li's Shipping Inner Box Area End Here -->
-                       <!-- Begin Li's Shipping Inner Box Area -->
-                       <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                           <div class="li-shipping-inner-box">
-                               <div class="shipping-icon">
-                                   <img src="./view/layout/images/shipping-icon/2.png" alt="Shipping Icon">
-                               </div>
-                               <div class="shipping-text">
-                                   <h2>Thanh toán an toàn</h2>
-                                   <p>Thanh toán bằng các phương thức thanh toán an toàn và phổ biến nhất thế giới.</p>
-                               </div>
-                           </div>
-                       </div>
-                       <!-- Li's Shipping Inner Box Area End Here -->
-                       <!-- Begin Li's Shipping Inner Box Area -->
-                       <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                           <div class="li-shipping-inner-box">
-                               <div class="shipping-icon">
-                                   <img src="./view/layout/images/shipping-icon/3.png" alt="Shipping Icon">
-                               </div>
-                               <div class="shipping-text">
-                                   <h2>Mua sắm với sự tự tin</h2>
-                                   <p>Bảo vệ người mua của chúng tôi bao gồm việc mua hàng của bạn từ nhấp chuột đến
-                                       giao hàng.</p>
-                               </div>
-                           </div>
-                       </div>
-                       <!-- Li's Shipping Inner Box Area End Here -->
-                       <!-- Begin Li's Shipping Inner Box Area -->
-                       <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                           <div class="li-shipping-inner-box">
-                               <div class="shipping-icon">
-                                   <img src="./view/layout/images/shipping-icon/4.png" alt="Shipping Icon">
-                               </div>
-                               <div class="shipping-text">
-                                   <h2>Trung tâm trợ giúp 24/7</h2>
-                                   <p>Có một câu hỏi? Gọi cho Chuyên gia hoặc trò chuyện trực tuyến.</p>
-                               </div>
-                           </div>
-                       </div>
-                       <!-- Li's Shipping Inner Box Area End Here -->
-                   </div>
-               </div>
-               <!-- Footer Shipping Area End Here -->
-           </div>
-       </div>
        <!-- Footer Static Top Area End Here -->
        <!-- Begin Footer Static Middle Area -->
        <div class="footer-static-middle">
@@ -74,10 +74,6 @@
                        <div class="col-lg-4 col-md-6">
                            <div class="footer-logo">
                                <img src="./view/layout/images/menu/logo/logo_footer.png" alt="Footer Logo">
-                               <p class="info">
-                                   Chúng tôi là một nhóm gồm các nhà thiết kế và phát triển tạo ra Mẫu HTML &
-                                   Thương mại điện tử, Chủ đề Shopify.
-                               </p>
                            </div>
                            <ul class="des">
                                <li>
@@ -96,7 +92,7 @@
                        </div>
                        <!-- Footer Logo Area End Here -->
                        <!-- Begin Footer Block Area -->
-                       <div class="col-lg-2 col-md-3 col-sm-6">
+                       <div class="col-lg-3 col-md-3 col-sm-6">
                            <div class="footer-block">
                                <h3 class="footer-block-title">Thông tin</h3>
                                <ul>
@@ -109,7 +105,7 @@
                        </div>
                        <!-- Footer Block Area End Here -->
                        <!-- Begin Footer Block Area -->
-                       <div class="col-lg-2 col-md-3 col-sm-6">
+                       <div class="col-lg-3 col-md-3 col-sm-6">
                            <div class="footer-block">
                                <h3 class="footer-block-title">Chính sách</h3>
                                <ul>
@@ -122,7 +118,7 @@
                        </div>
                        <!-- Footer Block Area End Here -->
                        <!-- Begin Footer Block Area -->
-                       <div class="col-lg-4">
+                       <div class="col-lg-2">
                            <div class="footer-block">
                                <h3 class="footer-block-title">Chính sách</h3>
                                <ul>
@@ -131,51 +127,51 @@
                                    <li><a href="#">Chính sách sản phẩm</a></li>
                                    <li><a href="#">Chính sách kiểm hàng</a></li>
                                </ul>
-                               <ul class="social-link">
-                                   <li class="twitter">
-                                       <a href="https://twitter.com/" data-toggle="tooltip" target="_blank"
-                                           title="Twitter">
-                                           <i class="fa fa-twitter"></i>
-                                       </a>
-                                   </li>
-                                   <li class="rss">
-                                       <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
-                                           <i class="fa fa-rss"></i>
-                                       </a>
-                                   </li>
-                                   <li class="google-plus">
-                                       <a href="https://www.plus.google.com/discover" data-toggle="tooltip"
-                                           target="_blank" title="Google Plus">
-                                           <i class="fa fa-google-plus"></i>
-                                       </a>
-                                   </li>
-                                   <li class="facebook">
-                                       <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank"
-                                           title="Facebook">
-                                           <i class="fa fa-facebook"></i>
-                                       </a>
-                                   </li>
-                                   <li class="youtube">
-                                       <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank"
-                                           title="Youtube">
-                                           <i class="fa fa-youtube"></i>
-                                       </a>
-                                   </li>
-                                   <li class="instagram">
-                                       <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank"
-                                           title="Instagram">
-                                           <i class="fa fa-instagram"></i>
-                                       </a>
-                                   </li>
-                               </ul>
-
-                           </div>
-                           <!-- Begin Footer Newsletter Area -->
-
-                           <!-- Footer Newsletter Area End Here -->
-                       </div>
-                       <!-- Footer Block Area End Here -->
-                   </div>
+                               
+                            </div>
+                            <!-- Begin Footer Newsletter Area -->
+                            
+                            <!-- Footer Newsletter Area End Here -->
+                        </div>
+                        <!-- Footer Block Area End Here -->
+                        <ul class="social-link">
+                            <li class="twitter">
+                                <a href="https://twitter.com/" data-toggle="tooltip" target="_blank"
+                                    title="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="rss">
+                                <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
+                            <li class="google-plus">
+                                <a href="https://www.plus.google.com/discover" data-toggle="tooltip"
+                                    target="_blank" title="Google Plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank"
+                                    title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank"
+                                    title="Youtube">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li class="instagram">
+                                <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank"
+                                    title="Instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                </div>
            </div>
        </div>

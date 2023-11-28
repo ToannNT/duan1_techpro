@@ -117,7 +117,7 @@ a:hover {
 
 a:focus,
 a:hover {
-    color: #0C2F4E;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -179,7 +179,10 @@ h5 {
 h6 {
     font-size: 16px;
 }
-
+.des{
+    padding-top: 18px;
+    width: 80%;
+}
 ul {
     margin: 0px;
     padding: 0px;
@@ -3617,7 +3620,9 @@ textarea:focus {
 .footer-shipping {
     border-bottom: 1px dashed #e1e1e1;
 }
-
+.footer-shipping{
+    border-top: 0.5px solid lightgray;
+}
 .footer-static-top-3 .footer-shipping {
     border-bottom: none;
 }
@@ -3659,8 +3664,8 @@ textarea:focus {
 .shipping-text p {
     margin: 0;
     color: #c5c5c5;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 200;
+    font-size: 13px;
     line-height: 18px;
 }
 
@@ -3729,7 +3734,7 @@ textarea:focus {
 }
 
 .footer-block>ul>li>a:hover {
-    color: #242424;
+    color: white;
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
 }
@@ -3739,15 +3744,18 @@ textarea:focus {
 
 .social-link {
     line-height: 30px;
-    margin-bottom: 40px;
     margin-top: 25px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .social-link>li {
     display: inline-block !important;
     transition: all 0.3s ease-in-out;
     float: left;
-    margin-right: 12px !important;
+    margin-right: 5px !important;
+    width: 40px;
+    text-align: center;
 }
 
 .social-link>li>a {
@@ -3873,7 +3881,7 @@ textarea:focus {
 }
 
 .footer-links>ul>li>a:hover {
-    color: #242424;
+    color: white;
     text-decoration: underline;
 }
 
