@@ -52,7 +52,7 @@ function get_newspapers(){
 }
 // tương tác với black friday 
 function get_blackfriday(){
-    $sql = "SELECT * FROM product WHERE dac_biet = 1";
+    $sql = "SELECT * FROM product WHERE dac_biet = 1 ";
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();

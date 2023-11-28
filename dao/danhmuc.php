@@ -3,28 +3,29 @@ require_once 'pdo.php';
 
 
 //TRANG ADMIN DANH MUC SP
-function showdm_adm($dsdm_adm, $id_catalog){
-    $html_show= '';
+function showdm_adm($dsdm_adm, $id_catalog)
+{
+    $html_show = '';
     foreach ($dsdm_adm as $dm_adm) {
         extract($dm_adm);
-        if($id_catalog == $id){
-            $html_show.='<option selected value="'.$id.'">'.$ten_dm.'</option>';
-        }else{
-            $html_show.='<option value="'.$id.'">'.$ten_dm.'</option>';
+        if ($id_catalog == $id) {
+            $html_show .= '<option selected value="' . $id . '">' . $ten_dm . '</option>';
+        } else {
+            $html_show .= '<option value="' . $id . '">' . $ten_dm . '</option>';
         }
     }
     return $html_show;
 }
-function showbr_adm($dsbr_adm, $id_brand){
-    $html_show= '';
+function showbr_adm($dsbr_adm, $id_brand)
+{
+    $html_show = '';
     foreach ($dsbr_adm as $br_adm) {
         extract($br_adm);
-        if($id_brand == $id){
-            $html_show.='<option selected value="'.$id.'">'.$ten.'</option>';
-        }else{
-            $html_show.='<option value="'.$id.'">'.$ten.'</option>';
+        if ($id_brand == $id) {
+            $html_show .= '<option selected value="' . $id . '">' . $ten . '</option>';
+        } else {
+            $html_show .= '<option value="' . $id . '">' . $ten . '</option>';
         }
-        
     }
     return $html_show;
 }
@@ -66,35 +67,40 @@ function showbr_adm($dsbr_adm, $id_brand){
 //         pdo_execute($sql, $ma_loai);
 //     }
 // }
-function get_Catalog(){
-    $sql="SELECT * FROM catalog";
+function get_Catalog()
+{
+    $sql = "SELECT * FROM catalog";
     return pdo_query($sql);
 }
 
-function get_Catalog_One($id){
-    $sql="SELECT * FROM catalog WHERE id=".$id;
+function get_Catalog_One($id)
+{
+    $sql = "SELECT * FROM catalog WHERE id=" . $id;
     return pdo_query_one($sql);
 }
-function catagory_add($stt,$name,$mota,$sethome){
-    $sql="INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
-    return pdo_execute($sql,$stt,$name,$mota,$sethome);
+function catagory_add($stt, $name, $mota, $sethome)
+{
+    $sql = "INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
+    return pdo_execute($sql, $stt, $name, $mota, $sethome);
 }
-function delete_catalog($id){
-    $sql="DELETE FROM catalog WHERE id=".$id;
+function delete_catalog($id)
+{
+    $sql = "DELETE FROM catalog WHERE id=" . $id;
     // pdo_execute($sql);
-    $dssp=sptheodanhmuc($id);
+    $dssp = sptheodanhmuc($id);
     // echo var_dump ($dssp);
-    if(count($dssp) > 0){
-        $tb = "Danh mục này có ".count($dssp)." sản phẩm. Bạn không được xóa!";
-    }else{
+    if (count($dssp) > 0) {
+        $tb = "Danh mục này có " . count($dssp) . " sản phẩm. Bạn không được xóa!";
+    } else {
         pdo_execute($sql);
         $tb = "";
     }
     return $tb;
 }
 
-function updateCatagory($id, $stt, $name, $mota, $sethome){
-    $sql = "UPDATE catalog SET stt=?, ten_dm=?, mota=?, sethome=?  WHERE id=".$id;
+function updateCatagory($id, $stt, $name, $mota, $sethome)
+{
+    $sql = "UPDATE catalog SET stt=?, ten_dm=?, mota=?, sethome=?  WHERE id=" . $id;
     return pdo_execute($sql, $stt, $name, $mota, $sethome);
 }
 
@@ -192,7 +198,7 @@ function show_dsbr_product($dsdm)
 
 
 
-//TRANG HOME
+//TRANG HOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 function dsdm_catalog()
 {
     $sql = "SELECT * FROM catalog ORDER BY id ASC";
@@ -224,8 +230,9 @@ function dsdm_brand_product()
     return pdo_query($sql);
 }
 
-function sptheodanhmuc($id){
-    $sql="SELECT * FROM product where id_catalog=".$id;
+function sptheodanhmuc($id)
+{
+    $sql = "SELECT * FROM product where id_catalog=" . $id;
     return pdo_query($sql);
 }
 

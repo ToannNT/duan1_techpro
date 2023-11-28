@@ -233,21 +233,21 @@
         <div class="container">
             <div class="row">
                 <!-- Begin Li's Featured Banner Area -->
-                <div class="col-lg-3 text-center">
-                    <div class="single-bannerr featured-banner">
-                        <a href="index.php?pg=product">
-                            <img src="./view/layout/images/banner/banner14.jpg" alt="Li's Featured Banner">
-                        </a>
-                    </div>
-                </div>
+
                 <!-- Li's Featured Banner Area End Here -->
                 <!-- Begin Featured Product Area -->
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="featured-product pt-sm-30 pt-xs-30">
                         <div class="li-section-title">
                             <h2>
                                 <span>Siêu sale vào ngày Black Friday</span>
                             </h2>
+
+                        </div>
+                        <div class="single-banner shop-page-banner" style="height: 100px;">
+                            <a href="#">
+                                <img src="./view/layout/images/bg-banner/3.jpg" alt="Li's Static Banner">
+                            </a>
                         </div>
                         <?php
                         $data_blackfriday = get_blackfriday();
@@ -259,7 +259,7 @@
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
                                             <a href="product-details.html">
-                                                <img  src="<?=$tt ['hinh'] ?>">
+                                                <img  src="./view/layout/images/product/<?=$tt ['hinh'] ?>">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
@@ -295,10 +295,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="featured-pro-wrapper">
+                                    <!-- <div class="featured-pro-wrapper">
                                         <div class="product-img">
                                             <a href="product-details.html">
-                                                <img alt src="./view/layout/images/product/sm-xiaomi-nau.jpg">
+                                                <img alt src="./view/layout/images/product/<?=$tt ['hinh'] ?>">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
@@ -331,9 +331,10 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <?php endforeach; ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -1052,23 +1053,23 @@
                         $data_tintucindex = get_tintucindex();
                     ?>
                     <div class="row">
-                        <div class="product-active owl-carousel">
+                        <!-- <div class="product-active owl-carousel"> -->
                                 <?php foreach ($data_tintucindex as $tt): ?>
                                 <!-- single-product-wrap start -->
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="li-blog-single-item pb-25">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="li-blog-single-item">
                                         <div class="li-blog-banner">
-                                            <a href="blog-details-left-sidebar.html"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
+                                            <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
                                         </div>
                                         <div class="li-blog-content">
                                             <div class="li-blog-details">
-                                                <h3 class="li-blog-heading pt-25"><a href="blog-details-left-sidebar.html">blog image post</a></h3>
+                                                <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a></h3>
                                                 <div class="li-blog-meta">
                                                   
-                                                    <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
+                                                    <a class="post-time" href="#"><i class="fa fa-calendar"></i>  <?= $tt['ngay'] ?></a>
                                                 </div>
                                                 
-                                                <a class="read-more" href="blog-details-left-sidebar.html">Read More...</a>
+                                                <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read More...</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1076,7 +1077,7 @@
                                 <!-- single-product-wrap end -->
                                 <?php endforeach; ?>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <!-- Li's Section Area End Here -->
             </div>
