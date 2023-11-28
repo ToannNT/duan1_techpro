@@ -2,13 +2,39 @@
 // echo var_dump($dsdanhmuc_all);
 $show_dm_all = show_DM($ds_danhmuc, $ds_brand);
 
+$show_html_cart = "";
+$j = 0;
+$tt = 0;
+$tong = 0;
+if (isset($_SESSION['giohang']) && ($_SESSION['giohang']) != "") {
+    foreach ($_SESSION['giohang'] as $item) {
+        extract($item);
+        $tong = (int)$price * (int)$quantity;
+        $show_html_cart .= '
+            <li>
+                <a href="index.php?pg=productdetail&idpro=' . $idpro . '" class="minicart-product-image">
+                    <img src="./view/layout/images/product/' . $img . '" alt="cart products">
+                </a>
+                <div  class="minicart-product-details  nav_cart">
+                    <h6><a  href="index.php?pg=productdetail&idpro=' . $idpro . '">' . $name . '</a></h6>
+                    <span>' . $price . ' x ' . $quantity . '</span>
+                </div>
+                <a href="index.php?pg=viewcart&del=' . $j . '" class="close" title="Remove">
+                    <i class="fa fa-close"></i>
+                </a>
+            </li>
+
+        ';
+        $j++;
+        $tt += $tong;
+    }
+}
 
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
     $html_account = '<li class="hm-minicart">
                         <div class="hm-minicart-trigger hm-minicart-trigger__user">
                             <a href="wishlist.html">
-                                <span class="cart-item-count wishlist-item-count">0</span>
                             </a>
                             <span class="item-icon__user">
 
@@ -164,7 +190,8 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
                                             <?= $Favorite_count ?>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
+                                                class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -173,7 +200,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                     <li class="hm-minicart">
                                         <div class="hm-minicart-trigger">
                                             <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count">0</span>
+                                                <span class="cart-item-count wishlist-item-count"><?=$j?></span>
                                             </a>
                                             <span class="item-icon">
                                             </span>
@@ -181,7 +208,16 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         </div>
                                         <div class="minicart">
                                             <ul class="minicart-product-list">
-                                                <li>
+
+
+                                                <?php
+                                                echo $show_html_cart;
+                                                ?>
+
+
+
+
+                                                <!-- <li>
                                                     <a href="single-product.html" class="minicart-product-image">
                                                         <img src="./view/layout/images/product/small-size/5.jpg" alt="cart products">
                                                     </a>
@@ -193,23 +229,36 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                                         <i class="fa fa-close"></i>
                                                     </button>
                                                 </li>
-                                                <li>
-                                                    <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="./view/layout/images/product/small-size/6.jpg" alt="cart products">
-                                                    </a>
-                                                    <div class="minicart-product-details">
-                                                        <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                        <span>£40 x 1</span>
-                                                    </div>
-                                                    <button class="close" title="Remove">
-                                                        <i class="fa fa-close"></i>
-                                                    </button>
-                                                </li>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                             </ul>
-                                            <p class="minicart-total">Tổng: <span>£80.00</span></p>
+                                            <p class="minicart-total">Tổng: <span><?= $tt ?>đ</span></p>
                                             <div class="minicart-button">
-                                                <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
-                                                    <span>View Full Cart</span>
+                                                <a href="index.php?pg=viewcart"
+                                                    class="li-button li-button-fullwidth li-button-dark">
+                                                    <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">
                                                     <span>Thanh toán</span>

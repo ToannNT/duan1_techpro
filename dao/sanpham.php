@@ -2,7 +2,8 @@
 require_once 'pdo.php';
 
 // TRANG SẢN PHẨM ADMIN
-function get_tablesp($limit){  
+function get_tablesp($limit)
+{
     $sql = "SELECT product.*, catalog.ten_dm AS tendm
     FROM product
     LEFT JOIN catalog ON product.id_catalog = catalog.id
@@ -10,24 +11,25 @@ function get_tablesp($limit){
     LIMIT " . $limit;
     return pdo_query($sql);
 }
-function show_tablesp($showspadm){
-    $html_showspadm='';
+function show_tablesp($showspadm)
+{
+    $html_showspadm = '';
     foreach ($showspadm as $spadm) {
         extract($spadm);
-        $link = 'index.php?pg=delsp&id='. $id;
-        $link2 = 'index.php?pg=updatesp&id='. $id;
-        $html_showspadm.='
+        $link = 'index.php?pg=delsp&id=' . $id;
+        $link2 = 'index.php?pg=updatesp&id=' . $id;
+        $html_showspadm .= '
         <tr>
-            <td width="10">'.$id.'</td>
-            <td width="10%">'.$ma_sp.'</td>
-            <td width="25%">'.$ten.'</td>
+            <td width="10">' . $id . '</td>
+            <td width="10%">' . $ma_sp . '</td>
+            <td width="25%">' . $ten . '</td>
             <td style="width: 100px; height: 100px; overflow: hidden;">
-                <img src="../view/layout/images/product/'.$hinh.'" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="../view/layout/images/product/' . $hinh . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
             </td>
             <td>40</td>
             <td><span class="badge bg-success">Còn hàng</span></td>
-            <td>'.number_format($gia,0,'.','.').'đ</td>
-            <td>'.$tendm.'</td>
+            <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
+            <td>' . $tendm . '</td>
             <td>
             <a class="btn btn-primary btn-sm trash" href="' . $link . '"><i class="fas fa-trash-alt"></i></a>
             <a class="btn btn-primary btn-sm edit" href="' . $link2 . '"><i class="fas fa-edit"></i></a>
@@ -37,22 +39,25 @@ function show_tablesp($showspadm){
     }
     return $html_showspadm;
 }
-//them san pham
-function insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run){
-    $sql ="INSERT INTO product (ma_sp, ten, gia, giamgia, id_catalog, id_brand, hinh, hinh1, hinh2, hinh3, hinh4, chitiet, mota, sale, new, xemnhieu, banchay) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+//them san pham ADMINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+function insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run)
+{
+    $sql = "INSERT INTO product (ma_sp, ten, gia, giamgia, id_catalog, id_brand, hinh, hinh1, hinh2, hinh3, hinh4, chitiet, mota, sale, new, xemnhieu, banchay) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     pdo_execute($sql, $masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
 }
 //end them san pham
 
 //xoa san pham
-function delsp($id){
+function delsp($id)
+{
     $sql = "DELETE FROM product WHERE  id=?";
     pdo_execute($sql, $id);
 }
 //end xoa san pham
 
 //sua san pham.
-function updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id){
+function updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id)
+{
     $sql = "UPDATE product SET ma_sp=?,ten=?,gia=?,giamgia=?,id_catalog=?,id_brand=?,hinh=?,hinh1=?,hinh2=?,hinh3=?,hinh4=?,chitiet=?,mota=?,sale=?,new=?,xemnhieu=?,banchay=? WHERE id=?";
     pdo_execute($sql, $masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
 }
@@ -164,9 +169,19 @@ function show_SP($dssp)
                 </div>
                 <div class="add-actions">
                     <ul class="add-actions-link">
-                        <li class="add-cart active"><a href="#">Thêm</a></li>
+                        
+                        <form action="index.php?pg=addcart" method="post">
+                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="idpro" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            <input type="hidden" name="price" value="' . $gia . '">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                        </form>
+                        
                         <form action="index.php?pg=addtoWishlist" method="post">
-                            <input type="hidden" name="img" value="../view/layout/images/product'. $hinh .'">
+                            <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
                             <input type="hidden" name="price" value="' . $gia . '">
                             <button type="submit" name="btn_Wish" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>

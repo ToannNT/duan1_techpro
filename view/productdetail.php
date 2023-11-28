@@ -1,15 +1,15 @@
 <?php
-    extract($show_Sp_detail);
-    $id1=$id;
-    if ($giamgia > 0) {
-        $gia_sp = '
+extract($show_Sp_detail);
+$id1 = $id;
+if ($giamgia > 0) {
+    $gia_sp = '
             <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
             <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
             <span class="discount-percentage">-7%</span>
         ';
-    } else {
-        $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
-    }
+} else {
+    $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+}
 ?>
 <!-- Begin Li's Breadcrumb Area -->
 <div class="breadcrumb-area">
@@ -32,54 +32,48 @@
                 <div class="product-details-left">
                     <div class="product-details-images slider-navigation-1">
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/1.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/1.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/2.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh1?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/2.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh1 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/3.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh2?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/3.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh2 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/4.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh3?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/4.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/5.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh4?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/5.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/6.jpg"
-                                data-gall="myGallery">
-                                <img src="./view/layout/images/product/<?=$hinh5?>" alt="product image">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/6.jpg" data-gall="myGallery">
+                                <img src="./view/layout/images/product/<?= $hinh5 ?>" alt="product image">
                             </a>
                         </div>
                     </div>
                     <div class="product-details-thumbs slider-thumbs-1">
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh3?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh1?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh1 ?>" alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh4?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh3?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh4?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?=$hinh5?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh5 ?>" alt="product image thumb">
                         </div>
                     </div>
                 </div>
@@ -89,7 +83,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="product-details-view-content pt-60">
                     <div class="product-info">
-                        <h2><?=$ten?></h2>
+                        <h2><?= $ten ?></h2>
                         <!-- <span class="product-details-ref">Reference: demo_15</span> -->
                         <!-- <div class="rating-box pt-20">
                             <ul class="rating rating-with-review-item">
@@ -103,11 +97,11 @@
                             </ul>
                         </div> -->
                         <div class="price-box pt-20">
-                            <?=$gia_sp?>
+                            <?= $gia_sp ?>
                         </div>
                         <div class="product-desc">
                             <p>
-                                <span><?=$mota;?></span>
+                                <span><?= $mota; ?></span>
                             </p>
                         </div>
                         <!-- <div class="product-variants">
@@ -121,21 +115,27 @@
                             </div>
                         </div> -->
                         <div class="single-add-to-cart">
-                            <form action="#" class="cart-quantity">
+                            <form action="index.php?pg=addcart" class="cart-quantity" method="post">
                                 <div class="quantity">
                                     <label>Số lượng</label>
                                     <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                        <input class="cart-plus-minus-box" name="quantity" value="1" type="text">
                                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                     </div>
                                 </div>
                                 <button class="add-to-cart" type="submit">Mua sản phẩm</button>
-                                <button class="add-to-cart" type="submit">Thêm vào giỏ hàng</button>
+                                <input type="hidden" name="img" value="<?= $hinh ?>">
+                                <input type="hidden" name="name" value="<?= $ten ?>">
+                                <input type="hidden" name="price" value="<?= $gia ?>">
+                                <input type="hidden" name="page_here" value="index.php?pg=productdetail&idpro=<?= $id ?>">
+                                <button class="add-to-cart" type="submit" name="addcart">Thêm vào giỏ hàng</button>
+                                <!-- <button  type="submit"></button> -->
                             </form>
                         </div>
                         <div class="product-additional-info pt-25">
-                            <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Thêm vào danh sách yêu thích</a>
+                            <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Thêm vào danh sách
+                                yêu thích</a>
                             <div class="product-social-sharing pt-25">
                                 <ul>
                                     <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
@@ -189,7 +189,8 @@
             <div class="col-lg-12">
                 <div class="li-product-tab">
                     <ul class="nav li-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#description"><span>Chi tiết sản phẩm</span></a></li>
+                        <li><a class="active" data-toggle="tab" href="#description"><span>Chi tiết sản phẩm</span></a>
+                        </li>
                         <!-- <li><a data-toggle="tab" href="#product-details"><span>Chi tiết sản phẩm</span></a></li> -->
                         <li><a data-toggle="tab" href="#reviews"><span>Đánh giá</span></a></li>
                     </ul>
@@ -200,7 +201,7 @@
         <div class="tab-content">
             <div id="description" class="tab-pane active show" role="tabpanel">
                 <div class="product-description">
-                    <span><?=$mota?></span>
+                    <span><?= $mota ?></span>
                 </div>
             </div>
             <!-- <div id="product-details" class="tab-pane" role="tabpanel">
@@ -234,7 +235,8 @@
                             <p>Plaza</p>
                         </div>
                         <div class="review-btn">
-                            <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Viết đánh giá của bạn</a>
+                            <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Viết đánh giá
+                                của bạn</a>
                         </div>
                         <!-- Begin Quick View | Modal Area -->
                         <div class="modal fade modal-wrapper" id="mymodal">
@@ -245,12 +247,12 @@
                                         <div class="modal-inner-area row">
                                             <div class="col-lg-6">
                                                 <div class="li-review-product">
-                                                    <img src="./view/layout/images/product/<?=$hinh?>" alt="Li's Product">
+                                                    <img src="./view/layout/images/product/<?= $hinh ?>" alt="Li's Product">
                                                     <div class="li-review-product-desc">
-                                                        <p class="li-product-name"><?=$ten?>
+                                                        <p class="li-product-name"><?= $ten ?>
                                                         </p>
                                                         <p>
-                                                            <span><?=$mota?></span>
+                                                            <span><?= $mota ?></span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -276,32 +278,23 @@
                                                                 </p>
                                                                 <p class="feedback-form">
                                                                     <label for="feedback">Đánh giá của bạn</label>
-                                                                    <textarea id="feedback" name="comment" cols="45"
-                                                                        rows="8" aria-required="true"></textarea>
+                                                                    <textarea id="feedback" name="comment" cols="45" rows="8" aria-required="true"></textarea>
                                                                 </p>
                                                                 <div class="feedback-input">
                                                                     <p class="feedback-form-author">
-                                                                        <label for="author">Họ và tên<span
-                                                                                class="required">*</span>
+                                                                        <label for="author">Họ và tên<span class="required">*</span>
                                                                         </label>
-                                                                        <input id="author" name="author" value
-                                                                            size="30" aria-required="true"
-                                                                            type="text">
+                                                                        <input id="author" name="author" value size="30" aria-required="true" type="text">
                                                                     </p>
-                                                                    <p
-                                                                        class="feedback-form-author feedback-form-email">
-                                                                        <label for="email">Email<span
-                                                                                class="required">*</span>
+                                                                    <p class="feedback-form-author feedback-form-email">
+                                                                        <label for="email">Email<span class="required">*</span>
                                                                         </label>
-                                                                        <input id="email" name="email" value
-                                                                            size="30" aria-required="true"
-                                                                            type="text">
-                                                                        <span class="required"><sub>*</sub> Phần bắt buộc</span>
+                                                                        <input id="email" name="email" value size="30" aria-required="true" type="text">
+                                                                        <span class="required"><sub>*</sub> Phần bắt
+                                                                            buộc</span>
                                                                     </p>
                                                                     <div class="feedback-btn pb-15">
-                                                                        <a href="#" class="close"
-                                                                            data-dismiss="modal"
-                                                                            aria-label="Close">Đóng</a>
+                                                                        <a href="#" class="close" data-dismiss="modal" aria-label="Close">Đóng</a>
                                                                         <a href="#">Gửi</a>
                                                                     </div>
                                                                 </div>
@@ -340,18 +333,18 @@
                         <?php
                         foreach ($show_relate as $item) {
                             extract($item);
-                            $link= "index.php?pg=productdetail&idpro=".$id;
-                            if($sale > 0){
-                                $giachinhthuc= $giamgia;
-                            }else{
-                                $giachinhthuc= "$gia";
+                            $link = "index.php?pg=productdetail&idpro=" . $id;
+                            if ($sale > 0) {
+                                $giachinhthuc = $giamgia;
+                            } else {
+                                $giachinhthuc = "$gia";
                             }
                             echo '<div class="col-lg-12">
                                     <!-- single-product-wrap start -->
                                     <div class="single-product-wrap">
                                         <div class="product-image">
-                                            <a href="'.$link.'">
-                                                <img src="./view/layout/images/product/'.$hinh.'" alt="">
+                                            <a href="' . $link . '">
+                                                <img src="./view/layout/images/product/' . $hinh . '" alt="">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -359,7 +352,7 @@
                                             <div class="product_desc_info">
                                                 <div class="product-review">
                                                     <h5 class="manufacturer">
-                                                        <a href="product-details.html">'.$ma_sp.'</a>
+                                                        <a href="product-details.html">' . $ma_sp . '</a>
                                                     </h5>
                                                     <div class="rating-box">
                                                         <ul class="rating">
@@ -371,14 +364,22 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <h4><a class="product_name" href="single-product.html">'.$ten.'</a></h4>
+                                                <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
                                                 <div class="price-box">
-                                                    <span class="new-price">'. number_format($giachinhthuc, 0, '.', '.') .'</span>
+                                                    <span class="new-price">' . number_format($giachinhthuc, 0, '.', '.') . '</span>
                                                 </div>
                                             </div>
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                <form action="index.php?pg=addcart" method="post">
+                                                    <input type="hidden" name="page_here" value="index.php?pg=product">
+                                                    <input type="hidden" name="img" value="' . $hinh . '">
+                                                    <input type="hidden" name="name" value="' . $ten . '">
+                                                    <input type="hidden" name="price" value="' . $gia . '">
+                                                    <input type="hidden" name="quantity" value="1">
+                                                    <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                                                </form>
+                                                
                                                     <li><a href="#" title="quick view" class="quick-view-btn"
                                                             data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                 class="fa fa-eye"></i></a></li>
@@ -389,8 +390,8 @@
                                         </div>
                                     </div>
                                     <button class="sosanh mt-20" id="sosanh">So Sánh</button>
-                                    <input type="hidden" id="spss1" value="'.$id1.'">
-                                    <input type="hidden" id="spss2" value="'.$id.'">
+                                    <input type="hidden" id="spss1" value="' . $id1 . '">
+                                    <input type="hidden" id="spss2" value="' . $id . '">
                                     <!-- single-product-wrap end -->
                                 </div>';
                         }
