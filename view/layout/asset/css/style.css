@@ -7175,3 +7175,16 @@ span.required {
 .changepass_center{
     justify-content: center;
 }
+.formWish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links-details{
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+}
+.wishimg{
+    width: 100px;
+}

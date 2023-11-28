@@ -170,7 +170,7 @@ function show_SP($dssp)
                             <input type="hidden" name="img" value="'. $hinh .'">
                             <input type="hidden" name="name" value="' . $ten . '">
                             <input type="hidden" name="price" value="' . $gia . '">
-                            <button type="submit" name="btn_Wish" style=" border: none;" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                            <button type="submit" name="btn_Wish" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
                             <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                         </form>
                     </ul>
