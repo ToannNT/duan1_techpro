@@ -3024,6 +3024,12 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
+    /* của quí  */
+    /* display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    margin: 8px 0; */
     -webkit-transition: all 300ms ease-in 0s;
     transition: all 300ms ease-in 0s;
     width: 100%;
@@ -3130,8 +3136,9 @@ textarea:focus {
 }
 
 .single-product-wrap:hover .add-actions {
-    transform: translateY(-79%);
+    transform: translateY(-100%);
     bottom: 0;
+    background-color: #fff;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
@@ -7207,4 +7214,20 @@ span.required {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+.changepass_center{
+    justify-content: center;
+}
+.formWish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links-details{
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+}
+.wishimg{
+    width: 100px;
 }

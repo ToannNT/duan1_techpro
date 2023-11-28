@@ -180,13 +180,16 @@ function show_SP($dssp)
                             <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
                         </form>
                         
-                        <form action="index.php?pg=addtoWishlist" method="post">
-                            <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+
+                        <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                            <li class="add-cart active"><a href="#">Thêm</a></li>
+                            <input type="hidden" name="id" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
                             <input type="hidden" name="price" value="' . $gia . '">
                             <button type="submit" name="btn_Wish" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                         </form>
-                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -514,3 +517,12 @@ function show_dssp($dssp_sp)
 //     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT " . $_SESSION['page_no'] . ", 10";
 //     return pdo_query($sql);
 // }
+
+
+
+
+
+
+// note cái trùng dòng 184
+// <form action="index.php?pg=addtoWishlist" method="post">
+// <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">

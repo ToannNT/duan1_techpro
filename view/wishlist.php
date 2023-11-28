@@ -1,22 +1,25 @@
 <?php
     $tableWishlist="";
-    if(isset($_SESSION['f_Product'])){
+    if(isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])){
         extract($_SESSION['f_Product']);
-        echo "<pre>";
-        print_r($_SESSION['f_Product']);
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r($_SESSION['f_Product']);
+        // echo "</pre>";
+        $i = 0;
         foreach ($_SESSION['f_Product'] as $item) {
             extract ($item);
-            $i = 0;
+            $link = 'index.php?pg=productdetail&idpro=' . $id;
+            
             $linkDel='index.php?pg=delWishlistArray&ind='.$i;
             $tableWishlist.='<tr>
                                 <td class="li-product-remove"><a href="' . $linkDel . '"><i class="fa fa-times"></i></a></td>
-                                <td class="li-product-thumbnail"><a href="#"><img src="'.$hinh.'" alt="Hinh"></a></td>
-                                <td class="li-product-name"><a href="#">'.$ten.'</a></td>
+                                <td class="li-product-thumbnail"><a href="'.$link.'"><img class="wishimg" src="./view/layout/images/product/' . $hinh . '" alt="Hinh"></a></td>
+                                <td class="li-product-name"><a href="'.$link.'">'.$ten.'</a></td>
                                 <td class="li-product-price"><span class="amount">'.$gia.'</span></td>
                                 <td class="li-product-stock-status"><span class="in-stock">in stock</span></td>
                                 <td class="li-product-add-cart"><a href="#">add to cart</a></td>
                             </tr>';
+        $i++;
         }
         // echo var_dump($_SESSION['f_Product']);
     }else{

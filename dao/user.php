@@ -38,6 +38,11 @@ function get_user($id)
     return  pdo_query_one($sql, $id);
 }
 
+function  update_pass_user($newpassword, $id){
+    $sql = "UPDATE user SET password=? WHERE id=?";
+    pdo_execute($sql, $newpassword, $id);
+}
+
 
 
 
