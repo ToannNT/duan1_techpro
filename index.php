@@ -170,6 +170,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'addtoWishlist':
             if(isset($_POST['btn_Wish'])){
+                $id=$_POST['id'];
                 $img=$_POST['img'];
                 $name=$_POST['name'];
                 $price=$_POST['price'];
@@ -195,9 +196,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //     $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
                 //     $_SESSION['f_Product'][]=$sp;
                 // }
-                $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
+                $sp=["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][]=$sp;
-                header('location: index.php?pg=login_register');
+                header('location: index.php?pg=wishlist');
             }
             break;
         case 'wishlist':
@@ -206,10 +207,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'delWishlistArray':
             if(isset($_GET['ind']) && ($_GET['ind'])>=0){
                 array_splice($_SESSION['f_Product'],$_GET['ind'],1);
-                header ('location: index.php?page=cart');
+                header ('location: index.php?pg=wishlist');
             }
             if(empty($_SESSION['f_Product'])){
                 unset($_SESSION['f_Product']);
+                header ('location: index.php');
             }
             break;
         default:
