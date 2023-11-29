@@ -84,13 +84,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
             if(isset($_POST['updatepro'])){
+                
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
                 $giaban = $_POST['giaban'];
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
-                
                 $hinhsp = $_FILES['imgup']['name'];
                 $hinh1 = $_FILES['hinh1']['name'];
                 $hinh2 = $_FILES['hinh2']['name'];
@@ -105,6 +105,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $id = $_POST['id'];
                 if($hinhsp ==""){
                     $hinhsp = $_POST['imgold'];
+                }
+                if(empty($masp)||strlen($masp)>10){
+                    $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm tối đa 10 ký tự</p>';
                 }
                 $target_file ="../view/layout/images/product/". $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
@@ -145,7 +148,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
                 if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
                 if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
-                
+                if($masp==""){
+                    $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm</p>';
+                    require_once "view/addsp.php";
+                }
                 insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
                 $target_file ="../view/layout/images/product/". $hinhsp;
 

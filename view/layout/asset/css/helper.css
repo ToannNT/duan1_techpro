@@ -5325,9 +5325,6 @@
 .pt-50 {
   padding-top: 50px !important; }
 
-.pt-55 {
-  padding-top: 55px !important; }
-
 .pt-60 {
   padding-top: 30px !important; }
 
@@ -6106,7 +6103,7 @@
   padding-bottom: 50px !important; }
 
 .pb-55 {
-  padding-bottom: 55px !important; }
+  padding: 35px !important; }
 
 .pb-60 {
   padding-bottom: 60px !important; }

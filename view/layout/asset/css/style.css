@@ -80,10 +80,12 @@
 
 /*  1.1 Basic
 /*----------------------------------------*/
+*{
+    font-family: 'Poppins', sans-serif;
 
+}
 body {
     color: #242424;
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
@@ -117,7 +119,7 @@ a:hover {
 
 a:focus,
 a:hover {
-    color: #0C2F4E;
+    /* color: #ffffff; */
     text-decoration: none;
 }
 
@@ -138,7 +140,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: inherit;
+    /* font-family: inherit; */
     font-weight: 700;
     color: inherit;
     line-height: 1.1;
@@ -179,7 +181,10 @@ h5 {
 h6 {
     font-size: 16px;
 }
-
+.des{
+    padding-top: 18px;
+    width: 80%;
+}
 ul {
     margin: 0px;
     padding: 0px;
@@ -1872,7 +1877,7 @@ textarea:focus {
 /*Header Middle*/
 
 .header-middle {
-    padding: 30px;
+    padding: 25px;
 }
 
 .hm-searchbox {
@@ -1911,6 +1916,7 @@ textarea:focus {
 }
 
 .wrappr-nav-mid {
+    align-items: center;
     display: flex;
     justify-content: end;
 }
@@ -1978,7 +1984,11 @@ textarea:focus {
 
 
 /*Header Middle Minicart*/
-
+.nav_cart{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .hm-minicart {
     display: inline-block;
     position: relative;
@@ -2070,7 +2080,7 @@ textarea:focus {
     position: absolute;
     right: 0;
     top: 100%;
-    z-index: 9;
+    z-index: 1000;
     display: none;
     border: 1px solid #e5e5e5;
     padding: 20px;
@@ -2445,6 +2455,7 @@ textarea:focus {
 
 .megamenu-holder:hover>.megamenu,
 .megamenu-static-holder:hover>.megamenu {
+    z-index: 1000;
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -2466,7 +2477,7 @@ textarea:focus {
 
 .megamenu-static-holder .hb-megamenu,
 .megamenu-holder .hb-megamenu {
-    background-image: url(images/menu/li-bg-menu.jpg);
+    /* background-image: url(./images/slider/bgbn1.jpg); */
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -3009,8 +3020,16 @@ textarea:focus {
 }
 
 .add-actions-link {
-    display: inline-block;
+    /* float: left; */
+    display: flex;
+    justify-content: space-between;
     margin-top: 24px;
+    /* của quí  */
+    /* display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    margin: 8px 0; */
     -webkit-transition: all 300ms ease-in 0s;
     transition: all 300ms ease-in 0s;
     width: 100%;
@@ -3022,7 +3041,7 @@ textarea:focus {
     background: #eef0f1;
     display: inline-block;
     border-radius: 4px;
-    float: left;
+    /* float: left; */
     height: 35px;
     line-height: 35px;
     width: 35px;
@@ -3037,6 +3056,34 @@ textarea:focus {
     width: 115px;
 }
 
+.add-cart-btn {
+    /* float: left; */
+    margin: 0;
+    background-color: #0C2F4E;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    width: 115px;
+    display: inline-block;
+    border-radius: 4px;
+    height: 35px;
+    line-height: 35px;
+    /* outline: none; */
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    -webkit-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s;
+    cursor: pointer;
+}
+
+.add-cart-btn:hover{
+    background: #305173;
+
+}
+
+
+/* mẫu  */
 .add-actions-link li:hover {
     background: #305173;
     /* border-color: #0C2F4E; */
@@ -3089,8 +3136,9 @@ textarea:focus {
 }
 
 .single-product-wrap:hover .add-actions {
-    transform: translateY(-79%);
+    transform: translateY(-100%);
     bottom: 0;
+    background-color: #fff;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
@@ -3615,7 +3663,9 @@ textarea:focus {
 .footer-shipping {
     border-bottom: 1px dashed #e1e1e1;
 }
-
+.footer-shipping{
+    border-top: 0.5px solid lightgray;
+}
 .footer-static-top-3 .footer-shipping {
     border-bottom: none;
 }
@@ -3657,8 +3707,8 @@ textarea:focus {
 .shipping-text p {
     margin: 0;
     color: #c5c5c5;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 200;
+    font-size: 13px;
     line-height: 18px;
 }
 
@@ -3727,7 +3777,7 @@ textarea:focus {
 }
 
 .footer-block>ul>li>a:hover {
-    color: #242424;
+    color: white;
     text-decoration: underline;
     transition: all 0.3s ease-in-out;
 }
@@ -3737,15 +3787,18 @@ textarea:focus {
 
 .social-link {
     line-height: 30px;
-    margin-bottom: 40px;
     margin-top: 25px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .social-link>li {
     display: inline-block !important;
     transition: all 0.3s ease-in-out;
     float: left;
-    margin-right: 12px !important;
+    margin-right: 5px !important;
+    width: 40px;
+    text-align: center;
 }
 
 .social-link>li>a {
@@ -3871,7 +3924,7 @@ textarea:focus {
 }
 
 .footer-links>ul>li>a:hover {
-    color: #242424;
+    color: white;
     text-decoration: underline;
 }
 
@@ -5321,7 +5374,7 @@ thead {
     border: 1px solid #0C2F4E;
     color: #fff;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     text-align: center;
     padding: 10px 20px;
@@ -5333,6 +5386,10 @@ thead {
 .cart-page-total>a:hover {
     background: #60A3E6;
     border-color: #60A3E6;
+}
+
+.li-product-thumbnail>a>img{
+    width: 100px;
 }
 
 
@@ -5394,7 +5451,7 @@ thead {
     text-transform: uppercase;
     position: relative;
     margin-bottom: 52px;
-    font-family: Poppins;
+    /* font-family: Poppins; */
 }
 
 .li-blog-sidebar .li-blog-sidebar-title::before {
@@ -5882,7 +5939,7 @@ h5.compare-product-name a:hover {
 /*----------------------------------------*/
 
 #google-map {
-    height: 400px;
+    /* height: 400px; */
 }
 
 h3.contact-page-title {
@@ -7157,4 +7214,20 @@ span.required {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+.changepass_center{
+    justify-content: center;
+}
+.formWish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links-details{
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+}
+.wishimg{
+    width: 100px;
 }

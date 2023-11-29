@@ -19,40 +19,41 @@ if(is_array($showup)&&(count($showup)>0)){
           <h3 class="tile-title">Cập nhật sản phẩm</h3>
           <div class="tile-body">
           </div>
+          <div class="formsp">
             <form action="index.php?pg=updatepro" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
-                <label class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span>  </label>
-                <input class="form-control" name="masp" type="text" value="<?=($ma_sp!="")?$ma_sp:"";?>">
+                <label for="masp" class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span>  </label>
+                <input class="form-control" id="masp" name="masp" type="text" value="<?=$ma_sp?>">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" name="tensp" type="text" value="<?=($ten!="")?$ten:"";?>">
+                <label for="tensp" class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input class="form-control" id="tensp" name="tensp" type="text" value="<?=($ten!="")?$ten:"";?>">
               </div>
               <div class="form-group col-md-3">
-                <label for="exampleSelect1" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
-                <select class="form-control" name="danhmucsp" id="exampleSelect1">
+                <label for="dmsp" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
+                <select id="dmsp" class="form-control" name="danhmucsp">
                   <option value="default">--Chọn danh mục--</option>
                   <?=$html_showdmadm?>
                 </select>
               </div>
               <div class="form-group col-md-3 ">
-                <label for="exampleSelect1" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <select class="form-control" name="brandsp" id="exampleSelect1">
+                <label for="brandsp" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span> </label>
+                <select class="form-control" name="brandsp" id="brandsp">
                   <option>-- Chọn hãng --</option>
                   <?=$html_showbradm?>
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" name="giaban" value="<?=$gia?>" type="text">
+                <label for="giabansp" class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input class="form-control" id="giabansp" name="giaban" value="<?=$gia?>" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá giảm</label>
-                <input class="form-control" name="giagiam" value="<?=$giamgia?>" type="text">
+                <label class="control-label" for="giagiamsp">Giá giảm</label>
+                <input class="form-control" id="giagiamsp" name="giagiam" value="<?=$giamgia?>" type="text">
               </div>
               <div class="form-group col-md-3 ">
-                <label for="exampleSelect1" class="control-label">Tình trạng</label>
-                <select class="form-control" id="exampleSelect1">
+                <label for="tinhtrangsp" class="control-label">Tình trạng</label>
+                <select class="form-control" id="tinhtrangsp">
                   <option>-- Chọn tình trạng --</option>
                   <option>Còn hàng</option>
                   <option>Hết hàng</option>
@@ -127,6 +128,7 @@ if(is_array($showup)&&(count($showup)>0)){
               <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
               <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>
+          </div>
         </div>
       </div>
     </div>
@@ -253,3 +255,45 @@ MODAL
   <!--
 MODAL
 -->
+<script>
+  var form = document.getElementsByTagName("form");
+  var masp = document.getElementById("masp");
+  var tensp = document.getElementById("tensp");
+  var danhmucsp = document.getElementById("danhmucsp");
+  var brandsp = document.getElementById("brandsp");
+  var giabansp = document.getElementById("giabansp");
+  form.addEventListener("submit", function(event){
+    if(masp.value == "" || masp.value.length>10){
+      alert("Mã sản phẩm không được để trống tối đa 10 ký tự!");
+      event.preventDefault();// không cho submit
+      masp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    if(tensp.value == ""){
+      alert("Tên sản phẩm không được để trống!");
+      event.preventDefault();// không cho submit
+      tensp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    if(danhmucsp.value == "default"){
+      alert("Danh mục không được để trống!");
+      event.preventDefault();// không cho submit
+      danhmucsp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    if(brandsp.value == "default"){
+      alert("Brand không được để trống!");
+      event.preventDefault();// không cho submit
+      brandsp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    if(giabansp.value == "" || isNaN(giabansp.value)){
+      alert("Giá bán không được để trống và phải là số!");
+      event.preventDefault();// không cho submit
+      giabansp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    return true;
+  });
+
+</script>

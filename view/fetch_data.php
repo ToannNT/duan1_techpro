@@ -88,9 +88,15 @@ if (isset($_POST['input'])) {
                     </div>
                     <div class="add-actions">
                         <ul class="add-actions-link">
-
+                        <form action="index.php?pg=addcart" method="post">
+                            <input type="hidden" name="page_here" value="index.php?pg=product">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            <input type="hidden" name="price" value="' . $gia . '">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                        </form>
                              
-                            <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
                             <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                         </ul>
@@ -206,7 +212,15 @@ if (isset($_POST['input'])) {
                         </div>
                         <div class="add-actions">
                             <ul class="add-actions-link">
-                                <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+
+                                <form action="index.php?pg=addcart" method="post">
+                                    <input type="hidden" name="page_here" value="index.php?pg=product">
+                                    <input type="hidden" name="img" value="' . $hinh . '">
+                                    <input type="hidden" name="name" value="' . $ten . '">
+                                    <input type="hidden" name="price" value="' . $gia . '">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                                </form>
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                             </ul>
@@ -300,9 +314,15 @@ if (isset($_POST['input'])) {
                     </div>
                     <div class="add-actions">
                         <ul class="add-actions-link">
-
+                        <form action="index.php?pg=addcart" method="post">
+                            <input type="hidden" name="page_here" value="index.php?pg=product">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            <input type="hidden" name="price" value="' . $gia . '">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                        </form>
                              
-                            <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
                             <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                         </ul>

@@ -17,3 +17,15 @@
 //     }
 //     return $tong;
 // }
+
+// function get_tongdonhang()
+// {
+//     $tt = 0;
+//     $tong = 0;
+//     foreach ($_SESSION['giohang'] as $item) {
+//         extract($item);
+//         $tt = (int)$price * (int)$quantity;
+//         $tong += $tt;
+//     }
+//     return $tong;
+// }
