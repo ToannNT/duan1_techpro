@@ -3371,8 +3371,8 @@ textarea:focus {
 
 .li-banner>a>img,
 .single-banner>a>img {
-    /* height: 500px; */
-    object-fit: contain;
+    height: 180px;
+    object-fit: cover;
 }
 
 
