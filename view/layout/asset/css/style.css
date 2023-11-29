@@ -3022,7 +3022,7 @@ textarea:focus {
 .add-actions-link {
     /* float: left; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 24px;
     /* của quí  */
     /* display: inline-flex;
@@ -3062,7 +3062,7 @@ textarea:focus {
     background-color: #0C2F4E;
     border: none;
     transition: all 0.3s ease-in-out;
-    width: 115px;
+    width: 100px;
     display: inline-block;
     border-radius: 4px;
     height: 35px;

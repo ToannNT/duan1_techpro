@@ -8,7 +8,7 @@ if (isset($_SESSION['giohang']) && ($_SESSION['giohang']) != "") {
         extract($item);
         $tong = (int)$price * (int)$quantity;
         $html_viewcart .= '
-                    <tr>
+                    <tr productId="' . $idpro . '">
                     <td class="li-product-remove"><a href="index.php?pg=viewcart&del=' . $i . '"><i class="fa fa-times"></i></a></td>
                     <td class="li-product-thumbnail"><a href="#"><img src="./view/layout/images/product/' . $img . '" alt="List Product Image"></a></td>
                     <td class="li-product-name"><a href="#">' . $name . '</a></td>

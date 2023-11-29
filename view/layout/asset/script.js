@@ -272,6 +272,45 @@ function uncheck_all_brand() {
     // }
     // }
 
-
-
 }
+
+
+
+/* 22. Cart Plus Minus Button
+    /*----------------------------------------*/
+$(".qtybutton").on("click", function () {
+    var $button = $(this);
+    var $input = $button.parent().find("input");
+    var oldValue = parseFloat($input.val());
+    var productId = $input.closest("tr").attr("productId");
+
+    if ($button.hasClass('inc')) {
+        var newVal = oldValue + 1;
+    } else {
+        // Don't allow decrementing below zero
+        var newVal = oldValue > 1 ? oldValue - 1 : 1;
+    }
+
+    // Cập nhật giá trị hiển thị và biến $quantity
+    $input.val(newVal);
+
+    // Gửi yêu cầu AJAX để cập nhật số lượng trên máy chủ
+    $.ajax({
+        type: "POST",
+        url: "./view/update_quantity.php",
+        data: { productId: productId, quantity: newVal },
+        dataType: "json",
+        success: function (response) {
+            if (response.success) {
+                console.log("Cập nhật số lượng thành công!");
+                location.reload();
+                // Có thể thực hiện các bước khác sau khi cập nhật thành công
+            } else {
+                console.error("Lỗi khi cập nhật số lượng!");
+            }
+        },
+        error: function () {
+            console.error("Lỗi kết nối đến máy chủ!");
+        }
+    });
+});
