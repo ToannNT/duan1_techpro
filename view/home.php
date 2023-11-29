@@ -258,7 +258,7 @@
                                 <div class="featured-product-bundle">
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
-                                            <a href="product-details.html">
+                                            <a href="index.php?pg=productdetail&idpro=<?=$tt ['id'] ?>">
                                                 <img  src="./view/layout/images/product/<?=$tt ['hinh'] ?>">
                                             </a>
                                         </div>
