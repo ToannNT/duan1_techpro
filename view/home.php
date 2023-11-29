@@ -260,7 +260,7 @@
                                     <div class="featured-product-bundle">
                                         <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                             <div class="product-img">
-                                                <a href="product-details.html">
+                                                <a href="index.php?pg=productdetail&idpro=<?=$tt ['id'] ?>">
                                                     <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
                                                 </a>
                                             </div>
@@ -279,7 +279,7 @@
                                                         <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a class="featured-product-name" href="single-product.html">Chỉ trong
+                                                <h4><a class="featured-product-name" href="index.php?pg=productdetail&idpro=<?=$tt ['id'] ?>">Chỉ trong
                                                         ngày hôm nay</a></h4>
                                                 <div class="featured-price-box">
                                                     <span class="new-price new-price-2">35.000.000đ</span>
