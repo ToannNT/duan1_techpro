@@ -12,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($_SESSION['giohang'] as &$item) {
             if ($item['idpro'] == $productId) {
                 $item['quantity'] = $newQuantity;
+
+                // Tính toán lại $thanhtien
+                $item['thanhtien'] = (int)$item['price'] * (int)$newQuantity;
             }
         }
 
