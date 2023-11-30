@@ -123,13 +123,24 @@ function show_SP($dssp)
 
         if ($giamgia > 0) {
             $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
-
+            $giatien_addcart = '
+            <input type="hidden" name="price" value="' . $giamgia . '">
+            ';
+            $thanhTien_addcart = '
+            <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+            ';
             $gia_sp = '
                 <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                 <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
                 <span class="discount-percentage">- ' . floor($phantram) . '%</span>
             ';
         } else {
+            $giatien_addcart = '
+            <input type="hidden" name="price" value="' . $gia . '">
+            ';
+            $thanhTien_addcart = '
+            <input type="hidden" name="thanhtien" value="' . $gia . '">
+            ';
             $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
         }
         $link = 'index.php?pg=productdetail&idpro=' . $id;
@@ -175,7 +186,11 @@ function show_SP($dssp)
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="price" value="' . $gia . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
+
+
                             <input type="hidden" name="quantity" value="1">
                             <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
                         </form>
