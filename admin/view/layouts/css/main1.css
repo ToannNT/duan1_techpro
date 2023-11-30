@@ -13906,9 +13906,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .app-sidebar__user-avatar {
-  background: white;
-  border-radius: 156px;
-  width: 131px;
+  width: 62px;
   border: 3px solid white;
   margin-bottom: 10px;
   object-fit: contain;
