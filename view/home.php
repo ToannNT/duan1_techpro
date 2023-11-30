@@ -1052,6 +1052,7 @@
                     <?php
                         $data_tintucindex = get_tintucindex();
                     ?>
+                    
                     <div class="row">
                         <!-- <div class="product-active owl-carousel"> -->
                                 <?php foreach ($data_tintucindex as $tt): ?>
@@ -1065,7 +1066,6 @@
                                             <div class="li-blog-details">
                                                 <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a></h3>
                                                 <div class="li-blog-meta">
-                                                  
                                                     <a class="post-time" href="#"><i class="fa fa-calendar"></i>  <?= $tt['ngay'] ?></a>
                                                 </div>
                                                 
@@ -1078,6 +1078,35 @@
                                 <?php endforeach; ?>
                         </div>
                     <!-- </div> -->
+                    <!-- Toast Frem Demo -->
+                    
+                    <div id="toast"></div>
+
+                    <!-- <div>
+                        <div onclick="showSuccessToast();" class="btn btn--success">Show success toast</div>
+                        <div onclick="showErrorToast();" class="btn btn--danger">Show error toast</div>
+                    </div> -->
+
+                    <script>
+                        function showSuccessToast() {
+                            toast({
+                                title: "Thành công!",
+                                message: "Bạn đã thêm vào mục yêu thích thành công.",
+                                type: "success",
+                                duration: 1000
+                            });
+                        }
+
+                        function showErrorToast() {
+                            toast({
+                                title: "Thất bại!",
+                                message: "Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ quản trị viên.",
+                                type: "error",
+                                duration: 1000
+                            });
+                        }
+                    </script>
+                    <!-- Toast Frem Demo End Here -->
                 </div>
                 <!-- Li's Section Area End Here -->
             </div>

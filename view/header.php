@@ -120,6 +120,8 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
+    <link rel="stylesheet" href="./view/layout/asset/css/toast.css">
+    <script src="./view/layout/asset/js/toast.js"></script>
 
 </head>
 
