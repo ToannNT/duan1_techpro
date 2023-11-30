@@ -3,14 +3,12 @@ $html_viewcart = '';
 $tt = 0;
 $tong = 0;
 $i = 0;
-if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
-    echo var_dump($_SESSION["giohang"]);
+if (isset($_SESSION['giohang']) && ($_SESSION['giohang']) != "") {
     foreach ($_SESSION['giohang'] as $item) {
         extract($item);
-        $checkboxChecked = $s_status == 1 ? 'checked' : '';
         $tong = (int)$price * (int)$quantity;
         $html_viewcart .= '
-                    <tr  productId="' . $idpro . '"  s_status="' . $s_status . '"  thanhtien="' . $thanhtien . '">
+                    <tr>
                     <td class="li-product-remove"><a href="index.php?pg=viewcart&del=' . $i . '"><i class="fa fa-times"></i></a></td>
                     <td class="li-product-thumbnail"><a href="#"><img src="./view/layout/images/product/' . $img . '" alt="List Product Image"></a></td>
                     <td class="li-product-name"><a href="#">' . $name . '</a></td>
@@ -24,9 +22,8 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                         </div>
                     </td>
                     <td class="product-subtotal"><span class="amount">' . number_format($price, 0, '.', '.') . 'đ</span></td>
-                    <td class="product-subtotal"><input type="checkbox" class="this_checkbox name="" ' . $checkboxChecked . ' id=""></span></td>
+                    <td class="product-subtotal"><input type="checkbox" name="" id=""></span></td>
                 </tr>
-                
         ';
         $tt += $tong;
         $i++;
@@ -58,7 +55,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                         <a href="index.php?pg=viewcart&del=-1" style=" font-size: 17px;">Xóa tất cả</a>
                         <div class="row ">
                             <table class="table col-md-9">
-                                <thead style="background-color: #0C2F4E;">
+                                <thead>
                                     <tr style="object-fit: cover;">
                                         <th class="li-product-remove">Xoá</th>
                                         <th class="li-product-thumbnail">Hình ảnh</th>
@@ -114,7 +111,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                         <li>Tạm tính<span><?= number_format($tt, 0, '.', '.') ?>đ</span></li>
                                         <li>Tổng tiền<span><?= number_format($tt, 0, '.', '.') ?>đ</span></li>
                                     </ul>
-                                    <a id="checkout-link" href="index.php?pg=checkout">Đến trang thanh toán</a>
+                                    <a href="#">Đến trang thanh toán</a>
                                 </div>
                             </div>
                         </div>

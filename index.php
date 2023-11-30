@@ -116,15 +116,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'addcart':
             if (isset($_POST['addcart'])) {
+                $idpro = $_POST["idpro"];
                 $name = $_POST["name"];
                 $img = $_POST["img"];
                 $price = $_POST["price"];
                 $quantity = $_POST["quantity"];
-                $idpro = $_POST["idpro"];
-                $s_status = $_POST["s_status"];
-                $s_status = $_POST["s_status"];
-                $thanhtien = $_POST["thanhtien"];
-
                 $page_here = $_POST["page_here"];
                 //tạo biến ktra 
                 $product_exists = false;
@@ -139,19 +135,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
 
                 if ($product_exists == false) {
-                    $product_arr = array("name" => $name, "img" => $img, "price" => $price, "quantity" => $quantity, "idpro" => $idpro, "s_status" => $s_status, "thanhtien" => $thanhtien);
+                    $product_arr = array("name" => $name, "img" => $img, "price" => $price, "quantity" => $quantity, "idpro" => $idpro);
                     array_push($_SESSION['giohang'], $product_arr);
                     header('location: ' . $page_here . '');
                 }
             }
 
             // require_once "view/addcart.php";
-            break;
-        case 'checkout':
-            require_once "view/checkout.php";
-            break;
-        case 'checkout2':
-            require_once "view/checkout2.php";
             break;
         case 'contact':
             require_once "view/contact.php";
@@ -161,7 +151,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
-            break;
         case 'login_register':
             require_once "view/login_register.php";
             break;

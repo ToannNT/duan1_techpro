@@ -256,7 +256,7 @@ MODAL
 MODAL
 -->
 <script>
-  var form = document.getElementsByTagName("form")[0];
+  var form = document.getElementsByTagName("form");
   var masp = document.getElementById("masp");
   var tensp = document.getElementById("tensp");
   var danhmucsp = document.getElementById("danhmucsp");

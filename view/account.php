@@ -2,14 +2,13 @@
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
 }
-// if (isset($target_file)) {
-//     $hinh_ac = '
-//             <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
-//         ';
-// } else {
-//     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
-// }
-
+if (isset($target_file)) {
+    $hinh_ac = '
+            <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
+        ';
+} else {
+    $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
+}
 ?>
 <div class="wrapper-container">
 <form action="index.php?pg=update_user" method="post" enctype="multipart/form-data">
@@ -19,7 +18,8 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 <div class="col-md-3">
                     <div class="content-col-left bg- p-4 pt-50">
                         <div class="content-col-left__avata">
-                            <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$hinh?>" alt>
+                            <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$target_file?>" alt> -->
+                            <?=$hinh_ac?>
                           
                         </div>
                         <div class="content-col-left__name">

@@ -35,39 +35,39 @@
     // echo var_dump($_SESSION['f_Product']);
 ?>
 <!-- Header Area End Here -->
-<!-- Begin Li's Breadcrumb Area -->
-<div class="breadcrumb-area">
-    <div class="container">
-        <div class="breadcrumb-content">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Wishlist</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- Li's Breadcrumb Area End Here -->
-<!--Wishlist Area Strat-->
-<div class="wishlist-area pt-60 pb-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <form action="#">
-                    <div class="table-content table-responsive">
-                        <table class="table">
-                            <thead style="background-color: #0C2F4E;">
-                                <tr>
-                                    <th class="li-product-remove">Xóa</th>
-                                    <th class="li-product-thumbnail">Hình ảnh</th>
-                                    <th class="cart-product-name">Tên sản phẩm</th>
-                                    <th class="li-product-price">Giá niêm yết</th>
-                                    <th class="li-product-stock-status">Tình trạng</th>
-                                    <th class="li-product-add-cart">Thêm vào giỏ</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?=$tableWishlist?>
-                                <!-- <tr>
+            <!-- Begin Li's Breadcrumb Area -->
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Wishlist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Breadcrumb Area End Here -->
+            <!--Wishlist Area Strat-->
+            <div class="wishlist-area pt-60 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="#">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="li-product-remove">Xóa</th>
+                                                <th class="li-product-thumbnail">Hình ảnh</th>
+                                                <th class="cart-product-name">Tên sản phẩm</th>
+                                                <th class="li-product-price">Giá niêm yết</th>
+                                                <th class="li-product-stock-status">Tình trạng</th>
+                                                <th class="li-product-add-cart">Thêm vào giỏ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?=$tableWishlist?>
+                                            <!-- <tr>
                                                 <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
                                                 <td class="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/1.jpg" alt></a></td>
                                                 <td class="li-product-name"><a href="#">Giro Civilia</a></td>
@@ -91,13 +91,13 @@
                                                 <td class="li-product-stock-status"><span class="out-stock">out stock</span></td>
                                                 <td class="li-product-add-cart"><a href="#">add to cart</a></td>
                                             </tr> -->
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!--Wishlist Area End-->
-<!-- Begin Footer Area -->
+            <!--Wishlist Area End-->
+            <!-- Begin Footer Area -->
