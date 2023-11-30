@@ -119,7 +119,7 @@
                 class="app-menu__label">Footer</span></a></li>
           <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span
                 class="app-menu__label">Button</span></a></li>
-          <li><a class="app-menu__item" href="qlbanner.html"><i class='app-menu__icon bx bx-slideshow'></i><span
+          <li><a class="app-menu__item" href="index.php?pg=qlbanner"><i class='app-menu__icon bx bx-slideshow'></i><span
                 class="app-menu__label">Banner</span></a></li>
         </ul>
       </li>
