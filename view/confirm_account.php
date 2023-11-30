@@ -77,6 +77,12 @@
                                         </div>
 
                                     </div>
+                                    <form action="index.php?pg=changepassword" method="post">
+                                        <div class="default-btn-thaydoi">
+                                            <!-- <input type="hidden" name="id" value="<?= $id ?>"> -->
+                                            <input type="submit" name="capnhat" value="Đổi mật khẩu">
+                                        </div>
+                                    </form>
                                     
                                 </div>
                             </div>
