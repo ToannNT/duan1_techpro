@@ -26,10 +26,12 @@ function checkuser($username, $password)
     // }
 }
 
-function update_user($hoten,$username, $password, $email, $gioitinh,$diachi, $sdt, $hinh, $role, $id)
-{
+function update_user($hoten,$username, $password, $email, $gioitinh,$diachi, $sdt, $hinh, $role, $id){
+
     $sql = "UPDATE user SET hoten=?, username=?,password=?,email=?,gioitinh=?,diachi=?,sdt=?, hinh=?,role=? WHERE id=?";
     pdo_execute($sql, $hoten, $username, $password,  $email,$gioitinh, $diachi, $sdt, $hinh, $role, $id);
+
+
 }
 
 function get_user($id)

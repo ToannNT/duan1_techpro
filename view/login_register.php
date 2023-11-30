@@ -6,6 +6,7 @@
                             <form action="index.php?pg=login" method="post">
                                 <div class="login-form">
                                     <h4 class="login-title">Đăng nhập</h4>
+                                    
                                     <div class="row">
                                         <div class="col-md-12 col-12 mb-20">
                                             <label>Tên đăng nhập*</label>
@@ -17,24 +18,20 @@
                                         </div>
                                         
                                         <div class="col-md-8">
-                                            <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
-                                                <input type="checkbox" id="remember_me">
-                                                <label for="remember_me">Ghi nhớ tôi</label>
-                                            </div>
+                                            <div class="thongbao" style="margin-top: 10px;">
+                                                <h10 style="font-weight: bolder;font-weight: 100px;color:red">
+                                                        <?php
+                                                        if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
+                                                            echo $_SESSION['tb_dangnhap'];
+                                                            unset ($_SESSION['tb_dangnhap']);
+                                                        }  
+                                                        ?>
+                                                    </h10>
+                                                </div>
                                         </div>
                                         <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
                                             <a href="index.php?pg=ft_password">Quên mật khẩu?</a>
                                         </div>
-                                        <div class="thongbao">
-                                            <h9 style="color:red">
-                                                    <?php
-                                                    if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
-                                                        echo $_SESSION['tb_dangnhap'];
-                                                        unset ($_SESSION['tb_dangnhap']);
-                                                    }  
-                                                    ?>
-                                                </h9>
-                                            </div>
                                         <div class="default-btn">
                                             <input class="name" name="dangnhap" type="submit" value="Đăng nhập">
                                         </div>

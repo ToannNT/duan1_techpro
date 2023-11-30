@@ -6,14 +6,23 @@
         // unset ($_SESSION['s_user']);
 
     }
+    // if (isset($target_file)) {
+    //     $hinh_ac = '
+    //             <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
+    //         ';
+    // } else {
+    //     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
+    // }
+    
 ?>
 <div class="wrapper-container">
+<form action="index.php?pg=update_user" method="post" enctype="multipart/form-data">
                 <div class="container-fluid ">
                     <div class="container text-center">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="content-col-left bg- p-4 pt-50">
-                                    <div class="content-col-left__avata"><img src="./view/layout/images/user/user_empty.png" alt></div>
+                                    <div class="content-col-left__avata"><img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$hinh?>" alt></div>
                                     <div class="content-col-left__name"><?=$hoten?></div>
                                     <div class="content-col-left__lv">Thành viên: Mới</div>
                                     <div class="content-col-left__cart"><img src="./view/layout/images/user/member_new.jpg" alt></div>
@@ -28,7 +37,7 @@
                                         <span><a href="#">THÔNG BÁO</a></span>
                                     </div>
                                     <!-- <div class="content-col-left__line"><img src="./view/layout/images/user/line.png" alt></div> -->
-                                    <form action="index.php?pg=update_user" method="post">
+                                    
                                     <div class="content-col-left__infomation">
                                         <div style="margin-top: 10px;" class="content-col-left__infomation--input">
                                             <label for="#">Họ và Tên: </label>
@@ -51,10 +60,13 @@
                                             <label for="#">Giới tính: </label>
                                             <input type="text" id="gioitinh" value="<?=$gioitinh?>"  name="gioitinh">
                                         </div>
-
                                         <div class="content-col-left__infomation--input">
                                             <label for="#">Địa chỉ: </label>
                                             <input type="text" id="diachi" value="<?=$diachi?>" name="diachi">
+                                        </div>
+                                        <div class="content-col-left__infomation--input">
+                                            <label for="#">Chọn hình mới: </label>
+                                            <input type="file" id="imageInput" value="<?= $hinh ?>" name="hinh">
                                         </div>
                                         <div class="thongbao">
                                         <h5 style="color:#0C2F4E">Cập nhật thông tin thành công</h5><br>
@@ -65,10 +77,24 @@
                                         </div>
 
                                     </div>
-                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
+            <!-- <script>
+            document.getElementById('imageInput').addEventListener('change', function (event) {
+                var input = event.target;
+                var reader = new FileReader();
+
+                reader.onload = function () {
+                var image = document.getElementById('previewImage');
+                image.src = reader.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            });
+            </script> -->
