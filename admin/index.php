@@ -69,6 +69,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/qlsanpham.php";
             break;
         case 'addsanpham':
+            // error_reporting(E_ALL);
+            // ini_set('display_errors', '1');
             $dsdm_adm = dsdm_catalog();
             $dsbr_adm = dsdm_brand();
             require_once "view/addsanpham.php";
@@ -164,7 +166,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 
                 //đưa về qlsanpham
-                
+
                 $showspadm=get_tablesp(20);
                     require_once "view/qlsanpham.php";
                 }else{

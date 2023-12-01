@@ -1,8 +1,16 @@
-<?php
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_danhmuc);
-  $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
+<?
+  $html_showdm = '';
+  foreach ($dsdm_adm as $dm_adm) {
+      extract($dm_adm);
+      $html_showdm .= '<option value="' . $id . '">' . $ten_dm . '</option>';
+  }
+  
+  $html_showbr = '';
+  foreach ($dsbr_adm as $br_adm) {
+      extract($br_adm);
+      $html_showbr .= '<option value="' . $id . '">' . $ten . '</option>';
+  }
 ?>
-
 <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb">
@@ -14,7 +22,6 @@
       <div class="col-md-12">
         <div class="tile">
           <h3 class="tile-title">Tạo mới sản phẩm</h3>
-          <?=$alert?>
           <div class="tile-body">
           </div>
             <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">
@@ -30,14 +37,15 @@
                 <label for="danhmucsp" class="control-label">Danh mục<span style="color: red; font-weight: bold" >(*)</span></label>
                 <select class="form-control" name="danhmucsp" id="danhmucsp">
                   <option value="">--Chọn danh mục--</option>
-                  <?=$html_showdmadm?>
+                          <!-- 1111111 -->
+                  <?=$html_showdm?>
                 </select>
               </div>
               <div class="form-group col-md-3 ">
                 <label for="brandsp" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span></label>
                 <select class="form-control" name="brandsp" id="brandsp">
                   <option>-- Chọn hãng --</option>
-                  <?=$html_showbradm?>
+                  <?=$html_showbr?>
                 </select>
               </div>
               <div class="form-group col-md-3">
