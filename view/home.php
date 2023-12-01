@@ -248,7 +248,9 @@
                         </div>
                         <div class="single-banner shop-page-banner">
                             <a href="#">
-                                <img src="./view/layout/images/bg-banner/3.jpg" alt="Li's Static Banner">
+                                <img src="./view/layout/images/bg-banner/4.png"
+                                    srcset="./view/layout/images/bg-banner/4.png 1x, ./view/layout/images/bg-banner/4.png 2x"
+                                    alt="Li's Static Banner">
                             </a>
                         </div>
                         <?php
@@ -257,48 +259,51 @@
                         <div class="row">
                             <div class="featured-product-active owl-carousel">
                                 <?php foreach ($data_blackfriday as $tt) : ?>
-                                    <div class="featured-product-bundle">
-                                        <div class="featured-pro-wrapper mb-30 mb-sm-25">
-                                            <div class="product-img">
-                                                <a href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">
-                                                    <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
-                                                </a>
+                                <div class="featured-product-bundle">
+                                    <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                        <div class="product-img">
+                                            <a href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">
+                                                <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
+                                            </a>
+                                        </div>
+                                        <div class="featured-pro-content">
+                                            <div class="product-review">
+                                                <h5 class="manufacturer">
+                                                    <a href="shop-left-sidebar.html"><?= $tt['ten'] ?></a>
+                                                </h5>
                                             </div>
-                                            <div class="featured-pro-content">
-                                                <div class="product-review">
-                                                    <h5 class="manufacturer">
-                                                        <a href="shop-left-sidebar.html"><?= $tt['ten'] ?></a>
-                                                    </h5>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul class="rating">
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li><i class="fa fa-star-o"></i></li>
-                                                        <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                        <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <h4><a class="featured-product-name" href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
-                                                        ngày hôm nay</a></h4>
-                                                <div class="featured-price-box">
-                                                    <span class="new-price new-price-2">35.000.000đ</span>
-                                                    <span class="old-price">36.000.000đ</span>
-                                                    <!-- <span class="discount-percentage">-7%</span> -->
-                                                </div>
-                                                <div class="featured-product-action">
-                                                    <ul class="add-actions-link">
-                                                        <li class="add-cart active"><a href="#">Thêm</a></li>
-                                                        <li><a class="links-details" href="single-product.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4><a class="featured-product-name"
+                                                    href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
+                                                    ngày hôm nay</a></h4>
+                                            <div class="featured-price-box">
+                                                <span class="new-price new-price-2">35.000.000đ</span>
+                                                <span class="old-price">36.000.000đ</span>
+                                                <!-- <span class="discount-percentage">-7%</span> -->
+                                            </div>
+                                            <div class="featured-product-action">
+                                                <ul class="add-actions-link">
+                                                    <li class="add-cart active"><a href="#">Thêm</a></li>
+                                                    <li><a class="links-details" href="single-product.html"><i
+                                                                class="fa fa-heart-o"></i></a></li>
+                                                    <li><a class="quick-view" data-toggle="modal"
+                                                            data-target="#exampleModalCenter" href="#"><i
+                                                                class="fa fa-eye"></i></a></li>
+                                                </ul>
                                             </div>
                                         </div>
-
                                     </div>
-                                <?php endforeach; ?>
 
+                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -307,8 +312,6 @@
             </div>
         </div>
     </div>
-
-
     <section class="product-area li-laptop-product li-tv-audio-product pb-45 mt-30">
         <div class="container">
             <div class="row">
@@ -414,7 +417,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/11.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -443,8 +447,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -456,7 +463,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/7.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -487,8 +495,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -500,7 +511,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/9.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -529,8 +541,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -542,7 +557,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/5.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -573,8 +589,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -586,7 +605,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/7.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -615,8 +635,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -628,7 +651,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/5.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -659,8 +683,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -678,7 +705,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/3.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/3.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -707,8 +735,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -720,7 +751,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/7.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -751,8 +783,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -764,7 +799,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/9.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -793,8 +829,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -806,7 +845,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/1.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/1.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -837,8 +877,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -850,7 +893,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/11.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -879,8 +923,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -892,7 +939,8 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                                    <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
+                                                    <img src="./view/layout/images/product/large-size/9.jpg"
+                                                        alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -923,8 +971,11 @@
                                                 <div class="add-actions">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a class="links-details" href="wishlist.html"><i
+                                                                    class="fa fa-heart-o"></i></a></li>
+                                                        <li><a href="#" title="quick view" class="quick-view-btn"
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -959,28 +1010,31 @@
                     <div class="row">
                         <!-- <div class="product-active owl-carousel"> -->
                         <?php foreach ($data_tintucindex as $tt) : ?>
-                            <!-- single-product-wrap start -->
-                            <div class="col-lg-4 col-md-4">
-                                <div class="li-blog-single-item">
-                                    <div class="li-blog-banner">
-                                        <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
-                                    </div>
-                                    <div class="li-blog-content">
-                                        <div class="li-blog-details">
-                                            <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a>
-                                            </h3>
-                                            <div class="li-blog-meta">
+                        <!-- single-product-wrap start -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="li-blog-single-item">
+                                <div class="li-blog-banner">
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
+                                            src="<?= $tt['hinh'] ?>" alt=""></a>
+                                </div>
+                                <div class="li-blog-content">
+                                    <div class="li-blog-details">
+                                        <h3 class="li-blog-heading pt-25"><a
+                                                href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a>
+                                        </h3>
+                                        <div class="li-blog-meta">
 
-                                                <a class="post-time" href="#"><i class="fa fa-calendar"></i>
-                                                    <?= $tt['ngay'] ?></a>
-                                            </div>
-
-                                            <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read More...</a>
+                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i>
+                                                <?= $tt['ngay'] ?></a>
                                         </div>
+
+                                        <a class="read-more"
+                                            href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read More...</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- single-product-wrap end -->
+                        </div>
+                        <!-- single-product-wrap end -->
                         <?php endforeach; ?>
                     </div>
                     <!-- </div> -->

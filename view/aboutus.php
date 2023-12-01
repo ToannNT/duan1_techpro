@@ -17,16 +17,17 @@
                  <!-- About Text Start -->
                  <div class="col-lg-6 order-last order-lg-first">
                      <div class="about-text-wrap">
-                         <h2><span>Cung cấp tốt nhất</span>Sản phẩm dành cho bạn</h2>
+                         <h2><span>Chúng tôi là</span>Công ty Công Nghệ <br> Techpro</h2>
                          <p>
-                            Chúng tôi cung cấp loại dầu râu tốt nhất trên toàn thế giới. Chúng tôi là cửa hàng tốt nhất thế giới ở Ấn Độ cho
-                              Dầu râu. Bạn có thể mua sản phẩm của chúng tôi mà không cần đắn đo vì họ tin tưởng chúng tôi và mua hàng
-                              sản phẩm của chúng tôi mà không có bất kỳ sự băn khoăn nào vì họ tin tưởng và luôn vui vẻ khi mua sản phẩm của chúng tôi.
+                         Công nghệ đang thay đổi thế giới chúng ta, và tại Công ty Công nghệ Techpro, chúng tôi cam kết tạo ra những giải pháp công nghệ tiên tiến để đáp ứng nhu cầu ngày càng cao của xã hội và doanh nghiệp.
                          </p>
-                         <p>Một số khách hàng của chúng tôi nói rằng họ tin tưởng chúng tôi và mua sản phẩm của chúng tôi mà không hề đắn đo
-                            bởi vì họ tin tưởng chúng tôi và luôn vui vẻ mua sản phẩm của chúng tôi.</p>
+                         <p>Công ty Công nghệ Techpro là một công ty hàng đầu trong lĩnh vực công nghệ thông tin và truyền thông. Chúng tôi chuyên về viễn thông, sản phẩm công nghệ và các giải pháp công nghệ khác để giúp khách hàng nâng cao hiệu suất, tối ưu hóa quy trình và tạo ra giá trị cạnh tranh.</p>
+                         <p>Với đội ngũ chuyên gia đầy tâm huyết và giàu kinh nghiệm, chúng tôi hiểu rõ về các xu hướng công nghệ mới nhất và áp dụng chúng vào các dự án của mình. Chúng tôi luôn theo đuổi sự sáng tạo và sẵn lòng đối mặt với những thách thức khó khăn nhất để mang đến những giải pháp đột phá và mang lại giá trị cho khách hàng.</p>
                          <p>Chúng tôi cung cấp những điều tốt nhất mà họ đã tin tưởng và mua sản phẩm của chúng tôi mà không có bất kỳ lời buộc tội nào vì
                             họ tin tưởng chúng tôi và luôn vui vẻ mua hàng.</p>
+                         <p>Chúng tôi tin rằng công nghệ có thể thay đổi cuộc sống của con người và tạo ra một tương lai tốt đẹp hơn. Vì vậy, chúng tôi không chỉ tập trung vào việc cung cấp các sản phẩm và dịch vụ chất lượng cao, mà còn đóng góp vào sự phát triển bền vững của cộng đồng và xã hội.
+                            Tầm nhìn của chúng tôi là trở thành một trong những công ty công nghệ hàng đầu trên thế giới, nơi chúng tôi không chỉ đáp ứng nhu cầu hiện tại
+                            mà còn dẫn đầu trong việc định hình tương lai. Chúng tôi cam kết duy trì lòng trung thành và sự sáng tạo với khách hàng, đối tác và nhân viên.</p>
                      </div>
                  </div>
                  <!-- About Text End -->
