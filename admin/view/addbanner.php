@@ -41,7 +41,7 @@
               </div>
               
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="addbanner" value="Lưu lại">
+                <input class="btn btn-save" type="submit" name="btnbn" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>
