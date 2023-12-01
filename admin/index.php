@@ -171,6 +171,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
             break;
         case 'qlbanner':
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
             $get_banner = db_banner();
             $get_slider = db_slider();
             require_once "view/qlbanner.php";
@@ -186,6 +188,30 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/addbanner.php";
+            break;
+        case 'updatebanner':
+            if(isset($_POST['updatebn'])){
+                $stt = $_POST['stt'];
+                $mota = $_POST['mota'];
+                $img = $_FILES['imgup']['name'];
+                $idbn = $_POST['idbn'];
+                $target_file ="../view/layout/images/banner/". $img;
+                move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+                update_banner($stt, $mota, $img, $idbn);
+                $get_banner = db_banner();
+                header('location: index.php?pg=qlbanner');
+            }
+            require_once "view/updatebn.php";
+            break;
+        case 'updatebnsl':
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
+            if(isset($_GET['idbn'])&&($_GET['idbn']>0)){
+                $idbn=$_GET['idbn'];
+                $showbanner=get_banner($id);
+            }
+            $get_banner = db_banner();
+            require_once "view/updatebnsl.php";
             break;
         case 'delbanner':
             if(isset($_GET['id'])&&($_GET['id']>0)){

@@ -110,7 +110,7 @@
                                             <td><a href="index.php?pg=delbanner&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
                                                     onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
                                                 </button>
-                                                <a href="index.php?pg=updateCatagory&id='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                                                <a href="index.php?pg=updatebnsl&idbn='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
                                             </td>
                                         </tr>';
                                 }
@@ -149,7 +149,7 @@
                                             <td><a href="index.php?pg=del&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
                                                     onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
                                                 </button>
-                                                <a href="index.php?pg=updateCatagory&id='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                                                <a href="index.php?pg=updatebnsl&idsl='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
                                             </td>
                                         </tr>';
                                 }
