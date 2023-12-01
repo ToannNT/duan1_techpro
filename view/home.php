@@ -244,7 +244,6 @@
                             <h2>
                                 <span>Siêu sale vào ngày Black Friday</span>
                             </h2>
-
                         </div>
                         <div class="single-banner shop-page-banner">
                             <a href="#">
@@ -290,7 +289,12 @@
                                                 <!-- <span class="discount-percentage">-7%</span> -->
                                             </div>
                                             <div class="featured-product-action">
+<<<<<<< HEAD
                                                 <ul class="add-actions-link">
+=======
+                                                <ul style="display: flex; justify-content: start;"
+                                                    class="add-actions-link">
+>>>>>>> parent of 0587a5c (Diễm sửa ac)
                                                     <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
@@ -301,6 +305,12 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+
+                                </div>
+                                <?php endforeach; ?>
+>>>>>>> parent of 0587a5c (Diễm sửa ac)
 
                                 </div>
                                 <?php endforeach; ?>
