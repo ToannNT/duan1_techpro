@@ -164,6 +164,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 
                 //đưa về qlsanpham
+                
                 $showspadm=get_tablesp(20);
                     require_once "view/qlsanpham.php";
                 }else{
