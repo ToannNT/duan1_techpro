@@ -3371,8 +3371,8 @@ textarea:focus {
 
 .li-banner>a>img,
 .single-banner>a>img {
-    height: 180px;
-    object-fit: cover;
+    /* height: 500px; */
+    object-fit: contain;
 }
 
 
@@ -7187,7 +7187,7 @@ span.required {
     transition: all 0.3s ease-in-out 0s;
     width: 150px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 5px;
     padding: 13px 20px;
 }
@@ -7197,9 +7197,7 @@ span.required {
     color: #ffffff;
 }
 
-.thongbao h9 {
-    margin-left: 40px;
-}
+
 
 
 /* row */
