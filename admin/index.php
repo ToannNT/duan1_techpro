@@ -65,13 +65,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             // require_once "view/updateCatagory.php";
             break;
         case 'qlsanpham':
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
             $showspadm=get_tablesp(20);
             require_once "view/qlsanpham.php";
             break;
         case 'addsanpham':
-            // error_reporting(E_ALL);
-            // ini_set('display_errors', '1');
             $dsdm_adm = dsdm_catalog();
+            extract($dsdm_adm);
             $dsbr_adm = dsdm_brand();
             require_once "view/addsanpham.php";
             break;
@@ -84,8 +85,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             break;
         case 'updatepro':
-            error_reporting(E_ALL);
-            ini_set('display_errors', '1');
             if(isset($_POST['updatepro'])){
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
