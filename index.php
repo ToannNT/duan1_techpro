@@ -122,7 +122,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $quantity = $_POST["quantity"];
                 $idpro = $_POST["idpro"];
                 $s_status = $_POST["s_status"];
-                $s_status = $_POST["s_status"];
                 $thanhtien = $_POST["thanhtien"];
 
                 $page_here = $_POST["page_here"];
@@ -199,6 +198,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'logout':
             if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 unset($_SESSION['s_user']);
+                header('location: index.php');
             }
             header('location: index.php');
         case 'account':
@@ -227,8 +227,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     // Nếu không có hình mới được chọn, sử dụng ảnh mặc định
                     $target_file = "./view/layout/images/user/user_empty.png";
                 }
-                    // $target_file ="./view/layout/images/user/". $hinh;
-                    // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+                // $target_file ="./view/layout/images/user/". $hinh;
+                // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                 // xử lý
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
                 include_once "view/confirm_account.php";
