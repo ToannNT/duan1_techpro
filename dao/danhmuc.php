@@ -3,19 +3,29 @@ require_once 'pdo.php';
 
 
 //TRANG ADMIN DANH MUC SP
-function showdm_adm($dsdm_adm, $id_catalog)
+function showdm_adm($dsdm_adm, $id)
 {
-    $html_show = '';
+    $html_show = ''; // Initialize an empty string to store HTML options
+
+    // Iterate through each element in $dsdm_adm
     foreach ($dsdm_adm as $dm_adm) {
+        // Extract variables from $dm_adm
         extract($dm_adm);
-        if ($id_catalog == $id) {
+
+        // Check if the current option's ID matches $id_catalog
+        if ($id == $id) {
+            // If yes, mark the option as selected
             $html_show .= '<option selected value="' . $id . '">' . $ten_dm . '</option>';
         } else {
+            // If not, generate a regular option
             $html_show .= '<option value="' . $id . '">' . $ten_dm . '</option>';
         }
     }
+
+    // Return the generated HTML options
     return $html_show;
 }
+
 function showbr_adm($dsbr_adm, $id_brand)
 {
     $html_show = '';
@@ -199,8 +209,7 @@ function show_dsbr_product($dsdm)
 
 
 //TRANG HOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-function dsdm_catalog()
-{
+function dsdm_catalog(){
     $sql = "SELECT * FROM catalog ORDER BY id ASC";
     return pdo_query($sql);
 }
@@ -208,8 +217,7 @@ function dsdm_catalog()
 
 
 // TRANG PRODUCT
-function dsdm_brand()
-{
+function dsdm_brand(){
     $sql = "SELECT * FROM brand ORDER BY id ASC";
     return pdo_query($sql);
 }

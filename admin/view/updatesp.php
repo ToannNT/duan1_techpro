@@ -3,8 +3,18 @@ if(is_array($showup)&&(count($showup)>0)){
   extract($showup);
   $idupdate= $id;
   }
-  $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_catalog);
+  $html_showbradm = '';
+  foreach ($dsdm_adm as $dm_adm) {
+      extract($dm_adm);
+      $html_showbradm .= '<option selected value="' . $id . '">' . $ten_dm . '</option>';
+  }
+  
+  $html_showdmadm = '';
+  foreach ($dsbr_adm as $br_adm) {
+      extract($br_adm);
+      $html_showdmadm .= '<option selected value="' . $id . '">' . $ten . '</option>';
+  }
+?>
 ?>
 <main class="app-content">
     <div class="app-title">
