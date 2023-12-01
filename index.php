@@ -122,6 +122,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $quantity = $_POST["quantity"];
                 $idpro = $_POST["idpro"];
                 $s_status = $_POST["s_status"];
+                $s_status = $_POST["s_status"];
                 $thanhtien = $_POST["thanhtien"];
 
                 $page_here = $_POST["page_here"];
@@ -182,11 +183,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
                 $username = $_POST["username"];
                 $password = $_POST["password"];
+                if (isset($_POST["page_here"])) {
+                    $page_here =  $_POST["page_here"];
+                } else {
+                    $page_here = "account";
+                }
                 //kiem tra
                 $kq = checkuser($username, $password);
                 if (is_array($kq) && (count($kq))) {
                     $_SESSION['s_user'] = $kq;
-                    header('location: index.php?pg=account');
+                    header('location: index.php?pg=' . $page_here . '');
                 } else {
                     $tb = "Tài khoản không tồn tại!";
                     $_SESSION['tb_dangnhap'] = $tb;
@@ -268,6 +274,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $_SESSION['f_Product'][] = $sp;
                 header('location: index.php?pg=wishlist');
             }
+            break;
+        case 'detailed-order':
+            include_once "view/detailed-order.php";
             break;
         case 'wishlist':
             include_once "view/wishlist.php";
