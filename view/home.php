@@ -169,7 +169,7 @@
             <div class="row">
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn11.png" alt="Li's Static Banner">
                         </a>
@@ -178,14 +178,14 @@
                 <!-- Single Banner Area End Here -->
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn9.jpg" alt="Li's Static Banner">
                         </a>
@@ -289,12 +289,8 @@
                                                 <!-- <span class="discount-percentage">-7%</span> -->
                                             </div>
                                             <div class="featured-product-action">
-<<<<<<< HEAD
-                                                <ul class="add-actions-link">
-=======
                                                 <ul style="display: flex; justify-content: start;"
                                                     class="add-actions-link">
->>>>>>> parent of 0587a5c (Diễm sửa ac)
                                                     <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
@@ -305,12 +301,6 @@
                                             </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
-=======
-
-                                </div>
-                                <?php endforeach; ?>
->>>>>>> parent of 0587a5c (Diễm sửa ac)
 
                                 </div>
                                 <?php endforeach; ?>

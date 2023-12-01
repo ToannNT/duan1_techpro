@@ -3371,7 +3371,8 @@ textarea:focus {
 
 .li-banner>a>img,
 .single-banner>a>img {
-    height: 180px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -6412,7 +6413,11 @@ span.required {
     font-size: 14px;
     margin: 5px 10px 0 0;
 }
-
+.single-banner__three{
+    max-width: 320px;
+    
+    height: 180px;
+}
 .single-banner img {
     width: 100%;
 }
