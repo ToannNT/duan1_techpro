@@ -1,7 +1,10 @@
 <?php
 session_start();
 ob_start();
-// session_start();
+
+if (!isset($_SESSION['giohang'])) {
+    $_SESSION['giohang'] = [];
+}
 require_once "dao/pdo.php";
 require_once "dao/user.php";
 require_once "dao/sanpham.php";
@@ -37,27 +40,27 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             //         # code...
             //     }
             // }
-            if(isset($_SESSION['s_user'])){
-                if (isset($_POST["thaydoi"])){
+            if (isset($_SESSION['s_user'])) {
+                if (isset($_POST["thaydoi"])) {
                     $password = $_POST['op'];
                     $newpassword = $_POST['np'];
                     $repassword = $_POST['c_np'];
-                    $id= $_SESSION['s_user']['id'];
+                    $id = $_SESSION['s_user']['id'];
                     // $checkvar = $conn->query("SELECT * FROM 'user' WHERE 'username' = '".$conn->real_escape_string($username)."' ")->fetch_array();
                     if ($password == "" || $newpassword == "" || $repassword == "") {
-                        $thongbao="Vui lòng nhập đầy đủ thông tin";
-                    }else if($password != $_SESSION['s_user']['password']){
+                        $thongbao = "Vui lòng nhập đầy đủ thông tin";
+                    } else if ($password != $_SESSION['s_user']['password']) {
                         echo $password;
                         echo $_SESSION['s_user']['password'];
                         $thongbao = "Mật khẩu hiện tại không chính xác";
-                    }else if( $newpassword != $repassword){
+                    } else if ($newpassword != $repassword) {
                         $thongbao = "Mật khẩu nhập lại không đúng";
-                    }else{
+                    } else {
                         update_pass_user($newpassword, $id);
                         $thongbaothanhcong = "Thành công";
                     }
                 }
-            }else{
+            } else {
                 include_once "view/login_register.php";
             }
             include_once "view/changepassword.php";
@@ -95,6 +98,60 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 include_once "view/home.php";
             }
             break;
+        case 'viewcart':
+            //xoa all
+            if (isset($_GET['del']) && ($_GET['del'] == -1)) {
+                unset($_SESSION['giohang']);
+                header('location: index.php?pg=viewcart');
+                // xóa 1 product
+            } else if (isset($_GET['del']) && ($_GET['del'] >= 0)) {
+                array_splice($_SESSION['giohang'], $_GET['del'], 1);
+                header('location: index.php?pg=viewcart');
+                // chưa làm
+            } else if (isset($_SESSION['giohang'])) {
+                // $ttdonhang = get_tongdonhang();
+            }
+            require_once "view/viewcart.php";
+            break;
+        case 'addcart':
+            if (isset($_POST['addcart'])) {
+                $name = $_POST["name"];
+                $img = $_POST["img"];
+                $price = $_POST["price"];
+                $quantity = $_POST["quantity"];
+                $idpro = $_POST["idpro"];
+                $s_status = $_POST["s_status"];
+                $s_status = $_POST["s_status"];
+                $thanhtien = $_POST["thanhtien"];
+
+                $page_here = $_POST["page_here"];
+                //tạo biến ktra 
+                $product_exists = false;
+                foreach ($_SESSION['giohang'] as &$item) {
+                    if ($item['name'] == $name) {
+                        // Sản phẩm đã tồn tại, cập nhật số lượng lênnn
+                        $item['quantity'] += $quantity;
+                        $product_exists = true;
+                        header('location: ' . $page_here . '');
+                        break;
+                    }
+                }
+
+                if ($product_exists == false) {
+                    $product_arr = array("name" => $name, "img" => $img, "price" => $price, "quantity" => $quantity, "idpro" => $idpro, "s_status" => $s_status, "thanhtien" => $thanhtien);
+                    array_push($_SESSION['giohang'], $product_arr);
+                    header('location: ' . $page_here . '');
+                }
+            }
+
+            // require_once "view/addcart.php";
+            break;
+        case 'checkout':
+            require_once "view/checkout.php";
+            break;
+        case 'checkout2':
+            require_once "view/checkout2.php";
+            break;
         case 'contact':
             require_once "view/contact.php";
             break;
@@ -103,6 +160,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'aboutus':
             require_once "view/aboutus.php";
+            break;
         case 'login_register':
             require_once "view/login_register.php";
             break;
@@ -169,11 +227,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             break;
         case 'addtoWishlist':
-            if(isset($_POST['btn_Wish'])){
-                $id=$_POST['id'];
-                $img=$_POST['img'];
-                $name=$_POST['name'];
-                $price=$_POST['price'];
+            if (isset($_POST['btn_Wish'])) {
+                $id = $_POST['id'];
+                $img = $_POST['img'];
+                $name = $_POST['name'];
+                $price = $_POST['price'];
                 // if (isset($_SESSION['f_Product']) && ($_SESSION['f_Product'] != "")) {
                 //     $flag = false;
                 //     // Kiểm tra xem sản phẩm đã có trong wishlist chưa
@@ -181,7 +239,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //     // Nếu có rồi thì không cần add nữa
                 //         if ($value['name'] == $name) {
                 //             // $_SESSION['f_Product'][$key]['quantity'] += 1;
-                            
+
                 //             $flag = true;
                 //         }
                 //     }
@@ -198,20 +256,21 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // }
                 $sp=["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][]=$sp;
-                header('location: index.php?pg=index.php');
+                
+                // header('location: index.php?pg=wishlist');
             }
             break;
         case 'wishlist':
             include_once "view/wishlist.php";
             break;
         case 'delWishlistArray':
-            if(isset($_GET['ind']) && ($_GET['ind'])>=0){
-                array_splice($_SESSION['f_Product'],$_GET['ind'],1);
-                header ('location: index.php?pg=wishlist');
+            if (isset($_GET['ind']) && ($_GET['ind']) >= 0) {
+                array_splice($_SESSION['f_Product'], $_GET['ind'], 1);
+                header('location: index.php?pg=wishlist');
             }
-            if(empty($_SESSION['f_Product'])){
+            if (empty($_SESSION['f_Product'])) {
                 unset($_SESSION['f_Product']);
-                header ('location: index.php');
+                header('location: index.php');
             }
             break;
         default:
@@ -239,3 +298,4 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 }
 
 require_once "view/footer.php";
+?>

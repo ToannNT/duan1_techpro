@@ -6,10 +6,12 @@
     $show_dssp_laptop = show_SP($dssp_laptop);
     $show_dssp_suggest = show_SP($dssp_suggest);
     // echo var_dump($dsdanhmuc_all);
+    // echo var_dump($_SESSION['giohang']);
+
     ?>
 
     <!-- Begin Slider With Banner Area -->
-    <div  class="slider-with-banner">
+    <div class="slider-with-banner">
         <div class="container">
             <div class="row">
                 <!-- Begin Slider Area -->
@@ -191,7 +193,7 @@
                 </div>
                 <!-- Single Banner Area End Here -->
                 <!-- Begin Single Banner Area -->
-                
+
                 <!-- Single Banner Area End Here -->
             </div>
         </div>
@@ -242,9 +244,8 @@
                             <h2>
                                 <span>Siêu sale vào ngày Black Friday</span>
                             </h2>
-
                         </div>
-                        <div class="single-banner shop-page-banner" style="height: 100px;">
+                        <div class="single-banner shop-page-banner">
                             <a href="#">
                                 <img src="./view/layout/images/bg-banner/3.jpg" alt="Li's Static Banner">
                             </a>
@@ -254,18 +255,18 @@
                         ?>
                         <div class="row">
                             <div class="featured-product-active owl-carousel">
-                            <?php foreach ($data_blackfriday as $tt): ?>
+                                <?php foreach ($data_blackfriday as $tt) : ?>
                                 <div class="featured-product-bundle">
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
-                                            <a href="product-details.html">
-                                                <img  src="./view/layout/images/product/<?=$tt ['hinh'] ?>">
+                                            <a href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">
+                                                <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
                                             </a>
                                         </div>
                                         <div class="featured-pro-content">
                                             <div class="product-review">
                                                 <h5 class="manufacturer">
-                                                    <a href="shop-left-sidebar.html"><?=$tt ['ten'] ?></a>
+                                                    <a href="shop-left-sidebar.html"><?= $tt['ten'] ?></a>
                                                 </h5>
                                             </div>
                                             <div class="rating-box">
@@ -277,14 +278,17 @@
                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <h4><a class="featured-product-name" href="single-product.html">Chỉ trong ngày hôm nay</a></h4>
+                                            <h4><a class="featured-product-name"
+                                                    href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
+                                                    ngày hôm nay</a></h4>
                                             <div class="featured-price-box">
                                                 <span class="new-price new-price-2">35.000.000đ</span>
                                                 <span class="old-price">36.000.000đ</span>
                                                 <!-- <span class="discount-percentage">-7%</span> -->
                                             </div>
                                             <div class="featured-product-action">
-                                                <ul class="add-actions-link">
+                                                <ul style="display: flex; justify-content: start;"
+                                                    class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
@@ -295,46 +299,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="featured-pro-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details.html">
-                                                <img alt src="./view/layout/images/product/<?=$tt ['hinh'] ?>">
-                                            </a>
-                                        </div>
-                                        <div class="featured-pro-content">
-                                            <div class="product-review">
-                                                <h5 class="manufacturer">
-                                                    <a href="shop-left-sidebar.html"><?=$tt ['ten'] ?></a>
-                                                </h5>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                            </div>
-                                            <h4><a class="featured-product-name" href="single-product.html">Chỉ trong ngày hôm nay</a></h4>
-                                            <div class="featured-price-box">
-                                                <span class="new-price">9.900.00đ</span>
-                                            </div>
-                                            <div class="featured-product-action">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Thêm</a></li>
-                                                    <li><a class="links-details" href="single-product.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div> -->
+
                                 </div>
                                 <?php endforeach; ?>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -483,8 +451,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -532,8 +499,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -579,8 +545,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -628,8 +593,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -675,8 +639,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -724,8 +687,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -777,8 +739,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -826,8 +787,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -873,8 +833,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -922,8 +881,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -969,8 +927,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -1018,8 +975,7 @@
                                                         <li><a class="links-details" href="wishlist.html"><i
                                                                     class="fa fa-heart-o"></i></a></li>
                                                         <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#exampleModalCenter"><i
+                                                                data-toggle="modal" data-target="#exampleModalCenter"><i
                                                                     class="fa fa-eye"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -1050,63 +1006,47 @@
                         </h2>
                     </div>
                     <?php
-                        $data_tintucindex = get_tintucindex();
+                    $data_tintucindex = get_tintucindex();
                     ?>
                     
                     <div class="row">
                         <!-- <div class="product-active owl-carousel"> -->
-                                <?php foreach ($data_tintucindex as $tt): ?>
-                                <!-- single-product-wrap start -->
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="li-blog-single-item">
-                                        <div class="li-blog-banner">
-                                            <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
+                        <?php foreach ($data_tintucindex as $tt) : ?>
+                        <!-- single-product-wrap start -->
+                        <div class="col-lg-4 col-md-4">
+                            <div class="li-blog-single-item">
+                                <div class="li-blog-banner">
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
+                                            src="<?= $tt['hinh'] ?>" alt=""></a>
+                                </div>
+                                <div class="li-blog-content">
+                                    <div class="li-blog-details">
+                                        <h3 class="li-blog-heading pt-25"><a
+                                                href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a>
+                                        </h3>
+                                        <div class="li-blog-meta">
+
+                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i>
+                                                <?= $tt['ngay'] ?></a>
                                         </div>
-                                        <div class="li-blog-content">
-                                            <div class="li-blog-details">
-                                                <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a></h3>
-                                                <div class="li-blog-meta">
-                                                    <a class="post-time" href="#"><i class="fa fa-calendar"></i>  <?= $tt['ngay'] ?></a>
-                                                </div>
-                                                
-                                                <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read More...</a>
-                                            </div>
-                                        </div>
+
+                                        <a class="read-more"
+                                            href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read More...</a>
                                     </div>
                                 </div>
-                                <!-- single-product-wrap end -->
-                                <?php endforeach; ?>
+                            </div>
                         </div>
+                        <!-- single-product-wrap end -->
+                        <?php endforeach; ?>
+                    </div>
                     <!-- </div> -->
-                    <!-- Toast Frem Demo -->
-                    
-                    <div id="toast"></div>
-
-                    <!-- <div>
-                        <div onclick="showSuccessToast();" class="btn btn--success">Show success toast</div>
-                        <div onclick="showErrorToast();" class="btn btn--danger">Show error toast</div>
-                    </div> -->
-
-                    <script>
-                        function showSuccessToast() {
-                            toast({
-                                title: "Thành công!",
-                                message: "Bạn đã thêm vào mục yêu thích thành công.",
-                                type: "success",
-                                duration: 1000
-                            });
-                        }
-
-                        function showErrorToast() {
-                            toast({
-                                title: "Thất bại!",
-                                message: "Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ quản trị viên.",
-                                type: "error",
-                                duration: 1000
-                            });
+                    <!-- Sweet Alert Frem Demo -->
+                    <script language="JavaScript">
+                        function toast() { 
+                            swal("Success!", "Your data have been saved. Thank you!", "success");
                         }
                     </script>
-                    <!-- Toast Frem Demo End Here -->
+                    <!-- Sweet Alert Frem Demo End Here -->
                 </div>
                 <!-- Li's Section Area End Here -->
             </div>

@@ -55,7 +55,7 @@ if (isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])) {
                 <form action="#">
                     <div class="table-content table-responsive">
                         <table class="table">
-                            <thead>
+                            <thead style="background-color: #0C2F4E;">
                                 <tr>
                                     <th class="li-product-remove">Xóa</th>
                                     <th class="li-product-thumbnail">Hình ảnh</th>

@@ -8,6 +8,7 @@ require_once "../dao/sanpham.php";
 require_once "../dao/danhmuc.php";
 require_once "../dao/giohang.php";
 require_once "../dao/bill.php";
+require_once "../dao/bannerslider.php";
 require_once "view/header.php";
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
@@ -84,14 +85,17 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
             if(isset($_POST['updatepro'])){
-                
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
                 $giaban = $_POST['giaban'];
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
-                $hinhsp = $_FILES['imgup']['name'];
+                if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
+                    $hinhsp = $_FILES['imgup']['name'];
+                }else{ 
+                    $hinhsp = "noimg.jpeg";
+                }
                 $hinh1 = $_FILES['hinh1']['name'];
                 $hinh2 = $_FILES['hinh2']['name'];
                 $hinh3 = $_FILES['hinh3']['name'];
@@ -109,15 +113,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if(empty($masp)||strlen($masp)>10){
                     $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm tối đa 10 ký tự</p>';
                 }
+                updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
                 $target_file ="../view/layout/images/product/". $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
             }
             $showspadm=get_tablesp(20);
             require_once "view/qlsanpham.php";
             break;
         case 'updatesp':
-
             if(isset($_GET['id'])&&($_GET['id']>0)){
                 $id=$_GET['id'];
                 $showup=get_Sp_Detail($id);
@@ -137,7 +140,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
-                $hinhsp = $_FILES['imgup']['name'];
+                if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
+                    $hinhsp = $_FILES['imgup']['name'];
+                }else{ 
+                    $hinhsp = "noimg.jpeg";
+                }
                 $hinh1 = $_FILES['hinh1']['name'];
                 $hinh2 = $_FILES['hinh2']['name'];
                 $hinh3 = $_FILES['hinh3']['name'];
@@ -154,14 +161,38 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
                 insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
                 $target_file ="../view/layout/images/product/". $hinhsp;
-
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+                
                 //đưa về qlsanpham
                 $showspadm=get_tablesp(20);
                     require_once "view/qlsanpham.php";
                 }else{
                     require_once "view/addsp.php";
                 }
+            break;
+        case 'qlbanner':
+            $get_banner = db_banner();
+            $get_slider = db_slider();
+            require_once "view/qlbanner.php";
+            break;
+        case 'addbanner':
+            if(isset($_POST['addbanner'])){
+                $stt = $_POST['stt'];
+                $mota = $_POST['mota'];
+                $img = $_FILES['imgup']['name'];
+                $target_file ="../view/layout/images/banner/". $img;
+                move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+                insert_banner($stt, $mota, $img);
+                header('location: index.php?pg=qlbanner');
+            }
+            require_once "view/addbanner.php";
+            break;
+        case 'delbanner':
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                $id=$_GET['id'];
+                del_banner($id);
+                header('location: index.php?pg=qlbanner');
+            }
             break;
         case 'qldonhang':
             require_once "view/qldonhang.php";
