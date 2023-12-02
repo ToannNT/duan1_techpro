@@ -84,11 +84,12 @@ function GuiMatKhauMoi($email, $matkhaumoi)
                 <h5>Quên mật khẩu</h5>
             </div>
             <?php if ($loi != "") { ?>
-                <div class="alert alert-danger"><?= $loi ?></div>
+            <div class="alert alert-danger"><?= $loi ?></div>
             <?php } ?>
             <div class="text1 col-md-11 col-12 mb-20">
                 <label> Nhập Email :</label>
-                <input value="<?php if (isset($email) == true) echo $email ?>" class="mb-0" id="email" name="email" type="email" placeholder="Nhập Email">
+                <input value="<?php if (isset($email) == true) echo $email ?>" class="mb-0" id="email" name="email"
+                    type="email" placeholder="Nhập Email">
             </div>
             <div class="text2">
                 <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>

@@ -1,8 +1,16 @@
 <?php
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_danhmuc);
-  $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
+  $html_showdm = '';
+  foreach ($dsdm_adm as $dm_adm) {
+      extract($dm_adm);
+      $html_showdm .= '<option value="' . $id . '">' . $ten_dm . '</option>';
+  }
+  
+  $html_showbr = '';
+  foreach ($dsbr_adm as $br_adm) {
+      extract($br_adm);
+      $html_showbr .= '<option value="' . $id . '">' . $ten . '</option>';
+  }
 ?>
-
 <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb">
@@ -14,7 +22,6 @@
       <div class="col-md-12">
         <div class="tile">
           <h3 class="tile-title">Tạo mới sản phẩm</h3>
-          <?=$alert?>
           <div class="tile-body">
           </div>
             <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">
@@ -29,15 +36,16 @@
               <div class="form-group col-md-3">
                 <label for="danhmucsp" class="control-label">Danh mục<span style="color: red; font-weight: bold" >(*)</span></label>
                 <select class="form-control" name="danhmucsp" id="danhmucsp">
-                  <option value="">--Chọn danh mục--</option>
-                  <?=$html_showdmadm?>
+                  <option value="default">--Chọn danh mục--</option>
+                          <!-- 1111111 -->
+                  <?=$html_showdm?>
                 </select>
               </div>
               <div class="form-group col-md-3 ">
                 <label for="brandsp" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span></label>
                 <select class="form-control" name="brandsp" id="brandsp">
-                  <option>-- Chọn hãng --</option>
-                  <?=$html_showbradm?>
+                  <option value="default">-- Chọn hãng --</option>
+                  <?=$html_showbr?>
                 </select>
               </div>
               <div class="form-group col-md-3">
@@ -45,8 +53,8 @@
                 <input id="giabansp" class="form-control" name="giaban" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label">Giá giảm<span style="color: red; font-weight: bold" >(*)</span></label>
-                <input class="form-control" name="giagiam" type="text">
+                <label for="giagiamsp" class="control-label">Giá giảm<span style="color: red; font-weight: bold" >(*)</span></label>
+                <input id="giagiamsp" class="form-control" name="giagiam" type="text">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="exampleSelect1" class="control-label">Tình trạng</label>
@@ -248,13 +256,15 @@ MODAL
 js
 -->
 <script>
-  var form = document.getElementsByTagName("form");
+  var form = document.getElementsByTagName("form")[0];
   var masp = document.getElementById("masp");
+  console.log(masp);
   var tensp = document.getElementById("tensp");
   var danhmucsp = document.getElementById("danhmucsp");
   var brandsp = document.getElementById("brandsp");
   var giabansp = document.getElementById("giabansp");
-  form.addEventListener("sumbit", function(event){
+  var giagiamsp = document.getElementById("giagiamsp");
+  form.addEventListener("submit", function(event){
     if(masp.value == "" || masp.value.length>10){
       alert("Mã sản phẩm không được để trống tối đa 10 ký tự!");
       event.preventDefault();// không cho submit
@@ -267,13 +277,13 @@ js
       tensp.focus();//di chuyển đến vị trí lỗi
       return false;
     }
-    if(danhmucsp.value == "default"){
+    if(danhmucsp.value==="default"){
       alert("Danh mục không được để trống!");
       event.preventDefault();// không cho submit
       danhmucsp.focus();//di chuyển đến vị trí lỗi
       return false;
     }
-    if(brandsp.value == "default"){
+    if(brandsp.value==="default"){
       alert("Brand không được để trống!");
       event.preventDefault();// không cho submit
       brandsp.focus();//di chuyển đến vị trí lỗi
@@ -285,7 +295,12 @@ js
       giabansp.focus();//di chuyển đến vị trí lỗi
       return false;
     }
+    if(giagiamsp.value.trim() === "" || isNaN(giagiamsp.value)){
+      alert("Giá giảm không được để trống và phải là số!");
+      event.preventDefault();// không cho submit
+      giagiamsp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
     return true;
   });
-
 </script>

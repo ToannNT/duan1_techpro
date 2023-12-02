@@ -13,6 +13,7 @@ require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
+require_once "dao/global.php";
 
 
 
@@ -182,13 +183,18 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
                 $username = $_POST["username"];
                 $password = $_POST["password"];
+                if (isset($_POST["page_here"])) {
+                    $page_here =  $_POST["page_here"];
+                } else {
+                    $page_here = "account";
+                }
                 //kiem tra
                 $kq = checkuser($username, $password);
                 if (is_array($kq) && (count($kq))) {
                     $_SESSION['s_user'] = $kq;
-                    header('location: index.php?pg=account');
+                    header('location: index.php?pg=' . $page_here . '');
                 } else {
-                    $tb = "Tài khoản không tồn tại hoặc thông tin đăng nhập sai!";
+                    $tb = "Tài khoản không tồn tại!";
                     $_SESSION['tb_dangnhap'] = $tb;
                     header('location: index.php?pg=login_register');
                 }
@@ -198,6 +204,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'logout':
             if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 unset($_SESSION['s_user']);
+                header('location: index.php');
             }
             header('location: index.php');
         case 'account':
@@ -211,19 +218,28 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             if (isset($_POST["capnhat"]) && ($_POST["capnhat"])) {
                 $hoten = $_POST["hoten"];
                 $username = $_POST["username"];
-                $password = $_POST["password"];
+                // $password = $_POST["password"];
                 $email = $_POST["email"];
                 $gioitinh = $_POST["gioitinh"];
                 $diachi = $_POST["diachi"];
                 $sdt = $_POST["sdt"];
-                $hinh = $_POST["hinh"];
                 $id = $_POST["id"];
                 $role = 0;
+                $hinh = $_FILES["hinh"]["name"];
+                if ($hinh != "") {
+                    $target_file = "./view/layout/images/user/" . $hinh;
+                    move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+                } else {
+                    // Nếu không có hình mới được chọn, sử dụng ảnh mặc định
+                    $target_file = "./view/layout/images/user/user_empty.png";
+                }
+                // $target_file ="./view/layout/images/user/". $hinh;
+                // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                 // xử lý
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
                 include_once "view/confirm_account.php";
             } else {
-                include_once "view/index.php";
+                include_once "view/account.php";
             }
             break;
         case 'addtoWishlist':
@@ -259,6 +275,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 
                 // header('location: index.php?pg=wishlist');
             }
+            break;
+        case 'detailed-order':
+            include_once "view/detailed-order.php";
             break;
         case 'wishlist':
             include_once "view/wishlist.php";

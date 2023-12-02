@@ -8,6 +8,13 @@
     padding: 0;
     font: inherit;
 }
+.ttin_nguoidat{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 15px;
+    color: #000000;
+    margin-bottom: 15px;
+}
 img,
 picture,
 svg,
@@ -41,8 +48,8 @@ body {
     width: 77%;
     margin: 0 auto;
     font-size: 1.2rem;
-    border: 1px solid black;
-    border-radius: 0.3rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
     padding: 10px;
     background-color: #fff;
     font-weight: 300;
@@ -57,7 +64,8 @@ table{
     opacity: 0.8;
 }
 table tr{
-    border-bottom: 0.5px solid gray;
+
+    border-bottom: 0.5px solid #e5e5e5;
 }
 tbody tr:not(:first-child){
     text-align: right;
@@ -86,7 +94,7 @@ table tbody tr:nth-child(2) td:nth-child(1),
 tr:nth-child(3) td:nth-child(1), 
 tr:nth-child(4) td:nth-child(1), 
 tr:nth-child(5) td:nth-child(1){
-    border-right: 0.5px solid gray;
+    border-right: 0.5px solid #e5e5e5;
 }
 table tbody tr:nth-child(1) td:nth-child(2),
 tr:nth-child(5) td:nth-child(2){
@@ -95,17 +103,15 @@ tr:nth-child(5) td:nth-child(2){
     font-weight: 500;
 }
 table tfoot td:nth-child(1){
-    border-right: 1px solid gray;
+    border-right: 1px solid #e5e5e5;
 }
 td, th{
     padding: 15px 10px;
 }
-th:nth-child(1){
-    width: 15rem;
-}
+
 th h3{
     font-size: x-large;
-    text-align: right;
+    /* text-align: right; */
     font-weight: 500;
     margin-bottom: 1rem;
 }

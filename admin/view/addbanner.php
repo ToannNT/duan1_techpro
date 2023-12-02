@@ -1,6 +1,5 @@
 <?php
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_danhmuc);
-  $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
+
 ?>
 
 <main class="app-content">
@@ -42,7 +41,7 @@
               </div>
               
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="addbanner" value="Lưu lại">
+                <input class="btn btn-save" type="submit" name="btnbn" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>
@@ -217,32 +216,32 @@ js
 -->
 <script>
   var form = document.getElementsByTagName("form")[0];
-  var masp = document.getElementById("masp");
-  var tensp = document.getElementById("tensp");
-  var danhmucsp = document.getElementById("danhmucsp");
+  var stt = document.getElementById("stt");
+  var mota = document.getElementById("mota");
+  var imgup = document.getElementById("imgup");
   var brandsp = document.getElementById("brandsp");
   var giabansp = document.getElementById("giabansp");
-  form.addEventListener("sumbit", function(event){
-    if(masp.value == "" || masp.value.length>10){
-      alert("Mã banner không được để trống tối đa 10 ký tự!");
+  form.addEventListener("submit", function(event){
+    if(stt.value == "" || stt.value.length>10){
+      alert("Số thứ tự không được để trống!");
       event.preventDefault();// không cho submit
-      masp.focus();//di chuyển đến vị trí lỗi
+      stt.focus();//di chuyển đến vị trí lỗi
       return false;
     }
-    if(tensp.value == ""){
+    if(mota.value == ""){
       alert("Tên banner không được để trống!");
       event.preventDefault();// không cho submit
-      tensp.focus();//di chuyển đến vị trí lỗi
+      mota.focus();//di chuyển đến vị trí lỗi
       return false;
     }
-    if(danhmucsp.value == "default"){
-      alert("Danh mục không được để trống!");
+    if(imgup.value == "default"){
+      alert("Mô tả không được để trống!");
       event.preventDefault();// không cho submit
-      danhmucsp.focus();//di chuyển đến vị trí lỗi
+      imgup.focus();//di chuyển đến vị trí lỗi
       return false;
     }
     if(brandsp.value == "default"){
-      alert("Brand không được để trống!");
+      alert("Hình không được để trống!");
       event.preventDefault();// không cho submit
       brandsp.focus();//di chuyển đến vị trí lỗi
       return false;

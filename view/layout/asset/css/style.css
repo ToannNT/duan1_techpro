@@ -3371,7 +3371,8 @@ textarea:focus {
 
 .li-banner>a>img,
 .single-banner>a>img {
-    height: 180px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -6412,7 +6413,11 @@ span.required {
     font-size: 14px;
     margin: 5px 10px 0 0;
 }
-
+.single-banner__three{
+    max-width: 320px;
+    
+    height: 180px;
+}
 .single-banner img {
     width: 100%;
 }
@@ -7190,7 +7195,7 @@ span.required {
     transition: all 0.3s ease-in-out 0s;
     width: 150px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 5px;
     padding: 13px 20px;
 }
@@ -7200,9 +7205,7 @@ span.required {
     color: #ffffff;
 }
 
-.thongbao h9 {
-    margin-left: 40px;
-}
+
 
 
 /* row */

@@ -1,6 +1,7 @@
 <?php
 $html_checkout = '';
 $tt = 0;
+$voucher = 100000;
 // $tong = 0;
 if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
 
@@ -22,6 +23,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
             $tt += $price;
         }
     }
+    $tongthanhtoan = (int)$tt - (int)$voucher;
 }
 
 ?>
@@ -108,8 +110,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                 </div>
                                 <div class="col-md-12">
                                     <div class="checkout-form-list create-acc">
-                                        <input id="cbox" type="checkbox">
-                                        <label>Tạo mới tài khoản?</label>
+                                        <a href="#">Tạo tài khoản để nhận thêm voucher ?</a>
                                     </div>
                                     <div id="cbox-info" class="checkout-form-list create-account">
                                         <p>Tạo một tài khoản bằng cách nhập thông tin dưới đây. Nếu bạn là khách hàng
@@ -152,8 +153,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                 <div class="order-notes">
                                     <div class="checkout-form-list">
                                         <label>Ghi chú</label>
-                                        <textarea id="checkout-mess" cols="30" rows="10"
-                                            placeholder="Ghi chú về đơn hàng của bạn."></textarea>
+                                        <textarea id="checkout-mess" cols="30" rows="10" placeholder="Ghi chú về đơn hàng của bạn."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -193,13 +193,16 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                         <th>Tổng tiền hàng</th>
                                         <td><span class="amount"><?= number_format($tt, 0, '.', '.') ?>đ</span></td>
                                     </tr>
-                                    <tr class="cart-subtotal">
-                                        <th>Voucher</th>
-                                        <td><span class="amount">-100.000đ</span></td>
-                                    </tr>
+                                    <form action="#" method="post">
+                                        <tr class="cart-subtotal">
+                                            <th>Voucher</th>
+                                            <td><span class="amount">-100.000đ</span></td>
+                                        </tr>
+                                    </form>
                                     <tr class="order-total">
                                         <th>Tổng thanh toán:</th>
-                                        <td><strong><span class="amount">215.00đ</span></strong></td>
+                                        <td><strong><span class="amount"><?= number_format($tongthanhtoan, 0, '.', '.') ?>đ</span></strong>
+                                        </td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -214,14 +217,12 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                     <div class="card">
                                         <div class="card-header" active id="#payment-3">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                     Nhập mã giảm giá:
                                                 </a>
                                             </h5>
                                         </div>
-                                        <div id="collapseThree" style="background-color: #f2f2f2;"
-                                            data-parent="#accordion">
+                                        <div id="collapseThree" style="background-color: #f2f2f2;" data-parent="#accordion">
                                             <form action="#">
                                                 <p class="checkout-coupon">
                                                     <input placeholder="Coupon code" type="text">
@@ -233,8 +234,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                     <div class="card">
                                         <div class="card-header" id="#payment-2">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                     Hình thức thanh toán
                                                 </a>
                                             </h5>
@@ -248,8 +248,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                                             sẽ không bao giờ được lưu lại.</p>
                                                         <div class="httt">
                                                             <input name="pttt" value="1" type="radio">
-                                                            <p>Thanh toán bằng thẻ tín dụng </p><img
-                                                                src="http://localhost/project/uploads/1.png" alt>
+                                                            <p>Thanh toán bằng thẻ tín dụng </p><img src="http://localhost/project/uploads/1.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="2" type="radio">
@@ -257,8 +256,7 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="3" type="radio">
-                                                            <p>Thanh toán bằng Momo </p><img class="momo"
-                                                                src="http://localhost/project/uploads/2.png" alt>
+                                                            <p>Thanh toán bằng Momo </p><img class="momo" src="http://localhost/project/uploads/2.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="4" type="radio">

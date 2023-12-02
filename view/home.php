@@ -169,7 +169,7 @@
             <div class="row">
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn11.png" alt="Li's Static Banner">
                         </a>
@@ -178,14 +178,14 @@
                 <!-- Single Banner Area End Here -->
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn9.jpg" alt="Li's Static Banner">
                         </a>
@@ -247,7 +247,9 @@
                         </div>
                         <div class="single-banner shop-page-banner">
                             <a href="#">
-                                <img src="./view/layout/images/bg-banner/3.jpg" alt="Li's Static Banner">
+                                <img src="./view/layout/images/bg-banner/4.png"
+                                    srcset="./view/layout/images/bg-banner/4.png 1x, ./view/layout/images/bg-banner/4.png 2x"
+                                    alt="Li's Static Banner">
                             </a>
                         </div>
                         <?php
@@ -302,7 +304,6 @@
 
                                 </div>
                                 <?php endforeach; ?>
-
                             </div>
                         </div>
                     </div>
@@ -311,8 +312,6 @@
             </div>
         </div>
     </div>
-
-
     <section class="product-area li-laptop-product li-tv-audio-product pb-45 mt-30">
         <div class="container">
             <div class="row">

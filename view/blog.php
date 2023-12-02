@@ -84,7 +84,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="li-blog-banner">
                                 <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
-                                    <img class="img-full" src="<?= $tt['hinh'] ?>" ></a>
+                                    <img class="img-full" src="<?= $tt['hinh'] ?>"></a>
                             </div>
                             <div class="li-blog-content">
                                 <div class="li-blog-details">
