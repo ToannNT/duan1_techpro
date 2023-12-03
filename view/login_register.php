@@ -1,3 +1,19 @@
+<?php
+
+if (isset($_GET['page_follow'])) {
+    $page_follow = $_GET['page_follow'];
+} else {
+    $page_follow = '';
+}
+
+// if (isset($page_follow_ne)) {
+//     $page_here = $page_follow_ne;
+// } else {
+//     $page_here = "trông";
+// }
+echo $page_follow;
+
+?>
 <div class="page-section mb-60">
     <div class="container">
         <div class="row">
@@ -10,24 +26,22 @@
                         <div class="row">
                             <div class="col-md-12 col-12 mb-20">
                                 <label>Tên đăng nhập*</label>
-                                <input class="mb-0" type="text" id="username" name="username"
-                                    placeholder="Hãy nhập tên đăng nhập">
+                                <input class="mb-0" type="text" id="username" name="username" placeholder="Hãy nhập tên đăng nhập">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Mật khẩu</label>
-                                <input class="mb-0" type="password" id="password" name="password"
-                                    placeholder="Mật khẩu của bạn">
+                                <input class="mb-0" type="password" id="password" name="password" placeholder="Mật khẩu của bạn">
                             </div>
 
                             <div class="col-md-8">
                                 <div class="thongbao" style="margin-top: 10px;">
                                     <h10 style="font-weight: bolder;font-weight: 100px;color:red">
                                         <?php
-                                                        if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
-                                                            echo $_SESSION['tb_dangnhap'];
-                                                            unset ($_SESSION['tb_dangnhap']);
-                                                        }  
-                                                        ?>
+                                        if (isset($_SESSION['tb_dangnhap']) && ($_SESSION['tb_dangnhap'] != "")) {
+                                            echo $_SESSION['tb_dangnhap'];
+                                            unset($_SESSION['tb_dangnhap']);
+                                        }
+                                        ?>
                                     </h10>
                                 </div>
                             </div>
@@ -35,6 +49,7 @@
                                 <a href="index.php?pg=ft_password">Quên mật khẩu?</a>
                             </div>
                             <div class="default-btn">
+                                <input class="name" name="page_here_ne" type="hidden" value="<?= $page_follow ?>">
                                 <input class="name" name="dangnhap" type="submit" value="Đăng nhập">
                             </div>
                         </div>
@@ -48,13 +63,11 @@
                         <div class="row">
                             <div class="col-md-12 mb-20">
                                 <label>Họ và tên</label>
-                                <input class="mb-0" type="text" id="hoten" name="hoten"
-                                    placeholder="Mời nhập họ và tên">
+                                <input class="mb-0" type="text" id="hoten" name="hoten" placeholder="Mời nhập họ và tên">
                             </div>
                             <div class="col-md-12 mb-20">
                                 <label>Tên đăng nhập</label>
-                                <input class="mb-0" type="text" id="username" name="username"
-                                    placeholder="Mời nhập tên đăng nhập">
+                                <input class="mb-0" type="text" id="username" name="username" placeholder="Mời nhập tên đăng nhập">
                             </div>
                             <div class="col-md-12 mb-20">
                                 <label>Email*</label>
@@ -66,13 +79,11 @@
                             </div>
                             <div class="col-md-6 mb-20">
                                 <label>Mật khẩu</label>
-                                <input class="mb-0" type="password" id="password" name="password"
-                                    placeholder=" Nhập mật khẩu">
+                                <input class="mb-0" type="password" id="password" name="password" placeholder=" Nhập mật khẩu">
                             </div>
                             <div class="col-md-6 mb-20">
                                 <label>Nhập lại mật khẩu</label>
-                                <input class="mb-0" type="password" id="repassword" name="repassword"
-                                    placeholder="Mời nhập lại mật khẩu">
+                                <input class="mb-0" type="password" id="repassword" name="repassword" placeholder="Mời nhập lại mật khẩu">
                             </div>
                             <div class="default-btn">
                                 <input class="name" type="submit" name="dangky" value="Đăng ký">

@@ -88,6 +88,8 @@ function get_Catalog_One($id)
     $sql = "SELECT * FROM catalog WHERE id=" . $id;
     return pdo_query_one($sql);
 }
+
+
 function catagory_add($stt, $name, $mota, $sethome)
 {
     $sql = "INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
@@ -209,7 +211,8 @@ function show_dsbr_product($dsdm)
 
 
 //TRANG HOMEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-function dsdm_catalog(){
+function dsdm_catalog()
+{
     $sql = "SELECT * FROM catalog ORDER BY id ASC";
     return pdo_query($sql);
 }
@@ -217,7 +220,8 @@ function dsdm_catalog(){
 
 
 // TRANG PRODUCT
-function dsdm_brand(){
+function dsdm_brand()
+{
     $sql = "SELECT * FROM brand ORDER BY id ASC";
     return pdo_query($sql);
 }

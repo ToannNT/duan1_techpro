@@ -367,3 +367,59 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
+
+
+
+$(document).ready(function () {
+    // Hàm xử lý lưu và khôi phục trạng thái checkbox
+    function handleCheckboxStatus() {
+        // Lấy giá trị của checkbox đã chọn
+        var selectedCheckbox = $('input[name="ptvc"]:checked').val();
+
+        // Lưu giá trị của checkbox đã chọn vào localStorage
+        localStorage.setItem('selectedCheckbox', selectedCheckbox);
+    }
+
+    // Kiểm tra nếu đã có giá trị checkbox đã lưu trong localStorage
+    var savedCheckbox = localStorage.getItem('selectedCheckbox');
+    if (savedCheckbox) {
+        // Đặt checkbox đã chọn trước đó là đã được chọn
+        $('input[name="ptvc"][value="' + savedCheckbox + '"]').prop('checked', true);
+    }
+
+    // // Hàm xóa thông tin đã lưu trong localStorage
+    // function clearCheckboxStatus() {
+    //     localStorage.removeItem('selectedCheckbox');
+    // }
+
+
+
+
+    // Bắt sự kiện khi input radio được chọn
+    $('input[name="ptvc"]').click(function () {
+        var selectedValue = $('input[name="ptvc"]:checked').val();
+
+        // Gửi giá trị được chọn đến xuli.php qua Ajax
+        $.ajax({
+            url: './view/update_quantity.php',
+            method: 'POST',
+            data: { ptvc: selectedValue },
+            success: function (response) {
+                // Cập nhật lại trang sau khi đã gửi dữ liệu thành công
+                handleCheckboxStatus();
+                window.location.reload();
+                // location.reload();
+                // clearCheckboxStatus(); // Xóa trạng thái checkbox sau khi reload
+
+            },
+            error: function (xhr, status, error) {
+                // Xử lý lỗi nếu có
+                console.error(error);
+            }
+        });
+    });
+});

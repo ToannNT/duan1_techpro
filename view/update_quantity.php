@@ -25,6 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => true]);
         exit();
     }
+
+
+    if (isset($_POST['ptvc'])) {
+        // Lưu giá trị vào session
+        $_SESSION['vanchuyen'] = $_POST['ptvc'];
+
+        // Phản hồi cho Ajax rằng đã lưu giá trị thành công
+        // echo "Dữ liệu đã được lưu vào session!";
+        // exit;
+    }
 }
 
 // ... (Phần hiển thị giỏ hàng giống như trước)
