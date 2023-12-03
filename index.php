@@ -13,7 +13,6 @@ require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
-require_once "dao/global.php";
 
 
 
@@ -166,34 +165,60 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/login_register.php";
             break;
         case 'register':
-            // xác định giá trị input
-            if (isset($_POST["dangky"]) && ($_POST["dangky"])) {
-                $hoten = $_POST["hoten"];
-                $username = $_POST["username"];
-                $email = $_POST["email"];
-                $sdt = $_POST["sdt"];
-                $password = $_POST["password"];
-                // xử lý
-                user_insert($hoten, $username, $email, $sdt, $password);
+            if (isset($_POST["dangky"])) {
+                $hoten = trim($_POST["hoten"]);
+                $username = trim($_POST["username"]);
+                $email = trim($_POST["email"]);
+                $sdt = trim($_POST["sdt"]);
+                $password = trim($_POST["password"]);
+                $repassword = trim($_POST["repassword"]);
+                if (empty($hoten) || empty($username) || empty($email) || empty($sdt) || empty($password) || empty($repassword)) {
+                    $tb .= '<div class="alert alert-danger">Vui lòng điền đầy đủ thông tin</div>';
+                } else {
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $tb .= '<div class="alert alert-danger">Địa chỉ email không hợp lệ</div>';
+                    } else {
+                        if (strlen($password) < 8) {
+                            $tb .= '<div class="alert alert-danger">Mật khẩu ít nhất phải có 8 kí tự</div>';
+                        } else {
+                            if ($password !== $repassword) {
+                                $tb .= '<div class="alert alert-danger">Mật khẩu không khớp</div>';
+                            } else {
+                                user_insert($hoten, $username, $email, $sdt, $password);
+                                $_SESSION['success_message'] = "Đăng ký thành công! Bạn có thể đăng nhập ngay.";
+                                header('location: index.php?pg=login_register');
+                                exit;
+                            }
+                        }
+                    }
+                }
+                $_SESSION['tb_dangky'] = $tb;
+                header('location: index.php?pg=login_register');
+                exit;
             }
             include_once "view/login_register.php";
             break;
         case 'login':
-            //input
-            if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
-                $username = $_POST["username"];
-                $password = $_POST["password"];
-                //kiem tra
-                $kq = checkuser($username, $password);
-                if (is_array($kq) && (count($kq))) {
-                    $_SESSION['s_user'] = $kq;
-                    header('location: index.php?pg=account');
+            if (isset($_POST["dangnhap"])) {
+                $username = trim($_POST["username"]);
+                $password = trim($_POST["password"]);
+                if (empty($username) || empty($password)) {
+                    $tb .= '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
                 } else {
-                    $tb = "Tài khoản không tồn tại!";
-                    $_SESSION['tb_dangnhap'] = $tb;
-                    header('location: index.php?pg=login_register');
+                    $kq = checkuser($username, $password);
+        
+                    if (is_array($kq) && (count($kq))) {
+                        $_SESSION['s_user'] = $kq;
+                        header('location: index.php?pg=account');
+                        exit;
+                    } else {
+                        $tb .= '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
+                    }
                 }
-                //out
+        
+                $_SESSION['tb_dangnhap'] = $tb;
+                header('location: index.php?pg=login_register');
+                exit;
             }
             break;
         case 'logout':
@@ -220,13 +245,15 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $id = $_POST["id"];
                 $role = 0;
                 $hinh = $_FILES["hinh"]["name"];
-                if ($hinh != "") {
-                    $target_file = "./view/layout/images/user/" . $hinh;
-                    move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
-                } else {
-                    // Nếu không có hình mới được chọn, sử dụng ảnh mặc định
-                    $target_file = "./view/layout/images/user/user_empty.png";
-                }
+                 // Nếu có ảnh mới được chọn
+            if ($hinh != "") {
+                $target_file = "./view/layout/images/user/" . $hinh;
+                move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+            } else {
+                // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
+                $latestImage =  getLatestImageFromUser($id);
+                $target_file = $latestImage;
+            }
                     // $target_file ="./view/layout/images/user/". $hinh;
                     // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                 // xử lý

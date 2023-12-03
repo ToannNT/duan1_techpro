@@ -3,17 +3,17 @@
         extract($_SESSION['s_user']);
         $userinf=get_user($id);
         extract($userinf);
-        // unset ($_SESSION['s_user']);
+        // unset ($_SESSION['s_user']); 
 
     }
-    // if (isset($target_file)) {
-    //     $hinh_ac = '
-    //             <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
-    //         ';
-    // } else {
-    //     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
-    // }
-    
+        if (isset($hinh)) {
+            $hinh_ac = '
+                    <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
+                ';
+        } else {
+            $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
+        }
+
 ?>
 <div class="wrapper-container">
 <form action="index.php?pg=update_user" method="post" enctype="multipart/form-data">
@@ -22,7 +22,9 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="content-col-left bg- p-4 pt-50">
-                                    <div class="content-col-left__avata"><img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$hinh?>" alt></div>
+                                    <div class="content-col-left__avata">
+                                        <?=$hinh_ac?>
+                                    </div>
                                     <div class="content-col-left__name"><?=$hoten?></div>
                                     <div class="content-col-left__lv">Thành viên: Mới</div>
                                     <div class="content-col-left__cart"><img src="./view/layout/images/user/member_new.jpg" alt></div>

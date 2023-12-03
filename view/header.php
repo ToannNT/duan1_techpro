@@ -68,10 +68,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                 <ul style="margin-left: 10px;" class="minicart-product-list ">
                                     <li>
                                         <a href="index.php?pg=login_register">Đăng Nhập</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Đăng ký</a>
-                                    </li>
+                                    </li>                                   
                                 </ul>
 
                             </div>
