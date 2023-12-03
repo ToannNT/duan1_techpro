@@ -76,6 +76,8 @@ function  update_pass_user($newpassword, $id)
 //     return ""; // Return an empty string if no image is found
 // }
 function getLatestImageFromUser($id) {
+
+
     // Truy vấn SQL để lấy thông tin ảnh gần nhất từ bảng user
     $sql = "SELECT hinh FROM userWHERE id = id ORDER BY upload_date DESC LIMIT 1";
 }

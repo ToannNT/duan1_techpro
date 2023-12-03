@@ -1,8 +1,6 @@
 <?php
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
-    $userinf=get_user($id);
-    extract($userinf);
 
 }
 if (isset($hinh)) {
@@ -30,7 +28,7 @@ if (isset($hinh)) {
                 <div class="col-md-3">
                     <div class="content-col-left bg- p-4 pt-50">
                         <div class="content-col-left__avata">
-                        <!-- <img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt> -->
+                            <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$hinh?>" alt> -->
                           <?=$hinh_ac?>
                         </div>
                         <div class="content-col-left__name">
