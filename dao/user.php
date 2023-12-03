@@ -56,25 +56,30 @@ function  update_pass_user($newpassword, $id)
 }
 
 <<<<<<< HEAD
-// img của account nhaaa
-// function getLatestImageFromUser($id) {
-//     // Giả sử bạn có một cột ID để xác định thứ tự
-//     $sql = "SELECT hinh FROM user WHERE id = ? ORDER BY ngay_uploaded DESC LIMIT 1";
-
-//     // Giả sử bạn đang sử dụng PDO, hãy thay thế pdo_query_one bằng hàm tương ứng của bạn
-//     $result = pdo_query_one($sql, [$id]);
-
-//     if ($result) {
-//         return $result['hinh'];
-//     }
-
-//     return ""; // Return an empty string if no image is found
-// }
+img của account nhaaa
 function getLatestImageFromUser($id) {
+    // Giả sử bạn có một cột ID để xác định thứ tự
+    $sql = "SELECT hinh FROM user WHERE id = ? ORDER BY ngay_uploaded DESC LIMIT 1";
+
+    // Giả sử bạn đang sử dụng PDO, hãy thay thế pdo_query_one bằng hàm tương ứng của bạn
+    $result = pdo_query_one($sql, [$id]);
+
+    if ($result) {
+        return $result['hinh'];
+    }
+
+    return ""; // Return an empty string if no image is found
+}
+<<<<<<< HEAD
+function getLatestImageFromUser($id) {
+=======
+function getLatestImageFromUser($id)
+{
+>>>>>>> 6879adc76e503088ad26f904a4fc20bb93381fa1
 
 
     // Truy vấn SQL để lấy thông tin ảnh gần nhất từ bảng user
-    $sql = "SELECT hinh FROM userWHERE id = id ORDER BY upload_date DESC LIMIT 1";
+    $sql = "SELECT image_path FROM user_images WHERE user_id = :user_id ORDER BY upload_date DESC LIMIT 1";
 }
 
 =======
@@ -82,50 +87,50 @@ function getLatestImageFromUser($id) {
 
 
 
-// function userinsert($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro)
-// {
-//     $sql = "INSERT INTO user(ma_kh, mat_khau, ho_ten, email, hinh, kich_hoat, vai_tro) VALUES (?, ?, ?, ?, ?, ?, ?)";
-//     pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat == 1, $vai_tro == 1);
-// }
+function userinsert($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro)
+{
+    $sql = "INSERT INTO user(ma_kh, mat_khau, ho_ten, email, hinh, kich_hoat, vai_tro) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat == 1, $vai_tro == 1);
+}
 
-// function user_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro){
-//     $sql = "UPDATE user SET mat_khau=?,ho_ten=?,email=?,hinh=?,kich_hoat=?,vai_tro=? WHERE ma_kh=?";
-//     pdo_execute($sql, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat==1, $vai_tro==1, $ma_kh);
-// }
+function user_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro){
+    $sql = "UPDATE user SET mat_khau=?,ho_ten=?,email=?,hinh=?,kich_hoat=?,vai_tro=? WHERE ma_kh=?";
+    pdo_execute($sql, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat==1, $vai_tro==1, $ma_kh);
+}
 
-// function user_delete($ma_kh){
-//     $sql = "DELETE FROM user  WHERE ma_kh=?";
-//     if(is_array($ma_kh)){
-//         foreach ($ma_kh as $ma) {
-//             pdo_execute($sql, $ma);
-//         }
-//     }
-//     else{
-//         pdo_execute($sql, $ma_kh);
-//     }
-// }
+function user_delete($ma_kh){
+    $sql = "DELETE FROM user  WHERE ma_kh=?";
+    if(is_array($ma_kh)){
+        foreach ($ma_kh as $ma) {
+            pdo_execute($sql, $ma);
+        }
+    }
+    else{
+        pdo_execute($sql, $ma_kh);
+    }
+}
 
-// function user_select_all(){
-//     $sql = "SELECT * FROM user";
-//     return pdo_query($sql);
-// }
+function user_select_all(){
+    $sql = "SELECT * FROM user";
+    return pdo_query($sql);
+}
 
-// function user_select_by_id($ma_kh){
-//     $sql = "SELECT * FROM user WHERE ma_kh=?";
-//     return pdo_query_one($sql, $ma_kh);
-// }
+function user_select_by_id($ma_kh){
+    $sql = "SELECT * FROM user WHERE ma_kh=?";
+    return pdo_query_one($sql, $ma_kh);
+}
 
-// function user_exist($ma_kh){
-//     $sql = "SELECT count(*) FROM user WHERE $ma_kh=?";
-//     return pdo_query_value($sql, $ma_kh) > 0;
-// }
+function user_exist($ma_kh){
+    $sql = "SELECT count(*) FROM user WHERE $ma_kh=?";
+    return pdo_query_value($sql, $ma_kh) > 0;
+}
 
-// function user_select_by_role($vai_tro){
-//     $sql = "SELECT * FROM user WHERE vai_tro=?";
-//     return pdo_query($sql, $vai_tro);
-// }
+function user_select_by_role($vai_tro){
+    $sql = "SELECT * FROM user WHERE vai_tro=?";
+    return pdo_query($sql, $vai_tro);
+}
 
-// function user_change_password($ma_kh, $mat_khau_moi){
-//     $sql = "UPDATE user SET mat_khau=? WHERE ma_kh=?";
-//     pdo_execute($sql, $mat_khau_moi, $ma_kh);
-// }
+function user_change_password($ma_kh, $mat_khau_moi){
+    $sql = "UPDATE user SET mat_khau=? WHERE ma_kh=?";
+    pdo_execute($sql, $mat_khau_moi, $ma_kh);
+}

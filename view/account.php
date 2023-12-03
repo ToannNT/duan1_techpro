@@ -1,6 +1,10 @@
 <?php
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6879adc76e503088ad26f904a4fc20bb93381fa1
 }
 // if (isset($target_file)) {
 //     $hinh_ac = '
