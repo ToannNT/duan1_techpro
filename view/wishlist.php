@@ -1,29 +1,29 @@
 <?php
-    $tableWishlist="";
-    if(isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])){
-        extract($_SESSION['f_Product']);
-        // echo "<pre>";
-        // print_r($_SESSION['f_Product']);
-        // echo "</pre>";
-        $i = 0;
-        foreach ($_SESSION['f_Product'] as $item) {
-            extract ($item);
-            $link = 'index.php?pg=productdetail&idpro=' . $id;
-            
-            $linkDel='index.php?pg=delWishlistArray&ind='.$i;
-            $tableWishlist.='<tr>
+$tableWishlist = "";
+if (isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])) {
+    extract($_SESSION['f_Product']);
+    // echo "<pre>";
+    // print_r($_SESSION['f_Product']);
+    // echo "</pre>";
+    $i = 0;
+    foreach ($_SESSION['f_Product'] as $item) {
+        extract($item);
+        $link = 'index.php?pg=productdetail&idpro=' . $id;
+
+        $linkDel = 'index.php?pg=delWishlistArray&ind=' . $i;
+        $tableWishlist .= '<tr>
                                 <td class="li-product-remove"><a href="' . $linkDel . '"><i class="fa fa-times"></i></a></td>
-                                <td class="li-product-thumbnail"><a href="'.$link.'"><img class="wishimg" src="./view/layout/images/product/' . $hinh . '" alt="Hinh"></a></td>
-                                <td class="li-product-name"><a href="'.$link.'">'.$ten.'</a></td>
-                                <td class="li-product-price"><span class="amount">'.$gia.'</span></td>
+                                <td class="li-product-thumbnail"><a href="' . $link . '"><img class="wishimg" src="./view/layout/images/product/' . $hinh . '" alt="Hinh"></a></td>
+                                <td class="li-product-name"><a href="' . $link . '">' . $ten . '</a></td>
+                                <td class="li-product-price"><span class="amount">' . $gia . '</span></td>
                                 <td class="li-product-stock-status"><span class="in-stock">in stock</span></td>
                                 <td class="li-product-add-cart"><a href="#">add to cart</a></td>
                             </tr>';
         $i++;
-        }
-        // echo var_dump($_SESSION['f_Product']);
-    }else{
-        $tableWishlist.= '<tr>
+    }
+    // echo var_dump($_SESSION['f_Product']);
+} else {
+    $tableWishlist .= '<tr>
                 <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
                 <td class="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/1.jpg" alt></a></td>
                 <td class="li-product-name"><a href="#">Trống</a></td>
@@ -31,8 +31,8 @@
                 <td class="li-product-stock-status"><span class="in-stock">...</span></td>
                 <td class="li-product-add-cart"><a href="index.php">Trang chủ</a></td>
             </tr>';
-    }
-    // echo var_dump($_SESSION['f_Product']);
+}
+// echo var_dump($_SESSION['f_Product']);
 ?>
 <!-- Header Area End Here -->
 <!-- Begin Li's Breadcrumb Area -->
@@ -66,31 +66,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?=$tableWishlist?>
-                                <!-- <tr>
-                                                <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                                <td class="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/1.jpg" alt></a></td>
-                                                <td class="li-product-name"><a href="#">Giro Civilia</a></td>
-                                                <td class="li-product-price"><span class="amount">$23.39</span></td>
-                                                <td class="li-product-stock-status"><span class="in-stock">in stock</span></td>
-                                                <td class="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                                <td class="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/2.jpg" alt></a></td>
-                                                <td class="li-product-name"><a href="#">Pro Bike Shoes</a></td>
-                                                <td class="li-product-price"><span class="amount">$30.50</span></td>
-                                                <td class="li-product-stock-status"><span class="in-stock">in stock</span></td>
-                                                <td class="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="li-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                                <td class="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/3.jpg" alt></a></td>
-                                                <td class="li-product-name"><a href="#">Nero Urban Shoes</a></td>
-                                                <td class="li-product-price"><span class="amount">$40.19</span></td>
-                                                <td class="li-product-stock-status"><span class="out-stock">out stock</span></td>
-                                                <td class="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr> -->
+                                <?= $tableWishlist ?>
                             </tbody>
                         </table>
                     </div>

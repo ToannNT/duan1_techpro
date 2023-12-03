@@ -1,6 +1,7 @@
 <?php
 require_once 'pdo.php';
 
+
 // TRANG SẢN PHẨM ADMIN
 function get_tablesp($limit)
 {
@@ -205,7 +206,7 @@ function show_SP($dssp)
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
-                                <button type="submit" name="btn_Wish" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="toast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             </form>
                     </ul>
@@ -214,7 +215,7 @@ function show_SP($dssp)
         </div>
         <!-- single-product-wrap end -->
     </div>
-        ';
+        ';     
     }
     return $show_dssp_all;
 }
