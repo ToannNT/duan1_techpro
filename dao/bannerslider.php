@@ -30,5 +30,10 @@ function showup_banner($idbn){
     return pdo_query_one($sql, $idbn);
 }
 
+
+function update_status($trangthai, $id){
+    $sql = "UPDATE banner SET trangthai=? WHERE id=?";
+    pdo_execute($sql, $trangthai, $id);
+}
 // kết thúc xoá banner
 ///endbanner
