@@ -2,6 +2,11 @@
   $html_showbanner = "";
   foreach ($get_banner as $item) {
     extract($item);
+    if($trangthai==1){
+      $check = "checked";
+    }else{
+      $check = "";
+    }
     $html_showbanner.= '<tr>
               <td>'.$id.'</td>
               <td>'.$stt.'</td>
@@ -11,7 +16,7 @@
               <td>'.$mota.'</td>
               <td style="width: 10%;">
                 <label class="switch">
-                  <input type="checkbox" value="1">
+                  <input onchange="upStatus(this)" id="'.$id.'" type="checkbox" '.$check.' value="1">
                   <span class="sliderr round"></span>
                 </label>
               </td>
@@ -140,5 +145,23 @@
             </div>
         </div>
     </main>
-
-<!--
+    <td style="width: 10%;">
+      <label class="switch">
+        <input type="checkbox" value="1">
+        <span class="sliderr round"></span>
+      </label>
+    </td>
+<script>
+  function upStatus(e){
+    var status=e.checked? 1 : 0;
+    var id = e.getAttribute("id");
+    $(document).ready(function(){
+        $.ajax({
+          url:"http://localhost/duan1_techpro/admin/view/status.php",
+          data:{id:id, status: status},
+          method: "post" ,
+          cache: false ,
+        });
+    });
+  }
+</script>

@@ -9,12 +9,11 @@ require_once "dao/pdo.php";
 require_once "dao/user.php";
 require_once "dao/sanpham.php";
 require_once "dao/danhmuc.php";
+require_once "dao/voucher.php";
 require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
-
-
 
 //header
 $ds_danhmuc = dsdm_catalog();
@@ -121,9 +120,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $quantity = $_POST["quantity"];
                 $idpro = $_POST["idpro"];
                 $s_status = $_POST["s_status"];
-                $s_status = $_POST["s_status"];
                 $thanhtien = $_POST["thanhtien"];
-
                 $page_here = $_POST["page_here"];
                 //tạo biến ktra 
                 $product_exists = false;
@@ -147,10 +144,177 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             // require_once "view/addcart.php";
             break;
         case 'checkout':
+            // lấy voucher
+            if (isset($_POST['check_voucher']) && ($_POST['check_voucher'])) {
+                if (isset($_POST["value_voucher"]) && ($_POST["value_voucher"] != "")) {
+                    //giá trị từ form
+                    $ten_voucher = $_POST['value_voucher'];
+                    $tt_chuadangnhap = "hãy đăng nhập để sử dụng các ữu đãi voucher";
+                    $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                    Vui lòng đăng nhập để sử dụng voucher</span>';
+                    //kiểm tra đăng nhập chưa 
+                    if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
+                        $id_user = $_SESSION["s_user"]["id"];
+
+                        // kiem tra voucher tồn tại không
+                        $kq = check_voucher($ten_voucher);
+
+                        if (is_array($kq) && (count($kq))) {
+                            //kiemtra nguoi dùng đã sử dụng chưa
+                            $checkUserVoucherUsed = checkUserVoucherUsage($id_user, $ten_voucher);
+                            //kiem tra số lượng voucher còn không
+                            $quantityVoucher = checkVoucherQuantity($ten_voucher);
+
+
+                            // nếu số lượng vouhcer > 0 thì cho sử dụng
+                            if ($quantityVoucher > 0) {
+                                if (is_array($checkUserVoucherUsed) && (count($checkUserVoucherUsed))) {
+                                    //Đã sử dụng voucher gòi 
+
+                                    $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                                    Tài khoản đã được sử dụng</span>';
+
+                                    $variable_voucher = 0;
+                                } else {
+                                    // chưa sử dụng voucher bao giờ
+                                    $variable_voucher = search_voucher($ten_voucher);
+
+                                    $_SESSION['voucher'] = array(
+                                        'ten_voucher' => $ten_voucher,
+                                        'variable_voucher' => $variable_voucher
+                                    );
+                                    // update đã sử dụng voucher
+
+                                    // nếu session isset thì cập nhật đã sử dụng trừ đi 1
+
+
+                                    $thongbaovoucher = '<span style="color: green; margin-left: 5px;">
+                                    Áp mã thành công</span>';
+                                }
+                            } else {
+                                //hết số lượng voucher 
+                                $variable_voucher = 0;
+                                $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                                Số lượng đã hết!</span>';
+                            }
+
+                            // nhập saiiiii
+                        } else {
+                            $variable_voucher = 0;
+                            $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                            Voucher không tồn tại!</span>';
+                        }
+                    } // end kiem tra có tài khoảng Không
+
+                } else { //nếu khg có kí tự nhập thì cảnh báo
+                    $variable_voucher = 0;
+                    $thongbaovoucher = '<span style="color: red; font-size: 1rem; font-size: 1rem; margin-left: 5px;">
+                    Vui lòng nhập để sử dụng voucher! kekeeke</span>';
+                }
+            } else { // nếu không gửi voucher
+                $variable_voucher = 0;
+                $thongbaovoucher = "";
+            }
+
+
+
+
+
+
+
+            if (isset($_POST['checkout']) && ($_POST['checkout'])) {
+                $hoten = $_POST['hoten'];
+                $diachi = $_POST['diachi'];
+                $dienthoai = $_POST['dienthoai'];
+                $email = $_POST['email'];
+                $pttt = $_POST['pttt'];
+                $nguoinhan_hoten = $_POST['nguoinhan_hoten'];
+                $nguoinhan_diachi = $_POST['nguoinhan_diachi'];
+                $nguoinhan_dienthoai = $_POST['nguoinhan_dienthoai'];
+                $voucher = $_POST['voucher'];
+                $total = $_POST['tt'];
+                $tongthanhtoan = $_POST['tong_thanhtoan'];
+                $ghichu = $_POST['order_notes'];
+                $ship = $_POST['ptvc'];
+
+
+
+
+
+                // lấy iduser
+                if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
+                    $iduser = $_SESSION['s_user']['id'];
+                    update_user_checkout($hoten, $email, $diachi, $dienthoai, $iduser);
+                } else {
+                    $username = "guests" . rand(1, 99999);
+                    $password = "172004" . rand(1, 99999);
+                    $iduser = user_insert_id($username, $password, $hoten, $diachi, $email, $dienthoai);
+                }
+                $ma_donhang = "TECHPRO" . $iduser . "-" . date("His-dmY");
+                // First tạo đơn hàng 
+                $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt);
+
+
+
+
+                // NẾU TÒN TẠI ID BILL VÀ KIỂM TRA USED CHƯA SỬ DỤNG THÌ ĐÁNH DẤU VÀ TRỪ QUANTITY 1
+                if ((isset($_SESSION['voucher'])) && ($_SESSION['voucher'] != "") && (isset($id_bill))) {
+                    $id_user = $_SESSION['s_user']['id'];
+                    $ten_voucher = $_SESSION['voucher']['ten_voucher'];
+
+                    updateUserVoucherUsage($id_user, $ten_voucher);
+                    //trừ số lượng voucher đi là 1
+                    updateVoucherQuantity($ten_voucher);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                foreach ($_SESSION['giohang'] as $key => $value) {
+                    extract($value);
+                    if ($s_status == 1) {
+                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                        unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
+                    }
+                }
+                unset($_SESSION['voucher']);
+                $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
+                header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '');
+            }
             require_once "view/checkout.php";
             break;
-        case 'checkout2':
-            require_once "view/checkout2.php";
+
+        case 'confirm_checkout':
+            require_once "view/confirm_checkout.php";
             break;
         case 'contact':
             require_once "view/contact.php";
@@ -163,6 +327,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'login_register':
             require_once "view/login_register.php";
+
             break;
         case 'register':
             if (isset($_POST["dangky"])) {
@@ -199,26 +364,48 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             include_once "view/login_register.php";
             break;
         case 'login':
-            if (isset($_POST["dangnhap"])) {
+            //input
+            if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
                 $username = trim($_POST["username"]);
                 $password = trim($_POST["password"]);
+                if (($_POST["page_here_ne"] != "")) {
+                    $page_here =  $_POST["page_here_ne"];
+                } else {
+                    $page_here =  "account";
+                }
+
+
+
+
                 if (empty($username) || empty($password)) {
-                    $tb .= '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
+                    $tb = '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
                 } else {
                     $kq = checkuser($username, $password);
-        
+
                     if (is_array($kq) && (count($kq))) {
                         $_SESSION['s_user'] = $kq;
                         header('location: index.php?pg=account');
                         exit;
                     } else {
-                        $tb .= '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
+                        $tb = '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
                     }
                 }
-        
-                $_SESSION['tb_dangnhap'] = $tb;
-                header('location: index.php?pg=login_register');
-                exit;
+
+
+
+                $kq = checkuser($username, $password);
+                if (is_array($kq) && (count($kq))) {
+                    $_SESSION['s_user'] = $kq;
+                    header('location: index.php?pg=' . $page_here . '');
+                } else {
+                    $tb = "Tài khoản không tồn tại!";
+                    $_SESSION['tb_dangnhap'] = $tb;
+                    header('location: index.php?pg=login_register');
+                    exit;
+                }
+
+                //out
+
             }
             break;
         case 'logout':
@@ -246,17 +433,17 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $id = $_POST["id"];
                 $role = 0;
                 $hinh = $_FILES["hinh"]["name"];
-                 // Nếu có ảnh mới được chọn
-            if ($hinh != "") {
-                $target_file = "./view/layout/images/user/" . $hinh;
-                move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
-            } else {
-                // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
-                $latestImage =  getLatestImageFromUser($id);
-                $target_file = $latestImage;
-            }
-                    // $target_file ="./view/layout/images/user/". $hinh;
-                    // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+                // Nếu có ảnh mới được chọn
+                if ($hinh != "") {
+                    $target_file = "./view/layout/images/user/" . $hinh;
+                    move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+                } else {
+                    // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
+                    $latestImage =  getLatestImageFromUser($id);
+                    $target_file = $latestImage;
+                }
+                // $target_file ="./view/layout/images/user/". $hinh;
+                // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                 // xử lý
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
                 include_once "view/confirm_account.php";
@@ -292,9 +479,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //     $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
                 //     $_SESSION['f_Product'][]=$sp;
                 // }
-                $sp=["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
-                $_SESSION['f_Product'][]=$sp;
-                
+                $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
+                $_SESSION['f_Product'][] = $sp;
+
                 // header('location: index.php?pg=wishlist');
             }
             break;
@@ -339,4 +526,3 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 }
 
 require_once "view/footer.php";
-?>

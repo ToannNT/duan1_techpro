@@ -2,16 +2,16 @@
 // require_once 'pdo.php';
 
 
-function user_insert($hoten,$username,$email,$sdt,$password)
+function user_insert($hoten, $username, $email, $sdt, $password)
 {
     $sql = "INSERT INTO user(hoten,username,email,sdt,password) VALUES (?,?,?,?,?)";
-    pdo_execute($sql,$hoten,$username,$email,$sdt,$password);
+    pdo_execute($sql, $hoten, $username, $email, $sdt, $password);
 }
 
 //lấy về id mới nhất sau khi insert
 function user_insert_id($username, $password, $hoten, $diachi, $email, $dienthoai)
 {
-    $sql = "INSERT INTO user (username,password,hoten,diachi,email,dienthoai) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO user (username,password,hoten,diachi,email,sdt) VALUES (?,?,?,?,?,?)";
     return  pdo_execute_id($sql, $username, $password, $hoten, $diachi, $email, $dienthoai);
 }
 
@@ -26,7 +26,8 @@ function checkuser($username, $password)
     // }
 }
 
-function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id) {
+function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id)
+{
     // Kiểm tra xem $hinh có giá trị không
     if ($hinh !== "") {
         $sql = "UPDATE user SET hoten=?, username=?, password=?, email=?, gioitinh=?, diachi=?, sdt=?, hinh=?, role=? WHERE id=?";
@@ -38,13 +39,24 @@ function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $
     }
 }
 
+
+//update user khi thay đổi trong checkout
+function update_user_checkout($hoten, $email, $diachi, $sdt, $id)
+{
+
+    $sql = "UPDATE user SET hoten=?,email=?,diachi=?,sdt=? WHERE id=?";
+    pdo_execute($sql, $hoten, $email, $diachi, $sdt, $id);
+}
+
+
 function get_user($id)
 {
     $sql = "SELECT * FROM user WHERE id=?";
     return  pdo_query_one($sql, $id);
 }
 
-function  update_pass_user($newpassword, $id){
+function  update_pass_user($newpassword, $id)
+{
     $sql = "UPDATE user SET password=? WHERE id=?";
     pdo_execute($sql, $newpassword, $id);
 }
@@ -65,8 +77,7 @@ function  update_pass_user($newpassword, $id){
 // }
 function getLatestImageFromUser($id) {
     // Truy vấn SQL để lấy thông tin ảnh gần nhất từ bảng user
-    $sql = "SELECT image_path FROM user_images WHERE user_id = :user_id ORDER BY upload_date DESC LIMIT 1";
-
+    $sql = "SELECT hinh FROM userWHERE id = id ORDER BY upload_date DESC LIMIT 1";
 }
 
 
