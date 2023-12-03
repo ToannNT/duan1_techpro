@@ -65,6 +65,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             // require_once "view/updateCatagory.php";
             break;
         case 'qlsanpham':
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
             $showspadm=get_tablesp(20);
             require_once "view/qlsanpham.php";
             break;
@@ -82,8 +84,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             break;
         case 'updatepro':
-            error_reporting(E_ALL);
-            ini_set('display_errors', '1');
             if(isset($_POST['updatepro'])){
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
@@ -164,7 +164,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 
                 //đưa về qlsanpham
-                
+
                 $showspadm=get_tablesp(20);
                     require_once "view/qlsanpham.php";
                 }else{
@@ -174,12 +174,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'qlbanner':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
-            $get_banner = db_banner();
-            $get_slider = db_slider();
+            $get_banner=db_banner(10);
             require_once "view/qlbanner.php";
             break;
         case 'addbanner':
-            if(isset($_POST['addbanner'])){
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
+            if(isset($_POST['btnbn'])&&($_POST['btnbn']!="")){
                 $stt = $_POST['stt'];
                 $mota = $_POST['mota'];
                 $img = $_FILES['imgup']['name'];
@@ -194,24 +195,27 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             if(isset($_POST['updatebn'])){
                 $stt = $_POST['stt'];
                 $mota = $_POST['mota'];
-                $img = $_FILES['imgup']['name'];
+                if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
+                    $img = $_FILES['imgup']['name'];
+                }else{ 
+                    $img = "noimg.jpeg";
+                }
                 $idbn = $_POST['idbn'];
                 $target_file ="../view/layout/images/banner/". $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_banner($stt, $mota, $img, $idbn);
-                $get_banner = db_banner();
+                // hàm show banner id
+                $showup_banner=showup_banner($idbn);
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/updatebn.php";
             break;
         case 'updatebnsl':
-            error_reporting(E_ALL);
-            ini_set('display_errors', '1');
             if(isset($_GET['idbn'])&&($_GET['idbn']>0)){
                 $idbn=$_GET['idbn'];
-                $showbanner=get_banner($id);
+                $showup_banner=showup_banner($idbn);
             }
-            $get_banner = db_banner();
+            $get_banner = db_banner(10);
             require_once "view/updatebnsl.php";
             break;
         case 'delbanner':

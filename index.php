@@ -224,6 +224,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'logout':
             if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 unset($_SESSION['s_user']);
+                header('location: index.php');
             }
             header('location: index.php');
         case 'account':
@@ -291,10 +292,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //     $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
                 //     $_SESSION['f_Product'][]=$sp;
                 // }
-                $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
-                $_SESSION['f_Product'][] = $sp;
-                header('location: index.php?pg=wishlist');
+                $sp=["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
+                $_SESSION['f_Product'][]=$sp;
+                
+                // header('location: index.php?pg=wishlist');
             }
+            break;
+        case 'detailed-order':
+            include_once "view/detailed-order.php";
             break;
         case 'wishlist':
             include_once "view/wishlist.php";
@@ -334,3 +339,4 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 }
 
 require_once "view/footer.php";
+?>
