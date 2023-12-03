@@ -376,20 +376,19 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
+                // if (empty($username) || empty($password)) {
+                //     $tb = '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
+                // } else {
+                //     $kq = checkuser($username, $password);
 
-                if (empty($username) || empty($password)) {
-                    $tb = '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
-                } else {
-                    $kq = checkuser($username, $password);
-
-                    if (is_array($kq) && (count($kq))) {
-                        $_SESSION['s_user'] = $kq;
-                        header('location: index.php?pg=account');
-                        exit;
-                    } else {
-                        $tb = '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
-                    }
-                }
+                //     if (is_array($kq) && (count($kq))) {
+                //         $_SESSION['s_user'] = $kq;
+                //         header('location: index.php?pg=account');
+                //         exit;
+                //     } else {
+                       
+                //     }
+                // }
 
 
 
@@ -398,13 +397,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     $_SESSION['s_user'] = $kq;
                     header('location: index.php?pg=' . $page_here . '');
                 } else {
-                    $tb = "Tài khoản không tồn tại!";
+                    $tb = '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
                     $_SESSION['tb_dangnhap'] = $tb;
                     header('location: index.php?pg=login_register');
                     exit;
                 }
 
-                //out
+                out;
 
             }
             break;

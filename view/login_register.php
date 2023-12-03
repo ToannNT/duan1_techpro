@@ -44,7 +44,7 @@ echo $page_follow;
                             </div>
 
                         </div>
-                        <h10 style="font-weight: bolder;font-weight: 100px;color:red">
+                        <h10 >
                             <?php
                                             if(isset($_SESSION['tb_dangnhap'])&&($_SESSION['tb_dangnhap']!="")){
                                                 echo $_SESSION['tb_dangnhap'];
@@ -93,7 +93,7 @@ echo $page_follow;
                                 <input class="name" type="submit" name="dangky" value="Đăng ký">
                             </div>
                         </div>
-                        <h10 style="font-weight: bolder;font-weight: 100px;color:red">
+                        <h10 >
                             <?php
                                         if(isset($_SESSION['tb_dangky'])&&($_SESSION['tb_dangky']!="")){
                                             echo $_SESSION['tb_dangky'];
