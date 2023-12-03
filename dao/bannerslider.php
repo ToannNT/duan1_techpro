@@ -1,8 +1,8 @@
 <?php
 require_once 'pdo.php';
 ///banner
-function db_banner($limit){
-    $sql = "SELECT * FROM banner ORDER BY id DESC LIMIT " . $limit;
+function db_banner(){
+    $sql = "SELECT * FROM banner ORDER BY id DESC";
     return pdo_query($sql);
 }
 function db_slider(){
@@ -20,15 +20,5 @@ function del_banner($id){
     $sql = "DELETE FROM banner WHERE  id=?";
     pdo_execute($sql, $id);
 }
-// updatebanner
-function update_banner($stt, $mota, $img, $idbn){
-    $sql = "UPDATE banner SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idbn);
-}
-function showup_banner($idbn){
-    $sql = "SELECT * FROM banner WHERE id=?";
-    return pdo_query_one($sql, $idbn);
-}
-
 // kết thúc xoá banner
 ///endbanner
