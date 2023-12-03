@@ -1,11 +1,11 @@
 <?php
 
-// inser vào giỏ hàng
-function cart_insert($id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien)
-{
-    $sql = "INSERT INTO cart (id_user,id_product,id_bill,ten,hinh,gia,soluong,thanhtien) VALUES (?,?, ?, ?, ? , ?, ? ,?)";
-    pdo_execute($sql, $id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien);
-}
+//inser vào giỏ hàng
+// function cart_insert($idpro, $idbill, $ten, $hinh, $gia, $soluong, $thanhtien)
+// {
+//     $sql = "INSERT INTO giohang (id_product,id_bill,ten,hinh,gia,soluong,thanhtien) VALUES (?, ?, ?, ? , ?, ? ,?)";
+//     pdo_execute($sql, $idpro, $idbill, $ten, $hinh, $gia, $soluong, $thanhtien);
+// }
 
 // function get_tongdonhang()
 // {

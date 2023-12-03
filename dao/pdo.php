@@ -98,7 +98,6 @@ function pdo_query_one($sql)
  * @return giá trị
  * @throws PDOException lỗi thực thi câu lệnh
  */
-
 function pdo_query_value($sql)
 {
     $sql_args = array_slice(func_get_args(), 1);
