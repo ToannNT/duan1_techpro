@@ -68,10 +68,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                 <ul style="margin-left: 10px;" class="minicart-product-list ">
                                     <li>
                                         <a href="index.php?pg=login_register">Đăng Nhập</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Đăng ký</a>
-                                    </li>
+                                    </li>                                   
                                 </ul>
 
                             </div>
@@ -146,6 +143,11 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
+    <!-- <link rel="stylesheet" href="./view/layout/asset/css/toast.css">
+    <script src="./view/layout/asset/js/toast.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 
 </head>
 
@@ -190,8 +192,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
                                             <?= $Favorite_count ?>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
-                                                class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -200,7 +201,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                     <li class="hm-minicart">
                                         <div class="hm-minicart-trigger">
                                             <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count"><?=$j?></span>
+                                                <span class="cart-item-count wishlist-item-count"><?= $j ?></span>
                                             </a>
                                             <span class="item-icon">
                                             </span>
@@ -234,30 +235,12 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                             </ul>
-                                            <p class="minicart-total">Tổng: <span><?= $tt ?>đ</span></p>
+                                            <p class="minicart-total">Tổng:
+                                                <span style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
+                                            </p>
                                             <div class="minicart-button">
-                                                <a href="index.php?pg=viewcart"
-                                                    class="li-button li-button-fullwidth li-button-dark">
+                                                <a href="index.php?pg=viewcart" class="li-button li-button-fullwidth li-button-dark">
                                                     <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">

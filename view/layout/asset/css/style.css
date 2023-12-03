@@ -195,7 +195,7 @@ li {
 }
 
 p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: normal;
     line-height: 24px;
     color: #898989;
@@ -4922,8 +4922,7 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 
 .pay-th {
-    width: 92.5%;
-    border: 1px solid #0C2F4E;
+    /* width: 92.5%; */
     margin: 0 auto;
     border-radius: 3px;
 }
@@ -4965,7 +4964,7 @@ p.checkout-coupon input[type="submit"]:hover {
 
 .your-order {
     background: #f2f2f2 none repeat scroll 0 0;
-    padding: 30px 40px 45px;
+    padding: 30px 30px 45px;
 }
 
 .your-order h3 {
@@ -5033,7 +5032,7 @@ thead {
 .payment-accordion .card {
     border: 0;
     border-radius: 0;
-    background: #B1CBE4;
+    background: #cfdae5;
 }
 
 .payment-accordion .card-header {
