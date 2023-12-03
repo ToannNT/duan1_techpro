@@ -68,7 +68,10 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                                 <ul style="margin-left: 10px;" class="minicart-product-list ">
                                     <li>
                                         <a href="index.php?pg=login_register">Đăng Nhập</a>
-                                    </li>                                   
+                                    </li>
+                                    <li>
+                                        <a href="#">Đăng ký</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -143,11 +146,6 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
-    <!-- <link rel="stylesheet" href="./view/layout/asset/css/toast.css">
-    <script src="./view/layout/asset/js/toast.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 
 </head>
 

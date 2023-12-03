@@ -13,6 +13,7 @@ require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
+require_once "dao/global.php";
 
 
 
@@ -165,40 +166,20 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/login_register.php";
             break;
         case 'register':
-            if (isset($_POST["dangky"])) {
-                $hoten = trim($_POST["hoten"]);
-                $username = trim($_POST["username"]);
-                $email = trim($_POST["email"]);
-                $sdt = trim($_POST["sdt"]);
-                $password = trim($_POST["password"]);
-                $repassword = trim($_POST["repassword"]);
-                if (empty($hoten) || empty($username) || empty($email) || empty($sdt) || empty($password) || empty($repassword)) {
-                    $tb .= '<div class="alert alert-danger">Vui lòng điền đầy đủ thông tin</div>';
-                } else {
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $tb .= '<div class="alert alert-danger">Địa chỉ email không hợp lệ</div>';
-                    } else {
-                        if (strlen($password) < 8) {
-                            $tb .= '<div class="alert alert-danger">Mật khẩu ít nhất phải có 8 kí tự</div>';
-                        } else {
-                            if ($password !== $repassword) {
-                                $tb .= '<div class="alert alert-danger">Mật khẩu không khớp</div>';
-                            } else {
-                                user_insert($hoten, $username, $email, $sdt, $password);
-                                $_SESSION['success_message'] = "Đăng ký thành công! Bạn có thể đăng nhập ngay.";
-                                header('location: index.php?pg=login_register');
-                                exit;
-                            }
-                        }
-                    }
-                }
-                $_SESSION['tb_dangky'] = $tb;
-                header('location: index.php?pg=login_register');
-                exit;
+            // xác định giá trị input
+            if (isset($_POST["dangky"]) && ($_POST["dangky"])) {
+                $hoten = $_POST["hoten"];
+                $username = $_POST["username"];
+                $email = $_POST["email"];
+                $sdt = $_POST["sdt"];
+                $password = $_POST["password"];
+                // xử lý
+                user_insert($hoten, $username, $email, $sdt, $password);
             }
             include_once "view/login_register.php";
             break;
         case 'login':
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (isset($_POST["dangnhap"])) {
                 $username = trim($_POST["username"]);
@@ -206,20 +187,36 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if (empty($username) || empty($password)) {
                     $tb .= '<div class="alert alert-danger">Vui lòng nhập tên đăng nhập và mật khẩu</div>';
 =======
+=======
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
             //input
             if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
                 $username = $_POST["username"];
                 $password = $_POST["password"];
+<<<<<<< HEAD
                 if (isset($_POST["page_here"])) {
                     $page_here =  $_POST["page_here"];
                 } else {
                     $page_here = "account";
                 }
+=======
+                if (($_POST["page_here_ne"] != "")) {
+                    $page_here =  $_POST["page_here_ne"];
+                } else {
+                    $page_here = "account";
+                }
+                // if (isset($_GET["page_follow"])) {
+                //     $page_here =  $_GET["page_follow"];
+                // } else {
+                //     $page_here = "account";
+                // }
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
                 //kiem tra
                 $kq = checkuser($username, $password);
                 if (is_array($kq) && (count($kq))) {
                     $_SESSION['s_user'] = $kq;
                     header('location: index.php?pg=' . $page_here . '');
+<<<<<<< HEAD
 >>>>>>> 2ea8992537acc826dddc45f9767b0729c830fbdb
                 } else {
                     $kq = checkuser($username, $password);
@@ -236,6 +233,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $_SESSION['tb_dangnhap'] = $tb;
                 header('location: index.php?pg=login_register');
                 exit;
+=======
+                } else {
+                    $tb = "Tài khoản không tồn tại!";
+                    $_SESSION['tb_dangnhap'] = $tb;
+                    header('location: index.php?pg=login_register');
+                }
+                //out
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
             }
             break;
         case 'logout':
@@ -264,6 +269,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $role = 0;
                 $hinh = $_FILES["hinh"]["name"];
 <<<<<<< HEAD
+<<<<<<< HEAD
                  // Nếu có ảnh mới được chọn
             if ($hinh != "") {
                 $target_file = "./view/layout/images/user/" . $hinh;
@@ -276,6 +282,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     // $target_file ="./view/layout/images/user/". $hinh;
                     // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
 =======
+=======
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
                 if ($hinh != "") {
                     $target_file = "./view/layout/images/user/" . $hinh;
                     move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
@@ -321,10 +329,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //     $sp=["ten" => $name, "hinh" => $img, "gia" => $price];
                 //     $_SESSION['f_Product'][]=$sp;
                 // }
+<<<<<<< HEAD
                 $sp=["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][]=$sp;
                 
                 // header('location: index.php?pg=wishlist');
+=======
+                $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
+                $_SESSION['f_Product'][] = $sp;
+                header('location: index.php?pg=wishlist');
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
             }
             break;
         case 'detailed-order':

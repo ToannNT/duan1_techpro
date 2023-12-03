@@ -1,33 +1,3 @@
-<?php
-  $html_showbanner = "";
-  foreach ($get_banner as $item) {
-    extract($item);
-    if($trangthai==1){
-      $check = "checked";
-    }else{
-      $check = "";
-    }
-    $html_showbanner.= '<tr>
-              <td>'.$id.'</td>
-              <td>'.$stt.'</td>
-              <td style="width: 200px; height: 100px; overflow: hidden;">
-                  <img src="../view/layout/images/banner/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
-              </td>
-              <td>'.$mota.'</td>
-              <td style="width: 10%;">
-                <label class="switch">
-                  <input onchange="upStatus(this)" id="'.$id.'" type="checkbox" '.$check.' value="1">
-                  <span class="sliderr round"></span>
-                </label>
-              </td>
-              <td><a href="index.php?pg=delbanner&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                      onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
-                  </button>
-                  <a href="index.php?pg=updatebnsl&idbn='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
-              </td>
-          </tr>';
-  }
-?>
 <style>
   /* The switch - the box around the slider */
   .switch {
@@ -121,7 +91,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?=$html_showbanner?>
+                            <?php
+                                foreach ($get_banner as $item) {
+                                  extract($item);
+                                  echo '<tr>
+                                            <td>'.$id.'</td>
+                                            <td>'.$stt.'</td>
+                                            <td style="width: 200px; height: 100px; overflow: hidden;">
+                                                <img src="../view/layout/images/banner/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </td>
+                                            <td>'.$mota.'</td>
+                                            <td style="width: 10%;">
+                                              <label class="switch">
+                                                <input type="checkbox" value="1">
+                                                <span class="sliderr round"></span>
+                                              </label>
+                                            </td>
+                                            <td><a href="index.php?pg=delbanner&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                                    onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
+                                                </button>
+                                                <a href="index.php?pg=updatebnsl&idbn='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                                            </td>
+                                        </tr>';
+                                }
+                              ?>
                             </tbody>
                         </table>
                         <table class="table table-hover table-bordered" id="sampleTable">
@@ -137,7 +130,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                            <?php
+                                foreach ($get_slider as $item) {
+                                  extract($item);
+                                  echo '<tr>
+                                            <td>'.$id.'</td>
+                                            <td>'.$stt.'</td>
+                                            <td style="width: 100px; height: 100px; overflow: hidden;">
+                                                <img src="../view/layout/images/slider/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </td>
+                                            <td>'.$mota.'</td>
+                                            <td>
+                                              <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                              </label>
+                                            </td>
+                                            <td><a href="index.php?pg=del&id='.$id.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                                    onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
+                                                </button>
+                                                <a href="index.php?pg=updatebnsl&idsl='.$id.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                                            </td>
+                                        </tr>';
+                                }
+                              ?>
                             </tbody>
                         </table>
                     </div>
@@ -145,23 +161,5 @@
             </div>
         </div>
     </main>
-    <td style="width: 10%;">
-      <label class="switch">
-        <input type="checkbox" value="1">
-        <span class="sliderr round"></span>
-      </label>
-    </td>
-<script>
-  function upStatus(e){
-    var status=e.checked? 1 : 0;
-    var id = e.getAttribute("id");
-    $(document).ready(function(){
-        $.ajax({
-          url:"http://localhost/duan1_techpro/admin/view/status.php",
-          data:{id:id, status: status},
-          method: "post" ,
-          cache: false ,
-        });
-    });
-  }
-</script>
+
+<!--

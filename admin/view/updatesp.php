@@ -315,6 +315,7 @@ MODAL
       giagiamsp.focus();//di chuyển đến vị trí lỗi
       return false;
     }
+    
     if (!(brandsp && brandsp.value !== "default")) { // Kiểm tra giá trị chọn của brand
         alert("Brand không được để trống!");
         event.preventDefault();

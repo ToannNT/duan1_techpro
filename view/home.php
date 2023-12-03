@@ -1007,7 +1007,6 @@
                     <?php
                     $data_tintucindex = get_tintucindex();
                     ?>
-                    
                     <div class="row">
                         <!-- <div class="product-active owl-carousel"> -->
                         <?php foreach ($data_tintucindex as $tt) : ?>
@@ -1039,13 +1038,6 @@
                         <?php endforeach; ?>
                     </div>
                     <!-- </div> -->
-                    <!-- Sweet Alert Frem Demo -->
-                    <script language="JavaScript">
-                        function toast() { 
-                            swal("Success!", "Your data have been saved. Thank you!", "success");
-                        }
-                    </script>
-                    <!-- Sweet Alert Frem Demo End Here -->
                 </div>
                 <!-- Li's Section Area End Here -->
             </div>

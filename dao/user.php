@@ -28,15 +28,9 @@ function checkuser($username, $password)
 
 function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id)
 {
-    // Kiểm tra xem $hinh có giá trị không
-    if ($hinh !== "") {
-        $sql = "UPDATE user SET hoten=?, username=?, password=?, email=?, gioitinh=?, diachi=?, sdt=?, hinh=?, role=? WHERE id=?";
-        pdo_execute($sql, $hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
-    } else {
-        // Nếu $hinh là giá trị trống, không cập nhật cột hinh
-        $sql = "UPDATE user SET hoten=?, username=?, password=?, email=?, gioitinh=?, diachi=?, sdt=?, role=? WHERE id=?";
-        pdo_execute($sql, $hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $role, $id);
-    }
+
+    $sql = "UPDATE user SET hoten=?, username=?,password=?,email=?,gioitinh=?,diachi=?,sdt=?, hinh=?,role=? WHERE id=?";
+    pdo_execute($sql, $hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
 }
 
 
@@ -61,6 +55,7 @@ function  update_pass_user($newpassword, $id)
     pdo_execute($sql, $newpassword, $id);
 }
 
+<<<<<<< HEAD
 // img của account nhaaa
 // function getLatestImageFromUser($id) {
 //     // Giả sử bạn có một cột ID để xác định thứ tự
@@ -82,6 +77,8 @@ function getLatestImageFromUser($id) {
     $sql = "SELECT hinh FROM userWHERE id = id ORDER BY upload_date DESC LIMIT 1";
 }
 
+=======
+>>>>>>> parent of a51c1e6 (Merge branch 'main' of https://github.com/ToannNT/duan1_techpro)
 
 
 

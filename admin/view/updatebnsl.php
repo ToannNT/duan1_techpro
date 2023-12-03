@@ -1,8 +1,11 @@
 <?php
-if(is_array($showup_banner)&&(count($showup_banner)>0)){
-  extract($showup_banner);
-  echo var_dump($stt, $mota, $img, $idbn);
+if(is_array($showbanner)&&(count($showbanner)>0)){
+  extract($showbanner);
   }
+// if(is_array($get_slider)&&(count($get_slider)>0)){
+//   extract($get_slider);
+//   $idsl = $id;
+//   }
 ?>
 
 <main class="app-content">
@@ -31,11 +34,11 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" /><br>
-                  <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
+                  <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" />
+                  <img style="width: 70px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="2000" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
@@ -65,7 +68,6 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
               <div class="form-group col-md-6">
                 <label class="control-label">Nhập mô tả</label>
                 <input class="form-control" name="mota" type="text">
-                <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/" alt="">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
