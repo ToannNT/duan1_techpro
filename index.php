@@ -386,7 +386,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 //         header('location: index.php?pg=account');
                 //         exit;
                 //     } else {
-                       
+
                 //     }
                 // }
 
@@ -403,7 +403,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     exit;
                 }
 
-                out;
+                // out;
 
             }
             break;
