@@ -96,7 +96,7 @@
                                         <a class="post-time" href="#"><i class="fa fa-calendar"></i>
                                             <?= $tt['ngay'] ?></a>
                                     </div>
-                                    <p> <?= $tt['noidung'] ?></p>
+                                    <p> <?= $tt['noidung']   ?></p>
                                     <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read
                                         More...</a>
                                 </div>
