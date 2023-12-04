@@ -78,7 +78,7 @@
                            <ul class="des">
                                <li>
                                    <span>Địa chỉ: </span>
-                                   6688Princess Road, London, Greater London BAS 23JK, UK
+                                   Công viên phần mềm Quang Trung, Quận 12, TP Hồ Chí Minh
                                </li>
                                <li>
                                    <span>Số điện thoại: </span>
@@ -86,7 +86,7 @@
                                </li>
                                <li>
                                    <span>Email: </span>
-                                   <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
+                                   <a href="mailto://info@yourdomain.com">Techpro@techpro.com</a>
                                </li>
                            </ul>
                        </div>

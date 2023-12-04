@@ -194,7 +194,7 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/2.png" alt="Our Team Member">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Nguyên Anh</h3>
@@ -213,7 +213,7 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/3.png" alt="Our Team Member">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Diễm</h3>
@@ -251,7 +251,7 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/3.png" alt="Our Team Member">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Hồ Thịnh</h3>
