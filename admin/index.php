@@ -93,7 +93,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $tenbr = $_POST['brandsp'];
                 if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
                     $hinhsp = $_FILES['imgup']['name'];
-                }else{ 
+                }else if($hinhsp ==""){ 
+                    $hinhsp = $_POST['imgold'];
+                }else{
                     $hinhsp = "noimg.jpeg";
                 }
                 $hinh1 = $_FILES['hinh1']['name'];
@@ -107,9 +109,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
                 if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
                 $id = $_POST['id'];
-                if($hinhsp ==""){
-                    $hinhsp = $_POST['imgold'];
-                }
                 if(empty($masp)||strlen($masp)>10){
                     $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm tối đa 10 ký tự</p>';
                 }
@@ -172,9 +171,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
             break;
         case 'qlbanner':
-            error_reporting(E_ALL);
-            ini_set('display_errors', '1');
+            // error_reporting(E_ALL);
+            // ini_set('display_errors', '1');
             $get_banner=db_banner(10);
+            $get_slider=db_slider(10);
             require_once "view/qlbanner.php";
             break;
         case 'addbanner':
@@ -187,6 +187,15 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $target_file ="../view/layout/images/banner/". $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 insert_banner($stt, $mota, $img);
+                header('location: index.php?pg=qlbanner');
+            }
+            if(isset($_POST['btnsd'])&&($_POST['btnsd']!="")){
+                $stt = $_POST['sttsd'];
+                $mota = $_POST['motasd'];
+                $img = $_FILES['imgupsd']['name'];
+                $target_file ="../view/layout/asset/css/images/slider/". $img;
+                move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
+                insert_slider($stt, $mota, $img);
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/addbanner.php";
@@ -219,12 +228,39 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/updatebnsl.php";
             break;
         case 'delbanner':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];
+            if(isset($_GET['idbn'])&&($_GET['idbn']>0)){
+                $id=$_GET['idbn'];
                 del_banner($id);
                 header('location: index.php?pg=qlbanner');
             }
             break;
+        
+        case 'updateslider':
+            if(isset($_POST['updatesl'])){
+                $sttsd = $_POST['sttsd'];
+                $motasd = $_POST['motasd'];
+                if(isset($_FILES['imgupsd']['name'])&&($_FILES['imgupsd']['name']!=="")){
+                    $imgsd = $_FILES['imgupsd']['name'];
+                }else{ 
+                    $imgsd = "noimg.jpeg";
+                }
+                $idsl = $_POST['idsl'];
+                $target_file ="../view/layout/asset/css/images/slider/". $img;
+                move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+                update_slider($stt, $mota, $img, $idsl);
+
+                // hàm show slider id
+                $showup_slider=showup_slider($idsl);
+                header('location: index.php?pg=qlbanner');
+            }
+            require_once "view/updatebn.php";
+            break;
+        case 'delslider':
+            if(isset($_GET['idsd'])&&($_GET['idsd']>0)){
+                $id=$_GET['idsd'];
+                del_slider($id);
+                header('location: index.php?pg=qlbanner');
+            }
         case 'qldonhang':
             require_once "view/qldonhang.php";
             break;

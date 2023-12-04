@@ -56,32 +56,28 @@
           <span style="color: red; font-wieght:bold;"></span>
           <div class="tile-body">
           </div>
-          <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">
+          <form action="index.php?pg=addbanner" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
                 <label for="masp" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="masp" class="form-control" name="masp" type="text" placeholder="">
+                <input id="masp" class="form-control" name="sttsd" type="text" placeholder="">
               </div>
               <div class="form-group col-md-6">
                 <label class="control-label">Nhập mô tả</label>
-                <input class="form-control" name="mota" type="text">
+                <input class="form-control" name="motasd" type="text">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" name="imgup" onchange="readURL(this);" />
+                  <input type="file" id="uploadfile2" name="imgupsd" onchange="readURL2(this);" />
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="70" alt="Thumb image" id="thumbimage2" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
-                </div>
-                <div id="boxchoice">
-                  <a href="javascript:" class="Choicefile"><i class="fas fa-cloud-upload-alt"></i> Chọn ảnh</a>
-                  <p style="clear:both"></p>
                 </div>
               </div>
               
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="addsp" value="Lưu lại">
+                <input class="btn btn-save" type="submit" name="btnsd" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>

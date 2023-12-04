@@ -68,18 +68,10 @@
               </div>
               <div class="form-group col-md-3">
               <label class="control-label">Thuộc tính <span style="color: red; font-weight: bold" >(*)</span></label>
-                <div class="col">
-                  <label for=""><input type="checkbox" name="seo" value="1" id=""> Sale</label>
-                </div>
-                <div class="col">
-                  <label for=""><input type="checkbox" name="moi" value="1" id=""> Mới</label>
-                </div>
-                <div class="col">
-                  <label for=""><input type="checkbox" name="many" value="1" id=""> Xem nhiều</label>
-                </div>
-                <div class="col">
-                  <label for=""><input type="checkbox" name="run" value="1" id=""> Bán chạy</label>
-                </div>
+                <div class="col"><label for=""><input type="checkbox" name="seo" value="1" id=""> Sale</label></div>
+                <div class="col"><label for=""><input type="checkbox" name="moi" value="1" id=""> Mới</label></div>
+                <div class="col"><label for=""><input type="checkbox" name="many" value="1" id=""> Xem nhiều</label></div>
+                <div class="col"><label for=""><input type="checkbox" name="run" value="1" id=""> Bán chạy</label></div>
               </div>
               <div class="form-group col-md-9">
                 <label class="control-label">Ảnh sản phẩm<span style="color: red; font-weight: bold" >(*)</span> </label>
@@ -98,19 +90,35 @@
               <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 1</p>
-                  <input type="file" name="hinh1"/>
+                  <input id="uploadfilesp1" onchange="readURLsp1(this);" type="file" name="hinh1"/>
+                  <div id="thumbboxsp1">
+                    <img width="70" alt="Thumb image"  id="thumbimagesp1" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 2</p>
-                  <input type="file" name="hinh2"/>
+                  <input id="uploadfilesp2" onchange="readURLsp2(this);" type="file" name="hinh2"/>
+                  <div id="thumbboxsp2">
+                    <img width="70" alt="Thumb image" id="thumbimagesp2" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 3</p>
-                  <input type="file" name="hinh3"/>
+                  <input id="uploadfilesp3" onchange="readURLsp3(this);" type="file" name="hinh3"/>
+                  <div id="thumbboxsp3">
+                    <img width="70" alt="Thumb image" id="thumbimagesp3" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 4</p>
-                  <input type="file" name="hinh4"/>
+                  <input id="uploadfilesp4" onchange="readURLsp4(this);" type="file" name="hinh4"/>
+                  <div id="thumbboxsp4">
+                    <img width="70" alt="Thumb image" id="thumbimagesp4" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
               <div class="form-group col-md-12">
                 <br>
@@ -258,7 +266,6 @@ js
 <script>
   var form = document.getElementsByTagName("form")[0];
   var masp = document.getElementById("masp");
-  console.log(masp);
   var tensp = document.getElementById("tensp");
   var danhmucsp = document.getElementById("danhmucsp");
   var brandsp = document.getElementById("brandsp");
