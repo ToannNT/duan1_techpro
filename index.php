@@ -157,7 +157,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                         $id_user = $_SESSION["s_user"]["id"];
 
                         // kiem tra voucher tồn tại không
-                        $kq = check_voucher($ten_voucher);
+                        $kq = check_voucherr($ten_voucher);
 
                         if (is_array($kq) && (count($kq))) {
                             //kiemtra nguoi dùng đã sử dụng chưa
@@ -193,16 +193,17 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                                 }
                             } else {
                                 //hết số lượng voucher 
-                                $variable_voucher = 0;
                                 $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
                                 Số lượng đã hết!</span>';
+                                $variable_voucher = 0;
                             }
 
                             // nhập saiiiii
                         } else {
-                            $variable_voucher = 0;
                             $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
                             Voucher không tồn tại!</span>';
+                            $variable_voucher = 0;
+                            unset($_SESSION['voucher']);
                         }
                     } // end kiem tra có tài khoảng Không
 
@@ -244,7 +245,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // lấy iduser
                 if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
                     $iduser = $_SESSION['s_user']['id'];
+                    // update lại user nếu có thay đổi thông tin nhận hàng 
                     update_user_checkout($hoten, $email, $diachi, $dienthoai, $iduser);
+                    $userNew = checkuser_bill($dienthoai, $email);
+                    $_SESSION['s_user'] = $userNew;
                 } else {
                     $username = "guests" . rand(1, 99999);
                     $password = "172004" . rand(1, 99999);
@@ -276,6 +280,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                         unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
                     }
                 }
+                //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
                 unset($_SESSION['voucher']);
                 $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
                 header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '');
@@ -338,6 +343,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             if (isset($_POST["dangnhap"]) && ($_POST["dangnhap"])) {
                 $username = trim($_POST["username"]);
                 $password = trim($_POST["password"]);
+
                 if (($_POST["page_here_ne"] != "")) {
                     $page_here =  $_POST["page_here_ne"];
                 } else {

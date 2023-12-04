@@ -26,6 +26,17 @@ function checkuser($username, $password)
     // }
 }
 
+function checkuser_bill($sdt, $email)
+{
+    $sql = "SELECT * FROM user WHERE sdt=? AND email=?";
+    return  pdo_query_one($sql, $sdt, $email);
+    // if (is_array($kq) && (count($kq))) {
+    //     return $kq["id"];
+    // } else {
+    //     return 0;
+    // }
+}
+
 function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id)
 {
     // Kiểm tra xem $hinh có giá trị không

@@ -1,5 +1,5 @@
 <?php
-
+// unset($_SESSION['voucher']);
 //sử dụng ajax để gán dữ liệu vào session sau đó tái sử dụng
 // Bất tiện.  phải tự load trang mới cập nhật lại session !!!
 if (isset($_SESSION['vanchuyen'])) {
@@ -97,7 +97,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
 <!-- Li's Breadcrumb Area End Here -->
 <!--Checkout Area Strat-->
 <div class="checkout-area pt-60 pb-30">
-    <form action="index.php?pg=checkout" method="post">
+    <form id="checkFormCheckout" action="index.php?pg=checkout" method="post">
 
         <div class="container">
             <div class="row">
@@ -157,7 +157,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     </div>
 
                                 </div>
-                                <div id="cbox-info" class="checkout-form-list create-account">
+                                <!-- <div id="cbox-info" class="checkout-form-list create-account">
                                     <p>Tạo một tài khoản bằng cách nhập thông tin dưới đây. Nếu bạn là khách hàng
                                         cũ,
                                         vui lòng đăng nhập ở đầu trang.</p>
@@ -165,7 +165,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <input placeholder="username" type="text">
                                     <label>Mật khẩu<span class="required">*</span></label>
                                     <input placeholder="password" type="password">
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="different-address">

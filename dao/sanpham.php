@@ -215,7 +215,7 @@ function show_SP($dssp)
         </div>
         <!-- single-product-wrap end -->
     </div>
-        ';     
+        ';
     }
     return $show_dssp_all;
 }
