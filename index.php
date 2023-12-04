@@ -269,36 +269,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 foreach ($_SESSION['giohang'] as $key => $value) {
                     extract($value);
                     if ($s_status == 1) {
