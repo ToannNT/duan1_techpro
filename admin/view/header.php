@@ -59,6 +59,187 @@
         $(".filename").text("");
       });
     })
+    function readURL2(input, thumbimage2) {
+      if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#thumbimage2").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      else { // Sử dụng cho IE
+        $("#thumbimage2").attr('src', input.value);
+      }
+      $("#thumbimage2").show();
+      $('.filename').text($("#uploadfile2").val());
+      $('.Choicefile').css('background', '#14142B');
+      $('.Choicefile').css('cursor', 'default');
+      $(".removeimg").show();
+      $(".Choicefile").unbind('click');
+
+    }
+    $(document).ready(function () {
+      $(".Choicefile").bind('click', function () {
+        $("#uploadfil2").click();
+
+      });
+      $(".removeimg").click(function () {
+        $("#thumbimage2").attr('src', '').hide();
+        $("#myfileupload").html('<input type="file" id="uploadfile2"  onchange="readURL(this);" />');
+        $(".removeimg").hide();
+        $(".Choicefile").bind('click', function () {
+          $("#uploadfile2").click();
+        });
+        $('.Choicefile').css('background', '#14142B');
+        $('.Choicefile').css('cursor', 'pointer');
+        $(".filename").text("");
+      });
+    })
+    function readURLsp1(input, thumbimagesp1) {
+      if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#thumbimagesp1").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      else { // Sử dụng cho IE
+        $("#thumbimagesp1").attr('src', input.value);
+      }
+      $("#thumbimagesp1").show();
+      $('.filename').text($("#uploadfilesp1").val());
+      $('.Choicefile').css('background', '#14142B');
+      $('.Choicefile').css('cursor', 'default');
+      $(".removeimg").show();
+      $(".Choicefile").unbind('click');
+
+    }
+    $(document).ready(function () {
+      $(".Choicefile").bind('click', function () {
+        $("#uploadfilesp1").click();
+
+      });
+      $(".removeimg").click(function () {
+        $("#uploadfilesp1").attr('src', '').hide();
+        $("#uploadfilesp1").html('<input type="file" id="uploadfilesp1"  onchange="readURL(this);" />');
+        $(".removeimg").hide();
+        $(".Choicefile").bind('click', function () {
+          $("#uploadfilesp1").click();
+        });
+        $('.Choicefile').css('background', '#14142B');
+        $('.Choicefile').css('cursor', 'pointer');
+        $(".filename").text("");
+      });
+    })
+    function readURLsp2(input, thumbimagesp2) {
+      if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#thumbimagesp2").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      else { // Sử dụng cho IE
+        $("#thumbimagesp2").attr('src', input.value);
+      }
+      $("#thumbimagesp2").show();
+      $('.filename').text($("#uploadfilesp2").val());
+      $('.Choicefile').css('background', '#14142B');
+      $('.Choicefile').css('cursor', 'default');
+      $(".removeimg").show();
+      $(".Choicefile").unbind('click');
+
+    }
+    $(document).ready(function () {
+      $(".Choicefile").bind('click', function () {
+        $("#uploadfilesp2").click();
+
+      });
+      $(".removeimg").click(function () {
+        $("#uploadfilesp2").attr('src', '').hide();
+        $("#uploadfilesp2").html('<input type="file" id="uploadfilesp2"  onchange="readURL(this);" />');
+        $(".removeimg").hide();
+        $(".Choicefile").bind('click', function () {
+          $("#uploadfilesp2").click();
+        });
+        $('.Choicefile').css('background', '#14142B');
+        $('.Choicefile').css('cursor', 'pointer');
+        $(".filename").text("");
+      });
+    })
+    function readURLsp3(input, thumbimagesp3) {
+      if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#thumbimagesp3").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      else { // Sử dụng cho IE
+        $("#thumbimagesp3").attr('src', input.value);
+      }
+      $("#thumbimagesp3").show();
+      $('.filename').text($("#uploadfilesp3").val());
+      $('.Choicefile').css('background', '#14142B');
+      $('.Choicefile').css('cursor', 'default');
+      $(".removeimg").show();
+      $(".Choicefile").unbind('click');
+
+    }
+    $(document).ready(function () {
+      $(".Choicefile").bind('click', function () {
+        $("#uploadfilesp3").click();
+
+      });
+      $(".removeimg").click(function () {
+        $("#uploadfilesp3").attr('src', '').hide();
+        $("#uploadfilesp3").html('<input type="file" id="uploadfilesp3"  onchange="readURL(this);" />');
+        $(".removeimg").hide();
+        $(".Choicefile").bind('click', function () {
+          $("#uploadfilesp3").click();
+        });
+        $('.Choicefile').css('background', '#14142B');
+        $('.Choicefile').css('cursor', 'pointer');
+        $(".filename").text("");
+      });
+    })
+    function readURLsp4(input, thumbimagesp4) {
+      if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#thumbimagesp4").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+      else { // Sử dụng cho IE
+        $("#thumbimagesp4").attr('src', input.value);
+      }
+      $("#thumbimagesp4").show();
+      $('.filename').text($("#uploadfilesp4").val());
+      $('.Choicefile').css('background', '#14142B');
+      $('.Choicefile').css('cursor', 'default');
+      $(".removeimg").show();
+      $(".Choicefile").unbind('click');
+
+    }
+    $(document).ready(function () {
+      $(".Choicefile").bind('click', function () {
+        $("#uploadfilesp4").click();
+
+      });
+      $(".removeimg").click(function () {
+        $("#uploadfilesp4").attr('src', '').hide();
+        $("#uploadfilesp4").html('<input type="file" id="uploadfilesp4"  onchange="readURL(this);" />');
+        $(".removeimg").hide();
+        $(".Choicefile").bind('click', function () {
+          $("#uploadfilesp4").click();
+        });
+        $('.Choicefile').css('background', '#14142B');
+        $('.Choicefile').css('cursor', 'pointer');
+        $(".filename").text("");
+      });
+    })
+    
   </script>
       </head>
 

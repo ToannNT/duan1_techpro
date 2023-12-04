@@ -102,10 +102,10 @@ if(is_array($showup)&&(count($showup)>0)){
                 <div id="myfileupload">
                   <input type="file" id="uploadfile" name="imgup" value="<?=$hinh;?>" onchange="readURL(this);" />
                   <input type="hidden" id="uploadfile" name="imgold" value="<?=$hinh;?>" />
-                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
+                  <img style="width: 200px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
                 <div id="boxchoice">
@@ -144,7 +144,7 @@ if(is_array($showup)&&(count($showup)>0)){
                 <textarea class="form-control" name="chitiet" id="chitiet"><?=$chitiet?></textarea>
                 <script>CKEDITOR.replace('chitiet');</script>
               </div>
-              <input type="hidden" name="id" value="<?=$idupdate?>">
+              <input type="hidden" name="imgsave" value="<>" >
               <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
               <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>
