@@ -1,47 +1,48 @@
 <?php
-
+if(is_array($showup_banner)&&(count($showup_banner)>0)){
+  extract($showup_banner);
+  echo var_dump($stt, $mota, $img, $idbn);
+  }
 ?>
 
 <main class="app-content">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><a style="color:#001C40;" href="index.php?pg=qlsanpham">Quản lý banner</a></li>
-        <li class="breadcrumb-item active"><a href="#"></a>Tạo mới banner</li>
+        <li class="breadcrumb-item active"><a href="#"></a>Chỉnh sửa banner</li>
       </ul>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Tạo mới banner/home</h3>
+          <h3 class="tile-title">Chỉnh sửa banner/home</h3>
           <span style="color: red; font-wieght:bold;" >Stt: 1,2(370x180px) / Stt: 3,4,5(360x180px) / stt: 6,7(1140x180px)</span>
           <div class="tile-body">
           </div>
-          <form action="index.php?pg=addbanner" enctype="multipart/form-data" method="post" class="row">
+          <form action="index.php?pg=updatebanner" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
                 <label for="stt" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="stt" class="form-control" name="stt" type="text" placeholder="">
+                <input id="stt" class="form-control" value="<?=$stt?>" name="stt" type="text" placeholder="">
               </div>
               <div class="form-group col-md-6">
                 <label for="mota" class="control-label">Nhập mô tả</label>
-                <input class="form-control" name="mota" type="text">
+                <input class="form-control" value="<?=$mota?>" name="mota" type="text">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" name="imgup" onchange="readURL(this);" />
+                  <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" /><br>
+                  <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="2000" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
-                </div>
-                <div id="boxchoice">
-                  <a href="javascript:" class="Choicefile"><i class="fas fa-cloud-upload-alt"></i> Chọn ảnh</a>
-                  <p style="clear:both"></p>
                 </div>
               </div>
               
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="btnbn" value="Lưu lại">
+                <input type="hidden" name="idbn" value="<?=$idbn?>" >
+                <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>
@@ -52,7 +53,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Tạo mới slide/home</h3>
+          <h3 class="tile-title">Chỉnh sửa slide/home</h3>
           <span style="color: red; font-wieght:bold;"></span>
           <div class="tile-body">
           </div>
@@ -64,6 +65,7 @@
               <div class="form-group col-md-6">
                 <label class="control-label">Nhập mô tả</label>
                 <input class="form-control" name="mota" type="text">
+                <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/" alt="">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
@@ -214,6 +216,7 @@ MODAL
   <!--
 js
 -->
+-->
 <script>
   var form = document.getElementsByTagName("form")[0];
   var stt = document.getElementById("stt");
@@ -221,7 +224,7 @@ js
   var imgup = document.getElementById("imgup");
   var brandsp = document.getElementById("brandsp");
   var giabansp = document.getElementById("giabansp");
-  form.addEventListener("submit", function(event){
+  form.addEventListener("sumbit", function(event){
     if(stt.value == "" || stt.value.length>10){
       alert("Số thứ tự không được để trống!");
       event.preventDefault();// không cho submit

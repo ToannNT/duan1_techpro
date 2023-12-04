@@ -272,6 +272,154 @@ function uncheck_all_brand() {
     // }
     // }
 
-
-
 }
+
+
+
+/* 22. Cart Plus Minus Button
+    /*----------------------------------------*/
+$(".qtybutton").on("click", function () {
+    var $button = $(this);
+    var $input = $button.parent().find("input");
+    var oldValue = parseFloat($input.val());
+    var productId = $input.closest("tr").attr("productId");
+
+    if ($button.hasClass('inc')) {
+        var newVal = oldValue + 1;
+    } else {
+        // Don't allow decrementing below zero
+        var newVal = oldValue > 1 ? oldValue - 1 : 1;
+
+    }
+
+    // Cập nhật giá trị hiển thị và biến $quantity
+    $input.val(newVal);
+
+    // Gửi yêu cầu AJAX để cập nhật số lượng trên máy chủ
+    $.ajax({
+        type: "POST",
+        url: "./view/update_quantity.php",
+        data: { productId: productId, quantity: newVal },
+        dataType: "json",
+        success: function (response) {
+            if (response.success) {
+                console.log("Cập nhật số lượng thành công!");
+
+                location.reload();
+                // Có thể thực hiện các bước khác sau khi cập nhật thành công
+            } else {
+                console.error("Lỗi khi cập nhật số lượng!");
+            }
+        },
+        error: function () {
+            console.error("Lỗi kết nối đến máy chủ!");
+        }
+    });
+});
+
+
+
+
+
+//CHANGE TRẠNG THÁI S_STATUS CỦA SESSIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+$("input.this_checkbox").on("change", function () {
+    var $checkbox = $(this);
+    var productId = $checkbox.closest("tr").attr("productId");
+    var newStatus = $checkbox.prop("checked") ? 1 : 0;
+
+    // Gửi yêu cầu AJAX để cập nhật trạng thái trên máy chủ
+    $.ajax({
+        type: "POST",
+        url: "./view/update_status.php",
+        data: { productId: productId, s_status: newStatus },
+        dataType: "json",
+        success: function (response) {
+            if (response.success) {
+                console.log("Cập nhật trạng thái thành công!");
+                location.reload();
+                // Có thể thực hiện các bước khác sau khi cập nhật thành công
+            } else {
+                console.error("Lỗi khi cập nhật trạng thái!");
+                // Hiển thị thông báo lỗi cho người dùng
+            }
+        },
+        error: function () {
+            console.error("Lỗi kết nối đến máy chủ!");
+            // Hiển thị thông báo lỗi cho người dùng
+        }
+    });
+});
+
+
+
+// KIỂM TRA SẢN PHẨM DƯỢC CHECKEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+$(document).ready(function () {
+    $("#checkout-link").click(function (event) {
+        // Kiểm tra xem có ít nhất một ô kiểm đã được chọn hay không
+        var checkboxes = $(".this_checkbox:checked");
+
+        if (checkboxes.length === 0) {
+            // Ngăn chặn hành vi mặc định của liên kết (không điều hướng)
+            event.preventDefault();
+
+            // Hiển thị một cảnh báo hoặc bất kỳ thông báo nào khác rằng cần chọn một sản phẩm
+            alert("Hãy chọn một sản phẩm để thanh toán.");
+        }
+    });
+});
+
+
+
+
+
+
+
+$(document).ready(function () {
+    // Hàm xử lý lưu và khôi phục trạng thái checkbox
+    function handleCheckboxStatus() {
+        // Lấy giá trị của checkbox đã chọn
+        var selectedCheckbox = $('input[name="ptvc"]:checked').val();
+
+        // Lưu giá trị của checkbox đã chọn vào localStorage
+        localStorage.setItem('selectedCheckbox', selectedCheckbox);
+    }
+
+    // Kiểm tra nếu đã có giá trị checkbox đã lưu trong localStorage
+    var savedCheckbox = localStorage.getItem('selectedCheckbox');
+    if (savedCheckbox) {
+        // Đặt checkbox đã chọn trước đó là đã được chọn
+        $('input[name="ptvc"][value="' + savedCheckbox + '"]').prop('checked', true);
+    }
+
+    // // Hàm xóa thông tin đã lưu trong localStorage
+    // function clearCheckboxStatus() {
+    //     localStorage.removeItem('selectedCheckbox');
+    // }
+
+
+
+
+    // Bắt sự kiện khi input radio được chọn
+    $('input[name="ptvc"]').click(function () {
+        var selectedValue = $('input[name="ptvc"]:checked').val();
+
+        // Gửi giá trị được chọn đến xuli.php qua Ajax
+        $.ajax({
+            url: './view/update_quantity.php',
+            method: 'POST',
+            data: { ptvc: selectedValue },
+            success: function (response) {
+                // Cập nhật lại trang sau khi đã gửi dữ liệu thành công
+                handleCheckboxStatus();
+                window.location.reload();
+                // location.reload();
+                // clearCheckboxStatus(); // Xóa trạng thái checkbox sau khi reload
+
+            },
+            error: function (xhr, status, error) {
+                // Xử lý lỗi nếu có
+                console.error(error);
+            }
+        });
+    });
+});

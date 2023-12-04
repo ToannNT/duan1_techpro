@@ -195,7 +195,7 @@ li {
 }
 
 p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: normal;
     line-height: 24px;
     color: #898989;
@@ -3022,7 +3022,7 @@ textarea:focus {
 .add-actions-link {
     /* float: left; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 24px;
     /* của quí  */
     /* display: inline-flex;
@@ -3062,7 +3062,7 @@ textarea:focus {
     background-color: #0C2F4E;
     border: none;
     transition: all 0.3s ease-in-out;
-    width: 115px;
+    width: 100px;
     display: inline-block;
     border-radius: 4px;
     height: 35px;
@@ -3371,8 +3371,9 @@ textarea:focus {
 
 .li-banner>a>img,
 .single-banner>a>img {
-    /* height: 500px; */
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -4676,7 +4677,7 @@ li.right-menu .cat-mega-menu-2>li {
 /*----------------------------------------*/
 
 .coupon-accordion h3 {
-    background-color: #d8d8d8d8;
+    background-color: #f7f6f7;
     border-top: 3px solid #0C2F4E;
     color: black;
     font-size: 14px;
@@ -4800,7 +4801,10 @@ p.lost-password a:hover {
     margin-bottom: 30px;
     display: none;
 }
-
+.checkout-coupon{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 p.checkout-coupon input[type="text"] {
     background-color: transparent;
     border: 1px solid #ddd;
@@ -4830,7 +4834,7 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 
 .checkbox-form h3 {
-    border-bottom: 1px solid #0C2F4E;
+    border-bottom: 1px solid #e5e5e5;
     font-size: 25px;
     margin: 0 0 25px;
     padding-bottom: 10px;
@@ -4867,7 +4871,7 @@ p.checkout-coupon input[type="submit"]:hover {
 .checkout-form-list input[type="password"],
 .checkout-form-list input[type="email"] {
     background: #fff none repeat scroll 0 0;
-    border: 1px solid #0C2F4E;
+    border: 1px solid  #e5e5e5;
     border-radius: 0;
     height: 42px;
     width: 100%;
@@ -4891,7 +4895,7 @@ p.checkout-coupon input[type="submit"]:hover {
 .ship-different-title h3 label {
     display: inline-block;
     margin-right: 20px;
-    font-size: 25px;
+    font-size: 20px;
     color: #363636;
 }
 
@@ -4918,8 +4922,7 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 
 .pay-th {
-    width: 92.5%;
-    border: 1px solid #0C2F4E;
+    /* width: 92.5%; */
     margin: 0 auto;
     border-radius: 3px;
 }
@@ -4960,12 +4963,12 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 
 .your-order {
-    background: #d3d3d3 none repeat scroll 0 0;
-    padding: 30px 40px 45px;
+    background: #f2f2f2 none repeat scroll 0 0;
+    padding: 30px 30px 45px;
 }
 
 .your-order h3 {
-    border-bottom: 1px solid #0C2F4E;
+    border-bottom: 1px solid #d8d8d8;
     font-size: 25px;
     margin: 0 0 20px;
     padding-bottom: 10px;
@@ -4974,13 +4977,13 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 
 .your-order-table table {
-    background: #d3d3d3 none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;
     width: 100%;
 }
 
 thead {
-    background-color: #0C2F4E;
+    background-color: #f6f6f6;
 }
 
 .your-order-table table th {
@@ -4995,8 +4998,8 @@ thead {
 
 .your-order-table table th,
 .your-order-table table td {
-    font-weight: bold;
-    border-bottom: 1px solid #0C2F4E;
+    /* font-weight: bold; */
+    border-bottom: 1px solid #d8d8d8;
     border-right: medium none;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -5005,7 +5008,7 @@ thead {
 }
 
 .your-order-table table tr.cart_item:hover {
-    background: whitesmoke;
+    background: #F9F9F9;
 }
 
 .your-order-table table .order-total td {
@@ -5023,19 +5026,19 @@ thead {
 }
 
 .payment-method {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .payment-accordion .card {
     border: 0;
     border-radius: 0;
-    background: #B1CBE4;
+    background: #cfdae5;
 }
 
 .payment-accordion .card-header {
     padding: 0;
     margin-bottom: 0;
-    background-color: #d3d3d3;
+    background-color: #f2f2f2;
     border-bottom: 0;
 }
 
@@ -5055,7 +5058,7 @@ thead {
 }
 
 .payment-accordion h5.panel-title>a:hover {
-    color: #0C2F4E !important;
+    color: 2772b3  !important;
 }
 
 .payment-accordion .card-body>p {
@@ -5063,7 +5066,7 @@ thead {
 }
 
 .order-button-payment input {
-    background: #0C2F4E none repeat scroll 0 0;
+    background: #434343  none repeat scroll 0 0;
     border: medium none;
     color: #fff;
     font-size: 17px;
@@ -5080,7 +5083,7 @@ thead {
 }
 
 .order-button-payment input:hover {
-    background: #61A5E8 none repeat scroll 0 0;
+    background: #0C2F4E none repeat scroll 0 0;
 }
 
 
@@ -6409,7 +6412,11 @@ span.required {
     font-size: 14px;
     margin: 5px 10px 0 0;
 }
-
+.single-banner__three{
+    max-width: 320px;
+    
+    height: 180px;
+}
 .single-banner img {
     width: 100%;
 }

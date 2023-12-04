@@ -3,8 +3,28 @@ if(is_array($showup)&&(count($showup)>0)){
   extract($showup);
   $idupdate= $id;
   }
-  $html_showbradm = showbr_adm($dsbr_adm, $id_brand);
-  $html_showdmadm = showdm_adm($dsdm_adm, $id_catalog);
+
+
+  $html_showbradm = '';
+  foreach ($dsbr_adm as $br_adm) {
+      extract($br_adm);
+      if($id==$id_brand){
+        $html_showbradm .= '<option selected value="'.$id.'">'.$ten.'</option>';
+      }else{  
+        $html_showbradm .= '<option value="'.$id.'">'.$ten.'</option>';
+      }
+  }
+  $html_showdmadm = '';
+  foreach ($dsdm_adm as $dm_adm) {
+      extract($dm_adm);
+      if($id==$id_catalog){
+        $html_showdmadm .= '<option selected value="'.$id.'">'.$ten_dm.'</option>';
+      }else{
+        $html_showdmadm .= '<option value="'.$id.'">'.$ten_dm.'</option>';
+      }
+  }
+  
+?>
 ?>
 <main class="app-content">
     <div class="app-title">
@@ -32,24 +52,24 @@ if(is_array($showup)&&(count($showup)>0)){
               <div class="form-group col-md-3">
                 <label for="dmsp" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
                 <select id="dmsp" class="form-control" name="danhmucsp">
-                  <option value="default">--Chọn danh mục--</option>
+                  <option value="default" >--Chọn danh mục--</option>
                   <?=$html_showdmadm?>
                 </select>
               </div>
               <div class="form-group col-md-3 ">
                 <label for="brandsp" class="control-label">Brand<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <select class="form-control" name="brandsp" id="brandsp">
-                  <option>-- Chọn hãng --</option>
+                  <option value="default" >-- Chọn hãng --</option>
                   <?=$html_showbradm?>
                 </select>
               </div>
               <div class="form-group col-md-3">
-                <label for="giabansp" class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" id="giabansp" name="giaban" value="<?=$gia?>" type="text">
+                <label for="giaban" class="control-label">Giá bán<span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input class="form-control" id="giaban" name="giaban" value="<?=$gia?>" type="text">
               </div>
               <div class="form-group col-md-3">
-                <label class="control-label" for="giagiamsp">Giá giảm</label>
-                <input class="form-control" id="giagiamsp" name="giagiam" value="<?=$giamgia?>" type="text">
+                <label for="giagiamsp" class="control-label" for="giagiamsp">Giá giảm</label>
+                <input id="giagiamsp" class="form-control" id="giagiamsp" name="giagiam" value="<?=$giamgia?>" type="text">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="tinhtrangsp" class="control-label">Tình trạng</label>
@@ -256,12 +276,14 @@ MODAL
 MODAL
 -->
 <script>
-  var form = document.getElementsByTagName("form");
+  var form = document.getElementsByTagName("form")[0];
   var masp = document.getElementById("masp");
   var tensp = document.getElementById("tensp");
-  var danhmucsp = document.getElementById("danhmucsp");
+  var danhmucsp = document.getElementById("dmsp");
   var brandsp = document.getElementById("brandsp");
-  var giabansp = document.getElementById("giabansp");
+  var giaban = document.getElementById("giaban");
+  var giagiamsp = document.getElementById("giagiamsp");
+  console.log(giaban);
   form.addEventListener("submit", function(event){
     if(masp.value == "" || masp.value.length>10){
       alert("Mã sản phẩm không được để trống tối đa 10 ký tự!");
@@ -275,24 +297,31 @@ MODAL
       tensp.focus();//di chuyển đến vị trí lỗi
       return false;
     }
-    if(danhmucsp.value == "default"){
-      alert("Danh mục không được để trống!");
-      event.preventDefault();// không cho submit
-      danhmucsp.focus();//di chuyển đến vị trí lỗi
-      return false;
+    if (!(danhmucsp && danhmucsp.value !== "default")) { // Kiểm tra giá trị chọn của danh mục
+        alert("Danh mục không được để trống!");
+        event.preventDefault();
+        danhmucsp.focus();
+        return false;
     }
-    if(brandsp.value == "default"){
-      alert("Brand không được để trống!");
-      event.preventDefault();// không cho submit
-      brandsp.focus();//di chuyển đến vị trí lỗi
-      return false;
-    }
-    if(giabansp.value == "" || isNaN(giabansp.value)){
+    if(giaban.value == "" || isNaN(giaban.value)){
       alert("Giá bán không được để trống và phải là số!");
       event.preventDefault();// không cho submit
-      giabansp.focus();//di chuyển đến vị trí lỗi
+      giaban.focus();//di chuyển đến vị trí lỗi
       return false;
     }
+    if(giagiamsp.value == "" || isNaN(giagiamsp.value)){
+      alert("Giá giảm không được để trống và phải là số!");
+      event.preventDefault();// không cho submit
+      giagiamsp.focus();//di chuyển đến vị trí lỗi
+      return false;
+    }
+    if (!(brandsp && brandsp.value !== "default")) { // Kiểm tra giá trị chọn của brand
+        alert("Brand không được để trống!");
+        event.preventDefault();
+        brandsp.focus();
+        return false;
+    }
+
     return true;
   });
 

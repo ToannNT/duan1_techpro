@@ -1,6 +1,7 @@
 <?php
 require_once 'pdo.php';
 
+
 // TRANG SẢN PHẨM ADMIN
 function get_tablesp($limit)
 {
@@ -123,13 +124,24 @@ function show_SP($dssp)
 
         if ($giamgia > 0) {
             $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
-
+            $giatien_addcart = '
+            <input type="hidden" name="price" value="' . $giamgia . '">
+            ';
+            $thanhTien_addcart = '
+            <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+            ';
             $gia_sp = '
                 <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                 <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
                 <span class="discount-percentage">- ' . floor($phantram) . '%</span>
             ';
         } else {
+            $giatien_addcart = '
+            <input type="hidden" name="price" value="' . $gia . '">
+            ';
+            $thanhTien_addcart = '
+            <input type="hidden" name="thanhtien" value="' . $gia . '">
+            ';
             $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
         }
         $link = 'index.php?pg=productdetail&idpro=' . $id;
@@ -175,7 +187,11 @@ function show_SP($dssp)
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="price" value="' . $gia . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
+
+
                             <input type="hidden" name="quantity" value="1">
                             <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
                         </form>
@@ -190,7 +206,7 @@ function show_SP($dssp)
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
-                                <button type="submit" name="btn_Wish" class="links-details" ><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="toast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             </form>
                     </ul>
@@ -199,7 +215,7 @@ function show_SP($dssp)
         </div>
         <!-- single-product-wrap end -->
     </div>
-        ';
+        ';     
     }
     return $show_dssp_all;
 }

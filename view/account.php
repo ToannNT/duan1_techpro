@@ -1,14 +1,24 @@
 <?php
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
+
 }
-if (isset($target_file)) {
+if (isset($hinh)) {
     $hinh_ac = '
             <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
         ';
 } else {
     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
 }
+// if ($hinh != "") {
+//     $target_file = "./view/layout/images/user/" . $hinh;
+//     move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
+// } else {
+//     // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
+//     $latestImage = getLatestImageFromUser($id);
+//     $target_file = $latestImage;
+// }
+
 ?>
 <div class="wrapper-container">
 <form action="index.php?pg=update_user" method="post" enctype="multipart/form-data">
@@ -18,9 +28,8 @@ if (isset($target_file)) {
                 <div class="col-md-3">
                     <div class="content-col-left bg- p-4 pt-50">
                         <div class="content-col-left__avata">
-                            <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$target_file?>" alt> -->
-                            <?=$hinh_ac?>
-                          
+                            <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?=$hinh?>" alt> -->
+                          <?=$hinh_ac?>
                         </div>
                         <div class="content-col-left__name">
                             <?= $hoten ?>
@@ -91,16 +100,3 @@ if (isset($target_file)) {
     </div>
     </form>
 </div>
-<!-- <script>
-  document.getElementById('imageInput').addEventListener('change', function (event) {
-    var input = event.target;
-    var reader = new FileReader();
-
-    reader.onload = function () {
-      var image = document.getElementById('previewImage');
-      image.src = reader.result;
-    };
-
-    reader.readAsDataURL(input.files[0]);
-  });
-</script> -->

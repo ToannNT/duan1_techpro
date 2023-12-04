@@ -11,7 +11,6 @@
             <div class="tile-body">
               <div class="row element-button">
                 <div class="col-sm-2">
-  
                   <a class="btn btn-add btn-sm" href="index.php?pg=adddonhang" title="Thêm"><i class="fas fa-plus"></i>
                     Tạo mới đơn hàng</a>
                 </div>
@@ -19,7 +18,6 @@
                   <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
                       class="fas fa-file-upload"></i> Tải từ file</a>
                 </div>
-  
                 <div class="col-sm-2">
                   <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
                       class="fas fa-print"></i> In dữ liệu</a>

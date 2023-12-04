@@ -169,7 +169,7 @@
             <div class="row">
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn11.png" alt="Li's Static Banner">
                         </a>
@@ -178,14 +178,14 @@
                 <!-- Single Banner Area End Here -->
                 <!-- Begin Single Banner Area -->
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                    <div class="single-banner">
+                    <div class="single-banner single-banner__three">
                         <a href="index.php?pg=product">
                             <img src="./view/layout/images/banner/bn9.jpg" alt="Li's Static Banner">
                         </a>
@@ -244,7 +244,6 @@
                             <h2>
                                 <span>Siêu sale vào ngày Black Friday</span>
                             </h2>
-
                         </div>
                         <div class="single-banner shop-page-banner">
                             <a href="#">
@@ -290,7 +289,8 @@
                                                 <!-- <span class="discount-percentage">-7%</span> -->
                                             </div>
                                             <div class="featured-product-action">
-                                                <ul class="add-actions-link">
+                                                <ul style="display: flex; justify-content: start;"
+                                                    class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Thêm</a></li>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
@@ -1007,6 +1007,7 @@
                     <?php
                     $data_tintucindex = get_tintucindex();
                     ?>
+                    
                     <div class="row">
                         <!-- <div class="product-active owl-carousel"> -->
                         <?php foreach ($data_tintucindex as $tt) : ?>
@@ -1038,6 +1039,13 @@
                         <?php endforeach; ?>
                     </div>
                     <!-- </div> -->
+                    <!-- Sweet Alert Frem Demo -->
+                    <script language="JavaScript">
+                        function toast() { 
+                            swal("Success!", "Your data have been saved. Thank you!", "success");
+                        }
+                    </script>
+                    <!-- Sweet Alert Frem Demo End Here -->
                 </div>
                 <!-- Li's Section Area End Here -->
             </div>

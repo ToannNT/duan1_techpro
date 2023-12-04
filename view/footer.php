@@ -1,70 +1,5 @@
    <!-- Begin Footer Area -->
-   <div class="footer-static-top">
-       <div class="container">
-           <!-- Begin Footer Shipping Area -->
-           <div class="footer-shipping pt-60 pb-55 pb-xs-25">
-               <div class="row">
-                   <!-- Begin Li's Shipping Inner Box Area -->
-                   <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                       <div class="li-shipping-inner-box">
-                           <div class="shipping-icon">
-                               <img src="./view/layout/images/shipping-icon/1.png" alt="Shipping Icon">
-                           </div>
-                           <div class="shipping-text">
-                               <h2>Giao hàng miễn phí</h2>
-                               <p>Và trả lại miễn phí. Xem thanh toán để biết ngày giao hàng.​</p>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Li's Shipping Inner Box Area End Here -->
-                   <!-- Begin Li's Shipping Inner Box Area -->
-                   <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                       <div class="li-shipping-inner-box">
-                           <div class="shipping-icon">
-                               <img src="./view/layout/images/shipping-icon/2.png" alt="Shipping Icon">
-                           </div>
-                           <div class="shipping-text">
-                               <h2>Thanh toán an toàn</h2>
-                               <p>Thanh toán bằng các phương thức thanh toán an toàn và phổ biến nhất thế giới.</p>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Li's Shipping Inner Box Area End Here -->
-                   <!-- Begin Li's Shipping Inner Box Area -->
-                   <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                       <div class="li-shipping-inner-box">
-                           <div class="shipping-icon">
-                               <img src="./view/layout/images/shipping-icon/3.png" alt="Shipping Icon">
-                           </div>
-                           <div class="shipping-text">
-                               <h2>Mua sắm với sự tự tin</h2>
-                               <p>Bảo vệ người mua của chúng tôi bao gồm việc mua hàng của bạn từ nhấp chuột đến
-                                   giao hàng.</p>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Li's Shipping Inner Box Area End Here -->
-                   <!-- Begin Li's Shipping Inner Box Area -->
-                   <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                       <div class="li-shipping-inner-box">
-                           <div class="shipping-icon">
-                               <img src="./view/layout/images/shipping-icon/4.png" alt="Shipping Icon">
-                           </div>
-                           <div class="shipping-text">
-                               <h2>Trung tâm trợ giúp 24/7</h2>
-                               <p>Có một câu hỏi? Gọi cho Chuyên gia hoặc trò chuyện trực tuyến.</p>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Li's Shipping Inner Box Area End Here -->
-               </div>
-           </div>
-           <!-- Footer Shipping Area End Here -->
-       </div>
-   </div>
    <div class="footer">
-       <!-- Begin Footer Static Top Area -->
-       <!-- Footer Static Top Area End Here -->
        <!-- Begin Footer Static Middle Area -->
        <div class="footer-static-middle">
            <div class="container">
@@ -127,51 +62,46 @@
                                    <li><a href="#">Chính sách sản phẩm</a></li>
                                    <li><a href="#">Chính sách kiểm hàng</a></li>
                                </ul>
-                               
-                            </div>
-                            <!-- Begin Footer Newsletter Area -->
-                            
-                            <!-- Footer Newsletter Area End Here -->
-                        </div>
-                        <!-- Footer Block Area End Here -->
-                        <ul class="social-link">
-                            <li class="twitter">
-                                <a href="https://twitter.com/" data-toggle="tooltip" target="_blank"
-                                    title="Twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="rss">
-                                <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
-                                    <i class="fa fa-rss"></i>
-                                </a>
-                            </li>
-                            <li class="google-plus">
-                                <a href="https://www.plus.google.com/discover" data-toggle="tooltip"
-                                    target="_blank" title="Google Plus">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li class="facebook">
-                                <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank"
-                                    title="Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li class="youtube">
-                                <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank"
-                                    title="Youtube">
-                                    <i class="fa fa-youtube"></i>
-                                </a>
-                            </li>
-                            <li class="instagram">
-                                <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank"
-                                    title="Instagram">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+                           </div>
+                           <!-- Begin Footer Newsletter Area -->
+
+                           <!-- Footer Newsletter Area End Here -->
+                       </div>
+                       <!-- Footer Block Area End Here -->
+                       <ul class="social-link">
+                           <li class="twitter">
+                               <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
+                                   <i class="fa fa-twitter"></i>
+                               </a>
+                           </li>
+                           <li class="rss">
+                               <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
+                                   <i class="fa fa-rss"></i>
+                               </a>
+                           </li>
+                           <li class="google-plus">
+                               <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
+                                   <i class="fa fa-google-plus"></i>
+                               </a>
+                           </li>
+                           <li class="facebook">
+                               <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
+                                   <i class="fa fa-facebook"></i>
+                               </a>
+                           </li>
+                           <li class="youtube">
+                               <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
+                                   <i class="fa fa-youtube"></i>
+                               </a>
+                           </li>
+                           <li class="instagram">
+                               <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank" title="Instagram">
+                                   <i class="fa fa-instagram"></i>
+                               </a>
+                           </li>
+                       </ul>
+                   </div>
                </div>
            </div>
        </div>
@@ -259,18 +189,12 @@
                                    </div>
                                </div>
                                <div class="product-details-thumbs slider-thumbs-1">
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/1.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/2.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/3.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/4.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/5.jpg"
-                                           alt="product image thumb"></div>
-                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/6.jpg"
-                                           alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/1.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/2.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/3.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/4.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/5.jpg" alt="product image thumb"></div>
+                                   <div class="sm-image"><img src="./view/layout/images/product/small-size/6.jpg" alt="product image thumb"></div>
                                </div>
                            </div>
                            <!--// Product Details Left -->
@@ -332,14 +256,11 @@
                                            wishlist</a>
                                        <div class="product-social-sharing pt-25">
                                            <ul>
-                                               <li class="facebook"><a href="#"><i
-                                                           class="fa fa-facebook"></i>Facebook</a></li>
+                                               <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
                                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a>
                                                </li>
-                                               <li class="google-plus"><a href="#"><i
-                                                           class="fa fa-google-plus"></i>Google +</a></li>
-                                               <li class="instagram"><a href="#"><i
-                                                           class="fa fa-instagram"></i>Instagram</a></li>
+                                               <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                               <li class="instagram"><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
                                            </ul>
                                        </div>
                                    </div>
@@ -400,19 +321,20 @@
    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
    <script src="./view/layout/asset/script.js"></script>
    <script>
-$(document).ready(function() {
+       $(document).ready(function() {
 
-    $(".sosanh").click(function(){   
-        var taikhoan= 'tài khoản';
-        var id1= $(this).parent().find("#spss1").val();
-        var id2= $(this).parent().find("#spss2").val();
- 
-        window.location.href= 'http://localhost/duan1_techpro/index.php?pg=compare&idsp1=' + id1 + '&idsp2=' + id2;
-    
+           $(".sosanh").click(function() {
+               var taikhoan = 'tài khoản';
+               var id1 = $(this).parent().find("#spss1").val();
+               var id2 = $(this).parent().find("#spss2").val();
 
-    });
-});
-</script>
+               window.location.href = 'http://localhost/duan1_techpro/index.php?pg=compare&idsp1=' + id1 +
+                   '&idsp2=' + id2;
+
+
+           });
+       });
+   </script>
    </body>
 
    <!-- index30:23-->
