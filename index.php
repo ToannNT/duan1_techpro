@@ -456,8 +456,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // }
                 $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][] = $sp;
-
-                // header('location: index.php?pg=wishlist');
+                sleep(1);
+                header('location: index.php');
             }
             break;
         case 'detailed-order':
