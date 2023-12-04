@@ -116,27 +116,43 @@ if(is_array($showup)&&(count($showup)>0)){
                 <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 1</p>
-                  <input type="hidden" id="uploadfile" name="imgold1" value="<?=$hinh1;?>" />
-                  <input type="file" id="uploadfile1" name="hinh1"/>
-                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh1?>" alt="">
+                  <img style="width: 70px;"  src="../view/layout/images/product/<?=$hinh1?>" alt="">
+                  <input type="hidden" id="uploadfile1" name="imgold1" value="<?=$hinh1;?>" />
+                  <input type="file" onchange="readURLsp1(this);" id="uploadfile1" name="hinh1"/>
+                  <div id="thumbboxsp1">
+                    <img width="70" alt="Thumb image" placeholder="ảnh tải lên" id="thumbimagesp1" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 2</p>
-                  <input type="hidden" id="uploadfile" name="imgold2" value="<?=$hinh2;?>" />
-                  <input type="file" id="uploadfile2" name="hinh2"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh2?>" alt="">
+                  <input type="hidden" id="uploadfile2" name="imgold2" value="<?=$hinh2;?>" />
+                  <input type="file" onchange="readURLsp2(this)" id="uploadfile2" name="hinh2"/>
+                  <div id="thumbboxsp2">
+                    <img width="70" alt="Thumb image" id="thumbimagesp2" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 3</p>
-                  <input type="hidden" id="uploadfile" name="imgold3" value="<?=$hinh3;?>" />
-                  <input type="file" id="uploadfile3" name="hinh3"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh3?>" alt="">
+                  <input type="hidden" id="uploadfile3" name="imgold3" value="<?=$hinh3;?>" />
+                  <input type="file" onchange="readURLsp3(this)" id="uploadfile3" name="hinh3"/>
+                  <div id="thumbboxsp3">
+                    <img width="70" alt="Thumb image" id="thumbimagesp3" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 4</p>
-                  <input type="hidden" id="uploadfile" name="imgold4" value="<?=$hinh4;?>" />
-                  <input type="file" id="uploadfile4" name="hinh4"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh4?>" alt="">
+                  <input type="hidden" id="uploadfile4" name="imgold4" value="<?=$hinh4;?>" />
+                  <input type="file" onchange="readURLsp4(this)" id="uploadfile4" name="hinh4"/>
+                  <div id="thumbboxsp4">
+                    <img width="70" alt="Thumb image" id="thumbimagesp4" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
               <div class="form-group col-md-12">
                 <br>
