@@ -1,6 +1,7 @@
 <style>
-    body {
+    .body {
         background-color: #f8f9fa;
+        padding: 20px 0px;
     }
 
     .payment-success {
@@ -24,6 +25,9 @@
     }
 
     .transaction-info {
+        align-items: start;
+        flex-direction: column;
+        display: flex;
         background-color: #f7f7f7;
         padding: 20px;
         border-radius: 8px;
@@ -49,20 +53,36 @@
         text-align: center;
     }
 </style>
+<?php
+if (isset($show_bill)) {
+    extract($show_bill);
 
-<body>
+    if ($pttt == 1) {
+        $pttt_t = "Thẻ tín dụng";
+    } else if ($pttt == 2) {
+        $pttt_t = "Thẻ ATM";
+    } else if ($pttt == 3) {
+        $pttt_t = "Momo";
+    } else {
+        $pttt_t = "Thanh toán khi nhận hàng";
+    }
+}
+
+
+?>
+<div class="body">
 
     <div class="container">
         <div class="alert payment-success text-center" role="alert">
             <!-- <img src="https://via.placeholder.com/150" alt="Brand Logo" class="brand-logo"> -->
             <h4 class="alert-heading">Thanh toán thành công!</h4>
             <div class="transaction-info">
-                <p><strong>Mã giao dịch:</strong> #123456</p>
-                <p><strong>Số tiền thanh toán:</strong> $50.00</p>
-                <p><strong>Ngày thanh toán:</strong> January 1, 2023</p>
-                <p><strong>Phương thức thanh toán:</strong> Thẻ tín dụng</p>
-                <p><strong>Người nhận thanh toán:</strong> Tên người nhận</p>
-                <p><strong>Email xác nhận:</strong> example@email.com</p>
+                <p><strong>Mã giao dịch:</strong> <?= $ma_donhang ?></p>
+                <p><strong>Số tiền thanh toán:</strong> <?= number_format($tong, 0, '.', '.') ?>đ</p>
+                <!-- <p><strong>Ngày thanh toán:</strong> January 1, 2023</p> -->
+                <p><strong>Phương thức thanh toán:</strong> <?= $pttt_t ?></p>
+                <!-- <p><strong>Người nhận thanh toán:</strong> Tên người nhận</p> -->
+                <p><strong>Email xác nhận:</strong> <?= $email_nguoidat ?></p>
             </div>
             <p class="thank-you">Cám mơn vì đã sử dụng dịch vụ</p>
             <a style="font-weight: 500; text-decoration: underline;" href="#">Xem đơn hàng của tôi</a>
@@ -70,4 +90,4 @@
         </div>
     </div>
 
-</body>
+</div>

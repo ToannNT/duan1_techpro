@@ -11,6 +11,12 @@ function bill_insert_id($ma_donhang, $iduser, $nguoidat_ten, $nguoidat_email, $n
 
 
 
+function confirm_bill($id_bill)
+{
+    $sql = "SELECT * FROM bill WHERE id = ?";
+    return pdo_query_one($sql, $id_bill);
+}
+
 // function user_insert($hoten, $username, $email, $sdt, $password)
 // {
 //     $sql = "INSERT INTO user(hoten,username,email,sdt,password) VALUES (?,?,?,?,?)";

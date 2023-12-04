@@ -289,6 +289,15 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
 
         case 'confirm_checkout':
+            if (isset($_GET['id_bill'])) {
+                $id_bill = $_GET['id_bill'];
+                $show_bill = confirm_bill($id_bill);
+                require_once "view/confirm_checkout.php";
+            } else {
+                // include_once "view/home.php";
+                // test 
+                require_once "view/confirm_checkout.php";
+            }
             require_once "view/confirm_checkout.php";
             break;
         case 'contact':

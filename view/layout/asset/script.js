@@ -377,6 +377,14 @@ $(document).ready(function () {
 // CHECKOUT
 $(document).ready(function () {
     $('#checkFormCheckout').submit(function (event) {
+
+
+        // Kiểm tra xem nút gửi có thuộc tính đặc biệt không
+        if ($(document.activeElement).hasClass('voucher-check')) {
+            return; // Nếu có, không làm gì cả và cho phép gửi form
+        }
+
+
         var hoten = $('input[name="hoten"]').val();
         var dienthoai = $('input[name="dienthoai"]').val();
         var email = $('input[name="email"]').val();
@@ -385,6 +393,12 @@ $(document).ready(function () {
         var nguoinhan_dienthoai = $('input[name="nguoinhan_dienthoai"]');
         var nguoinhan_diachi = $('input[name="nguoinhan_diachi"]');
         var ptvc = $('input[name="ptvc"]:checked').val();
+
+        // Kiểm tra nếu nút gửi được nhấn là nút kiểm tra voucher
+        if ($(event.relatedTarget).attr('name') === 'value_voucher') {
+            return; // Không làm gì và cho phép gửi form cho việc kiểm tra voucher
+        }
+
 
         if (hoten === '' || dienthoai === '' || email === '' || diachi === '') {
             alert('Vui lòng điền đầy đủ thông tin');
