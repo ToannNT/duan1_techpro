@@ -93,21 +93,34 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $tenbr = $_POST['brandsp'];
                 if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
                     $hinhsp = $_FILES['imgup']['name'];
-                }else if($hinhsp ==""){ 
-                    $hinhsp = $_POST['imgold'];
                 }else{
                     $hinhsp = "noimg.jpeg";
                 }
                 $hinh1 = $_FILES['hinh1']['name'];
+                if($hinh1==""){
+                    $hinh1 = $_POST['imgold1'];
+                }
                 $hinh2 = $_FILES['hinh2']['name'];
+                if($hinh2==""){
+                    $hinh2 = $_POST['imgold2'];
+                }
                 $hinh3 = $_FILES['hinh3']['name'];
+                if($hinh3==""){
+                    $hinh3 = $_POST['imgold3'];
+                }
                 $hinh4 = $_FILES['hinh4']['name'];
+                if($hinh4==""){
+                    $hinh4 = $_POST['imgold4'];
+                }
                 $chitiet = $_POST['chitiet'];
                 $mota = $_POST['mota'];
                 if(isset($_POST['seo'])){$seo = $_POST['seo'];if($seo) $seo=1; else $seo=0;}else{$seo=0;}
                 if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
                 if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
                 if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
+                if($hinhsp ==""){
+                    $hinhsp = $_POST['imgold'];
+                }
                 $id = $_POST['id'];
                 if(empty($masp)||strlen($masp)>10){
                     $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm tối đa 10 ký tự</p>';
@@ -209,6 +222,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }else{ 
                     $img = "noimg.jpeg";
                 }
+                if($img==""){
+                    $img = $_POST['imgold'];
+                }
                 $idbn = $_POST['idbn'];
                 $target_file ="../view/layout/images/banner/". $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
@@ -243,6 +259,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     $imgsd = $_FILES['imgupsd']['name'];
                 }else{ 
                     $imgsd = "noimg.jpeg";
+                }
+                if($imgsd==""){
+                    $imgsd = $_POST['imgold'];
                 }
                 $idsl = $_POST['idsl'];
                 $target_file ="../view/layout/asset/css/images/slider/". $img;

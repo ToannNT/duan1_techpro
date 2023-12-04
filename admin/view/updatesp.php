@@ -116,21 +116,25 @@ if(is_array($showup)&&(count($showup)>0)){
                 <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 1</p>
+                  <input type="hidden" id="uploadfile" name="imgold1" value="<?=$hinh1;?>" />
                   <input type="file" id="uploadfile1" name="hinh1"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh1?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 2</p>
+                  <input type="hidden" id="uploadfile" name="imgold2" value="<?=$hinh2;?>" />
                   <input type="file" id="uploadfile2" name="hinh2"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh2?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 3</p>
+                  <input type="hidden" id="uploadfile" name="imgold3" value="<?=$hinh3;?>" />
                   <input type="file" id="uploadfile3" name="hinh3"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh3?>" alt="">
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 4</p>
+                  <input type="hidden" id="uploadfile" name="imgold4" value="<?=$hinh4;?>" />
                   <input type="file" id="uploadfile4" name="hinh4"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh4?>" alt="">
                 </div><br>
@@ -144,7 +148,6 @@ if(is_array($showup)&&(count($showup)>0)){
                 <textarea class="form-control" name="chitiet" id="chitiet"><?=$chitiet?></textarea>
                 <script>CKEDITOR.replace('chitiet');</script>
               </div>
-              <input type="hidden" name="imgsave" value="<>" >
               <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
               <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>

@@ -1,7 +1,6 @@
 <?php
 if(is_array($showup_banner)&&(count($showup_banner)>0)){
   extract($showup_banner);
-  echo var_dump($stt, $mota, $img, $idbn);
   }
 ?>
 
@@ -32,10 +31,11 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
                   <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" /><br>
+                  <input type="hidden" id="uploadfile" value="<?=$img?>" name="imgold">
                   <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="2000" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
@@ -71,9 +71,10 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
                   <input type="file" id="uploadfile" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfile" value="<?=$imgsd?>" name="imgold">
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
