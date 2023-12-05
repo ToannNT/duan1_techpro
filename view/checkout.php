@@ -60,6 +60,8 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
 
 
 // Lấy thời gian hiện tại
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 $currentTime = new DateTime();
 $giaohangnhanh = new DateTime();
 $giaohangtietkiem = new DateTime();
@@ -67,7 +69,7 @@ $giaohangtietkiem = new DateTime();
 
 
 // Cộng thêm
-$currentTime->modify('+1 days');
+// $currentTime->modify('+1 days');
 $giaohangnhanh->modify('+1 days');
 $giaohangtietkiem->modify('+3 days');
 
@@ -76,6 +78,8 @@ $giaohangtietkiem->modify('+3 days');
 $newTime = $currentTime->format('Y-m-d');
 $newTime_nhanh = $giaohangnhanh->format('Y-m-d');
 $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
+
+$ngaydat = $currentTime->format('Y-m-d H:i:s');
 
 ?>
 <!-- END phppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp  -->
@@ -98,7 +102,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
 <!--Checkout Area Strat-->
 <div class="checkout-area pt-60 pb-30">
     <form id="checkFormCheckout" action="index.php?pg=checkout" method="post">
-
+        <input type="hidden" name="ngaydat" value="<?= $ngaydat ?>">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -132,8 +136,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                             <div class="col-md-6">
                                 <div class="checkout-form-list">
                                     <label>Địa chỉ email <span class="required">*</span></label>
-                                    <input placeholder="Email của bạn" type="email" name="email"
-                                        <?php echo $email_tk ?>>
+                                    <input placeholder="Email của bạn" type="email" name="email" <?php echo $email_tk ?>>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -147,8 +150,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <!-- <a href="#">Tạo tài khoản để nhận thêm voucher ?</a> -->
                                     <div class="coupon-accordion">
                                         <!--Accordion Start-->
-                                        <h3
-                                            style="font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
+                                        <h3 style="font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
                                             Tạo tài khoản mới?
                                             <a href="index.php?pg=login_register"><span id="showlogin">Nhấn vào đây tạo
                                                     tài khoản. </span></a>
@@ -198,8 +200,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                             <div class="order-notes">
                                 <div class="checkout-form-list">
                                     <label>Ghi chú</label>
-                                    <textarea id="checkout-mess" cols="30" name="order_notes" rows="10"
-                                        placeholder="Ghi chú về đơn hàng của bạn."></textarea>
+                                    <textarea id="checkout-mess" cols="30" name="order_notes" rows="10" placeholder="Ghi chú về đơn hàng của bạn."></textarea>
                                 </div>
                             </div>
                         </div>
@@ -250,8 +251,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <!-- //vận chuyển -->
                                     <tr class="cart-subtotal">
                                         <th>Vận chuyển</th>
-                                        <td><span
-                                                class="amount">+<?= number_format($vanchuyen_from_session, 0, '.', '.') ?>đ</span>
+                                        <td><span class="amount">+<?= number_format($vanchuyen_from_session, 0, '.', '.') ?>đ</span>
                                         </td>
                                         <input type="hidden" name="ptvc" value="<?= $vanchuyen_from_session ?>">
                                     </tr>
@@ -263,8 +263,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                         <input type="hidden" name="tong_thanhtoan" value="<?= $tongthanhtoan ?>">
 
                                         <td><strong>
-                                                <span
-                                                    class="amount"><?= number_format($tongthanhtoan, 0, '.', '.') ?>đ</span></strong>
+                                                <span class="amount"><?= number_format($tongthanhtoan, 0, '.', '.') ?>đ</span></strong>
 
                                         </td>
 
@@ -282,20 +281,17 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <div class="card">
                                         <div class="card-header" active id="#payment-3">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                     Nhập mã giảm giá:
                                                 </a>
                                                 <span><?= $thongbaovoucher ?></span>
                                             </h5>
                                         </div>
-                                        <div id="collapseThree" style="background-color: #f2f2f2;"
-                                            data-parent="#accordion">
+                                        <div id="collapseThree" style="background-color: #f2f2f2;" data-parent="#accordion">
                                             <form action="index.php?pg=checkout" method="post">
                                                 <p class="checkout-coupon">
-                                                    <input placeholder="Coupon code" <?= $ten_voucher_dangSuDung ?>
-                                                        name="value_voucher" type="text">
-                                                    <input name="check_voucher" type="submit">
+                                                    <input placeholder="Coupon code" <?= $ten_voucher_dangSuDung ?> name="value_voucher" type="text">
+                                                    <input class="voucher-check" name="check_voucher" type="submit">
                                                     <!-- <button type="submit" name="check_voucher"
                                                         id="check_voucher">nhập</button> -->
                                                 </p>
@@ -312,8 +308,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <div class="card">
                                         <div class="card-header" id="">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="" data-target="" aria-expanded="false"
-                                                    aria-controls="">
+                                                <a class="collapsed" data-toggle="" data-target="" aria-expanded="false" aria-controls="">
                                                     Đơn vị vận chuyển
                                                 </a>
                                             </h5>
@@ -325,16 +320,14 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                                         <div class="httt">
                                                             <input name="ptvc" value="25000" type="radio">
                                                             <p>Giao hàng Nhanh</p>
-                                                            <span
-                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">25.000đ
+                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">25.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_nhanh ?></p>
                                                         <div class="httt">
                                                             <input name="ptvc" value="16000" type="radio">
                                                             <p>Giao hàng tiết kiệm</p>
-                                                            <span
-                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">16.000đ
+                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">16.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_tietkiem ?></p>
@@ -342,8 +335,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                                         <div class="httt">
                                                             <input name="ptvc" value="60000" type="radio">
                                                             <p>Giao hàng Hỏa Tốc</p>
-                                                            <span
-                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">60.000đ
+                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">60.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime ?></p>
@@ -358,8 +350,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <div class="card">
                                         <div class="card-header" id="">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target=""
-                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                <a class="collapsed" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="collapseTwo">
                                                     Hình thức thanh toán
                                                 </a>
                                             </h5>
@@ -373,8 +364,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                                             sẽ không bao giờ được lưu lại.</p>
                                                         <div class="httt">
                                                             <input name="pttt" checked value="1" type="radio">
-                                                            <p>Thanh toán bằng thẻ tín dụng </p><img
-                                                                src="http://localhost/project/uploads/1.png" alt>
+                                                            <p>Thanh toán bằng thẻ tín dụng </p><img src="http://localhost/project/uploads/1.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="2" type="radio">
@@ -382,8 +372,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="3" type="radio">
-                                                            <p>Thanh toán bằng Momo </p><img class="momo"
-                                                                src="http://localhost/project/uploads/2.png" alt>
+                                                            <p>Thanh toán bằng Momo </p><img class="momo" src="http://localhost/project/uploads/2.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="4" type="radio">
