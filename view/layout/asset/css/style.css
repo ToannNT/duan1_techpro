@@ -2084,7 +2084,7 @@ textarea:focus {
     display: none;
     border: 1px solid #e5e5e5;
     padding: 20px;
-    max-width: 220px;
+    max-width: 240px;
     background: #ffffff;
     text-align: left;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);

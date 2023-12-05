@@ -4,7 +4,7 @@ $tt = 0;
 $tong = 0;
 $i = 0;
 if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
-    echo var_dump($_SESSION["giohang"]);
+    // echo var_dump($_SESSION["giohang"]);
     foreach ($_SESSION['giohang'] as $item) {
         extract($item);
         $checkboxChecked = $s_status == 1 ? 'checked' : '';

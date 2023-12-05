@@ -79,16 +79,15 @@ if (isset($show_bill)) {
             <div class="transaction-info">
                 <p><strong>Mã giao dịch:</strong> <?= $ma_donhang ?></p>
                 <p><strong>Số tiền thanh toán:</strong> <?= number_format($tong, 0, '.', '.') ?>đ</p>
-                <!-- <p><strong>Ngày thanh toán:</strong> January 1, 2023</p> -->
+                <p><strong>Ngày thanh toán:</strong> <?= $ngaydat ?></p>
                 <p><strong>Phương thức thanh toán:</strong> <?= $pttt_t ?></p>
                 <!-- <p><strong>Người nhận thanh toán:</strong> Tên người nhận</p> -->
                 <p><strong>Email xác nhận:</strong> <?= $email_nguoidat ?></p>
             </div>
             <p class="thank-you">Cám mơn vì đã sử dụng dịch vụ</p>
-            <a style="font-weight: 500; text-decoration: underline;" href="index.php?pg=detailed_order">Xem đơn hàng của
+            <a style="font-weight: 500; text-decoration: underline;" href="index.php?pg=my_order">Xem đơn hàng của
                 tôi</a>
 
         </div>
     </div>
-
 </div>

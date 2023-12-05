@@ -60,6 +60,8 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
 
 
 // Lấy thời gian hiện tại
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 $currentTime = new DateTime();
 $giaohangnhanh = new DateTime();
 $giaohangtietkiem = new DateTime();
@@ -67,7 +69,7 @@ $giaohangtietkiem = new DateTime();
 
 
 // Cộng thêm
-$currentTime->modify('+1 days');
+// $currentTime->modify('+1 days');
 $giaohangnhanh->modify('+1 days');
 $giaohangtietkiem->modify('+3 days');
 
@@ -76,6 +78,8 @@ $giaohangtietkiem->modify('+3 days');
 $newTime = $currentTime->format('Y-m-d');
 $newTime_nhanh = $giaohangnhanh->format('Y-m-d');
 $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
+
+$ngaydat = $currentTime->format('Y-m-d H:i:s');
 
 ?>
 <!-- END phppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp  -->
@@ -98,7 +102,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
 <!--Checkout Area Strat-->
 <div class="checkout-area pt-60 pb-30">
     <form id="checkFormCheckout" action="index.php?pg=checkout" method="post">
-
+        <input type="hidden" name="ngaydat" value="<?= $ngaydat ?>">
         <div class="container">
             <div class="row">
                 <div class="col-12">

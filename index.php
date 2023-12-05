@@ -237,6 +237,20 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $tongthanhtoan = $_POST['tong_thanhtoan'];
                 $ghichu = $_POST['order_notes'];
                 $ship = $_POST['ptvc'];
+                $ngaydathang = $_POST['ngaydat'];
+                if (isset($nguoinhan_hoten) && ($nguoinhan_hoten != "")) {
+                    $ten_nhan = $nguoinhan_hoten;
+                    $sdt_nhan = $nguoinhan_dienthoai;
+                    $diachi_nhan = $nguoinhan_diachi;
+                } else {
+                    $ten_nhan = $hoten;
+                    $sdt_nhan = $dienthoai;
+                    $diachi_nhan = $diachi;
+                }
+
+                // $ten_nhan = $hoten;
+                // $sdt_nhan = $dienthoai;
+                // $diachi_nhan = $diachi;
 
 
 
@@ -256,7 +270,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
                 $ma_donhang = "TECHPRO" . $iduser . "-" . date("His-dmY");
                 // First tạo đơn hàng 
-                $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt);
+                $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt, $ngaydathang);
 
 
 
@@ -276,14 +290,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 foreach ($_SESSION['giohang'] as $key => $value) {
                     extract($value);
                     if ($s_status == 1) {
-                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien, $ship, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher);
                         unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
                     }
                 }
                 //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
                 unset($_SESSION['voucher']);
                 $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
-                header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '');
+                header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '&id_cart=' . $id_cart . '');
             }
             require_once "view/checkout.php";
             break;
@@ -470,10 +484,20 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             break;
         case 'my_order':
-
+            if (isset($_SESSION['s_user'])) {
+                extract($_SESSION['s_user']);
+                $id_user = $_SESSION['s_user']['id'];
+                $show_my_order = get_ds_order($id_user);
+            }
             include_once "view/my_order.php";
             break;
         case 'detailed_order':
+            if (isset($_GET['idpro']) && ($_GET['idpro'] != "")) {
+                $idpro = $_GET["idpro"];
+                $id_cart = $_GET["idcart"];
+
+                $sp_detailed_order = get_ds_detailed_order($idpro, $id_cart);
+            }
             include_once "view/detailed_order.php";
             break;
         case 'wishlist':

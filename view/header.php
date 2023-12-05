@@ -62,15 +62,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 <ul class="minicart-product-list__register" style="padding-top: 15px;">' . $username . '</ul>
                         ';
 } else {
-    $html_account = '<li class="hm-minicart">
-                            <div class="hm-minicart-trigger hm-minicart-trigger__user">
-
-                                <span class="item-icon__user">
-
-                                </span>
-                            </div>
-                        </li>
-                        <!-- Header Mini Cart Area End Here -->
+    $html_account = '
                     </ul>
             
                     <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
@@ -201,8 +193,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
                                             <?= $Favorite_count ?>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
-                                                class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -217,7 +208,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                             </span>
 
                                         </div>
-                                        <div class="minicart">
+                                        <div style="width: 240px;" class="minicart">
                                             <ul class="minicart-product-list">
 
 
@@ -247,17 +238,15 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
 
                                             </ul>
                                             <p class="minicart-total">Tổng:
-                                                <span
-                                                    style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
+                                                <span style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
                                             </p>
                                             <div class="minicart-button">
-                                                <a href="index.php?pg=viewcart"
-                                                    class="li-button li-button-fullwidth li-button-dark">
+                                                <a href="index.php?pg=viewcart" class="li-button li-button-fullwidth li-button-dark">
                                                     <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
-                                                <a href="checkout.html" class="li-button li-button-fullwidth">
+                                                <!-- <a href="checkout.html" class="li-button li-button-fullwidth">
                                                     <span>Thanh toán</span>
-                                                </a>
+                                                </a> -->
                                             </div>
                                         </div>
                                     </li>
