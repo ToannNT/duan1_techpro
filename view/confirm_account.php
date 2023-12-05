@@ -1,11 +1,15 @@
 <?php
-    if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){
-        extract($_SESSION['s_user']);
-        $userinf=get_user($id);
-        extract($userinf);
-        // unset ($_SESSION['s_user']); 
+    // if(isset($_SESSION['s_user'])&&(count($_SESSION['s_user'])>0)){
+    //     extract($_SESSION['s_user']);
+    //     echo var_dump ($_SESSION['s_user']);
+    //     $userinf=get_user($id);
+    //     extract($userinf);
+    //     // echo var_dump ($userinf);
+    //     // unset ($_SESSION['s_user']); 
 
-    }
+    // }
+        extract(get_user($id));
+        echo var_dump (get_user($id));
         if (isset($hinh)) {
             $hinh_ac = '
                     <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>
