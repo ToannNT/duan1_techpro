@@ -41,13 +41,13 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                             </span>
                         </div>
                         <div class="minicart minicart__register">
-                            <ul style="margin-left: 10px;" class="minicart-product-list ">
+                            <ul style="margin-left: 5px;" class="minicart-product-list ">
                                 <li>
-                                    <a href="index.php?pg=account">My Account</a>
+                                    <a href="index.php?pg=account">Tài khoản của tôi</a>
                                 </li>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
+                                <ul style=" margin-top: 10px;" class="minicart-product-list ">
                                     <li>
-                                        <a href="index.php?pg=login_register">Đơn hàng</a>
+                                        <a href="index.php?pg=my_order">Đơn hàng</a>
                                     </li>                                   
                                 </ul>
                                 <li>
@@ -69,28 +69,17 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
 
                                 </span>
                             </div>
-                            <div class="minicart minicart__register">
-                                <ul style="margin-left: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đăng Nhập</a>
-                                    </li>                                   
-                                </ul>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đơn hàng</a>
-                                    </li>                                   
-                                </ul>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đăng ký</a>
-                                    </li>                                   
-                                 </ul>
-
-                            </div>
                         </li>
                         <!-- Header Mini Cart Area End Here -->
                     </ul>
-                    <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
+            
+                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                     href="index.php?pg=login_register">Đăng nhập</a>
+                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                     href="index.php?pg=login_register">Đăng ký</a>
+
+                    
+                    ';
 }
 if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     $Favorite_count = '<span class="cart-item-count wishlist-item-count">' . count($_SESSION['f_Product']) . '</span>';
@@ -167,7 +156,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -212,7 +201,8 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
                                             <?= $Favorite_count ?>
-                                            <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
+                                            <i style="padding-top: 6px; color: red; font-size: 30px;"
+                                                class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
@@ -257,10 +247,12 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
 
                                             </ul>
                                             <p class="minicart-total">Tổng:
-                                                <span style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
+                                                <span
+                                                    style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
                                             </p>
                                             <div class="minicart-button">
-                                                <a href="index.php?pg=viewcart" class="li-button li-button-fullwidth li-button-dark">
+                                                <a href="index.php?pg=viewcart"
+                                                    class="li-button li-button-fullwidth li-button-dark">
                                                     <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
                                                 <a href="checkout.html" class="li-button li-button-fullwidth">

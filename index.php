@@ -296,9 +296,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             } else {
                 // include_once "view/home.php";
                 // test 
-                require_once "view/confirm_checkout.php";
+                require_once "view/404.php";
             }
-            require_once "view/confirm_checkout.php";
+            // require_once "view/confirm_checkout.php";
             break;
         case 'contact':
             require_once "view/contact.php";
@@ -469,11 +469,18 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 header('location: index.php');
             }
             break;
-        case 'detailed-order':
-            include_once "view/detailed-order.php";
+        case 'my_order':
+
+            include_once "view/my_order.php";
+            break;
+        case 'detailed_order':
+            include_once "view/detailed_order.php";
             break;
         case 'wishlist':
             include_once "view/wishlist.php";
+            break;
+        case '404':
+            include_once "view/404.php";
             break;
         case 'delWishlistArray':
             if (isset($_GET['ind']) && ($_GET['ind']) >= 0) {

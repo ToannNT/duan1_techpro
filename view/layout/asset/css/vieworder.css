@@ -21,12 +21,12 @@ td>a:hover{
   text-decoration: underline;
   color: #0C2F4E;
 }
-.col-md-9 h2{
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+.col-md-9  .h2{
+  /* font-weight: 500; */
+  /* font-size: 20px; */
+  /* text-transform: uppercase; */
     text-align: left; /* căn lề trái cho tiêu đề h2 */
-    margin-left: 0.5rem; /* đặt lề trái về 0 */
+    margin-top: 0px; /* đặt lề trái về 0 */
   margin-bottom: 0;
 }
 /* line */
@@ -55,6 +55,7 @@ td>a:hover{
 }
 /* endline */
 .accout-user{
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -63,11 +64,13 @@ td>a:hover{
   width: 3rem;
   border-radius: 50%;
 }
-.username{
-  font-size: 1.2rem;
+  .username{
+    font-size: 16px;
+    font-weight: 600;
 }
+
 .sidebars{
-  background-color: #75A2D0;
+  background-color: #f4f4f4;
   border-radius: 0.7rem;
   margin-top: 2px;
 }
@@ -75,12 +78,13 @@ td>a:hover{
   padding: 1.5rem 1rem 1.5rem 1rem;
 }
 .sidebar-item i{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
+
 .sidebar-item{
   margin-bottom: 2px;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   display: flex;
   gap: 1.5rem;
   align-items: center;
@@ -88,9 +92,19 @@ td>a:hover{
 .sidebar-item:first-child{
   margin-top: 5px;
 }
-.sidebar-item:hover{
+/* .sidebar-item:hover{
   background-color: #0C2F4E;
   color: white;
   transition: 0,5s;
   border-radius: 0.74rem;
+} */
+
+.tr_th>th{
+  padding: 15px 5px;
+  font-size: 14px;
+}
+
+.tr_td>td{
+  /* padding: 20px 5px; */
+  /* font-size: 12px; */
 }

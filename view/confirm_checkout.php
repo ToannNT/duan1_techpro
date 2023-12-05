@@ -1,57 +1,57 @@
 <style>
-    .body {
-        background-color: #f8f9fa;
-        padding: 20px 0px;
-    }
+.body {
+    background-color: #f8f9fa;
+    padding: 20px 0px;
+}
 
-    .payment-success {
-        max-width: 500px;
-        margin: 50px auto;
-        border-radius: 10px;
-        padding: 30px;
-        background-color: #ffffff;
-        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.1);
-    }
+.payment-success {
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.1);
+}
 
-    .brand-logo {
-        max-width: 100px;
-        margin-bottom: 20px;
-    }
+.brand-logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
 
-    .alert-heading {
-        font-size: 32px;
-        color: #4CAF50;
-        margin-bottom: 20px;
-    }
+.alert-heading {
+    font-size: 32px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
 
-    .transaction-info {
-        align-items: start;
-        flex-direction: column;
-        display: flex;
-        background-color: #f7f7f7;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
+.transaction-info {
+    align-items: start;
+    flex-direction: column;
+    display: flex;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
 
-    .transaction-info p {
-        margin-bottom: 12px;
-        font-size: 18px;
-    }
+.transaction-info p {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
 
-    .thank-you {
-        font-size: 19px;
-        color: #4CAF50;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
+.thank-you {
+    font-size: 19px;
+    color: #4CAF50;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
-    .footer {
-        font-size: 14px;
-        color: #6c757d;
-        text-align: center;
-    }
+.footer {
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
 </style>
 <?php
 if (isset($show_bill)) {
@@ -85,7 +85,8 @@ if (isset($show_bill)) {
                 <p><strong>Email xác nhận:</strong> <?= $email_nguoidat ?></p>
             </div>
             <p class="thank-you">Cám mơn vì đã sử dụng dịch vụ</p>
-            <a style="font-weight: 500; text-decoration: underline;" href="#">Xem đơn hàng của tôi</a>
+            <a style="font-weight: 500; text-decoration: underline;" href="index.php?pg=detailed_order">Xem đơn hàng của
+                tôi</a>
 
         </div>
     </div>

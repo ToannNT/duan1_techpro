@@ -115,10 +115,6 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
                                         <li>Tổng tiền<span><?= number_format($tt, 0, '.', '.') ?>đ</span></li>
                                     </ul>
                                     <a id="checkout-link" href="index.php?pg=checkout">Đến trang thanh toán</a>
-                                    <a id="checkout-link" href="index.php?pg=detailed-order">Đến trang chi tiết đơn
-                                        hàng</a>
-
-
                                 </div>
                             </div>
                         </div>
