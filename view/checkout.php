@@ -1,5 +1,5 @@
 <?php
-
+// unset($_SESSION['voucher']);
 //sử dụng ajax để gán dữ liệu vào session sau đó tái sử dụng
 // Bất tiện.  phải tự load trang mới cập nhật lại session !!!
 if (isset($_SESSION['vanchuyen'])) {
@@ -24,12 +24,12 @@ if (isset($_SESSION['s_user']) && !empty($_SESSION['s_user'])) {
     $hovaten_tk = 'value="' . $hoten . '"';
     $email_tk = 'value="' . $email . '"';
     $sdt_tk = 'value="' . $sdt . '"';
-    $diachi_tk = 'value="' . $diachi . '"';
+    $diachi_tkk = 'value="' . $diachi . '"';
 } else {
     $hovaten_tk = '';
     $email_tk = '';
     $sdt_tk = '';
-    $diachi_tk = '';
+    $diachi_tkk = '';
 }
 
 
@@ -60,6 +60,8 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
 
 
 // Lấy thời gian hiện tại
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 $currentTime = new DateTime();
 $giaohangnhanh = new DateTime();
 $giaohangtietkiem = new DateTime();
@@ -67,7 +69,7 @@ $giaohangtietkiem = new DateTime();
 
 
 // Cộng thêm
-$currentTime->modify('+1 days');
+// $currentTime->modify('+1 days');
 $giaohangnhanh->modify('+1 days');
 $giaohangtietkiem->modify('+3 days');
 
@@ -76,6 +78,8 @@ $giaohangtietkiem->modify('+3 days');
 $newTime = $currentTime->format('Y-m-d');
 $newTime_nhanh = $giaohangnhanh->format('Y-m-d');
 $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
+
+$ngaydat = $currentTime->format('Y-m-d H:i:s');
 
 ?>
 <!-- END phppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp  -->
@@ -97,8 +101,8 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
 <!-- Li's Breadcrumb Area End Here -->
 <!--Checkout Area Strat-->
 <div class="checkout-area pt-60 pb-30">
-    <form action="index.php?pg=checkout" method="post">
-
+    <form id="checkFormCheckout" action="index.php?pg=checkout" method="post">
+        <input type="hidden" name="ngaydat" value="<?= $ngaydat ?>">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -138,7 +142,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Địa chỉ<span class="required">*</span></label>
-                                    <input placeholder="Địa chỉ nhận hàng" type="text" name="diachi" <?php echo $diachi_tk ?>>
+                                    <input placeholder="Địa chỉ" type="text" name="diachi" <?php echo $diachi_tkk ?>>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -155,7 +159,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     </div>
 
                                 </div>
-                                <div id="cbox-info" class="checkout-form-list create-account">
+                                <!-- <div id="cbox-info" class="checkout-form-list create-account">
                                     <p>Tạo một tài khoản bằng cách nhập thông tin dưới đây. Nếu bạn là khách hàng
                                         cũ,
                                         vui lòng đăng nhập ở đầu trang.</p>
@@ -163,7 +167,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                     <input placeholder="username" type="text">
                                     <label>Mật khẩu<span class="required">*</span></label>
                                     <input placeholder="password" type="password">
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="different-address">
@@ -287,7 +291,7 @@ $newTime_tietkiem = $giaohangtietkiem->format('Y-m-d');
                                             <form action="index.php?pg=checkout" method="post">
                                                 <p class="checkout-coupon">
                                                     <input placeholder="Coupon code" <?= $ten_voucher_dangSuDung ?> name="value_voucher" type="text">
-                                                    <input name="check_voucher" type="submit">
+                                                    <input class="voucher-check" name="check_voucher" type="submit">
                                                     <!-- <button type="submit" name="check_voucher"
                                                         id="check_voucher">nhập</button> -->
                                                 </p>

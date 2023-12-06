@@ -1,7 +1,6 @@
 <?php
 if(is_array($showup_banner)&&(count($showup_banner)>0)){
   extract($showup_banner);
-  echo var_dump($stt, $mota, $img, $idbn);
   }
 ?>
 
@@ -32,10 +31,11 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
                   <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" /><br>
+                  <input type="hidden" id="uploadfile" value="<?=$img?>" name="imgold">
                   <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="2000" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
@@ -57,33 +57,29 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
           <span style="color: red; font-wieght:bold;"></span>
           <div class="tile-body">
           </div>
-          <form action="index.php?pg=addsp" enctype="multipart/form-data" method="post" class="row">
+          <form action="index.php?pg=updateslider" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
                 <label for="masp" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="masp" class="form-control" name="masp" type="text" placeholder="">
+                <input id="masp" class="form-control"  value="<?=$sttsd?>" name="sttsd" type="text" placeholder="">
               </div>
               <div class="form-group col-md-6">
                 <label class="control-label">Nhập mô tả</label>
-                <input class="form-control" name="mota" type="text">
+                <input class="form-control" value="<?=$motasd?>" name="motasd" type="text">
                 <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/" alt="">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" name="imgup" onchange="readURL(this);" />
+                  <input type="file" id="uploadfile" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfile" value="<?=$imgsd?>" name="imgold">
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
-                <div id="boxchoice">
-                  <a href="javascript:" class="Choicefile"><i class="fas fa-cloud-upload-alt"></i> Chọn ảnh</a>
-                  <p style="clear:both"></p>
-                </div>
               </div>
-              
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="addsp" value="Lưu lại">
+                <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>
@@ -94,129 +90,7 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
   </main>
 
 
-  <!--
-  MODAL CHỨC VỤ 
--->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
 
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Thêm mới nhà cung cấp</h5>
-              </span>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Nhập tên chức vụ mới</label>
-              <input class="form-control" type="text" required>
-            </div>
-          </div>
-          <BR>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="index.php?pg=qlbanner">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-MODAL
--->
-
-
-
-  <!--
-  MODAL DANH MỤC
--->
-  <div class="modal fade" id="adddanhmuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Thêm mới danh mục </h5>
-              </span>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Nhập tên danh mục mới</label>
-              <input class="form-control" type="text" required>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Danh mục banner hiện đang có</label>
-              <ul style="padding-left: 20px;">
-                <li>Bàn ăn</li>
-              <li>Bàn thông minh</li>
-              <li>Tủ</li>
-              <li>Ghế gỗ</li>
-              <li>Ghế sắt</li>
-              <li>Giường người lớn</li>
-              <li>Giường trẻ em</li>
-              <li>Bàn trang điểm</li>
-              <li>Giá đỡ</li>
-              </ul>
-            </div>
-          </div>
-          <BR>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-MODAL
--->
-
-
-
-
-  <!--
-  MODAL TÌNH TRẠNG
--->
-  <div class="modal fade" id="addtinhtrang" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Thêm mới tình trạng</h5>
-              </span>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Nhập tình trạng mới</label>
-              <input class="form-control" type="text" required>
-            </div>
-          </div>
-          <BR>
-          <div class="btn">
-            <button class="btn btn-save" type="button">Lưu lại</button>
-            <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          </div>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-js
--->
--->
 <script>
   var form = document.getElementsByTagName("form")[0];
   var stt = document.getElementById("stt");

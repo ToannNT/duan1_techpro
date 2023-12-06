@@ -17,6 +17,13 @@ function show_tablesp($showspadm)
     $html_showspadm = '';
     foreach ($showspadm as $spadm) {
         extract($spadm);
+        if($soluong >= 5){
+            $alert = '<span class="badge bg-success">Còn hàng</span>'; 
+        }else if($soluong <=5 && $soluong >=1){
+            $alert = '<span class="badge bg-warning">Số lượng còn ít</span>';
+        }else{
+            $alert = '<span class="badge bg-danger">Hết hàng</span>';
+        }
         $link = 'index.php?pg=delsp&id=' . $id;
         $link2 = 'index.php?pg=updatesp&id=' . $id;
         $html_showspadm .= '
@@ -27,8 +34,8 @@ function show_tablesp($showspadm)
             <td style="width: 100px; height: 100px; overflow: hidden;">
                 <img src="../view/layout/images/product/' . $hinh . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
             </td>
-            <td>40</td>
-            <td><span class="badge bg-success">Còn hàng</span></td>
+            <td>'.$soluong.'</td>
+            <td>'.$alert.'</td>
             <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
             <td>' . $tendm . '</td>
             <td>
@@ -206,7 +213,7 @@ function show_SP($dssp)
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
-                                <button type="submit" name="btn_Wish" class="links-details" onclick="toast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             </form>
                     </ul>
@@ -215,7 +222,7 @@ function show_SP($dssp)
         </div>
         <!-- single-product-wrap end -->
     </div>
-        ';     
+        ';
     }
     return $show_dssp_all;
 }

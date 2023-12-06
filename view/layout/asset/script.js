@@ -352,7 +352,14 @@ $("input.this_checkbox").on("change", function () {
 
 
 
-// KIỂM TRA SẢN PHẨM DƯỢC CHECKEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+// KIỂM TRA DỮ LIỆU TRƯỚC KHI THỰC HIỆN
+////////////////////////////////////
+///////////////////////////////////
+////////////////////////////////////
+///////////////////////////////////
+
+//GIỎ HÀNG
 $(document).ready(function () {
     $("#checkout-link").click(function (event) {
         // Kiểm tra xem có ít nhất một ô kiểm đã được chọn hay không
@@ -367,7 +374,53 @@ $(document).ready(function () {
         }
     });
 });
+// CHECKOUT
+$(document).ready(function () {
+    $('#checkFormCheckout').submit(function (event) {
 
+
+        // Kiểm tra xem nút gửi có thuộc tính đặc biệt không
+        if ($(document.activeElement).hasClass('voucher-check')) {
+            return; // Nếu có, không làm gì cả và cho phép gửi form
+        }
+
+
+        var hoten = $('input[name="hoten"]').val();
+        var dienthoai = $('input[name="dienthoai"]').val();
+        var email = $('input[name="email"]').val();
+        var diachi = $('input[name="diachi"]').val();
+        var nguoinhan_hoten = $('input[name="nguoinhan_hoten"]');
+        var nguoinhan_dienthoai = $('input[name="nguoinhan_dienthoai"]');
+        var nguoinhan_diachi = $('input[name="nguoinhan_diachi"]');
+        var ptvc = $('input[name="ptvc"]:checked').val();
+
+        // Kiểm tra nếu nút gửi được nhấn là nút kiểm tra voucher
+        if ($(event.relatedTarget).attr('name') === 'value_voucher') {
+            return; // Không làm gì và cho phép gửi form cho việc kiểm tra voucher
+        }
+
+
+        if (hoten === '' || dienthoai === '' || email === '' || diachi === '') {
+            alert('Vui lòng điền đầy đủ thông tin');
+            event.preventDefault();
+        } else {
+            // Kiểm tra xem các trường nguoinhan có visible không (có đang ẩn hay không)
+            var nguoinhan_visible = nguoinhan_hoten.is(':visible') && nguoinhan_dienthoai.is(':visible') && nguoinhan_diachi.is(':visible');
+
+
+            if (nguoinhan_visible && (nguoinhan_hoten.val() === '' || nguoinhan_dienthoai.val() === '' || nguoinhan_diachi.val() === '' || ptvc === '')) {
+                alert('Vui lòng điền đầy đủ thông tin người nhận');
+                event.preventDefault();
+            }
+        }
+    });
+});
+
+// KIỂM TRA DỮ LIỆU TRỐNG END 
+////////////////////////////////////
+///////////////////////////////////
+////////////////////////////////////
+///////////////////////////////////
 
 
 
@@ -423,3 +476,6 @@ $(document).ready(function () {
         });
     });
 });
+
+
+

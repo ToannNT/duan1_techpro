@@ -41,13 +41,13 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                             </span>
                         </div>
                         <div class="minicart minicart__register">
-                            <ul style="margin-left: 10px;" class="minicart-product-list ">
+                            <ul style="margin-left: 5px;" class="minicart-product-list ">
                                 <li>
-                                    <a href="index.php?pg=account">My Account</a>
+                                    <a href="index.php?pg=account">Tài khoản của tôi</a>
                                 </li>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
+                                <ul style=" margin-top: 10px;" class="minicart-product-list ">
                                     <li>
-                                        <a href="index.php?pg=login_register">Đơn hàng</a>
+                                        <a href="index.php?pg=my_order">Đơn hàng</a>
                                     </li>                                   
                                 </ul>
                                 <li>
@@ -62,35 +62,16 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 <ul class="minicart-product-list__register" style="padding-top: 15px;">' . $username . '</ul>
                         ';
 } else {
-    $html_account = '<li class="hm-minicart">
-                            <div class="hm-minicart-trigger hm-minicart-trigger__user">
-
-                                <span class="item-icon__user">
-
-                                </span>
-                            </div>
-                            <div class="minicart minicart__register">
-                                <ul style="margin-left: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đăng Nhập</a>
-                                    </li>                                   
-                                </ul>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đơn hàng</a>
-                                    </li>                                   
-                                </ul>
-                                <ul style="margin-left: 10px; margin-top: 10px;" class="minicart-product-list ">
-                                    <li>
-                                        <a href="index.php?pg=login_register">Đăng ký</a>
-                                    </li>                                   
-                                 </ul>
-
-                            </div>
-                        </li>
-                        <!-- Header Mini Cart Area End Here -->
+    $html_account = '
                     </ul>
-                    <ul class="minicart-product-list__register" style="padding-top: 15px;">Đăng nhập</ul>';
+            
+                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                     href="index.php?pg=login_register">Đăng nhập</a>
+                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                     href="index.php?pg=login_register">Đăng ký</a>
+
+                    
+                    ';
 }
 if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     $Favorite_count = '<span class="cart-item-count wishlist-item-count">' . count($_SESSION['f_Product']) . '</span>';
@@ -158,11 +139,16 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
+    <!-- Link toast F8 -->
     <!-- <link rel="stylesheet" href="./view/layout/asset/css/toast.css">
     <script src="./view/layout/asset/js/toast.js"></script> -->
+    <!-- Toast F8 2 cái trên -->
+    <!-- Cái dưới là Font Awesome Lỗi, để chạy code F8 thì mở hết link ra, rồi Ctrl / cái Toast sweet đi -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -222,7 +208,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                             </span>
 
                                         </div>
-                                        <div class="minicart">
+                                        <div style="width: 240px;" class="minicart">
                                             <ul class="minicart-product-list">
 
 
@@ -258,9 +244,9 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                                 <a href="index.php?pg=viewcart" class="li-button li-button-fullwidth li-button-dark">
                                                     <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
-                                                <a href="checkout.html" class="li-button li-button-fullwidth">
+                                                <!-- <a href="checkout.html" class="li-button li-button-fullwidth">
                                                     <span>Thanh toán</span>
-                                                </a>
+                                                </a> -->
                                             </div>
                                         </div>
                                     </li>

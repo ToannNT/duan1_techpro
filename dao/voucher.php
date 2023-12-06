@@ -16,11 +16,11 @@ function check_used_voucher($ten_voucher)
 }
 
 
-function check_voucher($ten_voucher)
+function check_voucherr($ten_voucher)
 {
-    // $bien = "toanxinhtrai";
-    $sql = "SELECT * FROM vouncher WHERE ten_vouncher LIKE '%" . $ten_voucher . "%'";
-    return pdo_query_one($sql);
+    // $bien = "abc300";
+    $sql = "SELECT * FROM vouncher WHERE ten_vouncher =  ?";
+    return pdo_query_one($sql, $ten_voucher);
 }
 
 

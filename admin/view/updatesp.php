@@ -1,30 +1,47 @@
 <?php
-if(is_array($showup)&&(count($showup)>0)){
+// echo var_dump($showup);
+if(is_array($showup)){
   extract($showup);
-  $idupdate= $id;
   }
 
+  if($sale==1){
+    $sale = "checked";
+  }else{  
+    $sale = "";
+  }
+  if($new==1){
+    $new = "checked";
+  }else{  
+    $new = "";
+  }
+  if($xemnhieu==1){
+    $xemnhieu = "checked";
+  }else{
+    $xemnhieu = "";
+  }
+  if($banchay==1){
+    $banchay = "checked";
+  }else{ 
+    $banchay = "";
+  }
 
   $html_showbradm = '';
   foreach ($dsbr_adm as $br_adm) {
-      extract($br_adm);
-      if($id==$id_brand){
-        $html_showbradm .= '<option selected value="'.$id.'">'.$ten.'</option>';
+
+      if($br_adm['id']==$id_brand){
+        $html_showbradm .= '<option selected value="'.$br_adm['id'].'">'.$br_adm['ten'].'</option>';
       }else{  
-        $html_showbradm .= '<option value="'.$id.'">'.$ten.'</option>';
+        $html_showbradm .= '<option value="'.$br_adm['id'].'">'.$br_adm['ten'].'</option>';
       }
   }
   $html_showdmadm = '';
   foreach ($dsdm_adm as $dm_adm) {
-      extract($dm_adm);
-      if($id==$id_catalog){
-        $html_showdmadm .= '<option selected value="'.$id.'">'.$ten_dm.'</option>';
+      if($dm_adm['id']==$id_catalog){
+        $html_showdmadm .= '<option selected value="'.$dm_adm['id'].'">'.$dm_adm['ten_dm'].'</option>';
       }else{
-        $html_showdmadm .= '<option value="'.$id.'">'.$ten_dm.'</option>';
+        $html_showdmadm .= '<option value="'.$dm_adm['id'].'">'.$dm_adm['ten_dm'].'</option>';
       }
   }
-  
-?>
 ?>
 <main class="app-content">
     <div class="app-title">
@@ -43,11 +60,11 @@ if(is_array($showup)&&(count($showup)>0)){
             <form action="index.php?pg=updatepro" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
                 <label for="masp" class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span>  </label>
-                <input class="form-control" id="masp" name="masp" type="text" value="<?=$ma_sp?>">
+                <input class="form-control" id="masp" value="<?=$ma_sp?>" name="masp" type="text" >
               </div>
               <div class="form-group col-md-3">
                 <label for="tensp" class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" id="tensp" name="tensp" type="text" value="<?=($ten!="")?$ten:"";?>">
+                <input class="form-control" id="tensp" value="<?=$ten?>" name="tensp" type="text">
               </div>
               <div class="form-group col-md-3">
                 <label for="dmsp" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
@@ -80,32 +97,31 @@ if(is_array($showup)&&(count($showup)>0)){
                 </select>
               </div>
               <div class="form-group col-md-3">
-
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Thuộc tính <span style="color: red; font-weight: bold" >(*)</span></label>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="seo" value="<?=$sale;?>" id=""> Sale</label>
+                  <label for=""><input type="checkbox" name="seo" value="1" <?=$sale;?> id=""> Sale</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="moi" value="<?=$new;?>" id=""> Mới</label>
+                  <label for=""><input type="checkbox" name="moi" value="1" <?=$new;?> id=""> Mới</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="many" value="<?=$xemnhieu;?>" id=""> Xem nhiều</label>
+                  <label for=""><input type="checkbox" name="many" value="1" <?=$xemnhieu;?> id=""> Xem nhiều</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="run" value="<?=$banchay;?>" id=""> Bán chạy</label>
+                  <label for=""><input type="checkbox" name="run" value="1" <?=$banchay;?> id=""> Bán chạy</label>
                 </div>
               </div>
               <div class="form-group col-md-9">
                 <label class="control-label">Ảnh sản phẩm<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" name="imgup" value="<?=$hinh;?>" onchange="readURL(this);" />
-                  <input type="hidden" id="uploadfile" name="imgold" value="<?=$hinh;?>" />
-                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
+                  <input type="file" id="uploadfile" value="<?=$hinh;?>" name="imgup" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfile" value="<?=$hinh;?>" name="imgold" />
+                  <img style="width: 200px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
                 </div>
                 <div id="thumbbox">
-                  <img width="70" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
                 <div id="boxchoice">
@@ -116,23 +132,43 @@ if(is_array($showup)&&(count($showup)>0)){
                 <p class="tile-title col-md-12">Ảnh chi tiết sản phẩm</p>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 1</p>
-                  <input type="file" id="uploadfile1" name="hinh1"/>
-                  <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh1?>" alt="">
+                  <img style="width: 70px;"  src="../view/layout/images/product/<?=$hinh1?>" alt="">
+                  <input type="hidden" id="uploadfile1" name="imgold1" value="<?=$hinh1;?>" />
+                  <input type="file" onchange="readURLsp1(this);" id="uploadfile1" name="hinh1"/>
+                  <div id="thumbboxsp1">
+                    <img width="70" alt="Thumb image" placeholder="ảnh tải lên" id="thumbimagesp1" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 2</p>
-                  <input type="file" id="uploadfile2" name="hinh2"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh2?>" alt="">
+                  <input type="hidden" id="uploadfile2" name="imgold2" value="<?=$hinh2;?>" />
+                  <input type="file" onchange="readURLsp2(this)" id="uploadfile2" name="hinh2"/>
+                  <div id="thumbboxsp2">
+                    <img width="70" alt="Thumb image" id="thumbimagesp2" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 3</p>
-                  <input type="file" id="uploadfile3" name="hinh3"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh3?>" alt="">
+                  <input type="hidden" id="uploadfile3" name="imgold3" value="<?=$hinh3;?>" />
+                  <input type="file" onchange="readURLsp3(this)" id="uploadfile3" name="hinh3"/>
+                  <div id="thumbboxsp3">
+                    <img width="70" alt="Thumb image" id="thumbimagesp3" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
                 <div class="col-md-3">
                   <p class="control-label">Ảnh 4</p>
-                  <input type="file" id="uploadfile4" name="hinh4"/>
                   <img style="width: 70px;" src="../view/layout/images/product/<?=$hinh4?>" alt="">
+                  <input type="hidden" id="uploadfile4" name="imgold4" value="<?=$hinh4;?>" />
+                  <input type="file" onchange="readURLsp4(this)" id="uploadfile4" name="hinh4"/>
+                  <div id="thumbboxsp4">
+                    <img width="70" alt="Thumb image" id="thumbimagesp4" style="display: none" />
+                    <a class="removeimg" href="javascript:"></a>
+                  </div>
                 </div><br>
               <div class="form-group col-md-12">
                 <br>
@@ -144,8 +180,8 @@ if(is_array($showup)&&(count($showup)>0)){
                 <textarea class="form-control" name="chitiet" id="chitiet"><?=$chitiet?></textarea>
                 <script>CKEDITOR.replace('chitiet');</script>
               </div>
-              <input type="hidden" name="id" value="<?=$idupdate?>">
-              <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
+              <input type="hidden" value="<?=$id?>" name="id">
+              <input class="btn btn-save" type="submit" name="btnupdatepro" value="Lưu lại">
               <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>
           </div>
@@ -185,96 +221,6 @@ if(is_array($showup)&&(count($showup)>0)){
       </div>
     </div>
   </div>
-  <!--
-MODAL
--->
-
-
-
-  <!--
-  MODAL DANH MỤC
--->
-  <div class="modal fade" id="adddanhmuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Thêm mới danh mục </h5>
-              </span>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Nhập tên danh mục mới</label>
-              <input class="form-control" type="text" required>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Danh mục sản phẩm hiện đang có</label>
-              <ul style="padding-left: 20px;">
-                <li>Bàn ăn</li>
-              <li>Bàn thông minh</li>
-              <li>Tủ</li>
-              <li>Ghế gỗ</li>
-              <li>Ghế sắt</li>
-              <li>Giường người lớn</li>
-              <li>Giường trẻ em</li>
-              <li>Bàn trang điểm</li>
-              <li>Giá đỡ</li>
-              </ul>
-            </div>
-          </div>
-          <BR>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-MODAL
--->
-
-
-
-
-  <!--
-  MODAL TÌNH TRẠNG
--->
-  <div class="modal fade" id="addtinhtrang" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Thêm mới tình trạng</h5>
-              </span>
-            </div>
-            <div class="form-group col-md-12">
-              <label class="control-label">Nhập tình trạng mới</label>
-              <input class="form-control" type="text" required>
-            </div>
-          </div>
-          <BR>
-          <button class="btn btn-save" type="button">Lưu lại</button>
-          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-          <BR>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--
-MODAL
--->
 <script>
   var form = document.getElementsByTagName("form")[0];
   var masp = document.getElementById("masp");
