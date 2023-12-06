@@ -2,11 +2,6 @@
 // unset($_SESSION['voucher']);
 //sử dụng ajax để gán dữ liệu vào session sau đó tái sử dụng
 // Bất tiện.  phải tự load trang mới cập nhật lại session !!!
-if (isset($_SESSION['vanchuyen'])) {
-    $vanchuyen_from_session = $_SESSION['vanchuyen'];
-} else {
-    $vanchuyen_from_session = "0";
-}
 
 //sau khi ap mã tự động tạo và lưu session , Khi thanh toán xong sẽ tự động xóa
 if (isset($_SESSION['voucher']) && ($_SESSION['voucher'] != "")) {
@@ -18,19 +13,12 @@ if (isset($_SESSION['voucher']) && ($_SESSION['voucher'] != "")) {
     $ten_voucher_dangSuDung = "";
 }
 
-//LOAD DỮ LIỆU KHI CÓ TÀI KHOẢNG
-if (isset($_SESSION['s_user']) && !empty($_SESSION['s_user'])) {
-    extract($_SESSION['s_user']);
-    $hovaten_tk = 'value="' . $hoten . '"';
-    $email_tk = 'value="' . $email . '"';
-    $sdt_tk = 'value="' . $sdt . '"';
-    $diachi_tkk = 'value="' . $diachi . '"';
-} else {
-    $hovaten_tk = '';
-    $email_tk = '';
-    $sdt_tk = '';
-    $diachi_tkk = '';
-}
+
+// kiểm tra phải hội viên khôn
+
+
+
+
 
 
 
@@ -54,6 +42,41 @@ if (isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])) {
         }
     }
 }
+
+
+
+//LOAD DỮ LIỆU KHI CÓ TÀI KHOẢNG
+if (isset($_SESSION['s_user']) && !empty($_SESSION['s_user'])) {
+    extract($_SESSION['s_user']);
+
+    if ($hoivien == 1) {
+        $giamgiahoivien = (int)$tt * 0.05;
+        $tb_hv = "LV1 giảm 5%";
+    } else if ($hoivien == 2) {
+        $giamgiahoivien = (int)$tt * 0.1;
+        $tb_hv = "LV2 giảm 10%";
+    } else if ($hoivien == 3) {
+        $giamgiahoivien = (int)$tt * 0.2;
+        $tb_hv = "LV4 giảm 20%";
+    } else {
+        $giamgiahoivien = 0;
+        $tb_hv = "";
+    }
+
+
+
+    $hovaten_tk = 'value="' . $hoten . '"';
+    $email_tk = 'value="' . $email . '"';
+    $sdt_tk = 'value="' . $sdt . '"';
+    $diachi_tkk = 'value="' . $diachi . '"';
+} else {
+    $hovaten_tk = '';
+    $email_tk = '';
+    $sdt_tk = '';
+    $diachi_tkk = '';
+}
+
+
 
 
 
@@ -238,7 +261,7 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                 <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>Tổng tiền hàng</th>
-                                        <input type="hidden" name="tt" value="<?= $tt ?>">
+                                        <input id="tongcongtien" type="hidden" name="tt" value="<?= $tt ?>">
                                         <td><span class="amount"><?= number_format($tt, 0, '.', '.') ?>đ</span></td>
 
                                     </tr>
@@ -246,25 +269,35 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                         <th>Voucher</th>
                                         <td><span class="amount">-<?= number_format($voucher, 0, '.', '.') ?>đ</span>
                                         </td>
-                                        <input type="hidden" name="voucher" value="<?= $voucher ?>">
+                                        <input id="html_voucher" type="hidden" name="voucher" value="<?= $voucher ?>">
                                     </tr>
-                                    <!-- //vận chuyển -->
+
+                                    <!-- Hội viên  -->
+                                    <tr class="cart-subtotal">
+                                        <th>Hội viên: <span> <?= $tb_hv ?></span></th>
+                                        <td>
+                                            <span class="amount">-<?= number_format($giamgiahoivien, 0, '.', '.') ?>đ</span>
+                                        </td>
+                                        <input id="html_hoivien" type="hidden" name="hoivien" value="<?= $giamgiahoivien ?>">
+                                    </tr>
+
+                                    <!-- Hidden nằm trong js  -->
+                                    <!-- <input type="hidden" name="tong_thanhtoan" value=" $tongthanhtoan"> -->
+
                                     <tr class="cart-subtotal">
                                         <th>Vận chuyển</th>
-                                        <td><span class="amount">+<?= number_format($vanchuyen_from_session, 0, '.', '.') ?>đ</span>
+                                        <td><span id="html_ship" class="amount">đ</span>
                                         </td>
-                                        <input type="hidden" name="ptvc" value="<?= $vanchuyen_from_session ?>">
                                     </tr>
                                     <tr class="order-total">
                                         <th>Tổng thanh toán:</th>
-                                        <?php
-                                        $tongthanhtoan = ((int)$tt - (int)$voucher) + (int)$vanchuyen_from_session;
-                                        ?>
-                                        <input type="hidden" name="tong_thanhtoan" value="<?= $tongthanhtoan ?>">
+                                        <!-- Hidden nằm trong js  -->
+                                        <!-- <input type="hidden" name="tong_thanhtoan" value=" $tongthanhtoan"> -->
 
-                                        <td><strong>
-                                                <span class="amount"><?= number_format($tongthanhtoan, 0, '.', '.') ?>đ</span></strong>
-
+                                        <td>
+                                            <strong>
+                                                <span id="tongthanhtoan" class="amount"></span>
+                                            </strong>
                                         </td>
 
                                     </tr>
@@ -318,14 +351,14 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                                 <div class="pay-th">
                                                     <div class="pay-th-text">
                                                         <div class="httt">
-                                                            <input name="ptvc" value="25000" type="radio">
+                                                            <input checked onclick="calculateTotal()" name="ptvc" value="25000" type="radio">
                                                             <p>Giao hàng Nhanh</p>
                                                             <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">25.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_nhanh ?></p>
                                                         <div class="httt">
-                                                            <input name="ptvc" value="16000" type="radio">
+                                                            <input onclick="calculateTotal()" name="ptvc" value="16000" type="radio">
                                                             <p>Giao hàng tiết kiệm</p>
                                                             <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">16.000đ
                                                             </span>
@@ -333,7 +366,7 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_tietkiem ?></p>
 
                                                         <div class="httt">
-                                                            <input name="ptvc" value="60000" type="radio">
+                                                            <input onclick="calculateTotal()" name="ptvc" value="60000" type="radio">
                                                             <p>Giao hàng Hỏa Tốc</p>
                                                             <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">60.000đ
                                                             </span>
