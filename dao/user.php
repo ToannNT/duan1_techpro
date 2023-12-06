@@ -40,7 +40,7 @@ function checkuser_bill($sdt, $email)
 function update_user($hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id)
 {
     // Kiểm tra xem $hinh có giá trị không
-    if ($hinh !== "") {
+    if ($hinh != "") {
         $sql = "UPDATE user SET hoten=?, username=?, password=?, email=?, gioitinh=?, diachi=?, sdt=?, hinh=?, role=? WHERE id=?";
         pdo_execute($sql, $hoten, $username, $password, $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
     } else {

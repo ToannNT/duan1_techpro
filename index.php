@@ -470,6 +470,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // xử lý
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
                 include_once "view/confirm_account.php";
+                // header ('location: index.php?pg=account');
             } else {
                 include_once "view/account.php";
             }
