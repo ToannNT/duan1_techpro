@@ -242,7 +242,7 @@
     
   </script>
       </head>
-<!-- 
+
 <body onload="time()" class="app sidebar-mini rtl">
 
   <header class="app-header">
@@ -307,4 +307,4 @@
       <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
             đặt hệ thống</span></a></li>
     </ul>
-  </aside> -->
+  </aside>
