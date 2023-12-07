@@ -70,6 +70,8 @@ if (isset($_SESSION['s_user']) && !empty($_SESSION['s_user'])) {
     $sdt_tk = 'value="' . $sdt . '"';
     $diachi_tkk = 'value="' . $diachi . '"';
 } else {
+    $giamgiahoivien = 0;
+    $tb_hv = "";
     $hovaten_tk = '';
     $email_tk = '';
     $sdt_tk = '';
