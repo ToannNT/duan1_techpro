@@ -65,6 +65,56 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             // require_once "view/updateCatagory.php";
             break;
+        // THƯƠNG HIỆU
+        case 'qlthuonghieu':
+            $get_Brandlist=get_Brand();
+            include_once "view/qlthuonghieu.php";
+            break;
+
+        case 'addbrand':
+            if (isset($_POST['addTrademark'])) {
+                // echo "Thêm thành công";
+                $stt = $_POST['stt'];
+                $name = $_POST['name'];
+                $idcatalog = $_POST['idcatalog'];
+                // $mota = $_POST['mota'];
+                trademark_add($stt, $name, $idcatalog);
+                $get_Brandlist=get_Brand();
+                header('location: index.php?pg=qlthuonghieu');
+            }
+            include_once "view/addbrand.php";
+            break;
+        case 'delbrand' :
+            if (isset($_GET['id'])) {
+                // echo 'OK';
+                $id = $_GET['id'];
+                $tb = delete_trademark($id);
+            }
+            $get_Brandlist=get_Brand();
+            include_once "view/qlthuonghieu.php";
+            break;
+        
+        case 'updateBrand':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+            $get_Brandlist_one=get_Brandlist_one($id);
+            }
+            include_once "view/updateBrand.php";
+            break;
+
+        case 'fixBrand' :
+            if (isset($_POST['btnUpdate'])) {
+                if (isset($_POST['id'])) {
+                    $id = $_POST['id'];
+                    // $stt = $_POST['stt'];
+                    $name = $_POST['name'];
+                    // $mota = $_POST['mota'];
+                    $idcatalog = $_POST['idcatalog'];
+                    updateTrademark($id, $name, $idcatalog);
+                    header('location: index.php?pg=qlthuonghieu');
+                }
+            }
+            break;
         case 'qlsanpham':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');

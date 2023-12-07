@@ -283,8 +283,7 @@
         </a>
       </li>
       <li>
-        <a class="app-menu__item" href="index.php?pg=qldanhmuc">
-          <!-- <i class='app-menu__icon bi bi-card-checklist'></i> -->
+        <a class="app-menu__item" href="index.php?pg=qlthuonghieu">
           <i class="app-menu__icon fa-brands fa-bandcamp"></i>
           <span class="app-menu__label">Quản lý thương hiệu</span>
         </a>
