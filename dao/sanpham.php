@@ -17,6 +17,13 @@ function show_tablesp($showspadm)
     $html_showspadm = '';
     foreach ($showspadm as $spadm) {
         extract($spadm);
+        if($soluong >= 5){
+            $alert = '<span class="badge bg-success">Còn hàng</span>'; 
+        }else if($soluong <=5 && $soluong >=1){
+            $alert = '<span class="badge bg-warning">Số lượng còn ít</span>';
+        }else{
+            $alert = '<span class="badge bg-danger">Hết hàng</span>';
+        }
         $link = 'index.php?pg=delsp&id=' . $id;
         $link2 = 'index.php?pg=updatesp&id=' . $id;
         $html_showspadm .= '
@@ -27,8 +34,8 @@ function show_tablesp($showspadm)
             <td style="width: 100px; height: 100px; overflow: hidden;">
                 <img src="../view/layout/images/product/' . $hinh . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
             </td>
-            <td>40</td>
-            <td><span class="badge bg-success">Còn hàng</span></td>
+            <td>'.$soluong.'</td>
+            <td>'.$alert.'</td>
             <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
             <td>' . $tendm . '</td>
             <td>
