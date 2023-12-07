@@ -10,6 +10,8 @@ require_once "../dao/giohang.php";
 require_once "../dao/bill.php";
 require_once "../dao/bannerslider.php";
 require_once "../dao/donhang.php";
+require_once "../dao/blog.php";
+
 
 require_once "view/header.php";
 
@@ -68,6 +70,56 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
             }
             // require_once "view/updateCatagory.php";
+            break;
+            // THƯƠNG HIỆU
+        case 'qlthuonghieu':
+            $get_Brandlist = get_Brand();
+            include_once "view/qlthuonghieu.php";
+            break;
+
+        case 'addbrand':
+            if (isset($_POST['addTrademark'])) {
+                // echo "Thêm thành công";
+                $stt = $_POST['stt'];
+                $name = $_POST['name'];
+                $idcatalog = $_POST['idcatalog'];
+                // $mota = $_POST['mota'];
+                trademark_add($stt, $name, $idcatalog);
+                $get_Brandlist = get_Brand();
+                header('location: index.php?pg=qlthuonghieu');
+            }
+            include_once "view/addbrand.php";
+            break;
+        case 'delbrand':
+            if (isset($_GET['id'])) {
+                // echo 'OK';
+                $id = $_GET['id'];
+                $tb = delete_trademark($id);
+            }
+            $get_Brandlist = get_Brand();
+            include_once "view/qlthuonghieu.php";
+            break;
+
+        case 'updateBrand':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $get_Brandlist_one = get_Brandlist_one($id);
+            }
+            include_once "view/updateBrand.php";
+            break;
+
+        case 'fixBrand':
+            if (isset($_POST['btnUpdate'])) {
+                if (isset($_POST['id'])) {
+                    $id = $_POST['id'];
+                    // $stt = $_POST['stt'];
+                    $name = $_POST['name'];
+                    // $mota = $_POST['mota'];
+                    $idcatalog = $_POST['idcatalog'];
+                    updateTrademark($id, $name, $idcatalog);
+                    header('location: index.php?pg=qlthuonghieu');
+                }
+            }
             break;
         case 'qlsanpham':
             error_reporting(E_ALL);
@@ -329,7 +381,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $target_file = "../view/layout/asset/css/images/slider/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_slider($stt, $mota, $img, $idsl);
-
                 // hàm show slider id
                 $showup_slider = showup_slider($idsl);
                 header('location: index.php?pg=qlbanner');
@@ -346,6 +397,54 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             $ds_order = getds_orderAll();
             require_once "view/qldonhang.php";
             break;
+        case 'addblog':
+            if (isset($_POST['btnblog'])) {
+                $mablog = $_POST['mablog'];
+                $tieudeblog = $_POST['tieudeblog'];
+                $chitietblog = $_POST['chitietblog'];
+                if (isset($_FILES['imgblog']['name']) && ($_FILES['imgblog']['name'] !== "")) {
+                    $imgblog = $_FILES['imgblog']['name'];
+                } else {
+                    $imgblog = "noimg.jpeg";
+                }
+                $target_file = "../view/layout/images/blog/" . $imgblog;
+                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
+                insert_blog($mablog, $tieudeblog, $chitietblog, $imgblog);
+                header('location: index.php?pg=qlblog');
+            }
+            require_once "view/addblog.php";
+            break;
+        case 'qlblog':
+            $get_blog = select_blog(10);
+            require_once "view/qlblog.php";
+            break;
+        case 'updateblog':
+            if (isset($_GET['id_blog']) && ($_GET['id_blog'] > 0)) {
+                $idblog = $_GET['id_blog'];
+                $showup_blog = showup_blog($idblog);
+            }
+            require_once "view/updateblog.php";
+            break;
+        case 'updateblogxl':
+            if (isset($_POST['updateblogxl'])) {
+                $mablog = $_POST['mablog'];
+                $tieudeblog = $_POST['tieudeblog'];
+                $chitietblog = $_POST['chitietblog'];
+                if (isset($_FILES['imgblog']['name']) && ($_FILES['imgblog']['name'] !== "")) {
+                    $imgblog = $_FILES['imgblog']['name'];
+                }
+                if ($imgblog == "") {
+                    $imgblog = $_POST['imgold'];
+                }
+                $idblog = $_POST['idblog'];
+                $target_file = "../view/layout/images/blog/" . $imgblog;
+                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
+                update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
+                header('location: index.php?pg=qlblog');
+            }
+            require_once "view/updateblog.php";
+            break;
+
         case 'adddonhang':
             require_once "view/adddonhang.php";
             break;

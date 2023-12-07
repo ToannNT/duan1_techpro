@@ -10,16 +10,6 @@ if (isset($hinh)) {
 } else {
     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
 }
-// if ($hinh != "") {
-//     $target_file = "./view/layout/images/user/" . $hinh;
-//     move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
-// } else {
-//     // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
-//     $latestImage = getLatestImageFromUser($id);
-//     $target_file = $latestImage;
-// }
-
-
 ?>
 
 <div class="wrapper-container">

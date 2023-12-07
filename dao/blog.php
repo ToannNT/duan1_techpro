@@ -66,11 +66,26 @@ function get_blackfriday()
 
 }
 // lấy 3 blog ngoài trang index
-function get_tintucindex()
-{
-    $sql = "SELECT * FROM blog LIMIT 4";
+function get_tintucindex($limit){
+    $sql = "SELECT * FROM blog LIMIT" .$limit;
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     return $stmt->fetchALL(); // lấy all dữ liệu
+}
+function select_blog($limit){
+    $sql = "SELECT * FROM blog ORDER BY id_blog DESC LIMIT " . $limit;
+    return pdo_query($sql);
+}
+function insert_blog($mablog, $tieudeblog, $chitietblog, $imgblog){
+    $sql = "INSERT INTO blog(madm, tieude, noidung, hinh) VALUES (?,?,?,?)";
+    pdo_execute($sql, $mablog, $tieudeblog, $chitietblog, $imgblog);
+}
+function showup_blog($idblog){
+    $sql = "SELECT * FROM blog WHERE id_blog=?";
+    return pdo_query_one($sql, $idblog);
+}
+function update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog){
+    $sql = "UPDATE blog SET madm=?, tieude=?, noidung=?, hinh=? WHERE id_blog=?";
+    pdo_execute($sql, $mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
 }

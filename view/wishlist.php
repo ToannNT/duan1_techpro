@@ -75,5 +75,6 @@ if (isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])) {
         </div>
     </div>
 </div>
+?>
 <!--Wishlist Area End-->
 <!-- Begin Footer Area -->

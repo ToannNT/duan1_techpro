@@ -225,23 +225,33 @@
 
         }
         $(document).ready(function() {
-            $(".Choicefile").bind('click', function() {
-                $("#uploadfilesp4").click();
+                    $(".Choicefile").bind('click', function() {
+                        $("#uploadfilesp4").click();
 
-            });
-            $(".removeimg").click(function() {
-                $("#uploadfilesp4").attr('src', '').hide();
-                $("#uploadfilesp4").html(
-                    '<input type="file" id="uploadfilesp4"  onchange="readURL(this);" />');
-                $(".removeimg").hide();
-                $(".Choicefile").bind('click', function() {
-                    $("#uploadfilesp4").click();
-                });
-                $('.Choicefile').css('background', '#14142B');
-                $('.Choicefile').css('cursor', 'pointer');
-                $(".filename").text("");
-            });
-        })
+                    });
+                    $(document).ready(function() {
+                        $(".Choicefile").bind('click', function() {
+                            $("#uploadfilesp4").click();
+
+                        });
+                        $(".removeimg").click(function() {
+                            $("#uploadfilesp4").attr('src', '').hide();
+                            $("#uploadfilesp4").html(
+                                '<input type="file" id="uploadfilesp4"  onchange="readURL(this);" />');
+                            $(".removeimg").hide();
+                            $(".Choicefile").bind('click', function() {
+                                $("#uploadfilesp4").click();
+                            });
+                            $('.Choicefile').css('background', '#14142B');
+                            $('.Choicefile').css('cursor', 'pointer');
+                            $(".filename").text("");
+                        });
+                    })
+
+                    function momenu() {
+                        $('.sub-menu').toggle();
+                    }
+                }
     </script>
 </head>
 
