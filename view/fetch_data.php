@@ -101,6 +101,16 @@ if (isset($_POST['input'])) {
                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                         </ul>
                     </div>
+                    <form class="add-actions"  action="index.php?pg=product " method="post">
+                        <ul class="add-actions-link">
+                            <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                        </ul>
+                        <input type="hidden" name="productId" value="'. $id .'">
+                        <input type="hidden" name="productCatalog" value="'. $id_catalog .'"> 
+                        <input class="add-cart active" type="submit" id="sosanh" name="sosanh" value="So Sánh" class="select-btn col col-9"></input>
+                    </form>
                 </div>
             </div>
             <!-- single-product-wrap end -->
@@ -225,6 +235,16 @@ if (isset($_POST['input'])) {
                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                             </ul>
                         </div>
+                        <form class="add-actions"  action="index.php?pg=product " method="post">
+                            <ul class="add-actions-link">
+                                <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                            </ul>
+                            <input type="hidden" name="productId" value="'. $id .'">
+                            <input type="hidden" name="productCatalog" value="'. $id_catalog .'"> 
+                            <input class="add-cart active" type="submit" id="sosanh" name="sosanh" value="So Sánh" class="select-btn col col-9"></input>
+                        </form>
                     </div>
                 </div>
                 <!-- single-product-wrap end -->
@@ -327,6 +347,16 @@ if (isset($_POST['input'])) {
                             <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
                         </ul>
                     </div>
+                    <form class="add-actions"  action="index.php?pg=product " method="post">
+                        <ul class="add-actions-link">
+                            <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                        </ul>
+                        <input type="hidden" name="productId" value="'. $id .'">
+                        <input type="hidden" name="productCatalog" value="'. $id_catalog .'"> 
+                        <input class="add-cart active" type="submit" id="sosanh" name="sosanh" value="So Sánh" class="select-btn col col-9"></input>
+                    </form>
                 </div>
             </div>
             <!-- single-product-wrap end -->
