@@ -1,7 +1,11 @@
 <?php
 extract($sp_detailed_order);
-$total = ((int)$thanhtien - (int)$voucher) + (int)$phi_vanchuyen;
 
+$voucher = $voucher / $slsp_in_bill;
+$phivanchuyen = $phivanchuyen / $slsp_in_bill;
+
+$total = ((int)$gia - (int)$voucher) + (int)$phivanchuyen;
+// echo $slsp_in_bill;
 if ($pttt == 1) {
     $pt_thanhtoan = "Thanh toán bằng thẻ tín dụng";
 } else if ($pttt == 2) {
@@ -45,13 +49,14 @@ if ($status == 0) {
             <thead>
                 <tr>
                     <th colspan="1" style="vertical-align: baseline; padding-top: 10px; width: 300px;">
-                        <h3>Thông tin người nhận hàng:</h3>
+                        <h3>Thông tin người nhận:</h3>
                     </th>
                     <th colspan="1">
-                        <p style="font-size: 18px;" class="ttin_nguoidat">Tên: <?= $ten_nhan ?> </p>
+                        <p style="font-size: 18px;" class="ttin_nguoidat">Tên: <?= $ten_nguoinhan ?> </p>
                         <!-- <br> -->
-                        <p style="font-size: 18px;" class="ttin_nguoidat">Số điện thoại: (+84) <?= $sdt_nhan ?> </p>
-                        <p style="font-size: 18px;" class="ttin_nguoidat">Địa chỉ: <?= $diachi_nhan ?></p>
+                        <p style="font-size: 18px;" class="ttin_nguoidat">Số điện thoại: (+84) <?= $sdt_nguoinhan ?>
+                        </p>
+                        <p style="font-size: 18px;" class="ttin_nguoidat">Địa chỉ: <?= $diachi_nguoinhan ?></p>
 
                     </th>
                 </tr>
@@ -60,7 +65,8 @@ if ($status == 0) {
             <tbody>
                 <tr>
                     <td colspan="2">
-                        <div class="i__Phone" style="max-width: 140px;"><img src="./view/layout/images/product/<?= $hinh ?>" alt="">
+                        <div class="i__Phone" style="max-width: 140px;"><img
+                                src="./view/layout/images/product/<?= $hinh ?>" alt="">
                         </div>
                         <div style="margin-top: 15px;" class="inf__Phone">
                             <h4><?= $ten ?></h4>
@@ -68,15 +74,15 @@ if ($status == 0) {
                             <p>x<?= $soluong ?></p>
                         </div>
                     </td>
-                    <td style="border-left: 1px solid #e5e5e5;"><?= number_format($thanhtien, 0, '.', '.') ?>đ</td>
+                    <td style="border-left: 1px solid #e5e5e5;"><?= number_format($gia, 0, '.', '.') ?>đ</td>
                 </tr>
                 <tr>
                     <td colspan="2">Tổng tiền hàng</td>
-                    <td><?= number_format($thanhtien, 0, '.', '.') ?>đ</td>
+                    <td><?= number_format($gia, 0, '.', '.') ?>đ</td>
                 </tr>
                 <tr>
                     <td colspan="2">Phí vận chuyển</td>
-                    <td>+<?= number_format($phi_vanchuyen, 0, '.', '.') ?>đ</td>
+                    <td>+<?= number_format($phivanchuyen, 0, '.', '.') ?>đ</td>
                 </tr>
                 <tr>
                     <td colspan="2">Voucher từ shop</td>
