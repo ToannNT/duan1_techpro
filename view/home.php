@@ -8,6 +8,22 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 // echo var_dump($dsdanhmuc_all);
 // echo var_dump($_SESSION['giohang']);
 
+$showbn12 = "";
+foreach ($showdsbn12 as $tt) {
+    extract($tt);
+    if ($trangthai == 1) {
+        $showtrangthai = '<img src="./view/layout/images/banner/'.$img.'">;';
+    } else {
+        $showtrangthai = '';
+    }
+    $showbn12 .= '
+        <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+            <a href="index.php?pg=product">
+                '.$showtrangthai.'
+            </a>
+        </div>
+    ';
+}
 ?>
 
 <!-- Begin Slider With Banner Area -->
@@ -63,16 +79,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
             <!-- Slider Area End Here -->
             <!-- Begin Li Banner Area -->
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                <div class="li-banner">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn6.png" alt>
-                    </a>
-                </div>
-                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn7.png" alt>
-                    </a>
-                </div>
+                <?=$showbn12?>
                 <!-- <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
                         <a href="#">
                             <img src="./view/layout/images/banner/bn8.png" alt>
@@ -1006,7 +1013,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     </h2>
                 </div>
                 <?php
-                $data_tintucindex = get_tintucindex();
+                $data_tintucindex = get_tintucicndex(4);
                 ?>
 
                 <div class="row">
@@ -1017,7 +1024,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                         <div class="li-blog-single-item">
                             <div class="li-blog-banner">
                                 <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
-                                        src="<?= $tt['hinh'] ?>" alt=""></a>
+                                        src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt=""></a>
                             </div>
                             <div class="li-blog-content">
                                 <div class="li-blog-details">

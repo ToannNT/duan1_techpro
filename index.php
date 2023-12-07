@@ -565,7 +565,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
-
     require_once "view/home.php";
 }
 
