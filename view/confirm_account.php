@@ -9,7 +9,7 @@
 
     // }
         extract(get_user($id));
-        echo var_dump (get_user($id));
+        // echo var_dump (get_user($id));
         if (isset($hinh)) {
             $hinh_ac = '
                     <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/'.$hinh.'" alt>

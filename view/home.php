@@ -257,7 +257,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     ?>
                     <div class="row">
                         <div class="featured-product-active owl-carousel">
-                            <?php foreach ($data_blackfriday as $tt): ?>
+                            <?php foreach($data_blackfriday as $tt): ?>
                                 <div class="featured-product-bundle">
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
@@ -1011,7 +1011,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 
                 <div class="row">
                     <!-- <div class="product-active owl-carousel"> -->
-                    <?php foreach ($data_tintucindex as $tt): ?>
+                    <?php foreach($data_tintucindex as $tt): ?>
                         <!-- single-product-wrap start -->
                         <div class="col-lg-4 col-md-4">
                             <div class="li-blog-single-item">
@@ -1052,24 +1052,25 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                 </div>
                 <script language="JavaScript">
                     function toast() {
-                        swal("Success!", "Your data have been saved. Thank you!", "success");
+                        swal("Thành công!", "Thêm sản phẩm yêu thích thành công!", "success");
                     }
-                    function showSuccessToast() {
-                        toast({
-                            title: "Thành công!",
-                            message: "Bạn đã thêm vào mục yêu thích thành công.",
-                            type: "success",
-                            duration: 1000
-                        });
-                    }
-
-                    function showErrorToast() {
-                        toast({
-                            title: "Thất bại!",
-                            message: "Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ quản trị viên.",
-                            type: "error",
-                            duration: 1000
-                        });
+                    function Warn_toast() {
+                        swal({
+                            title: "Are you sure?",
+                            text: "Once deleted, you will not be able to recover this file!",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                        })
+                            .then((willDelete) => {
+                                if (willDelete) {
+                                    swal("Poof! Your file has been deleted!", {
+                                        icon: "success",
+                                    });
+                                } else {
+                                    swal("Your file is safe!");
+                                }
+                            });
                     }
                 </script>
                 <!-- Sweet Alert Frem Demo End Here -->

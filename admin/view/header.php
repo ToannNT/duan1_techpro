@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
         <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
         <script>
     function readURL(input, thumbimage) {
@@ -278,6 +279,13 @@
         <a class="app-menu__item" href="index.php?pg=qldanhmuc">
           <i class='app-menu__icon bi bi-card-checklist'></i>
           <span class="app-menu__label">Quản lý danh mục</span>
+        </a>
+      </li>
+      <li>
+        <a class="app-menu__item" href="index.php?pg=qldanhmuc">
+          <!-- <i class='app-menu__icon bi bi-card-checklist'></i> -->
+          <i class="app-menu__icon fa-brands fa-bandcamp"></i>
+          <span class="app-menu__label">Quản lý thương hiệu</span>
         </a>
       </li>
       <li>

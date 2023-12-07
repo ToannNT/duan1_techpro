@@ -480,7 +480,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // }
                 $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][] = $sp;
-                sleep(1);
+                sleep(5);
                 header('location: index.php');
             }
             break;

@@ -193,7 +193,7 @@ function show_SP($dssp)
 
 
                             <input type="hidden" name="quantity" value="1">
-                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                            <button type="submit"  name="addcart" class="add-cart-btn active">Thêm</button>
                         </form>
 
 
@@ -206,7 +206,7 @@ function show_SP($dssp)
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
-                                <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="Warn_toast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                             </form>
                     </ul>
