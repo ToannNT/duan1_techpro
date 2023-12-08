@@ -2591,6 +2591,7 @@ fieldset:disabled a.btn {
   /* width: 100px; */
   font-weight: 600;
   letter-spacing: 1px;
+  margin-left: 15px;
 }
 .btn-cancel{
   background-color: rgb(255 197 197);
@@ -10672,6 +10673,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
   color: #333333;
   font-size: 13px;
   line-height: 1.42857143;
@@ -13858,8 +13861,11 @@ be a descendant of the grid when it is being dragged.
   width: 250px;
   padding-left: 10px;
   padding-right: 10px;
+  overflow: auto;
   z-index: 10;
   background: rgb(0, 28, 64);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  /* border-bottom-right-radius: 50px; */
 }
 
 .app-sidebar::-webkit-scrollbar {

@@ -8,6 +8,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 // echo var_dump($dsdanhmuc_all);
 // echo var_dump($_SESSION['giohang']);
 
+<<<<<<< HEAD
 $showbn12 = "";
 foreach ($showdsbn12 as $tt) {
     extract($tt);
@@ -24,6 +25,8 @@ foreach ($showdsbn12 as $tt) {
         </div>
     ';
 }
+=======
+>>>>>>> parent of 611c014 (udblogadm)
 ?>
 
 <!-- Begin Slider With Banner Area -->
@@ -79,7 +82,20 @@ foreach ($showdsbn12 as $tt) {
             <!-- Slider Area End Here -->
             <!-- Begin Li Banner Area -->
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+<<<<<<< HEAD
                 <?= $showbn12 ?>
+=======
+                <div class="li-banner">
+                    <a href="index.php?pg=product">
+                        <img src="./view/layout/images/banner/bn6.png" alt>
+                    </a>
+                </div>
+                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                    <a href="index.php?pg=product">
+                        <img src="./view/layout/images/banner/bn7.png" alt>
+                    </a>
+                </div>
+>>>>>>> parent of 611c014 (udblogadm)
                 <!-- <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
                         <a href="#">
                             <img src="./view/layout/images/banner/bn8.png" alt>
@@ -964,6 +980,7 @@ foreach ($showdsbn12 as $tt) {
 
                 <div class="row">
                     <!-- <div class="product-active owl-carousel"> -->
+<<<<<<< HEAD
                     <?php foreach ($data_tintucindex as $tt) : ?>
                         <!-- single-product-wrap start -->
                         <div class="col-lg-4 col-md-4">
@@ -978,6 +995,24 @@ foreach ($showdsbn12 as $tt) {
                                             </a>
                                         </h3>
                                         <div class="li-blog-meta">
+=======
+                    <?php foreach ($data_tintucindex as $tt): ?>
+                    <!-- single-product-wrap start -->
+                    <div class="col-lg-3 col-md-3">
+                        <div class="li-blog-single-item">
+                            <div class="li-blog-banner">
+                                <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
+                                        src="<?= $tt['hinh'] ?>" alt=""></a>
+                            </div>
+                            <div class="li-blog-content">
+                                <div class="li-blog-details">
+                                    <h3 class="li-blog-heading pt-25"><a
+                                            href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
+                                            <?= $tt['tieude'] ?>
+                                        </a>
+                                    </h3>
+                                    <div class="li-blog-meta">
+>>>>>>> parent of 611c014 (udblogadm)
 
                                             <a class="post-time" href="#"><i class="fa fa-calendar"></i>
                                                 <?= $tt['ngay'] ?>

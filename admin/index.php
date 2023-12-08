@@ -9,7 +9,6 @@ require_once "../dao/danhmuc.php";
 require_once "../dao/giohang.php";
 require_once "../dao/bill.php";
 require_once "../dao/bannerslider.php";
-require_once "../dao/blog.php";
 require_once "view/header.php";
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
@@ -268,6 +267,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $target_file ="../view/layout/asset/css/images/slider/". $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_slider($stt, $mota, $img, $idsl);
+
                 // hàm show slider id
                 $showup_slider=showup_slider($idsl);
                 header('location: index.php?pg=qlbanner');
@@ -280,55 +280,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 del_slider($id);
                 header('location: index.php?pg=qlbanner');
             }
+        case 'qldonhang':
+            require_once "view/qldonhang.php";
             break;
-        case 'addblog':
-            if(isset($_POST['btnblog'])){
-                $mablog = $_POST['mablog'];
-                $tieudeblog = $_POST['tieudeblog'];
-                $chitietblog = $_POST['chitietblog'];
-                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
-                    $imgblog = $_FILES['imgblog']['name'];
-                }else{ 
-                    $imgblog = "noimg.jpeg";
-                }
-                $target_file ="../view/layout/images/blog/". $imgblog;
-                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
-                insert_blog($mablog, $tieudeblog, $chitietblog, $imgblog);
-                header('location: index.php?pg=qlblog');
-            }
-            require_once "view/addblog.php";
-            break;
-        case 'qlblog':
-            $get_blog = select_blog(10);
-            require_once "view/qlblog.php";
-            break;
-        case 'updateblog':
-            if(isset($_GET['id_blog'])&&($_GET['id_blog']>0)){
-                $idblog=$_GET['id_blog'];
-                $showup_blog=showup_blog($idblog);
-            }
-            require_once "view/updateblog.php";
-            break;
-        case 'updateblogxl':
-            if(isset($_POST['updateblogxl'])){
-                $mablog = $_POST['mablog'];
-                $tieudeblog = $_POST['tieudeblog'];
-                $chitietblog = $_POST['chitietblog'];
-                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
-                    $imgblog = $_FILES['imgblog']['name'];
-                }
-                if($imgblog==""){
-                    $imgblog = $_POST['imgold'];
-                }
-                $idblog = $_POST['idblog'];
-                $target_file ="../view/layout/images/blog/". $imgblog;
-                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
-                update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
-                header('location: index.php?pg=qlblog');
-            }
-            require_once "view/updateblog.php";
-            break;
-
         case 'adddonhang':
             require_once "view/adddonhang.php";
             break;
