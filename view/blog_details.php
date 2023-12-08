@@ -2,7 +2,7 @@
     <div class="container">
         <div class="breadcrumb-content">
             <ul>
-                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.php">Trang chủ</a></li>
                 <li class="active">Chi tiết sản phẩm</li>
             </ul>
         </div>
@@ -47,7 +47,7 @@
                         <div class="li-recent-post pb-30">
                             <div class="li-recent-post-thumb">
                                 <a href="blog-details-left-sidebar.html">
-                                    <img class="img-full" src="<?= $tt['hinh'] ?>" alt="Li's Product Image">
+                                    <img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt="Li's Product Image">
                                 </a>
                             </div>
                             <div class="li-recent-post-des">
@@ -72,7 +72,7 @@
                     <div class="col-lg-12">
                         <div class="li-blog-single-item pb-30">
                             <div class="li-blog-banner" style="display: flex; justify-content: center;">
-                                <a href="blog-details.html"><img class="img-full" src="<?= $data['CTSP']['hinh'] ?>"
+                                <a href="blog-details.html"><img class="img-full" src="./view/layout/images/blog/<?= $data['CTSP']['hinh'] ?>"
                                         alt=""></a>
                             </div>
                             <div class="li-blog-content">

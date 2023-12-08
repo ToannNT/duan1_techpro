@@ -973,7 +973,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                         <div class="col-lg-3 col-md-3">
                             <div class="li-blog-single-item">
                                 <div class="li-blog-banner">
-                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt=""></a>
                                 </div>
                                 <div class="li-blog-content">
                                     <div class="li-blog-details">

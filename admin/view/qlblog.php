@@ -10,8 +10,8 @@ $html_showblog = "";
                   <img src="../view/layout/images/blog/' . $hinh . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
               </td>
               <td>'.$tieude.'</td>
-              <td style="max-height:100px;">'.$noidung.'</td>
-              <td><a href="index.php?pg=delblog&idbn='.$id_blog.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> </button>
+              <td style="max-height: 100px; max-width: 500px; position: absolute; overflow: hidden;">'.$noidung.'</td>
+              <td><a href="index.php?pg=delblog&id_blog='.$id_blog.'"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> </button>
                   <a href="index.php?pg=updateblog&id_blog='.$id_blog.'"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
               </td>
           </tr>';
@@ -42,7 +42,7 @@ $html_showblog = "";
                                     <th>Mã danh mục</th>
                                     <th>Hình ảnh</th>
                                     <th  style="width:20%;" >Tiêu đề</th>
-                                    <th  style="width:50%;" >Nội dung</th>
+                                    <th  style="width:500px;" >Nội dung</th>
                                     <th>Thuộc tính</th>
                                 </tr>
                             </thead>

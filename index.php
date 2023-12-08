@@ -15,6 +15,9 @@ require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
 require_once "dao/checkout.php";
+require_once "dao/thongke.php";
+require_once "dao/donhang.php";
+
 
 //header
 $ds_danhmuc = dsdm_catalog();
@@ -224,6 +227,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
+
+
             if (isset($_POST['checkout']) && ($_POST['checkout'])) {
                 $hoten = $_POST['hoten'];
                 $diachi = $_POST['diachi'];
@@ -278,7 +283,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     $password = "172004" . rand(1, 99999);
                     $iduser = user_insert_id($username, $password, $hoten, $diachi, $email, $dienthoai);
                 }
-                $ma_donhang = "TECHPRO" . $iduser . "-" . date("His-dmY");
+                $ma_donhang = "TECHPRO" . "$iduser" . date("dmY");
+
+
                 // First tạo đơn hàng 
                 $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt, $ngaydathang, $giamgiahoivien);
 
@@ -300,7 +307,21 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 foreach ($_SESSION['giohang'] as $key => $value) {
                     extract($value);
                     if ($s_status == 1) {
-                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien, $ship, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher);
+                        //thêm sản vào bảng CART
+                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                        //update Số lượng sản phẩm
+                        update_quantity_product($idpro);
+                        // thêm sản phẩm vào bảng  ORDER
+                        $randomChars = "";
+                        for ($i = 0; $i < 4; $i++) {
+                            $randomChars .= chr(mt_rand(65, 90)); // Random ký tự từ A-Z (theo bảng mã ASCII)
+                        }
+                        $madh = $randomChars . "-" . $iduser . date("dmY");
+
+                        // $madh = "Toannha" . $iduser . "-" . date("His-dmY");
+
+                        insert_orderr($madh, $iduser, $idpro, $id_bill, $name, $price, $img, $quantity, $ngaydathang, $ten_nhan, $sdt_nhan, $diachi_nhan, $ship, $voucher, $giamgiahoivien, $pttt, 0);
+
                         unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
                     }
                 }
@@ -514,6 +535,23 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 extract($_SESSION['s_user']);
                 $id_user = $_SESSION['s_user']['id'];
                 $show_my_order = get_ds_order($id_user);
+
+                if (isset($_GET['huydon']) && ($_GET['huydon'] != "")) {
+                    $id_huydon =  $_GET["huydon"];
+                    $status =  "";
+                    $idorder =  "";
+                    header("location: index.php?pg=my_order");
+
+                    update_status_my_order($id_huydon, $idorder, $status);
+                } else if (isset($_GET['status']) && ($_GET['status'] != "")) {
+                    $id_huydon = "";
+                    $status = $_GET['status'];
+                    $idorder = $_GET['idorder'];
+                    update_status_my_order($id_huydon, $idorder, $status);
+                    header("location: index.php?pg=my_order");
+                }
+
+
                 include_once "view/my_order.php";
             } else {
                 echo ("Đăng nhập để xem đơn hàng của bạn");
@@ -521,11 +559,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
             break;
         case 'detailed_order':
-            if (isset($_GET['idpro']) && ($_GET['idpro'] != "")) {
-                $idpro = $_GET["idpro"];
-                $id_cart = $_GET["idcart"];
+            if (isset($_GET['id_order']) && ($_GET['id_order'] != "")) {
+                $id_order = $_GET["id_order"];
+                $sl_spbill = $_GET["id_bill"];
 
-                $sp_detailed_order = get_ds_detailed_order($idpro, $id_cart);
+                $sp_detailed_order = get_ds_detailed_order($id_order);
+                $slsp_in_bill = count_sp_inbill($sl_spbill);
             }
             include_once "view/detailed_order.php";
             break;

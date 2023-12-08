@@ -10,12 +10,14 @@ require_once "../dao/giohang.php";
 require_once "../dao/bill.php";
 require_once "../dao/bannerslider.php";
 require_once "../dao/blog.php";
+require_once "../dao/donhang.php";
+
 require_once "view/header.php";
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
     $pg = $_GET['pg'];
     switch ($pg) {
-        // 1111111111111111111111111
+            // 1111111111111111111111111
         case 'qldanhmuc':
             $get_Cataloglist = get_Catalog();
             require_once "view/qldanhmuc.php";
@@ -68,7 +70,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'qlsanpham':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
-            $showspadm=get_tablesp(20);
+            $showspadm = get_tablesp(20);
             require_once "view/qlsanpham.php";
             break;
         case 'addsanpham':
@@ -77,138 +79,200 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/addsanpham.php";
             break;
         case 'delsp':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];
-                $showup=get_Sp_Detail($id);
-                $target_file ="../view/layout/images/product/". $showup['hinhsp'];
-                unlink($target_file);
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
+            if (isset($_GET['id']) && ($_GET['id'] > 0)){
+                $id = $_GET['id'];
+                $showup = get_Sp_Detail($id);
+                $target_file = "../view/layout/images/product/".$showup['hinh'];
+                if (file_exists($target_file)) {
+                    unlink($target_file);
+                    echo "File $target_file đã bị xóa.";
+                } else {
+                    echo "File $target_file không tồn tại.";
+                }
                 delsp($id);
-                $showspadm=get_tablesp(20);
-                require_once "view/qlsanpham.php";
+                header('location: index.php?pg=qlsanpham');
             }
             break;
         case 'updatepro':
-            if(isset($_POST['btnupdatepro'])){
+            if (isset($_POST['btnupdatepro'])) {
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
                 $giaban = $_POST['giaban'];
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
-                if(isset($_FILES['imgup']['name'])){
+                if (isset($_FILES['imgup']['name'])) {
                     $hinhsp = $_FILES['imgup']['name'];
                 }
-                if($hinhsp ==""){
+                if ($hinhsp == "") {
                     $hinhsp = $_POST['imgold'];
                 }
                 $hinh1 = $_FILES['hinh1']['name'];
-                if($hinh1==""){$hinh1 = $_POST['imgold1'];}
-                
+                if ($hinh1 == "") {
+                    $hinh1 = $_POST['imgold1'];
+                }
+
                 $hinh2 = $_FILES['hinh2']['name'];
-                if($hinh2==""){$hinh2 = $_POST['imgold2'];}
+                if ($hinh2 == "") {
+                    $hinh2 = $_POST['imgold2'];
+                }
 
                 $hinh3 = $_FILES['hinh3']['name'];
-                if($hinh3==""){$hinh3 = $_POST['imgold3'];}
-                
+                if ($hinh3 == "") {
+                    $hinh3 = $_POST['imgold3'];
+                }
+
                 $hinh4 = $_FILES['hinh4']['name'];
-                if($hinh4==""){$hinh4 = $_POST['imgold4'];}
+                if ($hinh4 == "") {
+                    $hinh4 = $_POST['imgold4'];
+                }
                 $chitiet = $_POST['chitiet'];
                 $mota = $_POST['mota'];
-                if(isset($_POST['seo'])){$seo = $_POST['seo'];if($seo) $seo=1; else $seo=0;}else{$seo=0;}
-                if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
-                if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
-                if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
+                if (isset($_POST['seo'])) {
+                    $seo = $_POST['seo'];
+                    if ($seo) $seo = 1;
+                    else $seo = 0;
+                } else {
+                    $seo = 0;
+                }
+                if (isset($_POST['moi'])) {
+                    $moi = $_POST['moi'];
+                    if ($moi) $moi = 1;
+                    else $moi = 0;
+                } else {
+                    $moi = 0;
+                }
+                if (isset($_POST['many'])) {
+                    $many = $_POST['many'];
+                    if ($many) $many = 1;
+                    else $many = 0;
+                } else {
+                    $many = 0;
+                }
+                if (isset($_POST['run'])) {
+                    $run = $_POST['run'];
+                    if ($run) $run = 1;
+                    else $run = 0;
+                } else {
+                    $run = 0;
+                }
                 $id = $_POST['id'];
-                $target_file ="../view/layout/images/product/". $hinhsp;
+                $target_file = "../view/layout/images/product/" . $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
             }
-            $showspadm=get_tablesp(20);
+            $showspadm = get_tablesp(20);
             require_once "view/qlsanpham.php";
             break;
         case 'updatesp':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];
-                $showup=get_Sp_Detail($id);
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $showup = get_Sp_Detail($id);
             }
             $dsdm_adm = dsdm_catalog();
             $dsbr_adm = dsdm_brand();
-            $showspadm=get_tablesp(20);
+            $showspadm = get_tablesp(20);
             require_once "view/updatesp.php";
             break;
         case 'addsp':
             // error_reporting(E_ALL);
             // ini_set('display_errors', '1');
-            if(isset($_POST['addsp'])){
+            if (isset($_POST['addsp'])) {
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
                 $giaban = $_POST['giaban'];
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
-                if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
+                if (isset($_FILES['imgup']['name']) && ($_FILES['imgup']['name'] !== "")) {
                     $hinhsp = $_FILES['imgup']['name'];
-                }else{ 
+                } else {
                     $hinhsp = "noimg.jpeg";
                 }
                 $hinh1 = $_FILES['hinh1']['name'];
                 $hinh2 = $_FILES['hinh2']['name'];
                 $hinh3 = $_FILES['hinh3']['name'];
                 $hinh4 = $_FILES['hinh4']['name'];
-                $chitiet = $_POST['chitiet'];//chitiet
-                $mota = $_POST['mota'];//chitiet
-                if(isset($_POST['seo'])){$seo = $_POST['seo'];if($seo) $seo=1; else $seo=0;}else{$seo=0;}
-                if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
-                if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
-                if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
-                if($masp==""){
-                    $alert= '<p style="color:red;">Vui lòng nhập mã sản phẩm</p>';
+                $chitiet = $_POST['chitiet']; //chitiet
+                $mota = $_POST['mota']; //chitiet
+                if (isset($_POST['seo'])) {
+                    $seo = $_POST['seo'];
+                    if ($seo) $seo = 1;
+                    else $seo = 0;
+                } else {
+                    $seo = 0;
+                }
+                if (isset($_POST['moi'])) {
+                    $moi = $_POST['moi'];
+                    if ($moi) $moi = 1;
+                    else $moi = 0;
+                } else {
+                    $moi = 0;
+                }
+                if (isset($_POST['many'])) {
+                    $many = $_POST['many'];
+                    if ($many) $many = 1;
+                    else $many = 0;
+                } else {
+                    $many = 0;
+                }
+                if (isset($_POST['run'])) {
+                    $run = $_POST['run'];
+                    if ($run) $run = 1;
+                    else $run = 0;
+                } else {
+                    $run = 0;
+                }
+                if ($masp == "") {
+                    $alert = '<p style="color:red;">Vui lòng nhập mã sản phẩm</p>';
                     require_once "view/addsp.php";
                 }
                 insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
-                $target_file ="../view/layout/images/product/". $hinhsp;
+                $target_file = "../view/layout/images/product/" . $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                $target_file1 ="../view/layout/images/product/". $hinh1;
+                $target_file1 = "../view/layout/images/product/" . $hinh1;
                 move_uploaded_file($_FILES['hinh1']['tmp_name'], $target_file1);
-                $target_file2 ="../view/layout/images/product/". $hinh2;
+                $target_file2 = "../view/layout/images/product/" . $hinh2;
                 move_uploaded_file($_FILES['hinh2']['tmp_name'], $target_file2);
-                $target_file3 ="../view/layout/images/product/". $hinh3;
+                $target_file3 = "../view/layout/images/product/" . $hinh3;
                 move_uploaded_file($_FILES['hinh3']['tmp_name'], $target_file3);
-                $target_file4 ="../view/layout/images/product/". $hinh4;
+                $target_file4 = "../view/layout/images/product/" . $hinh4;
                 move_uploaded_file($_FILES['hinh4']['tmp_name'], $target_file4);
-                
+
                 //đưa về qlsanpham
 
-                $showspadm=get_tablesp(20);
-                    require_once "view/qlsanpham.php";
-                }else{
-                    require_once "view/addsp.php";
-                }
+                $showspadm = get_tablesp(20);
+                require_once "view/qlsanpham.php";
+            } else {
+                require_once "view/addsp.php";
+            }
             break;
         case 'qlbanner':
             // error_reporting(E_ALL);
             // ini_set('display_errors', '1');
-            $get_banner=db_banner(10);
-            $get_slider=db_slider(10);
+            $get_banner = db_banner(10);
+            $get_slider = db_slider(10);
             require_once "view/qlbanner.php";
             break;
         case 'addbanner':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
-            if(isset($_POST['btnbn'])&&($_POST['btnbn']!="")){
+            if (isset($_POST['btnbn']) && ($_POST['btnbn'] != "")) {
                 $stt = $_POST['stt'];
                 $mota = $_POST['mota'];
                 $img = $_FILES['imgup']['name'];
-                $target_file ="../view/layout/images/banner/". $img;
+                $target_file = "../view/layout/images/banner/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 insert_banner($stt, $mota, $img);
                 header('location: index.php?pg=qlbanner');
             }
-            if(isset($_POST['btnsd'])&&($_POST['btnsd']!="")){
+            if (isset($_POST['btnsd']) && ($_POST['btnsd'] != "")) {
                 $stt = $_POST['sttsd'];
                 $mota = $_POST['motasd'];
                 $img = $_FILES['imgupsd']['name'];
-                $target_file ="../view/layout/asset/css/images/slider/". $img;
+                $target_file = "../view/layout/asset/css/images/slider/" . $img;
                 move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
                 insert_slider($stt, $mota, $img);
                 header('location: index.php?pg=qlbanner');
@@ -216,83 +280,83 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/addbanner.php";
             break;
         case 'updatebanner':
-            if(isset($_POST['updatebn'])){
+            if (isset($_POST['updatebn'])) {
                 $stt = $_POST['stt'];
                 $mota = $_POST['mota'];
-                if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
+                if (isset($_FILES['imgup']['name']) && ($_FILES['imgup']['name'] !== "")) {
                     $img = $_FILES['imgup']['name'];
-                }else{ 
+                } else {
                     $img = "noimg.jpeg";
                 }
-                if($img==""){
+                if ($img == "") {
                     $img = $_POST['imgold'];
                 }
                 $idbn = $_POST['idbn'];
-                $target_file ="../view/layout/images/banner/". $img;
+                $target_file = "../view/layout/images/banner/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_banner($stt, $mota, $img, $idbn);
                 // hàm show banner id
-                $showup_banner=showup_banner($idbn);
+                $showup_banner = showup_banner($idbn);
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/updatebn.php";
             break;
         case 'updatebnsl':
-            if(isset($_GET['idbn'])&&($_GET['idbn']>0)){
-                $idbn=$_GET['idbn'];
-                $showup_banner=showup_banner($idbn);
+            if (isset($_GET['idbn']) && ($_GET['idbn'] > 0)) {
+                $idbn = $_GET['idbn'];
+                $showup_banner = showup_banner($idbn);
             }
             $get_banner = db_banner(10);
             require_once "view/updatebnsl.php";
             break;
         case 'delbanner':
-            if(isset($_GET['idbn'])&&($_GET['idbn']>0)){
-                $id=$_GET['idbn'];
+            if (isset($_GET['idbn']) && ($_GET['idbn'] > 0)) {
+                $id = $_GET['idbn'];
                 del_banner($id);
                 header('location: index.php?pg=qlbanner');
             }
             break;
-        
+
         case 'updateslider':
-            if(isset($_POST['updatesl'])){
+            if (isset($_POST['updatesl'])) {
                 $sttsd = $_POST['sttsd'];
                 $motasd = $_POST['motasd'];
-                if(isset($_FILES['imgupsd']['name'])&&($_FILES['imgupsd']['name']!=="")){
+                if (isset($_FILES['imgupsd']['name']) && ($_FILES['imgupsd']['name'] !== "")) {
                     $imgsd = $_FILES['imgupsd']['name'];
-                }else{ 
+                } else {
                     $imgsd = "noimg.jpeg";
                 }
-                if($imgsd==""){
+                if ($imgsd == "") {
                     $imgsd = $_POST['imgold'];
                 }
                 $idsl = $_POST['idsl'];
-                $target_file ="../view/layout/asset/css/images/slider/". $img;
+                $target_file = "../view/layout/asset/css/images/slider/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_slider($stt, $mota, $img, $idsl);
                 // hàm show slider id
-                $showup_slider=showup_slider($idsl);
+                $showup_slider = showup_slider($idsl);
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/updatebn.php";
             break;
         case 'delslider':
-            if(isset($_GET['idsd'])&&($_GET['idsd']>0)){
-                $id=$_GET['idsd'];
+            if (isset($_GET['idsd']) && ($_GET['idsd'] > 0)) {
+                $id = $_GET['idsd'];
                 del_slider($id);
                 header('location: index.php?pg=qlbanner');
             }
             break;
         case 'addblog':
-            if(isset($_POST['btnblog'])){
+            if (isset($_POST['btnblog'])) {
                 $mablog = $_POST['mablog'];
                 $tieudeblog = $_POST['tieudeblog'];
                 $chitietblog = $_POST['chitietblog'];
-                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
+                if (isset($_FILES['imgblog']['name']) && ($_FILES['imgblog']['name'] !== "")) {
                     $imgblog = $_FILES['imgblog']['name'];
-                }else{ 
+                } else {
                     $imgblog = "noimg.jpeg";
                 }
-                $target_file ="../view/layout/images/blog/". $imgblog;
+                $target_file = "../view/layout/images/blog/" . $imgblog;
                 move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
                 insert_blog($mablog, $tieudeblog, $chitietblog, $imgblog);
                 header('location: index.php?pg=qlblog');
@@ -304,30 +368,56 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/qlblog.php";
             break;
         case 'updateblog':
-            if(isset($_GET['id_blog'])&&($_GET['id_blog']>0)){
-                $idblog=$_GET['id_blog'];
-                $showup_blog=showup_blog($idblog);
+            if (isset($_GET['id_blog']) && ($_GET['id_blog'] > 0)) {
+                $idblog = $_GET['id_blog'];
+                $showup_blog = showup_blog($idblog);
             }
             require_once "view/updateblog.php";
             break;
         case 'updateblogxl':
-            if(isset($_POST['updateblogxl'])){
+            if (isset($_POST['updateblogxl'])) {
                 $mablog = $_POST['mablog'];
                 $tieudeblog = $_POST['tieudeblog'];
                 $chitietblog = $_POST['chitietblog'];
-                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
+                if (isset($_FILES['imgblog']['name']) && ($_FILES['imgblog']['name'] !== "")) {
                     $imgblog = $_FILES['imgblog']['name'];
                 }
-                if($imgblog==""){
+                if ($imgblog == "") {
                     $imgblog = $_POST['imgold'];
                 }
                 $idblog = $_POST['idblog'];
-                $target_file ="../view/layout/images/blog/". $imgblog;
+                $target_file = "../view/layout/images/blog/" . $imgblog;
                 move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
                 update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
                 header('location: index.php?pg=qlblog');
             }
+
             require_once "view/updateblog.php";
+            break;
+        case 'delblog':
+            if (isset($_GET['id_blog']) && ($_GET['id_blog'] > 0)) {
+                $id = $_GET['id_blog'];
+                del_blog($id);
+                header('location: index.php?pg=qlblog');
+            }
+            break;
+        case 'qldonhang':
+            if (isset($_POST['submit_donhang'])) {
+                $keyword = $_POST['keyword'];
+            } else {
+                $keyword = "";
+            }
+            $ds_order = getds_orderAll($keyword);
+
+
+            if (isset($_GET['status']) && $_GET['status'] != "") {
+                $status = $_GET["status"];
+                $idorder = $_GET["idorder"];
+                update_status_order($status, $idorder);
+                header("location: index.php?pg=qldonhang");
+            }
+
+            require_once "view/qldonhang.php";
             break;
 
         case 'adddonhang':
