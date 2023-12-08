@@ -9,6 +9,10 @@ require_once "../dao/danhmuc.php";
 require_once "../dao/giohang.php";
 require_once "../dao/bill.php";
 require_once "../dao/bannerslider.php";
+<<<<<<< HEAD
+=======
+require_once "../dao/blog.php";
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 require_once "view/header.php";
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
@@ -78,19 +82,30 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'delsp':
             if(isset($_GET['id'])&&($_GET['id']>0)){
                 $id=$_GET['id'];
+<<<<<<< HEAD
+=======
+                $showup=get_Sp_Detail($id);
+                $target_file ="../view/layout/images/product/". $showup['hinhsp'];
+                unlink($target_file);
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 delsp($id);
                 $showspadm=get_tablesp(20);
                 require_once "view/qlsanpham.php";
             }
             break;
         case 'updatepro':
+<<<<<<< HEAD
             if(isset($_POST['updatepro'])){
+=======
+            if(isset($_POST['btnupdatepro'])){
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 $masp = $_POST['masp'];
                 $tensp = $_POST['tensp'];
                 $giaban = $_POST['giaban'];
                 $giagiam = $_POST['giagiam'];
                 $tendm = $_POST['danhmucsp'];
                 $tenbr = $_POST['brandsp'];
+<<<<<<< HEAD
                 if(isset($_FILES['imgup']['name'])&&($_FILES['imgup']['name']!=="")){
                     $hinhsp = $_FILES['imgup']['name'];
                 }else{
@@ -112,12 +127,32 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if($hinh4==""){
                     $hinh4 = $_POST['imgold4'];
                 }
+=======
+                if(isset($_FILES['imgup']['name'])){
+                    $hinhsp = $_FILES['imgup']['name'];
+                }
+                if($hinhsp ==""){
+                    $hinhsp = $_POST['imgold'];
+                }
+                $hinh1 = $_FILES['hinh1']['name'];
+                if($hinh1==""){$hinh1 = $_POST['imgold1'];}
+                
+                $hinh2 = $_FILES['hinh2']['name'];
+                if($hinh2==""){$hinh2 = $_POST['imgold2'];}
+
+                $hinh3 = $_FILES['hinh3']['name'];
+                if($hinh3==""){$hinh3 = $_POST['imgold3'];}
+                
+                $hinh4 = $_FILES['hinh4']['name'];
+                if($hinh4==""){$hinh4 = $_POST['imgold4'];}
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 $chitiet = $_POST['chitiet'];
                 $mota = $_POST['mota'];
                 if(isset($_POST['seo'])){$seo = $_POST['seo'];if($seo) $seo=1; else $seo=0;}else{$seo=0;}
                 if(isset($_POST['moi'])){$moi = $_POST['moi'];if($moi) $moi=1; else $moi=0;}else{$moi=0;}
                 if(isset($_POST['many'])){$many = $_POST['many'];if($many) $many=1; else $many=0;}else{$many=0;}
                 if(isset($_POST['run'])){$run = $_POST['run'];if($run) $run=1; else $run=0;}else{$run=0;}
+<<<<<<< HEAD
                 if($hinhsp ==""){
                     $hinhsp = $_POST['imgold'];
                 }
@@ -128,6 +163,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
                 $target_file ="../view/layout/images/product/". $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+=======
+                $id = $_POST['id'];
+                $target_file ="../view/layout/images/product/". $hinhsp;
+                move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+                updatesp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run, $id);
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
             }
             $showspadm=get_tablesp(20);
             require_once "view/qlsanpham.php";
@@ -174,6 +215,17 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 insertsp($masp, $tensp, $giaban, $giagiam, $tendm, $tenbr, $hinhsp, $hinh1, $hinh2, $hinh3, $hinh4, $chitiet, $mota, $seo, $moi, $many, $run);
                 $target_file ="../view/layout/images/product/". $hinhsp;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
+<<<<<<< HEAD
+=======
+                $target_file1 ="../view/layout/images/product/". $hinh1;
+                move_uploaded_file($_FILES['hinh1']['tmp_name'], $target_file1);
+                $target_file2 ="../view/layout/images/product/". $hinh2;
+                move_uploaded_file($_FILES['hinh2']['tmp_name'], $target_file2);
+                $target_file3 ="../view/layout/images/product/". $hinh3;
+                move_uploaded_file($_FILES['hinh3']['tmp_name'], $target_file3);
+                $target_file4 ="../view/layout/images/product/". $hinh4;
+                move_uploaded_file($_FILES['hinh4']['tmp_name'], $target_file4);
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 
                 //đưa về qlsanpham
 
@@ -267,7 +319,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $target_file ="../view/layout/asset/css/images/slider/". $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
                 update_slider($stt, $mota, $img, $idsl);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 // hàm show slider id
                 $showup_slider=showup_slider($idsl);
                 header('location: index.php?pg=qlbanner');
@@ -280,9 +335,61 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 del_slider($id);
                 header('location: index.php?pg=qlbanner');
             }
+<<<<<<< HEAD
         case 'qldonhang':
             require_once "view/qldonhang.php";
             break;
+=======
+            break;
+        case 'addblog':
+            if(isset($_POST['btnblog'])){
+                $mablog = $_POST['mablog'];
+                $tieudeblog = $_POST['tieudeblog'];
+                $chitietblog = $_POST['chitietblog'];
+                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
+                    $imgblog = $_FILES['imgblog']['name'];
+                }else{ 
+                    $imgblog = "noimg.jpeg";
+                }
+                $target_file ="../view/layout/images/blog/". $imgblog;
+                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
+                insert_blog($mablog, $tieudeblog, $chitietblog, $imgblog);
+                header('location: index.php?pg=qlblog');
+            }
+            require_once "view/addblog.php";
+            break;
+        case 'qlblog':
+            $get_blog = select_blog(10);
+            require_once "view/qlblog.php";
+            break;
+        case 'updateblog':
+            if(isset($_GET['id_blog'])&&($_GET['id_blog']>0)){
+                $idblog=$_GET['id_blog'];
+                $showup_blog=showup_blog($idblog);
+            }
+            require_once "view/updateblog.php";
+            break;
+        case 'updateblogxl':
+            if(isset($_POST['updateblogxl'])){
+                $mablog = $_POST['mablog'];
+                $tieudeblog = $_POST['tieudeblog'];
+                $chitietblog = $_POST['chitietblog'];
+                if(isset($_FILES['imgblog']['name'])&&($_FILES['imgblog']['name']!=="")){
+                    $imgblog = $_FILES['imgblog']['name'];
+                }
+                if($imgblog==""){
+                    $imgblog = $_POST['imgold'];
+                }
+                $idblog = $_POST['idblog'];
+                $target_file ="../view/layout/images/blog/". $imgblog;
+                move_uploaded_file($_FILES['imgblog']['tmp_name'], $target_file);
+                update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
+                header('location: index.php?pg=qlblog');
+            }
+            require_once "view/updateblog.php";
+            break;
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
         case 'adddonhang':
             require_once "view/adddonhang.php";
             break;

@@ -21,7 +21,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
         <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+<<<<<<< HEAD
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 
         <script>
     function readURL(input, thumbimage) {
@@ -241,10 +244,17 @@
       });
     })
     
+<<<<<<< HEAD
+=======
+    function momenu() {
+      $('.sub-menu').toggle();
+    }
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
   </script>
       </head>
 
 <body onload="time()" class="app sidebar-mini rtl">
+<<<<<<< HEAD
   <!-- Navbar-->
   <header class="app-header">
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
@@ -254,12 +264,27 @@
 
 
       <!-- User Menu-->
+=======
+
+  <header class="app-header">
+<a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+
+    <ul class="app-nav">
+
+
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
       <li><a class="app-nav__item" href="../index.php"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
   </header>
+<<<<<<< HEAD
   <!-- Sidebar menu-->
+=======
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
@@ -271,8 +296,11 @@
     </div>
     <hr>
     <ul class="app-menu">
+<<<<<<< HEAD
       <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li>
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
       <li><a class="app-menu__item active" href="index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
             class="app-menu__label">Bảng điều khiển</span></a></li>
       <li>
@@ -282,6 +310,7 @@
         </a>
       </li>
       <li>
+<<<<<<< HEAD
         <a class="app-menu__item" href="index.php?pg=qldanhmuc">
           <!-- <i class='app-menu__icon bi bi-card-checklist'></i> -->
           <i class="app-menu__icon fa-brands fa-bandcamp"></i>
@@ -289,6 +318,8 @@
         </a>
       </li>
       <li>
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
         <a class="app-menu__item" href="index.php?pg=qlsanpham">
           <i class='app-menu__icon bx bx-purchase-tag-alt'></i>
           <span class="app-menu__label">Quản lý sản phẩm</span>
@@ -297,11 +328,19 @@
       <li><a class="app-menu__item" href="index.php?pg=qldonhang"><i class='app-menu__icon bx bx-task'></i><span
             class="app-menu__label">Quản lý đơn hàng</span></a></li>
       <li class="app-menu__itemhv">
+<<<<<<< HEAD
         <a class="app-menu__item" href="">
           <i class='app-menu__icon bx bx-image'></i>
           <span class="app-menu__label">Quản lý giao diện</span>
         </a>
         <ul class="sub-menu">
+=======
+        <a onclick="momenu()" class="app-menu__item" href="#">
+          <i class='app-menu__icon bx bx-image'></i>
+          <span class="app-menu__label">Quản lý giao diện</span>
+        </a>
+        <ul class="sub-menu" style="display:none;">
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
           <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span
                 class="app-menu__label">Header</span></a></li>
           <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span
@@ -312,6 +351,15 @@
                 class="app-menu__label">Banner</span></a></li>
         </ul>
       </li>
+<<<<<<< HEAD
+=======
+      <li>
+        <a class="app-menu__item" href="index.php?pg=qlblog">
+          <i class='app-menu__icon bi bi-mailbox'></i>
+          <span class="app-menu__label">Quản lý bài viết</span>
+        </a>
+      </li>
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
       <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
             đặt hệ thống</span></a></li>
     </ul>

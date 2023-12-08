@@ -72,6 +72,36 @@ function  update_pass_user($newpassword, $id)
     pdo_execute($sql, $newpassword, $id);
 }
 
+<<<<<<< HEAD
+=======
+function  update_hoivien_lv1($id)
+{
+    $sql = "UPDATE user SET hoivien = 1 WHERE id = ?";
+    pdo_execute($sql, $id);
+}
+
+function  update_hoivien_lv2($id)
+{
+    $sql = "UPDATE user SET hoivien = 2 WHERE id = ?";
+    pdo_execute($sql, $id);
+}
+
+function  update_hoivien_lv3($id)
+{
+    $sql = "UPDATE user SET hoivien = 2 WHERE id = ?";
+    pdo_execute($sql, $id);
+}
+
+
+function sum_tongtien($id)
+{
+    $sql = "SELECT SUM(tong) FROM bill WHERE id_user = $id";
+    return pdo_query_value($sql);
+}
+
+
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 // img của account nhaaa
 // function getLatestImageFromUser($id) {
 //     // Giả sử bạn có một cột ID để xác định thứ tự

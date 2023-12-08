@@ -414,15 +414,37 @@ $(document).ready(function () {
             }
         }
     });
+<<<<<<< HEAD
 });
 
 // KIỂM TRA DỮ LIỆU TRỐNG END 
+=======
+
+
+
+    // tính giá vận chuyển
+
+
+
+
+
+
+
+
+
+});
+
+
+
+// KIỂM TRA DỮ LIỆU TRỐNG END
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 ////////////////////////////////////
 ///////////////////////////////////
 ////////////////////////////////////
 ///////////////////////////////////
 
 
+<<<<<<< HEAD
 
 
 
@@ -448,10 +470,43 @@ $(document).ready(function () {
     // function clearCheckboxStatus() {
     //     localStorage.removeItem('selectedCheckbox');
     // }
+=======
+function calculateTotal() {
+    var cartTotal = document.getElementById('tongcongtien').value;
+    var html_voucher = document.getElementById('html_voucher').value;
+    var html_hoivien = document.getElementById('html_hoivien').value;
+
+
+    let shippingCost = 0;
+    const shippingOptions = document.getElementsByName('ptvc');
+    for (let i = 0; i < shippingOptions.length; i++) {
+        if (shippingOptions[i].checked) {
+            shippingCost = parseFloat(shippingOptions[i].value);
+        }
+    }
+
+
+    //tính tổng tiền - hv +ship -voucer
+    const finalTotal = (parseInt(cartTotal) - parseInt(html_voucher) - parseInt(html_hoivien)) + parseInt(shippingCost);
+
+    const tongthanhtoan = document.getElementById('tongthanhtoan');
+    //format tiền thanh toán
+    let formattedNumber_tongthanhtoan = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    }).format(finalTotal);
+    formattedNumber_tongthanhtoan = formattedNumber_tongthanhtoan.replace('₫', 'đ');
+
+
+    tongthanhtoan.innerHTML = `${formattedNumber_tongthanhtoan}
+    <input type="hidden" name="tong_thanhtoan" value="   ${finalTotal}">
+    `;
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 
 
 
 
+<<<<<<< HEAD
     // Bắt sự kiện khi input radio được chọn
     $('input[name="ptvc"]').click(function () {
         var selectedValue = $('input[name="ptvc"]:checked').val();
@@ -476,6 +531,87 @@ $(document).ready(function () {
         });
     });
 });
+=======
+    //show html 
+    const html_ship = document.getElementById('html_ship');
+
+    let formattedNumber_vanchuyen = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    }).format(shippingCost);
+    formattedNumber_vanchuyen = formattedNumber_vanchuyen.replace('₫', 'đ');
+
+    html_ship.innerHTML = `+${formattedNumber_vanchuyen}
+    <input type="hidden" name="ptvc" value="${shippingCost}">
+    `;
+
+
+}
+// Gọi hàm tính toán khi trang được tải
+window.onload = function () {
+    calculateTotal();
+};
+
+
+
+
+
+
+// $(document).ready(function () {
+//     // Hàm xử lý lưu và khôi phục trạng thái checkbox
+//     function handleCheckboxStatus() {
+//         // Lấy giá trị của checkbox đã chọn
+//         var selectedCheckbox = $('input[name="ptvc"]:checked').val();
+
+//         // Lưu giá trị của checkbox đã chọn vào localStorage
+//         localStorage.setItem('selectedCheckbox', selectedCheckbox);
+//     }
+
+//     // Kiểm tra nếu đã có giá trị checkbox đã lưu trong localStorage
+//     var savedCheckbox = localStorage.getItem('selectedCheckbox');
+//     if (savedCheckbox) {
+//         // Đặt checkbox đã chọn trước đó là đã được chọn
+//         $('input[name="ptvc"][value="' + savedCheckbox + '"]').prop('checked', true);
+//     }
+
+//     // // Hàm xóa thông tin đã lưu trong localStorage
+//     // function clearCheckboxStatus() {
+//     //     localStorage.removeItem('selectedCheckbox');
+//     // }
+
+
+
+
+//     // Bắt sự kiện khi input radio được chọn
+//     $('input[name="ptvc"]').click(function () {
+//         var selectedValue = $('input[name="ptvc"]:checked').val();
+
+//         // Gửi giá trị được chọn đến xuli.php qua Ajax
+//         $.ajax({
+//             url: './view/update_quantity.php',
+//             method: 'POST',
+//             data: { ptvc: selectedValue },
+//             success: function (response) {
+//                 // Cập nhật lại trang sau khi đã gửi dữ liệu thành công
+//                 handleCheckboxStatus();
+//                 // window.location.reload();
+//                 // location.reload();
+//                 // clearCheckboxStatus(); // Xóa trạng thái checkbox sau khi reload
+
+//             },
+//             error: function (xhr, status, error) {
+//                 // Xử lý lỗi nếu có
+//                 console.error(error);
+//             }
+//         });
+//     });
+// });
+
+
+
+
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 
 
 

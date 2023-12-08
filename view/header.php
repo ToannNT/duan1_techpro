@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 // echo var_dump($dsdanhmuc_all);
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 $show_dm_all = show_DM($ds_danhmuc, $ds_brand);
 
 $show_html_cart = "";
@@ -139,6 +142,15 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./view/layout/asset/css/myaccount.css">
+<<<<<<< HEAD
+=======
+    <!-- Link toast F8 -->
+    <!-- <link rel="stylesheet" href="./view/layout/asset/css/toast.css">
+    <script src="./view/layout/asset/js/toast.js"></script> -->
+    <!-- Toast F8 2 cái trên -->
+    <!-- Cái dưới là Font Awesome Lỗi, để chạy code F8 thì mở hết link ra, rồi Ctrl / cái Toast sweet đi -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/> -->
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
@@ -147,6 +159,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
 </head>
 
 <body>
+<<<<<<< HEAD
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -161,6 +174,13 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                 <div class="container">
                     <div class="row">
                         <!-- Begin Header Logo Area -->
+=======
+    <div class="body-wrapper">
+        <header>
+            <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
+                <div class="container">
+                    <div class="row">
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                         <div class="col-lg-3">
                             <div class="logo pb-sm-30 pb-xs-30">
                                 <a href="index.php">
@@ -168,16 +188,21 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                 </a>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <!-- Header Logo Area End Here -->
                         <!-- Begin Header Middle Right Area -->
                         <div class="wrappr-nav-mid col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                             <!-- Begin Header Middle Searchbox Area -->
+=======
+                        <div class="wrappr-nav-mid col-lg-9 pl-0 ml-sm-15 ml-xs-15">
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                             <form action="index.php?pg=product" method="post" class="hm-searchbox">
                                 <input type="text" id="search_product_name" placeholder="Nhập tên sản phẩm">
                                 <button class="li-btn" name="timkiem" type="submit">
                                     <i style="color: white;" class="fa fa-search"></i>
                                 </button>
                             </form>
+<<<<<<< HEAD
                             <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
                             <div class="header-middle-right">
@@ -186,13 +211,22 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                     <li class="hm-wishlist">
                                         <a href="index.php?pg=wishlist">
                                             <!-- <span class="cart-item-count wishlist-item-count">0</span> -->
+=======
+                            <div class="header-middle-right">
+                                <ul class="hm-menu">
+                                    <li class="hm-wishlist">
+                                        <a href="index.php?pg=wishlist">
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                                             <?= $Favorite_count ?>
                                             <i style="padding-top: 6px; color: red; font-size: 30px;" class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
 
+<<<<<<< HEAD
                                     <!-- Header Middle Wishlist Area End Here -->
                                     <!-- Begin Header Mini Cart Area -->
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                                     <li class="hm-minicart">
                                         <div class="hm-minicart-trigger">
                                             <a href="wishlist.html">
@@ -209,6 +243,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                                 <?php
                                                 echo $show_html_cart;
                                                 ?>
+<<<<<<< HEAD
 
 
 
@@ -230,6 +265,8 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
 
 
 
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                                             </ul>
                                             <p class="minicart-total">Tổng:
                                                 <span style="text-transform: none;"><?= number_format($tt, 0, '.', '.') ?>đ</span>
@@ -238,14 +275,18 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                                 <a href="index.php?pg=viewcart" class="li-button li-button-fullwidth li-button-dark">
                                                     <span>Xem giỏ hàng chi tiết</span>
                                                 </a>
+<<<<<<< HEAD
                                                 <!-- <a href="checkout.html" class="li-button li-button-fullwidth">
                                                     <span>Thanh toán</span>
                                                 </a> -->
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                                             </div>
                                         </div>
                                     </li>
                                     <?= $html_account ?>
                             </div>
+<<<<<<< HEAD
                             <!-- Header Middle Right Area End Here -->
                         </div>
                         <!-- Header Middle Right Area End Here -->
@@ -254,11 +295,20 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
             </div>
             <!-- Header Middle Area End Here -->
             <!-- Begin Header Bottom Area -->
+=======
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
             <div style="display: flex;" class="header-bottom  d-none d-lg-block d-xl-block">
                 <div style="justify-content: center;" class="container">
                     <div class="row">
                         <div class="col-lg-12">
+<<<<<<< HEAD
                             <!-- Begin Header Bottom Menu Area -->
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                             <div class="hb-menu">
                                 <nav>
                                     <ul>
@@ -268,6 +318,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                         <li class="themne megamenu-holder">
                                             <a href="index.php?pg=product">Sản phẩm</a>
                                             <ul class="megamenu hb-megamenu">
+<<<<<<< HEAD
 
 
                                                 <?= $show_dm_all ?>
@@ -286,6 +337,9 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                                     </ul>
                                                 </li> -->
 
+=======
+                                                <?= $show_dm_all ?>
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                                             </ul>
                                         </li>
                                         <li><a href="index.php?pg=blog">Tin tức</a></li>
@@ -295,13 +349,19 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                     </ul>
                                 </nav>
                             </div>
+<<<<<<< HEAD
                             <!-- Header Bottom Menu Area End Here -->
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <!-- Header Bottom Area End Here -->
             <!-- Begin Mobile Menu Area -->
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
             <div class="mobile-menu-area d-lg-none d-xl-none col-12">
                 <div class="container">
                     <div class="row">
@@ -310,6 +370,10 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <!-- Mobile Menu Area End Here -->
         </header>
         <!-- Header Area End Here -->
+=======
+        </header>
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849

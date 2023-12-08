@@ -14,6 +14,10 @@ require_once "dao/giohang.php";
 require_once "dao/bill.php";
 require_once "dao/blog.php";
 require_once "dao/compare.php";
+<<<<<<< HEAD
+=======
+require_once "dao/checkout.php";
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 
 //header
 $ds_danhmuc = dsdm_catalog();
@@ -238,6 +242,18 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $ghichu = $_POST['order_notes'];
                 $ship = $_POST['ptvc'];
                 $ngaydathang = $_POST['ngaydat'];
+<<<<<<< HEAD
+=======
+                $giamgiahoivien = $_POST['hoivien'];
+
+
+
+
+
+                // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
+                guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 if (isset($nguoinhan_hoten) && ($nguoinhan_hoten != "")) {
                     $ten_nhan = $nguoinhan_hoten;
                     $sdt_nhan = $nguoinhan_dienthoai;
@@ -270,7 +286,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
                 $ma_donhang = "TECHPRO" . $iduser . "-" . date("His-dmY");
                 // First tạo đơn hàng 
+<<<<<<< HEAD
                 $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt, $ngaydathang);
+=======
+                $id_bill = bill_insert_id($ma_donhang, $iduser, $hoten, $email, $dienthoai, $diachi, $nguoinhan_hoten, $nguoinhan_dienthoai, $nguoinhan_diachi, $total, $ship, $voucher, $ghichu, $tongthanhtoan, $pttt, $ngaydathang, $giamgiahoivien);
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
 
 
 
@@ -325,7 +345,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
         case 'login_register':
             require_once "view/login_register.php";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
             break;
         case 'register':
             if (isset($_POST["dangky"])) {
@@ -393,7 +416,27 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
                 $kq = checkuser($username, $password);
                 if (is_array($kq) && (count($kq))) {
+<<<<<<< HEAD
                     $_SESSION['s_user'] = $kq;
+=======
+
+                    //lấy id để kiểm tra hội viên    
+                    $id_user = $kq['id'];
+                    $tongtien_order = sum_tongtien($id_user);
+
+                    if ($id_user >= 10000000) {
+                        update_hoivien_lv1($id_user);
+                    } else if ($tongtien_order >= 20000000) {
+                        update_hoivien_lv2($id_user);
+                    } else if ($tongtien_order >= 30000000) {
+                        update_hoivien_lv3($id_user);
+                    }
+
+                    $_SESSION['s_user'] = $kq;
+
+
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                     header('location: index.php?pg=' . $page_here . '');
                 } else {
                     $tb = '<div class="alert alert-danger">Tài khoản không tồn tại hoặc mật khẩu không đúng</div>';
@@ -480,7 +523,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // }
                 $sp = ["id" => $id, "ten" => $name, "hinh" => $img, "gia" => $price];
                 $_SESSION['f_Product'][] = $sp;
+<<<<<<< HEAD
                 sleep(5);
+=======
+                sleep(1);
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
                 header('location: index.php');
             }
             break;
@@ -489,8 +536,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 extract($_SESSION['s_user']);
                 $id_user = $_SESSION['s_user']['id'];
                 $show_my_order = get_ds_order($id_user);
+<<<<<<< HEAD
             }
             include_once "view/my_order.php";
+=======
+                include_once "view/my_order.php";
+            } else {
+                echo ("Đăng nhập để xem đơn hàng của bạn");
+            }
+
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
             break;
         case 'detailed_order':
             if (isset($_GET['idpro']) && ($_GET['idpro'] != "")) {
@@ -528,6 +583,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
     }
 } else {
+<<<<<<< HEAD
+=======
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
     $dssp_hot = get_dssp_hot(5);
     $dssp_new = get_dssp_new(5);
     $dssp_sale = get_dssp_sale(5);
@@ -537,7 +597,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
     require_once "view/home.php";
 }
 

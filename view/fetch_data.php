@@ -108,7 +108,11 @@ if (isset($_POST['input'])) {
         }
         echo $output;
     } else {
+<<<<<<< HEAD
         $output = "<h3>SẢN PHẨM TIỀM KIẾM KHÔNG CÓ :(</h3>";
+=======
+        $output = "<h4 style>Sản phẩm không tồn tại</h4>";
+>>>>>>> 8a6ea6209833b252133dc488cc97508f5c96a849
         echo $output;
     }
 } else if (isset($_POST['action'])) {
