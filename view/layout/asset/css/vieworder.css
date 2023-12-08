@@ -1,0 +1,110 @@
+thead>tr{
+  background-color: #75A2D0;
+}
+.custom-table{
+  border-radius: 10px; /* Đường cong của viền bảng */
+}
+.img-sp{
+  width: 3.5rem;
+}
+tr{
+  font-size: 0.7rem;
+}
+tr>td, tr>th{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+td>span{
+  color: #3BD901;
+}
+td>a:hover{
+  text-decoration: underline;
+  color: #0C2F4E;
+}
+.col-md-9  .h2{
+  /* font-weight: 500; */
+  /* font-size: 20px; */
+  /* text-transform: uppercase; */
+    text-align: left; /* căn lề trái cho tiêu đề h2 */
+    margin-top: 0px; /* đặt lề trái về 0 */
+  margin-bottom: 0;
+}
+/* line */
+.custom-div {
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  display: inline-flex;
+}
+
+.custom-line {
+  width: 90px;
+  height: 3px;
+  position: relative;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.custom-line:nth-child(odd) {
+  background: #60A3E7;
+}
+
+.custom-line:nth-child(even) {
+  background: #0C2F4E;
+}
+/* endline */
+.accout-user{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.accout-user img{
+  width: 3rem;
+  border-radius: 50%;
+}
+  .username{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sidebars{
+  background-color: #f4f4f4;
+  border-radius: 0.7rem;
+  margin-top: 2px;
+}
+.sidebar{
+  padding: 1.5rem 1rem 1.5rem 1rem;
+}
+.sidebar-item i{
+  font-size: 1.5rem;
+}
+
+.sidebar-item{
+  margin-bottom: 2px;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.sidebar-item:first-child{
+  margin-top: 5px;
+}
+/* .sidebar-item:hover{
+  background-color: #0C2F4E;
+  color: white;
+  transition: 0,5s;
+  border-radius: 0.74rem;
+} */
+
+.tr_th>th{
+  padding: 15px 5px;
+  font-size: 14px;
+}
+
+.tr_td>td{
+  /* padding: 20px 5px; */
+  /* font-size: 12px; */
+}
