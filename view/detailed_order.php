@@ -45,7 +45,7 @@ if ($status == 0) {
             <thead>
                 <tr>
                     <th colspan="1" style="vertical-align: baseline; padding-top: 10px; width: 300px;">
-                        <h3>Thông tin nhận hàng:</h3>
+                        <h3>Thông tin người nhận hàng:</h3>
                     </th>
                     <th colspan="1">
                         <p style="font-size: 18px;" class="ttin_nguoidat">Tên: <?= $ten_nhan ?> </p>
@@ -60,8 +60,7 @@ if ($status == 0) {
             <tbody>
                 <tr>
                     <td colspan="2">
-                        <div class="i__Phone" style="max-width: 140px;"><img
-                                src="./view/layout/images/product/<?= $hinh ?>" alt="">
+                        <div class="i__Phone" style="max-width: 140px;"><img src="./view/layout/images/product/<?= $hinh ?>" alt="">
                         </div>
                         <div style="margin-top: 15px;" class="inf__Phone">
                             <h4><?= $ten ?></h4>

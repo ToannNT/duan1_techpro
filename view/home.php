@@ -8,6 +8,22 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 // echo var_dump($dsdanhmuc_all);
 // echo var_dump($_SESSION['giohang']);
 
+// $showbn12 = "";
+// foreach ($showdsbn12 as $tt) {
+//     extract($tt);
+//     if ($trangthai == 1) {
+//         $showtrangthai = '<img src="./view/layout/images/banner/'.$img.'">;';
+//     } else {
+//         $showtrangthai = '';
+//     }
+//     $showbn12 .= '
+//         <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+//             <a href="index.php?pg=product">
+//                 '.$showtrangthai.'
+//             </a>
+//         </div>
+//     ';
+// }
 ?>
 
 <!-- Begin Slider With Banner Area -->
@@ -63,21 +79,16 @@ $show_dssp_suggest = show_SP($dssp_suggest);
             <!-- Slider Area End Here -->
             <!-- Begin Li Banner Area -->
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                <div class="li-banner">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn6.png" alt>
+                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                    <a href="#">
+                        <img src="./view/layout/images/banner/bn8.png" alt>
                     </a>
                 </div>
                 <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn7.png" alt>
+                    <a href="#">
+                        <img src="./view/layout/images/banner/bn8.png" alt>
                     </a>
                 </div>
-                <!-- <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                        <a href="#">
-                            <img src="./view/layout/images/banner/bn8.png" alt>
-                        </a>
-                    </div> -->
             </div>
             <!-- Li Banner Area End Here -->
         </div>
@@ -247,9 +258,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     </div>
                     <div class="single-banner shop-page-banner">
                         <a href="#">
-                            <img src="./view/layout/images/bg-banner/4.png"
-                                srcset="./view/layout/images/bg-banner/4.png 1x, ./view/layout/images/bg-banner/4.png 2x"
-                                alt="Li's Static Banner">
+                            <img src="./view/layout/images/bg-banner/4.png" srcset="./view/layout/images/bg-banner/4.png 1x, ./view/layout/images/bg-banner/4.png 2x" alt="Li's Static Banner">
                         </a>
                     </div>
                     <?php
@@ -257,7 +266,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     ?>
                     <div class="row">
                         <div class="featured-product-active owl-carousel">
-                            <?php foreach ($data_blackfriday as $tt): ?>
+                            <?php foreach ($data_blackfriday as $tt) : ?>
                                 <div class="featured-product-bundle">
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
@@ -282,8 +291,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <h4><a class="featured-product-name"
-                                                    href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
+                                            <h4><a class="featured-product-name" href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
                                                     ngày hôm nay</a></h4>
                                             <div class="featured-price-box">
                                                 <span class="new-price new-price-2">35.000.000đ</span>
@@ -293,11 +301,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="featured-product-action">
                                                 <ul style="display: flex; justify-content: start;" class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Thêm</a></li>
-                                                    <li><a class="links-details" href="single-product.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a class="quick-view" data-toggle="modal"
-                                                            data-target="#exampleModalCenter" href="#"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="single-product.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -418,8 +423,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/11.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -448,11 +452,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -464,8 +465,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -496,11 +496,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -512,8 +509,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -542,11 +538,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -558,8 +551,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/5.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -590,11 +582,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -606,8 +595,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -636,11 +624,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -652,8 +637,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/5.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -684,11 +668,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -706,8 +687,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/3.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/3.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -736,11 +716,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -752,8 +729,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -784,11 +760,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -800,8 +773,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -830,11 +802,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -846,8 +815,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/1.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/1.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -878,11 +846,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -894,8 +859,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/11.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -924,11 +888,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -940,8 +901,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -972,11 +932,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1006,23 +963,21 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     </h2>
                 </div>
                 <?php
-                $data_tintucindex = get_tintucindex();
+                $data_tintucindex = get_tintucindex(4);
                 ?>
 
                 <div class="row">
                     <!-- <div class="product-active owl-carousel"> -->
-                    <?php foreach ($data_tintucindex as $tt): ?>
+                    <?php foreach ($data_tintucindex as $tt) : ?>
                         <!-- single-product-wrap start -->
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-3 col-md-3">
                             <div class="li-blog-single-item">
                                 <div class="li-blog-banner">
-                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
-                                            src="<?= $tt['hinh'] ?>" alt=""></a>
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
                                 </div>
                                 <div class="li-blog-content">
                                     <div class="li-blog-details">
-                                        <h3 class="li-blog-heading pt-25"><a
-                                                href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
+                                        <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
                                                 <?= $tt['tieude'] ?>
                                             </a>
                                         </h3>
@@ -1045,15 +1000,11 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                 <!-- </div> -->
                 <!-- Sweet Alert Frem Demo -->
                 <div id="toast"></div>
-
-                <div>
-                    <div onclick="showSuccessToast();" class="btn btn--success">Show success toast</div>
-                    <div onclick="showErrorToast();" class="btn btn--danger">Show error toast</div>
-                </div>
                 <script language="JavaScript">
                     function toast() {
                         swal("Success!", "Your data have been saved. Thank you!", "success");
                     }
+
                     function showSuccessToast() {
                         toast({
                             title: "Thành công!",
@@ -1078,4 +1029,3 @@ $show_dssp_suggest = show_SP($dssp_suggest);
         </div>
     </div>
 </section>
-<!-- Li's Trendding Products Area End Here -->

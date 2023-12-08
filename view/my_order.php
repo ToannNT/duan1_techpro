@@ -1,54 +1,45 @@
 <?php
 // Mảng tạm thời để lưu trữ thông tin sản phẩm đã xử lý
 // $processed_products = array();
-
-$html_show_my_order = "";
-$i = 1;
-// echo var_dump($show_my_order);
-foreach ($show_my_order as $value) {
-    extract($value);
-    // $product_key = $id_product . "_" . $status;
-
-    // // Kiểm tra nếu sản phẩm đã tồn tại với id_product và status tương tự
-    // if (array_key_exists($product_key, $processed_products)) {
-    //     // Nếu đã tồn tại, cập nhật số lượng
-    //     $processed_products[$product_key]['soluong'] += $soluong;
-    // } else {
-    //     // Nếu chưa tồn tại, thêm vào mảng processed_products
-    //     $processed_products[$product_key] = array(
-    //         'soluong' => $soluong,
-    //         // Các thông tin khác của sản phẩm nếu cần
-    //         // ...
-    //     );
+if (isset($_SESSION['s_user'])) {
+    $html_show_my_order = "";
+    $i = 1;
+    foreach ($show_my_order as $value) {
+        extract($value);
 
 
+        if ($status == 0) {
+            $status_p = "<span style='color: #ff4a20; font-weight: bold;'  href='#'>Đang chờ xét duyệt</span>";
+        } else if ($status == 1) {
+            $status_p = "<span style='color: #5273f9; font-weight: bold;' href='#'>Đang giao</span>";
+        } else if ($status == 2) {
+            $status_p = "<a style='color: #00a90d; font-weight: bold;' href='#'>Đã nhận được hàng</a>";
+        } else if ($status == 3) {
+            $status_p = "<span style='color: #00a90d; font-weight: bold;' href='#'>Hoàn thành</span>";
+        }
 
-
-    if ($status == 0) {
-        $status_p = "<span style='color: #ff4a20; font-weight: bold;'  href='#'>Đang chờ xét duyệt</span>";
-    } else if ($status == 1) {
-        $status_p = "<span style='color: #5273f9; font-weight: bold;' href='#'>Đang giao</span>";
-    } else if ($status == 2) {
-        $status_p = "<a style='color: #00a90d; font-weight: bold;' href='#'>Đã nhận được hàng</a>";
-    } else if ($status == 3) {
-        $status_p = "<span style='color: #00a90d; font-weight: bold;' href='#'>Hoàn thành</span>";
+        $html_show_my_order .= '
+                    <tr class="tr_td">
+                        <th scope="row">' . $i . '</th>
+                        <td><img class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt=""></td>
+                        <td>' . $ten . '</td>
+                        <td>' . $ngaydat . '</td>
+                        <td>' . $ma_donhang . '</td>
+                        <td>' . $soluong . '</td>
+                        <td>' . number_format($total, 0, '.', '.') . 'đ</td>
+                        <td>' . $status_p . '</td>
+                        <td><a href="index.php?pg=detailed_order&idpro=' . $id_product . '&&idcart=' . $id_cart . '">Xem chi tiết đơn hàng</a></td>
+                    </tr>
+        ';
+        $i++;
     }
-
-    $html_show_my_order .= '
-                <tr class="tr_td">
-                    <th scope="row">' . $i . '</th>
-                    <td><img class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt=""></td>
-                    <td>' . $ten . '</td>
-                    <td>' . $ngaydat . '</td>
-                    <td>' . $ma_donhang . '</td>
-                    <td>' . $soluong . '</td>
-                    <td>' . number_format($total, 0, '.', '.') . 'đ</td>
-                    <td>' . $status_p . '</td>
-                    <td><a href="index.php?pg=detailed_order&idpro=' . $id_product . '&&idcart=' . $id_cart . '">Xem chi tiết đơn hàng</a></td>
-                </tr>
-    ';
-    $i++;
+} else {
+    $html_show_my_order = "<h3>Đăng nhập để xem đơn hàng của bạn</h3>";
 }
+
+// echo var_dump($show_my_order);
+
+
 // }
 
 
@@ -65,6 +56,8 @@ foreach ($show_my_order as $value) {
         </div>
     </div>
 </div>
+
+
 <div class="container text-center">
 
     <div class="row justify-content-between mt-3">

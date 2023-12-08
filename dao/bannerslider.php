@@ -5,6 +5,10 @@ function db_banner($limit){
     $sql = "SELECT * FROM banner ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
+function get_inbn() {
+    $sql = "SELECT * FROM banner ORDER BY stt ASC";
+    return pdo_query($sql);
+}
 function db_slider($limit){
     $sql = "SELECT * FROM slider ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
