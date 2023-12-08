@@ -2,6 +2,11 @@
 // unset($_SESSION['voucher']);
 //sử dụng ajax để gán dữ liệu vào session sau đó tái sử dụng
 // Bất tiện.  phải tự load trang mới cập nhật lại session !!!
+if (isset($_SESSION['vanchuyen'])) {
+    $vanchuyen_from_session = $_SESSION['vanchuyen'];
+} else {
+    $vanchuyen_from_session = "0";
+}
 
 //sau khi ap mã tự động tạo và lưu session , Khi thanh toán xong sẽ tự động xóa
 if (isset($_SESSION['voucher']) && ($_SESSION['voucher'] != "")) {
@@ -13,12 +18,19 @@ if (isset($_SESSION['voucher']) && ($_SESSION['voucher'] != "")) {
     $ten_voucher_dangSuDung = "";
 }
 
-
-// kiểm tra phải hội viên khôn
-
-
-
-
+//LOAD DỮ LIỆU KHI CÓ TÀI KHOẢNG
+if (isset($_SESSION['s_user']) && !empty($_SESSION['s_user'])) {
+    extract($_SESSION['s_user']);
+    $hovaten_tk = 'value="' . $hoten . '"';
+    $email_tk = 'value="' . $email . '"';
+    $sdt_tk = 'value="' . $sdt . '"';
+    $diachi_tkk = 'value="' . $diachi . '"';
+} else {
+    $hovaten_tk = '';
+    $email_tk = '';
+    $sdt_tk = '';
+    $diachi_tkk = '';
+}
 
 
 
@@ -161,7 +173,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                             <div class="col-md-6">
                                 <div class="checkout-form-list">
                                     <label>Địa chỉ email <span class="required">*</span></label>
-                                    <input placeholder="Email của bạn" type="email" name="email" <?php echo $email_tk ?>>
+                                    <input placeholder="Email của bạn" type="email" name="email"
+                                        <?php echo $email_tk ?>>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -175,7 +188,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                     <!-- <a href="#">Tạo tài khoản để nhận thêm voucher ?</a> -->
                                     <div class="coupon-accordion">
                                         <!--Accordion Start-->
-                                        <h3 style="font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
+                                        <h3
+                                            style="font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
                                             Tạo tài khoản mới?
                                             <a href="index.php?pg=login_register"><span id="showlogin">Nhấn vào đây tạo
                                                     tài khoản. </span></a>
@@ -225,7 +239,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                             <div class="order-notes">
                                 <div class="checkout-form-list">
                                     <label>Ghi chú</label>
-                                    <textarea id="checkout-mess" cols="30" name="order_notes" rows="10" placeholder="Ghi chú về đơn hàng của bạn."></textarea>
+                                    <textarea id="checkout-mess" cols="30" name="order_notes" rows="10"
+                                        placeholder="Ghi chú về đơn hàng của bạn."></textarea>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +278,7 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                 <tfoot>
                                     <tr class="cart-subtotal">
                                         <th>Tổng tiền hàng</th>
-                                        <input id="tongcongtien" type="hidden" name="tt" value="<?= $tt ?>">
+                                        <input type="hidden" name="tt" value="<?= $tt ?>">
                                         <td><span class="amount"><?= number_format($tt, 0, '.', '.') ?>đ</span></td>
 
                                     </tr>
@@ -271,35 +286,27 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                         <th>Voucher</th>
                                         <td><span class="amount">-<?= number_format($voucher, 0, '.', '.') ?>đ</span>
                                         </td>
-                                        <input id="html_voucher" type="hidden" name="voucher" value="<?= $voucher ?>">
+                                        <input type="hidden" name="voucher" value="<?= $voucher ?>">
                                     </tr>
-
-                                    <!-- Hội viên  -->
-                                    <tr class="cart-subtotal">
-                                        <th>Hội viên: <span> <?= $tb_hv ?></span></th>
-                                        <td>
-                                            <span class="amount">-<?= number_format($giamgiahoivien, 0, '.', '.') ?>đ</span>
-                                        </td>
-                                        <input id="html_hoivien" type="hidden" name="hoivien" value="<?= $giamgiahoivien ?>">
-                                    </tr>
-
-                                    <!-- Hidden nằm trong js  -->
-                                    <!-- <input type="hidden" name="tong_thanhtoan" value=" $tongthanhtoan"> -->
-
+                                    <!-- //vận chuyển -->
                                     <tr class="cart-subtotal">
                                         <th>Vận chuyển</th>
-                                        <td><span id="html_ship" class="amount">đ</span>
+                                        <td><span
+                                                class="amount">+<?= number_format($vanchuyen_from_session, 0, '.', '.') ?>đ</span>
                                         </td>
+                                        <input type="hidden" name="ptvc" value="<?= $vanchuyen_from_session ?>">
                                     </tr>
                                     <tr class="order-total">
                                         <th>Tổng thanh toán:</th>
-                                        <!-- Hidden nằm trong js  -->
-                                        <!-- <input type="hidden" name="tong_thanhtoan" value=" $tongthanhtoan"> -->
+                                        <?php
+                                        $tongthanhtoan = ((int)$tt - (int)$voucher) + (int)$vanchuyen_from_session;
+                                        ?>
+                                        <input type="hidden" name="tong_thanhtoan" value="<?= $tongthanhtoan ?>">
 
-                                        <td>
-                                            <strong>
-                                                <span id="tongthanhtoan" class="amount"></span>
-                                            </strong>
+                                        <td><strong>
+                                                <span
+                                                    class="amount"><?= number_format($tongthanhtoan, 0, '.', '.') ?>đ</span></strong>
+
                                         </td>
 
                                     </tr>
@@ -316,16 +323,19 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                     <div class="card">
                                         <div class="card-header" active id="#payment-3">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
                                                     Nhập mã giảm giá:
                                                 </a>
                                                 <span><?= $thongbaovoucher ?></span>
                                             </h5>
                                         </div>
-                                        <div id="collapseThree" style="background-color: #f2f2f2;" data-parent="#accordion">
+                                        <div id="collapseThree" style="background-color: #f2f2f2;"
+                                            data-parent="#accordion">
                                             <form action="index.php?pg=checkout" method="post">
                                                 <p class="checkout-coupon">
-                                                    <input placeholder="Coupon code" <?= $ten_voucher_dangSuDung ?> name="value_voucher" type="text">
+                                                    <input placeholder="Coupon code" <?= $ten_voucher_dangSuDung ?>
+                                                        name="value_voucher" type="text">
                                                     <input class="voucher-check" name="check_voucher" type="submit">
                                                     <!-- <button type="submit" name="check_voucher"
                                                         id="check_voucher">nhập</button> -->
@@ -343,7 +353,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                     <div class="card">
                                         <div class="card-header" id="">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="" data-target="" aria-expanded="false" aria-controls="">
+                                                <a class="collapsed" data-toggle="" data-target="" aria-expanded="false"
+                                                    aria-controls="">
                                                     Đơn vị vận chuyển
                                                 </a>
                                             </h5>
@@ -353,24 +364,27 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                                 <div class="pay-th">
                                                     <div class="pay-th-text">
                                                         <div class="httt">
-                                                            <input checked onclick="calculateTotal()" name="ptvc" value="25000" type="radio">
+                                                            <input name="ptvc" value="25000" type="radio">
                                                             <p>Giao hàng Nhanh</p>
-                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">25.000đ
+                                                            <span
+                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">25.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_nhanh ?></p>
                                                         <div class="httt">
-                                                            <input onclick="calculateTotal()" name="ptvc" value="16000" type="radio">
+                                                            <input name="ptvc" value="16000" type="radio">
                                                             <p>Giao hàng tiết kiệm</p>
-                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">16.000đ
+                                                            <span
+                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">16.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime_tietkiem ?></p>
 
                                                         <div class="httt">
-                                                            <input onclick="calculateTotal()" name="ptvc" value="60000" type="radio">
+                                                            <input name="ptvc" value="60000" type="radio">
                                                             <p>Giao hàng Hỏa Tốc</p>
-                                                            <span style="margin-left: 10px; font-size: 17px; font-weight: bold;">60.000đ
+                                                            <span
+                                                                style="margin-left: 10px; font-size: 17px; font-weight: bold;">60.000đ
                                                             </span>
                                                         </div>
                                                         <p>Dự kiến nhận hàng vào ngày <?= $newTime ?></p>
@@ -385,7 +399,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                     <div class="card">
                                         <div class="card-header" id="">
                                             <h5 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="collapseTwo">
+                                                <a class="collapsed" data-toggle="collapse" data-target=""
+                                                    aria-expanded="false" aria-controls="collapseTwo">
                                                     Hình thức thanh toán
                                                 </a>
                                             </h5>
@@ -399,7 +414,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                                             sẽ không bao giờ được lưu lại.</p>
                                                         <div class="httt">
                                                             <input name="pttt" checked value="1" type="radio">
-                                                            <p>Thanh toán bằng thẻ tín dụng </p><img src="http://localhost/project/uploads/1.png" alt>
+                                                            <p>Thanh toán bằng thẻ tín dụng </p><img
+                                                                src="http://localhost/project/uploads/1.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="2" type="radio">
@@ -407,7 +423,8 @@ $ngaydat = $currentTime->format('Y-m-d H:i:s');
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="3" type="radio">
-                                                            <p>Thanh toán bằng Momo </p><img class="momo" src="http://localhost/project/uploads/2.png" alt>
+                                                            <p>Thanh toán bằng Momo </p><img class="momo"
+                                                                src="http://localhost/project/uploads/2.png" alt>
                                                         </div>
                                                         <div class="httt">
                                                             <input name="pttt" value="4" type="radio">

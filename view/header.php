@@ -1,4 +1,5 @@
 <?php
+// echo var_dump($dsdanhmuc_all);
 $show_dm_all = show_DM($ds_danhmuc, $ds_brand);
 
 $show_html_cart = "";

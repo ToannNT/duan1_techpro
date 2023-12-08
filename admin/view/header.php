@@ -248,21 +248,21 @@
       </head>
 
 <body onload="time()" class="app sidebar-mini rtl">
-
+  <!-- Navbar-->
   <header class="app-header">
-<a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
       aria-label="Hide Sidebar"></a>
-
+    <!-- Navbar Right Menu-->
     <ul class="app-nav">
 
 
-
+      <!-- User Menu-->
       <li><a class="app-nav__item" href="../index.php"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
   </header>
-
+  <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"

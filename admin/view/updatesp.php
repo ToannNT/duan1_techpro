@@ -1,47 +1,30 @@
 <?php
-// echo var_dump($showup);
-if(is_array($showup)){
+if(is_array($showup)&&(count($showup)>0)){
   extract($showup);
+  $idupdate= $id;
   }
 
-  if($sale==1){
-    $sale = "checked";
-  }else{  
-    $sale = "";
-  }
-  if($new==1){
-    $new = "checked";
-  }else{  
-    $new = "";
-  }
-  if($xemnhieu==1){
-    $xemnhieu = "checked";
-  }else{
-    $xemnhieu = "";
-  }
-  if($banchay==1){
-    $banchay = "checked";
-  }else{ 
-    $banchay = "";
-  }
 
   $html_showbradm = '';
   foreach ($dsbr_adm as $br_adm) {
-
-      if($br_adm['id']==$id_brand){
-        $html_showbradm .= '<option selected value="'.$br_adm['id'].'">'.$br_adm['ten'].'</option>';
+      extract($br_adm);
+      if($id==$id_brand){
+        $html_showbradm .= '<option selected value="'.$id.'">'.$ten.'</option>';
       }else{  
-        $html_showbradm .= '<option value="'.$br_adm['id'].'">'.$br_adm['ten'].'</option>';
+        $html_showbradm .= '<option value="'.$id.'">'.$ten.'</option>';
       }
   }
   $html_showdmadm = '';
   foreach ($dsdm_adm as $dm_adm) {
-      if($dm_adm['id']==$id_catalog){
-        $html_showdmadm .= '<option selected value="'.$dm_adm['id'].'">'.$dm_adm['ten_dm'].'</option>';
+      extract($dm_adm);
+      if($id==$id_catalog){
+        $html_showdmadm .= '<option selected value="'.$id.'">'.$ten_dm.'</option>';
       }else{
-        $html_showdmadm .= '<option value="'.$dm_adm['id'].'">'.$dm_adm['ten_dm'].'</option>';
+        $html_showdmadm .= '<option value="'.$id.'">'.$ten_dm.'</option>';
       }
   }
+  
+?>
 ?>
 <main class="app-content">
     <div class="app-title">
@@ -60,11 +43,11 @@ if(is_array($showup)){
             <form action="index.php?pg=updatepro" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
                 <label for="masp" class="control-label">Mã sản phẩm <span style="color: red; font-weight: bold" >(*)</span>  </label>
-                <input class="form-control" id="masp" value="<?=$ma_sp?>" name="masp" type="text" >
+                <input class="form-control" id="masp" name="masp" type="text" value="<?=$ma_sp?>">
               </div>
               <div class="form-group col-md-3">
                 <label for="tensp" class="control-label">Tên sản phẩm <span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input class="form-control" id="tensp" value="<?=$ten?>" name="tensp" type="text">
+                <input class="form-control" id="tensp" name="tensp" type="text" value="<?=($ten!="")?$ten:"";?>">
               </div>
               <div class="form-group col-md-3">
                 <label for="dmsp" class="control-label">Danh mục <span style="color: red; font-weight: bold" >(*)</span> </label>
@@ -97,27 +80,28 @@ if(is_array($showup)){
                 </select>
               </div>
               <div class="form-group col-md-3">
+
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Thuộc tính <span style="color: red; font-weight: bold" >(*)</span></label>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="seo" value="1" <?=$sale;?> id=""> Sale</label>
+                  <label for=""><input type="checkbox" name="seo" value="<?=$sale;?>" id=""> Sale</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="moi" value="1" <?=$new;?> id=""> Mới</label>
+                  <label for=""><input type="checkbox" name="moi" value="<?=$new;?>" id=""> Mới</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="many" value="1" <?=$xemnhieu;?> id=""> Xem nhiều</label>
+                  <label for=""><input type="checkbox" name="many" value="<?=$xemnhieu;?>" id=""> Xem nhiều</label>
                 </div>
                 <div class="col">
-                  <label for=""><input type="checkbox" name="run" value="1" <?=$banchay;?> id=""> Bán chạy</label>
+                  <label for=""><input type="checkbox" name="run" value="<?=$banchay;?>" id=""> Bán chạy</label>
                 </div>
               </div>
               <div class="form-group col-md-9">
                 <label class="control-label">Ảnh sản phẩm<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div id="myfileupload">
-                  <input type="file" id="uploadfile" value="<?=$hinh;?>" name="imgup" onchange="readURL(this);" />
-                  <input type="hidden" id="uploadfile" value="<?=$hinh;?>" name="imgold" />
+                  <input type="file" id="uploadfile" name="imgup" value="<?=$hinh;?>" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfile" name="imgold" value="<?=$hinh;?>" />
                   <img style="width: 200px;" src="../view/layout/images/product/<?=$hinh?>" alt="">
                 </div>
                 <div id="thumbbox">
@@ -180,8 +164,7 @@ if(is_array($showup)){
                 <textarea class="form-control" name="chitiet" id="chitiet"><?=$chitiet?></textarea>
                 <script>CKEDITOR.replace('chitiet');</script>
               </div>
-              <input type="hidden" value="<?=$id?>" name="id">
-              <input class="btn btn-save" type="submit" name="btnupdatepro" value="Lưu lại">
+              <input class="btn btn-save" type="submit" name="updatepro" value="Lưu lại">
               <a class="btn btn-cancel" href="qlsanpham.html">Hủy bỏ</a>
             </form>
           </div>
@@ -221,6 +204,96 @@ if(is_array($showup)){
       </div>
     </div>
   </div>
+  <!--
+MODAL
+-->
+
+
+
+  <!--
+  MODAL DANH MỤC
+-->
+  <div class="modal fade" id="adddanhmuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Thêm mới danh mục </h5>
+              </span>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Nhập tên danh mục mới</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Danh mục sản phẩm hiện đang có</label>
+              <ul style="padding-left: 20px;">
+                <li>Bàn ăn</li>
+              <li>Bàn thông minh</li>
+              <li>Tủ</li>
+              <li>Ghế gỗ</li>
+              <li>Ghế sắt</li>
+              <li>Giường người lớn</li>
+              <li>Giường trẻ em</li>
+              <li>Bàn trang điểm</li>
+              <li>Giá đỡ</li>
+              </ul>
+            </div>
+          </div>
+          <BR>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+MODAL
+-->
+
+
+
+
+  <!--
+  MODAL TÌNH TRẠNG
+-->
+  <div class="modal fade" id="addtinhtrang" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Thêm mới tình trạng</h5>
+              </span>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Nhập tình trạng mới</label>
+              <input class="form-control" type="text" required>
+            </div>
+          </div>
+          <BR>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+MODAL
+-->
 <script>
   var form = document.getElementsByTagName("form")[0];
   var masp = document.getElementById("masp");

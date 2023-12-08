@@ -959,17 +959,17 @@ foreach ($showdsbn12 as $tt) {
                     </h2>
                 </div>
                 <?php
-                $data_tintucindex = get_tintucindex(4);
+                $data_tintucindex = get_tintucindex();
                 ?>
 
                 <div class="row">
                     <!-- <div class="product-active owl-carousel"> -->
                     <?php foreach ($data_tintucindex as $tt) : ?>
                         <!-- single-product-wrap start -->
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-4 col-md-4">
                             <div class="li-blog-single-item">
                                 <div class="li-blog-banner">
-                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt=""></a>
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="<?= $tt['hinh'] ?>" alt=""></a>
                                 </div>
                                 <div class="li-blog-content">
                                     <div class="li-blog-details">
