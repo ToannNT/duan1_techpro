@@ -191,7 +191,7 @@ $show_dssp_suggest = show_SP($dssp_suggest);
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                 <div class="single-banner single-banner__three">
                     <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
+                    <img src="./view/layout/images/banner/bn8.jpg" srcset="./view/layout/images/banner/bn8.png 1x, ./view/layout/images/banner/bn8.png 2x" alt="Li's Static Banner">
                     </a>
                 </div>
             </div>
