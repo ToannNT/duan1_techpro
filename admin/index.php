@@ -79,14 +79,20 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/addsanpham.php";
             break;
         case 'delsp':
-            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
+            if (isset($_GET['id']) && ($_GET['id'] > 0)){
                 $id = $_GET['id'];
                 $showup = get_Sp_Detail($id);
-                $target_file = "../view/layout/images/product/" . $showup['hinhsp'];
-                unlink($target_file);
+                $target_file = "../view/layout/images/product/".$showup['hinh'];
+                if (file_exists($target_file)) {
+                    unlink($target_file);
+                    echo "File $target_file đã bị xóa.";
+                } else {
+                    echo "File $target_file không tồn tại.";
+                }
                 delsp($id);
-                $showspadm = get_tablesp(20);
-                require_once "view/qlsanpham.php";
+                header('location: index.php?pg=qlsanpham');
             }
             break;
         case 'updatepro':
