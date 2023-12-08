@@ -98,7 +98,7 @@
                                     </div>
                                     <p> <?= $tt['noidung']   ?></p>
                                     <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read
-                                        More...</a>
+                                        More...</a> <br>
                                 </div>
                             </div>
                         </div>
