@@ -1,0 +1,138 @@
+.nice-selectt {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  line-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  width: auto; }
+  .nice-selectt:hover {
+    border-color: #dbdbdb; }
+  .nice-selectt:active, .nice-selectt.open, .nice-selectt:focus {
+    border-color: #999; }
+  .nice-selectt:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
+            transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 5px; }
+  .nice-selectt.open:after {
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  .nice-selectt.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+        -ms-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0); }
+  .nice-selectt.disabled {
+    border-color: #ededed;
+    color: #999;
+    pointer-events: none; }
+    .nice-selectt.disabled:after {
+      border-color: #cccccc; }
+  .nice-selectt.wide {
+    width: 100%; }
+    .nice-selectt.wide .list {
+      left: 0 !important;
+      right: 0 !important; }
+  .nice-selectt.right {
+    float: right; }
+    .nice-selectt.right .list {
+      left: auto;
+      right: 0; }
+  .nice-selectt.small {
+    font-size: 12px;
+    height: 36px;
+    line-height: 34px; }
+    .nice-selectt.small:after {
+      height: 4px;
+      width: 4px; }
+    .nice-selectt.small .option {
+      line-height: 34px;
+      min-height: 34px; }
+  .nice-selectt .list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    -webkit-transform: scale(0.75) translateY(-21px);
+        -ms-transform: scale(0.75) translateY(-21px);
+            transform: scale(0.75) translateY(-21px);
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 9; }
+    .nice-selectt .list:hover .option:not(:hover) {
+      background-color: transparent !important; }
+  .nice-selectt .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s; }
+    .nice-selectt .option:hover, .nice-selectt .option.focus, .nice-selectt .option.selected.focus {
+      background-color: #f6f6f6; }
+    .nice-selectt .option.selected {
+      font-weight: bold; }
+    .nice-selectt .option.disabled {
+      background-color: transparent;
+      color: #999;
+      cursor: default; }
+
+.no-csspointerevents .nice-selectt .list {
+  display: none; }
+
+.no-csspointerevents .nice-selectt.open .list {
+  display: block; }
