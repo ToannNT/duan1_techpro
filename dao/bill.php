@@ -20,6 +20,14 @@ function confirm_bill($id_bill)
 
 
 
+function update_quantity_product($idpro)
+{
+    $sql = "UPDATE product SET soluong = soluong - 1  WHERE id = $idpro";
+    pdo_execute($sql);
+}
+
+
+
 
 
 
