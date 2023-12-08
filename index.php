@@ -17,6 +17,8 @@ require_once "dao/compare.php";
 require_once "dao/checkout.php";
 require_once "dao/thongke.php";
 require_once "dao/donhang.php";
+require_once "dao/comment.php";
+
 
 
 //header
@@ -96,21 +98,37 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $show_Sp_detail = get_Sp_Detail($id);
                 $iddm = $show_Sp_detail['id_catalog'];
                 $show_relate = get_Sp_relate($iddm, $id);
+                $dscmt_all = getds_cmt_sp($id);
                 require_once "view/productdetail.php";
             } else {
                 include_once "view/home.php";
             }
 
+            //comment sản phẩm
             if (isset($_POST["submit_cmt"])) {
                 $iduser = $_POST['iduser'];
                 $idpro = $_POST['idpro'];
                 $ten_cmt = $_POST['name_cmt'];
-                $hinh_cmt = $_POST['hinh_cmt'];
+                $hinh_cmtt = $_POST['hinh_cmt'];
+                if ($hinh_cmtt == "") {
+                    $hinh_cmtt = "user_empty.png";
+                }
+
+                $noidung_cmt = $_POST['noidung_cmt'];
                 $ngay_bl = $_POST['ngaybl'];
+                insert_cmt($idpro, $iduser, $noidung_cmt, $ngay_bl, $ten_cmt, $hinh_cmtt);
+                header('location: index.php?pg=productdetail&idpro=' . $idpro . '');
             }
-            //comment sản phẩm
+
 
             break;
+
+            // case 'productdetail_cmt':
+
+
+            //     //comment sản phẩm
+
+            //     break;
         case 'viewcart':
             //xoa all
             if (isset($_GET['del']) && ($_GET['del'] == -1)) {
