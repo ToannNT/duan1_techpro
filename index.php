@@ -309,6 +309,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     if ($s_status == 1) {
                         //thêm sản vào bảng CART
                         cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                        //update Số lượng sản phẩm
+                        update_quantity_product($idpro);
                         // thêm sản phẩm vào bảng  ORDER
                         $randomChars = "";
                         for ($i = 0; $i < 4; $i++) {
