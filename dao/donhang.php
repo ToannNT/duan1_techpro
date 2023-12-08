@@ -61,3 +61,14 @@ function update_status_order($status, $idorder)
     $sql = "UPDATE `order` SET status = $status + 1  WHERE id = $idorder";
     pdo_execute($sql);
 }
+
+
+function update_status_my_order($id_huydon, $idorder, $status)
+{
+    if (isset($id_huydon) && ($id_huydon != "")) {
+        $sql = "UPDATE `order` SET status = 4  WHERE id = $id_huydon";
+    } else {
+        $sql = "UPDATE `order` SET status = $status + 1  WHERE id = $idorder";
+    }
+    return pdo_execute($sql);
+}

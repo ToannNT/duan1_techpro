@@ -1,38 +1,50 @@
 <?php
+
 // Mảng tạm thời để lưu trữ thông tin sản phẩm đã xử lý
 // $processed_products = array();
 if (isset($_SESSION['s_user'])) {
     $html_show_my_order = "";
     $i = 1;
     foreach ($show_my_order as $value) {
+
         extract($value);
+        $slsp_in_bill = count_sp_inbill($id_bill);
+        $voucher = (int)$voucher / (int)$slsp_in_bill;
+        $phivanchuyen = (int)$phivanchuyen / (int)$slsp_in_bill;
+
+        $total = ((int)$gia - (int)$voucher) + (int)$phivanchuyen;
 
 
         if ($status == 0) {
-            $status_p = "<span style='color: #ff4a20; font-weight: bold;'  href='#'>Đang chờ xét duyệt</span>";
+            $status_p = "<span style='color: #ff4a20; font-weight: bold;'  href='#'>Đang chờ duyệt</span> <br>
+                         <a style='text-decoration: underline; color: #00a90d; font-weight: bold;' href='index.php?pg=my_order&huydon=$id'>
+                         Hủy đơn
+                         </a>
+            ";
         } else if ($status == 1) {
             $status_p = "<span style='color: #5273f9; font-weight: bold;' href='#'>Đang giao</span>";
         } else if ($status == 2) {
-            $status_p = "<a style='color: #00a90d; font-weight: bold;' href='#'>Đã nhận được hàng</a>";
+            $status_p = "<a style='text-decoration: underline; color: #00a90d; font-weight: bold;' href='index.php?pg=my_order&status=$status&idorder=$id'>Đã nhận được hàng</a>";
         } else if ($status == 3) {
             $status_p = "<span style='color: #00a90d; font-weight: bold;' href='#'>Hoàn thành</span>";
+        } else {
+            $status_p = "<span style='color: red; font-weight: bold;' href='#'>Đã hủy</span>";
         }
 
         $html_show_my_order .= '
-                    <tr class="tr_td">
+                    <tr class="">
                         <th scope="row">' . $i . '</th>
-                        <td>
-<a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-<img class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt="">
-</a>
-                        
+                        <td class="tr_td">
+                            <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
+                            <img  style="width: 7.5rem;" class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt="">
+                            </a>
                         </td>
-                        <td>' . $ten . '</td>
-                        <td>' . $ngaydat . '</td>
-                        <td>' . $madh . '</td>
-                        <td>' . $soluong . '</td>
-                        <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
-                        <td>' . $status_p . '</td>
+                        <td class="tr_td">' . $ten . '</td>
+                        <td class="tr_td">' . $ngaydat . '</td>
+                        <td class="tr_td">' . $madh . '</td>
+                        <td class="tr_td">' . $soluong . '</td>
+                        <td class="tr_td">' . number_format($total, 0, '.', '.') . 'đ</td>
+                        <td class="tr_td">' . $status_p . '</td>
                         <td><a href="index.php?pg=detailed_order&id_order=' . $id . '&id_bill=' . $id_bill . '">Xem chi tiết đơn hàng</a></td>
                     </tr>
         ';
@@ -49,6 +61,8 @@ if (isset($_SESSION['s_user'])) {
 
 
 ?>
+</button>
+
 <link rel="stylesheet" href="./view/layout/asset/css/vieworder.css">
 <div class="breadcrumb-area">
     <div class="container">
@@ -65,7 +79,7 @@ if (isset($_SESSION['s_user'])) {
 <div class="container text-center">
 
     <div class="row justify-content-between mt-3">
-        <div style="margin-top: 1%;" class="col-md-3">
+        <!-- <div style="margin-top: 1%;" class="col-md-3">
 
             <div class="sidebars">
                 <div class="sidebar">
@@ -83,8 +97,7 @@ if (isset($_SESSION['s_user'])) {
 
 
 
-                    <div style=" border-radius: 0.74rem;  background-color: #02213d; color: white;"
-                        class="sidebar-item"><i class="bi bi-bag-dash-fill"></i> Đơn hàng
+                    <div style=" border-radius: 0.74rem;  background-color: #02213d; color: white;" class="sidebar-item"><i class="bi bi-bag-dash-fill"></i> Đơn hàng
                     </div>
 
                     <div class="sidebar-item"><i class="bi bi-ticket-perforated-fill"></i>
@@ -94,8 +107,8 @@ if (isset($_SESSION['s_user'])) {
 
                 </div>
             </div><br>
-        </div>
-        <div style="margin-top: 0.1%;" class="col-md-9">
+        </div> -->
+        <div style="margin-top: 0.1%;" class="col-md-12">
             <p class="h2"></p>
             <div class="custom-div">
                 <div class="custom-line"></div>
@@ -107,6 +120,10 @@ if (isset($_SESSION['s_user'])) {
                 <div class="custom-line"></div>
                 <div class="custom-line"></div>
                 <div class="custom-line"></div>
+                <div class="custom-line"></div>
+                <div class="custom-line"></div>
+                <div class="custom-line"></div>
+
             </div>
             <table style=" margin: 0px;" class="table table-bordered custom-table">
                 <thead>
@@ -117,7 +134,7 @@ if (isset($_SESSION['s_user'])) {
                         <th scope="col">Ngày đặt</th>
                         <th scope="col">Mã đơn hàng</th>
                         <th scope="col">Số lượng</th>
-                        <th scope="col">Giá tiền</th>
+                        <th scope="col">Thành tiền</th>
                         <th scope="col">Tình trạng</th>
                         <th scope="col">Hoạt động</th>
                     </tr>
