@@ -100,6 +100,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             } else {
                 include_once "view/home.php";
             }
+
+            if (isset($_POST["submit_cmt"])) {
+                $iduser = $_POST['iduser'];
+                $idpro = $_POST['idpro'];
+                $ten_cmt = $_POST['name_cmt'];
+                $hinh_cmt = $_POST['hinh_cmt'];
+                $ngay_bl = $_POST['ngaybl'];
+            }
+            //comment sản phẩm
+
             break;
         case 'viewcart':
             //xoa all

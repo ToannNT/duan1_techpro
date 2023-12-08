@@ -1,4 +1,25 @@
+<style>
+    .btn_submit_cmt {
+        background: #242424;
+        color: #fff !important;
+        width: 80px;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        left: 110px;
+        right: auto;
+        top: 0;
+        display: block;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
+
 <?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$currentTime = new DateTime();
+$ngaybl = $currentTime->format('Y-m-d');
+
 extract($show_Sp_detail);
 $id1 = $id;
 if ($giamgia > 0) {
@@ -192,7 +213,7 @@ if ($giamgia > 0) {
                         <li><a class="active" data-toggle="tab" href="#description"><span>Chi tiết sản phẩm</span></a>
                         </li>
                         <!-- <li><a data-toggle="tab" href="#product-details"><span>Chi tiết sản phẩm</span></a></li> -->
-                        <li><a data-toggle="tab" href="#reviews"><span>Đánh giá</span></a></li>
+                        <li><a data-toggle="tab" href="#reviews"><span>Bình luận</span></a></li>
                     </ul>
                 </div>
                 <!-- Begin Li's Tab Menu Content Area -->
@@ -216,30 +237,141 @@ if ($giamgia > 0) {
             <div id="reviews" class="tab-pane" role="tabpanel">
                 <div class="product-reviews">
                     <div class="product-details-comment-block">
-                        <div class="comment-review">
-                            <span>Đánh giá sao</span>
-                            <ul class="rating">
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                            </ul>
-                        </div>
+
+                        <?php
+                        if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
+                            extract($_SESSION["s_user"]);
+                            $idpro = $_GET['idpro'];
+                            echo '
+                            <form action="index.php?pg=productdetail">
+                            <p class="your-opinion">
+                                <!-- <label>Bạn hãy đánh giá sao</label> -->
+                                <span>
+                                    <div class="br-wrapper br-theme-fontawesome-stars"><select class="star-rating"
+                                            style="display: none;">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <!-- <div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1"
+                                                class="br-selected"></a><a href="#" data-rating-value="2"
+                                                data-rating-text="2" class="br-selected"></a><a href="#"
+                                                data-rating-value="3" data-rating-text="3" class="br-selected"></a><a
+                                                href="#" data-rating-value="4" data-rating-text="4"
+                                                class="br-selected br-current"></a><a href="#" data-rating-value="5"
+                                                data-rating-text="5" class=""></a>
+                                            <div class="br-current-rating">4</div>
+                                        </div> -->
+                                    </div>
+                                </span>
+                            </p>
+                            <p class="feedback-form">
+                                <label for="feedback">Bình luận của bạn</label>
+                                <textarea name="noidung_cmt" placeholder="Bạn có thắc mắc gì về sản phẩm không?" id="feedback"
+                                    name="comment" cols="45" rows="2" aria-required="true"></textarea>
+                            </p>
+                            <div class="feedback-input">
+
+                                <input type="hidden" name="name_cmt" value="' . $hoten . '">
+                                <input type="hidden" name="hinh_cmt" value="' . $hinh . '">
+                                <input type="hidden" name="idpro" value="' . $idpro . '">
+                                <input type="hidden" name="iduser" value="' . $id . '">
+                                <input type="hidden" name="ngaybl" value="' . $ngaybl . '">
+
+
+                                <div class="feedback-btn pb-15">
+                                <button class="btn_submit_cmt" type="submit" name="submit_cmt">Gửi</button>
+                                </div>
+                            </div>
+                        </form>
+                        ';
+                        } else {
+                            echo '
+                            <div class="coupon-accordion">
+                                        <!--Accordion Start-->
+                                        <h3 style="font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
+                                            Đăng nhập để bình luận sản phẩm ?
+                                            <a href="index.php?pg=login_register"><span>Đăng nhập.</span></a>
+                                        </h3>
+
+                                    </div>
+                            ';
+                        }
+                        ?>
+
+                        <form action="index.php?pg=productdetail">
+                            <p class="your-opinion">
+                                <!-- <label>Bạn hãy đánh giá sao</label> -->
+                                <span>
+                                    <div class="br-wrapper br-theme-fontawesome-stars"><select class="star-rating" style="display: none;">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <!-- <div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1"
+                                                class="br-selected"></a><a href="#" data-rating-value="2"
+                                                data-rating-text="2" class="br-selected"></a><a href="#"
+                                                data-rating-value="3" data-rating-text="3" class="br-selected"></a><a
+                                                href="#" data-rating-value="4" data-rating-text="4"
+                                                class="br-selected br-current"></a><a href="#" data-rating-value="5"
+                                                data-rating-text="5" class=""></a>
+                                            <div class="br-current-rating">4</div>
+                                        </div> -->
+                                    </div>
+                                </span>
+                            </p>
+                            <p class="feedback-form">
+                                <label for="feedback">Bình luận của bạn</label>
+                                <textarea name="noidung_cmt" placeholder="Bạn có thắc mắc gì về sản phẩm không?" id="feedback" name="comment" cols="45" rows="2" aria-required="true"></textarea>
+                            </p>
+                            <div class="feedback-input">
+                                <!-- <p class="feedback-form-author">
+                                    <label for="author">Họ và tên<span class="required">*</span>
+                                    </label>
+                                    <input id="author" name="author" value="" size="30" aria-required="true"
+                                        type="text">
+                                </p>
+                                <p class="feedback-form-author feedback-form-email">
+                                    <label for="email">Email<span class="required">*</span>
+                                    </label>
+                                    <input id="email" name="email" value="" size="30" aria-required="true" type="text">
+                                    <span class="required"><sub>*</sub> Phần bắt
+                                        buộc</span>
+                                </p> -->
+                                <input type="hidden" name="name_cmt" value="">
+                                <input type="hidden" name="hinh_cmt" value="">
+                                <input type="hidden" name="idpro" value="">
+                                <input type="hidden" name="iduser" value="">
+                                <input type="hidden" name="ngaybl" value="">
+
+
+
+                                <div class="feedback-btn pb-15">
+                                    <button class="btn_submit_cmt" type="submit" name="submit_cmt">Gửi</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- content cmt  -->
                         <div class="comment-author-infos pt-25">
-                            <span>HTML 5</span>
+                            <img style="margin-bottom: 5px; margin-right: 5px; border-radius: 50px; width: 50px;" src="./view/layout/images/user/931a662b88d1d24f3c60c2ca2cdb0038.jpg" alt="">
+                            <span>Nguyễn Thanh Toàn</span>
                             <em>01-12-18</em>
+                            <p class="content-cmt">Qsadsdasda Qsadsdasda QsadsdasdaQsadsdasdaQsadsdasda Qsadsdasda
+                                Qsadsdasda Qsadsdasda
+                                Qsadsdasda Qsadsdasda Qsadsdasda </p>
                         </div>
-                        <div class="comment-details">
+                        <!-- <div class="comment-details">
                             <h4 class="title-block">Demo</h4>
                             <p>Plaza</p>
-                        </div>
-                        <div class="review-btn">
-                            <a class="review-links" href="#" data-toggle="modal" data-target="#mymodal">Viết đánh giá
-                                của bạn</a>
-                        </div>
+                        </div> -->
+
                         <!-- Begin Quick View | Modal Area -->
-                        <div class="modal fade modal-wrapper" id="mymodal">
+                        <!-- <div class="modal fade modal-wrapper" id="mymodal">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -247,7 +379,8 @@ if ($giamgia > 0) {
                                         <div class="modal-inner-area row">
                                             <div class="col-lg-6">
                                                 <div class="li-review-product">
-                                                    <img src="./view/layout/images/product/<?= $hinh ?>" alt="Li's Product">
+                                                    <img src="./view/layout/images/product/<?= $hinh ?>"
+                                                        alt="Li's Product">
                                                     <div class="li-review-product-desc">
                                                         <p class="li-product-name"><?= $ten ?>
                                                         </p>
@@ -259,7 +392,6 @@ if ($giamgia > 0) {
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="li-review-content">
-                                                    <!-- Begin Feedback Area -->
                                                     <div class="feedback-area">
                                                         <div class="feedback">
                                                             <h3 class="feedback-title">Cảm nhận của bạn</h3>
@@ -278,37 +410,42 @@ if ($giamgia > 0) {
                                                                 </p>
                                                                 <p class="feedback-form">
                                                                     <label for="feedback">Đánh giá của bạn</label>
-                                                                    <textarea id="feedback" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                                                                    <textarea id="feedback" name="comment" cols="45"
+                                                                        rows="8" aria-required="true"></textarea>
                                                                 </p>
                                                                 <div class="feedback-input">
                                                                     <p class="feedback-form-author">
-                                                                        <label for="author">Họ và tên<span class="required">*</span>
+                                                                        <label for="author">Họ và tên<span
+                                                                                class="required">*</span>
                                                                         </label>
-                                                                        <input id="author" name="author" value size="30" aria-required="true" type="text">
+                                                                        <input id="author" name="author" value size="30"
+                                                                            aria-required="true" type="text">
                                                                     </p>
                                                                     <p class="feedback-form-author feedback-form-email">
-                                                                        <label for="email">Email<span class="required">*</span>
+                                                                        <label for="email">Email<span
+                                                                                class="required">*</span>
                                                                         </label>
-                                                                        <input id="email" name="email" value size="30" aria-required="true" type="text">
+                                                                        <input id="email" name="email" value size="30"
+                                                                            aria-required="true" type="text">
                                                                         <span class="required"><sub>*</sub> Phần bắt
                                                                             buộc</span>
                                                                     </p>
                                                                     <div class="feedback-btn pb-15">
-                                                                        <a href="#" class="close" data-dismiss="modal" aria-label="Close">Đóng</a>
+                                                                        <a href="#" class="close" data-dismiss="modal"
+                                                                            aria-label="Close">Đóng</a>
                                                                         <a href="#">Gửi</a>
                                                                     </div>
                                                                 </div>
                                                             </form>
                                                         </div>
                                                     </div>
-                                                    <!-- Feedback Area End Here -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Quick View | Modal Area End Here -->
                     </div>
                 </div>
