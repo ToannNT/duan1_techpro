@@ -533,6 +533,23 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 extract($_SESSION['s_user']);
                 $id_user = $_SESSION['s_user']['id'];
                 $show_my_order = get_ds_order($id_user);
+
+                if (isset($_GET['huydon']) && ($_GET['huydon'] != "")) {
+                    $id_huydon =  $_GET["huydon"];
+                    $status =  "";
+                    $idorder =  "";
+                    header("location: index.php?pg=my_order");
+
+                    update_status_my_order($id_huydon, $idorder, $status);
+                } else if (isset($_GET['status']) && ($_GET['status'] != "")) {
+                    $id_huydon = "";
+                    $status = $_GET['status'];
+                    $idorder = $_GET['idorder'];
+                    update_status_my_order($id_huydon, $idorder, $status);
+                    header("location: index.php?pg=my_order");
+                }
+
+
                 include_once "view/my_order.php";
             } else {
                 echo ("Đăng nhập để xem đơn hàng của bạn");

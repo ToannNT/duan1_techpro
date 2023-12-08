@@ -20,7 +20,7 @@ if ($pttt == 1) {
 
 
 if ($status == 0) {
-    $status_cart = "Đang chờ xét duyệt";
+    $status_cart = "Đang chờ duyệt";
 } else if ($status == 1) {
     $status_cart = "Đang giao";
 } else if ($status == 2) {
@@ -28,7 +28,7 @@ if ($status == 0) {
 } else if ($status == 3) {
     $status_cart = "Hoàn thành";
 } else {
-    $status_cart = "Đang chờ xét duyệt";
+    $status_cart = "Đã hủy";
 }
 
 
@@ -65,7 +65,8 @@ if ($status == 0) {
             <tbody>
                 <tr>
                     <td colspan="2">
-                        <div class="i__Phone" style="max-width: 140px;"><img src="./view/layout/images/product/<?= $hinh ?>" alt="">
+                        <div class="i__Phone" style="max-width: 140px;"><img
+                                src="./view/layout/images/product/<?= $hinh ?>" alt="">
                         </div>
                         <div style="margin-top: 15px;" class="inf__Phone">
                             <h4><?= $ten ?></h4>
@@ -98,7 +99,7 @@ if ($status == 0) {
                     <td><?= $pt_thanhtoan ?></td>
                 </tr>
                 <tr>
-                    <td colspan="2">Trạng thái</td>
+                    <td colspan="2">Tình trạng</td>
                     <td><?= $status_cart ?></td>
                 </tr>
             </tfoot>
