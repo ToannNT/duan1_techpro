@@ -20,6 +20,7 @@ require_once "dao/donhang.php";
 
 
 
+
 //header
 $ds_danhmuc = dsdm_catalog();
 $ds_brand = dsdm_brand();
@@ -81,13 +82,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
             $dsbrandne = dsdm_brand_product();
 
-              // SO SÁNH
-              if(isset($_GET['del'])&&($_GET['del']==1)){
+            // SO SÁNH
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
                 unset($_SESSION['dataArray']);
                 unset($_SESSION['catalogArray']);
                 header('location: index.php?pg=product');
             } else {
-                if(isset($_POST['sosanh'])){
+                if (isset($_POST['sosanh'])) {
                     // Khởi tạo mảng để lưu trữ dữ liệu sản phẩm
                     if (!isset($_SESSION['dataArray'])) {
                         $_SESSION['dataArray'] = array();
@@ -112,7 +113,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                             if (count($_SESSION['dataArray']) < $maxProducts) {
                                 $_SESSION['dataArray'][] = $productId; // Thêm sản phẩm vào mảng
                                 $_SESSION['catalogArray'][] = $productCatalog;
-    
+
                                 if (isset($_SESSION['catalogArray'][1]) && $_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
                                     array_shift($_SESSION['dataArray']);
                                     array_shift($_SESSION['catalogArray']);
@@ -147,9 +148,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                             unset($_SESSION['catalogArray'][$indexC]);
                         }
                     }
-                    if(empty($_SESSION['dataArray'])){
+                    if (empty($_SESSION['dataArray'])) {
                         unset($_SESSION['catalogArray']);
-                    }      
+                    }
                 }
             }
 
