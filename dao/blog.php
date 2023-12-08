@@ -94,3 +94,7 @@ function update_blog($mablog, $tieudeblog, $chitietblog, $imgblog, $idblog)
     $sql = "UPDATE blog SET madm=?, tieude=?, noidung=?, hinh=? WHERE id_blog=?";
     pdo_execute($sql, $mablog, $tieudeblog, $chitietblog, $imgblog, $idblog);
 }
+function del_blog($id){
+    $sql = "DELETE FROM blog WHERE id_blog=?";
+    return pdo_execute($sql, $id);
+}

@@ -388,7 +388,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
             require_once "view/updateblog.php";
             break;
-
+        case 'delblog':
+            if (isset($_GET['id_blog']) && ($_GET['id_blog'] > 0)) {
+                $id = $_GET['id_blog'];
+                del_blog($id);
+                header('location: index.php?pg=qlblog');
+            }
+            break;
         case 'qldonhang':
             if (isset($_POST['submit_donhang'])) {
                 $keyword = $_POST['keyword'];
