@@ -21,19 +21,14 @@ if (isset($_SESSION['s_user'])) {
         $html_show_my_order .= '
                     <tr class="tr_td">
                         <th scope="row">' . $i . '</th>
-                        <td>
-<a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-<img class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt="">
-</a>
-                        
-                        </td>
+                        <td><img class="img-sp" src="./view/layout/images/product/' . $hinh . '" alt=""></td>
                         <td>' . $ten . '</td>
                         <td>' . $ngaydat . '</td>
-                        <td>' . $madh . '</td>
+                        <td>' . $ma_donhang . '</td>
                         <td>' . $soluong . '</td>
-                        <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
+                        <td>' . number_format($total, 0, '.', '.') . 'đ</td>
                         <td>' . $status_p . '</td>
-                        <td><a href="index.php?pg=detailed_order&id_order=' . $id . '&id_bill=' . $id_bill . '">Xem chi tiết đơn hàng</a></td>
+                        <td><a href="index.php?pg=detailed_order&idpro=' . $id_product . '&&idcart=' . $id_cart . '">Xem chi tiết đơn hàng</a></td>
                     </tr>
         ';
         $i++;
@@ -49,6 +44,7 @@ if (isset($_SESSION['s_user'])) {
 
 
 ?>
+
 <link rel="stylesheet" href="./view/layout/asset/css/vieworder.css">
 <div class="breadcrumb-area">
     <div class="container">

@@ -1,11 +1,11 @@
 <?php
 
 // inser vào giỏ hàng
-// function cart_insert($id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien, $phi_vanchuyen, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher)
-// {
-//     $sql = "INSERT INTO cart (id_user,id_product,id_bill,ten,hinh,gia,soluong,thanhtien,phi_vanchuyen,pttt,ten_nhan,sdt_nhan,diachi_nhan,voucher) VALUES (?,?, ?, ?, ? , ?, ? , ?, ?, ?, ?, ?, ?, ?)";
-//     pdo_execute($sql, $id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien, $phi_vanchuyen, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher);
-// }
+function cart_insert($id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien, $phi_vanchuyen, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher)
+{
+    $sql = "INSERT INTO cart (id_user,id_product,id_bill,ten,hinh,gia,soluong,thanhtien,phi_vanchuyen,pttt,ten_nhan,sdt_nhan,diachi_nhan,voucher) VALUES (?,?, ?, ?, ? , ?, ? , ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien, $phi_vanchuyen, $pttt, $ten_nhan, $sdt_nhan, $diachi_nhan, $voucher);
+}
 
 // function get_tongdonhang()
 // {
@@ -29,10 +29,3 @@
 //     }
 //     return $tong;
 // }
-
-
-function cart_insert($id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien)
-{
-    $sql = "INSERT INTO cart (id_user,id_product,id_bill,ten,hinh,gia,soluong,thanhtien) VALUES (?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $id_user, $id_product, $id_bill, $ten, $hinh, $gia, $soluong, $thanhtien);
-}

@@ -89,26 +89,11 @@ function get_Catalog_One($id)
     return pdo_query_one($sql);
 }
 
-function get_Brandlist_one($id){
-    $sql = "SELECT * FROM brand WHERE id=" . $id;
-    return pdo_query_one($sql);
-}
-
-function get_Brand(){
-    $sql = "SELECT * FROM brand";
-    return pdo_query($sql);
-}
-
 
 function catagory_add($stt, $name, $mota, $sethome)
 {
     $sql = "INSERT INTO catalog(stt, ten_dm, mota, sethome) VALUES (?,?,?,?)";
     return pdo_execute($sql, $stt, $name, $mota, $sethome);
-}
-function trademark_add($stt, $name, $idcatalog)
-{
-    $sql = "INSERT INTO brand (id, ten , id_catalog) VALUES (?,?,?)";
-    return pdo_execute($sql, $stt, $name, $idcatalog);
 }
 function delete_catalog($id)
 {
@@ -124,30 +109,11 @@ function delete_catalog($id)
     }
     return $tb;
 }
-function delete_trademark($id)
-{
-    $sql = "DELETE FROM brand WHERE id=" . $id;
-    // pdo_execute($sql);
-    $dssp_brand = sptheobrand($id);
-    // echo var_dump ($dssp);
-    if (count($dssp_brand) > 0) {
-        $tb = "Thương hiệu này có " . count($dssp_brand) . " sản phẩm. Bạn không được xóa!";
-    } else {
-        pdo_execute($sql);  
-        $tb = "";
-    }
-    return $tb;
-}
 
 function updateCatagory($id, $stt, $name, $mota, $sethome)
 {
     $sql = "UPDATE catalog SET stt=?, ten_dm=?, mota=?, sethome=?  WHERE id=" . $id;
     return pdo_execute($sql, $stt, $name, $mota, $sethome);
-}
-function updateTrademark($id, $name, $idcatalog)
-{
-    $sql = "UPDATE brand SET ten=?, id_catalog=?  WHERE id=?";
-    return pdo_execute($sql, $name, $idcatalog, $id);
 }
 
 /**
@@ -279,10 +245,6 @@ function dsdm_brand_product()
 function sptheodanhmuc($id)
 {
     $sql = "SELECT * FROM product where id_catalog=" . $id;
-    return pdo_query($sql);
-}
-function sptheobrand($id){
-    $sql = "SELECT * FROM product where id_brand=" . $id;
     return pdo_query($sql);
 }
 
