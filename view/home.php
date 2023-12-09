@@ -287,7 +287,26 @@ $banners = showsttbn();
                     ?>
                     <div class="row">
                         <div class="featured-product-active owl-carousel">
-                            <?php foreach ($data_blackfriday as $tt) : ?>
+                            <?php foreach ($data_blackfriday as $tt) :
+                                extract($tt);
+                                if ($giamgia > 0) {
+                                    $gia_muangay = $giamgia;
+                                    $giatien_addcart = '
+                                    <input type="hidden" name="price" value="' . $giamgia . '">
+                                    ';
+                                    $thanhTien_addcart = '
+                                    <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+                                    ';
+                                } else {
+                                    $gia_muangay = $gia;
+                                    $giatien_addcart = '
+                                    <input type="hidden" name="price" value="' . $gia . '">
+                                    ';
+                                    $thanhTien_addcart = '
+                                    <input type="hidden" name="thanhtien" value="' . $gia . '">
+                                    ';
+                                }
+                            ?>
                                 <div class="featured-product-bundle">
                                     <div class="featured-pro-wrapper mb-30 mb-sm-25">
                                         <div class="product-img">
@@ -321,9 +340,70 @@ $banners = showsttbn();
                                             </div>
                                             <div class="featured-product-action">
                                                 <ul style="display: flex; justify-content: start;" class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Thêm</a></li>
-                                                    <li><a class="links-details" href="single-product.html"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i></a></li>
+
+                                                    <form>
+                                                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                                                        <input type="hidden" name="idpro" value="<?= $id ?>">
+                                                        <input type="hidden" name="img" value="<?= $hinh ?>">
+                                                        <input type="hidden" name="name" value="<?= $ten ?>">
+                                                        <input type="hidden" name="giamuangay" value="<?= $gia_muangay ?>">
+
+                                                        <?= $giatien_addcart ?>
+                                                        <input type="hidden" name="s_status" value="1">
+                                                        <?= $thanhTien_addcart ?>
+
+                                                        <input type="hidden" name="quantity" value="1">
+
+
+                                                        <a style="text-align: center; margin-right: 5px; width: 100px;
+                                                        " class="add-cart-btn" href="index.php?pg=checkout&idpro=<?= $id ?>&name=<?= $ten ?>&quantity=1&price=<?= $gia_muangay ?>&thanhtien=<?= $gia_muangay ?>&img=<?= $hinh ?>">Mua
+                                                            ngay</a>
+                                                    </form>
+
+
+
+
+
+                                                    <form action="index.php?pg=addcart" method="post">
+                                                        <input type="hidden" name="page_here" value="index.php">
+                                                        <input type="hidden" name="idpro" value="<?= $id ?>">
+                                                        <input type="hidden" name="img" value="<?= $hinh ?>">
+                                                        <input type="hidden" name="name" value="<?= $ten ?>">
+
+                                                        <?= $giatien_addcart ?>
+                                                        <input type="hidden" name="s_status" value="0">
+                                                        <?= $thanhTien_addcart ?>
+
+                                                        <input type="hidden" name="quantity" value="1">
+
+                                                        <button style="text-align: center; margin-right: 5px; width: 100px;
+                                                        " type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                                                    </form>
+
+
+
+
+
+
+                                                    <form action="index.php?pg=addtoWishlist" method="post">
+                                                        <input type="hidden" name="img" value="../view/layout/images/product<?= $hinh ?>">
+                                                        <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                                                            <input type="hidden" name="id" value="<?= $id ?>">
+                                                            <input type="hidden" name="img" value="<?= $hinh ?>">
+                                                            <input type="hidden" name="name" value="<?= $ten ?>">
+                                                            <input type="hidden" name="price" value="' . $gia . '">
+                                                            <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
+                                                                <i class="fa fa-heart-o"></i>
+
+                                                            </button>
+
+                                                        </form>
+                                                        <!-- <li class="add-cart active"><a href="#">Thêm</a></button>
+                                                    <li><a class="links-details" href="single-product.html"><i
+                                                                class="fa fa-heart-o"></i></a></li>
+                                                    <li><a class="quick-view" data-toggle="modal"
+                                                            data-target="#exampleModalCenter" href="#"><i
+                                                                class="fa fa-eye"></i></a></li> -->
                                                 </ul>
                                             </div>
                                         </div>

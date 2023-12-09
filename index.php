@@ -192,7 +192,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     $ten_voucher = $_POST['value_voucher'];
                     $tt_chuadangnhap = "hãy đăng nhập để sử dụng các ữu đãi voucher";
                     $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
-                    Vui lòng đăng nhập để sử dụng voucher</span>';
+                    Đăng nhập để sử dụng voucher</span>';
                     //kiểm tra đăng nhập chưa 
                     if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
                         $id_user = $_SESSION["s_user"]["id"];
@@ -205,39 +205,54 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                             $checkUserVoucherUsed = checkUserVoucherUsage($id_user, $ten_voucher);
                             //kiem tra số lượng voucher còn không
                             $quantityVoucher = checkVoucherQuantity($ten_voucher);
+                            //kiem tra ngày hết hạn voucher còn không
+                            $dateVoucher = checkVoucherDate($ten_voucher);
 
 
                             // nếu số lượng vouhcer > 0 thì cho sử dụng
-                            if ($quantityVoucher > 0) {
-                                if (is_array($checkUserVoucherUsed) && (count($checkUserVoucherUsed))) {
-                                    //Đã sử dụng voucher gòi 
+                            if (is_array($dateVoucher) &&  (count($dateVoucher))) {
+                                $thongbaovoucher = '<span style="color: red; 
+                                font-size: 1rem; margin-left: 5px;"> Đã hết hạn sử dụng voucher</span>';
+                                $variable_voucher = 0;
+                            } else {
+                                // nếu số lượng vouhcer > 0 thì cho sử dụng
+                                if ($quantityVoucher > 0) {
+                                    if (is_array($checkUserVoucherUsed) && (count($checkUserVoucherUsed))) {
+                                        //Đã sử dụng voucher gòi 
 
-                                    $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                                        $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
                                     Tài khoản đã được sử dụng</span>';
 
-                                    $variable_voucher = 0;
-                                } else {
-                                    // chưa sử dụng voucher bao giờ
-                                    $variable_voucher = search_voucher($ten_voucher);
+                                        $variable_voucher = 0;
+                                    } else {
+                                        // chưa sử dụng voucher bao giờ
+                                        $variable_voucher = search_voucher($ten_voucher);
 
-                                    $_SESSION['voucher'] = array(
-                                        'ten_voucher' => $ten_voucher,
-                                        'variable_voucher' => $variable_voucher
-                                    );
-                                    // update đã sử dụng voucher
+                                        $_SESSION['voucher'] = array(
+                                            'ten_voucher' => $ten_voucher,
+                                            'variable_voucher' => $variable_voucher
+                                        );
+                                        // update đã sử dụng voucher
 
-                                    // nếu session isset thì cập nhật đã sử dụng trừ đi 1
+                                        // nếu session isset thì cập nhật đã sử dụng trừ đi 1
 
 
-                                    $thongbaovoucher = '<span style="color: green; margin-left: 5px;">
+                                        $thongbaovoucher = '<span style="color: green; margin-left: 5px;">
                                     Áp mã thành công</span>';
-                                }
-                            } else {
-                                //hết số lượng voucher 
-                                $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
+                                    }
+                                } else {
+                                    //hết số lượng voucher 
+                                    $thongbaovoucher = '<span style="color: red; font-size: 1rem; margin-left: 5px;">
                                 Số lượng đã hết!</span>';
-                                $variable_voucher = 0;
+                                    $variable_voucher = 0;
+                                }
                             }
+
+
+
+
+
+
 
                             // nhập saiiiii
                         } else {
@@ -251,7 +266,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 } else { //nếu khg có kí tự nhập thì cảnh báo
                     $variable_voucher = 0;
                     $thongbaovoucher = '<span style="color: red; font-size: 1rem; font-size: 1rem; margin-left: 5px;">
-                    Vui lòng nhập để sử dụng voucher! kekeeke</span>';
+                    Vui lòng nhập để sử dụng voucher!</span>';
                 }
             } else { // nếu không gửi voucher
                 $variable_voucher = 0;

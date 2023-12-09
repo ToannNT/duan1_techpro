@@ -44,8 +44,15 @@ function updateUserVoucherUsage($id_user, $voucherCode)
 function checkVoucherQuantity($ten_voucher)
 {
 
-    $sql = "SELECT quantity_voucher FROM vouncher WHERE ten_vouncher LIKE '%" . $ten_voucher . "%'";
+    $sql = "SELECT quantity_voucher FROM vouncher WHERE ten_vouncher = '$ten_voucher'";
     return pdo_query_value($sql);
+}
+// // check Date voucher
+function checkVoucherDate($ten_voucher)
+{
+
+    $sql = "SELECT end_time FROM vouncher WHERE ten_vouncher = '$ten_voucher' AND end_time < CURDATE()";
+    return pdo_query_one($sql);
 }
 
 // trừ số lượng voucher đi 1;

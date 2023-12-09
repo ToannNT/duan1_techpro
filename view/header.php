@@ -64,9 +64,9 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     $html_account = '
                     </ul>
             
-                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                    <a style="padding-top: 15px; margin-left: 10px; font-size: 16px;"
                      href="index.php?pg=login_register">Đăng nhập</a>
-                    <a style="padding-top: 15px; margin-left: 15px; font-size: 16px;"
+                    <a style="padding-top: 15px; margin-left: 25px; font-size: 16px;"
                      href="index.php?pg=login_register">Đăng ký</a>
 
                     
@@ -172,7 +172,7 @@ if (isset($_SESSION['f_Product']) && (count($_SESSION['f_Product']) > 0)) {
                                 </button>
                             </form>
                             <div class="header-middle-right">
-                                <ul class="hm-menu">
+                                <ul style="display: flex;" class="hm-menu">
                                     <li class="hm-wishlist">
                                         <a href="index.php?pg=wishlist">
                                             <?= $Favorite_count ?>

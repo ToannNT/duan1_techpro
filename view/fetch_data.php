@@ -42,14 +42,29 @@ if (isset($_POST['input'])) {
             }
 
             if ($giamgia > 0) {
-                $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
+                $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
+                $gia_muangay = $giamgia;
+                $giatien_addcart = '
+                <input type="hidden" name="price" value="' . $giamgia . '">
+                ';
+                $thanhTien_addcart = '
+                <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+                ';
                 $gia_sp = '
                     <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                     <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
                     <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                 ';
             } else {
-                $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+                $gia_muangay = $gia;
+
+                $giatien_addcart = '
+                <input type="hidden" name="price" value="' . $gia . '">
+                ';
+                $thanhTien_addcart = '
+                <input type="hidden" name="thanhtien" value="' . $gia . '">
+                ';
+                $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
             }
             $link = 'index.php?pg=productdetail&idpro=' . $id;
             $output .= '
@@ -64,47 +79,88 @@ if (isset($_POST['input'])) {
                     ' . $itemHot . '
                 </div>
                 <div class="product_desc">
-                    <div class="product_desc_info">
-                        <div class="product-review">
-                            <h5 class="manufacturer">
-                                <a href="product-details.html">Graphic Corner</a>
-                            </h5>
-                            <div class="rating-box">
-                                <ul class="rating">
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                </ul>
-                            </div>
+                <div class="product_desc_info">
+                    <div class="product-review">
+                        <h5 class="manufacturer">
+                            <a href="shop-left-sidebar.html"></a>
+                        </h5>
+                        <div class="rating-box">
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
                         </div>
-                        <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
-
-                        <div class="price-box">
-                        ' . $gia_sp . '
-                       </div>
-                       
                     </div>
-                    <div class="add-actions">
-                        <ul class="add-actions-link">
+                    <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
+
+                    <div class="price-box">
+                     ' . $gia_sp . '
+                    </div>
+                    
+                </div>
+                <div class="add-actions">
+                    <ul class="add-actions-link">
+                        
+
+
+                    <form>
+                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                        <input type="hidden" name="idpro" value="' . $id . '">
+                        <input type="hidden" name="img" value="' . $hinh . '">
+                        <input type="hidden" name="name" value="' . $ten . '">
+                        <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+
+                        ' . $giatien_addcart . '
+                        <input type="hidden" name="s_status" value="1">
+                        ' . $thanhTien_addcart . '
+                        <input type="hidden" name="quantity" value="1">
+
+                        
+                        <a style="width: 85px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                    </form>
+
+
+                
+
+
                         <form action="index.php?pg=addcart" method="post">
-                            <input type="hidden" name="page_here" value="index.php?pg=product">
+                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="price" value="' . $gia . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
-                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+  
+                            <button style="width: 85px;" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
                         </form>
-                             
-                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                        </ul>
-                    </div>
+
+                        
+                        
+                            <form action="index.php?pg=addtoWishlist" method="post">
+                                <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+                                <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                                <input type="hidden" name="id" value="' . $id . '">
+                                <input type="hidden" name="img" value="' . $hinh . '">
+                                <input type="hidden" name="name" value="' . $ten . '">
+                                <input type="hidden" name="price" value="' . $gia . '">
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
+                                <i class="fa fa-heart-o"></i>
+                                
+                                </button>
+                               
+                            </form>
+                    </ul>
                 </div>
             </div>
-            <!-- single-product-wrap end -->
-        </div>';
+        </div>
+        <!-- single-product-wrap end -->
+    </div>
+                ';
         }
         echo $output;
     } else {
@@ -165,15 +221,31 @@ if (isset($_POST['input'])) {
                     <span class="stickerr"></span>
                     ';
                 }
+
                 if ($giamgia > 0) {
-                    $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
+                    $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
+                    $gia_muangay = $giamgia;
+                    $giatien_addcart = '
+                    <input type="hidden" name="price" value="' . $giamgia . '">
+                    ';
+                    $thanhTien_addcart = '
+                    <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+                    ';
                     $gia_sp = '
                         <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                         <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
                         <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                     ';
                 } else {
-                    $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+                    $gia_muangay = $gia;
+
+                    $giatien_addcart = '
+                    <input type="hidden" name="price" value="' . $gia . '">
+                    ';
+                    $thanhTien_addcart = '
+                    <input type="hidden" name="thanhtien" value="' . $gia . '">
+                    ';
+                    $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
                 }
                 $link = 'index.php?pg=productdetail&idpro=' . $id;
                 $output .= '
@@ -188,47 +260,89 @@ if (isset($_POST['input'])) {
                         ' . $itemHot . '
                     </div>
                     <div class="product_desc">
-                        <div class="product_desc_info">
-                            <div class="product-review">
-                                <h5 class="manufacturer">
-                                    <a href="product-details.html">Graphic Corner</a>
-                                </h5>
-                                <div class="rating-box">
-                                    <ul class="rating">
-                                        <li><i class="fa fa-star-o"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                        <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                        <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                </div>
+                    <div class="product_desc_info">
+                        <div class="product-review">
+                            <h5 class="manufacturer">
+                                <a href="shop-left-sidebar.html"></a>
+                            </h5>
+                            <div class="rating-box">
+                                <ul class="rating">
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                </ul>
                             </div>
-                            <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
-    
-                            <div class="price-box">
-                            ' . $gia_sp . '
-                           </div>
-                           
                         </div>
-                        <div class="add-actions">
-                            <ul class="add-actions-link">
-
-                                <form action="index.php?pg=addcart" method="post">
-                                    <input type="hidden" name="page_here" value="index.php?pg=product">
+                        <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
+    
+                        <div class="price-box">
+                         ' . $gia_sp . '
+                        </div>
+                        
+                    </div>
+                    <div class="add-actions">
+                        <ul class="add-actions-link">
+                            
+    
+    
+                        <form>
+                            <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                            <input type="hidden" name="idpro" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+    
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="1">
+                            ' . $thanhTien_addcart . '
+                            <input type="hidden" name="quantity" value="1">
+    
+                            
+                            <a style="width: 85px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                        </form>
+    
+    
+                    
+    
+    
+                            <form action="index.php?pg=addcart" method="post">
+                                <input type="hidden" name="page_here" value="index.php">
+                                <input type="hidden" name="idpro" value="' . $id . '">
+                                <input type="hidden" name="img" value="' . $hinh . '">
+                                <input type="hidden" name="name" value="' . $ten . '">
+                                ' . $giatien_addcart . '
+                                <input type="hidden" name="s_status" value="0">
+                                ' . $thanhTien_addcart . '
+                                <input type="hidden" name="quantity" value="1">
+      
+                                <button style="width: 85px;" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                            </form>
+    
+                            
+                            
+                                <form action="index.php?pg=addtoWishlist" method="post">
+                                    <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+                                    <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                                    <input type="hidden" name="id" value="' . $id . '">
                                     <input type="hidden" name="img" value="' . $hinh . '">
                                     <input type="hidden" name="name" value="' . $ten . '">
                                     <input type="hidden" name="price" value="' . $gia . '">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+                                    <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
+                                    <i class="fa fa-heart-o"></i>
+                                    
+                                    </button>
+                                   
                                 </form>
-                                <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
-                <!-- single-product-wrap end -->
-            </div>';
+            </div>
+            <!-- single-product-wrap end -->
+        </div>
+           
+                ';
             }
             echo $output;
         } else {
@@ -267,15 +381,31 @@ if (isset($_POST['input'])) {
                 ';
             }
 
+
             if ($giamgia > 0) {
-                $phantram = ((int)$gia - (int)$giamgia) / (int)$gia * 100;
+                $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
+                $gia_muangay = $giamgia;
+                $giatien_addcart = '
+                <input type="hidden" name="price" value="' . $giamgia . '">
+                ';
+                $thanhTien_addcart = '
+                <input type="hidden" name="thanhtien" value="' . $giamgia . '">
+                ';
                 $gia_sp = '
                     <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
                     <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
                     <span class="discount-percentage">- ' . floor($phantram) . '%</span>
                 ';
             } else {
-                $gia_sp = '<span class="new-price">' .  number_format($gia, 0, '.', '.') . 'đ</span>';
+                $gia_muangay = $gia;
+
+                $giatien_addcart = '
+                <input type="hidden" name="price" value="' . $gia . '">
+                ';
+                $thanhTien_addcart = '
+                <input type="hidden" name="thanhtien" value="' . $gia . '">
+                ';
+                $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
             }
             $link = 'index.php?pg=productdetail&idpro=' . $id;
             $output .= '
@@ -290,47 +420,88 @@ if (isset($_POST['input'])) {
                     ' . $itemHot . '
                 </div>
                 <div class="product_desc">
-                    <div class="product_desc_info">
-                        <div class="product-review">
-                            <h5 class="manufacturer">
-                                <a href="product-details.html">Graphic Corner</a>
-                            </h5>
-                            <div class="rating-box">
-                                <ul class="rating">
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                </ul>
-                            </div>
+                <div class="product_desc_info">
+                    <div class="product-review">
+                        <h5 class="manufacturer">
+                            <a href="shop-left-sidebar.html"></a>
+                        </h5>
+                        <div class="rating-box">
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
                         </div>
-                        <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
-
-                        <div class="price-box">
-                        ' . $gia_sp . '
-                       </div>
-                       
                     </div>
-                    <div class="add-actions">
-                        <ul class="add-actions-link">
+                    <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
+
+                    <div class="price-box">
+                     ' . $gia_sp . '
+                    </div>
+                    
+                </div>
+                <div class="add-actions">
+                    <ul class="add-actions-link">
+                        
+
+
+                    <form>
+                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                        <input type="hidden" name="idpro" value="' . $id . '">
+                        <input type="hidden" name="img" value="' . $hinh . '">
+                        <input type="hidden" name="name" value="' . $ten . '">
+                        <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+
+                        ' . $giatien_addcart . '
+                        <input type="hidden" name="s_status" value="1">
+                        ' . $thanhTien_addcart . '
+                        <input type="hidden" name="quantity" value="1">
+
+                        
+                        <a style="width: 85px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                    </form>
+
+
+                
+
+
                         <form action="index.php?pg=addcart" method="post">
-                            <input type="hidden" name="page_here" value="index.php?pg=product">
+                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="price" value="' . $gia . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
-                            <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
+  
+                            <button style="width: 85px;" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
                         </form>
-                             
-                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                        </ul>
-                    </div>
+
+                        
+                        
+                            <form action="index.php?pg=addtoWishlist" method="post">
+                                <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+                                <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                                <input type="hidden" name="id" value="' . $id . '">
+                                <input type="hidden" name="img" value="' . $hinh . '">
+                                <input type="hidden" name="name" value="' . $ten . '">
+                                <input type="hidden" name="price" value="' . $gia . '">
+                                <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
+                                <i class="fa fa-heart-o"></i>
+                                
+                                </button>
+                               
+                            </form>
+                    </ul>
                 </div>
             </div>
-            <!-- single-product-wrap end -->
-        </div>';
+        </div>
+        <!-- single-product-wrap end -->
+    </div>
+            ';
         }
         echo $output;
     } else {
