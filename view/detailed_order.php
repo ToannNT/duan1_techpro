@@ -4,7 +4,7 @@ extract($sp_detailed_order);
 $voucher = $voucher / $slsp_in_bill;
 $phivanchuyen = $phivanchuyen / $slsp_in_bill;
 
-$total = ((int)$gia - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
+$total = (((int)$gia * (int)$soluong) - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
 // echo $slsp_in_bill;
 if ($pttt == 1) {
     $pt_thanhtoan = "Thanh toán bằng thẻ tín dụng";
@@ -71,7 +71,7 @@ if ($status == 0) {
                         <div style="margin-top: 15px;" class="inf__Phone">
                             <h4><?= $ten ?></h4>
                             <!-- <p>Phân loại hàng: 257GB,Titan tự nhiên</p> -->
-                            <p>x<?= $soluong ?></p>
+                            <p style="font-size: 21px;">x<?= $soluong ?></p>
                         </div>
                     </td>
                     <td style="border-left: 1px solid #e5e5e5;"><?= number_format($gia, 0, '.', '.') ?>đ</td>

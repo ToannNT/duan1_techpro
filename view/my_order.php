@@ -11,8 +11,7 @@ if (isset($_SESSION['s_user'])) {
         $slsp_in_bill = count_sp_inbill($id_bill);
         $voucher = (int)$voucher / (int)$slsp_in_bill;
         $phivanchuyen = (int)$phivanchuyen / (int)$slsp_in_bill;
-
-        $total = ((int)$gia - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
+        $total = (((int)$gia * (int)$soluong) - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
 
 
         if ($status == 0) {
