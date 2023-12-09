@@ -1,6 +1,17 @@
 
 
 $(document).ready(function () {
+   
+    $(".sticky-form-mini").click(function () {
+        $(".sticky-form-big").show();
+        $(".sticky-form-mini").hide();
+    });
+
+    $(".sticky-form-hide").click(function () {
+        $(".sticky-form-big").hide();
+        $(".sticky-form-mini").show();
+    });
+
 
     $(".accordion").accordion({
         heightStyle: "content",

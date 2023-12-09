@@ -7234,3 +7234,41 @@ span.required {
 .wishimg{
     width: 100px;
 }
+
+.sticky-form {
+    margin-left: 15% ;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    background-color: #FFFFFF;
+    
+    /* border-top: 1px solid #ddd; */
+    
+    z-index: 9999;
+}
+
+.sticky-form li{
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.sticky-form-mini{
+    border-radius: 15px;
+    margin-left: 1% ;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 8%;
+    background-color: #FFFFFF;
+    padding: 15px;
+    /* border-top: 1px solid #ddd; */
+    border: 3px solid black;
+    z-index: 9999;
+    text-align: center;
+}
+
+.nutsosanh{
+    width: 17px;
+    height: 17px;
+}
