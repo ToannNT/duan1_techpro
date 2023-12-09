@@ -8,22 +8,75 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 // echo var_dump($dsdanhmuc_all);
 // echo var_dump($_SESSION['giohang']);
 
-// $showbn12 = "";
-// foreach ($showdsbn12 as $tt) {
-//     extract($tt);
-//     if ($trangthai == 1) {
-//         $showtrangthai = '<img src="./view/layout/images/banner/'.$img.'">;';
-//     } else {
-//         $showtrangthai = '';
-//     }
-//     $showbn12 .= '
-//         <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-//             <a href="index.php?pg=product">
-//                 '.$showtrangthai.'
-//             </a>
-//         </div>
-//     ';
-// }
+function pdo_querya($sql)
+{
+    $sql_args = array_slice(func_get_args(), 1);
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $rows = $stmt->fetchAll();
+        return $rows;
+    } catch (PDOException $e) {
+        throw $e;
+    } finally {
+        unset($conn);
+    }
+}
+
+
+function show_bn12(){
+    $sql = "SELECT * FROM banner WHERE trangthai = 1";
+    return pdo_querya($sql);
+}
+$showdsbn12 = show_bn12();
+function showsttbn(){  
+    $showdsbn12 = show_bn12();
+    $banner = array();
+    foreach ($showdsbn12 as $value) {
+        extract($value);
+        if ($stt == 1) {
+        $banner['stt1'] = '<div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                    <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                </div> ';
+        } else if($stt == 2){
+            $banner['stt2'] = '<div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                        <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                    </div> ';
+        } else if($stt == 3){
+            $banner['stt3'] = '
+                    <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                        <div class="single-banner single-banner__three">
+                            <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                        </div>
+                    </div>';
+        } else if($stt ==4){
+            $banner['stt4'] = '
+                    <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                        <div class="single-banner single-banner__three">
+                            <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                        </div>
+                    </div>';
+        }else if($stt ==5){
+            $banner['stt5'] = '<div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                                <div class="single-banner single-banner__three">
+                                    <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                                </div>
+                            </div>';
+        }else if($stt ==6){
+            $banner['stt6'] = '<div class="single-banner shop-page-banner">
+                        <a href="href="index.php?pg=product"><img src="./view/layout/images/banner/'.$img.'"></a>
+                    </div>';
+        }else if($stt ==7){
+            $banner['stt7'] = '<div class="li-static-home-image">
+                    <a href="index.php?pg=productdetail&idpro='.$id_product.'"><img src="./view/layout/images/banner/'.$img.'"></a>
+                    </div>';
+        } 
+
+    } return $banner;
+}
+
+$banners= showsttbn();
 ?>
 
 <!-- Begin Slider With Banner Area -->
@@ -76,21 +129,12 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                     </div>
                 </div>
             </div>
-            <!-- Slider Area End Here -->
-            <!-- Begin Li Banner Area -->
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                    <a href="#">
-                        <img src="./view/layout/images/banner/bn8.png" alt>
-                    </a>
-                </div>
-                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-                    <a href="#">
-                        <img src="./view/layout/images/banner/bn8.png" alt>
-                    </a>
-                </div>
+                <!-- ///11111//// -->
+                <?=$banners['stt1']?>
+                <!-- ///22222//// -->
+                <?=$banners['stt2']?>
             </div>
-            <!-- Li Banner Area End Here -->
         </div>
     </div>
 </div>
@@ -178,34 +222,12 @@ $show_dssp_suggest = show_SP($dssp_suggest);
 <div class="li-static-banner">
     <div class="container">
         <div class="row">
-            <!-- Begin Single Banner Area -->
-            <div class="col-lg-4 col-md-4 text-center">
-                <div class="single-banner single-banner__three">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/zflip.png" srcset="./view/layout/images/banner/zflip.png 1x, ./view/layout/images/banner/zflip.png 2x" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Banner Area End Here -->
-            <!-- Begin Single Banner Area -->
-            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                <div class="single-banner single-banner__three">
-                    <a href="index.php?pg=product">
-                    <img src="./view/layout/images/banner/bn8.jpg" srcset="./view/layout/images/banner/bn8.png 1x, ./view/layout/images/banner/bn8.png 2x" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                <div class="single-banner single-banner__three">
-                    <a href="index.php?pg=product">
-                        <img src="./view/layout/images/banner/bn9.jpg" srcset="./view/layout/images/banner/bn9.png 1x, ./view/layout/images/banner/bn9.png 2x" alt="Li's Static Banner">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Banner Area End Here -->
-            <!-- Begin Single Banner Area -->
-
-            <!-- Single Banner Area End Here -->
+            <!-- 33333333333 -->
+            <?=$banners['stt3']?>
+            <!-- 444444444444 -->
+            <?=$banners['stt4']?>
+            <!-- 555555555555 -->
+            <?=$banners['stt5']?>
         </div>
     </div>
 </div>
@@ -256,11 +278,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
                             <span>Siêu sale vào ngày Black Friday</span>
                         </h2>
                     </div>
-                    <div class="single-banner shop-page-banner">
-                        <a href="#">
-                            <img src="./view/layout/images/bg-banner/4.png" srcset="./view/layout/images/bg-banner/4.png 1x, ./view/layout/images/bg-banner/4.png 2x" alt="Li's Static Banner">
-                        </a>
-                    </div>
+                    <!-- 666666666 -->
+                    <?=$banners['stt6']?>
                     <?php
                     $data_blackfriday = get_blackfriday();
                     ?>
@@ -358,23 +377,8 @@ $show_dssp_suggest = show_SP($dssp_suggest);
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- Begin Li's Static Home Image Area -->
-                <div class="li-static-home-image"></div>
-                <!-- Li's Static Home Image Area End Here -->
-                <!-- Begin Li's Static Home Content Area -->
-                <div class="li-static-home-content">
-                    <!-- <p>Siêu sale<span>Giảm 20%</span>Trong 3 ngày</p>
-                        <h2>Sản phẩm nổi bật</h2>
-                        <h2>Tai nghe Bluetooth AirPods Pro Gen 2 MagSafe Charge (USB-C) Apple MTJV3 </h2>
-                        <p class="schedule">
-                            Giá chỉ từ
-                            <span> 5.599.000VNĐ</span>
-                        </p> -->
-                    <div class="default-btn">
-                        <a href="index.php?pg=product" class="links">Mua ngay</a>
-                    </div>
-                </div>
-                <!-- Li's Static Home Content Area End Here -->
+                <!-- 777777 -->
+                <?=$banners['stt7']?>
             </div>
         </div>
     </div>

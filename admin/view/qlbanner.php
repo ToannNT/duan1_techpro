@@ -8,12 +8,10 @@ foreach ($get_banner as $item) {
     $check = "";
   }
   $html_showbanner .= '<tr>
-              <td>' . $id . '</td>
               <td>' . $stt . '</td>
               <td style="width: 200px; height: 100px; overflow: hidden;">
                   <img src="../view/layout/images/banner/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
               </td>
-              <td>' . $mota . '</td>
               <td style="width: 10%;">
                 <label class="switch">
                   <input onchange="upStatus(this)" id="' . $id . '" type="checkbox" ' . $check . ' value="1">
@@ -36,12 +34,10 @@ foreach ($get_slider as $item) {
     $check = "";
   }
   $html_showslider .= '<tr>
-              <td>' . $id . '</td>
               <td>' . $stt . '</td>
               <td style="width: 200px; height: 100px; overflow: hidden;">
                   <img src="../view/layout/asset/css/images/slider/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
               </td>
-              <td>' . $mota . '</td>
               <td style="width: 10%;">
                 <label class="switch">
                   <input onchange="upStatussd(this)" id="' . $id . '" type="checkbox" ' . $check . ' value="1">
@@ -147,11 +143,9 @@ input:checked+.sliderr:before {
                         <h3>Banner home</h3>
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Stt</th>
-                                <th>Hình ảnh</th>
-                                <th>Mô tả</th>
-                                <th>Trạng thái</th>
+                                <th style="width:100px;" >Thứ tự banner</th>
+                                <th style="width:500px;">Hình ảnh</th>
+                                <th style="width:300px;">Trạng thái</th>
                                 <th>Thuộc tính</th>
                             </tr>
                         </thead>
@@ -163,11 +157,9 @@ input:checked+.sliderr:before {
                         <h3>Slider home</h3>
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Stt</th>
-                                <th>Hình ảnh</th>
-                                <th>Mô tả</th>
-                                <th>Trạng thái</th>
+                                <th style="width:100px;" >Thứ tự banner</th>
+                                <th style="width:500px;">Hình ảnh</th>
+                                <th style="width:300px;">Trạng thái</th>
                                 <th>Thuộc tính</th>
                             </tr>
                         </thead>

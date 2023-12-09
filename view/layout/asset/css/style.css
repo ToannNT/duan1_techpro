@@ -3523,10 +3523,8 @@ textarea:focus {
 /*----------------------------------------*/
 
 .li-static-home-image {
-    background-image: url(./images/slider/bgbn2.jpg);
-    background-size: cover;
-    height: 180px;
-    background-repeat: no-repeat;
+    width: 1200px;
+    height: 200px;
 }
 
 .li-static-home-content {
