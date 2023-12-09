@@ -282,6 +282,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $ship = $_POST['ptvc'];
                 $ngaydathang = $_POST['ngaydat'];
                 $giamgiahoivien = $_POST['hoivien'];
+                //
+                $idpro_get = $_GET['idpro'];
 
 
 
@@ -341,31 +343,57 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
-                foreach ($_SESSION['giohang'] as $key => $value) {
-                    extract($value);
-                    if ($s_status == 1) {
-                        //thêm sản vào bảng CART
-                        cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
-                        //update Số lượng sản phẩm
-                        update_quantity_product($idpro);
-                        // thêm sản phẩm vào bảng  ORDER
-                        $randomChars = "";
-                        for ($i = 0; $i < 4; $i++) {
-                            $randomChars .= chr(mt_rand(65, 90)); // Random ký tự từ A-Z (theo bảng mã ASCII)
-                        }
-                        $madh = $randomChars . "-" . $iduser . date("dmY");
 
-                        // $madh = "Toannha" . $iduser . "-" . date("His-dmY");
-
-                        insert_orderr($madh, $iduser, $idpro, $id_bill, $name, $price, $img, $quantity, $ngaydathang, $ten_nhan, $sdt_nhan, $diachi_nhan, $ship, $voucher, $giamgiahoivien, $pttt, 0);
-
-                        unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
+                //MUA HÀNG TRỰC TIẾP KHÔNG THÊM VÀ GIỎ HÀNG
+                //nếu IDPRO_GET checkout tồn tại thì mua sản phẩm luôn 
+                if (isset($_GET['idpro']) && ($_GET['idpro'] != "")) {
+                    $idpro = $_GET['idpro'];
+                    $name = $_GET['name'];
+                    $quantity = $_GET['quantity'];
+                    $price = $_GET['price'];
+                    $thanhtien = $_GET['thanhtien'];
+                    $img = $_GET['img'];
+                    $randomChars = "";
+                    for ($i = 0; $i < 4; $i++) {
+                        $randomChars .= chr(mt_rand(65, 90)); // Random ký tự từ A-Z (theo bảng mã ASCII)
                     }
+                    $madh = $randomChars . "-" . $iduser . date("dmY");
+
+                    cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                    //update Số lượng sản phẩm
+                    update_quantity_product($idpro);
+                    insert_orderr($madh, $iduser, $idpro, $id_bill, $name, $price, $img, $quantity, $ngaydathang, $ten_nhan, $sdt_nhan, $diachi_nhan, $ship, $voucher, $giamgiahoivien, $pttt, 0);
+                    unset($_SESSION['voucher']);
+                    header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '');
+                } else {
+
+
+                    foreach ($_SESSION['giohang'] as $key => $value) {
+                        extract($value);
+                        if ($s_status == 1) {
+                            //thêm sản vào bảng CART
+                            cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
+                            //update Số lượng sản phẩm
+                            update_quantity_product($idpro);
+                            // thêm sản phẩm vào bảng  ORDER
+                            $randomChars = "";
+                            for ($i = 0; $i < 4; $i++) {
+                                $randomChars .= chr(mt_rand(65, 90)); // Random ký tự từ A-Z (theo bảng mã ASCII)
+                            }
+                            $madh = $randomChars . "-" . $iduser . date("dmY");
+
+                            // $madh = "Toannha" . $iduser . "-" . date("His-dmY");
+
+                            insert_orderr($madh, $iduser, $idpro, $id_bill, $name, $price, $img, $quantity, $ngaydathang, $ten_nhan, $sdt_nhan, $diachi_nhan, $ship, $voucher, $giamgiahoivien, $pttt, 0);
+
+                            unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
+                        }
+                    }
+                    //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
+                    unset($_SESSION['voucher']);
+                    $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
+                    header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '');
                 }
-                //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
-                unset($_SESSION['voucher']);
-                $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
-                header('location: index.php?pg=confirm_checkout&id_bill=' . $id_bill . '&id_cart=' . $id_cart . '');
             }
             require_once "view/checkout.php";
             break;

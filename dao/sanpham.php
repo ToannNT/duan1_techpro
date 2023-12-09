@@ -206,7 +206,7 @@ function show_SP($dssp)
 
 
 
-                        <form >
+                        <form>
                             <input type="hidden" name="page_here" value="index.php?pg=checkout">
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
@@ -219,11 +219,11 @@ function show_SP($dssp)
                             <input type="hidden" name="quantity" value="1">
 
                             
-                            <a href="index.php?pg=checkout&idpro=' . $gia_muangay . '">Mua ngay</a>
+                            <a class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
                         </form>
 
 
-
+                        
 
 
                         

@@ -12,7 +12,7 @@ if (isset($_SESSION['s_user'])) {
         $voucher = (int)$voucher / (int)$slsp_in_bill;
         $phivanchuyen = (int)$phivanchuyen / (int)$slsp_in_bill;
 
-        $total = ((int)$gia - (int)$voucher) + (int)$phivanchuyen;
+        $total = ((int)$gia - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
 
 
         if ($status == 0) {

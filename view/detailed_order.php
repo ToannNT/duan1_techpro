@@ -4,7 +4,7 @@ extract($sp_detailed_order);
 $voucher = $voucher / $slsp_in_bill;
 $phivanchuyen = $phivanchuyen / $slsp_in_bill;
 
-$total = ((int)$gia - (int)$voucher) + (int)$phivanchuyen;
+$total = ((int)$gia - (int)$voucher - (int)$hoivien) + (int)$phivanchuyen;
 // echo $slsp_in_bill;
 if ($pttt == 1) {
     $pt_thanhtoan = "Thanh toán bằng thẻ tín dụng";
@@ -85,12 +85,18 @@ if ($status == 0) {
                     <td>+<?= number_format($phivanchuyen, 0, '.', '.') ?>đ</td>
                 </tr>
                 <tr>
+                    <td colspan="2">Hội viên</td>
+                    <td>- <?= number_format($hoivien, 0, '.', '.') ?>đ</td>
+                </tr>
+                <tr>
                     <td colspan="2">Voucher từ shop</td>
                     <td>- <?= number_format($voucher, 0, '.', '.') ?>đ</td>
                 </tr>
                 <tr>
                     <td colspan="2">Thành tiền</td>
-                    <td><?= number_format($total, 0, '.', '.') ?>đ</td>
+
+                    <td style=" color: red; font-weight: 500; font-size: larger; ">
+                        <?= number_format($total, 0, '.', '.') ?>đ</td>
                 </tr>
             </tbody>
             <tfoot>
