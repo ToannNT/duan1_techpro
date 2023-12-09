@@ -2,7 +2,41 @@
 // $html_dssp = show_dssp($dssp_all);
 $html_showdm = show_dsdm_product($dsdm);
 $html_showbrand = show_dsbr_product($dsbrandne);
+if(isset($_SESSION['dataArray'][0])) {
+    $id1 = (integer)($_SESSION['dataArray'][0]); // Lấy sản phẩm đầu tiên
+    $spss1 = get_Sp_Detail($id1);
+    extract($spss1);
+    $html_sp1 = "";
+    
+    $hinhsp1=$hinh;
+    $ten1=$ten;
 
+    $html_sp1.= '<img width="100px" src="./view/layout/images/product/'.$hinhsp1.'" alt="">
+                 <p>'.$ten1.'</p>';
+} else {
+    $html_sp1 = "<p> Không có sản phẩm </p>";
+}
+
+if(isset($_SESSION['dataArray'][1])) {
+    $id2 = (integer)($_SESSION['dataArray'][1]); // Lấy sản phẩm đầu tiên
+    $spss2 = get_Sp_Detail($id2);
+    extract($spss2);
+    $html_sp2="";
+
+    $hinhsp2=$hinh;
+    $ten2=$ten;
+
+    $html_sp2.= '<img width="100px" src="./view/layout/images/product/'.$hinhsp2.'" alt="">
+    <p>'.$ten2.'</p>';
+} else {
+    $html_sp2 = "<p> Không có sản phẩm </p>";
+}
+
+if(isset($_SESSION['dataArray'])) {
+    $countSs = count($_SESSION['dataArray']);
+} else {
+    $countSs = 0 ;
+}
 
 // echo var_dump($dssp_filter);
 ?>
@@ -784,6 +818,27 @@ $html_showbrand = show_dsbr_product($dsbrandne);
         </div>
     </div>
 </div>
+<div class="sticky-form-mini" id="stickyForm">
+    <input class="count" type="hidden" value="<?=$countSs?>">
+    So sánh(<?=$countSs?>)
+</div>
+<div class="sticky-form-big" style="display:none;">
+    <form class="sticky-form"  id="stickyForm" action="index.php?pg=compare" method="post">
+        <ul style="display: flex;">  
+            <li style="width:40%">
+                <?=$html_sp1?>
+            </li>
+            <li style="width:40%">
+                <?=$html_sp2?>
+            </li >    
+            <li style="width:20%" id="productInfoContainer">    
+                <input class="submit" type="submit" name="sosanh" value="So Sánh"><a href="index.php?pg=compare"></a>
+                <p style="margin-bottom: 0;text-align: center;font-weight: bold;"><a href="index.php?pg=product&del=1"> Xoá</a></p>
+                <p style="margin-bottom: 0; text-align: center;font-weight: bold;" class="sticky-form-hide">Ẩn </p>
+            </li>
+        </ul>
+    </form>
+</div>
 <!-- Content Wraper Area End Here -->
 <!-- Begin Footer Area -->
 
@@ -807,3 +862,21 @@ $html_showbrand = show_dsbr_product($dsbrandne);
 
     }
 </style>
+<script>
+            // JavaScript để xác định vị trí khi cuộn trang
+            window.onscroll = function() {
+            stickyForm();
+        };
+
+        var form = document.getElementById("stickyForm");
+        var sticky = form.offsetTop;
+
+        function stickyForm() {
+            if (window.pageYOffset >= sticky) {
+                form.classList.add("sticky");
+            } else {
+                form.classList.remove("sticky");
+            }
+        };
+
+</script>

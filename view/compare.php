@@ -1,9 +1,11 @@
 
 <?php 
-
-        $id1 = $_GET['idsp1'];
-        $id2 = $_GET['idsp2'];
-
+if(isset($_SESSION['dataArray']) && count($_SESSION['dataArray']) >= 2) {
+    $id1 = $_SESSION['dataArray'][0]; // Lấy sản phẩm đầu tiên
+    $id2 = $_SESSION['dataArray'][1]; // Lấy sản phẩm thứ hai
+} else {
+    header('location: index.php?pg=product');
+}
 
         $spss1 = get_Sp_Detail($id1);
         extract($spss1);
@@ -163,7 +165,7 @@
                 </div>
             </div>
             <!--// Compare Area -->
-<script>
+<!-- <script>
 $(document).ready(function() {
    
     $(".sosanh").click(function(){   
@@ -183,4 +185,4 @@ $(document).ready(function() {
         });
     });
 
-   </script>
+   </script> -->
