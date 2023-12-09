@@ -55,14 +55,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     if ($password == "" || $newpassword == "" || $repassword == "") {
                         $thongbao = "Vui lòng nhập đầy đủ thông tin";
                     } else if ($password != $_SESSION['s_user']['password']) {
-                        echo $password;
-                        echo $_SESSION['s_user']['password'];
+                        // echo $password;
+                        // echo $_SESSION['s_user']['password'];
                         $thongbao = "Mật khẩu hiện tại không chính xác";
                     } else if ($newpassword != $repassword) {
                         $thongbao = "Mật khẩu nhập lại không đúng";
                     } else {
                         update_pass_user($newpassword, $id);
                         $thongbaothanhcong = "Thành công";
+                        array_splice($_SESSION['s_user'],0, count($_SESSION['s_user']));
+                        header ('location: index.php?pg=login_register');
                     }
                 }
             } else {
@@ -70,6 +72,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             include_once "view/changepassword.php";
             break;
+        // case 'changepassword_form':
+        //     if(isset($_POST["location"])){
+        //         include_once "view/changepassword.php";
+        //     }
+        //     break;
         case 'blog':
             require_once "view/blog.php";
             break;

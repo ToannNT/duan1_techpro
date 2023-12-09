@@ -10,10 +10,10 @@
                             
                                 <?php
                                 if (isset($thongbao)) {
-                                    echo '<p style="color:red">'.$thongbao.'</p>';
+                                    echo '<div class="alert alert-danger">'.$thongbao.'</div>';
                                     unset($thongbao);
                                 }else if(isset($thongbaothanhcong)){
-                                    echo '<p style="color:green">'.$thongbaothanhcong.'</p>';
+                                    echo '<div class="alert alert-danger">'.$thongbaothanhcong.'</div>';
                                     unset ($thongbaothanhcong);
                                 }
                                 ?>
@@ -27,12 +27,12 @@
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Mật khẩu mới</label>
-                                <input class="mb-0" type="text" id="password" name="np"
+                                <input class="mb-0" type="password" id="password" name="np"
                                     placeholder="Mật khẩu mới">
                             </div>
                             <div class="col-12 mb-20">
                                 <label>Xác nhận mật khẩu</label>
-                                <input class="mb-0" type="text" id="password" name="c_np"
+                                <input class="mb-0" type="password" id="password" name="c_np"
                                     placeholder="Xác nhận">
                             </div>
 

@@ -1,16 +1,19 @@
 <?php
 $get_array_suser=get_user($id);
 $member_img="";
+$member_lv="";
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     if($get_array_suser != $_SESSION['s_user']){
         extract ($get_array_suser);
     }else{
         extract ($_SESSION['s_user']);
     }
-    if($_SESSION['s_user']['hoivien'] == 0){$member_img = "member_new.jpg";}
-    else if($_SESSION['s_user']['hoivien'] == 1){$member_img = "member_silver.png";}
-    else if($_SESSION['s_user']['hoivien'] == 2){$member_img = "member_gold.png";}
-    else if($_SESSION['s_user']['hoivien'] == 3){$member_img = "member_diamon.png";}
+    if($_SESSION['s_user']['hoivien'] == 0){$member_img = "member_new.jpg"; $member_lv="Thành viên: Mới";}
+    else if($_SESSION['s_user']['hoivien'] == 1){$member_img = "member_silver.png"; $member_lv="Thành viên: Bạc";}
+    else if($_SESSION['s_user']['hoivien'] == 2){$member_img = "member_gold.png"; $member_lv="Thành viên: Vàng";}
+    else if($_SESSION['s_user']['hoivien'] == 3){$member_img = "member_diamon.png"; $member_lv="Thành viên: Kim cương";}
+}else{
+    header ('location: index.php');
 }
 if (isset($hinh)) {
     $hinh_ac = '
@@ -19,16 +22,6 @@ if (isset($hinh)) {
 } else {
     $hinh_ac = '<img id="previewImage"name="hinh" src="./view/layout/images/user/user_empty.png" alt>';
 }
-// if ($hinh != "") {
-//     $target_file = "./view/layout/images/user/" . $hinh;
-//     move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
-// } else {
-//     // Nếu không có ảnh mới được chọn, sử dụng ảnh gần nhất
-//     $latestImage = getLatestImageFromUser($id);
-//     $target_file = $latestImage;
-// }
-
-
 ?>
 
 <div class="wrapper-container">
@@ -45,21 +38,26 @@ if (isset($hinh)) {
                             <div class="content-col-left__name">
                                 <?= $hoten ?>
                             </div>
-                            <div class="content-col-left__lv">Thành viên: Mới</div>
+                            <div class="content-col-left__lv"><?=$member_lv?></div>
                             <div class="content-col-left__cart"><img src="./view/layout/images/user/<?=$member_img?>" alt>
                             </div>
                         </div>
+
                         <div class="content-col-left bg- p-4 pt-50">
-                            <div class="content-col-left__avata">
-                                <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?= $hinh ?>" alt> -->
-                                <?= $hinh_ac ?>
+                            <div class="content-col-left__avata con-content">
+                                <p>Cách thành hội viên:</p>
                             </div>
-                            <div class="content-col-left__name">
-                                <?= $hoten ?>
+                            <div class="content-col-left__lv reg-content"><a href="index.php?pg=login_register">Đăng kí tài khoản tại trang web của chúng tôi</a></div>
+                        </div>
+
+                        <div class="content-col-left bg- p-4 pt-50">
+                            <div class="content-col-left__avata con-content">
+                                <p>Bậc hội viên và ưu đãi:</p>
                             </div>
-                            <div class="content-col-left__lv">Thành viên: Mới</div>
-                            <div class="content-col-left__cart"><img src="./view/layout/images/user/<?=$member_img?>" alt>
-                            </div>
+                            <div class="content-col-left__lv reg-content"> - Bậc bạc (Tổng thanh toán > 20tr): Giảm 5% mỗi sản phẩm </div>
+                            <div class="content-col-left__lv reg-content"> - Bậc vàng (Tổng thanh toán > 50tr): Giảm 10% mỗi sản phẩm </div>
+                            <div class="content-col-left__lv reg-content"> - Bậc kim cương (Tổng thanh toán > 100tr): Giảm 15% mỗi sản phẩm </div>
+                            <div class="content-col-left__lv reg-content pro-content"><a href="index.php?pg=product">Thăng bậc ngay</a></div>
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -103,19 +101,16 @@ if (isset($hinh)) {
                                     <label for="#">Chọn hình mới: </label>
                                     <input type="file" id="imageInput" name="hinh">
                                 </div>
-                                <div class="default-btn-thaydoi">
-                                    <input type="hidden" name="id" value="<?= $id ?>">
-                                    <input type="submit" name="capnhat" value="Lưu thay đổi">
+                                <div class="flex-btn-thaydoi">
+                                    <div class="default-btn-thaydoi">
+                                        <input type="hidden" name="id" value="<?= $id ?>">
+                                        <input type="submit" name="capnhat" value="Lưu thay đổi">
+                                    </div>
+                                    <div class="default-btn-thaydoi">
+                                        <a href="index.php?pg=changepassword">Đổi mật khẩu</a>
+                                    </div>
                                 </div>
-
                             </div>
-
-                            <form action="index.php?pg=changepassword" method="post">
-                                <div class="default-btn-thaydoi">
-                                    <!-- <input type="hidden" name="id" value="<?= $id ?>"> -->
-                                    <input type="submit" name="capnhat" value="Đổi mật khẩu">
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
