@@ -7269,6 +7269,5 @@ span.required {
 }
 
 .nutsosanh{
-    width: 17px;
-    height: 17px;
+all :unset;
 }

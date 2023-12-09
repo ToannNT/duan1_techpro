@@ -101,7 +101,7 @@ if (isset($_POST['input'])) {
                             <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                <li style="overflow: hidden;"><input type="submit" value="" id="sosanh" name="sosanh"></input></li>                        
+                                <li><button class="nutsosanh" type="submit" id="sosanh" name="sosanh">SS</button></li>                        
                         </form>
                         </ul>
                     </div>
@@ -230,7 +230,7 @@ if (isset($_POST['input'])) {
                                     <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
                                         <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                         <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                        <li style="overflow: hidden;"><input type="submit" value="" id="sosanh" name="sosanh"></input></li>                        
+                                        <li><button class="nutsosanh" type="submit" id="sosanh" name="sosanh">SS</button></li>                        
                                 </form>
                             </ul>
                         </div>
@@ -336,7 +336,7 @@ if (isset($_POST['input'])) {
                             <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
                                 <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                <li style="overflow: hidden;"><input type="submit" value="" id="sosanh" name="sosanh"></input></li>                        
+                                <li><button class="nutsosanh" type="submit" id="sosanh" name="sosanh">SS</button></li>                        
                         </form>
                         </ul>
                     </div>

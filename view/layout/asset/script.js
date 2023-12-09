@@ -1,7 +1,8 @@
 
 
 $(document).ready(function () {
-   
+    
+
     $(".sticky-form-mini").click(function () {
         $(".sticky-form-big").show();
         $(".sticky-form-mini").hide();
