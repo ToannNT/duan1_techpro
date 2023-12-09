@@ -225,12 +225,34 @@ $banners= showsttbn();
 <div class="li-static-banner">
     <div class="container">
         <div class="row">
-            <!-- 33333333333 -->
-            <?=$banners['stt3']?>
-            <!-- 444444444444 -->
-            <?=$banners['stt4']?>
-            <!-- 555555555555 -->
-            <?=$banners['stt5']?>
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="single-banner single-banner__three">
+                    <a href="index.php?pg=product">
+                        <img src="./view/layout/images/banner/zflip.png" srcset="./view/layout/images/banner/zflip.png 1x, ./view/layout/images/banner/zflip.png 2x" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                <div class="single-banner single-banner__three">
+                    <a href="index.php?pg=product">
+                        <img src="./view/layout/images/banner/bn10.jpg" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                <div class="single-banner single-banner__three">
+                    <a href="index.php?pg=product">
+                        <img src="./view/layout/images/banner/bn9.jpg" srcset="./view/layout/images/banner/bn9.png 1x, ./view/layout/images/banner/bn9.png 2x" alt="Li's Static Banner">
+                    </a>
+                </div>
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+
+            <!-- Single Banner Area End Here -->
         </div>
     </div>
 </div>
@@ -380,7 +402,6 @@ $banners= showsttbn();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- 7777777777 -->
                 <?=$banners['stt7']?>
             </div>
         </div>
