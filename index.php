@@ -490,8 +490,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 // move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file);
                 // xử lý
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
-                include_once "view/confirm_account.php";
-                // header ('location: index.php?pg=account');
+                // get_user($id);
+                // include_once "view/account.php";
+                header ('location: index.php?pg=account');
             } else {
                 include_once "view/account.php";
             }

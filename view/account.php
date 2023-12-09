@@ -1,7 +1,16 @@
 <?php
-
+$get_array_suser=get_user($id);
+$member_img="";
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
-    extract($_SESSION['s_user']);
+    if($get_array_suser != $_SESSION['s_user']){
+        extract ($get_array_suser);
+    }else{
+        extract ($_SESSION['s_user']);
+    }
+    if($_SESSION['s_user']['hoivien'] == 0){$member_img = "member_new.jpg";}
+    else if($_SESSION['s_user']['hoivien'] == 1){$member_img = "member_silver.png";}
+    else if($_SESSION['s_user']['hoivien'] == 2){$member_img = "member_gold.png";}
+    else if($_SESSION['s_user']['hoivien'] == 3){$member_img = "member_diamon.png";}
 }
 if (isset($hinh)) {
     $hinh_ac = '
@@ -37,7 +46,19 @@ if (isset($hinh)) {
                                 <?= $hoten ?>
                             </div>
                             <div class="content-col-left__lv">Thành viên: Mới</div>
-                            <div class="content-col-left__cart"><img src="./view/layout/images/user/member_new.jpg" alt>
+                            <div class="content-col-left__cart"><img src="./view/layout/images/user/<?=$member_img?>" alt>
+                            </div>
+                        </div>
+                        <div class="content-col-left bg- p-4 pt-50">
+                            <div class="content-col-left__avata">
+                                <!-- <img style="border-radius: 50%;" id="previewImage"name="hinh" src="./view/layout/images/user/<?= $hinh ?>" alt> -->
+                                <?= $hinh_ac ?>
+                            </div>
+                            <div class="content-col-left__name">
+                                <?= $hoten ?>
+                            </div>
+                            <div class="content-col-left__lv">Thành viên: Mới</div>
+                            <div class="content-col-left__cart"><img src="./view/layout/images/user/<?=$member_img?>" alt>
                             </div>
                         </div>
                     </div>
