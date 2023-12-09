@@ -13,3 +13,5 @@ function insert_cmt($id_product, $id_user, $noi_dung, $ngay_bl, $ten, $hinh)
     $sql = "INSERT INTO cmt (id_product,id_user,noi_dung,ngay_bl,ten,hinh ) VALUES (?,?,?,?,?,?)";
     pdo_execute($sql, $id_product, $id_user, $noi_dung, $ngay_bl, $ten, $hinh);
 }
+
+
