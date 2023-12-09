@@ -14,9 +14,9 @@ function db_slider($limit){
     return pdo_query($sql);
 }
 //tạo mới banner
-function insert_banner($stt, $mota, $img){
-    $sql = "INSERT INTO banner(stt, mota, img) VALUES(?,?,?)";
-    pdo_execute($sql, $stt, $mota, $img);
+function insert_banner($stt, $namepro, $img){
+    $sql = "INSERT INTO banner(stt,id_product, img) VALUES(?,?,?)";
+    pdo_execute($sql, $stt, $namepro, $img);
 }
 //kết thúc tạo mới banner
 //tạo mới slider
@@ -60,3 +60,10 @@ function update_status($trangthai, $id){
 }
 // kết thúc xoá banner
 ///endbanner
+
+
+
+function ds_product(){
+    $sql = "SELECT * FROM product ORDER BY id ASC";
+    return pdo_query($sql);
+}

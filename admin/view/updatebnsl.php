@@ -2,6 +2,16 @@
 if(is_array($showup_banner)&&(count($showup_banner)>0)){
   extract($showup_banner);
   }
+  $html_showsp = '';
+  foreach ($get_pro as $dm_adm) {
+      extract($dm_adm);
+      if($dm_adm['id']==$id_product){
+        $selected = "selected";
+      }else{
+        $selected = "";
+      }
+      $html_showsp .= '<option value="' . $id . '" '.$selected.'>' . substr($ten, 0, 50) . '...</option>';
+  }
 ?>
 
 <main class="app-content">
@@ -20,26 +30,32 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
           </div>
           <form action="index.php?pg=updatebanner" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
-                <label for="stt" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
+                <label for="stt" class="control-label">Nhập số thứ tự trên web<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <input id="stt" class="form-control" value="<?=$stt?>" name="stt" type="text" placeholder="">
               </div>
-              <div class="form-group col-md-6">
-                <label for="mota" class="control-label">Nhập mô tả</label>
-                <input class="form-control" value="<?=$mota?>" name="mota" type="text">
+              <div class="form-group col-md-3 ">
+                <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
+                <select name="namepro" class="form-control" id="exampleSelect1">
+                  <option value="default" >-- Chọn tên sản phẩm --</option>
+                  <?=$html_showsp;?>
+                </select>
               </div>
+              <div class="form-group col-md-6 "></div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
                   <input type="file" id="uploadfile" value="<?=$img?>" name="imgup" onchange="readURL(this);" /><br>
                   <input type="hidden" id="uploadfile" value="<?=$img?>" name="imgold">
-                  <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 </div>
+              </div>
+              <div class="form-group col-md-3">
+                <img style="width: 100%;padding-top: 20px;" src="../view/layout/images/banner/<?=$img?>" alt="">
                 <div id="thumbbox">
-                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <p style="display: none; color:red;">Ảnh mới được cập nhật</p>
+                  <img width="100%px" alt="Thumb image" id="thumbimage" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
-              
               <div class="form-group col-md-12">
                 <input type="hidden" name="idbn" value="<?=$idbn?>" >
                 <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">

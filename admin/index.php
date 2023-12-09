@@ -252,6 +252,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'qlbanner':
             // error_reporting(E_ALL);
             // ini_set('display_errors', '1');
+            $get_pro = ds_product();
             $get_banner = db_banner(10);
             $get_slider = db_slider(10);
             require_once "view/qlbanner.php";
@@ -259,13 +260,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'addbanner':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
+            $get_pro = ds_product();
             if (isset($_POST['btnbn']) && ($_POST['btnbn'] != "")) {
                 $stt = $_POST['stt'];
-                $mota = $_POST['mota'];
+                $namepro = $_POST['namepro'];
                 $img = $_FILES['imgup']['name'];
                 $target_file = "../view/layout/images/banner/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                insert_banner($stt, $mota, $img);
+                insert_banner($stt, $namepro, $img);
                 header('location: index.php?pg=qlbanner');
             }
             if (isset($_POST['btnsd']) && ($_POST['btnsd'] != "")) {
@@ -285,8 +287,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $mota = $_POST['mota'];
                 if (isset($_FILES['imgup']['name']) && ($_FILES['imgup']['name'] !== "")) {
                     $img = $_FILES['imgup']['name'];
-                } else {
-                    $img = "noimg.jpeg";
                 }
                 if ($img == "") {
                     $img = $_POST['imgold'];
@@ -304,6 +304,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'updatebnsl':
             if (isset($_GET['idbn']) && ($_GET['idbn'] > 0)) {
                 $idbn = $_GET['idbn'];
+                $get_pro = ds_product();
                 $showup_banner = showup_banner($idbn);
             }
             $get_banner = db_banner(10);
