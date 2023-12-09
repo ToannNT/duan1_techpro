@@ -822,7 +822,7 @@ if(isset($_SESSION['dataArray'])) {
     <input class="count" type="hidden" value="<?=$countSs?>">
     So sánh(<?=$countSs?>)
 </div>
-<div class="sticky-form-big" style="display:none;">
+<div class="sticky-form-big" style="display:none; height: 300px;">
     <form class="sticky-form"  id="stickyForm" action="index.php?pg=compare" method="post">
         <ul style="display: flex;">  
             <li style="width:40%">
@@ -832,9 +832,9 @@ if(isset($_SESSION['dataArray'])) {
                 <?=$html_sp2?>
             </li >    
             <li style="width:20%" id="productInfoContainer">    
-                <input class="submit" type="submit" name="sosanh" value="So Sánh"><a href="index.php?pg=compare"></a>
-                <p style="margin-bottom: 0;text-align: center;font-weight: bold;"><a href="index.php?pg=product&del=1"> Xoá</a></p>
-                <p style="margin-bottom: 0; text-align: center;font-weight: bold;" class="sticky-form-hide">Ẩn </p>
+                <input style="width: 100%;" class="submit add-cart-btn__main" type="submit" name="sosanh" value="So Sánh"><a href="index.php?pg=compare"></a>
+                <p style="margin-bottom: 0;text-align: center;"><a href="index.php?pg=product&del=1"> Xoá</a></p>
+                <p style="margin-bottom: 0; text-align: center;" class="sticky-form-hide">Ẩn </p>
             </li>
         </ul>
     </form>
