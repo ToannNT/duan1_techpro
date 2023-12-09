@@ -818,6 +818,27 @@ if(isset($_SESSION['dataArray'])) {
         </div>
     </div>
 </div>
+<div class="sticky-form-mini" id="stickyForm">
+    <input class="count" type="hidden" value="<?=$countSs?>">
+    So sánh(<?=$countSs?>)
+</div>
+<div class="sticky-form-big" style="display:none;">
+    <form class="sticky-form"  id="stickyForm" action="index.php?pg=compare" method="post">
+        <ul style="display: flex;">  
+            <li style="width:40%">
+                <?=$html_sp1?>
+            </li>
+            <li style="width:40%">
+                <?=$html_sp2?>
+            </li >    
+            <li style="width:20%" id="productInfoContainer">    
+                <input class="submit" type="submit" name="sosanh" value="So Sánh"><a href="index.php?pg=compare"></a>
+                <p style="margin-bottom: 0;text-align: center;font-weight: bold;"><a href="index.php?pg=product&del=1"> Xoá</a></p>
+                <p style="margin-bottom: 0; text-align: center;font-weight: bold;" class="sticky-form-hide">Ẩn </p>
+            </li>
+        </ul>
+    </form>
+</div>
 <!-- Content Wraper Area End Here -->
 <!-- Begin Footer Area -->
 
@@ -841,3 +862,21 @@ if(isset($_SESSION['dataArray'])) {
 
     }
 </style>
+<script>
+            // JavaScript để xác định vị trí khi cuộn trang
+            window.onscroll = function() {
+            stickyForm();
+        };
+
+        var form = document.getElementById("stickyForm");
+        var sticky = form.offsetTop;
+
+        function stickyForm() {
+            if (window.pageYOffset >= sticky) {
+                form.classList.add("sticky");
+            } else {
+                form.classList.remove("sticky");
+            }
+        };
+
+</script>
