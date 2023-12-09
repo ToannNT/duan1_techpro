@@ -17,11 +17,11 @@ function show_tablesp($showspadm)
     $html_showspadm = '';
     foreach ($showspadm as $spadm) {
         extract($spadm);
-        if($soluong >= 5){
-            $alert = '<span class="badge bg-success">Còn hàng</span>'; 
-        }else if($soluong <=5 && $soluong >=1){
+        if ($soluong >= 5) {
+            $alert = '<span class="badge bg-success">Còn hàng</span>';
+        } else if ($soluong <= 5 && $soluong >= 1) {
             $alert = '<span class="badge bg-warning">Số lượng còn ít</span>';
-        }else{
+        } else {
             $alert = '<span class="badge bg-danger">Hết hàng</span>';
         }
         $link = 'index.php?pg=delsp&id=' . $id;
@@ -34,8 +34,8 @@ function show_tablesp($showspadm)
             <td style="width: 100px; height: 100px; overflow: hidden;">
                 <img src="../view/layout/images/product/' . $hinh . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
             </td>
-            <td>'.$soluong.'</td>
-            <td>'.$alert.'</td>
+            <td>' . $soluong . '</td>
+            <td>' . $alert . '</td>
             <td>' . number_format($gia, 0, '.', '.') . 'đ</td>
             <td>' . $tendm . '</td>
             <td>
@@ -131,6 +131,7 @@ function show_SP($dssp)
 
         if ($giamgia > 0) {
             $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
+            $gia_muangay = $giamgia;
             $giatien_addcart = '
             <input type="hidden" name="price" value="' . $giamgia . '">
             ';
@@ -143,6 +144,8 @@ function show_SP($dssp)
                 <span class="discount-percentage">- ' . floor($phantram) . '%</span>
             ';
         } else {
+            $gia_muangay = $gia;
+
             $giatien_addcart = '
             <input type="hidden" name="price" value="' . $gia . '">
             ';
@@ -197,11 +200,30 @@ function show_SP($dssp)
                             ' . $giatien_addcart . '
                             <input type="hidden" name="s_status" value="0">
                             ' . $thanhTien_addcart . '
-
-
                             <input type="hidden" name="quantity" value="1">
                             <button type="submit" name="addcart" class="add-cart-btn active">Thêm</button>
                         </form>
+
+
+
+                        <form >
+                            <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                            <input type="hidden" name="idpro" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="1">
+                            ' . $thanhTien_addcart . '
+                            <input type="hidden" name="quantity" value="1">
+
+                            
+                            <a href="index.php?pg=checkout&idpro=' . $gia_muangay . '">Mua ngay</a>
+                        </form>
+
+
+
 
 
                         
@@ -214,7 +236,7 @@ function show_SP($dssp)
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
                                 <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()"><li><a class="links-details" href=""><i class="fa fa-heart-o"></i></a></li></button>
-                                <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                               
                             </form>
                     </ul>
                 </div>

@@ -180,6 +180,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
             }
 
+
+
             // require_once "view/addcart.php";
             break;
         case 'checkout':

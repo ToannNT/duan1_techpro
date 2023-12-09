@@ -1,4 +1,8 @@
 <?php
+if (isset($_GET['idpro'])) {
+    $tenn = $_GET['idpro'];
+}
+echo $tenn;
 // unset($_SESSION['voucher']);
 //sử dụng ajax để gán dữ liệu vào session sau đó tái sử dụng
 // Bất tiện.  phải tự load trang mới cập nhật lại session !!!
