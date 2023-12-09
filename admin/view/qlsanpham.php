@@ -1,5 +1,5 @@
 <?php
-    $html_tablesp=show_tablesp($showspadm)
+    $html_tablesp=show_tablesp($showspadm);
 ?>
 <main class="app-content">
         <div class="app-title">
