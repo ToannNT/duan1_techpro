@@ -63,8 +63,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     } else {
                         update_pass_user($newpassword, $id);
                         $thongbaothanhcong = "Thành công";
-                        array_splice($_SESSION['s_user'],0, count($_SESSION['s_user']));
-                        header ('location: index.php?pg=login_register');
+                        array_splice($_SESSION['s_user'], 0, count($_SESSION['s_user']));
+                        header('location: index.php?pg=login_register');
                     }
                 }
             } else {
@@ -72,11 +72,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
             include_once "view/changepassword.php";
             break;
-        // case 'changepassword_form':
-        //     if(isset($_POST["location"])){
-        //         include_once "view/changepassword.php";
-        //     }
-        //     break;
+            // case 'changepassword_form':
+            //     if(isset($_POST["location"])){
+            //         include_once "view/changepassword.php";
+            //     }
+            //     break;
         case 'blog':
             require_once "view/blog.php";
             break;
@@ -467,7 +467,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                         update_hoivien_lv1($id_user);
                     } else if ($tongtien_order >= 20000000) {
                         update_hoivien_lv2($id_user);
-                    } else if ($tongtien_order >= 30000000) {
+                    } else if ($tongtien_order >= 50000000) {
                         update_hoivien_lv3($id_user);
                     }
 
@@ -527,7 +527,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 update_user($hoten, $username, $password,  $email, $gioitinh, $diachi, $sdt, $hinh, $role, $id);
                 // get_user($id);
                 // include_once "view/account.php";
-                header ('location: index.php?pg=account');
+                header('location: index.php?pg=account');
             } else {
                 include_once "view/account.php";
             }

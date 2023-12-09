@@ -23,7 +23,7 @@
     font-size: 1.2rem;
 }
 .content-col-left__lv{
-    padding-bottom: 5px;
+    padding: 10px 0px;
     border-bottom: 2px solid rgb(233, 233, 233);
     font-size: 1rem;
     font-weight: 500;
@@ -110,14 +110,15 @@
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
-    height: 50px;
+    height: 47px;
     width: 150px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 12px 18px;
-    text-decoration: none; /* Loại bỏ gạch chân mặc định */
-    text-align: center; /* Căn giữa nội dung */
+    text-decoration: none;
+    text-align: center;
     transition: all 0.3s ease-in-out 0s;
+    margin-left: 10px;
 
 }
 .default-btn-thaydoi a:hover{
@@ -128,8 +129,9 @@
     font-weight: bold;
 }
 .reg-content{
+    text-align: start;
     font-weight: 600;
-    font-size: small;
+    /* font-size: small; */
 }
 .pro-content{
     /* border: none;
@@ -144,8 +146,12 @@
 }
 .flex-btn-thaydoi{
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: start;
+    align-items: center;
+}
+
+.icon_bac{
+    width: 30px;
 }
 
 

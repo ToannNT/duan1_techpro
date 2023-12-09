@@ -1,19 +1,28 @@
 <?php
-$get_array_suser=get_user($id);
-$member_img="";
-$member_lv="";
+$get_array_suser = get_user($id);
+$member_img = "";
+$member_lv = "";
 if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
-    if($get_array_suser != $_SESSION['s_user']){
-        extract ($get_array_suser);
-    }else{
-        extract ($_SESSION['s_user']);
+    if ($get_array_suser != $_SESSION['s_user']) {
+        extract($get_array_suser);
+    } else {
+        extract($_SESSION['s_user']);
     }
-    if($_SESSION['s_user']['hoivien'] == 0){$member_img = "member_new.jpg"; $member_lv="Thành viên: Mới";}
-    else if($_SESSION['s_user']['hoivien'] == 1){$member_img = "member_silver.png"; $member_lv="Thành viên: Bạc";}
-    else if($_SESSION['s_user']['hoivien'] == 2){$member_img = "member_gold.png"; $member_lv="Thành viên: Vàng";}
-    else if($_SESSION['s_user']['hoivien'] == 3){$member_img = "member_diamon.png"; $member_lv="Thành viên: Kim cương";}
-}else{
-    header ('location: index.php');
+    if ($_SESSION['s_user']['hoivien'] == 0) {
+        $member_img = "member_new.jpg";
+        $member_lv = "Thành viên: Mới";
+    } else if ($_SESSION['s_user']['hoivien'] == 1) {
+        $member_img = "member_silver.png";
+        $member_lv = "Thành viên: Bạc";
+    } else if ($_SESSION['s_user']['hoivien'] == 2) {
+        $member_img = "member_gold.png";
+        $member_lv = "Thành viên: Vàng";
+    } else if ($_SESSION['s_user']['hoivien'] == 3) {
+        $member_img = "member_diamon.png";
+        $member_lv = "Thành viên: Kim cương";
+    }
+} else {
+    header('location: index.php');
 }
 if (isset($hinh)) {
     $hinh_ac = '
@@ -38,26 +47,48 @@ if (isset($hinh)) {
                             <div class="content-col-left__name">
                                 <?= $hoten ?>
                             </div>
-                            <div class="content-col-left__lv"><?=$member_lv?></div>
-                            <div class="content-col-left__cart"><img src="./view/layout/images/user/<?=$member_img?>" alt>
+                            <div class="content-col-left__lv"><?= $member_lv ?></div>
+                            <div class="content-col-left__cart"><img src="./view/layout/images/user/<?= $member_img ?>"
+                                    alt>
                             </div>
                         </div>
-
+                        <!-- 
                         <div class="content-col-left bg- p-4 pt-50">
                             <div class="content-col-left__avata con-content">
                                 <p>Cách thành hội viên:</p>
                             </div>
-                            <div class="content-col-left__lv reg-content"><a href="index.php?pg=login_register">Đăng kí tài khoản tại trang web của chúng tôi</a></div>
-                        </div>
+                            <div class="content-col-left__lv reg-content"><a href="index.php?pg=login_register">Đăng kí
+                                    tài khoản tại trang web của chúng tôi</a></div>
+                        </div> -->
 
                         <div class="content-col-left bg- p-4 pt-50">
                             <div class="content-col-left__avata con-content">
-                                <p>Bậc hội viên và ưu đãi:</p>
+                                <p style="font-size: 20px;">Ưu đãi hội viên</p>
                             </div>
-                            <div class="content-col-left__lv reg-content"> - Bậc bạc (Tổng thanh toán > 20tr): Giảm 5% mỗi sản phẩm </div>
-                            <div class="content-col-left__lv reg-content"> - Bậc vàng (Tổng thanh toán > 50tr): Giảm 10% mỗi sản phẩm </div>
-                            <div class="content-col-left__lv reg-content"> - Bậc kim cương (Tổng thanh toán > 100tr): Giảm 15% mỗi sản phẩm </div>
-                            <div class="content-col-left__lv reg-content pro-content"><a href="index.php?pg=product">Thăng bậc ngay</a></div>
+                            <div class="content-col-left__lv reg-content"> * Lv1 Bạc:
+                                <img class="icon_bac" src="./view/layout/images/user/star_lv1.png" alt="">
+                                <br>Tổng thanh toán > 10tr <br>
+                                (Giảm
+                                5% tổng tiền hàng tất cả các hóa đơn)
+                            </div>
+                            <div class="content-col-left__lv reg-content"> * Lv2 Vàng:
+                                <img class="icon_bac" src="./view/layout/images/user/star_lv2.png" alt="">
+                                <br>Tổng thanh toán > 20tr <br>
+                                (Giảm
+                                10% tổng tiền hàng tất cả các hóa đơn)
+                            </div>
+                            <div class="content-col-left__lv reg-content"> * Lv3 Kim cương:
+                                <img class="icon_bac" src="./view/layout/images/user/star_lv3.png" alt="">
+                                <br>Tổng thanh toán > 50tr <br>
+                                (Giảm
+                                20% tổng tiền hàng tất cả các hóa đơn)
+                            </div>
+
+                            <div style="text-align: center;" class="content-col-left__lv reg-content pro-content">
+                                <a style="color: black;
+    font-size: 16px;" href="index.php?pg=product">Mua
+                                    hàng ngay</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-9">
