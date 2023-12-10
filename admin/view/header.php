@@ -246,8 +246,15 @@
 
         function momenu() {
             $('.sub-menu').toggle();
+            $('.bi-caret-right-fill').toggleClass('rotate');
         }
     </script>
+    <style>
+        .rotate {
+            transform: rotate(90deg);
+            transition: all 0.2s ease;
+        }
+    </style>
 </head>
 
 <body onload="time()" class="app sidebar-mini rtl">
@@ -256,11 +263,7 @@
         <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
 
         <ul class="app-nav">
-
-
-
-            <li><a class="app-nav__item" href="../index.php"><i class='bx bx-log-out bx-rotate-180'></i> </a>
-
+            <li><a class="app-nav__item" href="index.php?pg=logout"><i class='bx bx-log-out bx-rotate-180'></i> </a>
             </li>
         </ul>
     </header>
@@ -277,14 +280,15 @@
         <ul class="app-menu">
             <li><a class="app-menu__item active" href="index.php"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
             <li class="app-menu__itemhv">
-                <a onclick="momenu()" class="app-menu__item" href="#">
-                    <i class='app-menu__icon bx bx-image'></i>
-                    <span class="app-menu__label">Quản lý giao diện</span>
-                </a>
+            <a onclick="momenu()" class="app-menu__item" href="#">
+                <i class='app-menu__icon bx bx-image'></i>
+                <span class="app-menu__label">Quản lý giao diện</span>
+                <i class="bi bi-caret-right-fill"></i>
+            </a>
                 <ul class="sub-menu" style="display:none;">
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
+                    <!-- <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
                     <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li>
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li> -->
                     <li><a class="app-menu__item" href="index.php?pg=qlbanner"><i class='app-menu__icon bx bx-slideshow'></i><span class="app-menu__label">Banner</span></a></li>
                 </ul>
             </li>

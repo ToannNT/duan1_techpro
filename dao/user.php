@@ -1,5 +1,5 @@
 <?php
-// require_once 'pdo.php';
+require_once 'pdo.php';
 
 
 function user_insert($hoten, $username, $email, $sdt, $password)
@@ -171,3 +171,7 @@ function getLatestImageFromUser($id)
 //     $sql = "UPDATE user SET mat_khau=? WHERE ma_kh=?";
 //     pdo_execute($sql, $mat_khau_moi, $ma_kh);
 // }
+function user_select_by_username($username){
+    $sql = "SELECT * FROM user WHERE username=?";
+    return pdo_query_one($sql, $username);
+}

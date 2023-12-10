@@ -178,7 +178,7 @@ function upStatussd(e) {
     var id = e.getAttribute("id");
     $(document).ready(function() {
         $.ajax({
-            url: "http://localhost/duan1_techpro/admin/view/status.php",
+            url: "./view/status.php",
             data: {
                 id: id,
                 status: status
@@ -194,8 +194,8 @@ function upStatus(e) {
     var status = e.checked ? 1 : 0;
     var id = e.getAttribute("id");
     $(document).ready(function() {
-        $.ajax({
-            url: "http://localhost/duan1_techpro/admin/view/status.php",
+        $.ajax(
+            url: "./view/status.php",
             data: {
                 id: id,
                 status: status
