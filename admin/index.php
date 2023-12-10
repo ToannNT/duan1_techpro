@@ -357,14 +357,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $get_pro = ds_product();
                 $idbn = $_GET['idbn'];
                 $showup_banner = showup_banner($idbn);
-                echo var_dump($showup_banner);
             }
-
             if (isset($_GET['idsd']) && ($_GET['idsd'] > 0)) {
                 $get_pro = ds_product();
                 $idsd = $_GET['idsd'];
                 $showup_slider = showup_slider($idsd);
-                echo var_dump($showup_slider);
             }
             $get_banner = db_banner(10);
             require_once "view/updatebnsl.php";
@@ -378,19 +375,19 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             break;
 
         case 'updateslider':
+            error_reporting(E_ALL);
+            ini_set('display_errors', '1');
             if (isset($_POST['updatesl'])) {
                 $sttsd = $_POST['sttsd'];
                 $nameprosl = $_POST['nameprosl'];
                 if (isset($_FILES['imgupsd']['name']) && ($_FILES['imgupsd']['name'] !== "")) {
                     $imgsd = $_FILES['imgupsd']['name'];
-                } else {
-                    $imgsd = "noimg.jpeg";
-                }
-                if ($imgsd == "") {
+                }if ($imgsd == "") {
                     $imgsd = $_POST['imgold'];
                 }
+                
                 $idsd = $_POST['idsd'];
-                $target_file = "../view/layout/asset/css/images/slider/" . $imgsd;
+                $target_file = "../view/layout/images/slider/" . $imgsd;
                 move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
                 update_slider($sttsd, $nameprosl, $imgsd, $idsd);
                 // hàm show slider id

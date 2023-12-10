@@ -13,6 +13,6 @@
   if(isset($_POST['id'])&&isset($_POST['status'])){
     $id = $_POST['id'];
     $status = $_POST['status'];
-    update_status($status, $id);
+    update_status2($status, $id);
   }
 ?>

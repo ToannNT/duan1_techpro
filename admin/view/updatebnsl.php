@@ -23,6 +23,16 @@ if(is_array($showup_slider)&&(count($showup_slider)>0)){
       }
       $html_showsp .= '<option value="' . $id . '" '.$selected.'>' . substr($ten, 0, 50) . '...</option>';
   }
+  if(isset($_GET['idbn'])){
+    $none1="style='display:none;'";
+  }else{
+    $none1="";
+  }
+  if(isset($_GET['idsd'])){
+    $none="style='display:none;'";
+  }else{
+    $none="";
+  }
 ?>
 
 <main class="app-content">
@@ -32,10 +42,10 @@ if(is_array($showup_slider)&&(count($showup_slider)>0)){
         <li class="breadcrumb-item active"><a href="#"></a>Chỉnh sửa banner</li>
       </ul>
     </div>
-    <div class="row">
+    <div <?=$none?> class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Chỉnh sửa banner/home</h3>
+          <h3 class="tile-title">Chỉnh sửa banner</h3>
           <span style="color: red; font-wieght:bold;" >Stt: 1,2(370x180px) / Stt: 3,4,5(360x180px) / stt: 6,7(1140x180px)</span>
           <div class="tile-body">
           </div>
@@ -78,7 +88,7 @@ if(is_array($showup_slider)&&(count($showup_slider)>0)){
       </div>
     </div>
 
-    <div class="row">
+    <div <?=$none1?> class="row">
       <div class="col-md-12">
         <div class="tile">
           <h3 class="tile-title">Chỉnh sửa slide</h3>
@@ -101,8 +111,8 @@ if(is_array($showup_slider)&&(count($showup_slider)>0)){
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfilesp1" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
-                  <input type="hidden" id="uploadfilesp1" value="<?=$imgsd?>" name="imgold">
+                  <input type="file" id="uploadfilesp1" value="<?=$img?>" name="imgupsd" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfilesp1" value="<?=$img?>" name="imgold">
                 </div>
               </div>
               <div class="form-group col-md-3">
@@ -114,7 +124,7 @@ if(is_array($showup_slider)&&(count($showup_slider)>0)){
               </div>
               <div class="form-group col-md-12">
                 <input type="hidden" name="idsd" value="<?=$idsd?>" >
-                <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">
+                <input class="btn btn-save" type="submit" name="updatesl" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>

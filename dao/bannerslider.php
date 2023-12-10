@@ -58,6 +58,10 @@ function update_status($trangthai, $id){
     $sql = "UPDATE banner SET trangthai=? WHERE id=?";
     pdo_execute($sql, $trangthai, $id);
 }
+function update_status2($trangthai, $id){
+    $sql = "UPDATE slider SET trangthai=? WHERE id=?";
+    pdo_execute($sql, $trangthai, $id);
+}
 // kết thúc xoá banner
 ///endbanner
 function ds_product(){
