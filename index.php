@@ -740,7 +740,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $id = $_POST['id'];
                 $img = $_POST['img'];
                 $name = $_POST['name'];
-                $price = $_POST['price'];
+                $price = $_POST['thanhtien'];
                 // if (isset($_SESSION['f_Product']) && ($_SESSION['f_Product'] != "")) {
                 //     $flag = false;
                 //     // Kiểm tra xem sản phẩm đã có trong wishlist chưa

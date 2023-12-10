@@ -167,7 +167,7 @@ if (isset($_POST['input'])) {
         }
         echo $output;
     } else {
-        $output = "<h4 style>Sản phẩm không tồn tại</h4>";
+        $output = '<img src="./view/layout/images/product/thongbaofetchdata.png">';
         echo $output;
     }
 } else if (isset($_POST['action'])) {
@@ -352,7 +352,10 @@ if (isset($_POST['input'])) {
             }
             echo $output;
         } else {
-            $output = "<h3>No dữ liệuddddddddddddddddddddddd</h3>";
+            $output = '<img src="./view/layout/images/product/thongbaofetchdata.png">';
+
+
+
             echo $output;
         }
     }
@@ -515,7 +518,7 @@ if (isset($_POST['input'])) {
         }
         echo $output;
     } else {
-        $output = "<h3>SẢN PHẨM TIỀM KIẾM KHÔNG CÓ :(</h3>";
+        $output = '<img src="./view/layout/images/product/thongbaofetchdata.png">';
         echo $output;
     }
 }

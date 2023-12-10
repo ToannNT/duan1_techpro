@@ -55,6 +55,7 @@ method="post">
     <td class="cart-product-total"><span class="amount">' . number_format($price, 0, '.', '.') . 'đ</span></td>
 </tr>
 ';
+    $thanhtien = $thanhtien * $quantity;
     $tt += $thanhtien;
     echo "cách" . $tt . "Đang trong idpro ne";
 } else {

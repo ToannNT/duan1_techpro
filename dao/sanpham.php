@@ -238,7 +238,8 @@ function show_SP($dssp)
                                 <input type="hidden" name="id" value="' . $id . '">
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
-                                <input type="hidden" name="price" value="' . $gia . '">
+                            ' . $thanhTien_addcart . '
+
                                 <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
                                 <i class="fa fa-heart-o"></i>
                                 

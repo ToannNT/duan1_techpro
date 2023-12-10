@@ -65,8 +65,7 @@ if ($status == 0) {
             <tbody>
                 <tr>
                     <td colspan="2">
-                        <div class="i__Phone" style="max-width: 140px;"><img
-                                src="./view/layout/images/product/<?= $hinh ?>" alt="">
+                        <div class="i__Phone" style="max-width: 140px;"><img src="./view/layout/images/product/<?= $hinh ?>" alt="">
                         </div>
                         <div style="margin-top: 15px;" class="inf__Phone">
                             <h4><?= $ten ?></h4>
