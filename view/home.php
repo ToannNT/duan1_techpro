@@ -24,15 +24,15 @@ function pdo_querya($sql)
     }
 }
 
-
-function show_bn12()
-{
+function show_sl(){
+    $sql = "SELECT * FROM slider WHERE trangthai = 1";
+    return pdo_querya($sql);
+}
+function show_bn12(){
     $sql = "SELECT * FROM banner WHERE trangthai = 1";
     return pdo_querya($sql);
 }
-$showdsbn12 = show_bn12();
-function showsttbn()
-{
+function showsttbn(){
     $showdsbn12 = show_bn12();
     $banner = array();
     foreach ($showdsbn12 as $value) {
@@ -67,7 +67,7 @@ function showsttbn()
                             </div>';
         } else if ($stt == 6) {
             $banner['stt6'] = '<div class="single-banner shop-page-banner">
-                        <a href="href="index.php?pg=product"><img src="./view/layout/images/banner/' . $img . '"></a>
+                        <a href="index.php?pg=product"><img src="./view/layout/images/banner/' . $img . '"></a>
                     </div>';
         } else if ($stt == 7) {
             $banner['stt7'] = '<div class="li-static-home-image">
@@ -77,7 +77,45 @@ function showsttbn()
     }
     return $banner;
 }
-
+function showsttsl(){
+    $showsl = show_sl();
+    $sl = array();
+    foreach ($showsl as $value) {
+        extract($value);
+        if ($stt == 1) {
+            $sl['stt1'] =' <div class="single-slide align-center-left  animation-style-01 bg-1">
+                            <div class="slider-progress"></div>
+                                <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
+                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                </a>
+                            <div class="slider-content">
+                            </div>
+                        </div>';
+        } else if ($stt == 2) {
+            $sl['stt2'] = '<div class="single-slide align-center-left animation-style-02 bg-2">
+                            <div class="slider-progress"></div>
+                            <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
+                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                </a>
+                            <div class="slider-content">
+                            </div>
+                        </div>';
+        } else if ($stt == 3) {
+            $sl['stt3'] = '
+                            <div class="single-slide align-center-left animation-style-01 bg-3">
+                                <div class="slider-progress"></div>
+                                    <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
+                                        <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                    </a>
+                                    <div class="slider-content">
+                                    <div class="default-btn slide-btn"></div>
+                                </div>
+                            </div>';
+        }
+    }
+    return $sl;
+}
+$showsttsl = showsttsl();
 $banners = showsttbn();
 ?>
 
@@ -85,49 +123,13 @@ $banners = showsttbn();
 <div class="slider-with-banner">
     <div class="container">
         <div class="row">
-            <!-- Begin Slider Area -->
             <div class="col-lg-8 col-md-8">
                 <div class="slider-area">
                     <div class="slider-active owl-carousel">
-                        <!-- Begin Single Slide Area -->
-                        <div class="single-slide align-center-left  animation-style-01 bg-1">
-                            <div class="slider-progress"></div>
-                            <div class="slider-content">
-                                <!-- <h5>Ưu đãi giảm giá <span>-giảm giá 20%</span> Tuần này</h5>
-                                    <h2>Galaxy S23 FE 5G </h2>
-                                    <h3>Giá chỉ từ <span>12.000.000VNĐ</span></h3> -->
-                                <div class="default-btn slide-btn">
-                                    <a class="links" href="index.php?pg=product">Mua ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Slide Area End Here -->
-                        <!-- Begin Single Slide Area -->
-                        <div class="single-slide align-center-left animation-style-02 bg-2">
-                            <div class="slider-progress"></div>
-                            <div class="slider-content">
-                                <!-- <h5>Siêu giảm giá <span>Black Friday</span>Chỉ một ngày duy nhất</h5>
-                                    <h2>Đặc quyền Techpro Shop</h2>
-                                    <h3>Giá chỉ từ <span>9.990.000VNĐ</span></h3> -->
-                                <div class="default-btn slide-btn">
-                                    <a class="links" href="index.php?pg=product">Mua ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Slide Area End Here -->
-                        <!-- Begin Single Slide Area -->
-                        <div class="single-slide align-center-left animation-style-01 bg-3">
-                            <div class="slider-progress"></div>
-                            <div class="slider-content">
-                                <!-- <h5>Ưu đãi siêu hời<span>Giảm tới 10%</span>Trong tuần này</h5>
-                                    <h2>iPhone 15 Pro Max 256GB</h2>
-                                    <h3>Giá chỉ còn<span>31.000.000VNĐ</span></h3> -->
-                                <div class="default-btn slide-btn">
-                                    <a class="index.php?pg=product" href="shop-left-sidebar.html">Mua ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Slide Area End Here -->
+                        <!-- sl111. -->
+                        <?=$showsttsl['stt1']?>
+                        <?=$showsttsl['stt2']?>
+                        <?=$showsttsl['stt3']?>
                     </div>
                 </div>
             </div>
