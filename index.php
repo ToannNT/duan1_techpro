@@ -442,7 +442,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $ngaydathang = $_POST['ngaydat'];
                 $giamgiahoivien = $_POST['hoivien'];
                 //
-                $idpro_get = $_GET['idpro'];
+                guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship);
 
 
 
@@ -518,8 +518,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
                     // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
-                    guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
-
 
 
                     cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
@@ -556,10 +554,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
                     // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
-                    guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
-
-
-
 
                     //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
                     unset($_SESSION['voucher']);
