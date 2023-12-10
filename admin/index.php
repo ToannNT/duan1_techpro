@@ -11,15 +11,36 @@ require_once "../dao/bill.php";
 require_once "../dao/bannerslider.php";
 require_once "../dao/blog.php";
 require_once "../dao/donhang.php";
+require_once "../dao/user.php";
 require_once "../dao/voucher.php";
 
 
 require_once "view/header.php";
+
+if (!isset($_SESSION['user'])) {
+    header('location: ./view/login.php');
+}else{
+    $user = $_SESSION['user'];
+    $iduser = $user['id'];
+    $get_user = get_user($iduser);
+    $role = $get_user['role'];
+    if($role == 0){
+        header('location: login.php');
+    }
+}
+
 if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
     //vào các trang con
     $pg = $_GET['pg'];
     switch ($pg) {
             // 1111111111111111111111111
+        case 'logout':
+            if(isset($_SESSION['user'])){
+                unset($_SESSION['user']);
+                header('location: view/login.php');
+            }
+            require_once "view/qldanhmuc.php";
+            break;
         case 'qldanhmuc':
             $get_Cataloglist = get_Catalog();
             require_once "view/qldanhmuc.php";

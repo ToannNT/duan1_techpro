@@ -179,7 +179,6 @@ function upStatussd(e) {
     $(document).ready(function() {
         $.ajax({
             url: "./view/status.php",
-
             data: {
                 id: id,
                 status: status
