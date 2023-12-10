@@ -439,7 +439,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $ngaydathang = $_POST['ngaydat'];
                 $giamgiahoivien = $_POST['hoivien'];
                 //
-                guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship);
+                guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship, $pttt);
 
 
 

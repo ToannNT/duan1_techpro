@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\Exception;
 
-function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship)
+function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship, $pttt)
 {
     require "PHPMailer-master/src/PHPMailer.php";
     require "PHPMailer-master/src/SMTP.php";
@@ -22,8 +22,24 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
         $mail->addAddress($email);
         $mail->isHTML(true);  // Set email format to HTML
         $mail->Subject = 'Thư gửi hoá đơn';
+        $logoImg = 'view/layout/images/menu/logo/logo_full.png';
+        $mail->addEmbeddedImage($logoImg, 'logo');
 
-        $i=0;
+        $html_pttt ="";
+        
+        if($pttt == 1){
+            $html_pttt ="Thanh toán bằng thẻ tín dụng";
+        }
+        if($pttt == 2){
+            $html_pttt ="Thanh toán bằng thẻ ATM";
+        }
+        if($pttt == 3){
+            $html_pttt ="Thanh toán bằng MOMO";
+        }
+        if($pttt == 4){
+            $html_pttt ="Thanh toán khi nhận hàng";
+        }
+           
         $tongtien=0;
         $html_donhang='';
         if (isset($_SESSION['giohang']) && ($_SESSION['giohang'] != "")) {
@@ -67,10 +83,10 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
         <body>
             <div>    
                 <div style="margin-bottom: 20px;>
-                    <div style="float: left;" class="col-6"> <img src="images/menu/logo/1.jpg" alt=""></div>
+                    <div class="col-6"> <img src="cid:logo" alt="Techpro Logo" style="display: block;width: 100px;margin: 0 auto;"></div>
                     <div style="float: right;" class="col-6">
-                        <h3>HOÁ ĐƠN #12345</h3>
-                        <p>Ngày Tháng Năm</p>
+                        <h3>HOÁ ĐƠN '.$mahd.'</h3>
+                        <p>'.$ngaydathang.'</p>
                     </div>
                 </div>
         
@@ -101,12 +117,13 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
                 <div>
                     <div><h2>THÔNG TIN THANH TOÁN</h2></div>
                     <div style="float: left ">
+                        <p>Phương thức thanh toán : '.$html_pttt.'</p>
                         <p>Ngày thanh toán : '.$ngaydathang.'</p>
                     </div>
                     <div style="float: right;margin-right:20%;">
-                        <p>SĐT</p>
-                        <p>EMAIL</p>
-                        <p>Địa chỉ</p>
+                        <p>Công Ty TECHPRO</p>
+                        <p>EMAIL: techpro.com</p>
+                        <p>Địa chỉ: Công viên phần mềm Quang Trung</p>
                     </div>
                 </div>
             </div>   

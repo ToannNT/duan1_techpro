@@ -44,6 +44,42 @@ function GuiMatKhauMoi($email, $matkhaumoi)
         $mail->addAddress($email);
         $mail->isHTML(true);  // Set email format to HTML
         $mail->Subject = 'Thư gửi mật khẩu mới';
+        $noidungthu = '
+            <head>
+                <style>
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+        
+                    th, td {
+                        padding: 8px;
+                        text-align: center;
+                        border-bottom: 3px solid #ddd;
+                    }   
+
+                </style>
+            </head>
+        <body>
+            <div>    
+                <div style="margin-bottom: 20px;>
+                    <div class="col-6"> <img src="cid:logo" alt="Techpro Logo" style="display: block;width: 100px;margin: 0 auto;"></div>
+                </div> <br>
+                   <div>
+                        <p>Xin chào quý khách, mật khẩu của bạn đã được đặt lại thành công</p> <br>
+                        <p> Mật khẩu mới của bạn là '.$matkhaumoi.'.Vui lòng không chia sẽ mật khẩu với bất kỳ ai </p><br>
+                   </div>
+                <div>
+                    <div style="float: right;margin-right:20%;">
+                        <p>Công Ty TECHPRO</p>
+                        <p>EMAIL: techpro.com</p>
+                        <p>Địa chỉ: Công viên phần mềm Quang Trung</p>
+                    </div>
+                </div>
+            </div>   
+        </body>
+        </html>
+            ';
         $noidungthu = "<p>Mật khẩu của bạn đã được đặt lại. 
                  Mật khẩu mới của bạn là {$matkhaumoi} </p>
             ";
