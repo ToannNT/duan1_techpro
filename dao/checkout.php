@@ -49,8 +49,8 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
                     $html_donhang.='<tr>
                                         <td>'.$name.'</td>
                                         <td>'.$quantity.'</td>
-                                        <td>'.number_format($price,0,'.',',').'</td>
-                                        <td>'.number_format($price*$quantity,0,'.',',').'</td>
+                                        <td>'.number_format($price,0,'.',',').'đ</td>
+                                        <td>'.number_format($price*$quantity,0,'.',',').'đ</td>
                                     </tr>';
                     $tongtien+=$price*$quantity;
                 }
@@ -59,8 +59,8 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
                 $html_donhang.='<tr>
                                     <td>'.$name.'</td>
                                     <td>'.$quantity.'</td>
-                                    <td>'.number_format($price,0,'.',',').'</td>
-                                    <td>'.number_format($price*$quantity,0,'.',',').'</td>
+                                    <td>'.number_format($price,0,'.',',').'đ</td>
+                                    <td>'.number_format($price*$quantity,0,'.',',').'đ</td>
                                 </tr>';
                         $tongtien+=$price*$quantity;
         }
@@ -83,9 +83,8 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
         <body>
             <div>    
                 <div style="margin-bottom: 20px;>
-                    <div class="col-6"> <img src="cid:logo" alt="Techpro Logo" style="display: block;width: 100px;margin: 0 auto;"></div>
+                    <div class="col-6"> <img src="cid:logo" alt="Techpro Logo" style="display: block;width: 100px;margin-left:40%;"></div>
                     <div style="float: right;" class="col-6">
-                        <h3>HOÁ ĐƠN '.$mahd.'</h3>
                         <p>'.$ngaydathang.'</p>
                     </div>
                 </div>
@@ -108,11 +107,11 @@ function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydath
                     '.$html_donhang.'
                 </table>
                 <div style="text-align: right;">
-                    <p>Tổng cộng : '.$tongtien.'</p>
-                    <p>Vouncher : '.$voucher.'</p>
-                    <p>Hội viên : '.$giamgiahoivien.'</p>
-                    <p>Phí vận chuyển : '.$ship.'</p>
-                    <h3 style="color: #0C2F4E;">TỔNG THANH TOÁN : '.$tongthanhtoan.'</h3>
+                    <p>Tổng cộng : '.number_format($tongtien,0,'.',',').'đ</p>
+                    <p>Vouncher : '.number_format($voucher,0,'.',',').'đ</p>
+                    <p>Hội viên : '.number_format($giamgiahoivien,0,'.',',').'đ</p>
+                    <p>Phí vận chuyển : '.number_format($ship,0,'.',',').'đ</p>
+                    <h3 style="color: #0C2F4E;">TỔNG THANH TOÁN : '.number_format($tongthanhtoan,0,'.',',').'đ</h3>
                 </div>
                 <div>
                     <div><h2>THÔNG TIN THANH TOÁN</h2></div>
