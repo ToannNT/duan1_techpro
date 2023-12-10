@@ -118,7 +118,7 @@ if (isset($_POST['input'])) {
                         <input type="hidden" name="quantity" value="1">
 
                         
-                        <a class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                        <a style="width: 90px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
                     </form>
 
 
@@ -135,7 +135,7 @@ if (isset($_POST['input'])) {
                             ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
   
-                            <button style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                            <button style="width: 90px;" style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
                         </form>
 
 
@@ -288,51 +288,60 @@ if (isset($_POST['input'])) {
                     <div class="add-actions">
                         <ul class="add-actions-link">
                             
-                            <form action="index.php?pg=addcart" method="post">
-                                <input type="hidden" name="page_here" value="index.php">
-                                <input type="hidden" name="idpro" value="' . $id . '">
-                                <input type="hidden" name="img" value="' . $hinh . '">
-                                <input type="hidden" name="name" value="' . $ten . '">
-                                ' . $giatien_addcart . '
-                                <input type="hidden" name="s_status" value="0">
-                                ' . $thanhTien_addcart . '
-                                <input type="hidden" name="quantity" value="1">
-      
-                                <button style="width: 150px;" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
-                            </form>
-    
-                            <form action="index.php?pg=product " method="post">
-                                <input type="hidden" name="productId" value="' . $id . '">
-                                <input type="hidden" name="productCatalog" value="' . $id_catalog . '">                           
-                                <button class="links-details" type="submit" id="sosanh" name="sosanh">SS</button>                        
-                            </form>                        
-                            
+                  
+                        <form>
+                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                        <input type="hidden" name="idpro" value="' . $id . '">
+                        <input type="hidden" name="img" value="' . $hinh . '">
+                        <input type="hidden" name="name" value="' . $ten . '">
+                        <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+
+                        ' . $giatien_addcart . '
+                        <input type="hidden" name="s_status" value="1">
+                        ' . $thanhTien_addcart . '
+                        <input type="hidden" name="quantity" value="1">
+
+                        
+                        <a style="width: 90px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                    </form>
+
+
+                
+
+
+                        <form action="index.php?pg=addcart" method="post">
+                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="idpro" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
+                            <input type="hidden" name="quantity" value="1">
+  
+                            <button style="width: 90px;" style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                        </form>
+
+
+
+
+                        
+                        
                             <form action="index.php?pg=addtoWishlist" method="post">
                                 <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+                                <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
                                 <input type="hidden" name="id" value="' . $id . '">
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
                                 <input type="hidden" name="price" value="' . $gia . '">
                                 <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
                                 <i class="fa fa-heart-o"></i>
+                                
                                 </button>
+                               
                             </form>
                         </ul>
 
-
-                        <form>
-                            <input type="hidden" name="page_here" value="index.php?pg=checkout">
-                            <input type="hidden" name="idpro" value="' . $id . '">
-                            <input type="hidden" name="img" value="' . $hinh . '">
-                            <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
-
-                            ' . $giatien_addcart . '
-                            <input type="hidden" name="s_status" value="1">
-                            ' . $thanhTien_addcart . '
-                            <input type="hidden" name="quantity" value="1">
-                            <a style="width: 100%;margin-top: 10px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -442,27 +451,48 @@ if (isset($_POST['input'])) {
                 <div class="add-actions">
                         <ul class="add-actions-link">
                             
-                            <form action="index.php?pg=addcart" method="post">
-                                <input type="hidden" name="page_here" value="index.php">
-                                <input type="hidden" name="idpro" value="' . $id . '">
-                                <input type="hidden" name="img" value="' . $hinh . '">
-                                <input type="hidden" name="name" value="' . $ten . '">
-                                ' . $giatien_addcart . '
-                                <input type="hidden" name="s_status" value="0">
-                                ' . $thanhTien_addcart . '
-                                <input type="hidden" name="quantity" value="1">
-      
-                                <button style="width: 150px;" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
-                            </form>
-    
-                            <form action="index.php?pg=product " method="post">
-                                <input type="hidden" name="productId" value="' . $id . '">
-                                <input type="hidden" name="productCatalog" value="' . $id_catalog . '">                           
-                                <button class="links-details" type="submit" id="sosanh" name="sosanh">SS</button>                        
-                            </form>                        
-                            
+              
+                        <form>
+                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                        <input type="hidden" name="idpro" value="' . $id . '">
+                        <input type="hidden" name="img" value="' . $hinh . '">
+                        <input type="hidden" name="name" value="' . $ten . '">
+                        <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
+
+                        ' . $giatien_addcart . '
+                        <input type="hidden" name="s_status" value="1">
+                        ' . $thanhTien_addcart . '
+                        <input type="hidden" name="quantity" value="1">
+
+                        
+                        <a style="width: 90px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
+                    </form>
+
+
+                
+
+
+                        <form action="index.php?pg=addcart" method="post">
+                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="idpro" value="' . $id . '">
+                            <input type="hidden" name="img" value="' . $hinh . '">
+                            <input type="hidden" name="name" value="' . $ten . '">
+                            ' . $giatien_addcart . '
+                            <input type="hidden" name="s_status" value="0">
+                            ' . $thanhTien_addcart . '
+                            <input type="hidden" name="quantity" value="1">
+  
+                            <button style="width: 90px;" style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                        </form>
+
+
+
+
+                        
+                        
                             <form action="index.php?pg=addtoWishlist" method="post">
                                 <input type="hidden" name="img" value="../view/layout/images/product' . $hinh . '">
+                                <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
                                 <input type="hidden" name="id" value="' . $id . '">
                                 <input type="hidden" name="img" value="' . $hinh . '">
                                 <input type="hidden" name="name" value="' . $ten . '">
@@ -471,25 +501,11 @@ if (isset($_POST['input'])) {
                                 <i class="fa fa-heart-o"></i>
                                 
                                 </button>
-                                
+                               
                             </form>
                               
                         </ul>
-                        <form>
-                            <input type="hidden" name="page_here" value="index.php?pg=checkout">
-                            <input type="hidden" name="idpro" value="' . $id . '">
-                            <input type="hidden" name="img" value="' . $hinh . '">
-                            <input type="hidden" name="name" value="' . $ten . '">
-                            <input type="hidden" name="giamuangay" value="' . $gia_muangay . '">
-
-                            ' . $giatien_addcart . '
-                            <input type="hidden" name="s_status" value="1">
-                            ' . $thanhTien_addcart . '
-                            <input type="hidden" name="quantity" value="1">
-
-                            
-                            <a style="width: 100%;margin-top: 10px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
-                        </form>
+                      
                     </div>
             </div>
         </div>
