@@ -1,6 +1,17 @@
 <?php
 if(is_array($showup_banner)&&(count($showup_banner)>0)){
   extract($showup_banner);
+  }else{
+    $stt = "";
+    $id_product = "";
+    $img = "";
+  }
+if(is_array($showup_slider)&&(count($showup_slider)>0)){
+  extract($showup_slider);
+  }else{
+    $sttsd = "";
+    $id_product = "";
+    $imgsd = "";
   }
   $html_showsp = '';
   foreach ($get_pro as $dm_adm) {
@@ -12,6 +23,16 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
       }
       $html_showsp .= '<option value="' . $id . '" '.$selected.'>' . substr($ten, 0, 50) . '...</option>';
   }
+  if(isset($_GET['idbn'])){
+    $none1="style='display:none;'";
+  }else{
+    $none1="";
+  }
+  if(isset($_GET['idsd'])){
+    $none="style='display:none;'";
+  }else{
+    $none="";
+  }
 ?>
 
 <main class="app-content">
@@ -21,10 +42,10 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
         <li class="breadcrumb-item active"><a href="#"></a>Chỉnh sửa banner</li>
       </ul>
     </div>
-    <div class="row">
+    <div <?=$none?> class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Chỉnh sửa banner/home</h3>
+          <h3 class="tile-title">Chỉnh sửa banner</h3>
           <span style="color: red; font-wieght:bold;" >Stt: 1,2(370x180px) / Stt: 3,4,5(360x180px) / stt: 6,7(1140x180px)</span>
           <div class="tile-body">
           </div>
@@ -67,36 +88,43 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
       </div>
     </div>
 
-    <div class="row">
+    <div <?=$none1?> class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Chỉnh sửa slide/home</h3>
+          <h3 class="tile-title">Chỉnh sửa slide</h3>
           <span style="color: red; font-wieght:bold;"></span>
           <div class="tile-body">
           </div>
           <form action="index.php?pg=updateslider" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
-                <label for="masp" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="masp" class="form-control"  value="<?=$sttsd?>" name="sttsd" type="text" placeholder="">
+                <label for="masp" class="control-label">Số thứ tự trên web <span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input id="masp" class="form-control"  value="<?=$stt?>" name="sttsd" type="text" placeholder="">
               </div>
-              <div class="form-group col-md-6">
-                <label class="control-label">Nhập mô tả</label>
-                <input class="form-control" value="<?=$motasd?>" name="motasd" type="text">
-                <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/" alt="">
+              <div class="form-group col-md-3 ">
+                <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
+                <select name="nameprosl" class="form-control" id="exampleSelect1">
+                  <option value="default" >-- Chọn tên sản phẩm --</option>
+                  <?=$html_showsp;?>
+                </select>
               </div>
+              <div class="form-group col-md-6 "></div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
-                  <input type="hidden" id="uploadfile" value="<?=$imgsd?>" name="imgold">
+                  <input type="file" id="uploadfilesp1" value="<?=$img?>" name="imgupsd" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfilesp1" value="<?=$img?>" name="imgold">
                 </div>
+              </div>
+              <div class="form-group col-md-3">
+              <img style="width: 100%;padding-top: 20px;" src="../view/layout/images/slider/<?=$img?>" alt="">
                 <div id="thumbbox">
-                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimagesp1" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
               <div class="form-group col-md-12">
-                <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">
+                <input type="hidden" name="idsd" value="<?=$idsd?>" >
+                <input class="btn btn-save" type="submit" name="updatesl" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>
             </form>

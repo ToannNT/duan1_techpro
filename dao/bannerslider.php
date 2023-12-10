@@ -21,7 +21,7 @@ function insert_banner($stt, $namepro, $img){
 //kết thúc tạo mới banner
 //tạo mới slider
 function insert_slider($stt, $idpro, $img){
-    $sql = "INSERT INTO slider(stt,$id_product, img) VALUES(?,?,?)";
+    $sql = "INSERT INTO slider(stt, id_product, img) VALUES(?,?,?)";
     pdo_execute($sql, $stt, $idpro, $img);
 }
 //kết thúc tạo mới slider
@@ -35,27 +35,31 @@ function del_slider($id){
     pdo_execute($sql, $id);
 }
 // updatebanner
-function update_banner($stt, $mota, $img, $idbn){
-    $sql = "UPDATE banner SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idbn);
+function update_banner($stt, $namepro, $img, $idbn){
+    $sql = "UPDATE banner SET stt=?, id_product=?, img=? WHERE id=?";
+    pdo_execute($sql, $stt, $namepro, $img, $idbn);
 }
 function showup_banner($idbn){
     $sql = "SELECT * FROM banner WHERE id=?";
     return pdo_query_one($sql, $idbn);
 }
 //update slider
-function update_slider($stt, $mota, $img, $idsl){
-    $sql = "UPDATE slider SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idsl);
+function update_slider($sttsd, $nameprosl, $imgsd, $idsd){
+    $sql = "UPDATE slider SET stt=?, id_product=?, img=? WHERE id=?";
+    pdo_execute($sql, $sttsd, $nameprosl, $imgsd, $idsd);
 }
-function showup_slider($idsl){
+function showup_slider($idsd){
     $sql = "SELECT * FROM slider WHERE id=?";
-    return pdo_query_one($sql, $idsl);
+    return pdo_query_one($sql, $idsd);
 }
 
 
 function update_status($trangthai, $id){
     $sql = "UPDATE banner SET trangthai=? WHERE id=?";
+    pdo_execute($sql, $trangthai, $id);
+}
+function update_status2($trangthai, $id){
+    $sql = "UPDATE slider SET trangthai=? WHERE id=?";
     pdo_execute($sql, $trangthai, $id);
 }
 // kết thúc xoá banner

@@ -23,7 +23,7 @@
           <form action="index.php?pg=addbanner" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
               <label for="stt" class="control-label">Nhập số thứ tự trên web<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="stt" class="form-control" name="stt" min="1" type="number" placeholder="">
+                <input id="stt" class="form-control" max="15" name="stt" min="1" type="number" placeholder="">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
@@ -64,7 +64,7 @@
           <form action="index.php?pg=addbanner" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
               <label for="stt" class="control-label">Nhập số thứ tự trên web<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="stt" class="form-control" name="sttsd" min="1" type="number" placeholder="">
+                <input id="stt" class="form-control" name="sttsd" max="5" min="1" type="number" placeholder="">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
