@@ -1,13 +1,13 @@
 <?php
 $html_showbanner = "";
 foreach ($get_banner as $item) {
-  extract($item);
-  if ($trangthai == 1) {
-    $check = "checked";
-  } else {
-    $check = "";
-  }
-  $html_showbanner .= '<tr>
+    extract($item);
+    if ($trangthai == 1) {
+        $check = "checked";
+    } else {
+        $check = "";
+    }
+    $html_showbanner .= '<tr>
               <td>' . $stt . '</td>
               <td style="width: 200px; height: 100px; overflow: hidden;">
                   <img src="../view/layout/images/banner/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
@@ -27,13 +27,13 @@ foreach ($get_banner as $item) {
 }
 $html_showslider = "";
 foreach ($get_slider as $item) {
-  extract($item);
-  if ($trangthai == 1) {
-    $check = "checked";
-  } else {
-    $check = "";
-  }
-  $html_showslider .= '<tr>
+    extract($item);
+    if ($trangthai == 1) {
+        $check = "checked";
+    } else {
+        $check = "";
+    }
+    $html_showslider .= '<tr>
               <td>' . $stt . '</td>
               <td style="width: 200px; height: 100px; overflow: hidden;">
                   <img src="../view/layout/images/slider/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
@@ -143,7 +143,7 @@ input:checked+.sliderr:before {
                         <h3>Banner home</h3>
                         <thead>
                             <tr>
-                                <th style="width:100px;" >Thứ tự banner</th>
+                                <th style="width:100px;">Thứ tự banner</th>
                                 <th style="width:500px;">Hình ảnh</th>
                                 <th style="width:300px;">Trạng thái</th>
                                 <th>Thuộc tính</th>
@@ -157,7 +157,7 @@ input:checked+.sliderr:before {
                         <h3>Slider home</h3>
                         <thead>
                             <tr>
-                                <th style="width:100px;" >Thứ tự banner</th>
+                                <th style="width:100px;">Thứ tự banner</th>
                                 <th style="width:500px;">Hình ảnh</th>
                                 <th style="width:300px;">Trạng thái</th>
                                 <th>Thuộc tính</th>
@@ -178,7 +178,8 @@ function upStatussd(e) {
     var id = e.getAttribute("id");
     $(document).ready(function() {
         $.ajax({
-            url: "http://localhost/duan1_techpro/admin/view/status.php",
+            url: "./view/status.php",
+
             data: {
                 id: id,
                 status: status
@@ -195,7 +196,7 @@ function upStatus(e) {
     var id = e.getAttribute("id");
     $(document).ready(function() {
         $.ajax({
-            url: "http://localhost/duan1_techpro/admin/view/status.php",
+            url: "./view/status.php",
             data: {
                 id: id,
                 status: status
