@@ -1,7 +1,7 @@
 
 
 $(document).ready(function () {
-    
+
 
     $(".sticky-form-mini").click(function () {
         $(".sticky-form-big").show();
@@ -504,6 +504,28 @@ window.onload = function () {
     calculateTotal();
 };
 
+
+
+
+function updateURL() {
+    // Lấy giá trị số lượng từ input
+    var quantityValue = document.getElementById('giatri_soluong').value;
+
+
+    var productInfo = document.getElementById('productInfo');
+    var id = productInfo.getAttribute('data-id');
+    var ten = productInfo.getAttribute('data-ten');
+    var gia_hientai = productInfo.getAttribute('data-gia');
+    var hinh = productInfo.getAttribute('data-hinh');
+
+
+    // Tạo URL với thông tin sản phẩm và số lượng
+    var url = `index.php?pg=checkout&idpro=${id}&name=${ten}&quantity=${quantityValue}&price=${gia_hientai}&thanhtien=${gia_hientai}&img=${hinh}`;
+
+
+    // Chuyển hướng đến URL mới
+    window.location.href = url;
+}
 
 
 

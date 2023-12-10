@@ -47,15 +47,18 @@
                         $data_newspapers = get_newspapers();
                         ?>
                         <h4 class="li-blog-sidebar-title">Tin tức mới</h4>
-                        <?php foreach ($data_newspapers as $tt): ?>
+                        <?php foreach ($data_newspapers as $tt) : ?>
+
                         <div class="li-recent-post pb-30">
                             <div class="li-recent-post-thumb">
-                                <a href="blog-details-left-sidebar.html">
-                                    <img class="img-full" src="<?= $tt['hinh'] ?>" alt="Li's Product Image">
+                                <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
+                                    <img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>"
+                                        alt="Li's Product Image">
                                 </a>
                             </div>
                             <div class="li-recent-post-des">
-                                <span><a href="blog-details-left-sidebar.html"><?= $tt['tieude'] ?></a></span>
+                                <span><a
+                                        href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><?= $tt['tieude'] ?></a></span>
                                 <span class="li-post-date"><?= $tt['ngay'] ?></span>
                             </div>
                         </div>
@@ -84,7 +87,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="li-blog-banner">
                                 <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
-                                    <img class="img-full" src="<?= $tt['hinh'] ?>"></a>
+                                    <img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>"></a>
                             </div>
                             <div class="li-blog-content">
                                 <div class="li-blog-details">

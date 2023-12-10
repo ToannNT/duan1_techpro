@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\Exception;
 
-function guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang)
+function guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship)
 {
     require "PHPMailer-master/src/PHPMailer.php";
     require "PHPMailer-master/src/SMTP.php";
@@ -22,6 +22,32 @@ function guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang)
         $mail->addAddress($email);
         $mail->isHTML(true);  // Set email format to HTML
         $mail->Subject = 'Thư gửi hoá đơn';
+
+        $i=0;
+        $tongtien=0;
+        $html_donhang='';
+        if (isset($_SESSION['giohang']) && ($_SESSION['giohang'] != "")) {
+            foreach ($_SESSION['giohang'] as $item) {              
+                extract($item);
+                if($s_status == 1){
+                    $html_donhang.='<tr>
+                                        <td>'.$name.'</td>
+                                        <td>'.$quantity.'</td>
+                                        <td>'.number_format($price,0,'.',',').'</td>
+                                        <td>'.number_format($price*$quantity,0,'.',',').'</td>
+                                    </tr>';
+                    $tongtien+=$price*$quantity;
+                }
+            }
+        } else {
+                $html_donhang.='<tr>
+                                    <td>'.$name.'</td>
+                                    <td>'.$quantity.'</td>
+                                    <td>'.number_format($price,0,'.',',').'</td>
+                                    <td>'.number_format($price*$quantity,0,'.',',').'</td>
+                                </tr>';
+                        $tongtien+=$price*$quantity;
+        }
         $noidungthu = '
             <head>
                 <style>
@@ -51,43 +77,31 @@ function guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang)
                 <h1 style="text-align: center;">HOÁ ĐƠN</h1>
         
                 <div>
-                    <span>Tên khách hàng: </span>
-                    <p>Điện thoại khách hàng: </p>
-                    <p>Địa chỉ khách hàng: </p>
+                    <span>Tên khách hàng: '.$hoten.'</span>
+                    <p>Điện thoại khách hàng: '.$dienthoai.'</p>
+                    <p>Địa chỉ khách hàng: '.$diachi.'</p>
                 </div>
                 <table>
                     <tr>
-                        <th class="col-4"> <h4 >Mục</h4></th>
+                        <th class="col-4"> <h4 >Tên</h4></th>
                         <th class="col-2"> <h4 >Số lượng</h4></th>
                         <th class="col-3"> <h4 >Đơn giá</h4></th>
                         <th class="col-3"> <h4 >Thành tiền</h4></th>
                         
                     </tr>
-                    <tr>
-                        <td><p >Sản phẩm 1</p></td>
-                        <td><p>1</p></td>
-                        <td><p>200</p></td>
-                        <td><p>200</p></td>
-                    </tr>
-                    <tr>
-                        <td><p >Sản phẩm 2</p></td>
-                        <td><p>1</p></td>
-                        <td><p>200</p></td>
-                        <td<p>200</p></td>
-                    </tr>
+                    '.$html_donhang.'
                 </table>
                 <div style="text-align: right;">
-                    <p>Tổng cộng : 200</p>
-                    <p>Vouncher : -200</p>
-                    <p>Hội viên : -200</p>
-                    <p>Phí vận chuyển : -100</p>
-                    <h3 style="color: #0C2F4E;">TỔNG THANH TOÁN : -300</h3>
+                    <p>Tổng cộng : '.$tongtien.'</p>
+                    <p>Vouncher : '.$voucher.'</p>
+                    <p>Hội viên : '.$giamgiahoivien.'</p>
+                    <p>Phí vận chuyển : '.$ship.'</p>
+                    <h3 style="color: #0C2F4E;">TỔNG THANH TOÁN : '.$tongthanhtoan.'</h3>
                 </div>
                 <div>
                     <div><h2>THÔNG TIN THANH TOÁN</h2></div>
                     <div style="float: left ">
-                        <p>Phương thức thanh toán :</p>
-                        <p>Ngày thanh toán : </p>
+                        <p>Ngày thanh toán : '.$ngaydathang.'</p>
                     </div>
                     <div style="float: right;margin-right:20%;">
                         <p>SĐT</p>

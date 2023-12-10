@@ -12,6 +12,9 @@ require_once "../dao/bannerslider.php";
 require_once "../dao/blog.php";
 require_once "../dao/donhang.php";
 require_once "../dao/user.php";
+require_once "../dao/voucher.php";
+
+
 require_once "view/header.php";
 
 if (!isset($_SESSION['user'])) {
@@ -88,9 +91,9 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             // require_once "view/updateCatagory.php";
             break;
 
-        // THƯƠNG HIỆU
+            // THƯƠNG HIỆU
         case 'qlthuonghieu':
-            $get_Brandlist=get_Brand();
+            $get_Brandlist = get_Brand();
             include_once "view/qlthuonghieu.php";
             break;
 
@@ -102,30 +105,30 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $idcatalog = $_POST['idcatalog'];
                 // $mota = $_POST['mota'];
                 trademark_add($stt, $name, $idcatalog);
-                $get_Brandlist=get_Brand();
+                $get_Brandlist = get_Brand();
                 header('location: index.php?pg=qlthuonghieu');
             }
             include_once "view/addbrand.php";
             break;
-        case 'delbrand' :
+        case 'delbrand':
             if (isset($_GET['id'])) {
                 // echo 'OK';
                 $id = $_GET['id'];
                 $tb = delete_trademark($id);
             }
-            $get_Brandlist=get_Brand();
+            $get_Brandlist = get_Brand();
             include_once "view/qlthuonghieu.php";
             break;
-        
+
         case 'updateBrand':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-            $get_Brandlist_one=get_Brandlist_one($id);
+                $get_Brandlist_one = get_Brandlist_one($id);
             }
             include_once "view/updateBrand.php";
             break;
 
-        case 'fixBrand' :
+        case 'fixBrand':
             if (isset($_POST['btnUpdate'])) {
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
@@ -152,10 +155,10 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'delsp':
             error_reporting(E_ALL);
             ini_set('display_errors', '1');
-            if (isset($_GET['id']) && ($_GET['id'] > 0)){
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $showup = get_Sp_Detail($id);
-                $target_file = "../view/layout/images/product/".$showup['hinh'];
+                $target_file = "../view/layout/images/product/" . $showup['hinh'];
                 if (file_exists($target_file)) {
                     unlink($target_file);
                     echo "File $target_file đã bị xóa.";
@@ -402,10 +405,11 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $nameprosl = $_POST['nameprosl'];
                 if (isset($_FILES['imgupsd']['name']) && ($_FILES['imgupsd']['name'] !== "")) {
                     $imgsd = $_FILES['imgupsd']['name'];
-                }if ($imgsd == "") {
+                }
+                if ($imgsd == "") {
                     $imgsd = $_POST['imgold'];
                 }
-                
+
                 $idsd = $_POST['idsd'];
                 $target_file = "../view/layout/images/slider/" . $imgsd;
                 move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
@@ -495,6 +499,39 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
 
             require_once "view/qldonhang.php";
+            break;
+
+        case 'qlvoucher':
+            if (isset($_POST['submit_voucher'])) {
+                $keyword = $_POST['keyword'];
+            } else {
+                $keyword = "";
+            }
+            $ds_voucher = getds_voucherAll($keyword);
+
+
+            if (isset($_GET['status']) && $_GET['status'] != "") {
+                $status = $_GET["status"];
+                $idorder = $_GET["idorder"];
+                update_status_order($status, $idorder);
+                header("location: index.php?pg=qldonhang");
+            }
+
+
+            require_once "view/qlvoucher.php";
+            break;
+
+        case 'addvoucher':
+            if (isset($_POST['submit_voucher'])) {
+                // echo "Thêm thành công";
+                $ten = $_POST['ten'];
+                $tien = $_POST['tien'];
+                $soluong = $_POST['soluong'];
+                $date = $_POST['date'];
+                add_voucher($ten, $tien, $soluong, $date);
+                header('location: index.php?pg=qlvoucher');
+            }
+            require_once "view/addvoucher.php";
             break;
 
         case 'adddonhang':

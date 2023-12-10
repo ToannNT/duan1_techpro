@@ -61,3 +61,28 @@ function updateVoucherQuantity($ten_voucher)
     $sql = "UPDATE vouncher SET quantity_voucher = quantity_voucher - 1 WHERE ten_vouncher = ?";
     pdo_execute($sql, $ten_voucher);
 }
+
+
+
+
+// danh SACH VOUCHER ADMINN
+function getds_voucherAll($keyword)
+{
+    $sql = "SELECT  *  FROM vouncher WHERE 1";
+
+    if ($keyword != "") {
+        $sql .= " AND ten_vouncher LIKE '%" . $keyword . "%'";
+    }
+
+    $sql .= " ORDER BY id DESC";
+
+    return pdo_query($sql,);
+}
+
+
+// them voucher voucher
+function add_voucher($ten, $tien, $soluong, $date)
+{
+    $sql = "INSERT INTO vouncher (ten_vouncher, sotiengiam, quantity_voucher, end_time) VALUES (?,?,?,?)";
+    return pdo_execute($sql, $ten, $tien, $soluong, $date);
+}
