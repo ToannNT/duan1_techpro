@@ -1,7 +1,7 @@
 <style>
-    span {
-        font-size: 16px;
-    }
+span {
+    font-size: 16px;
+}
 </style>
 
 <?php
