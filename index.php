@@ -89,78 +89,78 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
             $dsbrandne = dsdm_brand_product();
 
-                          // SO SÁNH
-                          if(isset($_GET['del'])&&($_GET['del']==1)){
-                            unset($_SESSION['dataArray']);
-                            unset($_SESSION['catalogArray']);
-                            header('location: index.php?pg=product');
-                        } else {
-                            if(isset($_POST['sosanh'])){
-                                // Khởi tạo mảng để lưu trữ dữ liệu sản phẩm
-                                if (!isset($_SESSION['dataArray'])) {
-                                    $_SESSION['dataArray'] = array();
-                                }
-            
-                                // Khởi tạo mảng để lưu trữ danh mục
-                                if (!isset($_SESSION['catalogArray'])) {
-                                    $_SESSION['catalogArray'] = array();
-                                }
-            
-                                $maxProducts = 2; // Số lượng sản phẩm tối đa được lưu trong mảng
-            
-                                if (isset($_POST['productId']) && isset($_POST['productCatalog'])) {
-                                    $productId = $_POST['productId'];
-                                    $productCatalog = $_POST['productCatalog'];
-            
-                                    // Kiểm tra xem sản phẩm đã có trong mảng hay chưa
-                                    $index = array_search($productId, $_SESSION['dataArray']);
-                                    $indexC = array_search($productCatalog, $_SESSION['catalogArray']);
-                                    if ($index === false) {
-                                        // Nếu sản phẩm chưa có trong mảng và mảng chưa đạt đến giới hạn
-                                        if (count($_SESSION['dataArray']) < $maxProducts) {
-                                            $_SESSION['dataArray'][] = $productId; // Thêm sản phẩm vào mảng
-                                            $_SESSION['catalogArray'][] = $productCatalog;
-                
-                                            if (isset($_SESSION['catalogArray'][1]) && $_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
-                                                array_shift($_SESSION['dataArray']);
-                                                array_shift($_SESSION['catalogArray']);
-                                                $_SESSION['dataArray'][] = $productId;
-                                                $_SESSION['catalogArray'][] = $productCatalog;
-            
-                                                if (isset($_SESSION['catalogArray'][1]) && $_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
-                                                    array_shift($_SESSION['dataArray']);
-                                                    array_shift($_SESSION['catalogArray']);
-                                                }
-                                            }
-                                        } else {
-                                            array_shift($_SESSION['dataArray']);
-                                            array_shift($_SESSION['catalogArray']);
-                                            $_SESSION['dataArray'][] = $productId;
-                                            $_SESSION['catalogArray'][] = $productCatalog;
-                                            if ($_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
-                                                array_shift($_SESSION['dataArray']);
-                                                array_shift($_SESSION['catalogArray']);
-                                                $_SESSION['dataArray'][] = $productId;
-                                                $_SESSION['catalogArray'][] = $productCatalog;
-            
-                                                if ($_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
-                                                    array_shift($_SESSION['dataArray']);
-                                                    array_shift($_SESSION['catalogArray']);
-                                                }
-                                            }
-                                        }
-                                    } else {
-                                        // Nếu sản phẩm đã có trong mảng, xoá sản phẩm khỏi mảng
-                                        unset($_SESSION['dataArray'][$index]);
-                                        unset($_SESSION['catalogArray'][$indexC]);
+            // SO SÁNH
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
+                unset($_SESSION['dataArray']);
+                unset($_SESSION['catalogArray']);
+                header('location: index.php?pg=product');
+            } else {
+                if (isset($_POST['sosanh'])) {
+                    // Khởi tạo mảng để lưu trữ dữ liệu sản phẩm
+                    if (!isset($_SESSION['dataArray'])) {
+                        $_SESSION['dataArray'] = array();
+                    }
+
+                    // Khởi tạo mảng để lưu trữ danh mục
+                    if (!isset($_SESSION['catalogArray'])) {
+                        $_SESSION['catalogArray'] = array();
+                    }
+
+                    $maxProducts = 2; // Số lượng sản phẩm tối đa được lưu trong mảng
+
+                    if (isset($_POST['productId']) && isset($_POST['productCatalog'])) {
+                        $productId = $_POST['productId'];
+                        $productCatalog = $_POST['productCatalog'];
+
+                        // Kiểm tra xem sản phẩm đã có trong mảng hay chưa
+                        $index = array_search($productId, $_SESSION['dataArray']);
+                        $indexC = array_search($productCatalog, $_SESSION['catalogArray']);
+                        if ($index === false) {
+                            // Nếu sản phẩm chưa có trong mảng và mảng chưa đạt đến giới hạn
+                            if (count($_SESSION['dataArray']) < $maxProducts) {
+                                $_SESSION['dataArray'][] = $productId; // Thêm sản phẩm vào mảng
+                                $_SESSION['catalogArray'][] = $productCatalog;
+
+                                if (isset($_SESSION['catalogArray'][1]) && $_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
+                                    array_shift($_SESSION['dataArray']);
+                                    array_shift($_SESSION['catalogArray']);
+                                    $_SESSION['dataArray'][] = $productId;
+                                    $_SESSION['catalogArray'][] = $productCatalog;
+
+                                    if (isset($_SESSION['catalogArray'][1]) && $_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
+                                        array_shift($_SESSION['dataArray']);
+                                        array_shift($_SESSION['catalogArray']);
                                     }
                                 }
-                                if(empty($_SESSION['dataArray'])){
-                                    unset($_SESSION['catalogArray']);
-                                }      
+                            } else {
+                                array_shift($_SESSION['dataArray']);
+                                array_shift($_SESSION['catalogArray']);
+                                $_SESSION['dataArray'][] = $productId;
+                                $_SESSION['catalogArray'][] = $productCatalog;
+                                if ($_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
+                                    array_shift($_SESSION['dataArray']);
+                                    array_shift($_SESSION['catalogArray']);
+                                    $_SESSION['dataArray'][] = $productId;
+                                    $_SESSION['catalogArray'][] = $productCatalog;
+
+                                    if ($_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
+                                        array_shift($_SESSION['dataArray']);
+                                        array_shift($_SESSION['catalogArray']);
+                                    }
+                                }
                             }
+                        } else {
+                            // Nếu sản phẩm đã có trong mảng, xoá sản phẩm khỏi mảng
+                            unset($_SESSION['dataArray'][$index]);
+                            unset($_SESSION['catalogArray'][$indexC]);
                         }
-            
+                    }
+                    if (empty($_SESSION['dataArray'])) {
+                        unset($_SESSION['catalogArray']);
+                    }
+                }
+            }
+
 
             // if (isset($_POST['action'])) {
             //     $dssp_filter = get_data_filter();
@@ -198,6 +198,79 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 header('location: index.php?pg=productdetail&idpro=' . $idpro . '');
             }
 
+
+            // SO SÁNH
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
+                $idpro_ss = $_GET['idpro'];
+                unset($_SESSION['dataArray']);
+                unset($_SESSION['catalogArray']);
+                header('location: index.php?pg=productdetail&idpro=' . $idpro_ss . '');
+            } else {
+                if (isset($_POST['sosanh'])) {
+                    // Khởi tạo mảng để lưu trữ dữ liệu sản phẩm
+                    if (!isset($_SESSION['dataArray'])) {
+                        $_SESSION['dataArray'] = array();
+                    }
+
+                    // Khởi tạo mảng để lưu trữ danh mục
+                    if (!isset($_SESSION['catalogArray'])) {
+                        $_SESSION['catalogArray'] = array();
+                    }
+
+                    $maxProducts = 2; // Số lượng sản phẩm tối đa được lưu trong mảng
+
+                    if (isset($_POST['productId']) && isset($_POST['productCatalog'])) {
+                        $productId = $_POST['productId'];
+                        $productCatalog = $_POST['productCatalog'];
+
+                        // Kiểm tra xem sản phẩm đã có trong mảng hay chưa
+                        $index = array_search($productId, $_SESSION['dataArray']);
+                        $indexC = array_search($productCatalog, $_SESSION['catalogArray']);
+                        if ($index === false) {
+                            // Nếu sản phẩm chưa có trong mảng và mảng chưa đạt đến giới hạn
+                            if (count($_SESSION['dataArray']) < $maxProducts) {
+                                $_SESSION['dataArray'][] = $productId; // Thêm sản phẩm vào mảng
+                                $_SESSION['catalogArray'][] = $productCatalog;
+
+                                if (isset($_SESSION['catalogArray'][1]) && $_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
+                                    array_shift($_SESSION['dataArray']);
+                                    array_shift($_SESSION['catalogArray']);
+                                    $_SESSION['dataArray'][] = $productId;
+                                    $_SESSION['catalogArray'][] = $productCatalog;
+
+                                    if (isset($_SESSION['catalogArray'][1]) && $_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
+                                        array_shift($_SESSION['dataArray']);
+                                        array_shift($_SESSION['catalogArray']);
+                                    }
+                                }
+                            } else {
+                                array_shift($_SESSION['dataArray']);
+                                array_shift($_SESSION['catalogArray']);
+                                $_SESSION['dataArray'][] = $productId;
+                                $_SESSION['catalogArray'][] = $productCatalog;
+                                if ($_SESSION['catalogArray'][0] !== $_SESSION['catalogArray'][1]) {
+                                    array_shift($_SESSION['dataArray']);
+                                    array_shift($_SESSION['catalogArray']);
+                                    $_SESSION['dataArray'][] = $productId;
+                                    $_SESSION['catalogArray'][] = $productCatalog;
+
+                                    if ($_SESSION['dataArray'][0] == $_SESSION['dataArray'][1]) {
+                                        array_shift($_SESSION['dataArray']);
+                                        array_shift($_SESSION['catalogArray']);
+                                    }
+                                }
+                            }
+                        } else {
+                            // Nếu sản phẩm đã có trong mảng, xoá sản phẩm khỏi mảng
+                            unset($_SESSION['dataArray'][$index]);
+                            unset($_SESSION['catalogArray'][$indexC]);
+                        }
+                    }
+                    if (empty($_SESSION['dataArray'])) {
+                        unset($_SESSION['catalogArray']);
+                    }
+                }
+            }
 
             break;
 
@@ -375,9 +448,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
 
 
 
-                // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
-                guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
-
                 if (isset($nguoinhan_hoten) && ($nguoinhan_hoten != "")) {
                     $ten_nhan = $nguoinhan_hoten;
                     $sdt_nhan = $nguoinhan_dienthoai;
@@ -445,6 +515,13 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                     }
                     $madh = $randomChars . "-" . $iduser . date("dmY");
 
+
+
+                    // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
+                    guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
+
+
+
                     cart_insert($iduser, $idpro, $id_bill, $name, $img, $price, $quantity, $thanhtien);
                     //update Số lượng sản phẩm
                     update_quantity_product($idpro);
@@ -475,6 +552,15 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                             unset($_SESSION['giohang'][$key]); // Xóa phần tử trong mảng $_SESSION
                         }
                     }
+
+
+
+                    // gửi mail HÓA ĐƠN  CHO KHÁCH HÀNG
+                    guiHoaDon($email, $hoten, $tongthanhtoan, $ngaydathang);
+
+
+
+
                     //nếu tồn tại mã giảm giá thì addcart xong xóa luôn session
                     unset($_SESSION['voucher']);
                     $_SESSION['giohang'] = array_values($_SESSION['giohang']); // Đặt lại chỉ số mảng để tránh lỗ hổng
@@ -500,7 +586,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/contact.php";
             break;
         case 'compare':
-            
+
             require_once "view/compare.php";
             break;
         case 'aboutus':

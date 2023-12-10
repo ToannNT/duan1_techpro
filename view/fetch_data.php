@@ -118,8 +118,8 @@ if (isset($_POST['input'])) {
                             </form>
     
                             <form action="index.php?pg=product " method="post">
-                                <input type="hidden" name="productId" value="'. $id .'">
-                                <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
+                                <input type="hidden" name="productId" value="' . $id . '">
+                                <input type="hidden" name="productCatalog" value="' . $id_catalog . '">                           
                                 <button class="links-details" type="submit" id="sosanh" name="sosanh">SS</button>                        
                             </form>                        
                             
@@ -296,8 +296,8 @@ if (isset($_POST['input'])) {
                             </form>
     
                             <form action="index.php?pg=product " method="post">
-                                <input type="hidden" name="productId" value="'. $id .'">
-                                <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
+                                <input type="hidden" name="productId" value="' . $id . '">
+                                <input type="hidden" name="productCatalog" value="' . $id_catalog . '">                           
                                 <button class="links-details" type="submit" id="sosanh" name="sosanh">SS</button>                        
                             </form>                        
                             
@@ -309,12 +309,11 @@ if (isset($_POST['input'])) {
                                 <input type="hidden" name="price" value="' . $gia . '">
                                 <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
                                 <i class="fa fa-heart-o"></i>
-                                
                                 </button>
-                                
                             </form>
-                              
                         </ul>
+
+
                         <form>
                             <input type="hidden" name="page_here" value="index.php?pg=checkout">
                             <input type="hidden" name="idpro" value="' . $id . '">
@@ -326,8 +325,6 @@ if (isset($_POST['input'])) {
                             <input type="hidden" name="s_status" value="1">
                             ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
-
-                            
                             <a style="width: 100%;margin-top: 10px;" class="add-cart-btn" href="index.php?pg=checkout&idpro=' . $id . '&name=' . $ten . '&quantity=1&price=' . $gia_muangay . '&thanhtien=' . $gia_muangay . '&img=' . $hinh . '">Mua ngay</a>
                         </form>
                     </div>
@@ -453,8 +450,8 @@ if (isset($_POST['input'])) {
                             </form>
     
                             <form action="index.php?pg=product " method="post">
-                                <input type="hidden" name="productId" value="'. $id .'">
-                                <input type="hidden" name="productCatalog" value="'. $id_catalog .'">                           
+                                <input type="hidden" name="productId" value="' . $id . '">
+                                <input type="hidden" name="productCatalog" value="' . $id_catalog . '">                           
                                 <button class="links-details" type="submit" id="sosanh" name="sosanh">SS</button>                        
                             </form>                        
                             

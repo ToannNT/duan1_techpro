@@ -7299,25 +7299,61 @@ span.required {
 }
 
 .sticky-form li{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
     padding: 15px;
-    border: 1px solid black;
+    border-right: 1px solid #d5d5d5;
 }
 
 .sticky-form-mini{
     border-radius: 15px;
     margin-left: 1% ;
+    margin-bottom: 1% ;
+
     position: fixed;
     bottom: 0;
+    /* top: 0; */
     left: 0;
-    width: 8%;
+    right: 10;
+    width: 9%;
     background-color: #FFFFFF;
-    padding: 15px;
+    /* padding: 15px; */
     /* border-top: 1px solid #ddd; */
-    border: 3px solid black;
+    /* border: 3px solid black; */
     z-index: 9999;
     text-align: center;
+    
+    /* display: inline; */
+    
+    padding: 10px 10px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 15px #999;
+}
+
+.sticky-form-mini>span{
+    color: #288ad6;
 }
 
 .nutsosanh{
 all :unset;
+}
+
+#productInfoContainer{
+    position: relative;
+}
+
+#productInfoContainer__thugon{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    /* color: #288ad6; */
+    font-weight: 500;
+    top: -45px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+    box-shadow: 0 -2px 10px #0000001f;
 }
