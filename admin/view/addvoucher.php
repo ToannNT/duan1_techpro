@@ -8,36 +8,28 @@
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
-                <h3 class="tile-title">Tạo thương hiệu mới</h3>
+                <h3 class="tile-title">Tạo mới Danh mục</h3>
                 <div class="tile-body">
-                    <form method="POST" action="index.php?pg=addbrand" class="row" style="align-items: flex-end;">
+                    <form method="POST" action="index.php?pg=addvoucher" class="row">
                         <div class="form-group col-md-3">
-                            <label class="control-label">Tên thương hiệu</label>
-                            <input class="form-control" name="name" type="text">
+                            <label class="control-label">Tên voucher</label>
+                            <input class="form-control" name="ten" type="text" placeholder="">
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="exampleSelect1" class="control-label">Loại mô tả</label>
-                            <select class="form-control" name="idcatalog" id="exampleSelect1">
-                                <option>-- Chọn thuộc tính --</option>
-                                <option value="1">Điện thoại</option>
-                                <option value="2">Laptop</option>
-                                <option value="3">Tablet</option>
-                                <option value="4">Đồng hồ thông minh</option>
-                            </select>
+                            <label class="control-label">Số tiền giảm</label>
+                            <input class="form-control" name="tien" type="text">
                         </div>
-                        <div class="form-group col-md-3"></div>
-                        <div class="form-group col-md-3"></div>
                         <div class="form-group col-md-3">
-
-                            <button class="btn btn-save" name="addTrademark" type="submit">Thêm</button>
-                            <!-- <input type="submit" class="btn btn-save" name="addCatagory" value="Lưu lại"> -->
-                            <a class="btn btn-cancel" href="index.php">Hủy bỏ</a>
+                            <label class="control-label">Số lượng voucher</label>
+                            <input class="form-control" name="soluong" type="text">
                         </div>
-
-                        <!-- <div class="form-group col-md-3"> -->
-                        <!-- <label class="control-label">En unión y libertad</label>
-                            <input class="form-control" name="mota" type="text" readonly> -->
-                        <!-- </div> -->
+                        <div class="form-group col-md-3">
+                            <label class="control-label">Ngày hết hạn</label>
+                            <input class="form-control" name="date" type="date">
+                        </div>
+                        <button style="margin-left: 15px;" class="btn btn-save" name="submit_voucher" type="submit">Thêm</button>
+                        <!-- <input type="submit" class="btn btn-save" name="addCatagory" value="Lưu lại"> -->
+                        <a class="btn btn-cancel" href="index.php">Hủy bỏ</a>
                     </form>
                 </div>
 
@@ -46,7 +38,7 @@
 
 
 <!--
-MODAL CHỨC VỤ 
+  MODAL CHỨC VỤ 
 -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
