@@ -9,15 +9,13 @@ if (isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])) {
     foreach ($_SESSION['f_Product'] as $item) {
         extract($item);
         $link = 'index.php?pg=productdetail&idpro=' . $id;
-
         $linkDel = 'index.php?pg=delWishlistArray&ind=' . $i;
         $tableWishlist .= '<tr>
                                 <td class="li-product-remove"><a href="' . $linkDel . '"><i class="fa fa-times"></i></a></td>
                                 <td class="li-product-thumbnail"><a href="' . $link . '"><img class="wishimg" src="./view/layout/images/product/' . $hinh . '" alt="Hinh"></a></td>
                                 <td class="li-product-name"><a href="' . $link . '">' . $ten . '</a></td>
-                                <td class="li-product-price"><span class="amount">' . $gia . '</span></td>
-                                <td class="li-product-stock-status"><span class="in-stock">in stock</span></td>
-                                <td class="li-product-add-cart"><a href="#">add to cart</a></td>
+                                <td class="li-product-price"><span class="amount">' . number_format($gia, 0, '.', '.') . 'đ</span></td>
+                                <td class="li-product-add-cart"><a href="#">Thêm giỏ hàng</a></td>
                             </tr>';
         $i++;
     }
@@ -61,7 +59,6 @@ if (isset($_SESSION['f_Product']) && is_array($_SESSION['f_Product'])) {
                                     <th class="li-product-thumbnail">Hình ảnh</th>
                                     <th class="cart-product-name">Tên sản phẩm</th>
                                     <th class="li-product-price">Giá niêm yết</th>
-                                    <th class="li-product-stock-status">Tình trạng</th>
                                     <th class="li-product-add-cart">Thêm vào giỏ</th>
                                 </tr>
                             </thead>
