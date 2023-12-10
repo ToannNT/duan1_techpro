@@ -31,16 +31,26 @@
     #load-more-btn:hover {
         background-color: #272e68;
     }
+
+    .lg-image {
+        height: 420px;
+    }
+
+    .popup-img>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 </style>
 
 <?php
 
-
-
-
-
-
-
+if ($count_cmt >= 4) {
+    $xemthem = '
+    <button id="load-more-btn">Xem thêm</button>';
+} else {
+    $xemthem = '';
+}
 
 
 
@@ -86,6 +96,8 @@ if (isset($_SESSION['dataArray'])) {
 } else {
     $countSs = 0;
 }
+
+// echo var_dump($_SESSION['dataArray']);
 
 
 
@@ -378,51 +390,7 @@ if ($giamgia > 0) {
                     <div class="product-details-comment-block">
 
 
-                        //
 
-                        <form action="index.php?pg=productdetail" method="post">
-                            <p class="your-opinion">
-                                <!-- <label>Bạn hãy đánh giá sao</label> -->
-                                <span>
-                                    <div class="br-wrapper br-theme-fontawesome-stars"><select class="star-rating" style="display: none;">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <!-- <div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1"
-                                                class="br-selected"></a><a href="#" data-rating-value="2"
-                                                data-rating-text="2" class="br-selected"></a><a href="#"
-                                                data-rating-value="3" data-rating-text="3" class="br-selected"></a><a
-                                                href="#" data-rating-value="4" data-rating-text="4"
-                                                class="br-selected br-current"></a><a href="#" data-rating-value="5"
-                                                data-rating-text="5" class=""></a>
-                                            <div class="br-current-rating">4</div>
-                                        </div> -->
-                                    </div>
-                                </span>
-                            </p>
-                            <p class="feedback-form">
-                                <label for="feedback">Bình luận của bạn</label>
-                                <textarea name="noidung_cmt" placeholder="Bạn có thắc mắc gì về sản phẩm không?" id="feedback" name="comment" cols="45" rows="2" aria-required="true"></textarea>
-                            </p>
-                            <div class="feedback-input">
-
-                                <input type="hidden" name="name_cmt" value="' . $hoten . '">
-                                <input type="hidden" name="hinh_cmt" value="' . $hinh . '">
-                                <input type="hidden" name="idpro" value="' . $idpro . '">
-                                <input type="hidden" name="iduser" value="' . $id . '">
-                                <input type="hidden" name="ngaybl" value="' . $ngaybl . '">
-
-
-                                <div class="feedback-btn pb-15">
-                                    <button class="btn_submit_cmt" type="submit" name="submit_cmt">Gửi</button>
-                                </div>
-                            </div>
-                        </form>
-
-                        //
                         <?php
                         if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
                             extract($_SESSION["s_user"]);
@@ -478,9 +446,8 @@ if ($giamgia > 0) {
                                         <!--Accordion Start-->
                                         <h3 style="margin-bottom: 0px; font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
                                             Đăng nhập để bình luận sản phẩm ?
-                                            <a href="index.php?pg=login_register"><span>Đăng nhập.</span></a>
+                                            <a href="index.php?pg=login_register&page_follow=productdetail&idpro=' . $id . '"><span>Đăng nhập.</span></a>
                                         </h3>
-
                                     </div>
                             ';
                         }
@@ -490,11 +457,12 @@ if ($giamgia > 0) {
                         <div id="all-comments">
                             <?= $show_all_cmt ?>
                         </div>
-                        <button id="load-more-btn">Xem thêm</button>
+
+                        <?= $xemthem ?>
                         <script>
                             $(document).ready(function() {
                                 const commentsPerLoad =
-                                    5; // Số lượng comment muốn hiển thị mỗi lần nhấn nút "Xem thêm"
+                                    4; // Số lượng comment muốn hiển thị mỗi lần nhấn nút "Xem thêm"
                                 let visibleComments = commentsPerLoad;
 
                                 $('.comment-author-infos:gt(' + (commentsPerLoad - 1) + ')')
@@ -690,31 +658,7 @@ if ($giamgia > 0) {
 
 
 
-<div class="sticky-form-mini" id="stickyForm">
-    <input class="count" type="hidden" value="<?= $countSs ?>">
-    <span>
-        So sánh(<?= $countSs ?>)
 
-    </span>
-</div>
-<div class="sticky-form-big" style="display: none; height: 300px;">
-    <form class="sticky-form" id="stickyForm" action="index.php?pg=compare" method="post">
-        <ul style="min-height: 150px; display: flex; box-shadow: 0 0 15px #cfcdcd;">
-            <li style="width:40%">
-                <?= $html_sp1 ?>
-            </li>
-            <li style="width:40%">
-                <?= $html_sp2 ?>
-            </li>
-            <li style="width:20%" id="productInfoContainer">
-                <input style="width: 100%;" class="submit add-cart-btn__main" type="submit" name="sosanh" value="So sánh ngay"><a href="index.php?pg=compare"></a>
-                <p style="font-size: 15px;  margin-top: 10px; margin-bottom: 0;text-align: center;"><a style="color: #288ad6;" href="index.php?pg=productdetail&idpro=<?= $id1 ?>&del=1">
-                        Xoá tất cả</a></p>
-                <p id="productInfoContainer__thugon" style="font-size: 15px; margin-bottom: 0; text-align: center;" class="sticky-form-hide">Thu gọn </p>
-            </li>
-        </ul>
-    </form>
-</div>
 
 <script>
     // JavaScript để xác định vị trí khi cuộn trang

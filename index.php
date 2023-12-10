@@ -162,11 +162,6 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             }
 
 
-            // if (isset($_POST['action'])) {
-            //     $dssp_filter = get_data_filter();
-            // } else {
-            //     $dssp_filter = get_data_filter();
-            // }
 
             require_once "view/product.php";
             break;
@@ -177,6 +172,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $iddm = $show_Sp_detail['id_catalog'];
                 $show_relate = get_Sp_relate($iddm, $id);
                 $dscmt_all = getds_cmt_sp($id);
+                $count_cmt = count_cmt_product($id);
                 require_once "view/productdetail.php";
             } else {
                 include_once "view/home.php";
@@ -204,7 +200,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $idpro_ss = $_GET['idpro'];
                 unset($_SESSION['dataArray']);
                 unset($_SESSION['catalogArray']);
-                header('location: index.php?pg=productdetail&idpro=' . $idpro_ss . '');
+                // header('location: index.php?pg=productdetail&idpro=' . $idpro_ss . '');
             } else {
                 if (isset($_POST['sosanh'])) {
                     // Khởi tạo mảng để lưu trữ dữ liệu sản phẩm
@@ -320,6 +316,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if ($product_exists == false) {
                     $product_arr = array("name" => $name, "img" => $img, "price" => $price, "quantity" => $quantity, "idpro" => $idpro, "s_status" => $s_status, "thanhtien" => $thanhtien);
                     array_push($_SESSION['giohang'], $product_arr);
+                    sleep(2);
                     header('location: ' . $page_here . '');
                 }
             }

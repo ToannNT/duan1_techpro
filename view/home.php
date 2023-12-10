@@ -24,15 +24,18 @@ function pdo_querya($sql)
     }
 }
 
-function show_sl(){
+function show_sl()
+{
     $sql = "SELECT * FROM slider WHERE trangthai = 1";
     return pdo_querya($sql);
 }
-function show_bn12(){
+function show_bn12()
+{
     $sql = "SELECT * FROM banner WHERE trangthai = 1";
     return pdo_querya($sql);
 }
-function showsttbn(){
+function showsttbn()
+{
     $showdsbn12 = show_bn12();
     $banner = array();
     foreach ($showdsbn12 as $value) {
@@ -77,16 +80,17 @@ function showsttbn(){
     }
     return $banner;
 }
-function showsttsl(){
+function showsttsl()
+{
     $showsl = show_sl();
     $sl = array();
     foreach ($showsl as $value) {
         extract($value);
         if ($stt == 1) {
-            $sl['stt1'] =' <div class="single-slide align-center-left  animation-style-01 bg-1">
+            $sl['stt1'] = ' <div class="single-slide align-center-left  animation-style-01 bg-1">
                             <div class="slider-progress"></div>
                                 <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                    <img src="./view/layout/images/slider/' . $img . '" alt="">
                                 </a>
                             <div class="slider-content">
                             </div>
@@ -95,7 +99,7 @@ function showsttsl(){
             $sl['stt2'] = '<div class="single-slide align-center-left animation-style-02 bg-2">
                             <div class="slider-progress"></div>
                             <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                    <img src="./view/layout/images/slider/' . $img . '" alt="">
                                 </a>
                             <div class="slider-content">
                             </div>
@@ -105,7 +109,7 @@ function showsttsl(){
                             <div class="single-slide align-center-left animation-style-01 bg-3">
                                 <div class="slider-progress"></div>
                                     <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                        <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                        <img src="./view/layout/images/slider/' . $img . '" alt="">
                                     </a>
                                     <div class="slider-content">
                                     <div class="default-btn slide-btn"></div>
@@ -127,9 +131,9 @@ $banners = showsttbn();
                 <div class="slider-area">
                     <div class="slider-active owl-carousel">
                         <!-- sl111. -->
-                        <?=$showsttsl['stt1']?>
-                        <?=$showsttsl['stt2']?>
-                        <?=$showsttsl['stt3']?>
+                        <?= $showsttsl['stt1'] ?>
+                        <?= $showsttsl['stt2'] ?>
+                        <?= $showsttsl['stt3'] ?>
                     </div>
                 </div>
             </div>
@@ -309,115 +313,109 @@ $banners = showsttbn();
                                     ';
                                 }
                             ?>
-                            <div class="featured-product-bundle">
-                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">
-                                            <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">
-                                                    <?= $tt['ten'] ?>
-                                                </a>
-                                            </h5>
+                                <div class="featured-product-bundle">
+                                    <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                        <div class="product-img">
+                                            <a href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">
+                                                <img src="./view/layout/images/product/<?= $tt['hinh'] ?>">
+                                            </a>
                                         </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name"
-                                                href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
-                                                ngày hôm nay</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">35.000.000đ</span>
-                                            <span class="old-price">36.000.000đ</span>
-                                            <!-- <span class="discount-percentage">-7%</span> -->
-                                        </div>
-                                        <div class="featured-product-action">
-                                            <ul style="display: flex; justify-content: start;" class="add-actions-link">
+                                        <div class="featured-pro-content">
+                                            <div class="product-review">
+                                                <h5 class="manufacturer">
+                                                    <a href="shop-left-sidebar.html">
+                                                        <?= $tt['ten'] ?>
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div class="rating-box">
+                                                <ul class="rating">
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4><a class="featured-product-name" href="index.php?pg=productdetail&idpro=<?= $tt['id'] ?>">Chỉ trong
+                                                    ngày hôm nay</a></h4>
+                                            <div class="featured-price-box">
+                                                <span class="new-price new-price-2">35.000.000đ</span>
+                                                <span class="old-price">36.000.000đ</span>
+                                                <!-- <span class="discount-percentage">-7%</span> -->
+                                            </div>
+                                            <div class="featured-product-action">
+                                                <ul style="display: flex; justify-content: start;" class="add-actions-link">
 
-                                                <form>
-                                                    <input type="hidden" name="page_here" value="index.php?pg=checkout">
-                                                    <input type="hidden" name="idpro" value="<?= $id ?>">
-                                                    <input type="hidden" name="img" value="<?= $hinh ?>">
-                                                    <input type="hidden" name="name" value="<?= $ten ?>">
-                                                    <input type="hidden" name="giamuangay" value="<?= $gia_muangay ?>">
-
-                                                    <?= $giatien_addcart ?>
-                                                    <input type="hidden" name="s_status" value="1">
-                                                    <?= $thanhTien_addcart ?>
-
-                                                    <input type="hidden" name="quantity" value="1">
-
-
-                                                    <a style="text-align: center; margin-right: 5px; width: 100px;
-                                                        " class="add-cart-btn"
-                                                        href="index.php?pg=checkout&idpro=<?= $id ?>&name=<?= $ten ?>&quantity=1&price=<?= $gia_muangay ?>&thanhtien=<?= $gia_muangay ?>&img=<?= $hinh ?>">Mua
-                                                        ngay</a>
-                                                </form>
-
-
-
-
-
-                                                <form action="index.php?pg=addcart" method="post">
-                                                    <input type="hidden" name="page_here" value="index.php">
-                                                    <input type="hidden" name="idpro" value="<?= $id ?>">
-                                                    <input type="hidden" name="img" value="<?= $hinh ?>">
-                                                    <input type="hidden" name="name" value="<?= $ten ?>">
-
-                                                    <?= $giatien_addcart ?>
-                                                    <input type="hidden" name="s_status" value="0">
-                                                    <?= $thanhTien_addcart ?>
-
-                                                    <input type="hidden" name="quantity" value="1">
-
-                                                    <button style="text-align: center; margin-right: 5px; width: 100px;
-                                                        " type="submit" name="addcart"
-                                                        class="add-cart-btn__main">Thêm</button>
-                                                </form>
-
-
-
-
-
-
-                                                <form action="index.php?pg=addtoWishlist" method="post">
-                                                    <input type="hidden" name="img"
-                                                        value="../view/layout/images/product<?= $hinh ?>">
-                                                    <form action="index.php?pg=addtoWishlist" class="formWish"
-                                                        method="post">
-                                                        <input type="hidden" name="id" value="<?= $id ?>">
+                                                    <form>
+                                                        <input type="hidden" name="page_here" value="index.php?pg=checkout">
+                                                        <input type="hidden" name="idpro" value="<?= $id ?>">
                                                         <input type="hidden" name="img" value="<?= $hinh ?>">
                                                         <input type="hidden" name="name" value="<?= $ten ?>">
-                                                        <input type="hidden" name="price" value="' . $gia . '">
-                                                        <button type="submit" name="btn_Wish" class="links-details"
-                                                            onclick="showSuccessToast()">
-                                                            <i class="fa fa-heart-o"></i>
+                                                        <input type="hidden" name="giamuangay" value="<?= $gia_muangay ?>">
 
-                                                        </button>
+                                                        <?= $giatien_addcart ?>
+                                                        <input type="hidden" name="s_status" value="1">
+                                                        <?= $thanhTien_addcart ?>
 
+                                                        <input type="hidden" name="quantity" value="1">
+
+
+                                                        <a style="text-align: center; margin-right: 5px; width: 100px;
+                                                        " class="add-cart-btn" href="index.php?pg=checkout&idpro=<?= $id ?>&name=<?= $ten ?>&quantity=1&price=<?= $gia_muangay ?>&thanhtien=<?= $gia_muangay ?>&img=<?= $hinh ?>">Mua
+                                                            ngay</a>
                                                     </form>
-                                                    <!-- <li class="add-cart active"><a href="#">Thêm</a></button>
+
+
+
+
+
+                                                    <form action="index.php?pg=addcart" method="post">
+                                                        <input type="hidden" name="page_here" value="index.php">
+                                                        <input type="hidden" name="idpro" value="<?= $id ?>">
+                                                        <input type="hidden" name="img" value="<?= $hinh ?>">
+                                                        <input type="hidden" name="name" value="<?= $ten ?>">
+
+                                                        <?= $giatien_addcart ?>
+                                                        <input type="hidden" name="s_status" value="0">
+                                                        <?= $thanhTien_addcart ?>
+
+                                                        <input type="hidden" name="quantity" value="1">
+
+                                                        <button style="text-align: center; margin-right: 5px; width: 100px;
+                                                        " type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                                                    </form>
+
+
+
+
+
+
+                                                    <form action="index.php?pg=addtoWishlist" method="post">
+                                                        <input type="hidden" name="img" value="../view/layout/images/product<?= $hinh ?>">
+                                                        <form action="index.php?pg=addtoWishlist" class="formWish" method="post">
+                                                            <input type="hidden" name="id" value="<?= $id ?>">
+                                                            <input type="hidden" name="img" value="<?= $hinh ?>">
+                                                            <input type="hidden" name="name" value="<?= $ten ?>">
+                                                            <input type="hidden" name="price" value="' . $gia . '">
+                                                            <button type="submit" name="btn_Wish" class="links-details" onclick="showSuccessToast()">
+                                                                <i class="fa fa-heart-o"></i>
+
+                                                            </button>
+
+                                                        </form>
+                                                        <!-- <li class="add-cart active"><a href="#">Thêm</a></button>
                                                     <li><a class="links-details" href="single-product.html"><i
                                                                 class="fa fa-heart-o"></i></a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i></a></li> -->
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            </div>
+                                </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -517,8 +515,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/11.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -547,11 +544,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -563,8 +557,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -595,11 +588,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -611,8 +601,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -641,11 +630,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -657,8 +643,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/5.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -689,11 +674,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -705,8 +687,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -735,11 +716,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -751,8 +729,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/5.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/5.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -783,11 +760,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -805,8 +779,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/3.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/3.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -835,11 +808,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -851,8 +821,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/7.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/7.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -883,11 +852,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -899,8 +865,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -929,11 +894,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -945,8 +907,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/1.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/1.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -977,11 +938,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -993,8 +951,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/11.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/11.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -1023,11 +980,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1039,8 +993,7 @@ $banners = showsttbn();
                                     <div class="single-product-wrap">
                                         <div class="product-image">
                                             <a href="single-product.html">
-                                                <img src="./view/layout/images/product/large-size/9.jpg"
-                                                    alt="Li's Product Image">
+                                                <img src="./view/layout/images/product/large-size/9.jpg" alt="Li's Product Image">
                                             </a>
                                             <span class="sticker">New</span>
                                         </div>
@@ -1071,11 +1024,8 @@ $banners = showsttbn();
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                            data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1111,61 +1061,63 @@ $banners = showsttbn();
                 <div class="row">
                     <!-- <div class="product-active owl-carousel"> -->
                     <?php foreach ($data_tintucindex as $tt) : ?>
-                    <!-- single-product-wrap start -->
-                    <div class="col-lg-3 col-md-3">
-                        <div class="li-blog-single-item">
-                            <div class="li-blog-banner">
-                                <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full"
-                                        src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt=""></a>
-                            </div>
-                            <div class="li-blog-content">
-                                <div class="li-blog-details">
-                                    <h3 class="li-blog-heading pt-25"><a
-                                            href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
-                                            <?= $tt['tieude'] ?>
-                                        </a>
-                                    </h3>
-                                    <div class="li-blog-meta">
+                        <!-- single-product-wrap start -->
+                        <div class="col-lg-3 col-md-3">
+                            <div class="li-blog-single-item">
+                                <div class="li-blog-banner">
+                                    <a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>"><img class="img-full" src="./view/layout/images/blog/<?= $tt['hinh'] ?>" alt=""></a>
+                                </div>
+                                <div class="li-blog-content">
+                                    <div class="li-blog-details">
+                                        <h3 class="li-blog-heading pt-25"><a href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">
+                                                <?= $tt['tieude'] ?>
+                                            </a>
+                                        </h3>
+                                        <div class="li-blog-meta">
 
-                                        <a class="post-time" href="#"><i class="fa fa-calendar"></i>
-                                            <?= $tt['ngay'] ?>
-                                        </a>
+                                            <a class="post-time" href="#"><i class="fa fa-calendar"></i>
+                                                <?= $tt['ngay'] ?>
+                                            </a>
+                                        </div>
+
+                                        <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read
+                                            More...</a>
                                     </div>
-
-                                    <a class="read-more" href="index.php?pg=blog_details&id=<?= $tt['id_blog'] ?>">Read
-                                        More...</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- single-product-wrap end -->
+                        <!-- single-product-wrap end -->
                     <?php endforeach; ?>
                 </div>
                 <!-- </div> -->
                 <!-- Sweet Alert Frem Demo -->
                 <div id="toast"></div>
                 <script language="JavaScript">
-                function toast() {
-                    swal("Success!", "Your data have been saved. Thank you!", "success");
-                }
+                    function toast() {
+                        swal("Success!", "Your data have been saved. Thank you!", "success");
+                    }
 
-                function showSuccessToast() {
-                    toast({
-                        title: "Thành công!",
-                        message: "Bạn đã thêm vào mục yêu thích thành công.",
-                        type: "success",
-                        duration: 1000
-                    });
-                }
+                    function toast_cart() {
+                        swal("Thành công!", "Thêm sản phẩm vào giỏ hàng thành công", "success");
+                    }
 
-                function showErrorToast() {
-                    toast({
-                        title: "Thất bại!",
-                        message: "Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ quản trị viên.",
-                        type: "error",
-                        duration: 1000
-                    });
-                }
+                    function showSuccessToast() {
+                        toast({
+                            title: "Thành công!",
+                            message: "Bạn đã thêm vào mục yêu thích thành công.",
+                            type: "success",
+                            duration: 1000
+                        });
+                    }
+
+                    function showErrorToast() {
+                        toast({
+                            title: "Thất bại!",
+                            message: "Có lỗi xảy ra, vui lòng thử lại hoặc liên hệ quản trị viên.",
+                            type: "error",
+                            duration: 1000
+                        });
+                    }
                 </script>
                 <!-- Sweet Alert Frem Demo End Here -->
             </div>

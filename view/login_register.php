@@ -6,6 +6,11 @@ if (isset($_GET['page_follow'])) {
     $page_follow = '';
 }
 
+if (isset($_GET['idpro'])) {
+    $page_follow = 'productdetail&idpro=' . $_GET['idpro'];
+} else {
+    $page_follow = '';
+}
 // echo $page_follow;
 
 ?>
