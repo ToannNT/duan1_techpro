@@ -325,7 +325,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $stt = $_POST['sttsd'];
                 $idpro = $_POST['nameprosl'];
                 $img = $_FILES['imgupsd']['name'];
-                $target_file = "../view/layout/asset/css/images/slider/" . $img;
+                $target_file = "../view/layout/images/slider/" . $img;
                 move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
                 insert_slider($stt, $idpro, $img);
                 header('location: index.php?pg=qlbanner');
@@ -335,7 +335,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'updatebanner':
             if (isset($_POST['updatebn'])) {
                 $stt = $_POST['stt'];
-                $mota = $_POST['mota'];
+                $namepro = $_POST['namepro'];
                 if (isset($_FILES['imgup']['name']) && ($_FILES['imgup']['name'] !== "")) {
                     $img = $_FILES['imgup']['name'];
                 }
@@ -345,7 +345,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $idbn = $_POST['idbn'];
                 $target_file = "../view/layout/images/banner/" . $img;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                update_banner($stt, $mota, $img, $idbn);
+                update_banner($stt, $namepro, $img, $idbn);
                 // hàm show banner id
                 $showup_banner = showup_banner($idbn);
                 header('location: index.php?pg=qlbanner');
@@ -357,12 +357,14 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $get_pro = ds_product();
                 $idbn = $_GET['idbn'];
                 $showup_banner = showup_banner($idbn);
+                echo var_dump($showup_banner);
             }
+
             if (isset($_GET['idsd']) && ($_GET['idsd'] > 0)) {
                 $get_pro = ds_product();
-                extract($get_pro);
                 $idsd = $_GET['idsd'];
                 $showup_slider = showup_slider($idsd);
+                echo var_dump($showup_slider);
             }
             $get_banner = db_banner(10);
             require_once "view/updatebnsl.php";
@@ -378,7 +380,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
         case 'updateslider':
             if (isset($_POST['updatesl'])) {
                 $sttsd = $_POST['sttsd'];
-                $motasd = $_POST['motasd'];
+                $nameprosl = $_POST['nameprosl'];
                 if (isset($_FILES['imgupsd']['name']) && ($_FILES['imgupsd']['name'] !== "")) {
                     $imgsd = $_FILES['imgupsd']['name'];
                 } else {
@@ -389,8 +391,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 }
                 $idsd = $_POST['idsd'];
                 $target_file = "../view/layout/asset/css/images/slider/" . $imgsd;
-                move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                update_slider($stt, $mota, $img, $idsd);
+                move_uploaded_file($_FILES['imgupsd']['tmp_name'], $target_file);
+                update_slider($sttsd, $nameprosl, $imgsd, $idsd);
                 // hàm show slider id
                 $showup_slider = showup_slider($idsd);
                 header('location: index.php?pg=qlbanner');

@@ -36,7 +36,7 @@ foreach ($get_slider as $item) {
   $html_showslider .= '<tr>
               <td>' . $stt . '</td>
               <td style="width: 200px; height: 100px; overflow: hidden;">
-                  <img src="../view/layout/asset/css/images/slider/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                  <img src="../view/layout/images/slider/' . $img . '" alt="" style="width: 100%; height: 100%; object-fit: cover;">
               </td>
               <td style="width: 10%;">
                 <label class="switch">

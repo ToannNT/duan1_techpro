@@ -1,6 +1,17 @@
 <?php
 if(is_array($showup_banner)&&(count($showup_banner)>0)){
   extract($showup_banner);
+  }else{
+    $stt = "";
+    $id_product = "";
+    $img = "";
+  }
+if(is_array($showup_slider)&&(count($showup_slider)>0)){
+  extract($showup_slider);
+  }else{
+    $sttsd = "";
+    $id_product = "";
+    $imgsd = "";
   }
   $html_showsp = '';
   foreach ($get_pro as $dm_adm) {
@@ -76,8 +87,8 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
           </div>
           <form action="index.php?pg=updateslider" enctype="multipart/form-data" method="post" class="row">
               <div class="form-group col-md-3">
-                <label for="masp" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
-                <input id="masp" class="form-control"  value="<?=$sttsd?>" name="sttsd" type="text" placeholder="">
+                <label for="masp" class="control-label">Số thứ tự trên web <span style="color: red; font-weight: bold" >(*)</span> </label>
+                <input id="masp" class="form-control"  value="<?=$stt?>" name="sttsd" type="text" placeholder="">
               </div>
               <div class="form-group col-md-3 ">
                 <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
@@ -95,6 +106,7 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
                 </div>
               </div>
               <div class="form-group col-md-3">
+              <img style="width: 100%;padding-top: 20px;" src="../view/layout/images/slider/<?=$img?>" alt="">
                 <div id="thumbbox">
                   <img width="200px" alt="Thumb image" id="thumbimagesp1" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>

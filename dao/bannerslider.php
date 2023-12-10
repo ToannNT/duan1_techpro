@@ -35,18 +35,18 @@ function del_slider($id){
     pdo_execute($sql, $id);
 }
 // updatebanner
-function update_banner($stt, $mota, $img, $idbn){
-    $sql = "UPDATE banner SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idbn);
+function update_banner($stt, $namepro, $img, $idbn){
+    $sql = "UPDATE banner SET stt=?, id_product=?, img=? WHERE id=?";
+    pdo_execute($sql, $stt, $namepro, $img, $idbn);
 }
 function showup_banner($idbn){
     $sql = "SELECT * FROM banner WHERE id=?";
     return pdo_query_one($sql, $idbn);
 }
 //update slider
-function update_slider($stt, $mota, $img, $idsd){
-    $sql = "UPDATE slider SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idsd);
+function update_slider($sttsd, $nameprosl, $imgsd, $idsd){
+    $sql = "UPDATE slider SET stt=?, id_product=?, img=? WHERE id=?";
+    pdo_execute($sql, $sttsd, $nameprosl, $imgsd, $idsd);
 }
 function showup_slider($idsd){
     $sql = "SELECT * FROM slider WHERE id=?";
