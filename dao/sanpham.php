@@ -224,7 +224,7 @@ function show_SP($dssp)
                             ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
   
-                            <button style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                            <button style="" onclick="toast_cart()" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
                         </form>
 
 
