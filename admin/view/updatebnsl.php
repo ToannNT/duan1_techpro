@@ -70,7 +70,7 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Chỉnh sửa slide/home</h3>
+          <h3 class="tile-title">Chỉnh sửa slide</h3>
           <span style="color: red; font-wieght:bold;"></span>
           <div class="tile-body">
           </div>
@@ -79,23 +79,29 @@ if(is_array($showup_banner)&&(count($showup_banner)>0)){
                 <label for="masp" class="control-label">STT<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <input id="masp" class="form-control"  value="<?=$sttsd?>" name="sttsd" type="text" placeholder="">
               </div>
-              <div class="form-group col-md-6">
-                <label class="control-label">Nhập mô tả</label>
-                <input class="form-control" value="<?=$motasd?>" name="motasd" type="text">
-                <img style="width: 200px;padding-top: 20px;" src="../view/layout/images/banner/" alt="">
+              <div class="form-group col-md-3 ">
+                <label for="exampleSelect1" class="control-label">Chọn sản phẩm cần thêm banner</label>
+                <select name="nameprosl" class="form-control" id="exampleSelect1">
+                  <option value="default" >-- Chọn tên sản phẩm --</option>
+                  <?=$html_showsp;?>
+                </select>
               </div>
+              <div class="form-group col-md-6 "></div>
               <div class="form-group col-md-3">
                 <label class="control-label">Ảnh banner<span style="color: red; font-weight: bold" >(*)</span> </label>
                 <div  >
-                  <input type="file" id="uploadfile" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
-                  <input type="hidden" id="uploadfile" value="<?=$imgsd?>" name="imgold">
+                  <input type="file" id="uploadfilesp1" value="<?=$imgsd?>" name="imgupsd" onchange="readURL(this);" />
+                  <input type="hidden" id="uploadfilesp1" value="<?=$imgsd?>" name="imgold">
                 </div>
+              </div>
+              <div class="form-group col-md-3">
                 <div id="thumbbox">
-                  <img width="200px" alt="Thumb image" id="thumbimage" style="display: none" />
+                  <img width="200px" alt="Thumb image" id="thumbimagesp1" style="display: none" />
                   <a class="removeimg" href="javascript:"></a>
                 </div>
               </div>
               <div class="form-group col-md-12">
+                <input type="hidden" name="idsd" value="<?=$idsd?>" >
                 <input class="btn btn-save" type="submit" name="updatebn" value="Lưu lại">
                 <a class="btn btn-cancel" href="index.php?pg=qlbanner">Hủy bỏ</a>
               </div>

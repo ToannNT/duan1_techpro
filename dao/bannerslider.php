@@ -21,7 +21,7 @@ function insert_banner($stt, $namepro, $img){
 //kết thúc tạo mới banner
 //tạo mới slider
 function insert_slider($stt, $idpro, $img){
-    $sql = "INSERT INTO slider(stt,$id_product, img) VALUES(?,?,?)";
+    $sql = "INSERT INTO slider(stt, id_product, img) VALUES(?,?,?)";
     pdo_execute($sql, $stt, $idpro, $img);
 }
 //kết thúc tạo mới slider
@@ -44,13 +44,13 @@ function showup_banner($idbn){
     return pdo_query_one($sql, $idbn);
 }
 //update slider
-function update_slider($stt, $mota, $img, $idsl){
+function update_slider($stt, $mota, $img, $idsd){
     $sql = "UPDATE slider SET stt=?, mota=?, img=? WHERE id=?";
-    pdo_execute($sql, $stt, $mota, $img, $idsl);
+    pdo_execute($sql, $stt, $mota, $img, $idsd);
 }
-function showup_slider($idsl){
+function showup_slider($idsd){
     $sql = "SELECT * FROM slider WHERE id=?";
-    return pdo_query_one($sql, $idsl);
+    return pdo_query_one($sql, $idsd);
 }
 
 

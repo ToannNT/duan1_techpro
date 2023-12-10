@@ -249,7 +249,7 @@
         }
     </script>
 </head>
-
+<!-- 
 <body onload="time()" class="app sidebar-mini rtl">
 
     <header class="app-header">
@@ -276,6 +276,18 @@
         <hr>
         <ul class="app-menu">
             <li><a class="app-menu__item active" href="index.php"><i class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
+            <li class="app-menu__itemhv">
+                <a onclick="momenu()" class="app-menu__item" href="#">
+                    <i class='app-menu__icon bx bx-image'></i>
+                    <span class="app-menu__label">Quản lý giao diện</span>
+                </a>
+                <ul class="sub-menu" style="display:none;">
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li>
+                    <li><a class="app-menu__item" href="index.php?pg=qlbanner"><i class='app-menu__icon bx bx-slideshow'></i><span class="app-menu__label">Banner</span></a></li>
+                </ul>
+            </li>
             <li>
                 <a class="app-menu__item" href="index.php?pg=qldanhmuc">
                     <i class='app-menu__icon bi bi-card-checklist'></i>
@@ -295,18 +307,6 @@
                 </a>
             </li>
             <li><a class="app-menu__item" href="index.php?pg=qldonhang"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý đơn hàng</span></a></li>
-            <li class="app-menu__itemhv">
-                <a onclick="momenu()" class="app-menu__item" href="#">
-                    <i class='app-menu__icon bx bx-image'></i>
-                    <span class="app-menu__label">Quản lý giao diện</span>
-                </a>
-                <ul class="sub-menu" style="display:none;">
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li>
-                    <li><a class="app-menu__item" href="index.php?pg=qlbanner"><i class='app-menu__icon bx bx-slideshow'></i><span class="app-menu__label">Banner</span></a></li>
-                </ul>
-            </li>
             <li>
                 <a class="app-menu__item" href="index.php?pg=qlblog">
                     <i class='app-menu__icon bi bi-mailbox'></i>
@@ -316,4 +316,4 @@
             <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
                         đặt hệ thống</span></a></li>
         </ul>
-    </aside>
+    </aside> -->

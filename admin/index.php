@@ -358,6 +358,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $idbn = $_GET['idbn'];
                 $showup_banner = showup_banner($idbn);
             }
+            if (isset($_GET['idsd']) && ($_GET['idsd'] > 0)) {
+                $get_pro = ds_product();
+                extract($get_pro);
+                $idsd = $_GET['idsd'];
+                $showup_slider = showup_slider($idsd);
+            }
             $get_banner = db_banner(10);
             require_once "view/updatebnsl.php";
             break;
@@ -381,12 +387,12 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 if ($imgsd == "") {
                     $imgsd = $_POST['imgold'];
                 }
-                $idsl = $_POST['idsl'];
-                $target_file = "../view/layout/asset/css/images/slider/" . $img;
+                $idsd = $_POST['idsd'];
+                $target_file = "../view/layout/asset/css/images/slider/" . $imgsd;
                 move_uploaded_file($_FILES['imgup']['tmp_name'], $target_file);
-                update_slider($stt, $mota, $img, $idsl);
+                update_slider($stt, $mota, $img, $idsd);
                 // hàm show slider id
-                $showup_slider = showup_slider($idsl);
+                $showup_slider = showup_slider($idsd);
                 header('location: index.php?pg=qlbanner');
             }
             require_once "view/updatebn.php";
