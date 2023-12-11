@@ -154,12 +154,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/nguyenanh.png" alt="">
                                      </div>
                                      <div class="team-content text-center">
-                                         <h3>Thanh Toàn</h3>
+                                         <h3>Nguyên Anh</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">info@example.com</a>
+                                         <a href="#">Thành viên</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>
@@ -174,12 +174,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/hoc.png" alt="">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Học</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">info@example.com</a>
+                                         <a href="#">Thành viên (PS28717)</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>
@@ -194,12 +194,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/2.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/toan.png" alt="">
                                      </div>
                                      <div class="team-content text-center">
-                                         <h3>Nguyên Anh</h3>
+                                         <h3>Thanh Toàn</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">info@example.com</a>
+                                         <a href="#">Trưởng nhóm (PS28740)</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>
@@ -213,12 +213,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/3.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/diem.png" alt="">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Diễm</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">info@example.com</a>
+                                         <a href="#">Thành viên (PS28441)</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>
@@ -232,12 +232,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/1.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/wenwy.jpg" alt="">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Quý</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">info@example.com</a>
+                                         <a href="#">Thành viên (PS28769)</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>
@@ -251,12 +251,12 @@
                                  <!-- single-product-wrap start -->
                                  <div class="team-member mb-60 mb-sm-30 mb-xs-30">
                                      <div class="team-thumb">
-                                         <img src="./view/layout/images/team/3.png" alt="Our Team Member">
+                                         <img src="./view/layout/images/team/thinh.png" alt="">
                                      </div>
                                      <div class="team-content text-center">
                                          <h3>Hồ Thịnh</h3>
                                          <p>IT Expert</p>
-                                         <a href="#">0399558442</a>
+                                         <a href="#">Thành viên (PS35139)</a>
                                          <div class="team-social">
                                              <a href="#"><i class="fa fa-facebook"></i></a>
                                              <a href="#"><i class="fa fa-twitter"></i></a>

@@ -1,11 +1,11 @@
 <?php
 // hiển thị tương tác với bảng blog
 require_once 'pdo.php';
-function get_tintucs($madm = 0, $start = 0, $limit = 0)
+function get_tintucs($iddm = 0, $start = 0, $limit = 0)
 {
     $sql = "SELECT * FROM blog p INNER JOIN catalog c ON p.madm = c.id";
-    if ($madm != 0) {
-        $sql .= " WHERE p.madm = " . $madm;
+    if ($iddm != 0) {
+        $sql .= " WHERE p.iddm = " . $iddm;
     }
     if ($limit != 0) {
         $sql .= " LIMIT " . $start . "," . $limit;
@@ -63,7 +63,6 @@ function get_blackfriday()
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     return $stmt->fetchALL(); // lấy all dữ liệu
-
 }
 // lấy 3 blog ngoài trang index
 function get_tintucindex($limit)
