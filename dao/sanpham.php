@@ -224,7 +224,7 @@ function show_SP($dssp)
                             ' . $thanhTien_addcart . '
                             <input type="hidden" name="quantity" value="1">
   
-                            <button style="" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
+                            <button style="" onclick="toast_cart()" type="submit" name="addcart" class="add-cart-btn__main">Thêm</button>
                         </form>
 
 
@@ -374,6 +374,37 @@ function get_dssp_suggest($limit)
 
     return pdo_query($sql);
 }
+
+
+//Lấy giá trị sản phẩm tran so sánh
+function get_dssp_sosanh($id_product)
+{
+    $sql = "SELECT * FROM attribute_product  where id_product = ? ";
+
+    return pdo_query($sql, $id_product);
+}
+
+function get_dssp_sosanh_ten($id_product)
+{
+    $sql = "SELECT ten_thuoctinh FROM attribute_product  where id_product = ? ";
+
+    return pdo_query($sql, $id_product);
+}
+
+function get_dssp_sosanh2($id_product)
+{
+    $sql = "SELECT * FROM attribute_product  where id_product = ? ";
+
+    return pdo_query($sql, $id_product);
+}
+
+function get_dssp_sosanh_ten2($id_product)
+{
+    $sql = "SELECT ten_thuoctinh FROM attribute_product  where id_product = ? ";
+
+    return pdo_query($sql, $id_product);
+}
+
 
 // function get_dssp_All($keyword, $idcatalog, $limit)
 // {

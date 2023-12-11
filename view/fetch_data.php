@@ -126,7 +126,7 @@ if (isset($_POST['input'])) {
 
 
                         <form action="index.php?pg=addcart" method="post">
-                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="page_here" value="index.php?pg=product">
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
@@ -310,7 +310,7 @@ if (isset($_POST['input'])) {
 
 
                         <form action="index.php?pg=addcart" method="post">
-                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="page_here" value="index.php?pg=product">
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">
@@ -476,7 +476,7 @@ if (isset($_POST['input'])) {
 
 
                         <form action="index.php?pg=addcart" method="post">
-                            <input type="hidden" name="page_here" value="index.php">
+                            <input type="hidden" name="page_here" value="index.php?pg=product">
                             <input type="hidden" name="idpro" value="' . $id . '">
                             <input type="hidden" name="img" value="' . $hinh . '">
                             <input type="hidden" name="name" value="' . $ten . '">

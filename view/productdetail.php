@@ -1,46 +1,56 @@
 <style>
-    .btn_submit_cmt {
-        background: #242424;
-        color: #fff !important;
-        width: 80px;
-        font-size: 14px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        left: 110px;
-        right: auto;
-        top: 0;
-        display: block;
-        transition: all 0.3s ease-in-out;
-    }
+.btn_submit_cmt {
+    background: #242424;
+    color: #fff !important;
+    width: 80px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    left: 110px;
+    right: auto;
+    top: 0;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
 
-    #load-more-btn {
-        border: none;
-        font-size: 14px;
-        color: white;
-        position: relative;
-        background: black;
-        cursor: pointer;
-        font-weight: 500;
-        text-transform: capitalize;
-        padding: 10px 20px;
-        border-radius: 3px;
-        transition: all 0.3s ease-in-out;
-    }
+#load-more-btn {
+    border: none;
+    font-size: 14px;
+    color: white;
+    position: relative;
+    background: black;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
 
-    #load-more-btn:hover {
-        background-color: #272e68;
-    }
+#load-more-btn:hover {
+    background-color: #272e68;
+}
+
+.lg-image {
+    height: 420px;
+}
+
+.popup-img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 </style>
 
 <?php
 
-
-
-
-
-
-
+if ($count_cmt >= 4) {
+    $xemthem = '
+    <button id="load-more-btn">Xem thêm</button>';
+} else {
+    $xemthem = '';
+}
 
 
 
@@ -86,6 +96,8 @@ if (isset($_SESSION['dataArray'])) {
 } else {
     $countSs = 0;
 }
+
+// echo var_dump($_SESSION['dataArray']);
 
 
 
@@ -166,48 +178,60 @@ if ($giamgia > 0) {
                 <div class="product-details-left">
                     <div class="product-details-images slider-navigation-1">
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/1.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/1.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/2.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/2.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh1 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/3.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/3.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh2 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/4.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/4.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/5.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/5.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image">
                             </a>
                         </div>
                         <div class="lg-image">
-                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/6.jpg" data-gall="myGallery">
+                            <a class="popup-img venobox vbox-item" href="./view/layout/images/product/large-size/6.jpg"
+                                data-gall="myGallery">
                                 <img src="./view/layout/images/product/<?= $hinh5 ?>" alt="product image">
                             </a>
                         </div>
                     </div>
                     <div class="product-details-thumbs slider-thumbs-1">
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>"
+                                alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh1 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh1 ?>"
+                                alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>"
+                                alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh3 ?>"
+                                alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh4 ?>"
+                                alt="product image thumb">
                         </div>
-                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh5 ?>" alt="product image thumb">
+                        <div class="sm-image"><img src="./view/layout/images/product/<?= $hinh5 ?>"
+                                alt="product image thumb">
                         </div>
                     </div>
                 </div>
@@ -263,10 +287,12 @@ if ($giamgia > 0) {
                         </div> -->
                         <div class="single-add-to-cart">
                             <form action="index.php?pg=addcart" class="cart-quantity" method="post">
-                                <div id="productInfo" data-id="<?= $id ?>" data-ten="<?= $ten ?>" data-gia="<?= $gia_hientai ?>" data-hinh="<?= $hinh ?>" class="quantity">
+                                <div id="productInfo" data-id="<?= $id ?>" data-ten="<?= $ten ?>"
+                                    data-gia="<?= $gia_hientai ?>" data-hinh="<?= $hinh ?>" class="quantity">
                                     <label>Số lượng</label>
                                     <div class="cart-plus-minus">
-                                        <input id="giatri_soluong" class="cart-plus-minus-box" name="quantity" value="1" type="text">
+                                        <input id="giatri_soluong" class="cart-plus-minus-box" name="quantity" value="1"
+                                            type="text">
                                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                     </div>
@@ -283,8 +309,10 @@ if ($giamgia > 0) {
                                 <input type="hidden" name="img" value="<?= $hinh ?>">
                                 <input type="hidden" name="name" value="<?= $ten ?>">
                                 <input type="hidden" name="price" value="<?= $gia ?>">
-                                <input type="hidden" name="page_here" value="index.php?pg=productdetail&idpro=<?= $id ?>">
-                                <button style="width: 179px; height: 47px; color: white;" class="add-cart-btn__main " type="submit" name="addcart">Thêm vào
+                                <input type="hidden" name="page_here"
+                                    value="index.php?pg=productdetail&idpro=<?= $id ?>">
+                                <button style="width: 179px; height: 47px; color: white;" class="add-cart-btn__main "
+                                    type="submit" name="addcart">Thêm vào
                                     giỏ hàng</button>
 
                             </form>
@@ -376,53 +404,27 @@ if ($giamgia > 0) {
             <div id="reviews" class="tab-pane" role="tabpanel">
                 <div class="product-reviews">
                     <div class="product-details-comment-block">
+                        <span>
+                            <div class="br-wrapper br-theme-fontawesome-stars">
+                                <?php 
+                              for ($count=1; $count <=5 ; $count++) { 
+                                
+                                if($count<=3){
+                                    $color = 'color: #ffcc00;'; // màu vàng
+                                }else{
+                                    $color = 'color: #ccc;'; // màu xàm
+
+                                }   
+                              }
+                              ?>
 
 
-                        //
-
-                        <form action="index.php?pg=productdetail" method="post">
-                            <p class="your-opinion">
-                                <!-- <label>Bạn hãy đánh giá sao</label> -->
-                                <span>
-                                    <div class="br-wrapper br-theme-fontawesome-stars"><select class="star-rating" style="display: none;">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <!-- <div class="br-widget"><a href="#" data-rating-value="1" data-rating-text="1"
-                                                class="br-selected"></a><a href="#" data-rating-value="2"
-                                                data-rating-text="2" class="br-selected"></a><a href="#"
-                                                data-rating-value="3" data-rating-text="3" class="br-selected"></a><a
-                                                href="#" data-rating-value="4" data-rating-text="4"
-                                                class="br-selected br-current"></a><a href="#" data-rating-value="5"
-                                                data-rating-text="5" class=""></a>
-                                            <div class="br-current-rating">4</div>
-                                        </div> -->
-                                    </div>
-                                </span>
-                            </p>
-                            <p class="feedback-form">
-                                <label for="feedback">Bình luận của bạn</label>
-                                <textarea name="noidung_cmt" placeholder="Bạn có thắc mắc gì về sản phẩm không?" id="feedback" name="comment" cols="45" rows="2" aria-required="true"></textarea>
-                            </p>
-                            <div class="feedback-input">
-
-                                <input type="hidden" name="name_cmt" value="' . $hoten . '">
-                                <input type="hidden" name="hinh_cmt" value="' . $hinh . '">
-                                <input type="hidden" name="idpro" value="' . $idpro . '">
-                                <input type="hidden" name="iduser" value="' . $id . '">
-                                <input type="hidden" name="ngaybl" value="' . $ngaybl . '">
 
 
-                                <div class="feedback-btn pb-15">
-                                    <button class="btn_submit_cmt" type="submit" name="submit_cmt">Gửi</button>
-                                </div>
                             </div>
-                        </form>
+                        </span>
 
-                        //
+
                         <?php
                         if (isset($_SESSION['s_user']) && ($_SESSION['s_user'] != "")) {
                             extract($_SESSION["s_user"]);
@@ -478,9 +480,8 @@ if ($giamgia > 0) {
                                         <!--Accordion Start-->
                                         <h3 style="margin-bottom: 0px; font-size: 14px; text-transform: none; border: none; padding-bottom: 15px;">
                                             Đăng nhập để bình luận sản phẩm ?
-                                            <a href="index.php?pg=login_register"><span>Đăng nhập.</span></a>
+                                            <a href="index.php?pg=login_register&page_follow=productdetail&idpro=' . $id . '"><span>Đăng nhập.</span></a>
                                         </h3>
-
                                     </div>
                             ';
                         }
@@ -490,28 +491,29 @@ if ($giamgia > 0) {
                         <div id="all-comments">
                             <?= $show_all_cmt ?>
                         </div>
-                        <button id="load-more-btn">Xem thêm</button>
+
+                        <?= $xemthem ?>
                         <script>
-                            $(document).ready(function() {
-                                const commentsPerLoad =
-                                    5; // Số lượng comment muốn hiển thị mỗi lần nhấn nút "Xem thêm"
-                                let visibleComments = commentsPerLoad;
+                        $(document).ready(function() {
+                            const commentsPerLoad =
+                                4; // Số lượng comment muốn hiển thị mỗi lần nhấn nút "Xem thêm"
+                            let visibleComments = commentsPerLoad;
 
-                                $('.comment-author-infos:gt(' + (commentsPerLoad - 1) + ')')
-                                    .hide(); // Ẩn các comment ngoài số lượng đã chỉ định
+                            $('.comment-author-infos:gt(' + (commentsPerLoad - 1) + ')')
+                                .hide(); // Ẩn các comment ngoài số lượng đã chỉ định
 
-                                $('#load-more-btn').click(function() {
-                                    $('.comment-author-infos:lt(' + visibleComments + ')')
-                                        .show(); // Hiển thị thêm comment
-                                    visibleComments += commentsPerLoad;
+                            $('#load-more-btn').click(function() {
+                                $('.comment-author-infos:lt(' + visibleComments + ')')
+                                    .show(); // Hiển thị thêm comment
+                                visibleComments += commentsPerLoad;
 
-                                    // Ẩn nút "Xem thêm" nếu đã hiển thị hết tất cả comment
-                                    if ($('.comment-author-infos:visible').length >= $(
-                                            '.comment-author-infos').length) {
-                                        $('#load-more-btn').hide();
-                                    }
-                                });
+                                // Ẩn nút "Xem thêm" nếu đã hiển thị hết tất cả comment
+                                if ($('.comment-author-infos:visible').length >= $(
+                                        '.comment-author-infos').length) {
+                                    $('#load-more-btn').hide();
+                                }
                             });
+                        });
                         </script>
                         <!-- content cmt  -->
                         <!-- <div class="comment-author-infos pt-25">
@@ -690,47 +692,23 @@ if ($giamgia > 0) {
 
 
 
-<div class="sticky-form-mini" id="stickyForm">
-    <input class="count" type="hidden" value="<?= $countSs ?>">
-    <span>
-        So sánh(<?= $countSs ?>)
 
-    </span>
-</div>
-<div class="sticky-form-big" style="display: none; height: 300px;">
-    <form class="sticky-form" id="stickyForm" action="index.php?pg=compare" method="post">
-        <ul style="min-height: 150px; display: flex; box-shadow: 0 0 15px #cfcdcd;">
-            <li style="width:40%">
-                <?= $html_sp1 ?>
-            </li>
-            <li style="width:40%">
-                <?= $html_sp2 ?>
-            </li>
-            <li style="width:20%" id="productInfoContainer">
-                <input style="width: 100%;" class="submit add-cart-btn__main" type="submit" name="sosanh" value="So sánh ngay"><a href="index.php?pg=compare"></a>
-                <p style="font-size: 15px;  margin-top: 10px; margin-bottom: 0;text-align: center;"><a style="color: #288ad6;" href="index.php?pg=productdetail&idpro=<?= $id1 ?>&del=1">
-                        Xoá tất cả</a></p>
-                <p id="productInfoContainer__thugon" style="font-size: 15px; margin-bottom: 0; text-align: center;" class="sticky-form-hide">Thu gọn </p>
-            </li>
-        </ul>
-    </form>
-</div>
 
 <script>
-    // JavaScript để xác định vị trí khi cuộn trang
-    window.onscroll = function() {
-        stickyForm();
-    };
+// JavaScript để xác định vị trí khi cuộn trang
+window.onscroll = function() {
+    stickyForm();
+};
 
-    var form = document.getElementById("stickyForm");
-    var sticky = form.offsetTop;
+var form = document.getElementById("stickyForm");
+var sticky = form.offsetTop;
 
-    function stickyForm() {
-        if (window.pageYOffset >= sticky) {
-            form.classList.add("sticky");
-        } else {
-            form.classList.remove("sticky");
-        }
-    };
+function stickyForm() {
+    if (window.pageYOffset >= sticky) {
+        form.classList.add("sticky");
+    } else {
+        form.classList.remove("sticky");
+    }
+};
 </script>
 <!-- Li's Laptop Product Area End Here -->

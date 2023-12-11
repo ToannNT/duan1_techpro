@@ -17,6 +17,7 @@ if (isset($_SESSION['dataArray'][0])) {
     $html_sp1 = '<p style="font-size: 15px;"> Không có sản phẩm </p>';
 }
 
+
 if (isset($_SESSION['dataArray'][1])) {
     $id2 = (int)($_SESSION['dataArray'][1]); // Lấy sản phẩm đầu tiên
     $spss2 = get_Sp_Detail($id2);
@@ -71,11 +72,8 @@ if (isset($_SESSION['dataArray'])) {
                         <div class="product-view-mode">
                             <!-- shop-item-filter-list start -->
                             <ul class="nav shop-item-filter-list" role="tablist">
-                                <li class="active" role="presentation"><a aria-selected="true" class="active show"
-                                        data-toggle="tab" role="tab" aria-controls="grid-view" href="#grid-view"><i
-                                            class="fa fa-th"></i></a></li>
-                                <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="list-view"
-                                        href="#list-view"><i class="fa fa-th-list"></i></a></li>
+                                <li class="active" role="presentation"><a aria-selected="true" class="active show" data-toggle="tab" role="tab" aria-controls="grid-view" href="#grid-view"><i class="fa fa-th"></i></a></li>
+                                <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i class="fa fa-th-list"></i></a></li>
                             </ul>
                             <!-- shop-item-filter-list end -->
                         </div>
@@ -780,22 +778,14 @@ if (isset($_SESSION['dataArray'])) {
                         <div class="categori-checkbox">
                             <!-- <form action="#"> -->
                             <ul>
-                                <li><input type="checkbox" id="brand_ne20" onclick="uncheckOthers(this)"
-                                        value=" 1000000" name="price" class="common_selector price checkbox"><a
-                                        href="#">Dưới
+                                <li><input type="checkbox" id="brand_ne20" onclick="uncheckOthers(this)" value=" 1000000" name="price" class="common_selector price checkbox"><a href="#">Dưới
                                         1.000.000đ</a></li>
-                                <li><input type="checkbox" id="brand_ne21" onclick="uncheckOthers(this)" value="2000000"
-                                        name="price" class="common_selector price checkbox"><a href="#">Dưới
+                                <li><input type="checkbox" id="brand_ne21" onclick="uncheckOthers(this)" value="2000000" name="price" class="common_selector price checkbox"><a href="#">Dưới
                                         2.000.000đ</a></li>
-                                <li><input type="checkbox" id="brand_ne22" onclick="uncheckOthers(this)" value="5000000"
-                                        name="price" class="common_selector price checkbox"><a href="#">Dưới
+                                <li><input type="checkbox" id="brand_ne22" onclick="uncheckOthers(this)" value="5000000" name="price" class="common_selector price checkbox"><a href="#">Dưới
                                         5.000.000đ</a></li>
-                                <li><input type="checkbox" id="brand_ne23" onclick="uncheckOthers(this)"
-                                        value="10000000" name="price" class="common_selector price checkbox"><a
-                                        href="#">Dưới 10.000.000đ</a></li>
-                                <li><input type="checkbox" id="brand_ne24" onclick="uncheckOthers(this)"
-                                        value="40000000" name="price" class="common_selector price checkbox"><a
-                                        href="#">Dưới
+                                <li><input type="checkbox" id="brand_ne23" onclick="uncheckOthers(this)" value="10000000" name="price" class="common_selector price checkbox"><a href="#">Dưới 10.000.000đ</a></li>
+                                <li><input type="checkbox" id="brand_ne24" onclick="uncheckOthers(this)" value="40000000" name="price" class="common_selector price checkbox"><a href="#">Dưới
                                         40.000.000đ</a>
                                 </li>
                             </ul>
@@ -844,13 +834,10 @@ if (isset($_SESSION['dataArray'])) {
                 <?= $html_sp2 ?>
             </li>
             <li style="width:20%" id="productInfoContainer">
-                <input style="width: 100%;" class="submit add-cart-btn__main" type="submit" name="sosanh"
-                    value="So sánh ngay"><a href="index.php?pg=compare"></a>
-                <p style="font-size: 15px;  margin-top: 10px; margin-bottom: 0;text-align: center;"><a
-                        style="color: #288ad6;" href="index.php?pg=product&del=1">
+                <input style="width: 100%;" class="submit add-cart-btn__main" type="submit" name="sosanh" value="So sánh ngay"><a href="index.php?pg=compare"></a>
+                <p style="font-size: 15px;  margin-top: 10px; margin-bottom: 0;text-align: center;"><a style="color: #288ad6;" href="index.php?pg=product&del=1">
                         Xoá tất cả</a></p>
-                <p id="productInfoContainer__thugon" style="font-size: 15px; margin-bottom: 0; text-align: center;"
-                    class="sticky-form-hide">Thu gọn </p>
+                <p id="productInfoContainer__thugon" style="font-size: 15px; margin-bottom: 0; text-align: center;" class="sticky-form-hide">Thu gọn </p>
             </li>
         </ul>
     </form>
@@ -869,29 +856,29 @@ if (isset($_SESSION['dataArray'])) {
 
 
 <style>
-#loading {
-    text-align: center;
-    background-color: brown;
-    height: 150px;
-    padding: 100px;
-    color: red;
+    #loading {
+        text-align: center;
+        background-color: brown;
+        height: 150px;
+        padding: 100px;
+        color: red;
 
-}
+    }
 </style>
 <script>
-// JavaScript để xác định vị trí khi cuộn trang
-window.onscroll = function() {
-    stickyForm();
-};
+    // JavaScript để xác định vị trí khi cuộn trang
+    window.onscroll = function() {
+        stickyForm();
+    };
 
-var form = document.getElementById("stickyForm");
-var sticky = form.offsetTop;
+    var form = document.getElementById("stickyForm");
+    var sticky = form.offsetTop;
 
-function stickyForm() {
-    if (window.pageYOffset >= sticky) {
-        form.classList.add("sticky");
-    } else {
-        form.classList.remove("sticky");
-    }
-};
+    function stickyForm() {
+        if (window.pageYOffset >= sticky) {
+            form.classList.add("sticky");
+        } else {
+            form.classList.remove("sticky");
+        }
+    };
 </script>

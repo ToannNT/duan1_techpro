@@ -24,15 +24,18 @@ function pdo_querya($sql)
     }
 }
 
-function show_sl(){
+function show_sl()
+{
     $sql = "SELECT * FROM slider WHERE trangthai = 1";
     return pdo_querya($sql);
 }
-function show_bn12(){
+function show_bn12()
+{
     $sql = "SELECT * FROM banner WHERE trangthai = 1";
     return pdo_querya($sql);
 }
-function showsttbn(){
+function showsttbn()
+{
     $showdsbn12 = show_bn12();
     $banner = array();
     foreach ($showdsbn12 as $value) {
@@ -77,16 +80,17 @@ function showsttbn(){
     }
     return $banner;
 }
-function showsttsl(){
+function showsttsl()
+{
     $showsl = show_sl();
     $sl = array();
     foreach ($showsl as $value) {
         extract($value);
         if ($stt == 1) {
-            $sl['stt1'] =' <div class="single-slide align-center-left  animation-style-01 bg-1">
+            $sl['stt1'] = ' <div class="single-slide align-center-left  animation-style-01 bg-1">
                             <div class="slider-progress"></div>
                                 <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                    <img src="./view/layout/images/slider/' . $img . '" alt="">
                                 </a>
                             <div class="slider-content">
                             </div>
@@ -95,7 +99,7 @@ function showsttsl(){
             $sl['stt2'] = '<div class="single-slide align-center-left animation-style-02 bg-2">
                             <div class="slider-progress"></div>
                             <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                    <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                    <img src="./view/layout/images/slider/' . $img . '" alt="">
                                 </a>
                             <div class="slider-content">
                             </div>
@@ -105,7 +109,7 @@ function showsttsl(){
                             <div class="single-slide align-center-left animation-style-01 bg-3">
                                 <div class="slider-progress"></div>
                                     <a href="index.php?pg=productdetail&idpro=' . $id_product . '">
-                                        <img src="./view/layout/images/slider/'.$img.'" alt="">
+                                        <img src="./view/layout/images/slider/' . $img . '" alt="">
                                     </a>
                                     <div class="slider-content">
                                     <div class="default-btn slide-btn"></div>
@@ -127,9 +131,9 @@ $banners = showsttbn();
                 <div class="slider-area">
                     <div class="slider-active owl-carousel">
                         <!-- sl111. -->
-                        <?=$showsttsl['stt1']?>
-                        <?=$showsttsl['stt2']?>
-                        <?=$showsttsl['stt3']?>
+                        <?= $showsttsl['stt1'] ?>
+                        <?= $showsttsl['stt2'] ?>
+                        <?= $showsttsl['stt3'] ?>
                     </div>
                 </div>
             </div>
@@ -246,11 +250,7 @@ $banners = showsttbn();
                     <h2>
                         <span>Điện thoại</span>
                     </h2>
-                    <ul class="li-sub-category-list">
-                        <li class="active"><a href="shop-left-sidebar.html"> Video</a></li>
-                        <li><a href="shop-left-sidebar.html">Máy tính</a></li>
-                        <li><a href="shop-left-sidebar.html">Thiết bị điện tử</a></li>
-                    </ul>
+
                 </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
@@ -436,11 +436,7 @@ $banners = showsttbn();
                     <h2>
                         <span>Laptop</span>
                     </h2>
-                    <ul class="li-sub-category-list">
-                        <li class="active"><a href="shop-left-sidebar.html">Chamcham</a></li>
-                        <li><a href="shop-left-sidebar.html">Sanai</a></li>
-                        <li><a href="shop-left-sidebar.html">Meito</a></li>
-                    </ul>
+
                 </div>
                 <div class="row">
                     <div class="product-active owl-carousel">
@@ -484,11 +480,7 @@ $banners = showsttbn();
                     <h2>
                         <span>Sản phẩm bestseller</span>
                     </h2>
-                    <ul class="nav li-product-menu li-trending-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#home1"><span>Sanai</span></a></li>
-                        <li><a data-toggle="tab" href="#home2"><span>Camera Accessories</span></a></li>
-                        <li><a data-toggle="tab" href="#home3"><span>XailStation</span></a></li>
-                    </ul>
+
                 </div>
                 <!-- Begin Li's Tab Menu Content Area -->
                 <div class="tab-content li-tab-content li-trending-product-content">
@@ -1147,6 +1139,10 @@ $banners = showsttbn();
                 <script language="JavaScript">
                 function toast() {
                     swal("Success!", "Your data have been saved. Thank you!", "success");
+                }
+
+                function toast_cart() {
+                    swal("Thành công!", "Thêm sản phẩm vào giỏ hàng thành công", "success");
                 }
 
                 function showSuccessToast() {
