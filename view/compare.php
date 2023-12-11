@@ -40,6 +40,57 @@ if ($sale = 1) {
 }
 $mota2 = $mota;
 
+
+
+// echo var_dump($ds_sosanh);
+$html_sp1 = '';
+
+
+foreach ($ds_tensosanh as  $value) {
+    extract($value);
+    $ten_thuoctinh_one = $ten_thuoctinh;
+    $html_sp1 .= '<h4 style="
+    padding-top: 15px;
+    margin: 15px 0px;
+    font-size: 19px;
+
+    ">' . $ten_thuoctinh . '</h4>';
+
+    foreach ($ds_sosanh as  $value) {
+        extract($value);
+        if ($ten_thuoctinh == $ten_thuoctinh_one) {
+            $html_sp1 .= '
+            <span class="compare-product-name">' . $giatri . '</a></span>';
+        }
+    }
+}
+
+$html_sp2 = '';
+
+
+foreach ($ds_tensosanh2 as  $value) {
+    extract($value);
+    $ten_thuoctinh_one = $ten_thuoctinh;
+    $html_sp2 .= '<h4 style="
+    padding-top: 15px;
+    margin: 15px 0px;
+    font-size: 19px;
+
+    "></h4>';
+
+    foreach ($ds_sosanh2 as  $value) {
+        extract($value);
+        if ($ten_thuoctinh == $ten_thuoctinh_one) {
+            $html_sp2 .= '
+            <span class="compare-product-name">' . $giatri . '</a></span>';
+        }
+    }
+}
+
+
+
+
+
 ?>
 
 <!-- Begin Li's Breadcrumb Area -->
@@ -85,13 +136,26 @@ $mota2 = $mota;
                 </tbody>
             </table>
             <br>
-            <div class="accordion">
+            <!-- <div class="accordion">
                 <div class="d-flex justify-content-between">
                     <h4>Thông tin sản phẩm</h4>
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </div>
                 <div>
                     <table class="table table-bordered table-hover mb-0">
+                        <tr>
+                            <div class="d-flex">
+                                <td colspan="2" class="col-6 text-left">
+                                    <h4>THong ticonst name = (params) => {
+
+                                        }</h4>
+                                    <span class="compare-product-name">Tên : <?= $ten1 ?></a></span>
+                                    <span class="compare-product-name">Giá :
+                                        <?= number_format($gia1, 0, '.', '.') ?></a></span>
+                                </td>
+
+                            </div>
+                        </tr>
                         <tr>
                             <div class="d-flex">
                                 <td colspan="2" class="col-6 text-left">
@@ -109,30 +173,48 @@ $mota2 = $mota;
                         </tr>
                     </table>
                 </div>
-            </div><br>
+            </div> -->
+
 
             <div class="accordion">
                 <div class="d-flex justify-content-between">
-                    <h4>Mô tả</h4>
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <!-- <h4></h4>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i> -->
                 </div>
-                <div>
+                <div style="display: flex;">
+                    <table class="table table-bordered table-hover mb-0">
+
+                        <tr>
+
+                            <div class="d-flex">
+
+                                <td colspan="1" class="col-6 text-left pd-0">
+                                    <?= $html_sp1 ?>
+
+
+
+                                </td>
+
+                            </div>
+                        </tr>
+                    </table>
+
                     <table class="table table-bordered table-hover mb-0">
                         <tr>
                             <div class="d-flex">
-                                <td colspan="2" class="col-6 text-left">
-                                    <span class="compare-product-name"><?= $mota1 ?></a></span>
+                                <td colspan="1" class="col-6 text-left pd-0">
+
+                                    <?= $html_sp2 ?>
+
                                 </td>
-                                <td colspan="2" class="col-6 text-left">
-                                    <span class="compare-product-name"><?= $mota2 ?></a></span>
-                                </td>
+
                             </div>
                         </tr>
                     </table>
                 </div>
             </div>
 
-            <div class="accordion">
+            <!-- <div class="accordion">
                 <div class="d-flex justify-content-between">
                     <h4>Chi tiết</h4>
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -172,7 +254,7 @@ $mota2 = $mota;
                         </tr>
                     </table>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
