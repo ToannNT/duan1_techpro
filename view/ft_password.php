@@ -67,7 +67,7 @@ function GuiMatKhauMoi($email, $matkhaumoi)
                 </div> <br>
                    <div>
                         <p>Xin chào quý khách, mật khẩu của bạn đã được đặt lại thành công</p> <br>
-                        <p> Mật khẩu mới của bạn là '.$matkhaumoi.'.Vui lòng không chia sẽ mật khẩu với bất kỳ ai </p><br>
+                        <p> Mật khẩu mới của bạn là ' . $matkhaumoi . '.Vui lòng không chia sẽ mật khẩu với bất kỳ ai </p><br>
                    </div>
                 <div>
                     <div style="float: right;margin-right:20%;">
@@ -120,15 +120,14 @@ function GuiMatKhauMoi($email, $matkhaumoi)
                 <h5>Quên mật khẩu</h5>
             </div>
             <?php if ($loi != "") { ?>
-            <div class="alert alert-danger"><?= $loi ?></div>
+                <div class="alert alert-danger"><?= $loi ?></div>
             <?php } ?>
             <div class="text1 col-md-11 col-12 mb-20">
                 <label> Nhập Email :</label>
-                <input value="<?php if (isset($email) == true) echo $email ?>" class="mb-0" id="email" name="email"
-                    type="email" placeholder="Nhập Email">
+                <input value="<?php if (isset($email) == true) echo $email ?>" class="mb-0" id="email" name="email" type="email" placeholder="Nhập Email">
             </div>
             <div class="text2">
-                <label>Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
+                <label style="margin-left: 9px;">Không có tài khoản?<a href=""> Đăng ký ngay</a></label><br>
                 <label>Đã có tài khoản?<a href=""> Đăng nhập ngay</a></label>
             </div>
             <button type="submit" name="nutguiyeucau" value="nutgui" class="btn btn-primary mb-20">Xác nhận</button>
