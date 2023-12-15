@@ -540,6 +540,8 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/adddonhang.php";
             break;
         default:
+            $count_user = get_useradm();//khachhang
+            $count_pro = get_sp();
             require_once "view/home.php";
             break;
     }

@@ -1,3 +1,35 @@
+<div id="myfirstchart" style="height: 250px;"></div>
+<?php
+//hàm đếm số lượng khách hàng
+$count_user = get_useradm();
+$count_users = count($count_user);
+$count_pro = get_sp();
+$count_pros = count($count_pro);
+
+
+?>
+<script>
+  new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+</script>
 <main class="app-content">
     <div class="row">
       <div class="col-md-12">
@@ -18,7 +50,7 @@
         <div class="widget-small primary coloured-icon"><i class='icon bx bxs-user-account fa-3x'></i>
           <div class="info">
             <h4>Tổng khách hàng</h4>
-            <p><b>56 khách hàng</b></p>
+            <p><b><?=($count_users)?> khách hàng</b></p>
             <p class="info-tong">Tổng số khách hàng được quản lý.</p>
           </div>
         </div>
@@ -28,7 +60,7 @@
             <div class="widget-small info coloured-icon"><i class='icon bx bxs-data fa-3x'></i>
               <div class="info">
                 <h4>Tổng sản phẩm</h4>
-                <p><b>1850 sản phẩm</b></p>
+                <p><b><?=($count_pros)?> sản phẩm</b></p>
                 <p class="info-tong">Tổng số sản phẩm được quản lý.</p>
               </div>
             </div>
@@ -38,7 +70,7 @@
             <div class="widget-small warning coloured-icon"><i class='icon bx bxs-shopping-bags fa-3x'></i>
               <div class="info">
                 <h4>Tổng đơn hàng</h4>
-                <p><b>247 đơn hàng</b></p>
+                <p><b><?=$count_orders?> đơn hàng</b></p>
                 <p class="info-tong">Tổng số hóa đơn bán hàng trong tháng.</p>
               </div>
             </div>
@@ -161,10 +193,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="tile">
-              <h3 class="tile-title">Dữ liệu 6 tháng đầu vào</h3>
-              <div class="embed-responsive embed-responsive-16by9">
-                <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
-              </div>
+              <h3 class="tile-title">Sản phẩm nhập vào trong tháng 12</h3>
+
+              <!-- 111111 -->
             </div>
           </div>
           <div class="col-md-12">
@@ -182,11 +213,5 @@
     </div>
 
 
-    <div class="text-center" style="font-size: 13px">
-      <p><b>Copyright
-          <script type="text/javascript">
-            document.write(new Date().getFullYear());
-          </script> Phần mềm quản lý bán hàng | Dev By Trường
-        </b></p>
-    </div>
+    
   </main>

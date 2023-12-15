@@ -416,90 +416,14 @@ function get_dssp($limit)
     $sql = "SELECT * FROM product ORDER BY id DESC LIMIT " . $limit;
     return pdo_query($sql);
 }
+function get_sp(){
+    $sql = "SELECT * FROM product ORDER BY id ";
+    return pdo_query($sql);
+}
 
-function show_dssp($dssp_sp)
-{
-    $showhtml = '';
-    foreach ($dssp_sp as $item) {
-
-        extract($item);
-        if ($banchay == 1) {
-            $itemHot = '
-            <span class="sticker__hot">Hot</span>
-            ';
-        } else {
-            $itemHot = '
-            <span class="sticker__hott"></span>
-            ';
-        }
-        if ($new == 1) {
-            $itemNew = '
-            <span class="sticker">Mới</span>
-            ';
-        } else {
-            $itemNew = '
-            <span class="stickerr"></span>
-            ';
-        }
-        if ($giamgia > 0) {
-            $phantram = ((int) $gia - (int) $giamgia) / (int) $gia * 100;
-            $gia_sp = '
-                <span class="new-price new-price-2">' . number_format($giamgia, 0, '.', '.') . 'đ</span>
-                <span class="old-price">' . number_format($gia, 0, '.', '.') . 'đ</span>
-                <span class="discount-percentage">- ' . floor($phantram) . '%</span>
-            ';
-        } else {
-            $gia_sp = '<span class="new-price">' . number_format($gia, 0, '.', '.') . 'đ</span>';
-        }
-        $link = 'index.php?pg=productdetail&idpro=' . $id;
-        $link = 'index.php?pg=productdetail&idpro=' . $id;
-        $showhtml .= '
-                    <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                    <!-- single-product-wrap start -->
-                    <div class="single-product-wrap">
-                        <div class="product-image">
-                            <a href="' . $link . '">
-                            <img src="./view/layout/images/product/' . $hinh . '" alt="Li s Product Image">
-                            </a>
-                            ' . $itemNew . '
-                            ' . $itemHot . '
-                        </div>
-                        <div class="product_desc">
-                            <div class="product_desc_info">
-                                <div class="product-review">
-                                    <h5 class="manufacturer">
-                                        <a href="product-details.html">Graphic Corner</a>
-                                    </h5>
-                                    <div class="rating-box">
-                                        <ul class="rating">
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h4><a class="product_name" href="single-product.html">' . $ten . '</a></h4>
-
-                                <div class="price-box">
-                                ' . $gia_sp . '
-                               </div>
-                               
-                            </div>
-                            <div class="add-actions">
-                                <ul class="add-actions-link">
-                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-product-wrap end -->
-                </div>';
-    }
-    return $showhtml;
+function get_order(){
+    $sql = "SELECT * FROM order ORDER BY id";
+    pdo_query($sql);
 }
 
 

@@ -22,7 +22,9 @@
     <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <script>
     function readURL(input, thumbimage) {
         if (input.files && input.files[0]) { //Sử dụng  cho Firefox - chrome
@@ -289,9 +291,7 @@
                 <i class="bi bi-caret-right-fill"></i>
             </a>
                 <ul class="sub-menu" style="display:none;">
-                    <!-- <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
-                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li> -->
+                    
                     <li><a class="app-menu__item" href="index.php?pg=qlbanner"><i class='app-menu__icon bx bx-slideshow'></i><span class="app-menu__label">Banner</span></a></li>
                 </ul>
             </li>
@@ -329,6 +329,10 @@
             </li>
             <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span
                         class="app-menu__label">Cài
-                        đặt hệ thống</span></a></li>
+                        đặt hệ thống</span></a></li> 
         </ul>
     </aside>
+
+    <!-- <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-headset-vr'></i><span class="app-menu__label">Header</span></a></li>
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bi bi-back'></i><span class="app-menu__label">Footer</span></a></li>
+                    <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-toggle-right'></i><span class="app-menu__label">Button</span></a></li>

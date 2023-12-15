@@ -48,6 +48,10 @@ function get_ds_detailed_order($id_order)
 }
 
 
+
+
+
+
 function count_sp_inbill($id_bill)
 {
     $sql = "SELECT COUNT(id_bill) AS sosanpham FROM `order` WHERE id_bill = $id_bill;";

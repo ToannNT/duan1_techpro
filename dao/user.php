@@ -65,6 +65,10 @@ function get_user($id)
     $sql = "SELECT * FROM user WHERE id=?";
     return  pdo_query_one($sql, $id);
 }
+function get_useradm(){
+    $sql = "SELECT * FROM user ORDER BY id ";
+    return  pdo_query_one($sql);
+}
 
 function  update_pass_user($newpassword, $id)
 {
