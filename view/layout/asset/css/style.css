@@ -530,7 +530,7 @@ option {
 }
 
 input:focus {
-    background: transparent;
+    /* background: transparent; */
     border: none;
     outline: none;
 }

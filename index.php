@@ -439,7 +439,7 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
                 $ngaydathang = $_POST['ngaydat'];
                 $giamgiahoivien = $_POST['hoivien'];
                 //
-                guiHoaDon($email,$dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang,$voucher , $giamgiahoivien, $ship);
+                guiHoaDon($email, $dienthoai, $diachi, $hoten, $tongthanhtoan, $ngaydathang, $voucher, $giamgiahoivien, $ship, $pttt);
 
 
 
@@ -577,6 +577,16 @@ if (isset($_GET['pg']) && ($_GET['pg'] != "")) {
             require_once "view/contact.php";
             break;
         case 'compare':
+
+            if (isset($_SESSION['dataArray']) && count($_SESSION['dataArray']) >= 2) {
+                $id1 = $_SESSION['dataArray'][0]; // Lấy sản phẩm đầu tiên
+                $id2 = $_SESSION['dataArray'][1]; // Lấy sản phẩm thứ hai
+            }
+            $ds_sosanh  = get_dssp_sosanh($id1);
+            $ds_tensosanh  = get_dssp_sosanh_ten($id1);
+
+            $ds_sosanh2  = get_dssp_sosanh2($id2);
+            $ds_tensosanh2  = get_dssp_sosanh_ten2($id2);
 
             require_once "view/compare.php";
             break;

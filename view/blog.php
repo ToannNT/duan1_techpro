@@ -34,7 +34,6 @@
                         foreach ($data_tintuc as $dm) :
                             extract($dm);
                             $link = 'index.php?pg=blog&iddm=' . $id;
-
                         ?>
                         <ul class="li-blog-archive">
                             <li><a href="index.php?pg=blog&iddm=<?= $dm['id'] ?>"><?= $dm['ten_dm'] ?></a></li>
@@ -77,7 +76,7 @@
                         if (isset($_GET['page'])) {
                             $page = $_GET['page'];
                         }
-                        $data_tintuc = get_tintucs($iddm, ($page - 1) * 4, 4); // $iddm sẽ là số bắt đầu- start = 0, và trang hiển thị
+                        $data_tintuc = get_tintucs($iddm, ($page - 1) * 4, 4); // $iddm sẽ là số bắt đầu- start = 0, *4 vị trí lấy dữ liệu, 4 (số lượng tin tức cần lấy)
                         // 0 ở giữa là tham số bắt đầu
                         $soluongtt = count_tintuc()['soluong'];
                         $sotrang = ceil($soluongtt / 4); //ceil dùng để làm tròn
